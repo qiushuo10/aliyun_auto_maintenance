@@ -1,0 +1,560 @@
+{
+  "snapshotVersion": 1,
+  "product": "dysmsapi",
+  "openApiProduct": "Dysmsapi",
+  "version": "2017-05-25",
+  "source": "https://api.aliyun.com/meta/v1/products/Dysmsapi/versions/2017-05-25/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:37.840Z",
+  "actions": {
+    "AddShortUrl": {
+      "required": [
+        "SourceUrl",
+        "ShortUrlName",
+        "EffectiveDays"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddShortUrl"
+    },
+    "AddSmsSign": {
+      "required": [
+        "SignName",
+        "SignSource",
+        "Remark",
+        "SignFileList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddSmsSign"
+    },
+    "AddSmsTemplate": {
+      "required": [
+        "TemplateType",
+        "TemplateName",
+        "TemplateContent",
+        "Remark"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddSmsTemplate"
+    },
+    "ChangeSignatureQualification": {
+      "required": [
+        "SignatureName",
+        "QualificationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Replace the Qualification and Letter of Authorization for a Signature (to be unpublished)"
+    },
+    "CheckMobilesCardSupport": {
+      "required": [
+        "TemplateCode",
+        "Mobiles"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckMobilesCardSupport"
+    },
+    "ConversionDataIntl": {
+      "required": [
+        "ConversionRate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConversionDataIntl"
+    },
+    "CreateCardSmsTemplate": {
+      "required": [
+        "TemplateName",
+        "Template"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCardSmsTemplate"
+    },
+    "CreateDigitalSignOrder": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Digital Message SMS Signature Management"
+    },
+    "CreateDigitalSmsTemplate": {
+      "required": [
+        "TemplateName",
+        "Remark",
+        "TemplateContents"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Digital SMS Template Creation"
+    },
+    "CreateSmsAppIcpRecord": {
+      "required": [
+        "AppIcpRecordPic",
+        "AppServiceName",
+        "AppPrincipalUnitName",
+        "AppIcpLicenseNumber",
+        "AppApprovalDate",
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an ICP Filing Entity"
+    },
+    "CreateSmsAuthorizationLetter": {
+      "required": [
+        "AuthorizationLetterPic",
+        "SignList",
+        "AuthorizationLetterExpDate",
+        "Authorization",
+        "OrganizationCode",
+        "ProxyAuthorization",
+        "AuthorizationLetterName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a Letter of Authorization"
+    },
+    "CreateSmsSign": {
+      "required": [
+        "SignName",
+        "QualificationId",
+        "SignSource"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Apply for SMS Signature (New Interface)"
+    },
+    "CreateSmsTemplate": {
+      "required": [
+        "TemplateName",
+        "TemplateContent",
+        "TemplateType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Apply for SMS Template (New Interface)"
+    },
+    "CreateSmsTrademark": {
+      "required": [
+        "TrademarkPic",
+        "TrademarkRegistrationNumber",
+        "TrademarkName",
+        "TrademarkApplicantName",
+        "TrademarkEffExpDate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Trademark Entity"
+    },
+    "DeleteShortUrl": {
+      "required": [
+        "SourceUrl"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteShortUrl"
+    },
+    "DeleteSmsQualification": {
+      "required": [
+        "QualificationGroupId",
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete SMS Qualification"
+    },
+    "DeleteSmsSign": {
+      "required": [
+        "SignName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSmsSign"
+    },
+    "DeleteSmsTemplate": {
+      "required": [
+        "TemplateCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSmsTemplate"
+    },
+    "GetCardSmsDetails": {
+      "required": [
+        "SendDate",
+        "PhoneNumber"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the card SMS sending records and status for a single phone number."
+    },
+    "GetCardSmsLink": {
+      "required": [
+        "CardTemplateCode",
+        "SignNameJson"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCardSmsLink"
+    },
+    "GetMediaResourceId": {
+      "required": [
+        "ResourceType",
+        "OssKey",
+        "FileSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMediaResourceId"
+    },
+    "GetOSSInfoForCardTemplate": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetOSSInfoForCardTemplate"
+    },
+    "GetOSSInfoForUploadFile": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Text SMS Obtain OSS Upload Information"
+    },
+    "GetQualificationOssInfo": {
+      "required": [
+        "BizType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain OSS Configuration Information for Qualification Materials or Letter of Authorization"
+    },
+    "GetSmsOcrOssInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain OCR Image Recognition OSS Information"
+    },
+    "GetSmsSign": {
+      "required": [
+        "SignName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Signature Details (New Interface)"
+    },
+    "GetSmsTemplate": {
+      "required": [
+        "TemplateCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query SMS Template Audit Details (New Interface)"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ModifySmsSign": {
+      "required": [
+        "SignName",
+        "SignSource",
+        "Remark",
+        "SignFileList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySmsSign"
+    },
+    "ModifySmsTemplate": {
+      "required": [
+        "TemplateType",
+        "TemplateName",
+        "TemplateCode",
+        "TemplateContent",
+        "Remark"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifySmsTemplate"
+    },
+    "QueryCardSmsTemplate": {
+      "required": [
+        "TemplateCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCardSmsTemplate"
+    },
+    "QueryCardSmsTemplateReport": {
+      "required": [
+        "TemplateCodes",
+        "StartDate",
+        "EndDate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCardSmsTemplateReport"
+    },
+    "QueryDigitalSignByName": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Digital Message SMS Signature"
+    },
+    "QueryMobilesCardSupport": {
+      "required": [
+        "TemplateCode",
+        "Mobiles"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Whether a Phone Number Supports Card SMS (New API)"
+    },
+    "QuerySendDetails": {
+      "required": [
+        "PhoneNumber",
+        "SendDate",
+        "PageSize",
+        "CurrentPage"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySendDetails"
+    },
+    "QuerySendStatistics": {
+      "required": [
+        "IsGlobe",
+        "StartDate",
+        "EndDate",
+        "PageIndex",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySendStatistics"
+    },
+    "QueryShortUrl": {
+      "required": [
+        "ShortUrl"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryShortUrl"
+    },
+    "QuerySingleSmsQualification": {
+      "required": [
+        "QualificationGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the details of a single qualification"
+    },
+    "QuerySmsAppIcpRecord": {
+      "required": [
+        "AppIcpRecordIdList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query ICP Filing Entity"
+    },
+    "QuerySmsAuthorizationLetter": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Authorization Letters"
+    },
+    "QuerySmsQualificationRecord": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Qualification List"
+    },
+    "QuerySmsSign": {
+      "required": [
+        "SignName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySmsSign"
+    },
+    "QuerySmsSignList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Detail of Sign List"
+    },
+    "QuerySmsTemplate": {
+      "required": [
+        "TemplateCode"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "QuerySmsTemplate"
+    },
+    "QuerySmsTemplateList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySmsTemplateList"
+    },
+    "QuerySmsTrademark": {
+      "required": [
+        "TrademarkIdList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query trademark entity"
+    },
+    "RequiredPhoneCode": {
+      "required": [
+        "PhoneNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain Phone Verification Code"
+    },
+    "SendBatchCardSms": {
+      "required": [
+        "CardTemplateCode",
+        "FallbackType",
+        "PhoneNumberJson",
+        "SignNameJson"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendBatchCardSms"
+    },
+    "SendBatchSms": {
+      "required": [
+        "PhoneNumberJson",
+        "SignNameJson",
+        "TemplateCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendBatchSms"
+    },
+    "SendCardSms": {
+      "required": [
+        "CardObjects",
+        "SignName",
+        "CardTemplateCode",
+        "FallbackType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendCardSms"
+    },
+    "SendSms": {
+      "required": [
+        "PhoneNumbers",
+        "SignName",
+        "TemplateCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendSms"
+    },
+    "SmsConversionIntl": {
+      "required": [
+        "MessageId",
+        "Delivered"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SmsConversionIntl"
+    },
+    "SubmitSmsQualification": {
+      "required": [
+        "QualificationName",
+        "UseBySelf",
+        "CompanyType",
+        "CompanyName",
+        "OrganizationCode",
+        "BussinessLicenseExpDate",
+        "LegalPersonName",
+        "LegalPersonIDCardNo",
+        "LegalPersonIdCardEffTime",
+        "LegalPersonIDCardType",
+        "AdminIDCardPic",
+        "AdminIDCardFrontFace",
+        "AdminName",
+        "AdminIDCardNo",
+        "AdminIDCardType",
+        "AdminIDCardExpDate",
+        "AdminPhoneNo",
+        "CertifyCode",
+        "WhetherShare"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Request SMS Qualification"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "RegionId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateSmsQualification": {
+      "required": [
+        "QualificationGroupId",
+        "OrderId",
+        "AdminPhoneNo",
+        "CertifyCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Short Message Service Qualification"
+    },
+    "UpdateSmsSign": {
+      "required": [
+        "SignName",
+        "QualificationId",
+        "SignSource"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update SMS Signature (New Interface)"
+    },
+    "UpdateSmsTemplate": {
+      "required": [
+        "TemplateName",
+        "TemplateCode",
+        "TemplateContent",
+        "TemplateType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update SMS Template (New Interface)"
+    },
+    "ValidPhoneCode": {
+      "required": [
+        "PhoneNo",
+        "CertifyCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Validate Phone Verification Code"
+    }
+  }
+}

@@ -1,0 +1,551 @@
+{
+  "snapshotVersion": 1,
+  "product": "cas",
+  "openApiProduct": "cas",
+  "version": "2020-04-07",
+  "source": "https://api.aliyun.com/meta/v1/products/cas/versions/2020-04-07/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:31.412Z",
+  "actions": {
+    "AddCloudAccess": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddCloudAccess"
+    },
+    "ApplyCertificate": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyCertificate"
+    },
+    "BatchUpdateNoticeStatus": {
+      "required": [
+        "Ids",
+        "NoticeStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "CancelCertificateForPackageRequest": {
+      "required": [
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelCertificateForPackageRequest"
+    },
+    "CancelOrderRequest": {
+      "required": [
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelOrderRequest"
+    },
+    "CancelPendingCertificate": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelPendingCertificate"
+    },
+    "CreateCertificateForPackageRequest": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCertificateForPackageRequest"
+    },
+    "CreateCertificateRequest": {
+      "required": [
+        "Username",
+        "Phone",
+        "Email",
+        "Domain",
+        "ValidateType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCertificateRequest"
+    },
+    "CreateCertificateWithCsrRequest": {
+      "required": [
+        "Csr",
+        "Username",
+        "Phone",
+        "Email",
+        "ValidateType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCertificateWithCsrRequest"
+    },
+    "CreateCsr": {
+      "required": [
+        "KeySize",
+        "Algorithm",
+        "CommonName",
+        "CountryCode",
+        "Province",
+        "Locality"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCsr"
+    },
+    "CreateDeploymentJob": {
+      "required": [
+        "Name",
+        "JobType",
+        "CertIds",
+        "ResourceIds",
+        "ContactIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDeploymentJob"
+    },
+    "CreateWHClientCertificate": {
+      "required": [
+        "ParentIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateWHClientCertificate"
+    },
+    "CreateWarehouse": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateWarehouse"
+    },
+    "Decrypt": {
+      "required": [
+        "Algorithm",
+        "CiphertextBlob"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Decrypt"
+    },
+    "DeleteCertificateRequest": {
+      "required": [
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCertificateRequest"
+    },
+    "DeleteCloudAccess": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCloudAccess"
+    },
+    "DeleteCsr": {
+      "required": [
+        "CsrId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCsr"
+    },
+    "DeleteDeploymentJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDeploymentJob"
+    },
+    "DeleteInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteInstance"
+    },
+    "DeletePCACert": {
+      "required": [
+        "Identifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePCACert"
+    },
+    "DeleteUserCertificate": {
+      "required": [
+        "CertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUserCertificate"
+    },
+    "DeleteWarehouse": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteWarehouse"
+    },
+    "DeleteWorkerResource": {
+      "required": [
+        "JobId",
+        "WorkerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteWorkerResource"
+    },
+    "DescribeCertificateState": {
+      "required": [
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCertificateState"
+    },
+    "DescribeCloudResourceStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudResourceStatus"
+    },
+    "DescribeDeploymentJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDeploymentJob"
+    },
+    "DescribeDeploymentJobStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDeploymentJobStatus"
+    },
+    "DescribePackageState": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePackageState"
+    },
+    "DescribeWarehouseCert": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWarehouseCert"
+    },
+    "Encrypt": {
+      "required": [
+        "Plaintext",
+        "Algorithm"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Encrypt"
+    },
+    "GetAssetCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAssetCount"
+    },
+    "GetCertWarehouseQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCertWarehouseQuota"
+    },
+    "GetCertificateDetail": {
+      "required": [
+        "CertificateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCertificateDetail"
+    },
+    "GetCsrDetail": {
+      "required": [
+        "CsrId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCsrDetail"
+    },
+    "GetInstanceDetail": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceDetail"
+    },
+    "GetInstanceSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceSummary"
+    },
+    "GetMatchedResources": {
+      "required": [
+        "CertIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "GetRiskCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRiskCount"
+    },
+    "GetTaskAttribute": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTaskAttribute"
+    },
+    "GetUserCertificateDetail": {
+      "required": [
+        "CertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUserCertificateDetail"
+    },
+    "ListAssetCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAssetCount"
+    },
+    "ListCert": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCert"
+    },
+    "ListCertWarehouse": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCertWarehouse"
+    },
+    "ListCertificates": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCertificates"
+    },
+    "ListCloudAccess": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudAccess"
+    },
+    "ListCloudResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudResources"
+    },
+    "ListContact": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListContact"
+    },
+    "ListCsr": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCsr"
+    },
+    "ListDeploymentJob": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDeploymentJob"
+    },
+    "ListDeploymentJobCert": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDeploymentJobCert"
+    },
+    "ListDeploymentJobResource": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDeploymentJobResource"
+    },
+    "ListInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListInstances"
+    },
+    "ListUserCertificateOrder": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUserCertificateOrder"
+    },
+    "ListWarehouse": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListWarehouse"
+    },
+    "ListWorkerResource": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListWorkerResource"
+    },
+    "MoveResourceGroup": {
+      "required": [
+        "ResourceId",
+        "ResourceGroupId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveResourceGroup"
+    },
+    "RefundInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RefundInstance"
+    },
+    "RenewCertificateOrderForPackageRequest": {
+      "required": [
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewCertificateOrderForPackageRequest"
+    },
+    "RevokeCertificate": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeCertificate"
+    },
+    "RevokeWHClientCertificate": {
+      "required": [
+        "Identifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeWHClientCertificate"
+    },
+    "Sign": {
+      "required": [
+        "Message",
+        "SigningAlgorithm",
+        "MessageType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Sign"
+    },
+    "UpdateCsr": {
+      "required": [
+        "CsrId",
+        "Key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCsr"
+    },
+    "UpdateDeploymentJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDeploymentJob"
+    },
+    "UpdateDeploymentJobStatus": {
+      "required": [
+        "JobId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDeploymentJobStatus"
+    },
+    "UpdateInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateInstance"
+    },
+    "UpdateWorkerResourceStatus": {
+      "required": [
+        "JobId",
+        "WorkerId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateWorkerResourceStatus"
+    },
+    "UploadCsr": {
+      "required": [
+        "Csr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UploadCsr"
+    },
+    "UploadPCACert": {
+      "required": [
+        "WarehouseId",
+        "Cert"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UploadPCACert"
+    },
+    "UploadUserCertificate": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UploadUserCertificate"
+    },
+    "Verify": {
+      "required": [
+        "Message",
+        "SigningAlgorithm",
+        "MessageType",
+        "SignatureValue"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Verify"
+    }
+  }
+}

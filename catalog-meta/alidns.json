@@ -1,0 +1,1903 @@
+{
+  "snapshotVersion": 1,
+  "product": "alidns",
+  "openApiProduct": "Alidns",
+  "version": "2015-01-09",
+  "source": "https://api.aliyun.com/meta/v1/products/Alidns/versions/2015-01-09/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:27.425Z",
+  "actions": {
+    "AddCustomLine": {
+      "required": [
+        "DomainName",
+        "LineName",
+        "IpSegment"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddCustomLine"
+    },
+    "AddDnsCacheDomain": {
+      "required": [
+        "DomainName",
+        "InstanceId",
+        "CacheTtlMin",
+        "CacheTtlMax",
+        "SourceProtocol",
+        "SourceEdns",
+        "SourceDnsServer"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDnsCacheDomain"
+    },
+    "AddDnsGtmAccessStrategy": {
+      "required": [
+        "InstanceId",
+        "StrategyName",
+        "DefaultAddrPoolType",
+        "DefaultMinAvailableAddrNum",
+        "StrategyMode",
+        "DefaultAddrPool"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDnsGtmAccessStrategy"
+    },
+    "AddDnsGtmAddressPool": {
+      "required": [
+        "InstanceId",
+        "Name",
+        "Type",
+        "LbaStrategy",
+        "Addr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDnsGtmAddressPool"
+    },
+    "AddDnsGtmMonitor": {
+      "required": [
+        "AddrPoolId",
+        "ProtocolType",
+        "Interval",
+        "EvaluationCount",
+        "Timeout",
+        "MonitorExtendInfo",
+        "IspCityNode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDnsGtmMonitor"
+    },
+    "AddDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDomain"
+    },
+    "AddDomainBackup": {
+      "required": [
+        "DomainName",
+        "PeriodType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDomainBackup"
+    },
+    "AddDomainGroup": {
+      "required": [
+        "GroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDomainGroup"
+    },
+    "AddDomainRecord": {
+      "required": [
+        "DomainName",
+        "RR",
+        "Type",
+        "Value"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDomainRecord"
+    },
+    "AddGtmAccessStrategy": {
+      "required": [
+        "InstanceId",
+        "StrategyName",
+        "DefaultAddrPoolId",
+        "FailoverAddrPoolId",
+        "AccessLines"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddGtmAccessStrategy"
+    },
+    "AddGtmAddressPool": {
+      "required": [
+        "InstanceId",
+        "Name",
+        "Type",
+        "MinAvailableAddrNum",
+        "Addr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddGtmAddressPool"
+    },
+    "AddGtmMonitor": {
+      "required": [
+        "AddrPoolId",
+        "ProtocolType",
+        "Interval",
+        "EvaluationCount",
+        "Timeout",
+        "MonitorExtendInfo",
+        "IspCityNode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddGtmMonitor"
+    },
+    "AddGtmRecoveryPlan": {
+      "required": [
+        "Name",
+        "FaultAddrPool"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddGtmRecoveryPlan"
+    },
+    "AddRecursionRecord": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddRecursionRecord"
+    },
+    "AddRecursionZone": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddRecursionZone"
+    },
+    "AddRspDomainServerHoldStatusForGateway": {
+      "required": [
+        "ClientToken",
+        "DomainName",
+        "StatusMsg"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddRspDomainServerHoldStatusForGateway"
+    },
+    "AddRspDomainServerHoldStatusForGatewayOte": {
+      "required": [
+        "ClientToken",
+        "DomainName",
+        "StatusMsg"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddRspDomainServerHoldStatusForGatewayOte"
+    },
+    "BindInstanceDomains": {
+      "required": [
+        "InstanceId",
+        "DomainNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BindInstanceDomains"
+    },
+    "ChangeDomainGroup": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeDomainGroup"
+    },
+    "ChangeDomainOfDnsProduct": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeDomainOfDnsProduct"
+    },
+    "CopyGtmConfig": {
+      "required": [
+        "SourceId",
+        "TargetId",
+        "CopyType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CopyGtmConfig"
+    },
+    "CreateCloudGtmAddress": {
+      "required": [
+        "Name",
+        "Type",
+        "Address",
+        "EnableStatus",
+        "AvailableMode",
+        "HealthJudgement"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCloudGtmAddress"
+    },
+    "CreateCloudGtmAddressPool": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCloudGtmAddressPool"
+    },
+    "CreateCloudGtmInstanceConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCloudGtmInstanceConfig"
+    },
+    "CreateCloudGtmMonitorTemplate": {
+      "required": [
+        "Name",
+        "IpVersion",
+        "Protocol",
+        "Interval",
+        "Timeout",
+        "EvaluationCount",
+        "FailureRate",
+        "IspCityNodes"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCloudGtmMonitorTemplate"
+    },
+    "CreatePdnsAppKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePdnsAppKey"
+    },
+    "CreatePdnsUdpIpSegment": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a public DNS UDP IP address segment"
+    },
+    "DeleteCloudGtmAddress": {
+      "required": [
+        "AddressId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCloudGtmAddress"
+    },
+    "DeleteCloudGtmAddressPool": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCloudGtmAddressPool"
+    },
+    "DeleteCloudGtmInstanceConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCloudGtmInstanceConfig"
+    },
+    "DeleteCloudGtmMonitorTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCloudGtmMonitorTemplate"
+    },
+    "DeleteCustomLines": {
+      "required": [
+        "LineIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCustomLines"
+    },
+    "DeleteDnsCacheDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDnsCacheDomain"
+    },
+    "DeleteDnsGtmAccessStrategy": {
+      "required": [
+        "StrategyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDnsGtmAccessStrategy"
+    },
+    "DeleteDnsGtmAddressPool": {
+      "required": [
+        "AddrPoolId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDnsGtmAddressPool"
+    },
+    "DeleteDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDomain"
+    },
+    "DeleteDomainGroup": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDomainGroup"
+    },
+    "DeleteDomainRecord": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDomainRecord"
+    },
+    "DeleteGtmAccessStrategy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGtmAccessStrategy"
+    },
+    "DeleteGtmAddressPool": {
+      "required": [
+        "AddrPoolId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGtmAddressPool"
+    },
+    "DeleteGtmRecoveryPlan": {
+      "required": [
+        "RecoveryPlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGtmRecoveryPlan"
+    },
+    "DeleteRecursionRecord": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRecursionRecord"
+    },
+    "DeleteRecursionZone": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRecursionZone"
+    },
+    "DeleteSubDomainRecords": {
+      "required": [
+        "DomainName",
+        "RR"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSubDomainRecords"
+    },
+    "DescribeBatchResultCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBatchResultCount"
+    },
+    "DescribeBatchResultDetail": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBatchResultDetail"
+    },
+    "DescribeCloudGtmAddress": {
+      "required": [
+        "AddressId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmAddress"
+    },
+    "DescribeCloudGtmAddressPool": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmAddressPool"
+    },
+    "DescribeCloudGtmAddressPoolReference": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmAddressPoolReference"
+    },
+    "DescribeCloudGtmAddressReference": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmAddressReference"
+    },
+    "DescribeCloudGtmGlobalAlert": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmGlobalAlert"
+    },
+    "DescribeCloudGtmInstanceConfigAlert": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmInstanceConfigAlert"
+    },
+    "DescribeCloudGtmInstanceConfigFullInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmInstanceConfigFullInfo"
+    },
+    "DescribeCloudGtmMonitorTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmMonitorTemplate"
+    },
+    "DescribeCloudGtmSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmSummary"
+    },
+    "DescribeCloudGtmSystemLines": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudGtmSystemLines"
+    },
+    "DescribeCustomLine": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomLine"
+    },
+    "DescribeCustomLines": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomLines"
+    },
+    "DescribeDNSSLBSubDomains": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDNSSLBSubDomains"
+    },
+    "DescribeDnsCacheDomains": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsCacheDomains"
+    },
+    "DescribeDnsGtmAccessStrategies": {
+      "required": [
+        "InstanceId",
+        "StrategyMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmAccessStrategies"
+    },
+    "DescribeDnsGtmAccessStrategy": {
+      "required": [
+        "StrategyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmAccessStrategy"
+    },
+    "DescribeDnsGtmAccessStrategyAvailableConfig": {
+      "required": [
+        "InstanceId",
+        "StrategyMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmAccessStrategyAvailableConfig"
+    },
+    "DescribeDnsGtmAddrAttributeInfo": {
+      "required": [
+        "Type",
+        "Addrs"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmAddrAttributeInfo"
+    },
+    "DescribeDnsGtmAddressPoolAvailableConfig": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmAddressPoolAvailableConfig"
+    },
+    "DescribeDnsGtmAvailableAlertGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmAvailableAlertGroup"
+    },
+    "DescribeDnsGtmInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmInstance"
+    },
+    "DescribeDnsGtmInstanceAddressPool": {
+      "required": [
+        "AddrPoolId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmInstanceAddressPool"
+    },
+    "DescribeDnsGtmInstanceAddressPools": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmInstanceAddressPools"
+    },
+    "DescribeDnsGtmInstanceStatus": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmInstanceStatus"
+    },
+    "DescribeDnsGtmInstanceSystemCname": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmInstanceSystemCname"
+    },
+    "DescribeDnsGtmInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmInstances"
+    },
+    "DescribeDnsGtmLogs": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmLogs"
+    },
+    "DescribeDnsGtmMonitorAvailableConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmMonitorAvailableConfig"
+    },
+    "DescribeDnsGtmMonitorConfig": {
+      "required": [
+        "MonitorConfigId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsGtmMonitorConfig"
+    },
+    "DescribeDnsProductInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsProductInstance"
+    },
+    "DescribeDnsProductInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsProductInstances"
+    },
+    "DescribeDohAccountStatistics": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDohAccountStatistics"
+    },
+    "DescribeDohDomainStatistics": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDohDomainStatistics"
+    },
+    "DescribeDohDomainStatisticsSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDohDomainStatisticsSummary"
+    },
+    "DescribeDohSubDomainStatistics": {
+      "required": [
+        "SubDomain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDohSubDomainStatistics"
+    },
+    "DescribeDohSubDomainStatisticsSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDohSubDomainStatisticsSummary"
+    },
+    "DescribeDohUserInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDohUserInfo"
+    },
+    "DescribeDomainDnssecInfo": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainDnssecInfo"
+    },
+    "DescribeDomainGroups": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainGroups"
+    },
+    "DescribeDomainInfo": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainInfo"
+    },
+    "DescribeDomainLogs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainLogs"
+    },
+    "DescribeDomainNs": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainNs"
+    },
+    "DescribeDomainRecordInfo": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRecordInfo"
+    },
+    "DescribeDomainRecords": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRecords"
+    },
+    "DescribeDomainResolveStatisticsSummary": {
+      "required": [
+        "StartDate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainResolveStatisticsSummary"
+    },
+    "DescribeDomainStatistics": {
+      "required": [
+        "StartDate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainStatistics"
+    },
+    "DescribeDomainStatisticsSummary": {
+      "required": [
+        "StartDate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainStatisticsSummary"
+    },
+    "DescribeDomains": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomains"
+    },
+    "DescribeGtmAccessStrategies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmAccessStrategies"
+    },
+    "DescribeGtmAccessStrategy": {
+      "required": [
+        "StrategyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmAccessStrategy"
+    },
+    "DescribeGtmAccessStrategyAvailableConfig": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmAccessStrategyAvailableConfig"
+    },
+    "DescribeGtmAvailableAlertGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmAvailableAlertGroup"
+    },
+    "DescribeGtmInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmInstance"
+    },
+    "DescribeGtmInstanceAddressPool": {
+      "required": [
+        "AddrPoolId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmInstanceAddressPool"
+    },
+    "DescribeGtmInstanceAddressPools": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmInstanceAddressPools"
+    },
+    "DescribeGtmInstanceStatus": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmInstanceStatus"
+    },
+    "DescribeGtmInstanceSystemCname": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmInstanceSystemCname"
+    },
+    "DescribeGtmInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmInstances"
+    },
+    "DescribeGtmLogs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmLogs"
+    },
+    "DescribeGtmMonitorAvailableConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmMonitorAvailableConfig"
+    },
+    "DescribeGtmMonitorConfig": {
+      "required": [
+        "MonitorConfigId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmMonitorConfig"
+    },
+    "DescribeGtmRecoveryPlan": {
+      "required": [
+        "RecoveryPlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmRecoveryPlan"
+    },
+    "DescribeGtmRecoveryPlanAvailableConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmRecoveryPlanAvailableConfig"
+    },
+    "DescribeGtmRecoveryPlans": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGtmRecoveryPlans"
+    },
+    "DescribeInstanceDomains": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceDomains"
+    },
+    "DescribeInterAuthStatisticsGlobalOverview": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInterAuthStatisticsGlobalOverview"
+    },
+    "DescribeInterAuthStatisticsHistory": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInterAuthStatisticsHistory"
+    },
+    "DescribeInterAuthStatisticsSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInterAuthStatisticsSummary"
+    },
+    "DescribeInterAuthStatisticsZoneOverview": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInterAuthStatisticsZoneOverview"
+    },
+    "DescribeInternetDnsLogs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetDnsLogs"
+    },
+    "DescribeIspFlushCacheInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the cache refresh package list"
+    },
+    "DescribeIspFlushCacheRemainQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the remaining cache refresh count"
+    },
+    "DescribeIspFlushCacheTask": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain cache refresh Job details"
+    },
+    "DescribeIspFlushCacheTasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the cache refresh Job List"
+    },
+    "DescribePdnsAccountSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain Public DNS User Data Overview"
+    },
+    "DescribePdnsAppKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain details of a public DNS AppKey"
+    },
+    "DescribePdnsAppKeys": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the List of public DNS AppKeys"
+    },
+    "DescribePdnsOperateLogs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the operation log list of Public DNS"
+    },
+    "DescribePdnsRequestStatistic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePdnsRequestStatistic"
+    },
+    "DescribePdnsRequestStatistics": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePdnsRequestStatistics"
+    },
+    "DescribePdnsThreatLogs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the list of public DNS threat logs"
+    },
+    "DescribePdnsThreatStatistic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain public DNS threat statistics"
+    },
+    "DescribePdnsThreatStatistics": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the public DNS threat statistics list"
+    },
+    "DescribePdnsUdpIpSegments": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the List of Public DNS UDP IP segments"
+    },
+    "DescribePdnsUserInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePdnsUserInfo"
+    },
+    "DescribeRecordLogs": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRecordLogs"
+    },
+    "DescribeRecordResolveStatisticsSummary": {
+      "required": [
+        "DomainName",
+        "StartDate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRecordResolveStatisticsSummary"
+    },
+    "DescribeRecordStatistics": {
+      "required": [
+        "StartDate",
+        "DomainName",
+        "Rr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRecordStatistics"
+    },
+    "DescribeRecordStatisticsSummary": {
+      "required": [
+        "StartDate",
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRecordStatisticsSummary"
+    },
+    "DescribeRecursionRecord": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRecursionRecord"
+    },
+    "DescribeRecursionZone": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRecursionZone"
+    },
+    "DescribeSubDomainRecords": {
+      "required": [
+        "SubDomain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSubDomainRecords"
+    },
+    "DescribeSupportLines": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSupportLines"
+    },
+    "DescribeTags": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTags"
+    },
+    "DescribeTransferDomains": {
+      "required": [
+        "TransferType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTransferDomains"
+    },
+    "ExecuteGtmRecoveryPlan": {
+      "required": [
+        "RecoveryPlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ExecuteGtmRecoveryPlan"
+    },
+    "GetMainDomainName": {
+      "required": [
+        "InputString"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMainDomainName"
+    },
+    "GetTxtRecordForVerify": {
+      "required": [
+        "Type"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTxtRecordForVerify"
+    },
+    "ListCloudGtmAddressPools": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmAddressPools"
+    },
+    "ListCloudGtmAddresses": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmAddresses"
+    },
+    "ListCloudGtmAlertLogs": {
+      "required": [
+        "StartTimestamp",
+        "EndTimestamp",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmAlertLogs"
+    },
+    "ListCloudGtmAvailableAlertGroups": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmAvailableAlertGroups"
+    },
+    "ListCloudGtmInstanceConfigs": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmInstanceConfigs"
+    },
+    "ListCloudGtmInstances": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmInstances"
+    },
+    "ListCloudGtmMonitorNodes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmMonitorNodes"
+    },
+    "ListCloudGtmMonitorTemplates": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCloudGtmMonitorTemplates"
+    },
+    "ListRecursionRecords": {
+      "required": [
+        "ZoneId",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRecursionRecords"
+    },
+    "ListRecursionZones": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRecursionZones"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ModifyHichinaDomainDNS": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHichinaDomainDNS"
+    },
+    "MoveDomainResourceGroup": {
+      "required": [
+        "ResourceId",
+        "NewResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveDomainResourceGroup"
+    },
+    "MoveGtmResourceGroup": {
+      "required": [
+        "ResourceId",
+        "NewResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveGtmResourceGroup"
+    },
+    "OperateBatchDomain": {
+      "required": [
+        "Type",
+        "DomainRecordInfo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OperateBatchDomain"
+    },
+    "PausePdnsService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Pause Public DNS service"
+    },
+    "PreviewGtmRecoveryPlan": {
+      "required": [
+        "RecoveryPlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PreviewGtmRecoveryPlan"
+    },
+    "RemovePdnsAppKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete public DNS AppKey"
+    },
+    "RemovePdnsUdpIpSegment": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete public DNS UDP IP address segment"
+    },
+    "RemoveRspDomainServerHoldStatusForGateway": {
+      "required": [
+        "ClientToken",
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveRspDomainServerHoldStatusForGateway"
+    },
+    "RemoveRspDomainServerHoldStatusForGatewayOte": {
+      "required": [
+        "ClientToken",
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveRspDomainServerHoldStatusForGatewayOte"
+    },
+    "ReplaceCloudGtmAddressPoolAddress": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReplaceCloudGtmAddressPoolAddress"
+    },
+    "ReplaceCloudGtmInstanceConfigAddressPool": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReplaceCloudGtmInstanceConfigAddressPool"
+    },
+    "ResumePdnsService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Recover the public DNS service"
+    },
+    "RetrieveDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RetrieveDomain"
+    },
+    "RollbackGtmRecoveryPlan": {
+      "required": [
+        "RecoveryPlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RollbackGtmRecoveryPlan"
+    },
+    "SearchCloudGtmAddressPools": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchCloudGtmAddressPools"
+    },
+    "SearchCloudGtmAddresses": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchCloudGtmAddresses"
+    },
+    "SearchCloudGtmInstanceConfigs": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchCloudGtmInstanceConfigs"
+    },
+    "SearchCloudGtmInstances": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchCloudGtmInstances"
+    },
+    "SearchCloudGtmMonitorTemplates": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchCloudGtmMonitorTemplates"
+    },
+    "SearchRecursionRecords": {
+      "required": [
+        "ZoneId",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchRecursionRecords"
+    },
+    "SearchRecursionZones": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchRecursionZones"
+    },
+    "SetCloudGtmInstanceConfigLogSwitch": {
+      "required": [
+        "ConfigId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetCloudGtmInstanceConfigLogSwitch"
+    },
+    "SetDNSSLBStatus": {
+      "required": [
+        "SubDomain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDNSSLBStatus"
+    },
+    "SetDnsGtmAccessMode": {
+      "required": [
+        "StrategyId",
+        "AccessMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDnsGtmAccessMode"
+    },
+    "SetDnsGtmMonitorStatus": {
+      "required": [
+        "MonitorConfigId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDnsGtmMonitorStatus"
+    },
+    "SetDomainDnssecStatus": {
+      "required": [
+        "DomainName",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDomainDnssecStatus"
+    },
+    "SetDomainRecordStatus": {
+      "required": [
+        "RecordId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDomainRecordStatus"
+    },
+    "SetGtmAccessMode": {
+      "required": [
+        "StrategyId",
+        "AccessMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetGtmAccessMode"
+    },
+    "SetGtmMonitorStatus": {
+      "required": [
+        "MonitorConfigId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetGtmMonitorStatus"
+    },
+    "SubmitIspFlushCacheTask": {
+      "required": [
+        "DomainName",
+        "Isp",
+        "ClientToken"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Submit a cache refresh Job"
+    },
+    "SwitchDnsGtmInstanceStrategyMode": {
+      "required": [
+        "InstanceId",
+        "StrategyMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchDnsGtmInstanceStrategyMode"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "Tag",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "TransferDomain": {
+      "required": [
+        "DomainNames",
+        "TargetUserId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TransferDomain"
+    },
+    "UnbindInstanceDomains": {
+      "required": [
+        "DomainNames",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnbindInstanceDomains"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateAppKeyState": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the status of an AppKey"
+    },
+    "UpdateCloudGtmAddress": {
+      "required": [
+        "AddressId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddress"
+    },
+    "UpdateCloudGtmAddressEnableStatus": {
+      "required": [
+        "AddressId",
+        "EnableStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddressEnableStatus"
+    },
+    "UpdateCloudGtmAddressManualAvailableStatus": {
+      "required": [
+        "AddressId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddressManualAvailableStatus"
+    },
+    "UpdateCloudGtmAddressPoolBasicConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddressPoolBasicConfig"
+    },
+    "UpdateCloudGtmAddressPoolEnableStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddressPoolEnableStatus"
+    },
+    "UpdateCloudGtmAddressPoolLbStrategy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddressPoolLbStrategy"
+    },
+    "UpdateCloudGtmAddressPoolRemark": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddressPoolRemark"
+    },
+    "UpdateCloudGtmAddressRemark": {
+      "required": [
+        "AddressId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmAddressRemark"
+    },
+    "UpdateCloudGtmGlobalAlert": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmGlobalAlert"
+    },
+    "UpdateCloudGtmInstanceConfigAlert": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmInstanceConfigAlert"
+    },
+    "UpdateCloudGtmInstanceConfigBasic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmInstanceConfigBasic"
+    },
+    "UpdateCloudGtmInstanceConfigEnableStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmInstanceConfigEnableStatus"
+    },
+    "UpdateCloudGtmInstanceConfigLbStrategy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmInstanceConfigLbStrategy"
+    },
+    "UpdateCloudGtmInstanceConfigRemark": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmInstanceConfigRemark"
+    },
+    "UpdateCloudGtmInstanceName": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmInstanceName"
+    },
+    "UpdateCloudGtmMonitorTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmMonitorTemplate"
+    },
+    "UpdateCloudGtmMonitorTemplateRemark": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCloudGtmMonitorTemplateRemark"
+    },
+    "UpdateCustomLine": {
+      "required": [
+        "LineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCustomLine"
+    },
+    "UpdateDNSSLBWeight": {
+      "required": [
+        "RecordId",
+        "Weight"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDNSSLBWeight"
+    },
+    "UpdateDnsCacheDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDnsCacheDomain"
+    },
+    "UpdateDnsCacheDomainRemark": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDnsCacheDomainRemark"
+    },
+    "UpdateDnsGtmAccessStrategy": {
+      "required": [
+        "StrategyId",
+        "StrategyName",
+        "DefaultAddrPoolType",
+        "DefaultMinAvailableAddrNum",
+        "DefaultAddrPool"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDnsGtmAccessStrategy"
+    },
+    "UpdateDnsGtmAddressPool": {
+      "required": [
+        "AddrPoolId",
+        "LbaStrategy",
+        "Addr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDnsGtmAddressPool"
+    },
+    "UpdateDnsGtmInstanceGlobalConfig": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDnsGtmInstanceGlobalConfig"
+    },
+    "UpdateDnsGtmMonitor": {
+      "required": [
+        "MonitorConfigId",
+        "ProtocolType",
+        "MonitorExtendInfo",
+        "IspCityNode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDnsGtmMonitor"
+    },
+    "UpdateDomainGroup": {
+      "required": [
+        "GroupId",
+        "GroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDomainGroup"
+    },
+    "UpdateDomainRecord": {
+      "required": [
+        "RecordId",
+        "RR",
+        "Type",
+        "Value"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDomainRecord"
+    },
+    "UpdateDomainRecordRemark": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDomainRecordRemark"
+    },
+    "UpdateDomainRemark": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDomainRemark"
+    },
+    "UpdateGtmAccessStrategy": {
+      "required": [
+        "StrategyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGtmAccessStrategy"
+    },
+    "UpdateGtmAddressPool": {
+      "required": [
+        "AddrPoolId",
+        "Type",
+        "Addr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGtmAddressPool"
+    },
+    "UpdateGtmInstanceGlobalConfig": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGtmInstanceGlobalConfig"
+    },
+    "UpdateGtmMonitor": {
+      "required": [
+        "MonitorConfigId",
+        "ProtocolType",
+        "MonitorExtendInfo",
+        "IspCityNode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGtmMonitor"
+    },
+    "UpdateGtmRecoveryPlan": {
+      "required": [
+        "RecoveryPlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGtmRecoveryPlan"
+    },
+    "UpdateIspFlushCacheInstanceConfig": {
+      "required": [
+        "InstanceId",
+        "InstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the cache refresh package configuration"
+    },
+    "UpdateRecursionRecord": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionRecord"
+    },
+    "UpdateRecursionRecordEnableStatus": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionRecordEnableStatus"
+    },
+    "UpdateRecursionRecordRemark": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionRecordRemark"
+    },
+    "UpdateRecursionRecordWeight": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionRecordWeight"
+    },
+    "UpdateRecursionRecordWeightEnableStatus": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionRecordWeightEnableStatus"
+    },
+    "UpdateRecursionZoneEffectiveScope": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionZoneEffectiveScope"
+    },
+    "UpdateRecursionZoneProxyPattern": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionZoneProxyPattern"
+    },
+    "UpdateRecursionZoneRemark": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecursionZoneRemark"
+    },
+    "UpdateRspDomainServerProhibitStatusForGateway": {
+      "required": [
+        "ClientToken",
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRspDomainServerProhibitStatusForGateway"
+    },
+    "UpdateRspDomainServerProhibitStatusForGatewayOte": {
+      "required": [
+        "ClientToken",
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRspDomainServerProhibitStatusForGatewayOte"
+    },
+    "UpdateRspDomainStatusOte": {
+      "required": [
+        "OperatorType",
+        "OperatorId",
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRspDomainStatusOte"
+    },
+    "ValidateDnsGtmCnameRrCanUse": {
+      "required": [
+        "InstanceId",
+        "CnameRr",
+        "CnameType",
+        "CnameMode",
+        "CnameZone"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Check whether the instance hostname can be added"
+    },
+    "ValidatePdnsUdpIpSegment": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ValidatePdnsUdpIpSegment"
+    }
+  }
+}

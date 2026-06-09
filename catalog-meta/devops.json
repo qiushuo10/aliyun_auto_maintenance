@@ -1,0 +1,2261 @@
+{
+  "snapshotVersion": 1,
+  "product": "devops",
+  "openApiProduct": "devops",
+  "version": "2021-06-25",
+  "source": "https://api.aliyun.com/meta/v1/products/devops/versions/2021-06-25/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:37.642Z",
+  "actions": {
+    "AddGroupMember": {
+      "required": [
+        "organizationId",
+        "groupId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add group members"
+    },
+    "AddPipelineRelations": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "relObjectType",
+        "relObjectIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add Pipeline Association"
+    },
+    "AddRepositoryMember": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add code repository member"
+    },
+    "AddWebhook": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a Code Repository Webhook"
+    },
+    "CancelExecutionReleaseStage": {
+      "required": [
+        "appName",
+        "releaseWorkflowSn",
+        "releaseStageSn",
+        "executionNumber"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Cancel the execution of a development-phase pipeline"
+    },
+    "CloseMergeRequest": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Shut Down Merge Request"
+    },
+    "CreateAppMembers": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Application Members"
+    },
+    "CreateBranch": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create branch"
+    },
+    "CreateChangeRequest": {
+      "required": [
+        "appName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Application Change"
+    },
+    "CreateCheckRun": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add Execution History"
+    },
+    "CreateComment": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a merge request comment"
+    },
+    "CreateCommitStatus": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "sha"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add commit status record"
+    },
+    "CreateCommitWithMultipleFiles": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Submit changes to multiple files"
+    },
+    "CreateDeployKey": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Deployment Key"
+    },
+    "CreateFile": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create File"
+    },
+    "CreateFlowTag": {
+      "required": [
+        "organizationId",
+        "name",
+        "color",
+        "flowTagGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a tag"
+    },
+    "CreateFlowTagGroup": {
+      "required": [
+        "organizationId",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create tag categorization"
+    },
+    "CreateHostGroup": {
+      "required": [
+        "organizationId",
+        "type",
+        "name",
+        "serviceConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a host group"
+    },
+    "CreateMergeRequest": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a merge request"
+    },
+    "CreateOAuthToken": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create OAuthToken"
+    },
+    "CreatePipeline": {
+      "required": [
+        "organizationId",
+        "name",
+        "content"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Pipeline"
+    },
+    "CreatePipelineGroup": {
+      "required": [
+        "organizationId",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a pipeline group"
+    },
+    "CreateProject": {
+      "required": [
+        "organizationId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Project"
+    },
+    "CreateProjectLabel": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Category"
+    },
+    "CreateProtectdBranch": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Creation of protected branch"
+    },
+    "CreatePushRule": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create push rule"
+    },
+    "CreateRepository": {
+      "required": [
+        "organizationId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create or import a code repository"
+    },
+    "CreateRepositoryGroup": {
+      "required": [
+        "organizationId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a code group"
+    },
+    "CreateResourceMember": {
+      "required": [
+        "organizationId",
+        "resourceType",
+        "accountId",
+        "roleName",
+        "resourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Insert resource members"
+    },
+    "CreateServiceAuth": {
+      "required": [
+        "organizationId",
+        "serviceAuthType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Creation of service access authorization"
+    },
+    "CreateServiceConnection": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a service connection"
+    },
+    "CreateServiceCredential": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a service certificate"
+    },
+    "CreateSprint": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Iteration"
+    },
+    "CreateSshKey": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Enterprise Public Key"
+    },
+    "CreateTag": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Tag"
+    },
+    "CreateTestCase": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Creation of a test case"
+    },
+    "CreateUserKey": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a user SSH key"
+    },
+    "CreateVariableGroup": {
+      "required": [
+        "organizationId",
+        "name",
+        "variables"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a variable group"
+    },
+    "CreateWorkitem": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Creation of a work item"
+    },
+    "CreateWorkitemComment": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a work item comment"
+    },
+    "CreateWorkitemEstimate": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Work Item Estimated Effort API"
+    },
+    "CreateWorkitemRecord": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Log Actual Work Hours"
+    },
+    "CreateWorkitemV2": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Work Item (Requirement/Bug/Job)"
+    },
+    "DeleteAppMember": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete an application member"
+    },
+    "DeleteBranch": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "branchName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Branch"
+    },
+    "DeleteFile": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "branchName",
+        "filePath",
+        "commitMessage"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete File"
+    },
+    "DeleteFlowTag": {
+      "required": [
+        "organizationId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove tags"
+    },
+    "DeleteFlowTagGroup": {
+      "required": [
+        "organizationId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove tag categorization"
+    },
+    "DeleteGroupMember": {
+      "required": [
+        "organizationId",
+        "groupId",
+        "aliyunPk",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a group member"
+    },
+    "DeleteHostGroup": {
+      "required": [
+        "organizationId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a host group"
+    },
+    "DeletePipeline": {
+      "required": [
+        "organizationId",
+        "pipelineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a pipeline"
+    },
+    "DeletePipelineGroup": {
+      "required": [
+        "organizationId",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a pipeline group"
+    },
+    "DeletePipelineRelations": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "relObjectType",
+        "relObjectId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Pipeline Association"
+    },
+    "DeleteProject": {
+      "required": [
+        "organizationId",
+        "identifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a project"
+    },
+    "DeleteProjectLabel": {
+      "required": [
+        "organizationId",
+        "labelId",
+        "repositoryIdentity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Label"
+    },
+    "DeleteProtectedBranch": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "protectedBranchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Protected Branch"
+    },
+    "DeletePushRule": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "pushRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Push Rule"
+    },
+    "DeleteRepository": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Code Repository"
+    },
+    "DeleteRepositoryGroup": {
+      "required": [
+        "organizationId",
+        "groupId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Code Group"
+    },
+    "DeleteRepositoryMember": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "aliyunPk"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Code Repository Member"
+    },
+    "DeleteRepositoryWebhook": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "hookId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a code repository Webhook"
+    },
+    "DeleteResourceMember": {
+      "required": [
+        "organizationId",
+        "resourceType",
+        "resourceId",
+        "accountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a resource member"
+    },
+    "DeleteTag": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "tagName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove Tag"
+    },
+    "DeleteUserKey": {
+      "required": [
+        "organizationId",
+        "keyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete the specified Secure Shell key"
+    },
+    "DeleteVariableGroup": {
+      "required": [
+        "organizationId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a variable group"
+    },
+    "DeleteWorkitem": {
+      "required": [
+        "organizationId",
+        "identifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a work item"
+    },
+    "DeleteWorkitemAllComment": {
+      "required": [
+        "organizationId",
+        "identifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete all comments of the current work item"
+    },
+    "DeleteWorkitemComment": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete the current comment of the current work item"
+    },
+    "EnableDeployKey": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "keyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Enable Deployment Key"
+    },
+    "ExecuteChangeRequestReleaseStage": {
+      "required": [
+        "appName",
+        "releaseWorkflowSn",
+        "releaseStageSn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Execute a pipeline in the development phase"
+    },
+    "ExportInsightCustomValue": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export CustomValue"
+    },
+    "ExportInsightExpectedWorkTime": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export ExpectedWorkTime"
+    },
+    "ExportInsightField": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export Field"
+    },
+    "ExportInsightSpace": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export Space"
+    },
+    "ExportInsightSpaceRef": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export SpaceRef"
+    },
+    "ExportInsightSprint": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export Sprint"
+    },
+    "ExportInsightTagRef": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export TagRef"
+    },
+    "ExportInsightWorkTime": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export WorkTime"
+    },
+    "ExportInsightWorkitemStatus": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export WorkitemStatus"
+    },
+    "ExportInsightWorkitemStatusJoinWorkitemDefectExtra": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export WorkitemStatus and WorkitemDefectExtra"
+    },
+    "ExportInsightWorkitemVersion": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export WorkitemVersion"
+    },
+    "ExportWorkitemActivity": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Export WorkitemActivity"
+    },
+    "GetApplication": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query application details"
+    },
+    "GetBranchInfo": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "branchName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query branch information"
+    },
+    "GetCheckRun": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "checkRunId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query check run"
+    },
+    "GetCodeupOrganization": {
+      "required": [
+        "identity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the enterprise information to which a Codeup repository belongs"
+    },
+    "GetCompareDetail": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "from",
+        "to"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Compare API"
+    },
+    "GetCustomFieldOption": {
+      "required": [
+        "organizationId",
+        "spaceIdentifier",
+        "spaceType",
+        "workitemTypeIdentifier",
+        "fieldId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve Custom Options for a Field"
+    },
+    "GetFileBlobs": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "filePath",
+        "ref"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query File Content"
+    },
+    "GetFileLastCommit": {
+      "required": [
+        "repositoryId",
+        "organizationId",
+        "sha",
+        "filePath"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the most recent commit information for a file"
+    },
+    "GetFlowTagGroup": {
+      "required": [
+        "organizationId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain tag categorization"
+    },
+    "GetGroupByPath": {
+      "required": [
+        "organizationId",
+        "identity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query code group information (Path)"
+    },
+    "GetGroupDetail": {
+      "required": [
+        "organizationId",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query code group information"
+    },
+    "GetHostGroup": {
+      "required": [
+        "organizationId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve a host group"
+    },
+    "GetMergeRequest": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query merge requests"
+    },
+    "GetMergeRequestChangeTree": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "localId",
+        "fromPatchSetBizId",
+        "toPatchSetBizId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Diff statistics information for a merge request"
+    },
+    "GetOrganizationMember": {
+      "required": [
+        "organizationId",
+        "accountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query organization member information"
+    },
+    "GetPipeline": {
+      "required": [
+        "organizationId",
+        "pipelineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain pipeline information"
+    },
+    "GetPipelineArtifactUrl": {
+      "required": [
+        "organizationId",
+        "filePath",
+        "fileName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the download URL of pipeline build artifacts."
+    },
+    "GetPipelineEmasArtifactUrl": {
+      "required": [
+        "organizationId",
+        "emasJobInstanceId",
+        "md5",
+        "pipelineId",
+        "pipelineRunId",
+        "serviceConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the temporary download URL for EMAS build artifacts from a pipeline"
+    },
+    "GetPipelineGroup": {
+      "required": [
+        "organizationId",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve pipeline groups"
+    },
+    "GetPipelineRun": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "pipelineRunId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve a pipeline run instance"
+    },
+    "GetPipelineScanReportUrl": {
+      "required": [
+        "organizationId",
+        "reportPath"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain a temporary download URL for the pipeline scan report"
+    },
+    "GetProjectInfo": {
+      "required": [
+        "organizationId",
+        "projectId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve project details"
+    },
+    "GetProjectMember": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "aliyunPk"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Repository Members"
+    },
+    "GetReleaseStagePipelineRun": {
+      "required": [
+        "appName",
+        "releaseWorkflowSn",
+        "releaseStageSn",
+        "executionNumber"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain R&D stage pipeline run instance"
+    },
+    "GetRepository": {
+      "required": [
+        "organizationId",
+        "identity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query code repository"
+    },
+    "GetRepositoryCommit": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "sha"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query code repository commit information"
+    },
+    "GetRepositoryTag": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "tagName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query a single label"
+    },
+    "GetSearchCodePreview": {
+      "required": [
+        "organizationId",
+        "docId",
+        "keyword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query preview code snippet"
+    },
+    "GetSprintInfo": {
+      "required": [
+        "organizationId",
+        "sprintId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Get Iteration Details"
+    },
+    "GetTestResultList": {
+      "required": [
+        "organizationId",
+        "testPlanIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the list of test cases in a test plan"
+    },
+    "GetTestcaseList": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the list of test cases from the test case library"
+    },
+    "GetUserInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query current user information"
+    },
+    "GetVMDeployOrder": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "deployOrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve deployment order details"
+    },
+    "GetVariableGroup": {
+      "required": [
+        "organizationId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve a variable group"
+    },
+    "GetWorkItemActivity": {
+      "required": [
+        "organizationId",
+        "workitemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query work item dynamics"
+    },
+    "GetWorkItemInfo": {
+      "required": [
+        "organizationId",
+        "workitemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain basic information of a work item"
+    },
+    "GetWorkItemWorkFlowInfo": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain work item pipeline information"
+    },
+    "GetWorkitemAttachmentCreatemeta": {
+      "required": [
+        "organizationId",
+        "workitemIdentifier",
+        "fileName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain information about the attachment uploaded to a work item"
+    },
+    "GetWorkitemCommentList": {
+      "required": [
+        "organizationId",
+        "workitemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the comment list of a work item"
+    },
+    "GetWorkitemFile": {
+      "required": [
+        "organizationId",
+        "workitemIdentifier",
+        "fileIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain Work Item File Information"
+    },
+    "GetWorkitemRelations": {
+      "required": [
+        "organizationId",
+        "workitemId",
+        "relationType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain work item associations"
+    },
+    "GetWorkitemTimeTypeList": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the list of work hour types"
+    },
+    "JoinPipelineGroup": {
+      "required": [
+        "organizationId",
+        "pipelineIds",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add a pipeline to a pipeline group"
+    },
+    "LinkMergeRequestLabel": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Associate Labels with Merge Request"
+    },
+    "ListAllReleaseWorkflows": {
+      "required": [
+        "appName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve all development flows under an application"
+    },
+    "ListAppReleaseStageExecutionIntegratedMetadata": {
+      "required": [
+        "appName",
+        "releaseWorkflowSn",
+        "releaseStageSn",
+        "executionNumber"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Integration Change Information of Execution Records in the R&D Stage"
+    },
+    "ListAppReleaseStageExecutions": {
+      "required": [
+        "appName",
+        "releaseWorkflowSn",
+        "releaseStageSn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Batch query execution records of development stages"
+    },
+    "ListApplicationMembers": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query application member list"
+    },
+    "ListApplications": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query application list"
+    },
+    "ListChangeRequestWorkflowExecutions": {
+      "required": [
+        "appName",
+        "sn",
+        "releaseWorkflowSn",
+        "releaseStageSn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the Execution History of a Change Request Development Flow"
+    },
+    "ListChangeRequests": {
+      "required": [
+        "organizationId",
+        "appName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the change list."
+    },
+    "ListCheckRuns": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "ref"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of check runs"
+    },
+    "ListCommitStatuses": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "sha"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query commit status List"
+    },
+    "ListFlowTagGroups": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the pipeline categorization list"
+    },
+    "ListGroupMember": {
+      "required": [
+        "organizationId",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query group member list"
+    },
+    "ListGroupRepositories": {
+      "required": [
+        "organizationId",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the List of Repositories under a Code Group"
+    },
+    "ListHostGroups": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the host group list"
+    },
+    "ListJoinedOrganizations": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of joined enterprises"
+    },
+    "ListMergeRequestComments": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of merge request comments"
+    },
+    "ListMergeRequestFilesReads": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "localId",
+        "fromPatchSetBizId",
+        "toPatchSetBizId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query read status of changed files in a merge request"
+    },
+    "ListMergeRequestLabels": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of labels for a merge request"
+    },
+    "ListMergeRequestPatchSets": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of merge request versions"
+    },
+    "ListMergeRequests": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "查询合并请求列表"
+    },
+    "ListOrganizationMembers": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of organization members"
+    },
+    "ListOrganizations": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the enterprise list of a user"
+    },
+    "ListPipelineGroupPipelines": {
+      "required": [
+        "organizationId",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the list of pipelines under a pipeline group"
+    },
+    "ListPipelineGroups": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the list of pipeline groups"
+    },
+    "ListPipelineJobHistorys": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "category",
+        "identifier",
+        "maxResults"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve Execution History of Pipeline Jobs"
+    },
+    "ListPipelineJobs": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain pipeline execution jobs by job categorization."
+    },
+    "ListPipelineRelations": {
+      "required": [
+        "organizationId",
+        "relObjectType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the pipeline association list"
+    },
+    "ListPipelineRuns": {
+      "required": [
+        "organizationId",
+        "pipelineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the list of pipeline run instances"
+    },
+    "ListPipelines": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain Pipeline List"
+    },
+    "ListProjectLabels": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Label List"
+    },
+    "ListProjectMembers": {
+      "required": [
+        "organizationId",
+        "projectId",
+        "targetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain Project Members"
+    },
+    "ListProjectTemplates": {
+      "required": [
+        "organizationId",
+        "category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the project template list"
+    },
+    "ListProjectWorkitemTypes": {
+      "required": [
+        "organizationId",
+        "projectId",
+        "spaceType",
+        "category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain work item types"
+    },
+    "ListProjects": {
+      "required": [
+        "organizationId",
+        "category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain project list"
+    },
+    "ListProtectedBranches": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query protected branch list"
+    },
+    "ListPushRules": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query push rule list"
+    },
+    "ListRepositories": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query code repository List"
+    },
+    "ListRepositoryBranches": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of code repository branches"
+    },
+    "ListRepositoryCommitDiff": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "sha"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the content of a single commit in a code repository"
+    },
+    "ListRepositoryCommits": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "refName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the commit list of a code repository"
+    },
+    "ListRepositoryGroups": {
+      "required": [
+        "organizationId",
+        "parentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Code Group List"
+    },
+    "ListRepositoryMemberWithInherited": {
+      "required": [
+        "repositoryId",
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of repository members"
+    },
+    "ListRepositoryTags": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query tag list"
+    },
+    "ListRepositoryTree": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query File Tree"
+    },
+    "ListRepositoryWebhook": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the webhook list of a code repository"
+    },
+    "ListResourceMembers": {
+      "required": [
+        "organizationId",
+        "resourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the resource member list"
+    },
+    "ListSearchCommit": {
+      "required": [
+        "organizationId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Search code commit data"
+    },
+    "ListSearchRepository": {
+      "required": [
+        "organizationId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Search code repository data"
+    },
+    "ListSearchSourceCode": {
+      "required": [
+        "organizationId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Search code snippet data"
+    },
+    "ListServiceAuths": {
+      "required": [
+        "organizationId",
+        "serviceAuthType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the service access authorization list"
+    },
+    "ListServiceConnections": {
+      "required": [
+        "organizationId",
+        "sericeConnectionType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List service connections"
+    },
+    "ListServiceCredentials": {
+      "required": [
+        "organizationId",
+        "serviceCredentialType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the service certificate list"
+    },
+    "ListSprints": {
+      "required": [
+        "organizationId",
+        "spaceIdentifier",
+        "spaceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve iteration list"
+    },
+    "ListTestCaseFields": {
+      "required": [
+        "organizationId",
+        "spaceIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the list of test case fields"
+    },
+    "ListUserDrawRecordByPk": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query lottery results"
+    },
+    "ListUserKeys": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query SSH key list"
+    },
+    "ListUserResources": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain resources to which the user has permission"
+    },
+    "ListVariableGroups": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the variable group list"
+    },
+    "ListWorkItemAllFields": {
+      "required": [
+        "organizationId",
+        "spaceType",
+        "spaceIdentifier",
+        "workitemTypeIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the List of Work Item Fields"
+    },
+    "ListWorkItemWorkFlowStatus": {
+      "required": [
+        "organizationId",
+        "spaceType",
+        "workitemCategoryIdentifier",
+        "spaceIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the list of workflow statuses for work items"
+    },
+    "ListWorkitemAttachments": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the attachment list of a work item"
+    },
+    "ListWorkitemEstimate": {
+      "required": [
+        "organizationId",
+        "workitemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve the list of estimated work hours for a work item"
+    },
+    "ListWorkitemTime": {
+      "required": [
+        "organizationId",
+        "workitemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the List of Work Item Time Entry Details"
+    },
+    "ListWorkitems": {
+      "required": [
+        "organizationId",
+        "spaceType",
+        "spaceIdentifier",
+        "category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve work item list"
+    },
+    "LogPipelineJobRun": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query job runtime logs"
+    },
+    "LogVMDeployMachine": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "deployOrderId",
+        "machineSn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query machine deployment logs"
+    },
+    "MergeMergeRequest": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Merge Merge Request"
+    },
+    "PassPipelineValidate": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "pipelineRunId",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Pass Through a Manual Checkpoint"
+    },
+    "PassReleaseStagePipelineValidate": {
+      "required": [
+        "appName",
+        "releaseWorkflowSn",
+        "releaseStageSn",
+        "executionNumber",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Pass the manual checkpoint in the R&D phase pipeline"
+    },
+    "RefusePipelineValidate": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "pipelineRunId",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Deny Manual Checkpoint"
+    },
+    "RefuseReleaseStagePipelineValidate": {
+      "required": [
+        "appName",
+        "releaseWorkflowSn",
+        "releaseStageSn",
+        "executionNumber",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Deny a Manual Checkpoint in the R&D Pipeline"
+    },
+    "ReopenMergeRequest": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Reopen Merge Request"
+    },
+    "ResetSshKey": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Reset Enterprise Public Key"
+    },
+    "ResumeVMDeployOrder": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "deployOrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Continue Deployment Order Run"
+    },
+    "RetryPipelineJobRun": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "pipelineRunId",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retry a pipeline job run"
+    },
+    "RetryVMDeployMachine": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "deployOrderId",
+        "machineSn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retry Machine Deployment"
+    },
+    "ReviewMergeRequest": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Review Merge Request"
+    },
+    "SkipPipelineJobRun": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "pipelineRunId",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Skip pipeline job run"
+    },
+    "SkipVMDeployMachine": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "deployOrderId",
+        "machineSn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Skip Machine Deployment"
+    },
+    "StartPipelineRun": {
+      "required": [
+        "organizationId",
+        "pipelineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Run Pipeline"
+    },
+    "StopPipelineJobRun": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "pipelineRunId",
+        "jobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Stop a pipeline job from running"
+    },
+    "StopPipelineRun": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "pipelineRunId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Stop a pipeline run"
+    },
+    "StopVMDeployOrder": {
+      "required": [
+        "organizationId",
+        "pipelineId",
+        "deployOrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Stop Machine Deployment"
+    },
+    "TransferRepository": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Transfer Code Repository"
+    },
+    "TriggerRepositoryMirrorSync": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Trigger Repository Synchronization"
+    },
+    "UpdateAppMember": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update application members."
+    },
+    "UpdateApplication": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Application"
+    },
+    "UpdateCheckRun": {
+      "required": [
+        "organizationId",
+        "repositoryIdentity",
+        "checkRunId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update check run"
+    },
+    "UpdateFile": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify File"
+    },
+    "UpdateFlowTag": {
+      "required": [
+        "organizationId",
+        "id",
+        "color",
+        "flowTagGroupId",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update a tag"
+    },
+    "UpdateFlowTagGroup": {
+      "required": [
+        "organizationId",
+        "id",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update tag categorization"
+    },
+    "UpdateGroup": {
+      "required": [
+        "organizationId",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update code group information"
+    },
+    "UpdateGroupMember": {
+      "required": [
+        "organizationId",
+        "groupId",
+        "aliyunPk",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify group member"
+    },
+    "UpdateHostGroup": {
+      "required": [
+        "organizationId",
+        "type",
+        "name",
+        "serviceConnectionId",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Host Group"
+    },
+    "UpdateMergeRequest": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "localId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Merge Request"
+    },
+    "UpdateMergeRequestPersonnel": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "localId",
+        "personType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update stakeholders of a merge request"
+    },
+    "UpdateOrganizationMember": {
+      "required": [
+        "organizationId",
+        "accountId",
+        "organizationMemberName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update enterprise member information"
+    },
+    "UpdatePipeline": {
+      "required": [
+        "organizationId",
+        "name",
+        "content",
+        "pipelineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Pipeline"
+    },
+    "UpdatePipelineBaseInfo": {
+      "required": [
+        "organizationId",
+        "pipelineName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update basic pipeline information"
+    },
+    "UpdatePipelineGroup": {
+      "required": [
+        "organizationId",
+        "name",
+        "groupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update pipeline group"
+    },
+    "UpdateProjectField": {
+      "required": [
+        "organizationId",
+        "identifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update project properties and fields"
+    },
+    "UpdateProjectLabel": {
+      "required": [
+        "organizationId",
+        "labelId",
+        "repositoryIdentity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Category"
+    },
+    "UpdateProjectMember": {
+      "required": [
+        "organizationId",
+        "body",
+        "projectId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add or Update Project Member"
+    },
+    "UpdateProtectedBranches": {
+      "required": [
+        "repositoryId",
+        "id",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify protected branch settings"
+    },
+    "UpdatePushReviewOnOff": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "trunkMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Toggle Push Review Mode"
+    },
+    "UpdatePushRule": {
+      "required": [
+        "organizationId",
+        "repositoryId",
+        "pushRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Push Rule"
+    },
+    "UpdateRepository": {
+      "required": [
+        "organizationId",
+        "repositoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Code Repository"
+    },
+    "UpdateRepositoryMember": {
+      "required": [
+        "repositoryId",
+        "aliyunPk",
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify permissions of repository members"
+    },
+    "UpdateResourceMember": {
+      "required": [
+        "organizationId",
+        "resourceType",
+        "roleName",
+        "resourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update resource members"
+    },
+    "UpdateTestCase": {
+      "required": [
+        "organizationId",
+        "testcaseIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update properties of a test case in the test case library"
+    },
+    "UpdateTestResult": {
+      "required": [
+        "organizationId",
+        "testPlanIdentifier",
+        "testcaseIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update test case result in test plan"
+    },
+    "UpdateVariableGroup": {
+      "required": [
+        "organizationId",
+        "name",
+        "variables",
+        "id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Variable Group"
+    },
+    "UpdateWorkItem": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update work item information"
+    },
+    "UpdateWorkitemComment": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update work item comment"
+    },
+    "UpdateWorkitemField": {
+      "required": [
+        "organizationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update work item field"
+    },
+    "WorkitemAttachmentCreate": {
+      "required": [
+        "organizationId",
+        "workitemIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Associate a File as an Attachment to a Work Item"
+    }
+  }
+}

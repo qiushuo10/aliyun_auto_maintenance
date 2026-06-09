@@ -1,0 +1,414 @@
+{
+  "snapshotVersion": 1,
+  "product": "ram",
+  "openApiProduct": "Ram",
+  "version": "2015-05-01",
+  "source": "https://api.aliyun.com/meta/v1/products/Ram/versions/2015-05-01/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:52.330Z",
+  "actions": {
+    "AddUserToGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddUserToGroup"
+    },
+    "AttachPolicyToGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachPolicyToGroup"
+    },
+    "AttachPolicyToRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachPolicyToRole"
+    },
+    "AttachPolicyToUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachPolicyToUser"
+    },
+    "BindMFADevice": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BindMFADevice"
+    },
+    "ChangePassword": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangePassword"
+    },
+    "ClearAccountAlias": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ClearAccountAlias"
+    },
+    "CreateAccessKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessKey"
+    },
+    "CreateGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGroup"
+    },
+    "CreateLoginProfile": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLoginProfile"
+    },
+    "CreatePolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolicy"
+    },
+    "CreatePolicyVersion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolicyVersion"
+    },
+    "CreateRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "**CreateRole**"
+    },
+    "CreateUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateUser"
+    },
+    "CreateVirtualMFADevice": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVirtualMFADevice"
+    },
+    "DecodeDiagnosticMessage": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DecodeDiagnosticMessage"
+    },
+    "DeleteAccessKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessKey"
+    },
+    "DeleteGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGroup"
+    },
+    "DeleteLoginProfile": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLoginProfile"
+    },
+    "DeletePolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolicy"
+    },
+    "DeletePolicyVersion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolicyVersion"
+    },
+    "DeleteRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRole"
+    },
+    "DeleteUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUser"
+    },
+    "DeleteVirtualMFADevice": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVirtualMFADevice"
+    },
+    "DetachPolicyFromGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachPolicyFromGroup"
+    },
+    "DetachPolicyFromRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachPolicyFromRole"
+    },
+    "DetachPolicyFromUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachPolicyFromUser"
+    },
+    "GetAccessKeyLastUsed": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessKeyLastUsed"
+    },
+    "GetAccountAlias": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccountAlias"
+    },
+    "GetGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetGroup"
+    },
+    "GetLoginProfile": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLoginProfile"
+    },
+    "GetPasswordPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPasswordPolicy"
+    },
+    "GetPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPolicy"
+    },
+    "GetPolicyVersion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPolicyVersion"
+    },
+    "GetRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRole"
+    },
+    "GetSecurityPreference": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSecurityPreference"
+    },
+    "GetUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUser"
+    },
+    "GetUserMFAInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUserMFAInfo"
+    },
+    "ListAccessKeys": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAccessKeys"
+    },
+    "ListEntitiesForPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEntitiesForPolicy"
+    },
+    "ListGroups": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGroups"
+    },
+    "ListGroupsForUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGroupsForUser"
+    },
+    "ListPolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolicies"
+    },
+    "ListPoliciesForGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPoliciesForGroup"
+    },
+    "ListPoliciesForRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPoliciesForRole"
+    },
+    "ListPoliciesForUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPoliciesForUser"
+    },
+    "ListPolicyVersions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolicyVersions"
+    },
+    "ListRoles": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRoles"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListUsers": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUsers"
+    },
+    "ListUsersForGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUsersForGroup"
+    },
+    "ListVirtualMFADevices": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListVirtualMFADevices"
+    },
+    "RemoveUserFromGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveUserFromGroup"
+    },
+    "SetAccountAlias": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetAccountAlias"
+    },
+    "SetDefaultPolicyVersion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDefaultPolicyVersion"
+    },
+    "SetPasswordPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetPasswordPolicy"
+    },
+    "SetSecurityPreference": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetSecurityPreference"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UnbindMFADevice": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnbindMFADevice"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateAccessKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAccessKey"
+    },
+    "UpdateGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGroup"
+    },
+    "UpdateLoginProfile": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLoginProfile"
+    },
+    "UpdatePolicyDescription": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePolicyDescription"
+    },
+    "UpdateRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRole"
+    },
+    "UpdateUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateUser"
+    }
+  }
+}

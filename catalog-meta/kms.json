@@ -1,0 +1,718 @@
+{
+  "snapshotVersion": 1,
+  "product": "kms",
+  "openApiProduct": "Kms",
+  "version": "2016-01-20",
+  "source": "https://api.aliyun.com/meta/v1/products/Kms/versions/2016-01-20/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:42.529Z",
+  "actions": {
+    "AsymmetricDecrypt": {
+      "required": [
+        "CiphertextBlob",
+        "KeyId",
+        "KeyVersionId",
+        "Algorithm"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AsymmetricDecrypt"
+    },
+    "AsymmetricEncrypt": {
+      "required": [
+        "Plaintext",
+        "KeyId",
+        "KeyVersionId",
+        "Algorithm"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AsymmetricEncrypt"
+    },
+    "AsymmetricSign": {
+      "required": [
+        "KeyId",
+        "KeyVersionId",
+        "Algorithm",
+        "Digest"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AsymmetricSign"
+    },
+    "AsymmetricVerify": {
+      "required": [
+        "KeyId",
+        "KeyVersionId",
+        "Algorithm",
+        "Digest",
+        "Value"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AsymmetricVerify"
+    },
+    "CancelKeyDeletion": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelKeyDeletion"
+    },
+    "ConnectKmsInstance": {
+      "required": [
+        "KmsInstanceId",
+        "VpcId",
+        "ZoneIds",
+        "VSwitchIds",
+        "KMProvider"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConnectKmsInstance"
+    },
+    "CreateAlias": {
+      "required": [
+        "KeyId",
+        "AliasName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAlias"
+    },
+    "CreateApplicationAccessPoint": {
+      "required": [
+        "Name",
+        "Policies"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateApplicationAccessPoint"
+    },
+    "CreateClientKey": {
+      "required": [
+        "AapName",
+        "Password"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateClientKey"
+    },
+    "CreateKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateKey"
+    },
+    "CreateKeyVersion": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateKeyVersion"
+    },
+    "CreateNetworkRule": {
+      "required": [
+        "Name",
+        "Type"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNetworkRule"
+    },
+    "CreatePolicy": {
+      "required": [
+        "Name",
+        "Permissions",
+        "Resources"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolicy"
+    },
+    "CreateSecret": {
+      "required": [
+        "SecretName",
+        "VersionId",
+        "SecretData"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSecret"
+    },
+    "Decrypt": {
+      "required": [
+        "CiphertextBlob"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Decrypt"
+    },
+    "DeleteAlias": {
+      "required": [
+        "AliasName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAlias"
+    },
+    "DeleteApplicationAccessPoint": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteApplicationAccessPoint"
+    },
+    "DeleteClientKey": {
+      "required": [
+        "ClientKeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteClientKey"
+    },
+    "DeleteKeyMaterial": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteKeyMaterial"
+    },
+    "DeleteNetworkRule": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNetworkRule"
+    },
+    "DeletePolicy": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolicy"
+    },
+    "DeleteSecret": {
+      "required": [
+        "SecretName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSecret"
+    },
+    "DescribeAccountKmsStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccountKmsStatus"
+    },
+    "DescribeApplicationAccessPoint": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplicationAccessPoint"
+    },
+    "DescribeKey": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeKey"
+    },
+    "DescribeKeyVersion": {
+      "required": [
+        "KeyId",
+        "KeyVersionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeKeyVersion"
+    },
+    "DescribeNetworkRule": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkRule"
+    },
+    "DescribePolicy": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolicy"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeSecret": {
+      "required": [
+        "SecretName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecret"
+    },
+    "DisableKey": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableKey"
+    },
+    "EnableKey": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableKey"
+    },
+    "Encrypt": {
+      "required": [
+        "KeyId",
+        "Plaintext"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Encrypt"
+    },
+    "ExportDataKey": {
+      "required": [
+        "CiphertextBlob",
+        "PublicKeyBlob",
+        "WrappingKeySpec",
+        "WrappingAlgorithm"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ExportDataKey"
+    },
+    "GenerateAndExportDataKey": {
+      "required": [
+        "KeyId",
+        "PublicKeyBlob",
+        "WrappingKeySpec",
+        "WrappingAlgorithm"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateAndExportDataKey"
+    },
+    "GenerateDataKey": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateDataKey"
+    },
+    "GenerateDataKeyWithoutPlaintext": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateDataKeyWithoutPlaintext"
+    },
+    "GetClientKey": {
+      "required": [
+        "ClientKeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetClientKey"
+    },
+    "GetDefaultKmsInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDefaultKmsInstance"
+    },
+    "GetKeyPolicy": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetKeyPolicy"
+    },
+    "GetKmsInstance": {
+      "required": [
+        "KmsInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetKmsInstance"
+    },
+    "GetKmsInstanceQuotaInfos": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetKmsInstanceQuotaInfos"
+    },
+    "GetParametersForImport": {
+      "required": [
+        "KeyId",
+        "WrappingAlgorithm",
+        "WrappingKeySpec"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetParametersForImport"
+    },
+    "GetPublicKey": {
+      "required": [
+        "KeyId",
+        "KeyVersionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPublicKey"
+    },
+    "GetRandomPassword": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRandomPassword"
+    },
+    "GetSecretPolicy": {
+      "required": [
+        "SecretName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSecretPolicy"
+    },
+    "GetSecretValue": {
+      "required": [
+        "SecretName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve Credential Value"
+    },
+    "ImportKeyMaterial": {
+      "required": [
+        "KeyId",
+        "EncryptedKeyMaterial",
+        "ImportToken",
+        "KeyMaterialExpireUnix"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ImportKeyMaterial"
+    },
+    "ListAliases": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAliases"
+    },
+    "ListAliasesByKeyId": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAliasesByKeyId"
+    },
+    "ListApplicationAccessPoints": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListApplicationAccessPoints"
+    },
+    "ListClientKeys": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListClientKeys"
+    },
+    "ListKeyVersions": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListKeyVersions"
+    },
+    "ListKeys": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListKeys"
+    },
+    "ListKmsInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListKmsInstances"
+    },
+    "ListNetworkRules": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListNetworkRules"
+    },
+    "ListPolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolicies"
+    },
+    "ListResourceTags": {
+      "required": [
+        "KeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListResourceTags"
+    },
+    "ListSecretVersionIds": {
+      "required": [
+        "SecretName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListSecretVersionIds"
+    },
+    "ListSecrets": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListSecrets"
+    },
+    "ListTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "OpenKmsService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenKmsService"
+    },
+    "PutSecretValue": {
+      "required": [
+        "VersionId",
+        "SecretName",
+        "SecretData"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutSecretValue"
+    },
+    "ReEncrypt": {
+      "required": [
+        "CiphertextBlob",
+        "DestinationKeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReEncrypt"
+    },
+    "ReleaseKmsInstance": {
+      "required": [
+        "KmsInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseKmsInstance"
+    },
+    "RestoreSecret": {
+      "required": [
+        "SecretName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestoreSecret"
+    },
+    "RotateSecret": {
+      "required": [
+        "SecretName",
+        "VersionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RotateSecret"
+    },
+    "ScheduleKeyDeletion": {
+      "required": [
+        "KeyId",
+        "PendingWindowInDays"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ScheduleKeyDeletion"
+    },
+    "SetDeletionProtection": {
+      "required": [
+        "EnableDeletionProtection"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDeletionProtection"
+    },
+    "SetKeyPolicy": {
+      "required": [
+        "KeyId",
+        "Policy"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetKeyPolicy"
+    },
+    "SetSecretPolicy": {
+      "required": [
+        "SecretName",
+        "Policy"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetSecretPolicy"
+    },
+    "TagResource": {
+      "required": [
+        "Tags"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResource"
+    },
+    "TagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResource": {
+      "required": [
+        "TagKeys"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResource"
+    },
+    "UntagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateAlias": {
+      "required": [
+        "KeyId",
+        "AliasName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAlias"
+    },
+    "UpdateApplicationAccessPoint": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateApplicationAccessPoint"
+    },
+    "UpdateKeyDescription": {
+      "required": [
+        "KeyId",
+        "Description"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateKeyDescription"
+    },
+    "UpdateKmsInstanceBindVpc": {
+      "required": [
+        "KmsInstanceId",
+        "BindVpcs"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateKmsInstanceBindVpc"
+    },
+    "UpdateNetworkRule": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateNetworkRule"
+    },
+    "UpdatePolicy": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePolicy"
+    },
+    "UpdateRotationPolicy": {
+      "required": [
+        "KeyId",
+        "EnableAutomaticRotation"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRotationPolicy"
+    },
+    "UpdateSecret": {
+      "required": [
+        "SecretName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSecret"
+    },
+    "UpdateSecretRotationPolicy": {
+      "required": [
+        "SecretName",
+        "EnableAutomaticRotation"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSecretRotationPolicy"
+    },
+    "UpdateSecretVersionStage": {
+      "required": [
+        "SecretName",
+        "VersionStage"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSecretVersionStage"
+    }
+  }
+}

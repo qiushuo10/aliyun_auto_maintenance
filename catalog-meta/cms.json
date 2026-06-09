@@ -1,0 +1,1325 @@
+{
+  "snapshotVersion": 1,
+  "product": "cms",
+  "openApiProduct": "Cms",
+  "version": "2019-01-01",
+  "source": "https://api.aliyun.com/meta/v1/products/Cms/versions/2019-01-01/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:35.696Z",
+  "actions": {
+    "AddTags": {
+      "required": [
+        "Tag",
+        "GroupIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddTags"
+    },
+    "ApplyMetricRuleTemplate": {
+      "required": [
+        "GroupId",
+        "TemplateIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyMetricRuleTemplate"
+    },
+    "BatchCreateInstantSiteMonitor": {
+      "required": [
+        "TaskList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchCreateInstantSiteMonitor"
+    },
+    "BatchCreateOnceSiteMonitor": {
+      "required": [
+        "TaskList"
+      ],
+      "deprecated": true,
+      "replacedBy": null
+    },
+    "BatchExport": {
+      "required": [
+        "Namespace",
+        "Metric",
+        "Cursor",
+        "Length"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchExport"
+    },
+    "CreateDynamicTagGroup": {
+      "required": [
+        "TagKey",
+        "ContactGroupList",
+        "MatchExpress"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDynamicTagGroup"
+    },
+    "CreateGroupMetricRules": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGroupMetricRules"
+    },
+    "CreateGroupMonitoringAgentProcess": {
+      "required": [
+        "GroupId",
+        "ProcessName",
+        "AlertConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGroupMonitoringAgentProcess"
+    },
+    "CreateHostAvailability": {
+      "required": [
+        "GroupId",
+        "TaskName",
+        "TaskType",
+        "AlertConfig.NotifyType",
+        "AlertConfigEscalationList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateHostAvailability"
+    },
+    "CreateHybridMonitorNamespace": {
+      "required": [
+        "Namespace"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateHybridMonitorNamespace"
+    },
+    "CreateHybridMonitorSLSGroup": {
+      "required": [
+        "SLSGroupName",
+        "SLSGroupConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateHybridMonitorSLSGroup"
+    },
+    "CreateHybridMonitorTask": {
+      "required": [
+        "Namespace",
+        "TaskType",
+        "CollectTargetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateHybridMonitorTask"
+    },
+    "CreateInstantSiteMonitor": {
+      "required": [
+        "Address",
+        "TaskType",
+        "TaskName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateInstantSiteMonitor"
+    },
+    "CreateMetricRuleBlackList": {
+      "required": [
+        "Name",
+        "Namespace",
+        "Category",
+        "Instances"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMetricRuleBlackList"
+    },
+    "CreateMetricRuleResources": {
+      "required": [
+        "Resources"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMetricRuleResources"
+    },
+    "CreateMetricRuleTemplate": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMetricRuleTemplate"
+    },
+    "CreateMonitorAgentProcess": {
+      "required": [
+        "ProcessName",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMonitorAgentProcess"
+    },
+    "CreateMonitorGroup": {
+      "required": [
+        "GroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMonitorGroup"
+    },
+    "CreateMonitorGroupByResourceGroupId": {
+      "required": [
+        "RegionId",
+        "ResourceGroupId",
+        "ResourceGroupName",
+        "ContactGroupList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMonitorGroupByResourceGroupId"
+    },
+    "CreateMonitorGroupInstances": {
+      "required": [
+        "GroupId",
+        "Instances"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMonitorGroupInstances"
+    },
+    "CreateMonitorGroupNotifyPolicy": {
+      "required": [
+        "PolicyType",
+        "GroupId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMonitorGroupNotifyPolicy"
+    },
+    "CreateMonitoringAgentProcess": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMonitoringAgentProcess"
+    },
+    "CreateSiteMonitor": {
+      "required": [
+        "Address",
+        "TaskType",
+        "TaskName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSiteMonitor"
+    },
+    "Cursor": {
+      "required": [
+        "Namespace",
+        "Metric",
+        "Period",
+        "StartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Cursor"
+    },
+    "DeleteContact": {
+      "required": [
+        "ContactName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteContact"
+    },
+    "DeleteContactGroup": {
+      "required": [
+        "ContactGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteContactGroup"
+    },
+    "DeleteCustomMetric": {
+      "required": [
+        "GroupId",
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCustomMetric"
+    },
+    "DeleteDynamicTagGroup": {
+      "required": [
+        "DynamicTagRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDynamicTagGroup"
+    },
+    "DeleteEventRuleTargets": {
+      "required": [
+        "RuleName",
+        "Ids"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEventRuleTargets"
+    },
+    "DeleteEventRules": {
+      "required": [
+        "RuleNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEventRules"
+    },
+    "DeleteExporterOutput": {
+      "required": [
+        "DestName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteExporterOutput"
+    },
+    "DeleteExporterRule": {
+      "required": [
+        "RuleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteExporterRule"
+    },
+    "DeleteGroupMonitoringAgentProcess": {
+      "required": [
+        "GroupId",
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGroupMonitoringAgentProcess"
+    },
+    "DeleteHostAvailability": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteHostAvailability"
+    },
+    "DeleteHybridMonitorNamespace": {
+      "required": [
+        "Namespace"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteHybridMonitorNamespace"
+    },
+    "DeleteHybridMonitorSLSGroup": {
+      "required": [
+        "SLSGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteHybridMonitorSLSGroup"
+    },
+    "DeleteHybridMonitorTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteHybridMonitorTask"
+    },
+    "DeleteLogMonitor": {
+      "required": [
+        "LogId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLogMonitor"
+    },
+    "DeleteMetricRuleBlackList": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMetricRuleBlackList"
+    },
+    "DeleteMetricRuleResources": {
+      "required": [
+        "RuleId",
+        "Resources"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMetricRuleResources"
+    },
+    "DeleteMetricRuleTargets": {
+      "required": [
+        "RuleId",
+        "TargetIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMetricRuleTargets"
+    },
+    "DeleteMetricRuleTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMetricRuleTemplate"
+    },
+    "DeleteMetricRules": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMetricRules"
+    },
+    "DeleteMonitorGroup": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMonitorGroup"
+    },
+    "DeleteMonitorGroupDynamicRule": {
+      "required": [
+        "GroupId",
+        "Category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMonitorGroupDynamicRule"
+    },
+    "DeleteMonitorGroupInstances": {
+      "required": [
+        "GroupId",
+        "InstanceIdList",
+        "Category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMonitorGroupInstances"
+    },
+    "DeleteMonitorGroupNotifyPolicy": {
+      "required": [
+        "PolicyType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMonitorGroupNotifyPolicy"
+    },
+    "DeleteMonitoringAgentProcess": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMonitoringAgentProcess"
+    },
+    "DeleteSiteMonitors": {
+      "required": [
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSiteMonitors"
+    },
+    "DescribeActiveMetricRuleList": {
+      "required": [
+        "Product"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActiveMetricRuleList"
+    },
+    "DescribeAlertHistoryList": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeAlertHistoryList"
+    },
+    "DescribeAlertLogCount": {
+      "required": [
+        "GroupBy"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAlertLogCount"
+    },
+    "DescribeAlertLogHistogram": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAlertLogHistogram"
+    },
+    "DescribeAlertLogList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAlertLogList"
+    },
+    "DescribeAlertingMetricRuleResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAlertingMetricRuleResources"
+    },
+    "DescribeContactGroupList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Alarm Contact Group List"
+    },
+    "DescribeContactList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeContactList"
+    },
+    "DescribeContactListByContactGroup": {
+      "required": [
+        "ContactGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeContactListByContactGroup"
+    },
+    "DescribeCustomEventAttribute": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomEventAttribute"
+    },
+    "DescribeCustomEventCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomEventCount"
+    },
+    "DescribeCustomEventHistogram": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomEventHistogram"
+    },
+    "DescribeCustomMetricList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomMetricList"
+    },
+    "DescribeDynamicTagRuleList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDynamicTagRuleList"
+    },
+    "DescribeEventRuleAttribute": {
+      "required": [
+        "RuleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEventRuleAttribute"
+    },
+    "DescribeEventRuleList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEventRuleList"
+    },
+    "DescribeEventRuleTargetList": {
+      "required": [
+        "RuleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEventRuleTargetList"
+    },
+    "DescribeExporterOutputList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeExporterOutputList"
+    },
+    "DescribeExporterRuleList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeExporterRuleList"
+    },
+    "DescribeGroupMonitoringAgentProcess": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGroupMonitoringAgentProcess"
+    },
+    "DescribeHostAvailabilityList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHostAvailabilityList"
+    },
+    "DescribeHybridMonitorDataList": {
+      "required": [
+        "Namespace",
+        "PromSQL",
+        "Start",
+        "End"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHybridMonitorDataList"
+    },
+    "DescribeHybridMonitorNamespaceList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHybridMonitorNamespaceList"
+    },
+    "DescribeHybridMonitorSLSGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHybridMonitorSLSGroup"
+    },
+    "DescribeHybridMonitorTaskList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHybridMonitorTaskList"
+    },
+    "DescribeLogMonitorAttribute": {
+      "required": [
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLogMonitorAttribute"
+    },
+    "DescribeLogMonitorList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLogMonitorList"
+    },
+    "DescribeMetricData": {
+      "required": [
+        "Namespace",
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricData"
+    },
+    "DescribeMetricLast": {
+      "required": [
+        "Namespace",
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricLast"
+    },
+    "DescribeMetricList": {
+      "required": [
+        "Namespace",
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricList"
+    },
+    "DescribeMetricMetaList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricMetaList"
+    },
+    "DescribeMetricRuleBlackList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricRuleBlackList"
+    },
+    "DescribeMetricRuleCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricRuleCount"
+    },
+    "DescribeMetricRuleList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricRuleList"
+    },
+    "DescribeMetricRuleTargets": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricRuleTargets"
+    },
+    "DescribeMetricRuleTemplateAttribute": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricRuleTemplateAttribute"
+    },
+    "DescribeMetricRuleTemplateList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricRuleTemplateList"
+    },
+    "DescribeMetricTop": {
+      "required": [
+        "Namespace",
+        "MetricName",
+        "Orderby"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetricTop"
+    },
+    "DescribeMonitorGroupCategories": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitorGroupCategories"
+    },
+    "DescribeMonitorGroupDynamicRules": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitorGroupDynamicRules"
+    },
+    "DescribeMonitorGroupInstanceAttribute": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitorGroupInstanceAttribute"
+    },
+    "DescribeMonitorGroupInstances": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitorGroupInstances"
+    },
+    "DescribeMonitorGroupNotifyPolicyList": {
+      "required": [
+        "PolicyType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitorGroupNotifyPolicyList"
+    },
+    "DescribeMonitorGroups": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitorGroups"
+    },
+    "DescribeMonitorResourceQuotaAttribute": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitorResourceQuotaAttribute"
+    },
+    "DescribeMonitoringAgentAccessKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitoringAgentAccessKey"
+    },
+    "DescribeMonitoringAgentConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitoringAgentConfig"
+    },
+    "DescribeMonitoringAgentHosts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitoringAgentHosts"
+    },
+    "DescribeMonitoringAgentProcesses": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitoringAgentProcesses"
+    },
+    "DescribeMonitoringAgentStatuses": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitoringAgentStatuses"
+    },
+    "DescribeMonitoringConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMonitoringConfig"
+    },
+    "DescribeProductResourceTagKeyList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeProductResourceTagKeyList"
+    },
+    "DescribeProductsOfActiveMetricRule": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeProductsOfActiveMetricRule"
+    },
+    "DescribeProjectMeta": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeProjectMeta"
+    },
+    "DescribeSiteInstantMonitorLog": {
+      "required": [
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "DescribeSiteMonitorAttribute": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSiteMonitorAttribute"
+    },
+    "DescribeSiteMonitorData": {
+      "required": [
+        "TaskId",
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSiteMonitorData"
+    },
+    "DescribeSiteMonitorISPCityList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSiteMonitorISPCityList"
+    },
+    "DescribeSiteMonitorList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSiteMonitorList"
+    },
+    "DescribeSiteMonitorLog": {
+      "required": [
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSiteMonitorLog"
+    },
+    "DescribeSiteMonitorQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSiteMonitorQuota"
+    },
+    "DescribeSiteMonitorStatistics": {
+      "required": [
+        "TaskId",
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSiteMonitorStatistics"
+    },
+    "DescribeSyntheticProbeList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSyntheticProbeList"
+    },
+    "DescribeSystemEventAttribute": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSystemEventAttribute"
+    },
+    "DescribeSystemEventCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSystemEventCount"
+    },
+    "DescribeSystemEventHistogram": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSystemEventHistogram"
+    },
+    "DescribeSystemEventMetaList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSystemEventMetaList"
+    },
+    "DescribeTagKeyList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTagKeyList"
+    },
+    "DescribeTagValueList": {
+      "required": [
+        "TagKey"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTagValueList"
+    },
+    "DescribeUnhealthyHostAvailability": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUnhealthyHostAvailability"
+    },
+    "DisableActiveMetricRule": {
+      "required": [
+        "Product"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableActiveMetricRule"
+    },
+    "DisableEventRules": {
+      "required": [
+        "RuleNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableEventRules"
+    },
+    "DisableHostAvailability": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableHostAvailability"
+    },
+    "DisableMetricRules": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableMetricRules"
+    },
+    "DisableSiteMonitors": {
+      "required": [
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableSiteMonitors"
+    },
+    "EnableActiveMetricRule": {
+      "required": [
+        "Product"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableActiveMetricRule"
+    },
+    "EnableEventRules": {
+      "required": [
+        "RuleNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableEventRules"
+    },
+    "EnableHostAvailability": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableHostAvailability"
+    },
+    "EnableMetricRuleBlackList": {
+      "required": [
+        "Id",
+        "IsEnable"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableMetricRuleBlackList"
+    },
+    "EnableMetricRules": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableMetricRules"
+    },
+    "EnableSiteMonitors": {
+      "required": [
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableSiteMonitors"
+    },
+    "InstallMonitoringAgent": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InstallMonitoringAgent"
+    },
+    "ModifyGroupMonitoringAgentProcess": {
+      "required": [
+        "Id",
+        "GroupId",
+        "AlertConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyGroupMonitoringAgentProcess"
+    },
+    "ModifyHostAvailability": {
+      "required": [
+        "GroupId",
+        "Id",
+        "TaskName",
+        "AlertConfig.NotifyType",
+        "AlertConfigEscalationList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHostAvailability"
+    },
+    "ModifyHostInfo": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHostInfo"
+    },
+    "ModifyHybridMonitorNamespace": {
+      "required": [
+        "Namespace"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHybridMonitorNamespace"
+    },
+    "ModifyHybridMonitorSLSGroup": {
+      "required": [
+        "SLSGroupName",
+        "SLSGroupConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHybridMonitorSLSGroup"
+    },
+    "ModifyHybridMonitorTask": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHybridMonitorTask"
+    },
+    "ModifyMetricRuleBlackList": {
+      "required": [
+        "Id",
+        "Name",
+        "Namespace",
+        "Category",
+        "Instances"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyMetricRuleBlackList"
+    },
+    "ModifyMetricRuleTemplate": {
+      "required": [
+        "TemplateId",
+        "RestVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyMetricRuleTemplate"
+    },
+    "ModifyMonitorGroup": {
+      "required": [
+        "GroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyMonitorGroup"
+    },
+    "ModifyMonitorGroupInstances": {
+      "required": [
+        "GroupId",
+        "Instances"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyMonitorGroupInstances"
+    },
+    "ModifySiteMonitor": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySiteMonitor"
+    },
+    "OpenCmsService": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Activate CMS pay-as-you-go service"
+    },
+    "PutContact": {
+      "required": [
+        "ContactName",
+        "Describe"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutContact"
+    },
+    "PutContactGroup": {
+      "required": [
+        "ContactGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutContactGroup"
+    },
+    "PutCustomEvent": {
+      "required": [
+        "EventInfo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutCustomEvent"
+    },
+    "PutCustomEventRule": {
+      "required": [
+        "GroupId",
+        "RuleId",
+        "RuleName",
+        "EventName",
+        "ContactGroups",
+        "Threshold",
+        "Level"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutCustomEventRule"
+    },
+    "PutCustomMetric": {
+      "required": [
+        "MetricList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutCustomMetric"
+    },
+    "PutCustomMetricRule": {
+      "required": [
+        "RuleId",
+        "MetricName",
+        "Resources",
+        "ContactGroups",
+        "Threshold",
+        "Level",
+        "EvaluationCount",
+        "Statistics",
+        "ComparisonOperator"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutCustomMetricRule"
+    },
+    "PutEventRule": {
+      "required": [
+        "RuleName",
+        "EventPattern"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutEventRule"
+    },
+    "PutEventRuleTargets": {
+      "required": [
+        "RuleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutEventRuleTargets"
+    },
+    "PutExporterOutput": {
+      "required": [
+        "DestName",
+        "ConfigJson"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutExporterOutput"
+    },
+    "PutExporterRule": {
+      "required": [
+        "DstNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutExporterRule"
+    },
+    "PutGroupMetricRule": {
+      "required": [
+        "GroupId",
+        "RuleId",
+        "RuleName",
+        "Namespace",
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutGroupMetricRule"
+    },
+    "PutHybridMonitorMetricData": {
+      "required": [
+        "Namespace",
+        "MetricList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutHybridMonitorMetricData"
+    },
+    "PutLogMonitor": {
+      "required": [
+        "SlsRegionId",
+        "SlsProject",
+        "SlsLogstore",
+        "MetricName",
+        "ValueFilterRelation",
+        "Aggregates"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutLogMonitor"
+    },
+    "PutMetricRuleTargets": {
+      "required": [
+        "RuleId",
+        "Targets"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutMetricRuleTargets"
+    },
+    "PutMonitorGroupDynamicRule": {
+      "required": [
+        "GroupId",
+        "GroupRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutMonitorGroupDynamicRule"
+    },
+    "PutMonitoringConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutMonitoringConfig"
+    },
+    "PutResourceMetricRule": {
+      "required": [
+        "RuleId",
+        "RuleName",
+        "Namespace",
+        "MetricName",
+        "ContactGroups"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutResourceMetricRule"
+    },
+    "PutResourceMetricRules": {
+      "required": [
+        "Rules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutResourceMetricRules"
+    },
+    "RemoveTags": {
+      "required": [
+        "Tag",
+        "GroupIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveTags"
+    },
+    "SendDryRunSystemEvent": {
+      "required": [
+        "Product",
+        "EventName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendDryRunSystemEvent"
+    },
+    "UninstallMonitoringAgent": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UninstallMonitoringAgent"
+    }
+  }
+}

@@ -1,0 +1,2284 @@
+{
+  "snapshotVersion": 1,
+  "product": "arms",
+  "openApiProduct": "ARMS",
+  "version": "2019-08-08",
+  "source": "https://api.aliyun.com/meta/v1/products/ARMS/versions/2019-08-08/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:29.895Z",
+  "actions": {
+    "AddAliClusterIdsToPrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "GroupName",
+        "GlobalViewClusterId",
+        "ClusterIds"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddAliClusterIdsToPrometheusGlobalView"
+    },
+    "AddGrafana": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "Integration"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddGrafana"
+    },
+    "AddIntegration": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "Integration"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddIntegration"
+    },
+    "AddPrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "GroupName",
+        "Clusters"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddPrometheusGlobalView"
+    },
+    "AddPrometheusGlobalViewByAliClusterIds": {
+      "required": [
+        "RegionId",
+        "GroupName",
+        "ClusterIds"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddPrometheusGlobalViewByAliClusterIds"
+    },
+    "AddPrometheusInstance": {
+      "required": [
+        "RegionId",
+        "Name",
+        "Type"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddPrometheusInstance"
+    },
+    "AddPrometheusIntegration": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "IntegrationType",
+        "Param"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddPrometheusIntegration"
+    },
+    "AddRecordingRule": {
+      "required": [
+        "ClusterId",
+        "RuleYaml",
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddRecordingRule"
+    },
+    "AddTagToFlinkCluster": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "TargetUserId",
+        "FlinkWorkSpaceId",
+        "FlinkWorkSpaceName"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddTagToFlinkCluster"
+    },
+    "AppendInstancesToPrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "GroupName",
+        "Clusters",
+        "GlobalViewClusterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AppendInstancesToPrometheusGlobalView"
+    },
+    "ApplyScenario": {
+      "required": [
+        "Name",
+        "AppId",
+        "Config",
+        "UpdateOption"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create or update Business Monitoring"
+    },
+    "BindPrometheusGrafanaInstance": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "GrafanaInstanceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "BindPrometheusGrafanaInstance"
+    },
+    "BlockAlarmNotification": {
+      "required": [
+        "RegionId",
+        "AlarmId",
+        "Timeout"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BlockAlarmNotification"
+    },
+    "ChangeAlarmSeverity": {
+      "required": [
+        "RegionId",
+        "AlarmId",
+        "Severity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeAlarmSeverity"
+    },
+    "ChangeResourceGroup": {
+      "required": [
+        "RegionId",
+        "ResourceId",
+        "NewResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeResourceGroup"
+    },
+    "CheckCommercialStatus": {
+      "required": [
+        "Service"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckCommercialStatus"
+    },
+    "CheckServiceStatus": {
+      "required": [
+        "SvcCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckServiceStatus"
+    },
+    "ClaimAlarm": {
+      "required": [
+        "RegionId",
+        "AlarmId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ClaimAlarm"
+    },
+    "CloseAlarm": {
+      "required": [
+        "RegionId",
+        "AlarmId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CloseAlarm"
+    },
+    "ConfigApp": {
+      "required": [
+        "AppIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigApp"
+    },
+    "CreateAlertContact": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAlertContact"
+    },
+    "CreateAlertContactGroup": {
+      "required": [
+        "ContactGroupName",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAlertContactGroup"
+    },
+    "CreateDispatchRule": {
+      "required": [
+        "DispatchRule",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDispatchRule"
+    },
+    "CreateEnvCustomJob": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "CustomJobName",
+        "ConfigYaml"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateEnvCustomJob"
+    },
+    "CreateEnvPodMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "ConfigYaml"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateEnvPodMonitor"
+    },
+    "CreateEnvServiceMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "ConfigYaml"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateEnvServiceMonitor"
+    },
+    "CreateEnvironment": {
+      "required": [
+        "RegionId",
+        "EnvironmentName",
+        "EnvironmentType",
+        "EnvironmentSubType",
+        "BindResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateEnvironment"
+    },
+    "CreateGrafanaWorkspace": {
+      "required": [
+        "RegionId",
+        "GrafanaWorkspaceName",
+        "GrafanaWorkspaceEdition",
+        "GrafanaVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Grafana Workspace"
+    },
+    "CreateIntegration": {
+      "required": [
+        "IntegrationName",
+        "IntegrationProductType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateIntegration"
+    },
+    "CreateOrUpdateAlertRule": {
+      "required": [
+        "AlertName",
+        "RegionId",
+        "AlertType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateAlertRule"
+    },
+    "CreateOrUpdateContact": {
+      "required": [
+        "ContactName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateContact"
+    },
+    "CreateOrUpdateContactGroup": {
+      "required": [
+        "ContactGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateContactGroup"
+    },
+    "CreateOrUpdateEventBridgeIntegration": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateEventBridgeIntegration"
+    },
+    "CreateOrUpdateIMRobot": {
+      "required": [
+        "RobotName",
+        "Type",
+        "RobotAddress"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateIMRobot"
+    },
+    "CreateOrUpdateNotificationPolicy": {
+      "required": [
+        "Name",
+        "NotifyRule"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateNotificationPolicy"
+    },
+    "CreateOrUpdateSilencePolicy": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateSilencePolicy"
+    },
+    "CreateOrUpdateWebhookContact": {
+      "required": [
+        "WebhookName",
+        "Method",
+        "Url"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrUpdateWebhookContact"
+    },
+    "CreatePrometheusAlertRule": {
+      "required": [
+        "RegionId",
+        "AlertName",
+        "ClusterId",
+        "Expression",
+        "Duration",
+        "Message"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePrometheusAlertRule"
+    },
+    "CreatePrometheusInstance": {
+      "required": [
+        "RegionId",
+        "ClusterType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePrometheusInstance"
+    },
+    "CreatePrometheusMonitoring": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "Type",
+        "ConfigYaml"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreatePrometheusMonitoring"
+    },
+    "CreateRetcodeApp": {
+      "required": [
+        "RetcodeAppName",
+        "RetcodeAppType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRetcodeApp"
+    },
+    "CreateRumApp": {
+      "required": [
+        "AppName",
+        "SiteType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRumApp"
+    },
+    "CreateRumUploadFileUrl": {
+      "required": [
+        "FileName",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRumUploadFileUrl"
+    },
+    "CreateSyntheticTask": {
+      "required": [
+        "RegionId",
+        "TaskName",
+        "Url",
+        "MonitorList",
+        "TaskType",
+        "IntervalTime",
+        "IntervalType",
+        "IpType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSyntheticTask"
+    },
+    "CreateTimingSyntheticTask": {
+      "required": [
+        "RegionId",
+        "Name",
+        "TaskType",
+        "MonitorConf",
+        "MonitorCategory",
+        "Monitors",
+        "Frequency"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTimingSyntheticTask"
+    },
+    "CreateWebhook": {
+      "required": [
+        "ContactName",
+        "Method",
+        "Url",
+        "RegionId",
+        "Body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateWebhook"
+    },
+    "DelAuthToken": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DelAuthToken"
+    },
+    "DeleteAddonRelease": {
+      "required": [
+        "ReleaseName",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAddonRelease"
+    },
+    "DeleteAlertContact": {
+      "required": [
+        "RegionId",
+        "ContactId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAlertContact"
+    },
+    "DeleteAlertContactGroup": {
+      "required": [
+        "RegionId",
+        "ContactGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAlertContactGroup"
+    },
+    "DeleteAlertRule": {
+      "required": [
+        "AlertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAlertRule"
+    },
+    "DeleteAlertRules": {
+      "required": [
+        "AlertIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAlertRules"
+    },
+    "DeleteAppList": {
+      "required": [
+        "RegionId",
+        "Pids"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAppList"
+    },
+    "DeleteCmsExporter": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Uninstall Prometheus for an Alibaba Cloud service instance"
+    },
+    "DeleteContact": {
+      "required": [
+        "ContactId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteContact"
+    },
+    "DeleteContactGroup": {
+      "required": [
+        "ContactGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteContactGroup"
+    },
+    "DeleteDispatchRule": {
+      "required": [
+        "Id",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDispatchRule"
+    },
+    "DeleteEnvCustomJob": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "CustomJobName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEnvCustomJob"
+    },
+    "DeleteEnvPodMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "Namespace",
+        "PodMonitorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEnvPodMonitor"
+    },
+    "DeleteEnvServiceMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "Namespace",
+        "ServiceMonitorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEnvServiceMonitor"
+    },
+    "DeleteEnvironment": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEnvironment"
+    },
+    "DeleteEnvironmentFeature": {
+      "required": [
+        "EnvironmentId",
+        "FeatureName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEnvironmentFeature"
+    },
+    "DeleteEventBridgeIntegration": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEventBridgeIntegration"
+    },
+    "DeleteGrafanaResource": {
+      "required": [
+        "RegionId",
+        "ClusterName",
+        "ClusterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteGrafanaResource"
+    },
+    "DeleteGrafanaWorkspace": {
+      "required": [
+        "RegionId",
+        "GrafanaWorkspaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGrafanaWorkspace"
+    },
+    "DeleteIMRobot": {
+      "required": [
+        "RobotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIMRobot"
+    },
+    "DeleteIntegration": {
+      "required": [
+        "ClusterId",
+        "RegionId",
+        "Integration"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteIntegration"
+    },
+    "DeleteIntegrations": {
+      "required": [
+        "IntegrationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIntegrations"
+    },
+    "DeleteNotificationPolicy": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNotificationPolicy"
+    },
+    "DeletePrometheusAlertRule": {
+      "required": [
+        "AlertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePrometheusAlertRule"
+    },
+    "DeletePrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "GlobalViewClusterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeletePrometheusGlobalView"
+    },
+    "DeletePrometheusIntegration": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "IntegrationType"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeletePrometheusIntegration"
+    },
+    "DeletePrometheusMonitoring": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "Type",
+        "MonitoringName"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeletePrometheusMonitoring"
+    },
+    "DeleteRetcodeApp": {
+      "required": [
+        "RegionId",
+        "Pid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRetcodeApp"
+    },
+    "DeleteRumApp": {
+      "required": [
+        "AppId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRumApp"
+    },
+    "DeleteRumUploadFile": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRumUploadFile"
+    },
+    "DeleteScenario": {
+      "required": [
+        "ScenarioId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete Business Monitoring"
+    },
+    "DeleteSilencePolicy": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSilencePolicy"
+    },
+    "DeleteSourceMap": {
+      "required": [
+        "RegionId",
+        "Pid",
+        "FidList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSourceMap"
+    },
+    "DeleteSyntheticTask": {
+      "required": [
+        "RegionId",
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSyntheticTask"
+    },
+    "DeleteTimingSyntheticTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTimingSyntheticTask"
+    },
+    "DeleteTraceApp": {
+      "required": [
+        "AppId",
+        "RegionId",
+        "Type",
+        "Pid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTraceApp"
+    },
+    "DeleteWebhookContact": {
+      "required": [
+        "WebhookId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteWebhookContact"
+    },
+    "DescribeAddonMetrics": {
+      "required": [
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAddonMetrics"
+    },
+    "DescribeAddonRelease": {
+      "required": [
+        "ReleaseName",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAddonRelease"
+    },
+    "DescribeContactGroups": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeContactGroups"
+    },
+    "DescribeContacts": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeContacts"
+    },
+    "DescribeDispatchRule": {
+      "required": [
+        "Id",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDispatchRule"
+    },
+    "DescribeEnvCustomJob": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "CustomJobName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEnvCustomJob"
+    },
+    "DescribeEnvDropMetricsRule": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEnvDropMetricsRule"
+    },
+    "DescribeEnvPodMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "Namespace",
+        "PodMonitorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEnvPodMonitor"
+    },
+    "DescribeEnvServiceMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "Namespace",
+        "ServiceMonitorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEnvServiceMonitor"
+    },
+    "DescribeEnvironment": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEnvironment"
+    },
+    "DescribeEnvironmentFeature": {
+      "required": [
+        "EnvironmentId",
+        "FeatureName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEnvironmentFeature"
+    },
+    "DescribeIMRobots": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIMRobots"
+    },
+    "DescribePrometheusAlertRule": {
+      "required": [
+        "AlertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrometheusAlertRule"
+    },
+    "DescribeTraceLicenseKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTraceLicenseKey"
+    },
+    "DescribeWebhookContacts": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebhookContacts"
+    },
+    "DoInsightsAction": {
+      "required": [
+        "Module",
+        "Data"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DoInsightsAction"
+    },
+    "EnableMetric": {
+      "required": [
+        "ClusterId",
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "EnableMetric"
+    },
+    "GetAgentDownloadUrl": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAgentDownloadUrl"
+    },
+    "GetAgentDownloadUrlV2": {
+      "required": [
+        "AgentType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAgentDownloadUrlV2"
+    },
+    "GetAlertRules": {
+      "required": [
+        "RegionId",
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve created alert rules"
+    },
+    "GetAppApiByPage": {
+      "required": [
+        "RegionId",
+        "PId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAppApiByPage"
+    },
+    "GetAppJVMConfig": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAppJVMConfig"
+    },
+    "GetAuthToken": {
+      "required": [
+        "ClusterId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAuthToken"
+    },
+    "GetCloudClusterAllUrl": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetCloudClusterAllUrl"
+    },
+    "GetClusterAllUrl": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetClusterAllUrl"
+    },
+    "GetCommercialStatus": {
+      "required": [
+        "CommodityCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCommercialStatus"
+    },
+    "GetExploreUrl": {
+      "required": [
+        "ClusterId",
+        "Type"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetExploreUrl"
+    },
+    "GetGrafanaWorkspace": {
+      "required": [
+        "RegionId",
+        "GrafanaWorkspaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetGrafanaWorkspace"
+    },
+    "GetIntegrationState": {
+      "required": [
+        "ClusterId",
+        "RegionId",
+        "Integration"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetIntegrationState"
+    },
+    "GetManagedPrometheusStatus": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "ClusterType"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetManagedPrometheusStatus"
+    },
+    "GetMultipleTrace": {
+      "required": [
+        "RegionId",
+        "TraceIDs",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMultipleTrace"
+    },
+    "GetOnCallSchedulesDetail": {
+      "required": [
+        "Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetOnCallSchedulesDetail"
+    },
+    "GetPrometheusApiToken": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPrometheusApiToken"
+    },
+    "GetPrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "GlobalViewClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPrometheusGlobalView"
+    },
+    "GetPrometheusInstance": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPrometheusInstance"
+    },
+    "GetPrometheusIntegration": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "IntegrationType",
+        "InstanceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetPrometheusIntegration"
+    },
+    "GetPrometheusMonitoring": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "Type",
+        "MonitoringName"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetPrometheusMonitoring"
+    },
+    "GetRecordingRule": {
+      "required": [
+        "ClusterId",
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "GetRecordingRule"
+    },
+    "GetRetcodeAppByPid": {
+      "required": [
+        "Pid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRetcodeAppByPid"
+    },
+    "GetRetcodeDataByQuery": {
+      "required": [
+        "Pid",
+        "Query",
+        "From",
+        "To",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRetcodeDataByQuery"
+    },
+    "GetRetcodeLogstore": {
+      "required": [
+        "Pid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRetcodeLogstore"
+    },
+    "GetRetcodeShareUrl": {
+      "required": [
+        "Pid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRetcodeShareUrl"
+    },
+    "GetRumAppInfo": {
+      "required": [
+        "Pid",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRumAppInfo"
+    },
+    "GetRumApps": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRumApps"
+    },
+    "GetRumDataForPage": {
+      "required": [
+        "Query",
+        "StartTime",
+        "EndTime",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRumDataForPage"
+    },
+    "GetRumExceptionStack": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRumExceptionStack"
+    },
+    "GetRumOcuStatisticData": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Page",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRumOcuStatisticData"
+    },
+    "GetRumUploadFiles": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRumUploadFiles"
+    },
+    "GetSourceMapInfo": {
+      "required": [
+        "ID"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSourceMapInfo"
+    },
+    "GetStack": {
+      "required": [
+        "TraceID",
+        "RegionId",
+        "RpcID"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStack"
+    },
+    "GetSyntheticMonitors": {
+      "required": [
+        "Filter"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSyntheticMonitors"
+    },
+    "GetSyntheticTaskDetail": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSyntheticTaskDetail"
+    },
+    "GetSyntheticTaskList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSyntheticTaskList"
+    },
+    "GetSyntheticTaskMonitors": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSyntheticTaskMonitors"
+    },
+    "GetTimingSyntheticTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTimingSyntheticTask"
+    },
+    "GetTrace": {
+      "required": [
+        "TraceID",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTrace"
+    },
+    "GetTraceApp": {
+      "required": [
+        "Pid",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTraceApp"
+    },
+    "GetTraceAppConfig": {
+      "required": [
+        "Pid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTraceAppConfig"
+    },
+    "ImportAppAlertRules": {
+      "required": [
+        "Pids",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ImportAppAlertRules"
+    },
+    "InitEnvironment": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InitEnvironment"
+    },
+    "InstallAddon": {
+      "required": [
+        "Name",
+        "AddonVersion",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InstallAddon"
+    },
+    "InstallCmsExporter": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "DirectArgs"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "InstallCmsExporter"
+    },
+    "InstallEnvironmentFeature": {
+      "required": [
+        "EnvironmentId",
+        "FeatureName",
+        "FeatureVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InstallEnvironmentFeature"
+    },
+    "InstallManagedPrometheus": {
+      "required": [
+        "ClusterType",
+        "VpcId",
+        "VSwitchId",
+        "SecurityGroupId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Create Managed Prometheus"
+    },
+    "ListActivatedAlerts": {
+      "required": [
+        "RegionId",
+        "CurrentPage",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of triggered alerts"
+    },
+    "ListAddonReleases": {
+      "required": [
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAddonReleases"
+    },
+    "ListAddons": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAddons"
+    },
+    "ListAlertEvents": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAlertEvents"
+    },
+    "ListAlerts": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAlerts"
+    },
+    "ListClusterFromGrafana": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ListClusterFromGrafana"
+    },
+    "ListCmsInstances": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Query the collection status of Alibaba Cloud services"
+    },
+    "ListDashboards": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDashboards"
+    },
+    "ListDashboardsByName": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ListDashboardsByName"
+    },
+    "ListDispatchRule": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDispatchRule"
+    },
+    "ListEnvCustomJobs": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvCustomJobs"
+    },
+    "ListEnvPodMonitors": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvPodMonitors"
+    },
+    "ListEnvServiceMonitors": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvServiceMonitors"
+    },
+    "ListEnvironmentAddons": {
+      "required": [
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the Addon installed in a specified environment"
+    },
+    "ListEnvironmentAlertRules": {
+      "required": [
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvironmentAlertRules"
+    },
+    "ListEnvironmentDashboards": {
+      "required": [
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvironmentDashboards"
+    },
+    "ListEnvironmentFeatures": {
+      "required": [
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvironmentFeatures"
+    },
+    "ListEnvironmentKubeResources": {
+      "required": [
+        "EnvironmentId",
+        "Kind"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvironmentKubeResources"
+    },
+    "ListEnvironmentMetricTargets": {
+      "required": [
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvironmentMetricTargets"
+    },
+    "ListEnvironments": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnvironments"
+    },
+    "ListEscalationPolicies": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEscalationPolicies"
+    },
+    "ListEventBridgeIntegrations": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEventBridgeIntegrations"
+    },
+    "ListGrafanaWorkspace": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGrafanaWorkspace"
+    },
+    "ListInsightsEvents": {
+      "required": [
+        "RegionId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListInsightsEvents"
+    },
+    "ListIntegration": {
+      "required": [
+        "IntegrationProductType",
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListIntegration"
+    },
+    "ListNotificationPolicies": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListNotificationPolicies"
+    },
+    "ListOnCallSchedules": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListOnCallSchedules"
+    },
+    "ListPrometheusAlertRules": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPrometheusAlertRules"
+    },
+    "ListPrometheusAlertTemplates": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPrometheusAlertTemplates"
+    },
+    "ListPrometheusGlobalView": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPrometheusGlobalView"
+    },
+    "ListPrometheusInstanceByTagAndResourceGroupId": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPrometheusInstanceByTagAndResourceGroupId"
+    },
+    "ListPrometheusInstances": {
+      "required": [
+        "RegionId",
+        "ShowGlobalView"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPrometheusInstances"
+    },
+    "ListPrometheusIntegration": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "IntegrationType"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ListPrometheusIntegration"
+    },
+    "ListPrometheusMonitoring": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ListPrometheusMonitoring"
+    },
+    "ListRetcodeApps": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRetcodeApps"
+    },
+    "ListScenario": {
+      "required": [
+        "Name",
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain Business Monitoring Details"
+    },
+    "ListSilencePolicies": {
+      "required": [
+        "Page",
+        "Size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListSilencePolicies"
+    },
+    "ListSyntheticDetail": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListSyntheticDetail"
+    },
+    "ListTimingSyntheticTasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTimingSyntheticTasks"
+    },
+    "ListTraceApps": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTraceApps"
+    },
+    "OpenArmsDefaultSLR": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenArmsDefaultSLR"
+    },
+    "OpenArmsServiceSecondVersion": {
+      "required": [
+        "RegionId",
+        "Type"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenArmsServiceSecondVersion"
+    },
+    "OpenVCluster": {
+      "required": [
+        "RegionId",
+        "ClusterType"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "OpenVCluster"
+    },
+    "OpenXtraceDefaultSLR": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenXtraceDefaultSLR"
+    },
+    "QueryAppMetadata": {
+      "required": [
+        "MetaIds",
+        "MetaType",
+        "Pid",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryAppMetadata"
+    },
+    "QueryAppTopology": {
+      "required": [
+        "RegionId",
+        "Type",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryAppTopology"
+    },
+    "QueryCommercialUsage": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Metric",
+        "QueryType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCommercialUsage"
+    },
+    "QueryMetricByPage": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Metric"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryMetricByPage"
+    },
+    "QueryPromInstallStatus": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "QueryPromInstallStatus"
+    },
+    "QueryReleaseMetric": {
+      "required": [
+        "Pid",
+        "ChangeOrderId",
+        "ReleaseStartTime",
+        "ReleaseEndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryReleaseMetric"
+    },
+    "RemoveAliClusterIdsFromPrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "GroupName",
+        "GlobalViewClusterId",
+        "ClusterIds"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "RemoveAliClusterIdsFromPrometheusGlobalView"
+    },
+    "RemoveSourcesFromPrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "GroupName",
+        "GlobalViewClusterId",
+        "SourceNames"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "RemoveSourcesFromPrometheusGlobalView"
+    },
+    "RestartEnvironmentFeature": {
+      "required": [
+        "EnvironmentId",
+        "FeatureName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestartEnvironmentFeature"
+    },
+    "SaveTraceAppConfig": {
+      "required": [
+        "Pid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SaveTraceAppConfig"
+    },
+    "SearchAlertContact": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchAlertContact"
+    },
+    "SearchAlertContactGroup": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchAlertContactGroup"
+    },
+    "SearchAlertHistories": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchAlertHistories"
+    },
+    "SearchAlertRules": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchAlertRules"
+    },
+    "SearchEvents": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchEvents"
+    },
+    "SearchRetcodeAppByPage": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchRetcodeAppByPage"
+    },
+    "SearchTraceAppByName": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchTraceAppByName"
+    },
+    "SearchTraceAppByPage": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchTraceAppByPage"
+    },
+    "SearchTraces": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchTraces"
+    },
+    "SearchTracesByPage": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchTracesByPage"
+    },
+    "SendTTSVerifyLink": {
+      "required": [
+        "ContactId",
+        "Phone"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendTTSVerifyLink"
+    },
+    "SetRetcodeShareStatus": {
+      "required": [
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetRetcodeShareStatus"
+    },
+    "StartAlert": {
+      "required": [
+        "AlertId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Start Alert Rule"
+    },
+    "StartTimingSyntheticTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartTimingSyntheticTask"
+    },
+    "StopAlert": {
+      "required": [
+        "AlertId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopAlert"
+    },
+    "StopTimingSyntheticTask": {
+      "required": [
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopTimingSyntheticTask"
+    },
+    "SwitchSyntheticTaskStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchSyntheticTaskStatus"
+    },
+    "SyncRecordingRules": {
+      "required": [
+        "ClusterId",
+        "TargetClusters",
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "SyncRecordingRules"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceId",
+        "Tag",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UninstallManagedPrometheus": {
+      "required": [
+        "RegionId",
+        "ClusterType"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UninstallManagedPrometheus"
+    },
+    "UninstallPromCluster": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UninstallPromCluster"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateAlertContact": {
+      "required": [
+        "RegionId",
+        "ContactId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAlertContact"
+    },
+    "UpdateAlertContactGroup": {
+      "required": [
+        "ContactGroupName",
+        "RegionId",
+        "ContactGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAlertContactGroup"
+    },
+    "UpdateAlertRule": {
+      "required": [
+        "RegionId",
+        "TemplageAlertConfig",
+        "AlertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update an alert rule for monitoring"
+    },
+    "UpdateDispatchRule": {
+      "required": [
+        "DispatchRule",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDispatchRule"
+    },
+    "UpdateEnvCustomJob": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "CustomJobName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateEnvCustomJob"
+    },
+    "UpdateEnvDropMetricsRule": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "DropMetrics"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateEnvDropMetricsRule"
+    },
+    "UpdateEnvPodMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "Namespace",
+        "PodMonitorName",
+        "ConfigYaml"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateEnvPodMonitor"
+    },
+    "UpdateEnvServiceMonitor": {
+      "required": [
+        "RegionId",
+        "EnvironmentId",
+        "Namespace",
+        "ServiceMonitorName",
+        "ConfigYaml"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateEnvServiceMonitor"
+    },
+    "UpdateEnvironment": {
+      "required": [
+        "RegionId",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateEnvironment"
+    },
+    "UpdateGrafanaWorkspace": {
+      "required": [
+        "RegionId",
+        "GrafanaWorkspaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGrafanaWorkspace"
+    },
+    "UpdateGrafanaWorkspaceVersion": {
+      "required": [
+        "RegionId",
+        "GrafanaWorkspaceId",
+        "GrafanaVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGrafanaWorkspaceVersion"
+    },
+    "UpdateIntegration": {
+      "required": [
+        "IntegrationId",
+        "IntegrationName",
+        "IntegrationProductType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateIntegration"
+    },
+    "UpdateMetricDrop": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UpdateMetricDrop"
+    },
+    "UpdatePrometheusAlertRule": {
+      "required": [
+        "RegionId",
+        "AlertName",
+        "ClusterId",
+        "Expression",
+        "Duration",
+        "Message",
+        "AlertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePrometheusAlertRule"
+    },
+    "UpdatePrometheusGlobalView": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "SubClustersJson",
+        "AllSubClustersSuccess"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UpdatePrometheusGlobalView"
+    },
+    "UpdatePrometheusInstance": {
+      "required": [
+        "RegionId",
+        "ClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePrometheusInstance"
+    },
+    "UpdatePrometheusIntegration": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "Param",
+        "IntegrationType"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UpdatePrometheusIntegration"
+    },
+    "UpdatePrometheusMonitoring": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "MonitoringName",
+        "Type",
+        "ConfigYaml"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UpdatePrometheusMonitoring"
+    },
+    "UpdatePrometheusMonitoringStatus": {
+      "required": [
+        "RegionId",
+        "ClusterId",
+        "MonitoringName",
+        "Type",
+        "Status"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UpdatePrometheusMonitoringStatus"
+    },
+    "UpdateRumApp": {
+      "required": [
+        "Pid",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRumApp"
+    },
+    "UpdateRumFileStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRumFileStatus"
+    },
+    "UpdateTimingSyntheticTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateTimingSyntheticTask"
+    },
+    "UpdateWebhook": {
+      "required": [
+        "ContactName",
+        "Method",
+        "Url",
+        "RegionId",
+        "ContactId",
+        "Body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateWebhook"
+    },
+    "UpgradeAddonRelease": {
+      "required": [
+        "AddonVersion",
+        "Values",
+        "ReleaseName",
+        "EnvironmentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeAddonRelease"
+    },
+    "UpgradeEnvironmentFeature": {
+      "required": [
+        "EnvironmentId",
+        "FeatureName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeEnvironmentFeature"
+    },
+    "Upload": {
+      "required": [
+        "RegionId",
+        "Pid",
+        "FileName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Upload"
+    }
+  }
+}

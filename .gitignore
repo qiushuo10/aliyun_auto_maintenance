@@ -1,0 +1,10 @@
+node_modules/
+out/
+dist/
+.tmp/
+output/
+*.db
+*.sqlite*
+.DS_Store
+.aliy-agent/
+.claude/

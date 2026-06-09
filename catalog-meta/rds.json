@@ -1,0 +1,3243 @@
+{
+  "snapshotVersion": 1,
+  "product": "rds",
+  "openApiProduct": "Rds",
+  "version": "2014-08-15",
+  "source": "https://api.aliyun.com/meta/v1/products/Rds/versions/2014-08-15/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:55.076Z",
+  "actions": {
+    "ActivateMigrationTargetInstance": {
+      "required": [
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ActivateMigrationTargetInstance"
+    },
+    "AddTagsToResource": {
+      "required": [
+        "RegionId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddTagsToResource"
+    },
+    "AllocateInstancePublicConnection": {
+      "required": [
+        "DBInstanceId",
+        "ConnectionStringPrefix",
+        "Port"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateInstancePublicConnection"
+    },
+    "AllocateReadWriteSplittingConnection": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateReadWriteSplittingConnection"
+    },
+    "AssociateEipAddressWithRCInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateEipAddressWithRCInstance"
+    },
+    "AttachRCDisk": {
+      "required": [
+        "InstanceId",
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Mount a data disk or system disk to an RDS Custom instance"
+    },
+    "AttachRCInstances": {
+      "required": [
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachRCInstances"
+    },
+    "AttachWhitelistTemplateToInstance": {
+      "required": [
+        "TemplateId",
+        "InsName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachWhitelistTemplateToInstance"
+    },
+    "AuthorizeBackupEncryption": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Validate backup encryption"
+    },
+    "AuthorizeRCSecurityGroupPermission": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AuthorizeRCSecurityGroupPermission"
+    },
+    "CalculateDBInstanceWeight": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CalculateDBInstanceWeight"
+    },
+    "CancelActiveOperationTasks": {
+      "required": [
+        "Ids"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelActiveOperationTasks"
+    },
+    "CheckAccountNameAvailable": {
+      "required": [
+        "DBInstanceId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckAccountNameAvailable"
+    },
+    "CheckBackupEncryptionAuthorized": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Validation Results for Backup Encryption"
+    },
+    "CheckCloudResourceAuthorized": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckCloudResourceAuthorized"
+    },
+    "CheckCreateDdrDBInstance": {
+      "required": [
+        "RegionId",
+        "Engine",
+        "EngineVersion",
+        "DBInstanceClass",
+        "DBInstanceStorage",
+        "RestoreType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckCreateDdrDBInstance"
+    },
+    "CheckDBNameAvailable": {
+      "required": [
+        "DBInstanceId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckDBNameAvailable"
+    },
+    "CheckInstanceExist": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query whether an instance exists"
+    },
+    "CheckRegionSupportBackupEncryption": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Check whether the instance supports backup encryption"
+    },
+    "CheckServiceLinkedRole": {
+      "required": [
+        "RegionId",
+        "ServiceLinkedRole"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckServiceLinkedRole"
+    },
+    "CloneDBInstance": {
+      "required": [
+        "PayType",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Restore Data (Clone Instance)"
+    },
+    "CloneParameterGroup": {
+      "required": [
+        "RegionId",
+        "TargetRegionId",
+        "ParameterGroupId",
+        "ParameterGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CloneParameterGroup"
+    },
+    "ConfirmNotify": {
+      "required": [
+        "Confirmor",
+        "NotifyIdList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfirmNotify"
+    },
+    "CopyDatabase": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CopyDatabase"
+    },
+    "CopyDatabaseBetweenInstances": {
+      "required": [
+        "DBInstanceId",
+        "TargetDBInstanceId",
+        "DbNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CopyDatabaseBetweenInstances"
+    },
+    "CreateAccount": {
+      "required": [
+        "DBInstanceId",
+        "AccountName",
+        "AccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccount"
+    },
+    "CreateBackup": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a Backup Set for an RDS Instance"
+    },
+    "CreateCloudMigrationPrecheckTask": {
+      "required": [
+        "DBInstanceName",
+        "SourceIpAddress",
+        "SourcePort",
+        "SourceAccount",
+        "SourcePassword",
+        "SourceCategory"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCloudMigrationPrecheckTask"
+    },
+    "CreateCloudMigrationTask": {
+      "required": [
+        "DBInstanceName",
+        "SourceIpAddress",
+        "SourcePort",
+        "SourceAccount",
+        "SourcePassword",
+        "SourceCategory"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCloudMigrationTask"
+    },
+    "CreateDBInstance": {
+      "required": [
+        "RegionId",
+        "Engine",
+        "EngineVersion",
+        "DBInstanceClass",
+        "DBInstanceStorage",
+        "DBInstanceNetType",
+        "SecurityIPList",
+        "PayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an RDS instance"
+    },
+    "CreateDBInstanceEndpoint": {
+      "required": [
+        "DBInstanceId",
+        "VpcId",
+        "VSwitchId",
+        "ConnectionStringPrefix",
+        "Port",
+        "DBInstanceEndpointType",
+        "NodeItems"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBInstanceEndpoint"
+    },
+    "CreateDBInstanceEndpointAddress": {
+      "required": [
+        "DBInstanceId",
+        "DBInstanceEndpointId",
+        "ConnectionStringPrefix",
+        "Port",
+        "IpType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBInstanceEndpointAddress"
+    },
+    "CreateDBInstanceForRebuild": {
+      "required": [
+        "RegionId",
+        "DBInstanceId",
+        "PayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBInstanceForRebuild"
+    },
+    "CreateDBInstanceReplication": {
+      "required": [
+        "RegionId",
+        "DbInstanceId",
+        "MasterHost",
+        "MasterPort",
+        "MasterUser",
+        "MasterPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create replication channel"
+    },
+    "CreateDBInstanceSecurityGroupRule": {
+      "required": [
+        "DBInstanceId",
+        "PortRange"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBInstanceSecurityGroupRule"
+    },
+    "CreateDBNodes": {
+      "required": [
+        "DBInstanceId",
+        "DBNode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBNodes"
+    },
+    "CreateDBProxyEndpointAddress": {
+      "required": [
+        "DBInstanceId",
+        "DBProxyEndpointId",
+        "ConnectionStringPrefix",
+        "DBProxyConnectStringNetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBProxyEndpointAddress"
+    },
+    "CreateDatabase": {
+      "required": [
+        "DBInstanceId",
+        "DBName",
+        "CharacterSetName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDatabase"
+    },
+    "CreateDdrInstance": {
+      "required": [
+        "RegionId",
+        "Engine",
+        "EngineVersion",
+        "DBInstanceNetType",
+        "SecurityIPList",
+        "PayType",
+        "RestoreType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDdrInstance"
+    },
+    "CreateGADInstance": {
+      "required": [
+        "CentralRegionId",
+        "CentralDBInstanceId",
+        "DBList",
+        "UnitNode",
+        "CentralRdsDtsAdminAccount",
+        "CentralRdsDtsAdminPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGADInstance"
+    },
+    "CreateGadInstanceMember": {
+      "required": [
+        "CentralRegionId",
+        "CentralDBInstanceId",
+        "GadInstanceId",
+        "UnitNode",
+        "CentralRdsDtsAdminAccount",
+        "CentralRdsDtsAdminPassword",
+        "DBList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGadInstanceMember"
+    },
+    "CreateImportTask": {
+      "required": [
+        "RegionId",
+        "Host",
+        "Port",
+        "StreamPort",
+        "User",
+        "Password",
+        "DbInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a Data Import Job"
+    },
+    "CreateMaskingRules": {
+      "required": [
+        "RuleName",
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an Encryption or Desensitization Rule"
+    },
+    "CreateMigrateTask": {
+      "required": [
+        "DBInstanceId",
+        "DBName",
+        "BackupMode",
+        "IsOnlineDB"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMigrateTask"
+    },
+    "CreateOnlineDatabaseTask": {
+      "required": [
+        "DBInstanceId",
+        "DBName",
+        "MigrateTaskId",
+        "CheckDBMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOnlineDatabaseTask"
+    },
+    "CreateOrderForDeleteDBNodes": {
+      "required": [
+        "CommodityCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrderForDeleteDBNodes"
+    },
+    "CreateParameterGroup": {
+      "required": [
+        "RegionId",
+        "ParameterGroupName",
+        "Engine",
+        "EngineVersion",
+        "Parameters"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateParameterGroup"
+    },
+    "CreatePostgresExtensions": {
+      "required": [
+        "DBInstanceId",
+        "DBNames",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePostgresExtensions"
+    },
+    "CreateRCDisk": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRCDisk"
+    },
+    "CreateRCImage": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRCImage"
+    },
+    "CreateRCNodePool": {
+      "required": [
+        "RegionId",
+        "InstanceType",
+        "VSwitchId",
+        "ClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRCNodePool"
+    },
+    "CreateRCSnapshot": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Snapshot"
+    },
+    "CreateReadOnlyDBInstance": {
+      "required": [
+        "RegionId",
+        "ZoneId",
+        "DBInstanceId",
+        "DBInstanceClass",
+        "DBInstanceStorage",
+        "EngineVersion",
+        "PayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a Read-Only Instance"
+    },
+    "CreateReplicationLink": {
+      "required": [
+        "DBInstanceId",
+        "DryRun"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateReplicationLink"
+    },
+    "CreateSecret": {
+      "required": [
+        "RegionId",
+        "Username",
+        "Password",
+        "DbInstanceId",
+        "ResourceGroupId",
+        "Engine"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSecret"
+    },
+    "CreateServiceLinkedRole": {
+      "required": [
+        "RegionId",
+        "ServiceLinkedRole"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateServiceLinkedRole"
+    },
+    "CreateTempDBInstance": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTempDBInstance"
+    },
+    "CreateYouhuiForOrder": {
+      "required": [
+        "ActivityId",
+        "PromotionId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Claim Coupon"
+    },
+    "DeleteADSetting": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteADSetting"
+    },
+    "DeleteAccount": {
+      "required": [
+        "DBInstanceId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccount"
+    },
+    "DeleteBackup": {
+      "required": [
+        "DBInstanceId",
+        "BackupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBackup"
+    },
+    "DeleteBackupFile": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBackupFile"
+    },
+    "DeleteDBInstance": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBInstance"
+    },
+    "DeleteDBInstanceEndpoint": {
+      "required": [
+        "DBInstanceId",
+        "DBInstanceEndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBInstanceEndpoint"
+    },
+    "DeleteDBInstanceEndpointAddress": {
+      "required": [
+        "DBInstanceId",
+        "DBInstanceEndpointId",
+        "ConnectionString"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBInstanceEndpointAddress"
+    },
+    "DeleteDBInstanceReplication": {
+      "required": [
+        "RegionId",
+        "DbInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete replication channel"
+    },
+    "DeleteDBInstanceSecurityGroupRule": {
+      "required": [
+        "DBInstanceId",
+        "SecurityGroupRuleIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBInstanceSecurityGroupRule"
+    },
+    "DeleteDBNodes": {
+      "required": [
+        "DBInstanceId",
+        "DBNodeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBNodes"
+    },
+    "DeleteDBProxyEndpointAddress": {
+      "required": [
+        "DBInstanceId",
+        "DBProxyEndpointId",
+        "DBProxyConnectStringNetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBProxyEndpointAddress"
+    },
+    "DeleteDatabase": {
+      "required": [
+        "DBInstanceId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDatabase"
+    },
+    "DeleteGadInstance": {
+      "required": [
+        "GadInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGadInstance"
+    },
+    "DeleteMaskingRules": {
+      "required": [
+        "RuleName",
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete an encryption or desensitization rule"
+    },
+    "DeleteParameterGroup": {
+      "required": [
+        "RegionId",
+        "ParameterGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteParameterGroup"
+    },
+    "DeleteParameterTimedScheduleTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a Scheduled Task for Parameter Modification"
+    },
+    "DeletePostgresExtensions": {
+      "required": [
+        "DBInstanceId",
+        "Extensions",
+        "DBNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePostgresExtensions"
+    },
+    "DeleteRCClusterNodes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRCClusterNodes"
+    },
+    "DeleteRCDeploymentSet": {
+      "required": [
+        "DeploymentSetId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRCDeploymentSet"
+    },
+    "DeleteRCDisk": {
+      "required": [
+        "DiskId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRCDisk"
+    },
+    "DeleteRCInstances": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRCInstances"
+    },
+    "DeleteRCSnapshot": {
+      "required": [
+        "SnapshotId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRCSnapshot"
+    },
+    "DeleteReplicationLink": {
+      "required": [
+        "DBInstanceId",
+        "PromoteToMaster"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteReplicationLink"
+    },
+    "DeleteSecret": {
+      "required": [
+        "RegionId",
+        "Engine"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSecret"
+    },
+    "DeleteSlot": {
+      "required": [
+        "DBInstanceId",
+        "SlotName",
+        "SlotStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSlot"
+    },
+    "DeleteUserBackupFile": {
+      "required": [
+        "BackupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUserBackupFile"
+    },
+    "DescibeImportsFromDatabase": {
+      "required": [
+        "DBInstanceId",
+        "Engine",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescibeImportsFromDatabase"
+    },
+    "DescribeADInfo": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeADInfo"
+    },
+    "DescribeAccountMaskingPrivilege": {
+      "required": [
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query account encryption or data masking permissions"
+    },
+    "DescribeAccounts": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccounts"
+    },
+    "DescribeActionEventPolicy": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActionEventPolicy"
+    },
+    "DescribeActiveOperationMaintainConf": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query proactive O\\&M configuration"
+    },
+    "DescribeActiveOperationTasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActiveOperationTasks"
+    },
+    "DescribeAllWhitelistTemplate": {
+      "required": [
+        "MaxRecordsPerPage",
+        "PageNumbers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAllWhitelistTemplate"
+    },
+    "DescribeAnalyticdbByPrimaryDBInstance": {
+      "required": [
+        "RegionId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAnalyticdbByPrimaryDBInstance"
+    },
+    "DescribeAvailableClasses": {
+      "required": [
+        "RegionId",
+        "ZoneId",
+        "Engine",
+        "EngineVersion",
+        "DBInstanceStorageType",
+        "Category"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableClasses"
+    },
+    "DescribeAvailableCrossRegion": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableCrossRegion"
+    },
+    "DescribeAvailableMetrics": {
+      "required": [
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableMetrics"
+    },
+    "DescribeAvailableRecoveryTime": {
+      "required": [
+        "CrossBackupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableRecoveryTime"
+    },
+    "DescribeAvailableZones": {
+      "required": [
+        "RegionId",
+        "Engine"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableZones"
+    },
+    "DescribeBackupDatabase": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackupDatabase"
+    },
+    "DescribeBackupPolicy": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackupPolicy"
+    },
+    "DescribeBackupTasks": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackupTasks"
+    },
+    "DescribeBackups": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "View the list of RDS instance backup sets"
+    },
+    "DescribeBinlogFiles": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBinlogFiles"
+    },
+    "DescribeCharacterSetName": {
+      "required": [
+        "Engine",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCharacterSetName"
+    },
+    "DescribeClassDetails": {
+      "required": [
+        "RegionId",
+        "CommodityCode",
+        "ClassCode",
+        "EngineVersion",
+        "Engine"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeClassDetails"
+    },
+    "DescribeCloudMigrationPrecheckResult": {
+      "required": [
+        "DBInstanceName",
+        "PageSize",
+        "PageNumber"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudMigrationPrecheckResult"
+    },
+    "DescribeCloudMigrationResult": {
+      "required": [
+        "DBInstanceName",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudMigrationResult"
+    },
+    "DescribeCollationTimeZones": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCollationTimeZones"
+    },
+    "DescribeComputeBurstConfig": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeComputeBurstConfig"
+    },
+    "DescribeCrossBackupMetaList": {
+      "required": [
+        "BackupSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCrossBackupMetaList"
+    },
+    "DescribeCrossRegionBackupDBInstance": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCrossRegionBackupDBInstance"
+    },
+    "DescribeCrossRegionBackups": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCrossRegionBackups"
+    },
+    "DescribeCrossRegionLogBackupFiles": {
+      "required": [
+        "DBInstanceId",
+        "RegionId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCrossRegionLogBackupFiles"
+    },
+    "DescribeCurrentModifyOrder": {
+      "required": [
+        "RegionId",
+        "DbInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the latest upgrade/downgrade order for an instance"
+    },
+    "DescribeCustinsResourceInfo": {
+      "required": [
+        "DBInstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query instance resource usage"
+    },
+    "DescribeDBInstanceAttribute": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query instance details"
+    },
+    "DescribeDBInstanceByTags": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceByTags"
+    },
+    "DescribeDBInstanceCLS": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Column Encryption Algorithm Configuration"
+    },
+    "DescribeDBInstanceConnectivity": {
+      "required": [
+        "DbInstanceName",
+        "SourceIpAddress"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query database instance connection"
+    },
+    "DescribeDBInstanceDetail": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the details of an instance"
+    },
+    "DescribeDBInstanceEncryptionKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceEncryptionKey"
+    },
+    "DescribeDBInstanceEndpoints": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceEndpoints"
+    },
+    "DescribeDBInstanceHAConfig": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceHAConfig"
+    },
+    "DescribeDBInstanceIPArrayList": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceIPArrayList"
+    },
+    "DescribeDBInstanceIpHostname": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceIpHostname"
+    },
+    "DescribeDBInstanceMetrics": {
+      "required": [
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceMetrics"
+    },
+    "DescribeDBInstanceMonitor": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceMonitor"
+    },
+    "DescribeDBInstanceNetInfo": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceNetInfo"
+    },
+    "DescribeDBInstanceNetInfoForChannel": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceNetInfoForChannel"
+    },
+    "DescribeDBInstancePerformance": {
+      "required": [
+        "DBInstanceId",
+        "Key",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstancePerformance"
+    },
+    "DescribeDBInstancePromoteActivity": {
+      "required": [
+        "DbInstanceName",
+        "AliUid"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeDBInstancePromoteActivity"
+    },
+    "DescribeDBInstanceProxyConfiguration": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceProxyConfiguration"
+    },
+    "DescribeDBInstanceReplication": {
+      "required": [
+        "RegionId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Instance Replication Status"
+    },
+    "DescribeDBInstanceSSL": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceSSL"
+    },
+    "DescribeDBInstanceSecurityGroupRule": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceSecurityGroupRule"
+    },
+    "DescribeDBInstanceSwitchLog": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceSwitchLog"
+    },
+    "DescribeDBInstanceTDE": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstanceTDE"
+    },
+    "DescribeDBInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Instance List"
+    },
+    "DescribeDBInstancesAsCsv": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeDBInstancesAsCsv"
+    },
+    "DescribeDBInstancesByExpireTime": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstancesByExpireTime"
+    },
+    "DescribeDBInstancesByPerformance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query instances base on performance"
+    },
+    "DescribeDBInstancesForClone": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeDBInstancesForClone"
+    },
+    "DescribeDBMiniEngineVersions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBMiniEngineVersions"
+    },
+    "DescribeDBProxy": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query PolarProxy details"
+    },
+    "DescribeDBProxyEndpoint": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBProxyEndpoint"
+    },
+    "DescribeDBProxyPerformance": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime",
+        "RegionId",
+        "MetricsName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Performance Data of PolarProxy"
+    },
+    "DescribeDTCSecurityIpHostsForSQLServer": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDTCSecurityIpHostsForSQLServer"
+    },
+    "DescribeDatabases": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDatabases"
+    },
+    "DescribeDedicatedHostGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDedicatedHostGroups"
+    },
+    "DescribeDedicatedHosts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDedicatedHosts"
+    },
+    "DescribeDetachedBackups": {
+      "required": [
+        "Region"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDetachedBackups"
+    },
+    "DescribeErrorLogs": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "View Error Log"
+    },
+    "DescribeEvents": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEvents"
+    },
+    "DescribeGadInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGadInstances"
+    },
+    "DescribeHADiagnoseConfig": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHADiagnoseConfig"
+    },
+    "DescribeHASwitchConfig": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHASwitchConfig"
+    },
+    "DescribeHistoryEvents": {
+      "required": [
+        "FromStartTime",
+        "ToStartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHistoryEvents"
+    },
+    "DescribeHistoryEventsStat": {
+      "required": [
+        "RegionId",
+        "ArchiveStatus",
+        "ToStartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHistoryEventsStat"
+    },
+    "DescribeHistoryTasks": {
+      "required": [
+        "FromStartTime",
+        "ToStartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHistoryTasks"
+    },
+    "DescribeHistoryTasksStat": {
+      "required": [
+        "RegionId",
+        "FromStartTime",
+        "ToStartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHistoryTasksStat"
+    },
+    "DescribeHostGroupElasticStrategyParameters": {
+      "required": [
+        "RegionId",
+        "DedicatedHostGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the elasticity policy configuration of a host group"
+    },
+    "DescribeHostWebShell": {
+      "required": [
+        "DBInstanceId",
+        "RegionID",
+        "HostName",
+        "AccountName",
+        "AccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHostWebShell"
+    },
+    "DescribeImportTask": {
+      "required": [
+        "RegionId",
+        "DBInstanceId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query import job details"
+    },
+    "DescribeImportTaskValidation": {
+      "required": [
+        "TaskId",
+        "DbInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Queries the Details of a Precheck for an Import Job"
+    },
+    "DescribeInstanceAutoRenewalAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceAutoRenewalAttribute"
+    },
+    "DescribeInstanceCrossBackupPolicy": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceCrossBackupPolicy"
+    },
+    "DescribeInstanceKeywords": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceKeywords"
+    },
+    "DescribeInstanceLinkedWhitelistTemplate": {
+      "required": [
+        "InsName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceLinkedWhitelistTemplate"
+    },
+    "DescribeKmsAssociateResources": {
+      "required": [
+        "KmsResourceUser",
+        "KmsResourceType",
+        "KmsResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeKmsAssociateResources"
+    },
+    "DescribeLocalAvailableRecoveryTime": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLocalAvailableRecoveryTime"
+    },
+    "DescribeLogBackupFiles": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLogBackupFiles"
+    },
+    "DescribeMarketingActivity": {
+      "required": [
+        "RegionId",
+        "UpgradeCode",
+        "AliUid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Marketing Campaigns"
+    },
+    "DescribeMaskingRules": {
+      "required": [
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query encryption or desensitization rules"
+    },
+    "DescribeMetaList": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetaList"
+    },
+    "DescribeMigrateTaskById": {
+      "required": [
+        "DBInstanceId",
+        "MigrateTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMigrateTaskById"
+    },
+    "DescribeMigrateTasks": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMigrateTasks"
+    },
+    "DescribeModifyPGHbaConfigLog": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeModifyPGHbaConfigLog"
+    },
+    "DescribeModifyParameterLog": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeModifyParameterLog"
+    },
+    "DescribeOssDownloads": {
+      "required": [
+        "DBInstanceId",
+        "MigrateTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOssDownloads"
+    },
+    "DescribePGHbaConfig": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePGHbaConfig"
+    },
+    "DescribeParameterGroup": {
+      "required": [
+        "ParameterGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeParameterGroup"
+    },
+    "DescribeParameterGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeParameterGroups"
+    },
+    "DescribeParameterTemplates": {
+      "required": [
+        "Engine",
+        "EngineVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeParameterTemplates"
+    },
+    "DescribeParameterTimedScheduleTask": {
+      "required": [
+        "DbInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Scheduled Task for Modifying Instance Parameters"
+    },
+    "DescribeParameters": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeParameters"
+    },
+    "DescribePostgresExtensions": {
+      "required": [
+        "DBInstanceId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePostgresExtensions"
+    },
+    "DescribePrice": {
+      "required": [
+        "Engine",
+        "EngineVersion",
+        "DBInstanceClass",
+        "DBInstanceStorage",
+        "Quantity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrice"
+    },
+    "DescribeQuickSaleConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query quick sale Product configuration"
+    },
+    "DescribeRCClusterConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRCClusterConfig"
+    },
+    "DescribeRCDisks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query disk information of RDS Custom instances"
+    },
+    "DescribeRCImageList": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of custom images that can be used to create an RDS Custom instance"
+    },
+    "DescribeRCInstanceAttribute": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query all property information of a single RDS Custom instance"
+    },
+    "DescribeRCInstanceDdosCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRCInstanceDdosCount"
+    },
+    "DescribeRCInstanceIpAddress": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRCInstanceIpAddress"
+    },
+    "DescribeRCInstanceVncUrl": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRCInstanceVncUrl"
+    },
+    "DescribeRCInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of RDS Custom instances"
+    },
+    "DescribeRCMetricList": {
+      "required": [
+        "MetricName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "View Monitoring Data of an RDS Custom Instance"
+    },
+    "DescribeRCNodePool": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRCNodePool"
+    },
+    "DescribeRCSnapshots": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query snapshot list"
+    },
+    "DescribeRdsResourceSettings": {
+      "required": [
+        "ResourceNiche"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeRdsResourceSettings"
+    },
+    "DescribeReadDBInstanceDelay": {
+      "required": [
+        "DBInstanceId",
+        "ReadInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeReadDBInstanceDelay"
+    },
+    "DescribeRegionInfos": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegionInfos"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeRenewalPrice": {
+      "required": [
+        "DBInstanceId",
+        "UsedTime",
+        "TimeType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRenewalPrice"
+    },
+    "DescribeReplicationLinkLogs": {
+      "required": [
+        "DBInstanceId",
+        "TaskType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeReplicationLinkLogs"
+    },
+    "DescribeResourceDetails": {
+      "required": [
+        "RegionId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query resource details"
+    },
+    "DescribeResourceUsage": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourceUsage"
+    },
+    "DescribeSQLCollectorPolicy": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSQLCollectorPolicy"
+    },
+    "DescribeSQLCollectorRetention": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSQLCollectorRetention"
+    },
+    "DescribeSQLLogFiles": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSQLLogFiles"
+    },
+    "DescribeSQLLogRecords": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSQLLogRecords"
+    },
+    "DescribeSQLLogReportList": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSQLLogReportList"
+    },
+    "DescribeSQLServerUpgradeVersions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query SQL Server upgradable versions"
+    },
+    "DescribeSecrets": {
+      "required": [
+        "RegionId",
+        "Engine",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecrets"
+    },
+    "DescribeSecurityGroupConfiguration": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecurityGroupConfiguration"
+    },
+    "DescribeSlots": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlots"
+    },
+    "DescribeSlowLogRecords": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "View Slow Query Log Details"
+    },
+    "DescribeSlowLogs": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlowLogs"
+    },
+    "DescribeSupportOnlineResizeDisk": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSupportOnlineResizeDisk"
+    },
+    "DescribeTags": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTags"
+    },
+    "DescribeTasks": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTasks"
+    },
+    "DescribeUpgradeMajorVersionPrecheckTask": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUpgradeMajorVersionPrecheckTask"
+    },
+    "DescribeUpgradeMajorVersionTasks": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query major version upgrade jobs for RDS PostgreSQL instances"
+    },
+    "DescribeVSwitches": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVSwitches"
+    },
+    "DescribeVpcs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the virtual private cloud (VPC) list"
+    },
+    "DescribeWhitelistTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWhitelistTemplate"
+    },
+    "DescribeWhitelistTemplateLinkedInstance": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWhitelistTemplateLinkedInstance"
+    },
+    "DestroyDBInstance": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DestroyDBInstance"
+    },
+    "DetachGadInstanceMember": {
+      "required": [
+        "GadInstanceName",
+        "MemberInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachGadInstanceMember"
+    },
+    "DetachRCDisk": {
+      "required": [
+        "InstanceId",
+        "DiskId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachRCDisk"
+    },
+    "DetachWhitelistTemplateToInstance": {
+      "required": [
+        "TemplateId",
+        "InsName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachWhitelistTemplateToInstance"
+    },
+    "EnableBackupEncryption": {
+      "required": [
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Enable backup encryption"
+    },
+    "EvaluateLocalExtendDisk": {
+      "required": [
+        "RegionId",
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Evaluate local disk extension"
+    },
+    "GetDBInstanceTopology": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDBInstanceTopology"
+    },
+    "GetDbProxyInstanceSsl": {
+      "required": [
+        "DbInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDbProxyInstanceSsl"
+    },
+    "GrantAccountPrivilege": {
+      "required": [
+        "DBInstanceId",
+        "AccountName",
+        "DBName",
+        "AccountPrivilege"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Grant Database Access Permissions to an Account"
+    },
+    "GrantOperatorPermission": {
+      "required": [
+        "DBInstanceId",
+        "ExpiredTime",
+        "Privileges"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GrantOperatorPermission"
+    },
+    "ImportUserBackupFile": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Import User Backup"
+    },
+    "ListClasses": {
+      "required": [
+        "CommodityCode",
+        "OrderType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListClasses"
+    },
+    "ListImportTasks": {
+      "required": [
+        "RegionId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List Data Import Jobs"
+    },
+    "ListTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListUserBackupFiles": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUserBackupFiles"
+    },
+    "LockAccount": {
+      "required": [
+        "DBInstanceId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "LockAccount"
+    },
+    "MigrateConnectionToOtherZone": {
+      "required": [
+        "DBInstanceId",
+        "ConnectionString",
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MigrateConnectionToOtherZone"
+    },
+    "MigrateDBInstance": {
+      "required": [
+        "DedicatedHostGroupId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MigrateDBInstance"
+    },
+    "MigrateDBNodes": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MigrateDBNodes"
+    },
+    "MigrateSecurityIPMode": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MigrateSecurityIPMode"
+    },
+    "MigrateToOtherZone": {
+      "required": [
+        "DBInstanceId",
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MigrateToOtherZone"
+    },
+    "ModifyADInfo": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyADInfo"
+    },
+    "ModifyAccountCheckPolicy": {
+      "required": [
+        "DBInstanceId",
+        "AccountName",
+        "CheckPolicy"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountCheckPolicy"
+    },
+    "ModifyAccountDescription": {
+      "required": [
+        "DBInstanceId",
+        "AccountName",
+        "AccountDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountDescription"
+    },
+    "ModifyAccountMaskingPrivilege": {
+      "required": [
+        "UserName",
+        "Privilege",
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Account Masking Permission"
+    },
+    "ModifyAccountSecurityPolicy": {
+      "required": [
+        "DBInstanceId",
+        "GroupPolicy"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountSecurityPolicy"
+    },
+    "ModifyActionEventPolicy": {
+      "required": [
+        "RegionId",
+        "EnableEventLog"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyActionEventPolicy"
+    },
+    "ModifyActiveOperationTasks": {
+      "required": [
+        "Ids",
+        "SwitchTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyActiveOperationTasks"
+    },
+    "ModifyBackupPolicy": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBackupPolicy"
+    },
+    "ModifyBackupSetExpireTime": {
+      "required": [
+        "DBInstanceId",
+        "BackupId",
+        "ExpectExpireTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBackupSetExpireTime"
+    },
+    "ModifyCollationTimeZone": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCollationTimeZone"
+    },
+    "ModifyComputeBurstConfig": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyComputeBurstConfig"
+    },
+    "ModifyCustinsResource": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Instance Resources"
+    },
+    "ModifyDBDescription": {
+      "required": [
+        "DBInstanceId",
+        "DBName",
+        "DBDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBDescription"
+    },
+    "ModifyDBInstance": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Instance"
+    },
+    "ModifyDBInstanceAutoUpgradeMinorVersion": {
+      "required": [
+        "DBInstanceId",
+        "AutoUpgradeMinorVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceAutoUpgradeMinorVersion"
+    },
+    "ModifyDBInstanceCLS": {
+      "required": [
+        "DBInstanceId",
+        "EncryptionStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Column Encryption Algorithm Configuration"
+    },
+    "ModifyDBInstanceConfig": {
+      "required": [
+        "DBInstanceId",
+        "ConfigName",
+        "ConfigValue"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceConfig"
+    },
+    "ModifyDBInstanceConnectionString": {
+      "required": [
+        "DBInstanceId",
+        "CurrentConnectionString",
+        "ConnectionStringPrefix",
+        "Port"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Manage the connection address and port of an instance"
+    },
+    "ModifyDBInstanceDelayedReplicationTime": {
+      "required": [
+        "DBInstanceId",
+        "ReadSQLReplicationTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceDelayedReplicationTime"
+    },
+    "ModifyDBInstanceDeletionProtection": {
+      "required": [
+        "DBInstanceId",
+        "DeletionProtection"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceDeletionProtection"
+    },
+    "ModifyDBInstanceDescription": {
+      "required": [
+        "DBInstanceId",
+        "DBInstanceDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the name of an instance"
+    },
+    "ModifyDBInstanceEndpoint": {
+      "required": [
+        "DBInstanceId",
+        "DBInstanceEndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceEndpoint"
+    },
+    "ModifyDBInstanceEndpointAddress": {
+      "required": [
+        "DBInstanceId",
+        "DBInstanceEndpointId",
+        "ConnectionString"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceEndpointAddress"
+    },
+    "ModifyDBInstanceHAConfig": {
+      "required": [
+        "SyncMode",
+        "HAMode",
+        "DbInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceHAConfig"
+    },
+    "ModifyDBInstanceMaintainTime": {
+      "required": [
+        "DBInstanceId",
+        "MaintainTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceMaintainTime"
+    },
+    "ModifyDBInstanceMetrics": {
+      "required": [
+        "DBInstanceName",
+        "Scope",
+        "MetricsConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceMetrics"
+    },
+    "ModifyDBInstanceMonitor": {
+      "required": [
+        "DBInstanceId",
+        "Period"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceMonitor"
+    },
+    "ModifyDBInstanceNetworkExpireTime": {
+      "required": [
+        "DBInstanceId",
+        "ConnectionString",
+        "ClassicExpiredDays"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceNetworkExpireTime"
+    },
+    "ModifyDBInstanceNetworkType": {
+      "required": [
+        "DBInstanceId",
+        "InstanceNetworkType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceNetworkType"
+    },
+    "ModifyDBInstancePayType": {
+      "required": [
+        "DBInstanceId",
+        "PayType",
+        "Period"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstancePayType"
+    },
+    "ModifyDBInstanceReplicationSwitch": {
+      "required": [
+        "DBInstanceId",
+        "RegionId",
+        "ExternalReplication"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceReplicationSwitch"
+    },
+    "ModifyDBInstanceSSL": {
+      "required": [
+        "DBInstanceId",
+        "ConnectionString"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceSSL"
+    },
+    "ModifyDBInstanceSecurityGroupRule": {
+      "required": [
+        "DBInstanceId",
+        "SecurityGroupRuleId",
+        "PortRange",
+        "IpProtocol",
+        "SourceCidrIp",
+        "Description"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceSecurityGroupRule"
+    },
+    "ModifyDBInstanceSpec": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceSpec"
+    },
+    "ModifyDBInstanceTDE": {
+      "required": [
+        "DBInstanceId",
+        "TDEStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBInstanceTDE"
+    },
+    "ModifyDBInstanceVectorSupportStatus": {
+      "required": [
+        "DBInstanceId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the vector storage toggle for an instance"
+    },
+    "ModifyDBNode": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNode"
+    },
+    "ModifyDBProxy": {
+      "required": [
+        "DBInstanceId",
+        "ConfigDBProxyService"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBProxy"
+    },
+    "ModifyDBProxyEndpoint": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBProxyEndpoint"
+    },
+    "ModifyDBProxyEndpointAddress": {
+      "required": [
+        "DBInstanceId",
+        "DBProxyEndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBProxyEndpointAddress"
+    },
+    "ModifyDBProxyInstance": {
+      "required": [
+        "DBInstanceId",
+        "DBProxyInstanceType",
+        "DBProxyInstanceNum"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBProxyInstance"
+    },
+    "ModifyDTCSecurityIpHostsForSQLServer": {
+      "required": [
+        "DBInstanceId",
+        "SecurityIpHosts",
+        "WhiteListGroupName",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDTCSecurityIpHostsForSQLServer"
+    },
+    "ModifyDasInstanceConfig": {
+      "required": [
+        "DBInstanceId",
+        "StorageAutoScale"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDasInstanceConfig"
+    },
+    "ModifyDatabaseConfig": {
+      "required": [
+        "DBInstanceId",
+        "DBName",
+        "DatabasePropertyName",
+        "DatabasePropertyValue"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDatabaseConfig"
+    },
+    "ModifyDbProxyInstanceSsl": {
+      "required": [
+        "DbInstanceId",
+        "DbProxyEndpointId",
+        "DbProxyConnectString",
+        "DbProxySslEnabled"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDbProxyInstanceSsl"
+    },
+    "ModifyEventInfo": {
+      "required": [
+        "RegionId",
+        "EventId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyEventInfo"
+    },
+    "ModifyHADiagnoseConfig": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHADiagnoseConfig"
+    },
+    "ModifyHASwitchConfig": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHASwitchConfig"
+    },
+    "ModifyImportTask": {
+      "required": [
+        "RegionId",
+        "DBInstanceId",
+        "TaskId",
+        "Operation"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Data Import Job"
+    },
+    "ModifyInstanceAutoRenewalAttribute": {
+      "required": [
+        "RegionId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceAutoRenewalAttribute"
+    },
+    "ModifyInstanceCrossBackupPolicy": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceCrossBackupPolicy"
+    },
+    "ModifyMaskingRules": {
+      "required": [
+        "RuleName",
+        "DBInstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify encryption or desensitization rule"
+    },
+    "ModifyPGHbaConfig": {
+      "required": [
+        "DBInstanceId",
+        "OpsType",
+        "HbaItem"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPGHbaConfig"
+    },
+    "ModifyParameter": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyParameter"
+    },
+    "ModifyParameterGroup": {
+      "required": [
+        "ParameterGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyParameterGroup"
+    },
+    "ModifyParameterTimedScheduleTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Scheduled Task for Parameter Modification"
+    },
+    "ModifyRCDiskAttribute": {
+      "required": [
+        "RegionId",
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify block storage properties"
+    },
+    "ModifyRCInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Upgrade or Decrease the Quota of an RDS Custom Instance"
+    },
+    "ModifyRCInstanceChargeType": {
+      "required": [
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRCInstanceChargeType"
+    },
+    "ModifyRCInstanceDescription": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRCInstanceDescription"
+    },
+    "ModifyReadWriteSplittingConnection": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyReadWriteSplittingConnection"
+    },
+    "ModifyReadonlyInstanceDelayReplicationTime": {
+      "required": [
+        "DBInstanceId",
+        "ReadSQLReplicationTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyReadonlyInstanceDelayReplicationTime"
+    },
+    "ModifyResourceGroup": {
+      "required": [
+        "DBInstanceId",
+        "ResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyResourceGroup"
+    },
+    "ModifySQLCollectorPolicy": {
+      "required": [
+        "DBInstanceId",
+        "SQLCollectorStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySQLCollectorPolicy"
+    },
+    "ModifySQLCollectorRetention": {
+      "required": [
+        "DBInstanceId",
+        "ConfigValue"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySQLCollectorRetention"
+    },
+    "ModifySecurityGroupConfiguration": {
+      "required": [
+        "DBInstanceId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySecurityGroupConfiguration"
+    },
+    "ModifySecurityIps": {
+      "required": [
+        "DBInstanceId",
+        "SecurityIps"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySecurityIps"
+    },
+    "ModifyTaskInfo": {
+      "required": [
+        "RegionId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyTaskInfo"
+    },
+    "ModifyWhitelistTemplate": {
+      "required": [
+        "IpWhitelist"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWhitelistTemplate"
+    },
+    "PreCheckCreateOrderForDeleteDBNodes": {
+      "required": [
+        "CommodityCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Precheck for deleting an instance node"
+    },
+    "PrecheckDuckDBDependency": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PrecheckDuckDBDependency"
+    },
+    "PurgeDBInstanceLog": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PurgeDBInstanceLog"
+    },
+    "QueryNotify": {
+      "required": [
+        "WithConfirmed",
+        "From",
+        "To"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryNotify"
+    },
+    "QueryRecommendByCode": {
+      "required": [
+        "Code"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query RDS Hot Spot Questions"
+    },
+    "RebuildDBInstance": {
+      "required": [
+        "DedicatedHostGroupId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RebuildDBInstance"
+    },
+    "RebuildReplicationLink": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RebuildReplicationLink"
+    },
+    "ReceiveDBInstance": {
+      "required": [
+        "DBInstanceId",
+        "GuardDBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReceiveDBInstance"
+    },
+    "RecoveryDBInstance": {
+      "required": [
+        "DbNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RecoveryDBInstance"
+    },
+    "ReleaseInstanceConnection": {
+      "required": [
+        "DBInstanceId",
+        "CurrentConnectionString",
+        "InstanceNetworkType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseInstanceConnection"
+    },
+    "ReleaseInstancePublicConnection": {
+      "required": [
+        "DBInstanceId",
+        "CurrentConnectionString"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseInstancePublicConnection"
+    },
+    "ReleaseReadWriteSplittingConnection": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseReadWriteSplittingConnection"
+    },
+    "RemoveTagsFromResource": {
+      "required": [
+        "RegionId",
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveTagsFromResource"
+    },
+    "RenewInstance": {
+      "required": [
+        "DBInstanceId",
+        "Period"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewInstance"
+    },
+    "RenewRCInstance": {
+      "required": [
+        "CommodityCode",
+        "RegionId",
+        "UsedTime",
+        "TimeType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Renew an RDS Custom Instance"
+    },
+    "ReplaceRCInstanceSystemDisk": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReplaceRCInstanceSystemDisk"
+    },
+    "ResetAccount": {
+      "required": [
+        "DBInstanceId",
+        "AccountName",
+        "AccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetAccount"
+    },
+    "ResetAccountPassword": {
+      "required": [
+        "DBInstanceId",
+        "AccountName",
+        "AccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetAccountPassword"
+    },
+    "ResizeRCInstanceDisk": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Scale out the storage space of an RDS Custom instance"
+    },
+    "RestartDBInstance": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestartDBInstance"
+    },
+    "RestoreDdrTable": {
+      "required": [
+        "DBInstanceId",
+        "RestoreType",
+        "TableMeta"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestoreDdrTable"
+    },
+    "RestoreTable": {
+      "required": [
+        "DBInstanceId",
+        "TableMeta"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestoreTable"
+    },
+    "RevokeAccountPrivilege": {
+      "required": [
+        "DBInstanceId",
+        "AccountName",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeAccountPrivilege"
+    },
+    "RevokeOperatorPermission": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeOperatorPermission"
+    },
+    "RunRCInstances": {
+      "required": [
+        "RegionId",
+        "InstanceType",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create one or more RDS Custom instances"
+    },
+    "StartDBInstance": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartDBInstance"
+    },
+    "StartRCInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartRCInstance"
+    },
+    "StopDBInstance": {
+      "required": [
+        "DBInstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopDBInstance"
+    },
+    "StopRCInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Stop an RDS Custom instance"
+    },
+    "SwitchDBInstanceHA": {
+      "required": [
+        "DBInstanceId",
+        "NodeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchDBInstanceHA"
+    },
+    "SwitchDBInstanceNetType": {
+      "required": [
+        "DBInstanceId",
+        "ConnectionStringPrefix"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchDBInstanceNetType"
+    },
+    "SwitchDBInstanceVpc": {
+      "required": [
+        "DBInstanceId",
+        "VPCId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchDBInstanceVpc"
+    },
+    "SwitchOverMajorVersionUpgrade": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Major Version Upgrade Switchover"
+    },
+    "SwitchReplicationLink": {
+      "required": [
+        "DBInstanceId",
+        "TargetInstanceName",
+        "TargetInstanceRegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchReplicationLink"
+    },
+    "TagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "TerminateMigrateTask": {
+      "required": [
+        "DBInstanceId",
+        "MigrateTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TerminateMigrateTask"
+    },
+    "TransformDBInstancePayType": {
+      "required": [
+        "DBInstanceId",
+        "PayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TransformDBInstancePayType"
+    },
+    "UnlockAccount": {
+      "required": [
+        "DBInstanceId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnlockAccount"
+    },
+    "UntagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateDBInstanceReplication": {
+      "required": [
+        "RegionId",
+        "DbInstanceId",
+        "Operation"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update replication channel"
+    },
+    "UpdatePostgresExtensions": {
+      "required": [
+        "DBInstanceId",
+        "Extensions",
+        "DBNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePostgresExtensions"
+    },
+    "UpdateUserBackupFile": {
+      "required": [
+        "BackupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateUserBackupFile"
+    },
+    "UpgradeDBInstanceEngineVersion": {
+      "required": [
+        "DBInstanceId",
+        "EngineVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeDBInstanceEngineVersion"
+    },
+    "UpgradeDBInstanceKernelVersion": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeDBInstanceKernelVersion"
+    },
+    "UpgradeDBInstanceMajorVersion": {
+      "required": [
+        "PayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeDBInstanceMajorVersion"
+    },
+    "UpgradeDBInstanceMajorVersionPrecheck": {
+      "required": [
+        "DBInstanceId",
+        "TargetMajorVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Pre-check for RDS Major Version Upgrade"
+    },
+    "UpgradeDBProxyInstanceKernelVersion": {
+      "required": [
+        "DBInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeDBProxyInstanceKernelVersion"
+    },
+    "ValidateImportTask": {
+      "required": [
+        "RegionId",
+        "Host",
+        "Port",
+        "StreamPort",
+        "User",
+        "Password",
+        "DbInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Precheck for Data Import Job"
+    }
+  }
+}

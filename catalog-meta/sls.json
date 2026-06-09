@@ -1,0 +1,1905 @@
+{
+  "snapshotVersion": 1,
+  "product": "sls",
+  "openApiProduct": "Sls",
+  "version": "2020-12-30",
+  "source": "https://api.aliyun.com/meta/v1/products/Sls/versions/2020-12-30/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:58.892Z",
+  "actions": {
+    "ApplyConfigToMachineGroup": {
+      "required": [
+        "project",
+        "machineGroup",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyConfigToMachineGroup"
+    },
+    "CallAiTools": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CallAiTools"
+    },
+    "ChangeResourceGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeResourceGroup"
+    },
+    "ConsumerGroupHeartBeat": {
+      "required": [
+        "project",
+        "logstore",
+        "consumerGroup",
+        "consumer",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConsumerGroupHeartBeat"
+    },
+    "ConsumerGroupUpdateCheckPoint": {
+      "required": [
+        "project",
+        "logstore",
+        "consumerGroup",
+        "consumer"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConsumerGroupUpdateCheckPoint"
+    },
+    "CreateAgentInstanceConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAgentInstanceConfig"
+    },
+    "CreateAlert": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAlert"
+    },
+    "CreateAnnotationDataSet": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAnnotationDataSet"
+    },
+    "CreateAnnotationLabel": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAnnotationLabel"
+    },
+    "CreateAzureBlobIngestion": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAzureBlobIngestion"
+    },
+    "CreateConfig": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateConfig"
+    },
+    "CreateConsumerGroup": {
+      "required": [
+        "logstore",
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateConsumerGroup"
+    },
+    "CreateDashboard": {
+      "required": [
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDashboard"
+    },
+    "CreateDomain": {
+      "required": [
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDomain"
+    },
+    "CreateDownloadJob": {
+      "required": [
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDownloadJob"
+    },
+    "CreateETL": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateETL"
+    },
+    "CreateElasticsearchIngestion": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateElasticsearchIngestion"
+    },
+    "CreateGCSIngestion": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGCSIngestion"
+    },
+    "CreateIndex": {
+      "required": [
+        "logstore",
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateIndex"
+    },
+    "CreateLogStore": {
+      "required": [
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLogStore"
+    },
+    "CreateLogging": {
+      "required": [
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLogging"
+    },
+    "CreateLogtailPipelineConfig": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLogtailPipelineConfig"
+    },
+    "CreateMachineGroup": {
+      "required": [
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMachineGroup"
+    },
+    "CreateMaterializedView": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMaterializedView"
+    },
+    "CreateMaxComputeExport": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMaxComputeExport"
+    },
+    "CreateMetricStore": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMetricStore"
+    },
+    "CreateOSSExport": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOSSExport"
+    },
+    "CreateOSSHDFSExport": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOSSHDFSExport"
+    },
+    "CreateOSSIngestion": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOSSIngestion"
+    },
+    "CreateProject": {
+      "required": [
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateProject"
+    },
+    "CreateS3Ingestion": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateS3Ingestion"
+    },
+    "CreateSavedSearch": {
+      "required": [
+        "body",
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSavedSearch"
+    },
+    "CreateScheduledSQL": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateScheduledSQL"
+    },
+    "CreateSqlInstance": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSqlInstance"
+    },
+    "CreateStoreView": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateStoreView"
+    },
+    "CreateTicket": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTicket"
+    },
+    "DeleteAgentInstanceConfig": {
+      "required": [
+        "configType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAgentInstanceConfig"
+    },
+    "DeleteAlert": {
+      "required": [
+        "project",
+        "alertName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAlert"
+    },
+    "DeleteAnnotationData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAnnotationData"
+    },
+    "DeleteAnnotationDataSet": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAnnotationDataSet"
+    },
+    "DeleteAnnotationLabel": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAnnotationLabel"
+    },
+    "DeleteAzureBlobIngestion": {
+      "required": [
+        "project",
+        "azureBlobIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAzureBlobIngestion"
+    },
+    "DeleteCollectionPolicy": {
+      "required": [
+        "policyName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCollectionPolicy"
+    },
+    "DeleteConfig": {
+      "required": [
+        "project",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteConfig"
+    },
+    "DeleteConsumeProcessor": {
+      "required": [
+        "project",
+        "processorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteConsumeProcessor"
+    },
+    "DeleteConsumerGroup": {
+      "required": [
+        "project",
+        "logstore",
+        "consumerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteConsumerGroup"
+    },
+    "DeleteDashboard": {
+      "required": [
+        "project",
+        "dashboardName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDashboard"
+    },
+    "DeleteDomain": {
+      "required": [
+        "project",
+        "domainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDomain"
+    },
+    "DeleteDownloadJob": {
+      "required": [
+        "downloadJobName",
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDownloadJob"
+    },
+    "DeleteETL": {
+      "required": [
+        "project",
+        "etlName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteETL"
+    },
+    "DeleteElasticsearchIngestion": {
+      "required": [
+        "project",
+        "esIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteElasticsearchIngestion"
+    },
+    "DeleteIndex": {
+      "required": [
+        "logstore",
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIndex"
+    },
+    "DeleteIngestProcessor": {
+      "required": [
+        "project",
+        "processorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIngestProcessor"
+    },
+    "DeleteLogStore": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLogStore"
+    },
+    "DeleteLogging": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLogging"
+    },
+    "DeleteLogtailPipelineConfig": {
+      "required": [
+        "project",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLogtailPipelineConfig"
+    },
+    "DeleteMachineGroup": {
+      "required": [
+        "project",
+        "machineGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMachineGroup"
+    },
+    "DeleteMaterializedView": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMaterializedView"
+    },
+    "DeleteMaxComputeExport": {
+      "required": [
+        "project",
+        "mcExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMaxComputeExport"
+    },
+    "DeleteMetricStore": {
+      "required": [
+        "project",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMetricStore"
+    },
+    "DeleteOSSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteOSSExport"
+    },
+    "DeleteOSSHDFSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteOSSHDFSExport"
+    },
+    "DeleteOSSIngestion": {
+      "required": [
+        "project",
+        "ossIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteOSSIngestion"
+    },
+    "DeleteProject": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteProject"
+    },
+    "DeleteProjectPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteProjectPolicy"
+    },
+    "DeleteS3Ingestion": {
+      "required": [
+        "project",
+        "s3IngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteS3Ingestion"
+    },
+    "DeleteSavedSearch": {
+      "required": [
+        "project",
+        "savedsearchName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSavedSearch"
+    },
+    "DeleteScheduledSQL": {
+      "required": [
+        "project",
+        "scheduledSQLName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteScheduledSQL"
+    },
+    "DeleteStoreView": {
+      "required": [
+        "project",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteStoreView"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DisableAlert": {
+      "required": [
+        "project",
+        "alertName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableAlert"
+    },
+    "DisableScheduledSQL": {
+      "required": [
+        "project",
+        "scheduledSQLName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableScheduledSQL"
+    },
+    "EnableAlert": {
+      "required": [
+        "project",
+        "alertName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableAlert"
+    },
+    "EnableScheduledSQL": {
+      "required": [
+        "project",
+        "scheduledSQLName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableScheduledSQL"
+    },
+    "GetAgentInstanceConfig": {
+      "required": [
+        "configType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAgentInstanceConfig"
+    },
+    "GetAlert": {
+      "required": [
+        "project",
+        "alertName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAlert"
+    },
+    "GetAnnotationData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAnnotationData"
+    },
+    "GetAnnotationDataSet": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAnnotationDataSet"
+    },
+    "GetAnnotationLabel": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAnnotationLabel"
+    },
+    "GetAppliedConfigs": {
+      "required": [
+        "project",
+        "machineGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAppliedConfigs"
+    },
+    "GetAppliedMachineGroups": {
+      "required": [
+        "project",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAppliedMachineGroups"
+    },
+    "GetAsyncSql": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAsyncSql"
+    },
+    "GetAzureBlobIngestion": {
+      "required": [
+        "project",
+        "azureBlobIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAzureBlobIngestion"
+    },
+    "GetCheckPoint": {
+      "required": [
+        "project",
+        "logstore",
+        "consumerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCheckPoint"
+    },
+    "GetCollectionPolicy": {
+      "required": [
+        "policyName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCollectionPolicy"
+    },
+    "GetConfig": {
+      "required": [
+        "project",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetConfig"
+    },
+    "GetConsumeProcessor": {
+      "required": [
+        "project",
+        "processorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetConsumeProcessor"
+    },
+    "GetContextLogs": {
+      "required": [
+        "project",
+        "logstore",
+        "pack_id",
+        "pack_meta",
+        "back_lines",
+        "forward_lines"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetContextLogs"
+    },
+    "GetCursor": {
+      "required": [
+        "project",
+        "logstore",
+        "shardId",
+        "from"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCursor"
+    },
+    "GetCursorTime": {
+      "required": [
+        "project",
+        "logstore",
+        "shardId",
+        "cursor"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCursorTime"
+    },
+    "GetDashboard": {
+      "required": [
+        "project",
+        "dashboardName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDashboard"
+    },
+    "GetDownloadJob": {
+      "required": [
+        "downloadJobName",
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDownloadJob"
+    },
+    "GetETL": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetETL"
+    },
+    "GetElasticsearchIngestion": {
+      "required": [
+        "project",
+        "esIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetElasticsearchIngestion"
+    },
+    "GetGCSIngestion": {
+      "required": [
+        "project",
+        "gcsIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetGCSIngestion"
+    },
+    "GetHistograms": {
+      "required": [
+        "project",
+        "logstore",
+        "from",
+        "to"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetHistograms"
+    },
+    "GetIndex": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetIndex"
+    },
+    "GetIngestProcessor": {
+      "required": [
+        "project",
+        "processorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetIngestProcessor"
+    },
+    "GetLogStore": {
+      "required": [
+        "logstore",
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLogStore"
+    },
+    "GetLogStoreConfig": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLogStoreConfig"
+    },
+    "GetLogStoreMeteringMode": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLogStoreMeteringMode"
+    },
+    "GetLogging": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLogging"
+    },
+    "GetLogs": {
+      "required": [
+        "project",
+        "logstore",
+        "from",
+        "to"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLogs"
+    },
+    "GetLogsV2": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLogsV2"
+    },
+    "GetLogtailPipelineConfig": {
+      "required": [
+        "project",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLogtailPipelineConfig"
+    },
+    "GetMLServiceResults": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMLServiceResults"
+    },
+    "GetMachineGroup": {
+      "required": [
+        "project",
+        "machineGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMachineGroup"
+    },
+    "GetMaterializedView": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMaterializedView"
+    },
+    "GetMaxComputeExport": {
+      "required": [
+        "project",
+        "mcExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMaxComputeExport"
+    },
+    "GetMetricStore": {
+      "required": [
+        "project",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMetricStore"
+    },
+    "GetMetricStoreMeteringMode": {
+      "required": [
+        "project",
+        "metricStore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMetricStoreMeteringMode"
+    },
+    "GetOSSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetOSSExport"
+    },
+    "GetOSSHDFSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetOSSHDFSExport"
+    },
+    "GetOSSIngestion": {
+      "required": [
+        "project",
+        "ossIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetOSSIngestion"
+    },
+    "GetProject": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetProject"
+    },
+    "GetProjectLogs": {
+      "required": [
+        "project",
+        "query"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetProjectLogs"
+    },
+    "GetProjectPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetProjectPolicy"
+    },
+    "GetS3Ingestion": {
+      "required": [
+        "project",
+        "s3IngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetS3Ingestion"
+    },
+    "GetSavedSearch": {
+      "required": [
+        "project",
+        "savedsearchName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSavedSearch"
+    },
+    "GetScheduledSQL": {
+      "required": [
+        "project",
+        "scheduledSQLName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetScheduledSQL"
+    },
+    "GetSlsService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSlsService"
+    },
+    "GetSqlInstance": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSqlInstance"
+    },
+    "GetStoreView": {
+      "required": [
+        "project",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStoreView"
+    },
+    "GetStoreViewIndex": {
+      "required": [
+        "project",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStoreViewIndex"
+    },
+    "ListAgentInstanceConfigs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAgentInstanceConfigs"
+    },
+    "ListAiTools": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAiTools"
+    },
+    "ListAlerts": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAlerts"
+    },
+    "ListAnnotationData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAnnotationData"
+    },
+    "ListAnnotationDataSets": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAnnotationDataSets"
+    },
+    "ListAnnotationLabels": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAnnotationLabels"
+    },
+    "ListAzureBlobIngestion": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAzureBlobIngestion"
+    },
+    "ListCollectionPolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCollectionPolicies"
+    },
+    "ListConfig": {
+      "required": [
+        "project",
+        "logstoreName",
+        "offset",
+        "size"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListConfig"
+    },
+    "ListConsumeProcessors": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListConsumeProcessors"
+    },
+    "ListConsumerGroup": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListConsumerGroup"
+    },
+    "ListDashboard": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDashboard"
+    },
+    "ListDomains": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDomains"
+    },
+    "ListDownloadJobs": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDownloadJobs"
+    },
+    "ListETLs": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListETLs"
+    },
+    "ListElasticsearchIngestions": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListElasticsearchIngestions"
+    },
+    "ListGCSIngestions": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGCSIngestions"
+    },
+    "ListIngestProcessors": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListIngestProcessors"
+    },
+    "ListLogStores": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListLogStores"
+    },
+    "ListLogtailPipelineConfig": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListLogtailPipelineConfig"
+    },
+    "ListMachineGroup": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListMachineGroup"
+    },
+    "ListMachines": {
+      "required": [
+        "project",
+        "machineGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListMachines"
+    },
+    "ListMaterializedView": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListMaterializedView"
+    },
+    "ListMaterializedViews": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListMaterializedViews"
+    },
+    "ListMaxComputeExports": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListMaxComputeExports"
+    },
+    "ListMetricStores": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListMetricStores"
+    },
+    "ListOSSExports": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListOSSExports"
+    },
+    "ListOSSHDFSExports": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListOSSHDFSExports"
+    },
+    "ListOSSIngestions": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListOSSIngestions"
+    },
+    "ListProject": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListProject"
+    },
+    "ListS3Ingestions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListS3Ingestions"
+    },
+    "ListSavedSearch": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListSavedSearch"
+    },
+    "ListScheduledSQLs": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListScheduledSQLs"
+    },
+    "ListShards": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListShards"
+    },
+    "ListStoreViews": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStoreViews"
+    },
+    "ListTagResources": {
+      "required": [
+        "resourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "MergeShard": {
+      "required": [
+        "project",
+        "logstore",
+        "shard"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MergeShard"
+    },
+    "OpenSlsService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenSlsService"
+    },
+    "PullLogs": {
+      "required": [
+        "project",
+        "logStore",
+        "shardId",
+        "cursor",
+        "count"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PullLogs"
+    },
+    "PutAnnotationData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutAnnotationData"
+    },
+    "PutConsumeProcessor": {
+      "required": [
+        "project",
+        "processorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutConsumeProcessor"
+    },
+    "PutIngestProcessor": {
+      "required": [
+        "project",
+        "processorName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutIngestProcessor"
+    },
+    "PutLogStoreConfig": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutLogStoreConfig"
+    },
+    "PutLogs": {
+      "required": [
+        "project",
+        "logstore",
+        "x-log-compresstype"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutLogs"
+    },
+    "PutProjectPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutProjectPolicy"
+    },
+    "PutProjectTransferAcceleration": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutProjectTransferAcceleration"
+    },
+    "PutWebtracking": {
+      "required": [
+        "project",
+        "logstoreName",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutWebtracking"
+    },
+    "RefreshToken": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RefreshToken"
+    },
+    "RemoveConfigFromMachineGroup": {
+      "required": [
+        "project",
+        "machineGroup",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveConfigFromMachineGroup"
+    },
+    "SplitShard": {
+      "required": [
+        "project",
+        "logstore",
+        "shard"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SplitShard"
+    },
+    "StartAzureBlobIngestion": {
+      "required": [
+        "project",
+        "azureBlobIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartAzureBlobIngestion"
+    },
+    "StartETL": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartETL"
+    },
+    "StartElasticsearchIngestion": {
+      "required": [
+        "project",
+        "elasticsearchIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartElasticsearchIngestion"
+    },
+    "StartGCSIngestion": {
+      "required": [
+        "project",
+        "gcsIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartGCSIngestion"
+    },
+    "StartMaxComputeExport": {
+      "required": [
+        "project",
+        "mcExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartMaxComputeExport"
+    },
+    "StartOSSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartOSSExport"
+    },
+    "StartOSSHDFSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartOSSHDFSExport"
+    },
+    "StartOSSIngestion": {
+      "required": [
+        "project",
+        "ossIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartOSSIngestion"
+    },
+    "StopAzureBlobIngestion": {
+      "required": [
+        "project",
+        "azureBlobIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopAzureBlobIngestion"
+    },
+    "StopETL": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopETL"
+    },
+    "StopElasticsearchIngestion": {
+      "required": [
+        "project",
+        "elasticsearchIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopElasticsearchIngestion"
+    },
+    "StopGCSIngestion": {
+      "required": [
+        "project",
+        "gcsIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopGCSIngestion"
+    },
+    "StopMaxComputeExport": {
+      "required": [
+        "project",
+        "mcExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopMaxComputeExport"
+    },
+    "StopOSSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopOSSExport"
+    },
+    "StopOSSHDFSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopOSSHDFSExport"
+    },
+    "StopOSSIngestion": {
+      "required": [
+        "project",
+        "ossIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopOSSIngestion"
+    },
+    "SubmitAsyncSql": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SubmitAsyncSql"
+    },
+    "TagResources": {
+      "required": [
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateAgentInstanceConfig": {
+      "required": [
+        "configType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAgentInstanceConfig"
+    },
+    "UpdateAlert": {
+      "required": [
+        "project",
+        "alertName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAlert"
+    },
+    "UpdateAnnotationDataSet": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAnnotationDataSet"
+    },
+    "UpdateAnnotationLabel": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAnnotationLabel"
+    },
+    "UpdateAzureBlobIngestion": {
+      "required": [
+        "project",
+        "azureBlobIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAzureBlobIngestion"
+    },
+    "UpdateConfig": {
+      "required": [
+        "project",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateConfig"
+    },
+    "UpdateConsumerGroup": {
+      "required": [
+        "project",
+        "logstore",
+        "consumerGroup",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateConsumerGroup"
+    },
+    "UpdateDashboard": {
+      "required": [
+        "project",
+        "dashboardName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDashboard"
+    },
+    "UpdateETL": {
+      "required": [
+        "project",
+        "etlName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateETL"
+    },
+    "UpdateElasticsearchIngestion": {
+      "required": [
+        "project",
+        "elasticsearchIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateElasticsearchIngestion"
+    },
+    "UpdateGCSIngestion": {
+      "required": [
+        "project",
+        "gcsIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGCSIngestion"
+    },
+    "UpdateIndex": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateIndex"
+    },
+    "UpdateLogStore": {
+      "required": [
+        "project",
+        "logstore",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLogStore"
+    },
+    "UpdateLogStoreEncryption": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLogStoreEncryption"
+    },
+    "UpdateLogStoreMeteringMode": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLogStoreMeteringMode"
+    },
+    "UpdateLogStoreProcessor": {
+      "required": [
+        "project",
+        "logstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLogStoreProcessor"
+    },
+    "UpdateLogging": {
+      "required": [
+        "project",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLogging"
+    },
+    "UpdateLogtailPipelineConfig": {
+      "required": [
+        "project",
+        "configName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLogtailPipelineConfig"
+    },
+    "UpdateMachineGroup": {
+      "required": [
+        "project",
+        "groupName",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateMachineGroup"
+    },
+    "UpdateMachineGroupMachine": {
+      "required": [
+        "project",
+        "machineGroup",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateMachineGroupMachine"
+    },
+    "UpdateMaterializedView": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateMaterializedView"
+    },
+    "UpdateMaxComputeExport": {
+      "required": [
+        "project",
+        "mcExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateMaxComputeExport"
+    },
+    "UpdateMetricStore": {
+      "required": [
+        "project",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateMetricStore"
+    },
+    "UpdateMetricStoreMeteringMode": {
+      "required": [
+        "project",
+        "metricStore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateMetricStoreMeteringMode"
+    },
+    "UpdateMetricStoreProcessor": {
+      "required": [
+        "project",
+        "metricstore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateMetricStoreProcessor"
+    },
+    "UpdateOSSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateOSSExport"
+    },
+    "UpdateOSSHDFSExport": {
+      "required": [
+        "project",
+        "ossExportName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateOSSHDFSExport"
+    },
+    "UpdateOSSIngestion": {
+      "required": [
+        "project",
+        "ossIngestionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateOSSIngestion"
+    },
+    "UpdateProject": {
+      "required": [
+        "body",
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateProject"
+    },
+    "UpdateSavedSearch": {
+      "required": [
+        "project",
+        "savedsearchName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSavedSearch"
+    },
+    "UpdateScheduledSQL": {
+      "required": [
+        "project",
+        "scheduledSQLName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateScheduledSQL"
+    },
+    "UpdateSqlInstance": {
+      "required": [
+        "project"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSqlInstance"
+    },
+    "UpdateStoreView": {
+      "required": [
+        "project",
+        "name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateStoreView"
+    },
+    "UpsertCollectionPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpsertCollectionPolicy"
+    }
+  }
+}

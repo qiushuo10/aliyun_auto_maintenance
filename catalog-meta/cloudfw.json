@@ -1,0 +1,2124 @@
+{
+  "snapshotVersion": 1,
+  "product": "cloudfw",
+  "openApiProduct": "Cloudfw",
+  "version": "2017-12-07",
+  "source": "https://api.aliyun.com/meta/v1/products/Cloudfw/versions/2017-12-07/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:34.323Z",
+  "actions": {
+    "AddAclBackupData": {
+      "required": [
+        "BackUpTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddAclBackupData"
+    },
+    "AddAddressBook": {
+      "required": [
+        "Description",
+        "GroupName",
+        "GroupType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddAddressBook"
+    },
+    "AddControlPolicy": {
+      "required": [
+        "AclAction",
+        "Description",
+        "Destination",
+        "DestinationType",
+        "Direction",
+        "Proto",
+        "Source",
+        "SourceType",
+        "NewOrder"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddControlPolicy"
+    },
+    "AddDnsFirewallPolicy": {
+      "required": [
+        "AclAction",
+        "Description",
+        "Destination",
+        "DestinationType",
+        "Source",
+        "SourceType",
+        "Priority",
+        "Release",
+        "IpVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDnsFirewallPolicy"
+    },
+    "AddDomainResolveRealtimeTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddDomainResolveRealtimeTask"
+    },
+    "AddInstanceMembers": {
+      "required": [
+        "Members"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddInstanceMembers"
+    },
+    "AddPrivateDnsDomainName": {
+      "required": [
+        "AccessInstanceId",
+        "RegionNo",
+        "DomainNameList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddPrivateDnsDomainName"
+    },
+    "BatchCopyVpcFirewallControlPolicy": {
+      "required": [
+        "SourceVpcFirewallId",
+        "TargetVpcFirewallId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "BatchCopyVpcFirewallControlPolicy"
+    },
+    "BatchDeleteVpcFirewallControlPolicy": {
+      "required": [
+        "VpcFirewallId",
+        "AclUuidList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchDeleteVpcFirewallControlPolicy"
+    },
+    "ClearLogStoreStorage": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ClearLogStoreStorage"
+    },
+    "CreateAckClusterConnector": {
+      "required": [
+        "RegionNo",
+        "ConnectorName",
+        "ClusterId",
+        "PrimaryVswitchId",
+        "Ttl"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAckClusterConnector"
+    },
+    "CreateAclCheck": {
+      "required": [
+        "AclType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAclCheck"
+    },
+    "CreateDownloadTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDownloadTask"
+    },
+    "CreateInstanceSyncTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateInstanceSyncTask"
+    },
+    "CreateIpsPrivateAssoc": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateIpsPrivateAssoc"
+    },
+    "CreateNatFirewallControlPolicy": {
+      "required": [
+        "AclAction",
+        "ApplicationNameList",
+        "Description",
+        "Destination",
+        "DestinationType",
+        "NatGatewayId",
+        "Proto",
+        "Source",
+        "SourceType",
+        "NewOrder",
+        "Direction"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNatFirewallControlPolicy"
+    },
+    "CreateNatFirewallPreCheck": {
+      "required": [
+        "RegionNo",
+        "VpcId",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNatFirewallPreCheck"
+    },
+    "CreateNatFirewallSyncTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNatFirewallSyncTask"
+    },
+    "CreatePrivateDnsEndpoint": {
+      "required": [
+        "AccessInstanceName",
+        "PrivateDnsType",
+        "RegionNo",
+        "VpcId",
+        "FirewallType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePrivateDnsEndpoint"
+    },
+    "CreateSecurityProxy": {
+      "required": [
+        "ProxyName",
+        "RegionNo",
+        "VpcId",
+        "NatGatewayId",
+        "NatRouteEntryList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSecurityProxy"
+    },
+    "CreateSlsLogDispatch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSlsLogDispatch"
+    },
+    "CreateTrFirewallV2": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTrFirewallV2"
+    },
+    "CreateTrFirewallV2RoutePolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTrFirewallV2RoutePolicy"
+    },
+    "CreateVpcFirewallCenConfigure": {
+      "required": [
+        "VpcFirewallName",
+        "NetworkInstanceId",
+        "VpcRegion",
+        "FirewallSwitch",
+        "CenId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpcFirewallCenConfigure"
+    },
+    "CreateVpcFirewallCenManualConfigure": {
+      "required": [
+        "VpcFirewallName",
+        "CenId",
+        "VpcId",
+        "VSwitchId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateVpcFirewallCenManualConfigure"
+    },
+    "CreateVpcFirewallConfigure": {
+      "required": [
+        "VpcFirewallName",
+        "LocalVpcId",
+        "LocalVpcRegion",
+        "PeerVpcId",
+        "PeerVpcRegion",
+        "FirewallSwitch",
+        "LocalVpcCidrTableList",
+        "PeerVpcCidrTableList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpcFirewallConfigure"
+    },
+    "CreateVpcFirewallControlPolicy": {
+      "required": [
+        "AclAction",
+        "Description",
+        "Destination",
+        "DestinationType",
+        "VpcFirewallId",
+        "Proto",
+        "Source",
+        "SourceType",
+        "NewOrder"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpcFirewallControlPolicy"
+    },
+    "CreateVpcFirewallPrecheck": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpcFirewallPrecheck"
+    },
+    "CreateVpcFirewallTask": {
+      "required": [
+        "TaskAction"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpcFirewallTask"
+    },
+    "DeleteAckClusterConnector": {
+      "required": [
+        "ConnectorId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAckClusterConnector"
+    },
+    "DeleteAclBackupData": {
+      "required": [
+        "BackUpTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAclBackupData"
+    },
+    "DeleteAddressBook": {
+      "required": [
+        "GroupUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAddressBook"
+    },
+    "DeleteControlPolicy": {
+      "required": [
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteControlPolicy"
+    },
+    "DeleteControlPolicyTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteControlPolicyTemplate"
+    },
+    "DeleteDnsFirewallPolicy": {
+      "required": [
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDnsFirewallPolicy"
+    },
+    "DeleteDownloadTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDownloadTask"
+    },
+    "DeleteFirewallV2RoutePolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFirewallV2RoutePolicies"
+    },
+    "DeleteInstanceMembers": {
+      "required": [
+        "MemberUids"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteInstanceMembers"
+    },
+    "DeleteIpsPrivateAssoc": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIpsPrivateAssoc"
+    },
+    "DeleteNatFirewallControlPolicy": {
+      "required": [
+        "AclUuid",
+        "NatGatewayId",
+        "Direction"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNatFirewallControlPolicy"
+    },
+    "DeleteNatFirewallControlPolicyBatch": {
+      "required": [
+        "AclUuidList",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNatFirewallControlPolicyBatch"
+    },
+    "DeletePrivateDnsAllDomainName": {
+      "required": [
+        "AccessInstanceId",
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePrivateDnsAllDomainName"
+    },
+    "DeletePrivateDnsDomainName": {
+      "required": [
+        "AccessInstanceId",
+        "RegionNo",
+        "DomainNameList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePrivateDnsDomainName"
+    },
+    "DeletePrivateDnsEndpoint": {
+      "required": [
+        "AccessInstanceId",
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePrivateDnsEndpoint"
+    },
+    "DeleteSecurityProxy": {
+      "required": [
+        "ProxyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSecurityProxy"
+    },
+    "DeleteTrFirewallV2": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTrFirewallV2"
+    },
+    "DeleteVpcFirewallCenConfigure": {
+      "required": [
+        "VpcFirewallIdList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpcFirewallCenConfigure"
+    },
+    "DeleteVpcFirewallConfigure": {
+      "required": [
+        "VpcFirewallIdList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpcFirewallConfigure"
+    },
+    "DeleteVpcFirewallControlPolicy": {
+      "required": [
+        "AclUuid",
+        "VpcFirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpcFirewallControlPolicy"
+    },
+    "DescribeACLProtectTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeACLProtectTrend"
+    },
+    "DescribeAITrafficAnalysisStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAITrafficAnalysisStatus"
+    },
+    "DescribeAccessInstanceRegionList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessInstanceRegionList"
+    },
+    "DescribeAccessInstanceTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessInstanceTask"
+    },
+    "DescribeAccessInstanceVSwitchList": {
+      "required": [
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessInstanceVSwitchList"
+    },
+    "DescribeAccessInstanceVpcList": {
+      "required": [
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessInstanceVpcList"
+    },
+    "DescribeAccessInstanceZoneList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessInstanceZoneList"
+    },
+    "DescribeAckClusterConnector": {
+      "required": [
+        "ConnectorId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAckClusterConnector"
+    },
+    "DescribeAckClusterConnectors": {
+      "required": [
+        "PageNo",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAckClusterConnectors"
+    },
+    "DescribeAckClusterNamespaces": {
+      "required": [
+        "ConnectorId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAckClusterNamespaces"
+    },
+    "DescribeAckClusterPodLabels": {
+      "required": [
+        "ConnectorId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAckClusterPodLabels"
+    },
+    "DescribeAckClusters": {
+      "required": [
+        "RegionNo",
+        "PageSize",
+        "PageNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAckClusters"
+    },
+    "DescribeAclApps": {
+      "required": [
+        "PageNo",
+        "PageSize",
+        "AclType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAclApps"
+    },
+    "DescribeAclBackupList": {
+      "required": [
+        "CurrentPage",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAclBackupList"
+    },
+    "DescribeAclCheck": {
+      "required": [
+        "TaskId",
+        "PageNo",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAclCheck"
+    },
+    "DescribeAclCheckQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAclCheckQuota"
+    },
+    "DescribeAclChecks": {
+      "required": [
+        "AclType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAclChecks"
+    },
+    "DescribeAclRuleCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAclRuleCount"
+    },
+    "DescribeAclWhitelist": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAclWhitelist"
+    },
+    "DescribeAddressBook": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAddressBook"
+    },
+    "DescribeAssetList": {
+      "required": [
+        "CurrentPage",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAssetList"
+    },
+    "DescribeAssetRiskList": {
+      "required": [
+        "IpVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAssetRiskList"
+    },
+    "DescribeAssetStatistic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAssetStatistic"
+    },
+    "DescribeAttackAppCategory": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAttackAppCategory"
+    },
+    "DescribeBatchSlsDispatchStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBatchSlsDispatchStatus"
+    },
+    "DescribeCfwRiskLevelSummary": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeCfwRiskLevelSummary"
+    },
+    "DescribeClearAuthInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeClearAuthInfo"
+    },
+    "DescribeConfiguredDestinationIP": {
+      "required": [
+        "GroupName",
+        "Direction",
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeConfiguredDestinationIP"
+    },
+    "DescribeConfiguredDomainNames": {
+      "required": [
+        "GroupName",
+        "Direction",
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeConfiguredDomainNames"
+    },
+    "DescribeControlPolicy": {
+      "required": [
+        "CurrentPage",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeControlPolicy"
+    },
+    "DescribeControlPolicyDomainResolve": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeControlPolicyDomainResolve"
+    },
+    "DescribeCreatedNatFirewall": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCreatedNatFirewall"
+    },
+    "DescribeCtrlInstanceMemberAccounts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCtrlInstanceMemberAccounts"
+    },
+    "DescribeDefaultIPSConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDefaultIPSConfig"
+    },
+    "DescribeDnsFirewallPolicy": {
+      "required": [
+        "CurrentPage",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDnsFirewallPolicy"
+    },
+    "DescribeDomainResolve": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeDomainResolve"
+    },
+    "DescribeDownloadTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDownloadTask"
+    },
+    "DescribeDownloadTaskType": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDownloadTaskType"
+    },
+    "DescribeFirewallDropStatistics": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeFirewallDropStatistics"
+    },
+    "DescribeFirewallTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFirewallTask"
+    },
+    "DescribeFirewallVSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFirewallVSwitch"
+    },
+    "DescribeFirewallVswitchResources": {
+      "required": [
+        "RegionNo",
+        "VpcId",
+        "FirewallType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFirewallVswitchResources"
+    },
+    "DescribeIPSRules": {
+      "required": [
+        "RuleType",
+        "PageNo",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIPSRules"
+    },
+    "DescribeInstanceMembers": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceMembers"
+    },
+    "DescribeInstanceRdAccounts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceRdAccounts"
+    },
+    "DescribeInstanceRiskLevels": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceRiskLevels"
+    },
+    "DescribeInternetDropTrafficTrend": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetDropTrafficTrend"
+    },
+    "DescribeInternetOpenDetail": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetOpenDetail"
+    },
+    "DescribeInternetOpenIp": {
+      "required": [
+        "CurrentPage",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetOpenIp"
+    },
+    "DescribeInternetOpenPort": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetOpenPort"
+    },
+    "DescribeInternetOpenService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetOpenService"
+    },
+    "DescribeInternetOpenStatistic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetOpenStatistic"
+    },
+    "DescribeInternetServiceNameList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetServiceNameList"
+    },
+    "DescribeInternetSlb": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetSlb"
+    },
+    "DescribeInternetTimeTop": {
+      "required": [
+        "Direction",
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetTimeTop"
+    },
+    "DescribeInternetTrafficTop": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "SourceCode",
+        "DataType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetTrafficTop"
+    },
+    "DescribeInternetTrafficTrend": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInternetTrafficTrend"
+    },
+    "DescribeInvadeEcsTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInvadeEcsTrend"
+    },
+    "DescribeInvadeEventDetail": {
+      "required": [
+        "AssetsInstanceId",
+        "EventUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInvadeEventDetail"
+    },
+    "DescribeInvadeEventList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInvadeEventList"
+    },
+    "DescribeInvadeEventNameList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInvadeEventNameList"
+    },
+    "DescribeInvadeEventStatistic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInvadeEventStatistic"
+    },
+    "DescribeIpsPrivateAssoc": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIpsPrivateAssoc"
+    },
+    "DescribeIspInfo": {
+      "required": [
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIspInfo"
+    },
+    "DescribeLocationInfo": {
+      "required": [
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLocationInfo"
+    },
+    "DescribeLogStoreInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Get Log Service Information"
+    },
+    "DescribeMemberInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMemberInfo"
+    },
+    "DescribeNatAclPageStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatAclPageStatus"
+    },
+    "DescribeNatFirewallAclGroupList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallAclGroupList"
+    },
+    "DescribeNatFirewallControlPolicy": {
+      "required": [
+        "NatGatewayId",
+        "Direction"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallControlPolicy"
+    },
+    "DescribeNatFirewallDropTrafficTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallDropTrafficTrend"
+    },
+    "DescribeNatFirewallList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallList"
+    },
+    "DescribeNatFirewallPolicyPriorUsed": {
+      "required": [
+        "NatGatewayId",
+        "Direction"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallPolicyPriorUsed"
+    },
+    "DescribeNatFirewallPrecheckDetail": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallPrecheckDetail"
+    },
+    "DescribeNatFirewallQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallQuota"
+    },
+    "DescribeNatFirewallTimeTop": {
+      "required": [
+        "TrafficTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallTimeTop"
+    },
+    "DescribeNatFirewallTrafficTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatFirewallTrafficTrend"
+    },
+    "DescribeNetworkInstanceList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkInstanceList"
+    },
+    "DescribeNetworkInstanceRelationList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkInstanceRelationList"
+    },
+    "DescribeNetworkTrafficTopRatio": {
+      "required": [
+        "SourceCode",
+        "DataType",
+        "EndTime",
+        "StartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkTrafficTopRatio"
+    },
+    "DescribeOpenIpAccessSrcStat": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOpenIpAccessSrcStat"
+    },
+    "DescribeOutgoingAssetList": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingAssetList"
+    },
+    "DescribeOutgoingDestination": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingDestination"
+    },
+    "DescribeOutgoingDestinationCategory": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingDestinationCategory"
+    },
+    "DescribeOutgoingDestinationIP": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingDestinationIP"
+    },
+    "DescribeOutgoingDestinationIPDetail": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "DstIP"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingDestinationIPDetail"
+    },
+    "DescribeOutgoingDomain": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingDomain"
+    },
+    "DescribeOutgoingDomainDetail": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingDomainDetail"
+    },
+    "DescribeOutgoingRiskDomainAndIpCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingRiskDomainAndIpCount"
+    },
+    "DescribeOutgoingRiskTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingRiskTrend"
+    },
+    "DescribeOutgoingStatistic": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingStatistic"
+    },
+    "DescribeOutgoingTag": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOutgoingTag"
+    },
+    "DescribePageDocuments": {
+      "required": [
+        "SourceCode",
+        "PageName",
+        "TabName"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribePageDocuments"
+    },
+    "DescribePolicyAdvancedConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolicyAdvancedConfig"
+    },
+    "DescribePolicyPriorUsed": {
+      "required": [
+        "Direction"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolicyPriorUsed"
+    },
+    "DescribePostpayEnabledProtection": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePostpayEnabledProtection"
+    },
+    "DescribePostpayTrafficDetail": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "TrafficType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePostpayTrafficDetail"
+    },
+    "DescribePostpayTrafficTotal": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePostpayTrafficTotal"
+    },
+    "DescribePostpayUserInternetStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePostpayUserInternetStatus"
+    },
+    "DescribePostpayUserNatStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePostpayUserNatStatus"
+    },
+    "DescribePostpayUserVpcStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePostpayUserVpcStatus"
+    },
+    "DescribePrefixLists": {
+      "required": [
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrefixLists"
+    },
+    "DescribePrivateDnsDomainNameList": {
+      "required": [
+        "AccessInstanceId",
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrivateDnsDomainNameList"
+    },
+    "DescribePrivateDnsEndpointDetail": {
+      "required": [
+        "AccessInstanceId",
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrivateDnsEndpointDetail"
+    },
+    "DescribePrivateDnsEndpointList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrivateDnsEndpointList"
+    },
+    "DescribePrivateDnsStatistics": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrivateDnsStatistics"
+    },
+    "DescribeRegionInfo": {
+      "required": [
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegionInfo"
+    },
+    "DescribeRegionResourceTypeAutoEnable": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegionResourceTypeAutoEnable"
+    },
+    "DescribeResourceTypeAutoEnable": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourceTypeAutoEnable"
+    },
+    "DescribeRiskEventGroup": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "DataType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRiskEventGroup"
+    },
+    "DescribeRiskEventPayload": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "UUID"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRiskEventPayload"
+    },
+    "DescribeRiskEventStatistic": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRiskEventStatistic"
+    },
+    "DescribeRiskEventTopAttackApp": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRiskEventTopAttackApp"
+    },
+    "DescribeRiskEventTopAttackAsset": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRiskEventTopAttackAsset"
+    },
+    "DescribeRiskEventTopAttackType": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Direction"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRiskEventTopAttackType"
+    },
+    "DescribeRiskSecurityGroupDetail": {
+      "required": [
+        "PageNo",
+        "PageSize"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeRiskSecurityGroupDetail"
+    },
+    "DescribeSdlEventDetail": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSdlEventDetail"
+    },
+    "DescribeSdlEventList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSdlEventList"
+    },
+    "DescribeSdlEventSdList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSdlEventSdList"
+    },
+    "DescribeSdlEventStatistic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSdlEventStatistic"
+    },
+    "DescribeSdlStatistic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSdlStatistic"
+    },
+    "DescribeSecurityMode": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecurityMode"
+    },
+    "DescribeSecurityProxy": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeSecurityProxy"
+    },
+    "DescribeSecurityProxyResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecurityProxyResources"
+    },
+    "DescribeSensitiveSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSensitiveSwitch"
+    },
+    "DescribeSignatureLibVersion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSignatureLibVersion"
+    },
+    "DescribeSlrGrant": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlrGrant"
+    },
+    "DescribeSlsAnalyzeOpenStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlsAnalyzeOpenStatus"
+    },
+    "DescribeThreatIntelligenceSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeThreatIntelligenceSwitch"
+    },
+    "DescribeTrFirewallPolicyBackUpAssociationList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTrFirewallPolicyBackUpAssociationList"
+    },
+    "DescribeTrFirewallV2RoutePolicyList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTrFirewallV2RoutePolicyList"
+    },
+    "DescribeTrFirewallsV2Detail": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTrFirewallsV2Detail"
+    },
+    "DescribeTrFirewallsV2List": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTrFirewallsV2List"
+    },
+    "DescribeTrFirewallsV2RouteList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTrFirewallsV2RouteList"
+    },
+    "DescribeTrafficLog": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "SourceCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTrafficLog"
+    },
+    "DescribeTransitRouterResourcesList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTransitRouterResourcesList"
+    },
+    "DescribeUnprotectedPortTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUnprotectedPortTrend"
+    },
+    "DescribeUnprotectedVulnTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUnprotectedVulnTrend"
+    },
+    "DescribeUserAlarmConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserAlarmConfig"
+    },
+    "DescribeUserAssetIPTrafficInfo": {
+      "required": [
+        "AssetIP",
+        "TrafficTime"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeUserAssetIPTrafficInfo"
+    },
+    "DescribeUserBuyVersion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserBuyVersion"
+    },
+    "DescribeUserIPSWhitelist": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserIPSWhitelist"
+    },
+    "DescribeVfwIPSConfigList": {
+      "required": [
+        "PageNo",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVfwIPSConfigList"
+    },
+    "DescribeVpcFirewallAccessDetail": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallAccessDetail"
+    },
+    "DescribeVpcFirewallAclGroupList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallAclGroupList"
+    },
+    "DescribeVpcFirewallAssetList": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallAssetList"
+    },
+    "DescribeVpcFirewallAssetRegionList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallAssetRegionList"
+    },
+    "DescribeVpcFirewallCenDetail": {
+      "required": [
+        "VpcFirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallCenDetail"
+    },
+    "DescribeVpcFirewallCenList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallCenList"
+    },
+    "DescribeVpcFirewallCenSummaryList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallCenSummaryList"
+    },
+    "DescribeVpcFirewallControlPolicy": {
+      "required": [
+        "VpcFirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallControlPolicy"
+    },
+    "DescribeVpcFirewallDefaultIPSConfig": {
+      "required": [
+        "VpcFirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallDefaultIPSConfig"
+    },
+    "DescribeVpcFirewallDetail": {
+      "required": [
+        "VpcFirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallDetail"
+    },
+    "DescribeVpcFirewallDomainList": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallDomainList"
+    },
+    "DescribeVpcFirewallDomainRelationList": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallDomainRelationList"
+    },
+    "DescribeVpcFirewallDropTrafficTrend": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallDropTrafficTrend"
+    },
+    "DescribeVpcFirewallIPSWhitelist": {
+      "required": [
+        "VpcFirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallIPSWhitelist"
+    },
+    "DescribeVpcFirewallList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallList"
+    },
+    "DescribeVpcFirewallManualVSwitchList": {
+      "required": [
+        "RegionNo",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallManualVSwitchList"
+    },
+    "DescribeVpcFirewallPolicyPriorUsed": {
+      "required": [
+        "VpcFirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallPolicyPriorUsed"
+    },
+    "DescribeVpcFirewallPrecheckDetail": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallPrecheckDetail"
+    },
+    "DescribeVpcFirewallSummaryInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallSummaryInfo"
+    },
+    "DescribeVpcFirewallTrafficAssetList": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallTrafficAssetList"
+    },
+    "DescribeVpcFirewallZone": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcFirewallZone"
+    },
+    "DescribeVpcListLite": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcListLite"
+    },
+    "DescribeVpcZone": {
+      "required": [
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcZone"
+    },
+    "DescribeVulnerabilityProtectedList": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVulnerabilityProtectedList"
+    },
+    "DisableSdlProtectedAsset": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableSdlProtectedAsset"
+    },
+    "EnableSdlProtectedAsset": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableSdlProtectedAsset"
+    },
+    "GetTlsInspectCertificateDownloadUrl": {
+      "required": [
+        "CaCertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTlsInspectCertificateDownloadUrl"
+    },
+    "ListTlsInspectCACertificates": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTlsInspectCACertificates"
+    },
+    "ModifyAddressBook": {
+      "required": [
+        "Description",
+        "GroupName",
+        "GroupUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAddressBook"
+    },
+    "ModifyCfwInstance": {
+      "required": [
+        "InstanceId",
+        "UpdateList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCfwInstance"
+    },
+    "ModifyControlPolicy": {
+      "required": [
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyControlPolicy"
+    },
+    "ModifyControlPolicyPosition": {
+      "required": [
+        "Direction",
+        "NewOrder",
+        "OldOrder"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyControlPolicyPosition"
+    },
+    "ModifyControlPolicyPriority": {
+      "required": [
+        "AclUuid",
+        "Order"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyControlPolicyPriority"
+    },
+    "ModifyDefaultIPSConfig": {
+      "required": [
+        "RunMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDefaultIPSConfig"
+    },
+    "ModifyDnsFirewallPolicy": {
+      "required": [
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDnsFirewallPolicy"
+    },
+    "ModifyFirewallV2RoutePolicySwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyFirewallV2RoutePolicySwitch"
+    },
+    "ModifyInstanceMemberAttributes": {
+      "required": [
+        "Members"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceMemberAttributes"
+    },
+    "ModifyIpsRules": {
+      "required": [
+        "RuleType",
+        "RuleAction",
+        "Rules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIpsRules"
+    },
+    "ModifyIpsRulesToDefault": {
+      "required": [
+        "RuleType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIpsRulesToDefault"
+    },
+    "ModifyNatFirewallControlPolicy": {
+      "required": [
+        "NatGatewayId",
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNatFirewallControlPolicy"
+    },
+    "ModifyNatFirewallControlPolicyPosition": {
+      "required": [
+        "NatGatewayId",
+        "NewOrder",
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNatFirewallControlPolicyPosition"
+    },
+    "ModifyObjectGroupOperation": {
+      "required": [
+        "ObjectOperation",
+        "ObjectType",
+        "Direction",
+        "ObjectList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyObjectGroupOperation"
+    },
+    "ModifyPolicyAdvancedConfig": {
+      "required": [
+        "InternetSwitch"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPolicyAdvancedConfig"
+    },
+    "ModifyPrivateDnsEndpoint": {
+      "required": [
+        "AccessInstanceId",
+        "PrivateDnsType",
+        "AccessInstanceName",
+        "RegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPrivateDnsEndpoint"
+    },
+    "ModifyResourceTypeAutoEnable": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyResourceTypeAutoEnable"
+    },
+    "ModifySensitiveSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySensitiveSwitch"
+    },
+    "ModifySlsDispatchStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySlsDispatchStatus"
+    },
+    "ModifyThreatIntelligenceSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyThreatIntelligenceSwitch"
+    },
+    "ModifyTrFirewallV2Configuration": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyTrFirewallV2Configuration"
+    },
+    "ModifyTrFirewallV2RoutePolicyScope": {
+      "required": [
+        "TrFirewallRoutePolicyId",
+        "FirewallId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyTrFirewallV2RoutePolicyScope"
+    },
+    "ModifyUserAlarmConfig": {
+      "required": [
+        "AlarmConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyUserAlarmConfig"
+    },
+    "ModifyUserIPSWhitelist": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyUserIPSWhitelist"
+    },
+    "ModifyUserSlsLogStorageTime": {
+      "required": [
+        "InstanceId",
+        "StorageTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyUserSlsLogStorageTime"
+    },
+    "ModifyVpcFirewallAclEngineMode": {
+      "required": [
+        "VpcFirewallId",
+        "StrictMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallAclEngineMode"
+    },
+    "ModifyVpcFirewallCenConfigure": {
+      "required": [
+        "VpcFirewallId",
+        "VpcFirewallName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallCenConfigure"
+    },
+    "ModifyVpcFirewallCenSwitchStatus": {
+      "required": [
+        "VpcFirewallId",
+        "FirewallSwitch"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallCenSwitchStatus"
+    },
+    "ModifyVpcFirewallConfigure": {
+      "required": [
+        "VpcFirewallId",
+        "VpcFirewallName",
+        "LocalVpcCidrTableList",
+        "PeerVpcCidrTableList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallConfigure"
+    },
+    "ModifyVpcFirewallControlPolicy": {
+      "required": [
+        "VpcFirewallId",
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallControlPolicy"
+    },
+    "ModifyVpcFirewallControlPolicyPosition": {
+      "required": [
+        "VpcFirewallId",
+        "NewOrder"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallControlPolicyPosition"
+    },
+    "ModifyVpcFirewallDefaultIPSConfig": {
+      "required": [
+        "VpcFirewallId",
+        "BasicRules",
+        "EnableAllPatch",
+        "RunMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallDefaultIPSConfig"
+    },
+    "ModifyVpcFirewallIPSWhitelist": {
+      "required": [
+        "VpcFirewallId",
+        "WhiteType",
+        "ListType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallIPSWhitelist"
+    },
+    "ModifyVpcFirewallSwitchStatus": {
+      "required": [
+        "VpcFirewallId",
+        "FirewallSwitch"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcFirewallSwitchStatus"
+    },
+    "PutDisableAllFwSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutDisableAllFwSwitch"
+    },
+    "PutDisableFwSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutDisableFwSwitch"
+    },
+    "PutEnableAllFwSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutEnableAllFwSwitch"
+    },
+    "PutEnableFwSwitch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutEnableFwSwitch"
+    },
+    "ReleaseExpiredInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseExpiredInstance"
+    },
+    "ReleasePostInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleasePostInstance"
+    },
+    "ResetNatFirewallRuleHitCount": {
+      "required": [
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetNatFirewallRuleHitCount"
+    },
+    "ResetRuleHitCount": {
+      "required": [
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetRuleHitCount"
+    },
+    "ResetVpcFirewallRuleHitCount": {
+      "required": [
+        "AclUuid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetVpcFirewallRuleHitCount"
+    },
+    "SetAutoProtectNewAssets": {
+      "required": [
+        "AutoProtect"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetAutoProtectNewAssets"
+    },
+    "SwitchSecurityProxy": {
+      "required": [
+        "ProxyId",
+        "Switch"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchSecurityProxy"
+    },
+    "UpdateAITrafficAnalysisStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAITrafficAnalysisStatus"
+    },
+    "UpdateAckClusterConnector": {
+      "required": [
+        "ConnectorId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAckClusterConnector"
+    },
+    "UpdateAclCheckDetailStatus": {
+      "required": [
+        "TaskId",
+        "Uuid",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAclCheckDetailStatus"
+    },
+    "UpdatePostpayUserInternetStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePostpayUserInternetStatus"
+    },
+    "UpdatePostpayUserNatStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePostpayUserNatStatus"
+    },
+    "UpdatePostpayUserVpcStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePostpayUserVpcStatus"
+    },
+    "UpdateSecurityProxy": {
+      "required": [
+        "ProxyId",
+        "ProxyName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSecurityProxy"
+    },
+    "UseAclBackupData": {
+      "required": [
+        "BackUpTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UseAclBackupData"
+    }
+  }
+}

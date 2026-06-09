@@ -1,0 +1,855 @@
+{
+  "snapshotVersion": 1,
+  "product": "slb",
+  "openApiProduct": "Slb",
+  "version": "2014-05-15",
+  "source": "https://api.aliyun.com/meta/v1/products/Slb/versions/2014-05-15/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:56.740Z",
+  "actions": {
+    "AddAccessControlListEntry": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddAccessControlListEntry"
+    },
+    "AddBackendServers": {
+      "required": [
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddBackendServers"
+    },
+    "AddListenerWhiteListItem": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort",
+        "SourceItems"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddListenerWhiteListItem"
+    },
+    "AddTags": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "Tags"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddTags"
+    },
+    "AddVServerGroupBackendServers": {
+      "required": [
+        "RegionId",
+        "VServerGroupId",
+        "BackendServers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddVServerGroupBackendServers"
+    },
+    "CreateAccessControlList": {
+      "required": [
+        "RegionId",
+        "AclName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessControlList"
+    },
+    "CreateDomainExtension": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "ListenerPort",
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDomainExtension"
+    },
+    "CreateLoadBalancer": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLoadBalancer"
+    },
+    "CreateLoadBalancerHTTPListener": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort",
+        "HealthCheck"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLoadBalancerHTTPListener"
+    },
+    "CreateLoadBalancerHTTPSListener": {
+      "required": [
+        "LoadBalancerId",
+        "Bandwidth",
+        "ListenerPort",
+        "HealthCheck"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLoadBalancerHTTPSListener"
+    },
+    "CreateLoadBalancerTCPListener": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLoadBalancerTCPListener"
+    },
+    "CreateLoadBalancerUDPListener": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLoadBalancerUDPListener"
+    },
+    "CreateMasterSlaveServerGroup": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMasterSlaveServerGroup"
+    },
+    "CreateRules": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "ListenerPort",
+        "RuleList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRules"
+    },
+    "CreateTLSCipherPolicy": {
+      "required": [
+        "RegionId",
+        "Name",
+        "Ciphers",
+        "TLSVersions"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTLSCipherPolicy"
+    },
+    "CreateVServerGroup": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVServerGroup"
+    },
+    "DeleteAccessControlList": {
+      "required": [
+        "RegionId",
+        "AclId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessControlList"
+    },
+    "DeleteAccessLogsDownloadAttribute": {
+      "required": [
+        "RegionId",
+        "LogsDownloadAttributes"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessLogsDownloadAttribute"
+    },
+    "DeleteCACertificate": {
+      "required": [
+        "RegionId",
+        "CACertificateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCACertificate"
+    },
+    "DeleteDomainExtension": {
+      "required": [
+        "RegionId",
+        "DomainExtensionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDomainExtension"
+    },
+    "DeleteLoadBalancer": {
+      "required": [
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLoadBalancer"
+    },
+    "DeleteLoadBalancerListener": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLoadBalancerListener"
+    },
+    "DeleteMasterSlaveServerGroup": {
+      "required": [
+        "RegionId",
+        "MasterSlaveServerGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMasterSlaveServerGroup"
+    },
+    "DeleteRules": {
+      "required": [
+        "RegionId",
+        "RuleIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRules"
+    },
+    "DeleteServerCertificate": {
+      "required": [
+        "ServerCertificateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteServerCertificate"
+    },
+    "DeleteTLSCipherPolicy": {
+      "required": [
+        "RegionId",
+        "TLSCipherPolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTLSCipherPolicy"
+    },
+    "DeleteVServerGroup": {
+      "required": [
+        "RegionId",
+        "VServerGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVServerGroup"
+    },
+    "DescribeAccessControlListAttribute": {
+      "required": [
+        "RegionId",
+        "AclId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessControlListAttribute"
+    },
+    "DescribeAccessControlLists": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessControlLists"
+    },
+    "DescribeAccessLogsDownloadAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessLogsDownloadAttribute"
+    },
+    "DescribeAvailableResource": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableResource"
+    },
+    "DescribeCACertificates": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCACertificates"
+    },
+    "DescribeDomainExtensionAttribute": {
+      "required": [
+        "RegionId",
+        "DomainExtensionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainExtensionAttribute"
+    },
+    "DescribeDomainExtensions": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainExtensions"
+    },
+    "DescribeHealthStatus": {
+      "required": [
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHealthStatus"
+    },
+    "DescribeHighDefinationMonitor": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHighDefinationMonitor"
+    },
+    "DescribeListenerAccessControlAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeListenerAccessControlAttribute"
+    },
+    "DescribeLoadBalancerAttribute": {
+      "required": [
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLoadBalancerAttribute"
+    },
+    "DescribeLoadBalancerHTTPListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLoadBalancerHTTPListenerAttribute"
+    },
+    "DescribeLoadBalancerHTTPSListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLoadBalancerHTTPSListenerAttribute"
+    },
+    "DescribeLoadBalancerListeners": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List SLB listeners"
+    },
+    "DescribeLoadBalancerTCPListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLoadBalancerTCPListenerAttribute"
+    },
+    "DescribeLoadBalancerUDPListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLoadBalancerUDPListenerAttribute"
+    },
+    "DescribeLoadBalancers": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLoadBalancers"
+    },
+    "DescribeMasterSlaveServerGroupAttribute": {
+      "required": [
+        "RegionId",
+        "MasterSlaveServerGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMasterSlaveServerGroupAttribute"
+    },
+    "DescribeMasterSlaveServerGroups": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMasterSlaveServerGroups"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeRuleAttribute": {
+      "required": [
+        "RegionId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRuleAttribute"
+    },
+    "DescribeRules": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRules"
+    },
+    "DescribeServerCertificates": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeServerCertificates"
+    },
+    "DescribeTags": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTags"
+    },
+    "DescribeVServerGroupAttribute": {
+      "required": [
+        "RegionId",
+        "VServerGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVServerGroupAttribute"
+    },
+    "DescribeVServerGroups": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVServerGroups"
+    },
+    "DescribeZones": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZones"
+    },
+    "EnableHighDefinationMonitor": {
+      "required": [
+        "RegionId",
+        "LogProject",
+        "LogStore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableHighDefinationMonitor"
+    },
+    "ListTLSCipherPolicies": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTLSCipherPolicies"
+    },
+    "ListTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ModifyHighDefinationMonitor": {
+      "required": [
+        "RegionId",
+        "LogProject",
+        "LogStore"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHighDefinationMonitor"
+    },
+    "ModifyLoadBalancerInstanceChargeType": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "InstanceChargeType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyLoadBalancerInstanceChargeType"
+    },
+    "ModifyLoadBalancerInstanceSpec": {
+      "required": [
+        "LoadBalancerId",
+        "LoadBalancerSpec"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the specification of a CLB instance"
+    },
+    "ModifyLoadBalancerInternetSpec": {
+      "required": [
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyLoadBalancerInternetSpec"
+    },
+    "ModifyLoadBalancerPayType": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyLoadBalancerPayType"
+    },
+    "ModifyVServerGroupBackendServers": {
+      "required": [
+        "RegionId",
+        "VServerGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVServerGroupBackendServers"
+    },
+    "MoveResourceGroup": {
+      "required": [
+        "RegionId",
+        "ResourceId",
+        "ResourceType",
+        "NewResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveResourceGroup"
+    },
+    "RemoveAccessControlListEntry": {
+      "required": [
+        "RegionId",
+        "AclId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveAccessControlListEntry"
+    },
+    "RemoveBackendServers": {
+      "required": [
+        "LoadBalancerId",
+        "BackendServers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveBackendServers"
+    },
+    "RemoveListenerWhiteListItem": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort",
+        "SourceItems"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveListenerWhiteListItem"
+    },
+    "RemoveTags": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "Tags"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveTags"
+    },
+    "RemoveVServerGroupBackendServers": {
+      "required": [
+        "RegionId",
+        "VServerGroupId",
+        "BackendServers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveVServerGroupBackendServers"
+    },
+    "SetAccessControlListAttribute": {
+      "required": [
+        "RegionId",
+        "AclId",
+        "AclName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetAccessControlListAttribute"
+    },
+    "SetAccessLogsDownloadAttribute": {
+      "required": [
+        "RegionId",
+        "LogsDownloadAttributes"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetAccessLogsDownloadAttribute"
+    },
+    "SetBackendServers": {
+      "required": [
+        "LoadBalancerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetBackendServers"
+    },
+    "SetCACertificateName": {
+      "required": [
+        "RegionId",
+        "CACertificateId",
+        "CACertificateName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetCACertificateName"
+    },
+    "SetDomainExtensionAttribute": {
+      "required": [
+        "RegionId",
+        "DomainExtensionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDomainExtensionAttribute"
+    },
+    "SetListenerAccessControlStatus": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort",
+        "AccessControlStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetListenerAccessControlStatus"
+    },
+    "SetLoadBalancerDeleteProtection": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "DeleteProtection"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerDeleteProtection"
+    },
+    "SetLoadBalancerHTTPListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerHTTPListenerAttribute"
+    },
+    "SetLoadBalancerHTTPSListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerHTTPSListenerAttribute"
+    },
+    "SetLoadBalancerModificationProtection": {
+      "required": [
+        "RegionId",
+        "LoadBalancerId",
+        "ModificationProtectionStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerModificationProtection"
+    },
+    "SetLoadBalancerName": {
+      "required": [
+        "LoadBalancerId",
+        "LoadBalancerName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerName"
+    },
+    "SetLoadBalancerStatus": {
+      "required": [
+        "LoadBalancerId",
+        "LoadBalancerStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerStatus"
+    },
+    "SetLoadBalancerTCPListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerTCPListenerAttribute"
+    },
+    "SetLoadBalancerUDPListenerAttribute": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetLoadBalancerUDPListenerAttribute"
+    },
+    "SetRule": {
+      "required": [
+        "RegionId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetRule"
+    },
+    "SetServerCertificateName": {
+      "required": [
+        "RegionId",
+        "ServerCertificateId",
+        "ServerCertificateName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetServerCertificateName"
+    },
+    "SetTLSCipherPolicyAttribute": {
+      "required": [
+        "RegionId",
+        "TLSCipherPolicyId",
+        "Name",
+        "TLSVersions",
+        "Ciphers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetTLSCipherPolicyAttribute"
+    },
+    "SetVServerGroupAttribute": {
+      "required": [
+        "RegionId",
+        "VServerGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetVServerGroupAttribute"
+    },
+    "StartLoadBalancerListener": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartLoadBalancerListener"
+    },
+    "StopLoadBalancerListener": {
+      "required": [
+        "LoadBalancerId",
+        "ListenerPort"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopLoadBalancerListener"
+    },
+    "TagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UploadCACertificate": {
+      "required": [
+        "RegionId",
+        "CACertificate"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UploadCACertificate"
+    },
+    "UploadServerCertificate": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UploadServerCertificate"
+    }
+  }
+}

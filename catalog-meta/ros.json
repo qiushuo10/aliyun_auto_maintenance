@@ -1,0 +1,765 @@
+{
+  "snapshotVersion": 1,
+  "product": "ros",
+  "openApiProduct": "ROS",
+  "version": "2019-09-10",
+  "source": "https://api.aliyun.com/meta/v1/products/ROS/versions/2019-09-10/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:56.329Z",
+  "actions": {
+    "CancelStackOperation": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelStackOperation"
+    },
+    "CancelUpdateStack": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelUpdateStack"
+    },
+    "ContinueCreateStack": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ContinueCreateStack"
+    },
+    "CreateAITask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create AI Task"
+    },
+    "CreateChangeSet": {
+      "required": [
+        "RegionId",
+        "ChangeSetName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateChangeSet"
+    },
+    "CreateDiagnostic": {
+      "required": [
+        "DiagnosticKey"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDiagnostic"
+    },
+    "CreateStack": {
+      "required": [
+        "StackName",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateStack"
+    },
+    "CreateStackGroup": {
+      "required": [
+        "RegionId",
+        "StackGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateStackGroup"
+    },
+    "CreateStackInstances": {
+      "required": [
+        "RegionId",
+        "StackGroupName",
+        "RegionIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateStackInstances"
+    },
+    "CreateTemplate": {
+      "required": [
+        "TemplateName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTemplate"
+    },
+    "CreateTemplateScratch": {
+      "required": [
+        "RegionId",
+        "TemplateScratchType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTemplateScratch"
+    },
+    "DeleteChangeSet": {
+      "required": [
+        "RegionId",
+        "ChangeSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteChangeSet"
+    },
+    "DeleteDiagnostic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDiagnostic"
+    },
+    "DeleteStack": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteStack"
+    },
+    "DeleteStackGroup": {
+      "required": [
+        "RegionId",
+        "StackGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteStackGroup"
+    },
+    "DeleteStackInstances": {
+      "required": [
+        "RegionId",
+        "StackGroupName",
+        "RegionIds",
+        "RetainStacks"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteStackInstances"
+    },
+    "DeleteTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTemplate"
+    },
+    "DeleteTemplateScratch": {
+      "required": [
+        "RegionId",
+        "TemplateScratchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTemplateScratch"
+    },
+    "DeregisterResourceType": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeregisterResourceType"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DetectStackDrift": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetectStackDrift"
+    },
+    "DetectStackGroupDrift": {
+      "required": [
+        "RegionId",
+        "StackGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetectStackGroupDrift"
+    },
+    "DetectStackResourceDrift": {
+      "required": [
+        "StackId",
+        "RegionId",
+        "LogicalResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetectStackResourceDrift"
+    },
+    "EnableServiceAccess": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableServiceAccess"
+    },
+    "EnableServices": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableServices"
+    },
+    "ExecuteChangeSet": {
+      "required": [
+        "RegionId",
+        "ChangeSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ExecuteChangeSet"
+    },
+    "GenerateTemplateByScratch": {
+      "required": [
+        "RegionId",
+        "TemplateScratchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateTemplateByScratch"
+    },
+    "GenerateTemplatePolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateTemplatePolicy"
+    },
+    "GetAITask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAITask"
+    },
+    "GetChangeSet": {
+      "required": [
+        "RegionId",
+        "ChangeSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetChangeSet"
+    },
+    "GetDiagnostic": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDiagnostic"
+    },
+    "GetFeatureDetails": {
+      "required": [
+        "Feature",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetFeatureDetails"
+    },
+    "GetResourceType": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourceType"
+    },
+    "GetResourceTypeTemplate": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourceTypeTemplate"
+    },
+    "GetServiceAccess": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetServiceAccess"
+    },
+    "GetServiceProvisions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetServiceProvisions"
+    },
+    "GetStack": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStack"
+    },
+    "GetStackDriftDetectionStatus": {
+      "required": [
+        "RegionId",
+        "DriftDetectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStackDriftDetectionStatus"
+    },
+    "GetStackGroup": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStackGroup"
+    },
+    "GetStackGroupOperation": {
+      "required": [
+        "RegionId",
+        "OperationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStackGroupOperation"
+    },
+    "GetStackInstance": {
+      "required": [
+        "RegionId",
+        "StackGroupName",
+        "StackInstanceAccountId",
+        "StackInstanceRegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStackInstance"
+    },
+    "GetStackPolicy": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStackPolicy"
+    },
+    "GetStackResource": {
+      "required": [
+        "StackId",
+        "RegionId",
+        "LogicalResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStackResource"
+    },
+    "GetTemplate": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTemplate"
+    },
+    "GetTemplateEstimateCost": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTemplateEstimateCost"
+    },
+    "GetTemplateParameterConstraints": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTemplateParameterConstraints"
+    },
+    "GetTemplateScratch": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTemplateScratch"
+    },
+    "GetTemplateSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTemplateSummary"
+    },
+    "ImportStacksToStackGroup": {
+      "required": [
+        "RegionId",
+        "StackGroupName",
+        "StackArns"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ImportStacksToStackGroup"
+    },
+    "ListAITaskEvents": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAITaskEvents"
+    },
+    "ListAITasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAITasks"
+    },
+    "ListChangeSets": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListChangeSets"
+    },
+    "ListDiagnostics": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDiagnostics"
+    },
+    "ListResourceTypeRegistrations": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListResourceTypeRegistrations"
+    },
+    "ListResourceTypeVersions": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListResourceTypeVersions"
+    },
+    "ListResourceTypes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListResourceTypes"
+    },
+    "ListStackEvents": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackEvents"
+    },
+    "ListStackGroupOperationResults": {
+      "required": [
+        "RegionId",
+        "OperationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackGroupOperationResults"
+    },
+    "ListStackGroupOperations": {
+      "required": [
+        "RegionId",
+        "StackGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackGroupOperations"
+    },
+    "ListStackGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackGroups"
+    },
+    "ListStackInstances": {
+      "required": [
+        "RegionId",
+        "StackGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackInstances"
+    },
+    "ListStackOperationRisks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackOperationRisks"
+    },
+    "ListStackResourceDrifts": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackResourceDrifts"
+    },
+    "ListStackResources": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStackResources"
+    },
+    "ListStacks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStacks"
+    },
+    "ListSummaries": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListSummaries"
+    },
+    "ListTagKeys": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagKeys"
+    },
+    "ListTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListTagValues": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "Key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagValues"
+    },
+    "ListTemplateScratches": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTemplateScratches"
+    },
+    "ListTemplateVersions": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTemplateVersions"
+    },
+    "ListTemplates": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List Templates"
+    },
+    "MoveResourceGroup": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "NewResourceGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveResourceGroup"
+    },
+    "PreviewStack": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PreviewStack"
+    },
+    "RegisterResourceType": {
+      "required": [
+        "EntityType",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RegisterResourceType"
+    },
+    "SetDeletionProtection": {
+      "required": [
+        "StackId",
+        "DeletionProtection",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDeletionProtection"
+    },
+    "SetResourceType": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetResourceType"
+    },
+    "SetStackPolicy": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetStackPolicy"
+    },
+    "SetTemplatePermission": {
+      "required": [
+        "ShareOption",
+        "TemplateId",
+        "AccountIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetTemplatePermission"
+    },
+    "SignalResource": {
+      "required": [
+        "StackId",
+        "Status",
+        "RegionId",
+        "UniqueId",
+        "LogicalResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SignalResource"
+    },
+    "StopStackGroupOperation": {
+      "required": [
+        "RegionId",
+        "OperationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopStackGroupOperation"
+    },
+    "TagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateStack": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateStack"
+    },
+    "UpdateStackGroup": {
+      "required": [
+        "RegionId",
+        "StackGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Stack Group"
+    },
+    "UpdateStackInstances": {
+      "required": [
+        "RegionId",
+        "StackGroupName",
+        "RegionIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateStackInstances"
+    },
+    "UpdateStackTemplateByResources": {
+      "required": [
+        "StackId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateStackTemplateByResources"
+    },
+    "UpdateTemplate": {
+      "required": [
+        "TemplateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Template"
+    },
+    "UpdateTemplateScratch": {
+      "required": [
+        "RegionId",
+        "TemplateScratchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateTemplateScratch"
+    },
+    "ValidateTemplate": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ValidateTemplate"
+    }
+  }
+}

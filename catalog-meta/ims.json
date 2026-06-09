@@ -1,0 +1,678 @@
+{
+  "snapshotVersion": 1,
+  "product": "ims",
+  "openApiProduct": "Ims",
+  "version": "2019-08-15",
+  "source": "https://api.aliyun.com/meta/v1/products/Ims/versions/2019-08-15/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:42.354Z",
+  "actions": {
+    "AddClientIdToOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddClientIdToOIDCProvider"
+    },
+    "AddFingerprintToOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddFingerprintToOIDCProvider"
+    },
+    "AddUserToGroup": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddUserToGroup"
+    },
+    "BindMFADevice": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BindMFADevice"
+    },
+    "ChangePassword": {
+      "required": [
+        "OldPassword",
+        "NewPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangePassword"
+    },
+    "CreateAccessKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessKey"
+    },
+    "CreateAppSecret": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAppSecret"
+    },
+    "CreateApplication": {
+      "required": [
+        "DisplayName",
+        "AppType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateApplication"
+    },
+    "CreateGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGroup"
+    },
+    "CreateLoginProfile": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLoginProfile"
+    },
+    "CreateOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOIDCProvider"
+    },
+    "CreateSAMLProvider": {
+      "required": [
+        "SAMLProviderName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSAMLProvider"
+    },
+    "CreateUser": {
+      "required": [
+        "UserPrincipalName",
+        "DisplayName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateUser"
+    },
+    "CreateVirtualMFADevice": {
+      "required": [
+        "VirtualMFADeviceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVirtualMFADevice"
+    },
+    "DeleteAccessKey": {
+      "required": [
+        "UserAccessKeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessKey"
+    },
+    "DeleteAccessKeyInRecycleBin": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessKeyInRecycleBin"
+    },
+    "DeleteAppSecret": {
+      "required": [
+        "AppId",
+        "AppSecretId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAppSecret"
+    },
+    "DeleteApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteApplication"
+    },
+    "DeleteGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGroup"
+    },
+    "DeleteLoginProfile": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLoginProfile"
+    },
+    "DeleteOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteOIDCProvider"
+    },
+    "DeletePasskey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePasskey"
+    },
+    "DeleteSAMLProvider": {
+      "required": [
+        "SAMLProviderName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSAMLProvider"
+    },
+    "DeleteUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUser"
+    },
+    "DeleteUserInRecycleBin": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUserInRecycleBin"
+    },
+    "DeleteVirtualMFADevice": {
+      "required": [
+        "SerialNumber"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVirtualMFADevice"
+    },
+    "DeprovisionApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeprovisionApplication"
+    },
+    "DeprovisionExternalApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeprovisionExternalApplication"
+    },
+    "DisableVirtualMFA": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableVirtualMFA"
+    },
+    "GenerateCredentialReport": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateCredentialReport"
+    },
+    "GenerateGovernanceReport": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateGovernanceReport"
+    },
+    "GetAccessKeyInfoInRecycleBin": {
+      "required": [
+        "UserAccessKeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessKeyInfoInRecycleBin"
+    },
+    "GetAccessKeyLastUsed": {
+      "required": [
+        "UserAccessKeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessKeyLastUsed"
+    },
+    "GetAccountMFAInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccountMFAInfo"
+    },
+    "GetAccountSecurityPracticeReport": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccountSecurityPracticeReport"
+    },
+    "GetAccountSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccountSummary"
+    },
+    "GetAppSecret": {
+      "required": [
+        "AppId",
+        "AppSecretId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAppSecret"
+    },
+    "GetApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetApplication"
+    },
+    "GetApplicationProvisionInfo": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetApplicationProvisionInfo"
+    },
+    "GetCredentialReport": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCredentialReport"
+    },
+    "GetDefaultDomain": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDefaultDomain"
+    },
+    "GetExternalApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetExternalApplication"
+    },
+    "GetGovernanceItemReport": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the detection report of a specified identity permission administration check item"
+    },
+    "GetGovernanceReportStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the generation status of the identity permission governance detection report"
+    },
+    "GetGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetGroup"
+    },
+    "GetLoginProfile": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetLoginProfile"
+    },
+    "GetOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetOIDCProvider"
+    },
+    "GetPasswordPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPasswordPolicy"
+    },
+    "GetSAMLProvider": {
+      "required": [
+        "SAMLProviderName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSAMLProvider"
+    },
+    "GetSecurityPreference": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSecurityPreference"
+    },
+    "GetUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUser"
+    },
+    "GetUserInRecycleBin": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUserInRecycleBin"
+    },
+    "GetUserMFAInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUserMFAInfo"
+    },
+    "GetUserSsoSettings": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUserSsoSettings"
+    },
+    "GetVerificationInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetVerificationInfo"
+    },
+    "ListAccessKeys": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAccessKeys"
+    },
+    "ListAccessKeysInRecycleBin": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAccessKeysInRecycleBin"
+    },
+    "ListAppSecretIds": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAppSecretIds"
+    },
+    "ListApplicationProvisionInfos": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListApplicationProvisionInfos"
+    },
+    "ListApplications": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListApplications"
+    },
+    "ListExternalApplications": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListExternalApplications"
+    },
+    "ListGroups": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGroups"
+    },
+    "ListGroupsForUser": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGroupsForUser"
+    },
+    "ListOIDCProviders": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListOIDCProviders"
+    },
+    "ListPasskeys": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPasskeys"
+    },
+    "ListPredefinedScopes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPredefinedScopes"
+    },
+    "ListRecentGovernanceMetrics": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRecentGovernanceMetrics"
+    },
+    "ListSAMLProviders": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListSAMLProviders"
+    },
+    "ListTagResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListUserBasicInfos": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUserBasicInfos"
+    },
+    "ListUsers": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUsers"
+    },
+    "ListUsersForGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUsersForGroup"
+    },
+    "ListUsersInRecycleBin": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUsersInRecycleBin"
+    },
+    "ListVirtualMFADevices": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListVirtualMFADevices"
+    },
+    "ProvisionApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ProvisionApplication"
+    },
+    "ProvisionExternalApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ProvisionExternalApplication"
+    },
+    "RemoveClientIdFromOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveClientIdFromOIDCProvider"
+    },
+    "RemoveFingerprintFromOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveFingerprintFromOIDCProvider"
+    },
+    "RemoveUserFromGroup": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveUserFromGroup"
+    },
+    "RestoreAccessKeyFromRecycleBin": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestoreAccessKeyFromRecycleBin"
+    },
+    "RestoreUserFromRecycleBin": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestoreUserFromRecycleBin"
+    },
+    "SetDefaultDomain": {
+      "required": [
+        "DefaultDomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDefaultDomain"
+    },
+    "SetPasswordPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetPasswordPolicy"
+    },
+    "SetSecurityPreference": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetSecurityPreference"
+    },
+    "SetUserSsoSettings": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetUserSsoSettings"
+    },
+    "SetVerificationInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetVerificationInfo"
+    },
+    "TagResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UnbindMFADevice": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnbindMFADevice"
+    },
+    "UnbindVerification": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnbindVerification"
+    },
+    "UntagResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateAccessKey": {
+      "required": [
+        "UserAccessKeyId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAccessKey"
+    },
+    "UpdateApplication": {
+      "required": [
+        "AppId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateApplication"
+    },
+    "UpdateGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGroup"
+    },
+    "UpdateLoginProfile": {
+      "required": [
+        "UserPrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLoginProfile"
+    },
+    "UpdateOIDCProvider": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateOIDCProvider"
+    },
+    "UpdatePasskey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePasskey"
+    },
+    "UpdateSAMLProvider": {
+      "required": [
+        "SAMLProviderName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSAMLProvider"
+    },
+    "UpdateUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateUser"
+    }
+  }
+}

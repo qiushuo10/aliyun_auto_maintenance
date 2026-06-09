@@ -1,0 +1,3756 @@
+{
+  "snapshotVersion": 1,
+  "product": "vpc",
+  "openApiProduct": "Vpc",
+  "version": "2016-04-28",
+  "source": "https://api.aliyun.com/meta/v1/products/Vpc/versions/2016-04-28/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:47:03.155Z",
+  "actions": {
+    "ActivateRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ActivateRouterInterface"
+    },
+    "ActiveFlowLog": {
+      "required": [
+        "RegionId",
+        "FlowLogId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ActiveFlowLog"
+    },
+    "AddBgpNetwork": {
+      "required": [
+        "RegionId",
+        "DstCidrBlock",
+        "RouterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddBgpNetwork"
+    },
+    "AddCommonBandwidthPackageIp": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "IpInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddCommonBandwidthPackageIp"
+    },
+    "AddCommonBandwidthPackageIps": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "IpInstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddCommonBandwidthPackageIps"
+    },
+    "AddGlobalAccelerationInstanceIp": {
+      "required": [
+        "RegionId",
+        "GlobalAccelerationInstanceId",
+        "IpInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddGlobalAccelerationInstanceIp"
+    },
+    "AddIPv6TranslatorAclListEntry": {
+      "required": [
+        "RegionId",
+        "AclId",
+        "AclEntryIp"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddIPv6TranslatorAclListEntry"
+    },
+    "AddPublicIpAddressPoolCidrBlock": {
+      "required": [
+        "PublicIpAddressPoolId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddPublicIpAddressPoolCidrBlock"
+    },
+    "AddSourcesToTrafficMirrorSession": {
+      "required": [
+        "TrafficMirrorSessionId",
+        "TrafficMirrorSourceIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddSourcesToTrafficMirrorSession"
+    },
+    "AllocateEipAddress": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Request an Elastic IP Address (EIP)"
+    },
+    "AllocateEipAddressPro": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateEipAddressPro"
+    },
+    "AllocateEipSegmentAddress": {
+      "required": [
+        "RegionId",
+        "EipMask"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AllocateEipSegmentAddress"
+    },
+    "AllocateIpv6Address": {
+      "required": [
+        "RegionId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateIpv6Address"
+    },
+    "AllocateIpv6InternetBandwidth": {
+      "required": [
+        "RegionId",
+        "Ipv6AddressId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateIpv6InternetBandwidth"
+    },
+    "AllocateVpcIpv6Cidr": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateVpcIpv6Cidr"
+    },
+    "ApplyPhysicalConnectionLOA": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "CompanyName",
+        "LineType",
+        "Si",
+        "ConstructionTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyPhysicalConnectionLOA"
+    },
+    "AssociateEipAddress": {
+      "required": [
+        "AllocationId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateEipAddress"
+    },
+    "AssociateEipAddressBatch": {
+      "required": [
+        "RegionId",
+        "BindedInstanceId",
+        "BindedInstanceType",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateEipAddressBatch"
+    },
+    "AssociateHaVip": {
+      "required": [
+        "RegionId",
+        "HaVipId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateHaVip"
+    },
+    "AssociateMacSecKey": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId",
+        "CipherSuite",
+        "Ckn",
+        "Cak"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Associate MacSec Key"
+    },
+    "AssociateNetworkAcl": {
+      "required": [
+        "NetworkAclId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateNetworkAcl"
+    },
+    "AssociatePhysicalConnectionToVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId",
+        "PhysicalConnectionId",
+        "VlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociatePhysicalConnectionToVirtualBorderRouter"
+    },
+    "AssociateRouteTable": {
+      "required": [
+        "RegionId",
+        "RouteTableId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateRouteTable"
+    },
+    "AssociateRouteTableWithGateway": {
+      "required": [
+        "RegionId",
+        "RouteTableId",
+        "GatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateRouteTableWithGateway"
+    },
+    "AssociateRouteTablesWithVpcGatewayEndpoint": {
+      "required": [
+        "EndpointId",
+        "RouteTableIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateRouteTablesWithVpcGatewayEndpoint"
+    },
+    "AssociateVpcCidrBlock": {
+      "required": [
+        "RegionId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateVpcCidrBlock"
+    },
+    "AssociateVpnGatewayWithCertificate": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "CertificateType",
+        "CertificateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateVpnGatewayWithCertificate"
+    },
+    "AttachDhcpOptionsSetToVpc": {
+      "required": [
+        "RegionId",
+        "DhcpOptionsSetId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachDhcpOptionsSetToVpc"
+    },
+    "AttachVbrToVpconn": {
+      "required": [
+        "VpconnId",
+        "VbrId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachVbrToVpconn"
+    },
+    "CancelCommonBandwidthPackageIpBandwidth": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "EipId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelCommonBandwidthPackageIpBandwidth"
+    },
+    "CancelPhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelPhysicalConnection"
+    },
+    "ChangeResourceGroup": {
+      "required": [
+        "NewResourceGroupId",
+        "ResourceType",
+        "ResourceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeResourceGroup"
+    },
+    "CheckCanAllocateVpcPrivateIpAddress": {
+      "required": [
+        "RegionId",
+        "VSwitchId",
+        "PrivateIpAddress"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckCanAllocateVpcPrivateIpAddress"
+    },
+    "CheckVpnBgpEnabled": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckVpnBgpEnabled"
+    },
+    "CompletePhysicalConnectionLOA": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CompletePhysicalConnectionLOA"
+    },
+    "ConfirmPhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfirmPhysicalConnection"
+    },
+    "ConnectRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConnectRouterInterface"
+    },
+    "ConvertBandwidthPackage": {
+      "required": [
+        "BandwidthPackageId",
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ConvertBandwidthPackage"
+    },
+    "CopyNetworkAclEntries": {
+      "required": [
+        "RegionId",
+        "NetworkAclId",
+        "SourceNetworkAclId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CopyNetworkAclEntries"
+    },
+    "CreateBgpGroup": {
+      "required": [
+        "RegionId",
+        "RouterId",
+        "PeerAsn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBgpGroup"
+    },
+    "CreateBgpPeer": {
+      "required": [
+        "RegionId",
+        "BgpGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBgpPeer"
+    },
+    "CreateCommonBandwidthPackage": {
+      "required": [
+        "RegionId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an Internet Shared Bandwidth instance"
+    },
+    "CreateCustomerGateway": {
+      "required": [
+        "RegionId",
+        "IpAddress"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCustomerGateway"
+    },
+    "CreateDefaultVSwitch": {
+      "required": [
+        "ZoneId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDefaultVSwitch"
+    },
+    "CreateDefaultVpc": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDefaultVpc"
+    },
+    "CreateDhcpOptionsSet": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDhcpOptionsSet"
+    },
+    "CreateEnhancedVpnGateway": {
+      "required": [
+        "RegionId",
+        "VpcId",
+        "GatewayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an enhanced VPN Gateway"
+    },
+    "CreateExpressCloudConnection": {
+      "required": [
+        "RegionId",
+        "PeerLocation",
+        "IdcSP",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateExpressCloudConnection"
+    },
+    "CreateExpressConnectTrafficQos": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateExpressConnectTrafficQos"
+    },
+    "CreateExpressConnectTrafficQosQueue": {
+      "required": [
+        "RegionId",
+        "QosId",
+        "QueueType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateExpressConnectTrafficQosQueue"
+    },
+    "CreateExpressConnectTrafficQosRule": {
+      "required": [
+        "RegionId",
+        "QosId",
+        "QueueId",
+        "Priority",
+        "Protocol"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateExpressConnectTrafficQosRule"
+    },
+    "CreateFailoverTestJob": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "JobType",
+        "JobDuration"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateFailoverTestJob"
+    },
+    "CreateFlowLog": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "TrafficType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a flow log"
+    },
+    "CreateForwardEntry": {
+      "required": [
+        "RegionId",
+        "ForwardTableId",
+        "ExternalIp",
+        "ExternalPort",
+        "InternalIp",
+        "InternalPort",
+        "IpProtocol"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateForwardEntry"
+    },
+    "CreateFullNatEntry": {
+      "required": [
+        "FullNatTableId",
+        "NetworkInterfaceId",
+        "NatIp",
+        "AccessPort",
+        "IpProtocol",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateFullNatEntry"
+    },
+    "CreateGlobalAccelerationInstance": {
+      "required": [
+        "RegionId",
+        "ServiceLocation",
+        "Bandwidth"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateGlobalAccelerationInstance"
+    },
+    "CreateHaVip": {
+      "required": [
+        "RegionId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateHaVip"
+    },
+    "CreateHighReliablePhysicalConnection": {
+      "required": [
+        "HighReliableType",
+        "PortType",
+        "ApList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a highly reliable Express Connect circuit"
+    },
+    "CreateIPv6Translator": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateIPv6Translator"
+    },
+    "CreateIPv6TranslatorAclList": {
+      "required": [
+        "RegionId",
+        "AclName"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateIPv6TranslatorAclList"
+    },
+    "CreateIPv6TranslatorEntry": {
+      "required": [
+        "RegionId",
+        "Ipv6TranslatorId",
+        "AllocateIpv6Port",
+        "BackendIpv4Addr",
+        "BackendIpv4Port",
+        "TransProtocol"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateIPv6TranslatorEntry"
+    },
+    "CreateIpsecServer": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "LocalSubnet",
+        "ClientIpPool"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateIpsecServer"
+    },
+    "CreateIpv4Gateway": {
+      "required": [
+        "VpcId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateIpv4Gateway"
+    },
+    "CreateIpv6EgressOnlyRule": {
+      "required": [
+        "RegionId",
+        "Ipv6GatewayId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add an egress-only rule for an IPv6 address"
+    },
+    "CreateIpv6Gateway": {
+      "required": [
+        "RegionId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateIpv6Gateway"
+    },
+    "CreateNatGateway": {
+      "required": [
+        "RegionId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNatGateway"
+    },
+    "CreateNatIp": {
+      "required": [
+        "RegionId",
+        "NatGatewayId",
+        "NatIpCidr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNatIp"
+    },
+    "CreateNatIpCidr": {
+      "required": [
+        "RegionId",
+        "NatGatewayId",
+        "NatIpCidr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNatIpCidr"
+    },
+    "CreateNetworkAcl": {
+      "required": [
+        "VpcId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNetworkAcl"
+    },
+    "CreatePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "AccessPointId",
+        "LineOperator"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Request connection over an Express Connect circuit"
+    },
+    "CreatePhysicalConnectionOccupancyOrder": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a Resource Occupancy Fee Order"
+    },
+    "CreatePhysicalConnectionSetupOrder": {
+      "required": [
+        "RegionId",
+        "AccessPointId",
+        "LineOperator"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePhysicalConnectionSetupOrder"
+    },
+    "CreatePublicIpAddressPool": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePublicIpAddressPool"
+    },
+    "CreateRouteEntries": {
+      "required": [
+        "RegionId",
+        "RouteEntries"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRouteEntries"
+    },
+    "CreateRouteEntry": {
+      "required": [
+        "RouteTableId",
+        "DestinationCidrBlock"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRouteEntry"
+    },
+    "CreateRouteTable": {
+      "required": [
+        "RegionId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRouteTable"
+    },
+    "CreateRouteTargetGroup": {
+      "required": [
+        "VpcId",
+        "RouteTargetMemberList",
+        "ConfigMode",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRouteTargetGroup"
+    },
+    "CreateRouterInterface": {
+      "required": [
+        "RegionId",
+        "Role",
+        "OppositeRegionId",
+        "Spec",
+        "RouterType",
+        "RouterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRouterInterface"
+    },
+    "CreateSnatEntry": {
+      "required": [
+        "RegionId",
+        "SnatTableId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSnatEntry"
+    },
+    "CreateSslVpnClientCert": {
+      "required": [
+        "RegionId",
+        "SslVpnServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSslVpnClientCert"
+    },
+    "CreateSslVpnServer": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "ClientIpPool",
+        "LocalSubnet"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSslVpnServer"
+    },
+    "CreateTrafficMirrorFilter": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTrafficMirrorFilter"
+    },
+    "CreateTrafficMirrorFilterRules": {
+      "required": [
+        "TrafficMirrorFilterId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTrafficMirrorFilterRules"
+    },
+    "CreateTrafficMirrorSession": {
+      "required": [
+        "TrafficMirrorTargetId",
+        "TrafficMirrorTargetType",
+        "TrafficMirrorFilterId",
+        "Priority",
+        "TrafficMirrorSourceIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTrafficMirrorSession"
+    },
+    "CreateVSwitch": {
+      "required": [
+        "ZoneId",
+        "CidrBlock",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVSwitch"
+    },
+    "CreateVSwitchCidrReservation": {
+      "required": [
+        "VSwitchId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVSwitchCidrReservation"
+    },
+    "CreateVbrHa": {
+      "required": [
+        "VbrId",
+        "PeerVbrId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVbrHa"
+    },
+    "CreateVcoRouteEntry": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId",
+        "RouteDest",
+        "Weight",
+        "NextHop"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVcoRouteEntry"
+    },
+    "CreateVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId",
+        "VlanId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVirtualBorderRouter"
+    },
+    "CreateVirtualPhysicalConnection": {
+      "required": [
+        "OrderMode",
+        "VlanId",
+        "Spec",
+        "VpconnAliUid",
+        "PhysicalConnectionId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVirtualPhysicalConnection"
+    },
+    "CreateVpc": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpc"
+    },
+    "CreateVpcGatewayEndpoint": {
+      "required": [
+        "VpcId",
+        "ServiceName",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpcGatewayEndpoint"
+    },
+    "CreateVpcPrefixList": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpcPrefixList"
+    },
+    "CreateVpconnFromVbr": {
+      "required": [
+        "VbrId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpconnFromVbr"
+    },
+    "CreateVpnAttachment": {
+      "required": [
+        "RegionId",
+        "LocalSubnet",
+        "RemoteSubnet"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an IPsec-VPN Connection"
+    },
+    "CreateVpnConnection": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "LocalSubnet",
+        "RemoteSubnet"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an IPsec-VPN connection"
+    },
+    "CreateVpnGateway": {
+      "required": [
+        "RegionId",
+        "VpcId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpnGateway"
+    },
+    "CreateVpnPbrRouteEntry": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteSource",
+        "RouteDest",
+        "NextHop",
+        "Weight",
+        "PublishVpc"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateVpnPbrRouteEntry"
+    },
+    "CreateVpnRouteEntry": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteDest",
+        "NextHop",
+        "Weight",
+        "PublishVpc"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Destination-Based Route"
+    },
+    "DeactivateRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeactivateRouterInterface"
+    },
+    "DeactiveFlowLog": {
+      "required": [
+        "RegionId",
+        "FlowLogId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeactiveFlowLog"
+    },
+    "DeleteBgpGroup": {
+      "required": [
+        "RegionId",
+        "BgpGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBgpGroup"
+    },
+    "DeleteBgpNetwork": {
+      "required": [
+        "RegionId",
+        "DstCidrBlock",
+        "RouterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBgpNetwork"
+    },
+    "DeleteBgpPeer": {
+      "required": [
+        "RegionId",
+        "BgpPeerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBgpPeer"
+    },
+    "DeleteCommonBandwidthPackage": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCommonBandwidthPackage"
+    },
+    "DeleteCustomerGateway": {
+      "required": [
+        "RegionId",
+        "CustomerGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCustomerGateway"
+    },
+    "DeleteDhcpOptionsSet": {
+      "required": [
+        "RegionId",
+        "DhcpOptionsSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDhcpOptionsSet"
+    },
+    "DeleteEnhancedVpnGateway": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a specified enhanced VPN Gateway"
+    },
+    "DeleteExpressConnect": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteExpressConnect"
+    },
+    "DeleteExpressConnectTrafficQos": {
+      "required": [
+        "RegionId",
+        "QosId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteExpressConnectTrafficQos"
+    },
+    "DeleteExpressConnectTrafficQosQueue": {
+      "required": [
+        "RegionId",
+        "QosId",
+        "QueueId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteExpressConnectTrafficQosQueue"
+    },
+    "DeleteExpressConnectTrafficQosRule": {
+      "required": [
+        "RegionId",
+        "QosId",
+        "QueueId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteExpressConnectTrafficQosRule"
+    },
+    "DeleteFailoverTestJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFailoverTestJob"
+    },
+    "DeleteFlowLog": {
+      "required": [
+        "RegionId",
+        "FlowLogId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFlowLog"
+    },
+    "DeleteForwardEntry": {
+      "required": [
+        "RegionId",
+        "ForwardTableId",
+        "ForwardEntryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteForwardEntry"
+    },
+    "DeleteFullNatEntry": {
+      "required": [
+        "FullNatTableId",
+        "FullNatEntryId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFullNatEntry"
+    },
+    "DeleteGlobalAccelerationInstance": {
+      "required": [
+        "RegionId",
+        "GlobalAccelerationInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGlobalAccelerationInstance"
+    },
+    "DeleteHaVip": {
+      "required": [
+        "RegionId",
+        "HaVipId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteHaVip"
+    },
+    "DeleteIPv6Translator": {
+      "required": [
+        "RegionId",
+        "Ipv6TranslatorId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIPv6Translator"
+    },
+    "DeleteIPv6TranslatorAclList": {
+      "required": [
+        "RegionId",
+        "AclId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteIPv6TranslatorAclList"
+    },
+    "DeleteIPv6TranslatorEntry": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteIPv6TranslatorEntry"
+    },
+    "DeleteIpsecServer": {
+      "required": [
+        "RegionId",
+        "IpsecServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIpsecServer"
+    },
+    "DeleteIpv4Gateway": {
+      "required": [
+        "Ipv4GatewayId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIpv4Gateway"
+    },
+    "DeleteIpv6EgressOnlyRule": {
+      "required": [
+        "RegionId",
+        "Ipv6EgressOnlyRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIpv6EgressOnlyRule"
+    },
+    "DeleteIpv6Gateway": {
+      "required": [
+        "RegionId",
+        "Ipv6GatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIpv6Gateway"
+    },
+    "DeleteIpv6InternetBandwidth": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteIpv6InternetBandwidth"
+    },
+    "DeleteNatGateway": {
+      "required": [
+        "RegionId",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNatGateway"
+    },
+    "DeleteNatIp": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNatIp"
+    },
+    "DeleteNatIpCidr": {
+      "required": [
+        "RegionId",
+        "NatIpCidr",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNatIpCidr"
+    },
+    "DeleteNetworkAcl": {
+      "required": [
+        "NetworkAclId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNetworkAcl"
+    },
+    "DeletePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePhysicalConnection"
+    },
+    "DeletePublicIpAddressPool": {
+      "required": [
+        "PublicIpAddressPoolId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePublicIpAddressPool"
+    },
+    "DeletePublicIpAddressPoolCidrBlock": {
+      "required": [
+        "PublicIpAddressPoolId",
+        "CidrBlock",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePublicIpAddressPoolCidrBlock"
+    },
+    "DeleteRouteEntries": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRouteEntries"
+    },
+    "DeleteRouteEntry": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRouteEntry"
+    },
+    "DeleteRouteTable": {
+      "required": [
+        "RegionId",
+        "RouteTableId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRouteTable"
+    },
+    "DeleteRouteTargetGroup": {
+      "required": [
+        "RouteTargetGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRouteTargetGroup"
+    },
+    "DeleteRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRouterInterface"
+    },
+    "DeleteSnatEntry": {
+      "required": [
+        "RegionId",
+        "SnatTableId",
+        "SnatEntryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSnatEntry"
+    },
+    "DeleteSslVpnClientCert": {
+      "required": [
+        "RegionId",
+        "SslVpnClientCertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSslVpnClientCert"
+    },
+    "DeleteSslVpnServer": {
+      "required": [
+        "RegionId",
+        "SslVpnServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSslVpnServer"
+    },
+    "DeleteTrafficMirrorFilter": {
+      "required": [
+        "TrafficMirrorFilterId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTrafficMirrorFilter"
+    },
+    "DeleteTrafficMirrorFilterRules": {
+      "required": [
+        "TrafficMirrorFilterId",
+        "TrafficMirrorFilterRuleIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTrafficMirrorFilterRules"
+    },
+    "DeleteTrafficMirrorSession": {
+      "required": [
+        "TrafficMirrorSessionId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTrafficMirrorSession"
+    },
+    "DeleteVSwitch": {
+      "required": [
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVSwitch"
+    },
+    "DeleteVSwitchCidrReservation": {
+      "required": [
+        "VSwitchCidrReservationId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVSwitchCidrReservation"
+    },
+    "DeleteVbrHa": {
+      "required": [
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVbrHa"
+    },
+    "DeleteVcoRouteEntry": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId",
+        "RouteDest",
+        "Weight",
+        "NextHop"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVcoRouteEntry"
+    },
+    "DeleteVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVirtualBorderRouter"
+    },
+    "DeleteVpc": {
+      "required": [
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpc"
+    },
+    "DeleteVpcGatewayEndpoint": {
+      "required": [
+        "EndpointId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpcGatewayEndpoint"
+    },
+    "DeleteVpcPrefixList": {
+      "required": [
+        "PrefixListId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpcPrefixList"
+    },
+    "DeleteVpnAttachment": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpnAttachment"
+    },
+    "DeleteVpnConnection": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpnConnection"
+    },
+    "DeleteVpnGateway": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpnGateway"
+    },
+    "DeleteVpnPbrRouteEntry": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteSource",
+        "RouteDest",
+        "NextHop",
+        "Weight"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpnPbrRouteEntry"
+    },
+    "DeleteVpnRouteEntry": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteDest",
+        "NextHop",
+        "Weight"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteVpnRouteEntry"
+    },
+    "DeletionProtection": {
+      "required": [
+        "RegionId",
+        "ProtectionEnable",
+        "Type",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletionProtection"
+    },
+    "Describe95Traffic": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "InstanceId",
+        "Day"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Describe95Traffic"
+    },
+    "DescribeAccessPoints": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessPoints"
+    },
+    "DescribeBgpGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBgpGroups"
+    },
+    "DescribeBgpNetworks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBgpNetworks"
+    },
+    "DescribeBgpPeers": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBgpPeers"
+    },
+    "DescribeCommonBandwidthPackages": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCommonBandwidthPackages"
+    },
+    "DescribeCustomerGateway": {
+      "required": [
+        "RegionId",
+        "CustomerGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomerGateway"
+    },
+    "DescribeCustomerGateways": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomerGateways"
+    },
+    "DescribeEcGrantRelation": {
+      "required": [
+        "InstanceType",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEcGrantRelation"
+    },
+    "DescribeEipAddresses": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEipAddresses"
+    },
+    "DescribeEipGatewayInfo": {
+      "required": [
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEipGatewayInfo"
+    },
+    "DescribeEipMonitorData": {
+      "required": [
+        "AllocationId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEipMonitorData"
+    },
+    "DescribeEipSegment": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEipSegment"
+    },
+    "DescribeExpressConnectTrafficQos": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeExpressConnectTrafficQos"
+    },
+    "DescribeExpressConnectTrafficQosQueue": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeExpressConnectTrafficQosQueue"
+    },
+    "DescribeExpressConnectTrafficQosRule": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeExpressConnectTrafficQosRule"
+    },
+    "DescribeFailoverTestJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFailoverTestJob"
+    },
+    "DescribeFailoverTestJobs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFailoverTestJobs"
+    },
+    "DescribeFlowLogs": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Flow Logs"
+    },
+    "DescribeForwardTableEntries": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeForwardTableEntries"
+    },
+    "DescribeGlobalAccelerationInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGlobalAccelerationInstances"
+    },
+    "DescribeGrantRulesToCen": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "InstanceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGrantRulesToCen"
+    },
+    "DescribeGrantRulesToEcr": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGrantRulesToEcr"
+    },
+    "DescribeHaVips": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHaVips"
+    },
+    "DescribeHighDefinitionMonitorLogAttribute": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHighDefinitionMonitorLogAttribute"
+    },
+    "DescribeIPv6TranslatorAclListAttributes": {
+      "required": [
+        "RegionId",
+        "AclId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIPv6TranslatorAclListAttributes"
+    },
+    "DescribeIPv6TranslatorAclLists": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeIPv6TranslatorAclLists"
+    },
+    "DescribeIPv6TranslatorEntries": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeIPv6TranslatorEntries"
+    },
+    "DescribeIPv6Translators": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeIPv6Translators"
+    },
+    "DescribeIpv6Addresses": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIpv6Addresses"
+    },
+    "DescribeIpv6EgressOnlyRules": {
+      "required": [
+        "RegionId",
+        "Ipv6GatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIpv6EgressOnlyRules"
+    },
+    "DescribeIpv6GatewayAttribute": {
+      "required": [
+        "RegionId",
+        "Ipv6GatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIpv6GatewayAttribute"
+    },
+    "DescribeIpv6Gateways": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query created IPv6 gateways"
+    },
+    "DescribeNatGatewayAssociateNetworkInterfaces": {
+      "required": [
+        "RegionId",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatGatewayAssociateNetworkInterfaces"
+    },
+    "DescribeNatGateways": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNatGateways"
+    },
+    "DescribeNetworkAclAttributes": {
+      "required": [
+        "NetworkAclId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkAclAttributes"
+    },
+    "DescribeNetworkAcls": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkAcls"
+    },
+    "DescribePhysicalConnectionLOA": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePhysicalConnectionLOA"
+    },
+    "DescribePhysicalConnections": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePhysicalConnections"
+    },
+    "DescribePublicIpAddress": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePublicIpAddress"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeRouteEntryList": {
+      "required": [
+        "RegionId",
+        "RouteTableId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRouteEntryList"
+    },
+    "DescribeRouteTableList": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRouteTableList"
+    },
+    "DescribeRouteTables": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeRouteTables"
+    },
+    "DescribeRouterInterfaceAttribute": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRouterInterfaceAttribute"
+    },
+    "DescribeRouterInterfaces": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRouterInterfaces"
+    },
+    "DescribeServerRelatedGlobalAccelerationInstances": {
+      "required": [
+        "RegionId",
+        "ServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeServerRelatedGlobalAccelerationInstances"
+    },
+    "DescribeSnatTableEntries": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnatTableEntries"
+    },
+    "DescribeSslVpnClientCert": {
+      "required": [
+        "RegionId",
+        "SslVpnClientCertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSslVpnClientCert"
+    },
+    "DescribeSslVpnClientCerts": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSslVpnClientCerts"
+    },
+    "DescribeSslVpnClients": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSslVpnClients"
+    },
+    "DescribeSslVpnServers": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSslVpnServers"
+    },
+    "DescribeTagKeys": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTagKeys"
+    },
+    "DescribeTagKeysForExpressConnect": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTagKeysForExpressConnect"
+    },
+    "DescribeTags": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTags"
+    },
+    "DescribeVRouters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVRouters"
+    },
+    "DescribeVSwitchAttributes": {
+      "required": [
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVSwitchAttributes"
+    },
+    "DescribeVSwitches": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVSwitches"
+    },
+    "DescribeVbrHa": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVbrHa"
+    },
+    "DescribeVcoRouteEntries": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVcoRouteEntries"
+    },
+    "DescribeVirtualBorderRouters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query created virtual border routers (VBRs)"
+    },
+    "DescribeVirtualBorderRoutersForPhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query virtual border routers (VBRs)"
+    },
+    "DescribeVpcAttribute": {
+      "required": [
+        "VpcId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcAttribute"
+    },
+    "DescribeVpcGrantRulesToEcr": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcGrantRulesToEcr"
+    },
+    "DescribeVpcs": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcs"
+    },
+    "DescribeVpnAttachments": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnAttachments"
+    },
+    "DescribeVpnConnection": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnConnection"
+    },
+    "DescribeVpnConnectionLogs": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnConnectionLogs"
+    },
+    "DescribeVpnConnections": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnConnections"
+    },
+    "DescribeVpnCrossAccountAuthorizations": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnCrossAccountAuthorizations"
+    },
+    "DescribeVpnGateway": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnGateway"
+    },
+    "DescribeVpnGatewayAvailableZones": {
+      "required": [
+        "RegionId",
+        "Spec"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of zones in a specified region that support deployment of IPsec-VPN connections"
+    },
+    "DescribeVpnGateways": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnGateways"
+    },
+    "DescribeVpnPbrRouteEntries": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnPbrRouteEntries"
+    },
+    "DescribeVpnRouteEntries": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnRouteEntries"
+    },
+    "DescribeVpnSslServerLogs": {
+      "required": [
+        "RegionId",
+        "VpnSslServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpnSslServerLogs"
+    },
+    "DescribeZones": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZones"
+    },
+    "DetachDhcpOptionsSetFromVpc": {
+      "required": [
+        "RegionId",
+        "DhcpOptionsSetId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachDhcpOptionsSetFromVpc"
+    },
+    "DiagnoseVpnConnections": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DiagnoseVpnConnections"
+    },
+    "DiagnoseVpnGateway": {
+      "required": [
+        "RegionId",
+        "ResourceId",
+        "ResourceType",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DiagnoseVpnGateway"
+    },
+    "DisableVpcClassicLink": {
+      "required": [
+        "RegionId",
+        "VpcId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DisableVpcClassicLink"
+    },
+    "DisassociateMacSecKey": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId",
+        "Ckn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Cancel association of MacSec key"
+    },
+    "DissociateRouteTableFromGateway": {
+      "required": [
+        "RegionId",
+        "RouteTableId",
+        "GatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DissociateRouteTableFromGateway"
+    },
+    "DissociateRouteTablesFromVpcGatewayEndpoint": {
+      "required": [
+        "EndpointId",
+        "RouteTableIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DissociateRouteTablesFromVpcGatewayEndpoint"
+    },
+    "DissociateVpnGatewayWithCertificate": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "CertificateType",
+        "CertificateId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DissociateVpnGatewayWithCertificate"
+    },
+    "DownloadVpnConnectionConfig": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DownloadVpnConnectionConfig"
+    },
+    "EnablePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnablePhysicalConnection"
+    },
+    "EnableVpcClassicLink": {
+      "required": [
+        "RegionId",
+        "VpcId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "EnableVpcClassicLink"
+    },
+    "EnableVpcIpv4Gateway": {
+      "required": [
+        "Ipv4GatewayId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableVpcIpv4Gateway"
+    },
+    "GetDhcpOptionsSet": {
+      "required": [
+        "RegionId",
+        "DhcpOptionsSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDhcpOptionsSet"
+    },
+    "GetFlowLogServiceStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetFlowLogServiceStatus"
+    },
+    "GetIpv4GatewayAttribute": {
+      "required": [
+        "RegionId",
+        "Ipv4GatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetIpv4GatewayAttribute"
+    },
+    "GetNatGatewayAttribute": {
+      "required": [
+        "RegionId",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetNatGatewayAttribute"
+    },
+    "GetNatIpAttribute": {
+      "required": [
+        "RegionId",
+        "NatIpId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "查看单个NAT IP地址详细信息"
+    },
+    "GetNatIpCidrAttribute": {
+      "required": [
+        "RegionId",
+        "NatIpCidr",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "查看单个NAT IP地址段详细信息"
+    },
+    "GetPhysicalConnectionServiceStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPhysicalConnectionServiceStatus"
+    },
+    "GetPublicIpAddressPoolServiceStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPublicIpAddressPoolServiceStatus"
+    },
+    "GetRouteTargetGroup": {
+      "required": [
+        "RouteTargetGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRouteTargetGroup"
+    },
+    "GetTrafficMirrorServiceStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetTrafficMirrorServiceStatus"
+    },
+    "GetVSwitchCidrReservationUsage": {
+      "required": [
+        "VSwitchCidrReservationId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetVSwitchCidrReservationUsage"
+    },
+    "GetVpcGatewayEndpointAttribute": {
+      "required": [
+        "EndpointId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetVpcGatewayEndpointAttribute"
+    },
+    "GetVpcPrefixListAssociations": {
+      "required": [
+        "PrefixListId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetVpcPrefixListAssociations"
+    },
+    "GetVpcPrefixListEntries": {
+      "required": [
+        "PrefixListId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetVpcPrefixListEntries"
+    },
+    "GetVpcRouteEntrySummary": {
+      "required": [
+        "VpcId",
+        "RouteEntryType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetVpcRouteEntrySummary"
+    },
+    "GetVpnGatewayDiagnoseResult": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetVpnGatewayDiagnoseResult"
+    },
+    "GrantInstanceToCen": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "InstanceType",
+        "CenId",
+        "CenOwnerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GrantInstanceToCen"
+    },
+    "GrantInstanceToVbr": {
+      "required": [
+        "RegionId",
+        "VbrOwnerUid",
+        "InstanceId",
+        "GrantType",
+        "VbrRegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GrantInstanceToVbr"
+    },
+    "ListBusinessAccessPoints": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListBusinessAccessPoints"
+    },
+    "ListBusinessRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListBusinessRegions"
+    },
+    "ListDhcpOptionsSets": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDhcpOptionsSets"
+    },
+    "ListEnhanhcedNatGatewayAvailableZones": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEnhanhcedNatGatewayAvailableZones"
+    },
+    "ListFullNatEntries": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListFullNatEntries"
+    },
+    "ListGatewayRouteTableEntries": {
+      "required": [
+        "RegionId",
+        "GatewayRouteTableId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGatewayRouteTableEntries"
+    },
+    "ListGeographicSubRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListGeographicSubRegions"
+    },
+    "ListIpsecServerLogs": {
+      "required": [
+        "RegionId",
+        "IpsecServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListIpsecServerLogs"
+    },
+    "ListIpsecServers": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListIpsecServers"
+    },
+    "ListIpv4Gateways": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListIpv4Gateways"
+    },
+    "ListNatIpCidrs": {
+      "required": [
+        "RegionId",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListNatIpCidrs"
+    },
+    "ListNatIps": {
+      "required": [
+        "RegionId",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListNatIps"
+    },
+    "ListPhysicalConnectionFeatures": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPhysicalConnectionFeatures"
+    },
+    "ListPrefixLists": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPrefixLists"
+    },
+    "ListPublicIpAddressPoolCidrBlocks": {
+      "required": [
+        "PublicIpAddressPoolId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPublicIpAddressPoolCidrBlocks"
+    },
+    "ListPublicIpAddressPools": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPublicIpAddressPools"
+    },
+    "ListRouteTargetGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRouteTargetGroups"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListTagResourcesForExpressConnect": {
+      "required": [
+        "ResourceType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResourcesForExpressConnect"
+    },
+    "ListTrafficMirrorFilters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTrafficMirrorFilters"
+    },
+    "ListTrafficMirrorSessions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTrafficMirrorSessions"
+    },
+    "ListVSwitchCidrReservations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListVSwitchCidrReservations"
+    },
+    "ListVirtualPhysicalConnections": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListVirtualPhysicalConnections"
+    },
+    "ListVpcEndpointServicesByEndUser": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListVpcEndpointServicesByEndUser"
+    },
+    "ListVpcGatewayEndpoints": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListVpcGatewayEndpoints"
+    },
+    "ListVpcPublishedRouteEntries": {
+      "required": [
+        "RegionId",
+        "RouteTableId",
+        "TargetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query VPC Route Publishing Status"
+    },
+    "ListVpnCertificateAssociations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListVpnCertificateAssociations"
+    },
+    "ModifyBgpGroupAttribute": {
+      "required": [
+        "RegionId",
+        "BgpGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBgpGroupAttribute"
+    },
+    "ModifyBgpPeerAttribute": {
+      "required": [
+        "RegionId",
+        "BgpPeerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBgpPeerAttribute"
+    },
+    "ModifyCommonBandwidthPackageAttribute": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCommonBandwidthPackageAttribute"
+    },
+    "ModifyCommonBandwidthPackageIpBandwidth": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "EipId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCommonBandwidthPackageIpBandwidth"
+    },
+    "ModifyCommonBandwidthPackageSpec": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCommonBandwidthPackageSpec"
+    },
+    "ModifyCustomerGatewayAttribute": {
+      "required": [
+        "RegionId",
+        "CustomerGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCustomerGatewayAttribute"
+    },
+    "ModifyEipAddressAttribute": {
+      "required": [
+        "AllocationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyEipAddressAttribute"
+    },
+    "ModifyEipForwardMode": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "Mode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyEipForwardMode"
+    },
+    "ModifyExpressCloudConnectionAttribute": {
+      "required": [
+        "RegionId",
+        "EccId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyExpressCloudConnectionAttribute"
+    },
+    "ModifyExpressCloudConnectionBandwidth": {
+      "required": [
+        "RegionId",
+        "EccId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyExpressCloudConnectionBandwidth"
+    },
+    "ModifyExpressConnectTrafficQos": {
+      "required": [
+        "RegionId",
+        "QosId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyExpressConnectTrafficQos"
+    },
+    "ModifyExpressConnectTrafficQosQueue": {
+      "required": [
+        "RegionId",
+        "QosId",
+        "QueueId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyExpressConnectTrafficQosQueue"
+    },
+    "ModifyExpressConnectTrafficQosRule": {
+      "required": [
+        "RegionId",
+        "QosId",
+        "QueueId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyExpressConnectTrafficQosRule"
+    },
+    "ModifyFlowLogAttribute": {
+      "required": [
+        "RegionId",
+        "FlowLogId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyFlowLogAttribute"
+    },
+    "ModifyForwardEntry": {
+      "required": [
+        "ForwardTableId",
+        "ForwardEntryId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyForwardEntry"
+    },
+    "ModifyFullNatEntryAttribute": {
+      "required": [
+        "FullNatTableId",
+        "FullNatEntryId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyFullNatEntryAttribute"
+    },
+    "ModifyGlobalAccelerationInstanceAttributes": {
+      "required": [
+        "RegionId",
+        "GlobalAccelerationInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyGlobalAccelerationInstanceAttributes"
+    },
+    "ModifyGlobalAccelerationInstanceSpec": {
+      "required": [
+        "RegionId",
+        "GlobalAccelerationInstanceId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyGlobalAccelerationInstanceSpec"
+    },
+    "ModifyHaVipAttribute": {
+      "required": [
+        "RegionId",
+        "HaVipId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHaVipAttribute"
+    },
+    "ModifyIPv6TranslatorAclAttribute": {
+      "required": [
+        "RegionId",
+        "AclId",
+        "AclName"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyIPv6TranslatorAclAttribute"
+    },
+    "ModifyIPv6TranslatorAclListEntry": {
+      "required": [
+        "RegionId",
+        "AclId",
+        "AclEntryId",
+        "AclEntryComment"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIPv6TranslatorAclListEntry"
+    },
+    "ModifyIPv6TranslatorAttribute": {
+      "required": [
+        "RegionId",
+        "Ipv6TranslatorId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIPv6TranslatorAttribute"
+    },
+    "ModifyIPv6TranslatorBandwidth": {
+      "required": [
+        "RegionId",
+        "Ipv6TranslatorId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIPv6TranslatorBandwidth"
+    },
+    "ModifyIPv6TranslatorEntry": {
+      "required": [
+        "RegionId",
+        "Ipv6TranslatorEntryId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyIPv6TranslatorEntry"
+    },
+    "ModifyIpv6AddressAttribute": {
+      "required": [
+        "RegionId",
+        "Ipv6AddressId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIpv6AddressAttribute"
+    },
+    "ModifyIpv6GatewayAttribute": {
+      "required": [
+        "RegionId",
+        "Ipv6GatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIpv6GatewayAttribute"
+    },
+    "ModifyIpv6InternetBandwidth": {
+      "required": [
+        "RegionId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyIpv6InternetBandwidth"
+    },
+    "ModifyNatGatewayAttribute": {
+      "required": [
+        "RegionId",
+        "NatGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNatGatewayAttribute"
+    },
+    "ModifyNatGatewaySpec": {
+      "required": [
+        "RegionId",
+        "NatGatewayId",
+        "Spec"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNatGatewaySpec"
+    },
+    "ModifyNatIpAttribute": {
+      "required": [
+        "RegionId",
+        "NatIpId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNatIpAttribute"
+    },
+    "ModifyNatIpCidrAttribute": {
+      "required": [
+        "RegionId",
+        "NatGatewayId",
+        "NatIpCidr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNatIpCidrAttribute"
+    },
+    "ModifyNetworkAclAttributes": {
+      "required": [
+        "NetworkAclId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNetworkAclAttributes"
+    },
+    "ModifyPhysicalConnectionAttribute": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPhysicalConnectionAttribute"
+    },
+    "ModifyRouteEntry": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRouteEntry"
+    },
+    "ModifyRouteTableAttributes": {
+      "required": [
+        "RouteTableId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRouteTableAttributes"
+    },
+    "ModifyRouterInterfaceAttribute": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRouterInterfaceAttribute"
+    },
+    "ModifyRouterInterfaceSpec": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId",
+        "Spec"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRouterInterfaceSpec"
+    },
+    "ModifySnatEntry": {
+      "required": [
+        "RegionId",
+        "SnatTableId",
+        "SnatEntryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySnatEntry"
+    },
+    "ModifySslVpnClientCert": {
+      "required": [
+        "RegionId",
+        "SslVpnClientCertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySslVpnClientCert"
+    },
+    "ModifySslVpnServer": {
+      "required": [
+        "RegionId",
+        "SslVpnServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySslVpnServer"
+    },
+    "ModifyTunnelAttribute": {
+      "required": [
+        "VpnConnectionId",
+        "TunnelId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyTunnelAttribute"
+    },
+    "ModifyVRouterAttribute": {
+      "required": [
+        "VRouterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVRouterAttribute"
+    },
+    "ModifyVSwitchAttribute": {
+      "required": [
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVSwitchAttribute"
+    },
+    "ModifyVSwitchCidrReservationAttribute": {
+      "required": [
+        "VSwitchCidrReservationId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the name and description of a reserved CIDR block for a vSwitch"
+    },
+    "ModifyVcoRouteEntryWeight": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId",
+        "RouteDest",
+        "Weight",
+        "NewWeight",
+        "NextHop"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVcoRouteEntryWeight"
+    },
+    "ModifyVirtualBorderRouterAttribute": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the configuration of a virtual border router (VBR)"
+    },
+    "ModifyVpcAttribute": {
+      "required": [
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcAttribute"
+    },
+    "ModifyVpcPrefixList": {
+      "required": [
+        "PrefixListId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpcPrefixList"
+    },
+    "ModifyVpnAttachmentAttribute": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpnAttachmentAttribute"
+    },
+    "ModifyVpnConnectionAttribute": {
+      "required": [
+        "RegionId",
+        "VpnConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpnConnectionAttribute"
+    },
+    "ModifyVpnGatewayAttribute": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpnGatewayAttribute"
+    },
+    "ModifyVpnPbrRouteEntryAttribute": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteSource",
+        "RouteDest",
+        "NextHop",
+        "Priority",
+        "Weight"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpnPbrRouteEntryAttribute"
+    },
+    "ModifyVpnPbrRouteEntryPriority": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteSource",
+        "RouteDest",
+        "NextHop",
+        "NewPriority",
+        "Weight"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpnPbrRouteEntryPriority"
+    },
+    "ModifyVpnPbrRouteEntryWeight": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteSource",
+        "RouteDest",
+        "NextHop",
+        "Weight",
+        "NewWeight"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpnPbrRouteEntryWeight"
+    },
+    "ModifyVpnRouteEntryWeight": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteDest",
+        "NextHop",
+        "Weight",
+        "NewWeight"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyVpnRouteEntryWeight"
+    },
+    "MoveResourceGroup": {
+      "required": [
+        "ResourceId",
+        "ResourceType",
+        "NewResourceGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveResourceGroup"
+    },
+    "MoveVpnResourceGroup": {
+      "required": [
+        "InstanceId",
+        "ResourceType",
+        "NewResourceGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveVpnResourceGroup"
+    },
+    "OpenFlowLogService": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenFlowLogService"
+    },
+    "OpenPhysicalConnectionService": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenPhysicalConnectionService"
+    },
+    "OpenPublicIpAddressPoolService": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenPublicIpAddressPoolService"
+    },
+    "OpenTrafficMirrorService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenTrafficMirrorService"
+    },
+    "PublishVpcRouteEntries": {
+      "required": [
+        "RegionId",
+        "TargetType",
+        "TargetInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Publish VPC Routes"
+    },
+    "PublishVpnRouteEntry": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId",
+        "RouteDest",
+        "NextHop",
+        "RouteType",
+        "PublishVpc"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PublishVpnRouteEntry"
+    },
+    "RecoverPhysicalConnection": {
+      "required": [
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RecoverPhysicalConnection"
+    },
+    "RecoverVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RecoverVirtualBorderRouter"
+    },
+    "ReleaseEipAddress": {
+      "required": [
+        "AllocationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseEipAddress"
+    },
+    "ReleaseEipSegmentAddress": {
+      "required": [
+        "RegionId",
+        "SegmentInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseEipSegmentAddress"
+    },
+    "ReleaseIpv6Address": {
+      "required": [
+        "RegionId",
+        "Ipv6AddressId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseIpv6Address"
+    },
+    "RemoveCommonBandwidthPackageIp": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "IpInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveCommonBandwidthPackageIp"
+    },
+    "RemoveGlobalAccelerationInstanceIp": {
+      "required": [
+        "RegionId",
+        "GlobalAccelerationInstanceId",
+        "IpInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove an EIP from a bandwidth-sharing instance"
+    },
+    "RemoveIPv6TranslatorAclListEntry": {
+      "required": [
+        "RegionId",
+        "AclId",
+        "AclEntryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveIPv6TranslatorAclListEntry"
+    },
+    "RemoveSourcesFromTrafficMirrorSession": {
+      "required": [
+        "TrafficMirrorSessionId",
+        "TrafficMirrorSourceIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveSourcesFromTrafficMirrorSession"
+    },
+    "ReplaceVpcDhcpOptionsSet": {
+      "required": [
+        "RegionId",
+        "DhcpOptionsSetId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReplaceVpcDhcpOptionsSet"
+    },
+    "RetryVpcPrefixListAssociation": {
+      "required": [
+        "PrefixListId",
+        "ResourceType",
+        "ResourceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RetryVpcPrefixListAssociation"
+    },
+    "RevokeInstanceFromCen": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "InstanceType",
+        "CenId",
+        "CenOwnerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeInstanceFromCen"
+    },
+    "RevokeInstanceFromVbr": {
+      "required": [
+        "RegionId",
+        "VbrOwnerUid",
+        "InstanceId",
+        "GrantType",
+        "VbrRegionNo"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeInstanceFromVbr"
+    },
+    "SecondApplyPhysicalConnectionLOA": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "CompanyName",
+        "LineType",
+        "Si",
+        "ConstructionTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SecondApplyPhysicalConnectionLOA"
+    },
+    "SetHighDefinitionMonitorLogStatus": {
+      "required": [
+        "RegionId",
+        "LogProject",
+        "LogStore",
+        "InstanceId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetHighDefinitionMonitorLogStatus"
+    },
+    "StartFailoverTestJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartFailoverTestJob"
+    },
+    "StopFailoverTestJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopFailoverTestJob"
+    },
+    "SwitchActiveRouteTarget": {
+      "required": [
+        "RouteTargetGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchActiveRouteTarget"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "RegionId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "TagResourcesForExpressConnect": {
+      "required": [
+        "ResourceType",
+        "RegionId",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResourcesForExpressConnect"
+    },
+    "TerminatePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TerminatePhysicalConnection"
+    },
+    "TerminateVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TerminateVirtualBorderRouter"
+    },
+    "TransformEipSegmentToPublicIpAddressPool": {
+      "required": [
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TransformEipSegmentToPublicIpAddressPool"
+    },
+    "UnTagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnTagResources"
+    },
+    "UnassociateEipAddress": {
+      "required": [
+        "AllocationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassociateEipAddress"
+    },
+    "UnassociateGlobalAccelerationInstance": {
+      "required": [
+        "RegionId",
+        "GlobalAccelerationInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassociateGlobalAccelerationInstance"
+    },
+    "UnassociateHaVip": {
+      "required": [
+        "RegionId",
+        "HaVipId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassociateHaVip"
+    },
+    "UnassociateNetworkAcl": {
+      "required": [
+        "NetworkAclId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassociateNetworkAcl"
+    },
+    "UnassociatePhysicalConnectionFromVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassociatePhysicalConnectionFromVirtualBorderRouter"
+    },
+    "UnassociateRouteTable": {
+      "required": [
+        "RegionId",
+        "RouteTableId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassociateRouteTable"
+    },
+    "UnassociateVpcCidrBlock": {
+      "required": [
+        "RegionId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassociateVpcCidrBlock"
+    },
+    "UntagResourcesForExpressConnect": {
+      "required": [
+        "ResourceType",
+        "RegionId",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResourcesForExpressConnect"
+    },
+    "UpdateDhcpOptionsSetAttribute": {
+      "required": [
+        "RegionId",
+        "DhcpOptionsSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateDhcpOptionsSetAttribute"
+    },
+    "UpdateEnhancedVpnGateway": {
+      "required": [
+        "RegionId",
+        "VpnGatewayId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the name, description, or automatic BGP route propagation feature of an enhanced VPN Gateway"
+    },
+    "UpdateFailoverTestJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateFailoverTestJob"
+    },
+    "UpdateGatewayRouteTableEntryAttribute": {
+      "required": [
+        "RegionId",
+        "DestinationCidrBlock",
+        "NextHopType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateGatewayRouteTableEntryAttribute"
+    },
+    "UpdateIpsecServer": {
+      "required": [
+        "RegionId",
+        "IpsecServerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateIpsecServer"
+    },
+    "UpdateIpv4GatewayAttribute": {
+      "required": [
+        "Ipv4GatewayId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateIpv4GatewayAttribute"
+    },
+    "UpdateNatGatewayNatType": {
+      "required": [
+        "RegionId",
+        "NatGatewayId",
+        "VSwitchId",
+        "NatType"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UpdateNatGatewayNatType"
+    },
+    "UpdateNetworkAclEntries": {
+      "required": [
+        "NetworkAclId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateNetworkAclEntries"
+    },
+    "UpdatePublicIpAddressPoolAttribute": {
+      "required": [
+        "PublicIpAddressPoolId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePublicIpAddressPoolAttribute"
+    },
+    "UpdateRouteTargetGroup": {
+      "required": [
+        "RouteTargetGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update Route Target Group"
+    },
+    "UpdateTrafficMirrorFilterAttribute": {
+      "required": [
+        "TrafficMirrorFilterId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateTrafficMirrorFilterAttribute"
+    },
+    "UpdateTrafficMirrorFilterRuleAttribute": {
+      "required": [
+        "TrafficMirrorFilterRuleId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateTrafficMirrorFilterRuleAttribute"
+    },
+    "UpdateTrafficMirrorSessionAttribute": {
+      "required": [
+        "TrafficMirrorSessionId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateTrafficMirrorSessionAttribute"
+    },
+    "UpdateVirtualBorderBandwidth": {
+      "required": [
+        "RegionId",
+        "VirtualBorderRouterId",
+        "Bandwidth"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateVirtualBorderBandwidth"
+    },
+    "UpdateVirtualPhysicalConnection": {
+      "required": [
+        "VlanId",
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateVirtualPhysicalConnection"
+    },
+    "UpdateVpcGatewayEndpointAttribute": {
+      "required": [
+        "EndpointId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateVpcGatewayEndpointAttribute"
+    },
+    "VpcDescribeVpcNatGatewayNetworkInterfaceQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "VpcDescribeVpcNatGatewayNetworkInterfaceQuota"
+    },
+    "WithdrawVpcPublishedRouteEntries": {
+      "required": [
+        "RegionId",
+        "TargetType",
+        "TargetInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "WithdrawVpcPublishedRouteEntries"
+    }
+  }
+}

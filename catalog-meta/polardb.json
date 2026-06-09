@@ -1,0 +1,3422 @@
+{
+  "snapshotVersion": 1,
+  "product": "polardb",
+  "openApiProduct": "polardb",
+  "version": "2017-08-01",
+  "source": "https://api.aliyun.com/meta/v1/products/polardb/versions/2017-08-01/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:46.913Z",
+  "actions": {
+    "AbortDBClusterMigration": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AbortDBClusterMigration"
+    },
+    "AddEncryptionDBRolePrivilege": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddEncryptionDBRolePrivilege"
+    },
+    "AddFirewallRules": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddFirewallRules"
+    },
+    "AddPolarClawMCPServer": {
+      "required": [
+        "ApplicationId",
+        "ServerName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddPolarClawMCPServer"
+    },
+    "AddPolarFsPathMapping": {
+      "required": [
+        "PolarFsInstanceId",
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddPolarFsPathMapping"
+    },
+    "AddPolarFsQuota": {
+      "required": [
+        "PolarFsInstanceId",
+        "Quotas"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddPolarFsQuota"
+    },
+    "AddSQLRateLimitingRules": {
+      "required": [
+        "DBClusterId",
+        "RuleName",
+        "RuleConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddSQLRateLimitingRules"
+    },
+    "ApplyApplicationPrompts": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyApplicationPrompts"
+    },
+    "ApprovePolarClawDevicePair": {
+      "required": [
+        "ApplicationId",
+        "PairRequestId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApprovePolarClawDevicePair"
+    },
+    "AttachApplicationPolarFS": {
+      "required": [
+        "ApplicationId",
+        "PolarFSInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachApplicationPolarFS"
+    },
+    "BindPolarClawAgent": {
+      "required": [
+        "ApplicationId",
+        "AgentId",
+        "Channel"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BindPolarClawAgent"
+    },
+    "CancelActiveOperationTasks": {
+      "required": [
+        "RegionId",
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelActiveOperationTasks"
+    },
+    "CancelCronJobPolicyServerless": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelCronJobPolicyServerless"
+    },
+    "CancelPolarFsFileQuota": {
+      "required": [
+        "PolarFsInstanceId",
+        "FilePathIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelPolarFsFileQuota"
+    },
+    "CancelScheduleTasks": {
+      "required": [
+        "DBClusterId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelScheduleTasks"
+    },
+    "CheckAccountName": {
+      "required": [
+        "DBClusterId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckAccountName"
+    },
+    "CheckAccountNameZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckAccountNameZonal"
+    },
+    "CheckConnectionString": {
+      "required": [
+        "DBClusterId",
+        "ConnectionStringPrefix"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckConnectionString"
+    },
+    "CheckDBName": {
+      "required": [
+        "DBClusterId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckDBName"
+    },
+    "CheckDBNameZonal": {
+      "required": [
+        "DBClusterId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckDBNameZonal"
+    },
+    "CheckKMSAuthorized": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckKMSAuthorized"
+    },
+    "CheckPolarFsQuotaConsistency": {
+      "required": [
+        "PolarFsInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckPolarFsQuotaConsistency"
+    },
+    "CheckServiceLinkedRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckServiceLinkedRole"
+    },
+    "ClonePolarFsBasicSnapshot": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ClonePolarFsBasicSnapshot"
+    },
+    "CloseAITask": {
+      "required": [
+        "RegionId",
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CloseAITask"
+    },
+    "CloseDBClusterMigration": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CloseDBClusterMigration"
+    },
+    "ContinueDBClusterMigration": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ContinueDBClusterMigration"
+    },
+    "CreateAIDBCluster": {
+      "required": [
+        "RegionId",
+        "DBNodeClass",
+        "PayType",
+        "VPCId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAIDBCluster"
+    },
+    "CreateAIDBClusterDataset": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAIDBClusterDataset"
+    },
+    "CreateAIDBClusterTask": {
+      "required": [
+        "DBClusterId",
+        "ModelSource",
+        "ModelName",
+        "RunningParameter",
+        "KubeType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAIDBClusterTask"
+    },
+    "CreateAINodes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAINodes"
+    },
+    "CreateAccount": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "AccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccount"
+    },
+    "CreateAccountZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "AccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccountZonal"
+    },
+    "CreateActivationCode": {
+      "required": [
+        "AliyunOrderId",
+        "MacAddress",
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateActivationCode"
+    },
+    "CreateApplication": {
+      "required": [
+        "ApplicationType",
+        "Architecture"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateApplication"
+    },
+    "CreateApplicationEndpointAddress": {
+      "required": [
+        "ApplicationId",
+        "EndpointId",
+        "NetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateApplicationEndpointAddress"
+    },
+    "CreateApplicationPrompt": {
+      "required": [
+        "ApplicationId",
+        "PromptName",
+        "PromptType",
+        "PromptValue"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateApplicationPrompt"
+    },
+    "CreateBackup": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBackup"
+    },
+    "CreateBatchTask": {
+      "required": [
+        "RegionId",
+        "TaskName",
+        "TaskType",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBatchTask"
+    },
+    "CreateBudgetPolicy": {
+      "required": [
+        "GwClusterId",
+        "BudgetType",
+        "ResetDayOfMonth",
+        "BudgetPoints"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBudgetPolicy"
+    },
+    "CreateColdStorageInstance": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateColdStorageInstance"
+    },
+    "CreateConsumer": {
+      "required": [
+        "GwClusterId",
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateConsumer"
+    },
+    "CreateConsumerGroup": {
+      "required": [
+        "GwClusterId",
+        "ConsumerGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateConsumerGroup"
+    },
+    "CreateCostRule": {
+      "required": [
+        "GwClusterId",
+        "ModelName",
+        "ModelServiceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCostRule"
+    },
+    "CreateCronJobPolicyServerless": {
+      "required": [
+        "DBClusterId",
+        "RegionId",
+        "CronExpression",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCronJobPolicyServerless"
+    },
+    "CreateDBCluster": {
+      "required": [
+        "RegionId",
+        "DBType",
+        "DBVersion",
+        "PayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBCluster"
+    },
+    "CreateDBClusterEndpoint": {
+      "required": [
+        "DBClusterId",
+        "EndpointType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBClusterEndpoint"
+    },
+    "CreateDBClusterEndpointZonal": {
+      "required": [
+        "DBClusterId",
+        "EndpointType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBClusterEndpointZonal"
+    },
+    "CreateDBEndpointAddress": {
+      "required": [
+        "DBClusterId",
+        "NetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBEndpointAddress"
+    },
+    "CreateDBLink": {
+      "required": [
+        "DBClusterId",
+        "DBLinkName",
+        "TargetDBAccount",
+        "TargetDBPasswd",
+        "TargetDBName",
+        "SourceDBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBLink"
+    },
+    "CreateDBNodes": {
+      "required": [
+        "DBClusterId",
+        "DBNode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDBNodes"
+    },
+    "CreateDatabase": {
+      "required": [
+        "DBClusterId",
+        "DBName",
+        "CharacterSetName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDatabase"
+    },
+    "CreateDatabaseZonal": {
+      "required": [
+        "DBClusterId",
+        "DBName",
+        "CharacterSetName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDatabaseZonal"
+    },
+    "CreateExtensions": {
+      "required": [
+        "DBClusterId",
+        "DBNames",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateExtensions"
+    },
+    "CreateGateway": {
+      "required": [
+        "RegionId",
+        "PayType",
+        "VPCId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGateway"
+    },
+    "CreateGlobalDataNetwork": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGlobalDataNetwork"
+    },
+    "CreateGlobalDatabaseNetwork": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGlobalDatabaseNetwork"
+    },
+    "CreateGlobalSecurityIPGroup": {
+      "required": [
+        "RegionId",
+        "GlobalIgName",
+        "GIpList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateGlobalSecurityIPGroup"
+    },
+    "CreateModelApi": {
+      "required": [
+        "GwClusterId",
+        "Name",
+        "ModelCategory",
+        "PathPrefix",
+        "Protocol",
+        "RouteRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateModelApi"
+    },
+    "CreateModelService": {
+      "required": [
+        "GwClusterId",
+        "Name",
+        "ModelCategory",
+        "Protocol",
+        "BaseUrl",
+        "ApiKey",
+        "Vendor"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateModelService"
+    },
+    "CreateNetworkChannel": {
+      "required": [
+        "DBClusterId",
+        "ChannelName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNetworkChannel"
+    },
+    "CreateOrGetVirtualLicenseOrder": {
+      "required": [
+        "Engine"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateOrGetVirtualLicenseOrder"
+    },
+    "CreateParameterGroup": {
+      "required": [
+        "RegionId",
+        "DBType",
+        "DBVersion",
+        "ParameterGroupName",
+        "Parameters"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateParameterGroup"
+    },
+    "CreatePolarClawAgent": {
+      "required": [
+        "ApplicationId",
+        "AgentId",
+        "Workspace"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolarClawAgent"
+    },
+    "CreatePolarClawChannel": {
+      "required": [
+        "ApplicationId",
+        "ChannelId",
+        "PluginId",
+        "NpmPackage"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolarClawChannel"
+    },
+    "CreatePolarClawCronJob": {
+      "required": [
+        "ApplicationId",
+        "Name",
+        "Schedule",
+        "SessionTarget",
+        "WakeMode",
+        "Payload"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolarClawCronJob"
+    },
+    "CreatePolarFsObject": {
+      "required": [
+        "PolarFsInstanceId",
+        "Path"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolarFsObject"
+    },
+    "CreateRateLimitPolicy": {
+      "required": [
+        "GwClusterId",
+        "ScopeType",
+        "ScopeRefId",
+        "RateLimitRpm",
+        "RateLimitTpm"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRateLimitPolicy"
+    },
+    "CreateServiceLinkedRole": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateServiceLinkedRole"
+    },
+    "CreateStoragePlan": {
+      "required": [
+        "Period",
+        "UsedTime",
+        "StorageClass",
+        "StorageType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateStoragePlan"
+    },
+    "DeleteAIDBCluster": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAIDBCluster"
+    },
+    "DeleteAIDBClusterDataset": {
+      "required": [
+        "DatasetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAIDBClusterDataset"
+    },
+    "DeleteAIDBClusterTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAIDBClusterTask"
+    },
+    "DeleteAINodes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAINodes"
+    },
+    "DeleteAccount": {
+      "required": [
+        "DBClusterId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccount"
+    },
+    "DeleteAccountZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccountZonal"
+    },
+    "DeleteApplication": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteApplication"
+    },
+    "DeleteApplicationEndpointAddress": {
+      "required": [
+        "ApplicationId",
+        "EndpointId",
+        "NetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteApplicationEndpointAddress"
+    },
+    "DeleteApplicationPrompt": {
+      "required": [
+        "ApplicationId",
+        "PromptId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteApplicationPrompt"
+    },
+    "DeleteBackup": {
+      "required": [
+        "DBClusterId",
+        "BackupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBackup"
+    },
+    "DeleteBudgetPolicy": {
+      "required": [
+        "BudgetPolicyId",
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBudgetPolicy"
+    },
+    "DeleteConsumer": {
+      "required": [
+        "GwClusterId",
+        "ConsumerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteConsumer"
+    },
+    "DeleteConsumerGroup": {
+      "required": [
+        "GwClusterId",
+        "ConsumerGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteConsumerGroup"
+    },
+    "DeleteCostRule": {
+      "required": [
+        "CostRuleId",
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCostRule"
+    },
+    "DeleteDBCluster": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBCluster"
+    },
+    "DeleteDBClusterEndpoint": {
+      "required": [
+        "DBClusterId",
+        "DBEndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBClusterEndpoint"
+    },
+    "DeleteDBClusterEndpointZonal": {
+      "required": [
+        "DBClusterId",
+        "DBEndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBClusterEndpointZonal"
+    },
+    "DeleteDBEndpointAddress": {
+      "required": [
+        "DBClusterId",
+        "NetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBEndpointAddress"
+    },
+    "DeleteDBLink": {
+      "required": [
+        "DBClusterId",
+        "DBLinkName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBLink"
+    },
+    "DeleteDBNodes": {
+      "required": [
+        "DBClusterId",
+        "DBNodeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDBNodes"
+    },
+    "DeleteDatabase": {
+      "required": [
+        "DBClusterId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDatabase"
+    },
+    "DeleteDatabaseZonal": {
+      "required": [
+        "DBClusterId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDatabaseZonal"
+    },
+    "DeleteEncryptionDBRolePrivilege": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEncryptionDBRolePrivilege"
+    },
+    "DeleteExtensions": {
+      "required": [
+        "DBClusterId",
+        "Extensions",
+        "DBNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteExtensions"
+    },
+    "DeleteFirewallRules": {
+      "required": [
+        "DBClusterId",
+        "RuleNameList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFirewallRules"
+    },
+    "DeleteGateway": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGateway"
+    },
+    "DeleteGlobalDataNetwork": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGlobalDataNetwork"
+    },
+    "DeleteGlobalDatabaseNetwork": {
+      "required": [
+        "GDNId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGlobalDatabaseNetwork"
+    },
+    "DeleteGlobalSecurityIPGroup": {
+      "required": [
+        "RegionId",
+        "GlobalSecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteGlobalSecurityIPGroup"
+    },
+    "DeleteMaskingRules": {
+      "required": [
+        "RuleNameList",
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMaskingRules"
+    },
+    "DeleteModelApi": {
+      "required": [
+        "GwClusterId",
+        "ModelApiId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteModelApi"
+    },
+    "DeleteModelService": {
+      "required": [
+        "GwClusterId",
+        "ModelName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteModelService"
+    },
+    "DeleteNetworkChannel": {
+      "required": [
+        "DBClusterId",
+        "ChannelName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNetworkChannel"
+    },
+    "DeleteParameterGroup": {
+      "required": [
+        "RegionId",
+        "ParameterGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteParameterGroup"
+    },
+    "DeletePolarClawAgent": {
+      "required": [
+        "ApplicationId",
+        "AgentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolarClawAgent"
+    },
+    "DeletePolarClawChannel": {
+      "required": [
+        "ApplicationId",
+        "ChannelId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolarClawChannel"
+    },
+    "DeletePolarClawCronJob": {
+      "required": [
+        "ApplicationId",
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolarClawCronJob"
+    },
+    "DeletePolarFsObjects": {
+      "required": [
+        "PolarFsInstanceId",
+        "ObjectsToDelete"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolarFsObjects"
+    },
+    "DeletePolarFsPathMapping": {
+      "required": [
+        "PolarFsInstanceId",
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolarFsPathMapping"
+    },
+    "DeletePolarFsQuota": {
+      "required": [
+        "PolarFsInstanceId",
+        "Quotas"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolarFsQuota"
+    },
+    "DeleteRateLimitPolicy": {
+      "required": [
+        "GwClusterId",
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRateLimitPolicy"
+    },
+    "DeleteSQLRateLimitingRules": {
+      "required": [
+        "DBClusterId",
+        "RuleNameList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSQLRateLimitingRules"
+    },
+    "DescribeAIDBClusterAttribute": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusterAttribute"
+    },
+    "DescribeAIDBClusterDatasets": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusterDatasets"
+    },
+    "DescribeAIDBClusterPerformance": {
+      "required": [
+        "DBClusterId",
+        "Key",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusterPerformance"
+    },
+    "DescribeAIDBClusterTaskAttribute": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusterTaskAttribute"
+    },
+    "DescribeAIDBClusterTaskLogFiles": {
+      "required": [
+        "DBClusterId",
+        "StartTime",
+        "EndTime",
+        "LogType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusterTaskLogFiles"
+    },
+    "DescribeAIDBClusterTaskMetrics": {
+      "required": [
+        "DBClusterId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusterTaskMetrics"
+    },
+    "DescribeAIDBClusterTasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusterTasks"
+    },
+    "DescribeAIDBClusters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAIDBClusters"
+    },
+    "DescribeAITaskStatus": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAITaskStatus"
+    },
+    "DescribeAccounts": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccounts"
+    },
+    "DescribeAccountsZonal": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccountsZonal"
+    },
+    "DescribeActivationCodeDetails": {
+      "required": [
+        "AliyunOrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActivationCodeDetails"
+    },
+    "DescribeActivationCodes": {
+      "required": [
+        "AliyunOrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActivationCodes"
+    },
+    "DescribeActiveOperationMaintainConf": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActiveOperationMaintainConf"
+    },
+    "DescribeActiveOperationTasks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActiveOperationTasks"
+    },
+    "DescribeApplicationAttribute": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplicationAttribute"
+    },
+    "DescribeApplicationLogs": {
+      "required": [
+        "RegionId",
+        "ApplicationId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplicationLogs"
+    },
+    "DescribeApplicationParameters": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplicationParameters"
+    },
+    "DescribeApplicationPerformance": {
+      "required": [
+        "ApplicationId",
+        "Key",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplicationPerformance"
+    },
+    "DescribeApplicationPrompts": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplicationPrompts"
+    },
+    "DescribeApplicationServerlessConf": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplicationServerlessConf"
+    },
+    "DescribeApplications": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeApplications"
+    },
+    "DescribeAutoRenewAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoRenewAttribute"
+    },
+    "DescribeAvailableCrossRegions": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableCrossRegions"
+    },
+    "DescribeAvailableModels": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAvailableModels"
+    },
+    "DescribeBackupLogs": {
+      "required": [
+        "DBClusterId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackupLogs"
+    },
+    "DescribeBackupPolicy": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackupPolicy"
+    },
+    "DescribeBackupRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackupRegions"
+    },
+    "DescribeBackupTasks": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackupTasks"
+    },
+    "DescribeBackups": {
+      "required": [
+        "DBClusterId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackups"
+    },
+    "DescribeBatchTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBatchTask"
+    },
+    "DescribeBatchTasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBatchTasks"
+    },
+    "DescribeBudgetPolicies": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBudgetPolicies"
+    },
+    "DescribeCharacterSetName": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCharacterSetName"
+    },
+    "DescribeClassList": {
+      "required": [
+        "CommodityCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeClassList"
+    },
+    "DescribeColdStorageInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeColdStorageInstance"
+    },
+    "DescribeConsumerGroups": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeConsumerGroups"
+    },
+    "DescribeConsumers": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeConsumers"
+    },
+    "DescribeCostRules": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCostRules"
+    },
+    "DescribeCronJobPolicyServerless": {
+      "required": [
+        "DBClusterId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCronJobPolicyServerless"
+    },
+    "DescribeCrossCloudLevels": {
+      "required": [
+        "ProjectId",
+        "DBType",
+        "StorageType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCrossCloudLevels"
+    },
+    "DescribeCrossCloudRegion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCrossCloudRegion"
+    },
+    "DescribeCrossCloudRegionMappingToAliyun": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCrossCloudRegionMappingToAliyun"
+    },
+    "DescribeDBClusterAccessWhitelist": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterAccessWhitelist"
+    },
+    "DescribeDBClusterAttribute": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterAttribute"
+    },
+    "DescribeDBClusterAuditLogCollector": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterAuditLogCollector"
+    },
+    "DescribeDBClusterAvailableResources": {
+      "required": [
+        "PayType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterAvailableResources"
+    },
+    "DescribeDBClusterConnectivity": {
+      "required": [
+        "DBClusterId",
+        "SourceIpAddress"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterConnectivity"
+    },
+    "DescribeDBClusterEncryptionKey": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterEncryptionKey"
+    },
+    "DescribeDBClusterEndpoints": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterEndpoints"
+    },
+    "DescribeDBClusterEndpointsZonal": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterEndpointsZonal"
+    },
+    "DescribeDBClusterMigration": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterMigration"
+    },
+    "DescribeDBClusterMonitor": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterMonitor"
+    },
+    "DescribeDBClusterNetInfo": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterNetInfo"
+    },
+    "DescribeDBClusterParameters": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterParameters"
+    },
+    "DescribeDBClusterPerformance": {
+      "required": [
+        "DBClusterId",
+        "Key",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterPerformance"
+    },
+    "DescribeDBClusterProxy": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterProxy"
+    },
+    "DescribeDBClusterSSL": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterSSL"
+    },
+    "DescribeDBClusterServerlessConf": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterServerlessConf"
+    },
+    "DescribeDBClusterTDE": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterTDE"
+    },
+    "DescribeDBClusterVersion": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterVersion"
+    },
+    "DescribeDBClusterVersionZonal": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusterVersionZonal"
+    },
+    "DescribeDBClusters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClusters"
+    },
+    "DescribeDBClustersWithBackups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClustersWithBackups"
+    },
+    "DescribeDBClustersZonal": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBClustersZonal"
+    },
+    "DescribeDBInitializeVariable": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInitializeVariable"
+    },
+    "DescribeDBInstancePerformance": {
+      "required": [
+        "DBInstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBInstancePerformance"
+    },
+    "DescribeDBLinks": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBLinks"
+    },
+    "DescribeDBLogFiles": {
+      "required": [
+        "DBClusterId",
+        "LogType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBLogFiles"
+    },
+    "DescribeDBMiniEngineVersions": {
+      "required": [
+        "DBType",
+        "DBVersion",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBMiniEngineVersions"
+    },
+    "DescribeDBNodePerformance": {
+      "required": [
+        "DBNodeId",
+        "Key",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBNodePerformance"
+    },
+    "DescribeDBNodesParameters": {
+      "required": [
+        "DBClusterId",
+        "DBNodeIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBNodesParameters"
+    },
+    "DescribeDBProxyPerformance": {
+      "required": [
+        "DBClusterId",
+        "Key",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDBProxyPerformance"
+    },
+    "DescribeDasConfig": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDasConfig"
+    },
+    "DescribeDatabases": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDatabases"
+    },
+    "DescribeDatabasesZonal": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDatabasesZonal"
+    },
+    "DescribeDbClusterAttributeZonal": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDbClusterAttributeZonal"
+    },
+    "DescribeDetachedBackups": {
+      "required": [
+        "DBClusterId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDetachedBackups"
+    },
+    "DescribeEncryptionDBRolePrivilege": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEncryptionDBRolePrivilege"
+    },
+    "DescribeEncryptionDBSecret": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEncryptionDBSecret"
+    },
+    "DescribeExtensions": {
+      "required": [
+        "DBClusterId",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeExtensions"
+    },
+    "DescribeFirewallRules": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFirewallRules"
+    },
+    "DescribeGatewayAttribute": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGatewayAttribute"
+    },
+    "DescribeGatewayList": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGatewayList"
+    },
+    "DescribeGlobalDataNetworkList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGlobalDataNetworkList"
+    },
+    "DescribeGlobalDatabaseNetwork": {
+      "required": [
+        "GDNId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGlobalDatabaseNetwork"
+    },
+    "DescribeGlobalDatabaseNetworks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGlobalDatabaseNetworks"
+    },
+    "DescribeGlobalSecurityIPGroup": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGlobalSecurityIPGroup"
+    },
+    "DescribeGlobalSecurityIPGroupRelation": {
+      "required": [
+        "RegionId",
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeGlobalSecurityIPGroupRelation"
+    },
+    "DescribeHALogs": {
+      "required": [
+        "DBClusterId",
+        "LogType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHALogs"
+    },
+    "DescribeHistoryEvents": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHistoryEvents"
+    },
+    "DescribeHistoryTasks": {
+      "required": [
+        "FromStartTime",
+        "ToStartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHistoryTasks"
+    },
+    "DescribeHistoryTasksStat": {
+      "required": [
+        "RegionId",
+        "FromStartTime",
+        "ToStartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHistoryTasksStat"
+    },
+    "DescribeLicenseOrderDetails": {
+      "required": [
+        "AliyunOrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLicenseOrderDetails"
+    },
+    "DescribeLicenseOrders": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLicenseOrders"
+    },
+    "DescribeLocalAvailableRecoveryTime": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLocalAvailableRecoveryTime"
+    },
+    "DescribeLogBackupPolicy": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLogBackupPolicy"
+    },
+    "DescribeMaskingRules": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMaskingRules"
+    },
+    "DescribeMetaList": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMetaList"
+    },
+    "DescribeModelApis": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeModelApis"
+    },
+    "DescribeModelServices": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeModelServices"
+    },
+    "DescribeModifyParameterLog": {
+      "required": [
+        "DBClusterId",
+        "EndTime",
+        "StartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeModifyParameterLog"
+    },
+    "DescribeNetworkChannel": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkChannel"
+    },
+    "DescribeParameterGroup": {
+      "required": [
+        "RegionId",
+        "ParameterGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeParameterGroup"
+    },
+    "DescribeParameterGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeParameterGroups"
+    },
+    "DescribeParameterTemplates": {
+      "required": [
+        "DBType",
+        "DBVersion",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeParameterTemplates"
+    },
+    "DescribePendingMaintenanceAction": {
+      "required": [
+        "Region",
+        "TaskType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePendingMaintenanceAction"
+    },
+    "DescribePendingMaintenanceActions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePendingMaintenanceActions"
+    },
+    "DescribePolarAgentChatRecords": {
+      "required": [
+        "SessionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarAgentChatRecords"
+    },
+    "DescribePolarAgentSessionStatus": {
+      "required": [
+        "SessionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarAgentSessionStatus"
+    },
+    "DescribePolarAgentUserSessions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarAgentUserSessions"
+    },
+    "DescribePolarClawAgents": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarClawAgents"
+    },
+    "DescribePolarClawChannels": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarClawChannels"
+    },
+    "DescribePolarClawCronJobs": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarClawCronJobs"
+    },
+    "DescribePolarClawMCPServers": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarClawMCPServers"
+    },
+    "DescribePolarClawPlugins": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarClawPlugins"
+    },
+    "DescribePolarClawTask": {
+      "required": [
+        "ApplicationId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarClawTask"
+    },
+    "DescribePolarFsAttribute": {
+      "required": [
+        "PolarFsInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarFsAttribute"
+    },
+    "DescribePolarFsObjects": {
+      "required": [
+        "PolarFsInstanceId",
+        "Path"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarFsObjects"
+    },
+    "DescribePolarFsQuota": {
+      "required": [
+        "PolarFsInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarFsQuota"
+    },
+    "DescribePolarFsQuotaList": {
+      "required": [
+        "PolarFsInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarFsQuotaList"
+    },
+    "DescribePolarSQLCollectorPolicy": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePolarSQLCollectorPolicy"
+    },
+    "DescribeRateLimitPolicy": {
+      "required": [
+        "GwClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRateLimitPolicy"
+    },
+    "DescribeRdsVSwitchs": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRdsVSwitchs"
+    },
+    "DescribeRdsVpcs": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRdsVpcs"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeResourcePackages": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourcePackages"
+    },
+    "DescribeSQLRateLimitingRules": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSQLRateLimitingRules"
+    },
+    "DescribeScheduleTasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeScheduleTasks"
+    },
+    "DescribeSharedBackups": {
+      "required": [
+        "ShareType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSharedBackups"
+    },
+    "DescribeSlowLogRecords": {
+      "required": [
+        "RegionId",
+        "DBClusterId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlowLogRecords"
+    },
+    "DescribeSlowLogs": {
+      "required": [
+        "RegionId",
+        "DBClusterId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlowLogs"
+    },
+    "DescribeTasks": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTasks"
+    },
+    "DescribeUpgradeReport": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUpgradeReport"
+    },
+    "DescribeUserEncryptionKeyList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserEncryptionKeyList"
+    },
+    "DescribeVSwitchList": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVSwitchList"
+    },
+    "DescribeVSwitches": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVSwitches"
+    },
+    "DescribeVpcs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVpcs"
+    },
+    "DescribeZones": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZones"
+    },
+    "DisableDBClusterDynamoDB": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableDBClusterDynamoDB"
+    },
+    "DisableDBClusterOrca": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableDBClusterOrca"
+    },
+    "DisableDBClusterServerless": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableDBClusterServerless"
+    },
+    "DisablePolarClawChannel": {
+      "required": [
+        "ApplicationId",
+        "ChannelId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisablePolarClawChannel"
+    },
+    "DisablePolarClawCronJob": {
+      "required": [
+        "ApplicationId",
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisablePolarClawCronJob"
+    },
+    "DisablePolarClawPlugin": {
+      "required": [
+        "ApplicationId",
+        "PluginId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisablePolarClawPlugin"
+    },
+    "EnableDBClusterDynamoDB": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableDBClusterDynamoDB"
+    },
+    "EnableDBClusterOrca": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableDBClusterOrca"
+    },
+    "EnableDBClusterServerless": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableDBClusterServerless"
+    },
+    "EnableFirewallRules": {
+      "required": [
+        "DBClusterId",
+        "RuleNameList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableFirewallRules"
+    },
+    "EnablePolarClawChannel": {
+      "required": [
+        "ApplicationId",
+        "ChannelId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnablePolarClawChannel"
+    },
+    "EnablePolarClawCronJob": {
+      "required": [
+        "ApplicationId",
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnablePolarClawCronJob"
+    },
+    "EnablePolarClawPlugin": {
+      "required": [
+        "ApplicationId",
+        "PluginId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnablePolarClawPlugin"
+    },
+    "EnableSQLRateLimitingRules": {
+      "required": [
+        "DBClusterId",
+        "RuleNameList",
+        "Enable"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableSQLRateLimitingRules"
+    },
+    "EvaluateRegionResource": {
+      "required": [
+        "DBType",
+        "DBVersion",
+        "DBNodeClass",
+        "NeedMaxScaleLink",
+        "RegionId",
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EvaluateRegionResource"
+    },
+    "ExecuteCrossCloudOpenAPI": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ExecuteCrossCloudOpenAPI"
+    },
+    "FailoverDBCluster": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "FailoverDBCluster"
+    },
+    "FailoverDBClusterZonal": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "FailoverDBClusterZonal"
+    },
+    "GenerateUpgradeReportForSyncClone": {
+      "required": [
+        "SourceDBClusterId",
+        "DBVersion",
+        "CreationOption",
+        "CreationCategory"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateUpgradeReportForSyncClone"
+    },
+    "GetPolarAgent": {
+      "required": [
+        "Query"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPolarAgent"
+    },
+    "GetPolarClawConfig": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPolarClawConfig"
+    },
+    "GrantAccountPrivilege": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "DBName",
+        "AccountPrivilege"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GrantAccountPrivilege"
+    },
+    "GrantAccountPrivilegeZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "DBName",
+        "AccountPrivilege"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GrantAccountPrivilegeZonal"
+    },
+    "InstallPolarClawPlugin": {
+      "required": [
+        "ApplicationId",
+        "PluginId",
+        "NpmPackage"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InstallPolarClawPlugin"
+    },
+    "ListOrders": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListOrders"
+    },
+    "ListPolarClawBindings": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolarClawBindings"
+    },
+    "ListPolarClawDevicePairs": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolarClawDevicePairs"
+    },
+    "ListTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListTagResourcesForRegion": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResourcesForRegion"
+    },
+    "LoginPolarClawChannel": {
+      "required": [
+        "ApplicationId",
+        "ChannelId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "LoginPolarClawChannel"
+    },
+    "ManuallyStartDBCluster": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ManuallyStartDBCluster"
+    },
+    "ModifyAIDBClusterDescription": {
+      "required": [
+        "DBClusterId",
+        "DBClusterDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAIDBClusterDescription"
+    },
+    "ModifyAccountDescription": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "AccountDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountDescription"
+    },
+    "ModifyAccountDescriptionZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "AccountDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountDescriptionZonal"
+    },
+    "ModifyAccountLockState": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "AccountLockState"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountLockState"
+    },
+    "ModifyAccountPassword": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "NewAccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountPassword"
+    },
+    "ModifyAccountPasswordZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "NewAccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountPasswordZonal"
+    },
+    "ModifyActiveOperationMaintainConf": {
+      "required": [
+        "RegionId",
+        "CycleType",
+        "CycleTime",
+        "MaintainStartTime",
+        "MaintainEndTime",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyActiveOperationMaintainConf"
+    },
+    "ModifyActiveOperationTasks": {
+      "required": [
+        "RegionId",
+        "TaskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyActiveOperationTasks"
+    },
+    "ModifyApplicationDescription": {
+      "required": [
+        "ApplicationId",
+        "Description"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyApplicationDescription"
+    },
+    "ModifyApplicationParameter": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyApplicationParameter"
+    },
+    "ModifyApplicationPrompt": {
+      "required": [
+        "ApplicationId",
+        "PromptId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyApplicationPrompt"
+    },
+    "ModifyApplicationServerlessConf": {
+      "required": [
+        "ApplicationId",
+        "ServerlessConfList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyApplicationServerlessConf"
+    },
+    "ModifyApplicationWhitelist": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyApplicationWhitelist"
+    },
+    "ModifyAutoRenewAttribute": {
+      "required": [
+        "DBClusterIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAutoRenewAttribute"
+    },
+    "ModifyBackupPolicy": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBackupPolicy"
+    },
+    "ModifyBudgetPolicy": {
+      "required": [
+        "GwClusterId",
+        "BudgetPolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBudgetPolicy"
+    },
+    "ModifyConsumer": {
+      "required": [
+        "GwClusterId",
+        "Name",
+        "ConsumerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyConsumer"
+    },
+    "ModifyConsumerGroup": {
+      "required": [
+        "GwClusterId",
+        "ConsumerGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyConsumerGroup"
+    },
+    "ModifyCostRule": {
+      "required": [
+        "GwClusterId",
+        "CostRuleId",
+        "ModelName",
+        "ModelServiceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCostRule"
+    },
+    "ModifyCronJobPolicyServerless": {
+      "required": [
+        "DBClusterId",
+        "RegionId",
+        "CronExpression",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCronJobPolicyServerless"
+    },
+    "ModifyDBCluster": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBCluster"
+    },
+    "ModifyDBClusterAccessWhitelist": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterAccessWhitelist"
+    },
+    "ModifyDBClusterAndNodesParameters": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterAndNodesParameters"
+    },
+    "ModifyDBClusterArch": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterArch"
+    },
+    "ModifyDBClusterAuditLogCollector": {
+      "required": [
+        "DBClusterId",
+        "CollectorStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterAuditLogCollector"
+    },
+    "ModifyDBClusterDeletion": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterDeletion"
+    },
+    "ModifyDBClusterDescription": {
+      "required": [
+        "DBClusterId",
+        "DBClusterDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterDescription"
+    },
+    "ModifyDBClusterDescriptionZonal": {
+      "required": [
+        "DBClusterId",
+        "DBClusterDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterDescriptionZonal"
+    },
+    "ModifyDBClusterEndpoint": {
+      "required": [
+        "DBClusterId",
+        "DBEndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterEndpoint"
+    },
+    "ModifyDBClusterEndpointZonal": {
+      "required": [
+        "DBClusterId",
+        "DBEndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterEndpointZonal"
+    },
+    "ModifyDBClusterMaintainTime": {
+      "required": [
+        "DBClusterId",
+        "MaintainTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterMaintainTime"
+    },
+    "ModifyDBClusterMigration": {
+      "required": [
+        "DBClusterId",
+        "SourceRDSDBInstanceId",
+        "NewMasterInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterMigration"
+    },
+    "ModifyDBClusterMigrationEndpoint": {
+      "required": [
+        "DBClusterId",
+        "MigrationConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterMigrationEndpoint"
+    },
+    "ModifyDBClusterMonitor": {
+      "required": [
+        "DBClusterId",
+        "Period"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterMonitor"
+    },
+    "ModifyDBClusterParameters": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterParameters"
+    },
+    "ModifyDBClusterPrimaryZone": {
+      "required": [
+        "DBClusterId",
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterPrimaryZone"
+    },
+    "ModifyDBClusterResourceGroup": {
+      "required": [
+        "DBClusterId",
+        "NewResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterResourceGroup"
+    },
+    "ModifyDBClusterSSL": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Configure cluster SSL"
+    },
+    "ModifyDBClusterServerlessConf": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterServerlessConf"
+    },
+    "ModifyDBClusterStoragePerformance": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterStoragePerformance"
+    },
+    "ModifyDBClusterStorageSpace": {
+      "required": [
+        "DBClusterId",
+        "StorageSpace"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterStorageSpace"
+    },
+    "ModifyDBClusterTDE": {
+      "required": [
+        "DBClusterId",
+        "TDEStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterTDE"
+    },
+    "ModifyDBClusterVpc": {
+      "required": [
+        "DBClusterId",
+        "VSwitchId",
+        "ExistedEndpointSwitchType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBClusterVpc"
+    },
+    "ModifyDBDescription": {
+      "required": [
+        "DBClusterId",
+        "DBName",
+        "DBDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBDescription"
+    },
+    "ModifyDBDescriptionZonal": {
+      "required": [
+        "DBClusterId",
+        "DBName",
+        "DBDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBDescriptionZonal"
+    },
+    "ModifyDBEndpointAddress": {
+      "required": [
+        "DBClusterId",
+        "NetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBEndpointAddress"
+    },
+    "ModifyDBNodeClass": {
+      "required": [
+        "DBClusterId",
+        "ModifyType",
+        "DBNodeTargetClass"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNodeClass"
+    },
+    "ModifyDBNodeConfig": {
+      "required": [
+        "DBClusterId",
+        "DBNodeId",
+        "ConfigName",
+        "ConfigValue"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNodeConfig"
+    },
+    "ModifyDBNodeDescription": {
+      "required": [
+        "DBClusterId",
+        "DBNodeDescription",
+        "DBNodeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNodeDescription"
+    },
+    "ModifyDBNodeHotReplicaMode": {
+      "required": [
+        "DBClusterId",
+        "DBNodeId",
+        "HotReplicaMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNodeHotReplicaMode"
+    },
+    "ModifyDBNodeSccMode": {
+      "required": [
+        "DBClusterId",
+        "DBNodeId",
+        "SccMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNodeSccMode"
+    },
+    "ModifyDBNodesClass": {
+      "required": [
+        "DBClusterId",
+        "ModifyType",
+        "DBNode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNodesClass"
+    },
+    "ModifyDBNodesParameters": {
+      "required": [
+        "DBClusterId",
+        "DBNodeIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDBNodesParameters"
+    },
+    "ModifyEncryptionDBRolePrivilege": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyEncryptionDBRolePrivilege"
+    },
+    "ModifyEncryptionDBSecret": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyEncryptionDBSecret"
+    },
+    "ModifyFirewallRules": {
+      "required": [
+        "DBClusterId",
+        "RuleName",
+        "RuleConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyFirewallRules"
+    },
+    "ModifyGlobalDatabaseNetwork": {
+      "required": [
+        "GDNId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyGlobalDatabaseNetwork"
+    },
+    "ModifyGlobalSecurityIPGroup": {
+      "required": [
+        "RegionId",
+        "GlobalIgName",
+        "GlobalSecurityGroupId",
+        "GIpList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyGlobalSecurityIPGroup"
+    },
+    "ModifyGlobalSecurityIPGroupName": {
+      "required": [
+        "RegionId",
+        "GlobalIgName",
+        "GlobalSecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyGlobalSecurityIPGroupName"
+    },
+    "ModifyGlobalSecurityIPGroupRelation": {
+      "required": [
+        "RegionId",
+        "DBClusterId",
+        "GlobalSecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyGlobalSecurityIPGroupRelation"
+    },
+    "ModifyLogBackupPolicy": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyLogBackupPolicy"
+    },
+    "ModifyMaskingRules": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyMaskingRules"
+    },
+    "ModifyModelApi": {
+      "required": [
+        "GwClusterId",
+        "ModelApiId",
+        "ModelCategory",
+        "PathPrefix",
+        "Protocol",
+        "RouteRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyModelApi"
+    },
+    "ModifyModelService": {
+      "required": [
+        "GwClusterId",
+        "Name",
+        "ModelCategory",
+        "Protocol",
+        "ModelServiceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyModelService"
+    },
+    "ModifyPendingMaintenanceAction": {
+      "required": [
+        "RegionId",
+        "Ids",
+        "SwitchTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPendingMaintenanceAction"
+    },
+    "ModifyRateLimitPolicy": {
+      "required": [
+        "GwClusterId",
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRateLimitPolicy"
+    },
+    "ModifyResourcePackage": {
+      "required": [
+        "ResourcePackageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyResourcePackage"
+    },
+    "ModifySQLRateLimitingRules": {
+      "required": [
+        "DBClusterId",
+        "RuleName",
+        "RuleConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySQLRateLimitingRules"
+    },
+    "ModifyScheduleTask": {
+      "required": [
+        "DBClusterId",
+        "TaskId",
+        "PlannedStartTime",
+        "PlannedEndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyScheduleTask"
+    },
+    "MovePolarFsObjects": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MovePolarFsObjects"
+    },
+    "OpenAITask": {
+      "required": [
+        "DBClusterId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenAITask"
+    },
+    "PatchPolarClawConfig": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PatchPolarClawConfig"
+    },
+    "ReactivateDBClusterBackup": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReactivateDBClusterBackup"
+    },
+    "RefreshDBClusterStorageUsage": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RefreshDBClusterStorageUsage"
+    },
+    "RejectPolarClawDevicePair": {
+      "required": [
+        "ApplicationId",
+        "PairRequestId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RejectPolarClawDevicePair"
+    },
+    "RemoveApplicationEnvironmentVariables": {
+      "required": [
+        "ApplicationId",
+        "VariableNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveApplicationEnvironmentVariables"
+    },
+    "RemoveDBClusterFromGDN": {
+      "required": [
+        "DBClusterId",
+        "GDNId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveDBClusterFromGDN"
+    },
+    "RemovePolarClawDevicePair": {
+      "required": [
+        "ApplicationId",
+        "DeviceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemovePolarClawDevicePair"
+    },
+    "RemovePolarClawMCPServer": {
+      "required": [
+        "ApplicationId",
+        "ServerName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemovePolarClawMCPServer"
+    },
+    "ResetAccount": {
+      "required": [
+        "DBClusterId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetAccount"
+    },
+    "ResetAccountPassword": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "AccountPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetAccountPassword"
+    },
+    "ResetAccountZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetAccountZonal"
+    },
+    "ResetConsumerApiKey": {
+      "required": [
+        "GwClusterId",
+        "ConsumerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetConsumerApiKey"
+    },
+    "ResetGlobalDatabaseNetwork": {
+      "required": [
+        "GDNId",
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetGlobalDatabaseNetwork"
+    },
+    "RestartDBLink": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestartDBLink"
+    },
+    "RestartDBNode": {
+      "required": [
+        "DBNodeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestartDBNode"
+    },
+    "RestartDBNodeZonal": {
+      "required": [
+        "DBNodeId",
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestartDBNodeZonal"
+    },
+    "RestoreTable": {
+      "required": [
+        "DBClusterId",
+        "TableMeta"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RestoreTable"
+    },
+    "RevokeAccountPrivilege": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeAccountPrivilege"
+    },
+    "RevokeAccountPrivilegeZonal": {
+      "required": [
+        "DBClusterId",
+        "AccountName",
+        "DBName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeAccountPrivilegeZonal"
+    },
+    "RunPolarClawCronJob": {
+      "required": [
+        "ApplicationId",
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RunPolarClawCronJob"
+    },
+    "SearchMemories": {
+      "required": [
+        "ApplicationId",
+        "Query",
+        "MemoryUserId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchMemories"
+    },
+    "SetPolarFsFileQuota": {
+      "required": [
+        "PolarFsInstanceId",
+        "FilePathQuotas"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetPolarFsFileQuota"
+    },
+    "SwitchOverGlobalDatabaseNetwork": {
+      "required": [
+        "GDNId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchOverGlobalDatabaseNetwork"
+    },
+    "TagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "TempModifyDBNode": {
+      "required": [
+        "DBClusterId",
+        "OperationType",
+        "ModifyType",
+        "DBNode",
+        "RestoreTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TempModifyDBNode"
+    },
+    "TransformDBClusterPayType": {
+      "required": [
+        "DBClusterId",
+        "PayType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TransformDBClusterPayType"
+    },
+    "UnbindPolarClawAgent": {
+      "required": [
+        "ApplicationId",
+        "AgentId",
+        "Channel"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnbindPolarClawAgent"
+    },
+    "UninstallPolarClawPlugin": {
+      "required": [
+        "ApplicationId",
+        "PluginId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UninstallPolarClawPlugin"
+    },
+    "UntagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateApplicationEnvironmentVariables": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateApplicationEnvironmentVariables"
+    },
+    "UpdateExtensions": {
+      "required": [
+        "DBClusterId",
+        "Extensions",
+        "DBNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateExtensions"
+    },
+    "UpdatePolarClawAgent": {
+      "required": [
+        "ApplicationId",
+        "AgentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePolarClawAgent"
+    },
+    "UpdatePolarClawCronJob": {
+      "required": [
+        "ApplicationId",
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdatePolarClawCronJob"
+    },
+    "UpgradeDBClusterVersion": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeDBClusterVersion"
+    },
+    "UpgradeDBClusterVersionZonal": {
+      "required": [
+        "DBClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeDBClusterVersionZonal"
+    },
+    "UpgradePolarClawChannel": {
+      "required": [
+        "ApplicationId",
+        "ChannelId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradePolarClawChannel"
+    },
+    "UpgradePolarClawPlugin": {
+      "required": [
+        "ApplicationId",
+        "PluginId",
+        "NpmPackage"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradePolarClawPlugin"
+    },
+    "UpgradePolarClawSkills": {
+      "required": [
+        "ApplicationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradePolarClawSkills"
+    }
+  }
+}

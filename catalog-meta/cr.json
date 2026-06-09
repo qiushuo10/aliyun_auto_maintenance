@@ -1,0 +1,1074 @@
+{
+  "snapshotVersion": 1,
+  "product": "cr",
+  "openApiProduct": "cr",
+  "version": "2018-12-01",
+  "source": "https://api.aliyun.com/meta/v1/products/cr/versions/2018-12-01/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:36.664Z",
+  "actions": {
+    "CancelArtifactBuildTask": {
+      "required": [
+        "InstanceId",
+        "BuildTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelArtifactBuildTask"
+    },
+    "CancelRepoBuildRecord": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "BuildRecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelRepoBuildRecord"
+    },
+    "CancelRepoSyncTask": {
+      "required": [
+        "InstanceId",
+        "SyncTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelRepoSyncTask"
+    },
+    "ChangeResourceGroup": {
+      "required": [
+        "ResourceId",
+        "ResourceRegionId",
+        "ResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeResourceGroup"
+    },
+    "CreateArtifactBuildRule": {
+      "required": [
+        "InstanceId",
+        "ScopeType",
+        "ScopeId",
+        "ArtifactType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateArtifactBuildRule"
+    },
+    "CreateArtifactLifecycleRule": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateArtifactLifecycleRule"
+    },
+    "CreateArtifactSubscriptionRule": {
+      "required": [
+        "InstanceId",
+        "SourceProvider",
+        "SourceRepoName",
+        "NamespaceName",
+        "RepoName",
+        "TagRegexp",
+        "TagCount",
+        "Platform"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateArtifactSubscriptionRule"
+    },
+    "CreateArtifactSubscriptionTask": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateArtifactSubscriptionTask"
+    },
+    "CreateBuildRecordByRecord": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "BuildRecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBuildRecordByRecord"
+    },
+    "CreateBuildRecordByRule": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "BuildRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBuildRecordByRule"
+    },
+    "CreateChain": {
+      "required": [
+        "InstanceId",
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateChain"
+    },
+    "CreateChartNamespace": {
+      "required": [
+        "InstanceId",
+        "NamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateChartNamespace"
+    },
+    "CreateChartRepository": {
+      "required": [
+        "InstanceId",
+        "RepoName",
+        "RepoNamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateChartRepository"
+    },
+    "CreateInstanceEndpointAclPolicy": {
+      "required": [
+        "InstanceId",
+        "EndpointType",
+        "Entry"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateInstanceEndpointAclPolicy"
+    },
+    "CreateInstanceVpcEndpointLinkedVpc": {
+      "required": [
+        "InstanceId",
+        "VpcId",
+        "VswitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateInstanceVpcEndpointLinkedVpc"
+    },
+    "CreateNamespace": {
+      "required": [
+        "InstanceId",
+        "NamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNamespace"
+    },
+    "CreateRepoBuildRule": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "PushType",
+        "PushName",
+        "ImageTag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepoBuildRule"
+    },
+    "CreateRepoSourceCodeRepo": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "CodeRepoType",
+        "CodeRepoNamespaceName",
+        "CodeRepoName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepoSourceCodeRepo"
+    },
+    "CreateRepoSyncRule": {
+      "required": [
+        "InstanceId",
+        "NamespaceName",
+        "TargetRegionId",
+        "TargetInstanceId",
+        "TargetNamespaceName",
+        "TagFilter",
+        "SyncScope",
+        "SyncRuleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepoSyncRule"
+    },
+    "CreateRepoSyncTask": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "Tag",
+        "TargetRegionId",
+        "TargetInstanceId",
+        "TargetNamespace",
+        "TargetRepoName",
+        "TargetTag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Manually create a repository synchronization task"
+    },
+    "CreateRepoSyncTaskByRule": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "Tag",
+        "SyncRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepoSyncTaskByRule"
+    },
+    "CreateRepoTag": {
+      "required": [
+        "InstanceId",
+        "NamespaceName",
+        "RepoName",
+        "FromTag",
+        "ToTag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepoTag"
+    },
+    "CreateRepoTagScanTask": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepoTagScanTask"
+    },
+    "CreateRepoTrigger": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "TriggerName",
+        "TriggerUrl",
+        "TriggerType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepoTrigger"
+    },
+    "CreateRepository": {
+      "required": [
+        "InstanceId",
+        "RepoName",
+        "RepoNamespaceName",
+        "RepoType",
+        "Summary"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRepository"
+    },
+    "CreateScanRule": {
+      "required": [
+        "InstanceId",
+        "RuleName",
+        "ScanScope",
+        "TriggerType",
+        "RepoTagFilterPattern"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateScanRule"
+    },
+    "CreateStorageDomainRoutingRule": {
+      "required": [
+        "InstanceId",
+        "Routes"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateStorageDomainRoutingRule"
+    },
+    "DeleteArtifactLifecycleRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteArtifactLifecycleRule"
+    },
+    "DeleteArtifactSubscriptionRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteArtifactSubscriptionRule"
+    },
+    "DeleteChain": {
+      "required": [
+        "InstanceId",
+        "ChainId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteChain"
+    },
+    "DeleteChartNamespace": {
+      "required": [
+        "InstanceId",
+        "NamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteChartNamespace"
+    },
+    "DeleteChartRelease": {
+      "required": [
+        "InstanceId",
+        "Chart",
+        "Release",
+        "RepoName",
+        "RepoNamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteChartRelease"
+    },
+    "DeleteChartRepository": {
+      "required": [
+        "InstanceId",
+        "RepoNamespaceName",
+        "RepoName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteChartRepository"
+    },
+    "DeleteEventCenterRule": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteEventCenterRule"
+    },
+    "DeleteInstanceEndpointAclPolicy": {
+      "required": [
+        "InstanceId",
+        "EndpointType",
+        "Entry"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteInstanceEndpointAclPolicy"
+    },
+    "DeleteInstanceVpcEndpointLinkedVpc": {
+      "required": [
+        "InstanceId",
+        "VpcId",
+        "VswitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteInstanceVpcEndpointLinkedVpc"
+    },
+    "DeleteNamespace": {
+      "required": [
+        "InstanceId",
+        "NamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNamespace"
+    },
+    "DeleteRepoBuildRule": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "BuildRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRepoBuildRule"
+    },
+    "DeleteRepoSyncRule": {
+      "required": [
+        "InstanceId",
+        "SyncRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRepoSyncRule"
+    },
+    "DeleteRepoTag": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRepoTag"
+    },
+    "DeleteRepoTrigger": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "TriggerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRepoTrigger"
+    },
+    "DeleteRepository": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRepository"
+    },
+    "DeleteScanRule": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteScanRule"
+    },
+    "DeleteStorageDomainRoutingRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteStorageDomainRoutingRule"
+    },
+    "GetArtifactBuildRule": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetArtifactBuildRule"
+    },
+    "GetArtifactBuildTask": {
+      "required": [
+        "InstanceId",
+        "BuildTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetArtifactBuildTask"
+    },
+    "GetArtifactLifecycleRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetArtifactLifecycleRule"
+    },
+    "GetArtifactSubscriptionRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetArtifactSubscriptionRule"
+    },
+    "GetArtifactSubscriptionTask": {
+      "required": [
+        "InstanceId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetArtifactSubscriptionTask"
+    },
+    "GetArtifactSubscriptionTaskResult": {
+      "required": [
+        "InstanceId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetArtifactSubscriptionTaskResult"
+    },
+    "GetAuthorizationToken": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAuthorizationToken"
+    },
+    "GetChain": {
+      "required": [
+        "InstanceId",
+        "ChainId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Retrieve delivery chain definition"
+    },
+    "GetChartNamespace": {
+      "required": [
+        "InstanceId",
+        "NamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetChartNamespace"
+    },
+    "GetChartRepository": {
+      "required": [
+        "InstanceId",
+        "RepoNamespaceName",
+        "RepoName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetChartRepository"
+    },
+    "GetInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query instance information"
+    },
+    "GetInstanceCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceCount"
+    },
+    "GetInstanceEndpoint": {
+      "required": [
+        "InstanceId",
+        "EndpointType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceEndpoint"
+    },
+    "GetInstanceUsage": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceUsage"
+    },
+    "GetInstanceVpcEndpoint": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceVpcEndpoint"
+    },
+    "GetNamespace": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetNamespace"
+    },
+    "GetRepoBuildRecord": {
+      "required": [
+        "InstanceId",
+        "BuildRecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRepoBuildRecord"
+    },
+    "GetRepoBuildRecordStatus": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "BuildRecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRepoBuildRecordStatus"
+    },
+    "GetRepoSourceCodeRepo": {
+      "required": [
+        "InstanceId",
+        "RepoId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRepoSourceCodeRepo"
+    },
+    "GetRepoSyncTask": {
+      "required": [
+        "InstanceId",
+        "SyncTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRepoSyncTask"
+    },
+    "GetRepoTag": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query a specific image version (tag)"
+    },
+    "GetRepoTagScanStatus": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRepoTagScanStatus"
+    },
+    "GetRepoTagScanSummary": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the number of scan results for an image version"
+    },
+    "GetRepository": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRepository"
+    },
+    "GetScanRule": {
+      "required": [
+        "InstanceId",
+        "ScanRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "获取扫描规则"
+    },
+    "GetStorageDomainRoutingRule": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "获取实例存储域名路由列表"
+    },
+    "ListArtifactBuildTaskLog": {
+      "required": [
+        "InstanceId",
+        "BuildTaskId",
+        "Page",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListArtifactBuildTaskLog"
+    },
+    "ListArtifactLifecycleRule": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListArtifactLifecycleRule"
+    },
+    "ListArtifactSubscriptionRule": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListArtifactSubscriptionRule"
+    },
+    "ListArtifactSubscriptionTask": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListArtifactSubscriptionTask"
+    },
+    "ListChain": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListChain"
+    },
+    "ListChainInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListChainInstance"
+    },
+    "ListChartNamespace": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListChartNamespace"
+    },
+    "ListChartRelease": {
+      "required": [
+        "InstanceId",
+        "RepoName",
+        "RepoNamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListChartRelease"
+    },
+    "ListChartRepository": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListChartRepository"
+    },
+    "ListEventCenterRecord": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEventCenterRecord"
+    },
+    "ListEventCenterRuleName": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListEventCenterRuleName"
+    },
+    "ListInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListInstance"
+    },
+    "ListInstanceEndpoint": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListInstanceEndpoint"
+    },
+    "ListInstanceRegion": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListInstanceRegion"
+    },
+    "ListNamespace": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListNamespace"
+    },
+    "ListRepoBuildRecord": {
+      "required": [
+        "InstanceId",
+        "RepoId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRepoBuildRecord"
+    },
+    "ListRepoBuildRecordLog": {
+      "required": [
+        "InstanceId",
+        "BuildRecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRepoBuildRecordLog"
+    },
+    "ListRepoBuildRule": {
+      "required": [
+        "InstanceId",
+        "RepoId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of build rules for an image repository"
+    },
+    "ListRepoSyncRule": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRepoSyncRule"
+    },
+    "ListRepoSyncTask": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRepoSyncTask"
+    },
+    "ListRepoTag": {
+      "required": [
+        "InstanceId",
+        "RepoId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRepoTag"
+    },
+    "ListRepoTagScanResult": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRepoTagScanResult"
+    },
+    "ListRepoTrigger": {
+      "required": [
+        "InstanceId",
+        "RepoId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRepoTrigger"
+    },
+    "ListRepository": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query image repository list"
+    },
+    "ListScanBaselineByTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListScanBaselineByTask"
+    },
+    "ListScanMaliciousFileByTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListScanMaliciousFileByTask"
+    },
+    "ListScanRule": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListScanRule"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ResetLoginPassword": {
+      "required": [
+        "InstanceId",
+        "Password"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetLoginPassword"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "RegionId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateArtifactLifecycleRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateArtifactLifecycleRule"
+    },
+    "UpdateArtifactSubscriptionRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateArtifactSubscriptionRule"
+    },
+    "UpdateChain": {
+      "required": [
+        "InstanceId",
+        "ChainId",
+        "Name",
+        "ChainConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateChain"
+    },
+    "UpdateChartNamespace": {
+      "required": [
+        "InstanceId",
+        "NamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateChartNamespace"
+    },
+    "UpdateChartRepository": {
+      "required": [
+        "InstanceId",
+        "RepoNamespaceName",
+        "RepoName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateChartRepository"
+    },
+    "UpdateEventCenterRule": {
+      "required": [
+        "InstanceId",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateEventCenterRule"
+    },
+    "UpdateInstanceEndpointStatus": {
+      "required": [
+        "InstanceId",
+        "EndpointType",
+        "Enable"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateInstanceEndpointStatus"
+    },
+    "UpdateNamespace": {
+      "required": [
+        "InstanceId",
+        "NamespaceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateNamespace"
+    },
+    "UpdateRepoBuildRule": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "BuildRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRepoBuildRule"
+    },
+    "UpdateRepoSourceCodeRepo": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "CodeRepoType",
+        "CodeRepoNamespaceName",
+        "CodeRepoName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRepoSourceCodeRepo"
+    },
+    "UpdateRepoTrigger": {
+      "required": [
+        "InstanceId",
+        "RepoId",
+        "TriggerId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRepoTrigger"
+    },
+    "UpdateRepository": {
+      "required": [
+        "InstanceId",
+        "RepoType",
+        "Summary"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Update repository information"
+    },
+    "UpdateScanRule": {
+      "required": [
+        "InstanceId",
+        "ScanRuleId",
+        "RuleName",
+        "ScanScope",
+        "TriggerType",
+        "RepoTagFilterPattern"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateScanRule"
+    },
+    "UpdateStorageDomainRoutingRule": {
+      "required": [
+        "InstanceId",
+        "Routes",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateStorageDomainRoutingRule"
+    }
+  }
+}

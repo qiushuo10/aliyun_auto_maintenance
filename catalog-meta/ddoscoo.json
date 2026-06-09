@@ -1,0 +1,1668 @@
+{
+  "snapshotVersion": 1,
+  "product": "ddoscoo",
+  "openApiProduct": "ddoscoo",
+  "version": "2020-01-01",
+  "source": "https://api.aliyun.com/meta/v1/products/ddoscoo/versions/2020-01-01/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:37.075Z",
+  "actions": {
+    "AddAutoCcBlacklist": {
+      "required": [
+        "InstanceId",
+        "Blacklist",
+        "ExpireTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddAutoCcBlacklist"
+    },
+    "AddAutoCcWhitelist": {
+      "required": [
+        "InstanceId",
+        "Whitelist"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddAutoCcWhitelist"
+    },
+    "AssociateWebCert": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssociateWebCert"
+    },
+    "AttachSceneDefenseObject": {
+      "required": [
+        "PolicyId",
+        "ObjectType",
+        "Objects"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachSceneDefenseObject"
+    },
+    "ConfigDomainSecurityProfile": {
+      "required": [
+        "Domain",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigDomainSecurityProfile"
+    },
+    "ConfigL7GlobalRule": {
+      "required": [
+        "Domain",
+        "RuleAttr"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigL7GlobalRule"
+    },
+    "ConfigL7RsPolicy": {
+      "required": [
+        "Domain",
+        "Policy"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigL7RsPolicy"
+    },
+    "ConfigL7UsKeepalive": {
+      "required": [
+        "UpstreamKeepalive"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigL7UsKeepalive"
+    },
+    "ConfigLayer4Remark": {
+      "required": [
+        "Listeners"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigLayer4Remark"
+    },
+    "ConfigLayer4RuleBakMode": {
+      "required": [
+        "BakMode",
+        "Listeners"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigLayer4RuleBakMode"
+    },
+    "ConfigLayer4RulePolicy": {
+      "required": [
+        "Listeners"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigLayer4RulePolicy"
+    },
+    "ConfigNetworkRegionBlock": {
+      "required": [
+        "InstanceId",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigNetworkRegionBlock"
+    },
+    "ConfigNetworkRules": {
+      "required": [
+        "NetworkRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigNetworkRules"
+    },
+    "ConfigUdpReflect": {
+      "required": [
+        "InstanceId",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigUdpReflect"
+    },
+    "ConfigWebCCRuleV2": {
+      "required": [
+        "Domain",
+        "RuleList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigWebCCRuleV2"
+    },
+    "ConfigWebCCTemplate": {
+      "required": [
+        "Domain",
+        "Template"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigWebCCTemplate"
+    },
+    "ConfigWebIpSet": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfigWebIpSet"
+    },
+    "CreateAsyncTask": {
+      "required": [
+        "TaskType",
+        "TaskParams"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAsyncTask"
+    },
+    "CreateDomainResource": {
+      "required": [
+        "Domain",
+        "RsType",
+        "InstanceIds",
+        "RealServers",
+        "ProxyTypes"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDomainResource"
+    },
+    "CreateNetworkRules": {
+      "required": [
+        "NetworkRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNetworkRules"
+    },
+    "CreatePort": {
+      "required": [
+        "FrontendPort",
+        "FrontendProtocol",
+        "InstanceId",
+        "RealServers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePort"
+    },
+    "CreateSceneDefensePolicy": {
+      "required": [
+        "Name",
+        "Template",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSceneDefensePolicy"
+    },
+    "CreateSchedulerRule": {
+      "required": [
+        "Rules",
+        "RuleName",
+        "RuleType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSchedulerRule"
+    },
+    "CreateTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateTagResources"
+    },
+    "CreateWebCCRule": {
+      "required": [
+        "Domain",
+        "Name",
+        "Act",
+        "Count",
+        "Interval",
+        "Mode",
+        "Ttl",
+        "Uri"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateWebCCRule"
+    },
+    "CreateWebRule": {
+      "required": [
+        "Domain",
+        "RsType",
+        "Rules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateWebRule"
+    },
+    "DeleteAsyncTask": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAsyncTask"
+    },
+    "DeleteAutoCcBlacklist": {
+      "required": [
+        "InstanceId",
+        "Blacklist"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAutoCcBlacklist"
+    },
+    "DeleteAutoCcWhitelist": {
+      "required": [
+        "InstanceId",
+        "Whitelist"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAutoCcWhitelist"
+    },
+    "DeleteDomainResource": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDomainResource"
+    },
+    "DeleteNetworkRule": {
+      "required": [
+        "NetworkRule"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNetworkRule"
+    },
+    "DeletePort": {
+      "required": [
+        "FrontendPort",
+        "FrontendProtocol",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePort"
+    },
+    "DeleteSceneDefensePolicy": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSceneDefensePolicy"
+    },
+    "DeleteSchedulerRule": {
+      "required": [
+        "RuleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSchedulerRule"
+    },
+    "DeleteTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteTagResources"
+    },
+    "DeleteWebCCRule": {
+      "required": [
+        "Domain",
+        "Name"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteWebCCRule"
+    },
+    "DeleteWebCCRuleV2": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteWebCCRuleV2"
+    },
+    "DeleteWebCacheCustomRule": {
+      "required": [
+        "Domain",
+        "RuleNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteWebCacheCustomRule"
+    },
+    "DeleteWebPreciseAccessRule": {
+      "required": [
+        "Domain",
+        "RuleNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteWebPreciseAccessRule"
+    },
+    "DeleteWebRule": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteWebRule"
+    },
+    "DescribeAsyncTasks": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAsyncTasks"
+    },
+    "DescribeAttackAnalysisMaxQps": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAttackAnalysisMaxQps"
+    },
+    "DescribeAutoCcBlacklist": {
+      "required": [
+        "InstanceId",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoCcBlacklist"
+    },
+    "DescribeAutoCcListCount": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoCcListCount"
+    },
+    "DescribeAutoCcWhitelist": {
+      "required": [
+        "InstanceId",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoCcWhitelist"
+    },
+    "DescribeBackSourceCidr": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBackSourceCidr"
+    },
+    "DescribeBlackholeStatus": {
+      "required": [
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBlackholeStatus"
+    },
+    "DescribeBlockStatus": {
+      "required": [
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBlockStatus"
+    },
+    "DescribeCdnLinkageRules": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnLinkageRules"
+    },
+    "DescribeCerts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCerts"
+    },
+    "DescribeCnameReuses": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCnameReuses"
+    },
+    "DescribeDDoSEvents": {
+      "required": [
+        "StartTime",
+        "PageSize",
+        "PageNumber",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDDoSEvents"
+    },
+    "DescribeDDosAllEventList": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDDosAllEventList"
+    },
+    "DescribeDDosEventArea": {
+      "required": [
+        "EventType",
+        "StartTime",
+        "Ip"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDDosEventArea"
+    },
+    "DescribeDDosEventAttackType": {
+      "required": [
+        "EventType",
+        "StartTime",
+        "Ip"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDDosEventAttackType"
+    },
+    "DescribeDDosEventIsp": {
+      "required": [
+        "EventType",
+        "StartTime",
+        "Ip"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDDosEventIsp"
+    },
+    "DescribeDDosEventMax": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDDosEventMax"
+    },
+    "DescribeDDosEventSrcIp": {
+      "required": [
+        "EventType",
+        "StartTime",
+        "Ip",
+        "Range"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDDosEventSrcIp"
+    },
+    "DescribeDefenseCountStatistics": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDefenseCountStatistics"
+    },
+    "DescribeDefenseRecords": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDefenseRecords"
+    },
+    "DescribeDestinationPortEvent": {
+      "required": [
+        "Region",
+        "EventType",
+        "StartTime",
+        "Ip",
+        "Range"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDestinationPortEvent"
+    },
+    "DescribeDomainAttackEvents": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainAttackEvents"
+    },
+    "DescribeDomainBps": {
+      "required": [
+        "Region",
+        "StartTime",
+        "EndTime",
+        "Interval"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainBps"
+    },
+    "DescribeDomainCcProtectSwitch": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainCcProtectSwitch"
+    },
+    "DescribeDomainH2Fingerprint": {
+      "required": [
+        "StartTime",
+        "Limit"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainH2Fingerprint"
+    },
+    "DescribeDomainOverview": {
+      "required": [
+        "StartTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainOverview"
+    },
+    "DescribeDomainQPSList": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Interval"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainQPSList"
+    },
+    "DescribeDomainResource": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainResource"
+    },
+    "DescribeDomainStatusCodeCount": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainStatusCodeCount"
+    },
+    "DescribeDomainStatusCodeList": {
+      "required": [
+        "StartTime",
+        "Interval",
+        "QueryType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainStatusCodeList"
+    },
+    "DescribeDomainTopAttackList": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopAttackList"
+    },
+    "DescribeDomainTopFingerprint": {
+      "required": [
+        "Region",
+        "StartTime",
+        "EndTime",
+        "Limit",
+        "Interval"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopFingerprint"
+    },
+    "DescribeDomainTopHttpMethod": {
+      "required": [
+        "Region",
+        "StartTime",
+        "EndTime",
+        "Limit"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopHttpMethod"
+    },
+    "DescribeDomainTopReferer": {
+      "required": [
+        "Region",
+        "StartTime",
+        "EndTime",
+        "Limit"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopReferer"
+    },
+    "DescribeDomainTopUserAgent": {
+      "required": [
+        "Region",
+        "StartTime",
+        "EndTime",
+        "Limit"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopUserAgent"
+    },
+    "DescribeDomainViewSourceCountries": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainViewSourceCountries"
+    },
+    "DescribeDomainViewSourceProvinces": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainViewSourceProvinces"
+    },
+    "DescribeDomainViewTopCostTime": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Top"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainViewTopCostTime"
+    },
+    "DescribeDomainViewTopUrl": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Top"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainViewTopUrl"
+    },
+    "DescribeDomains": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomains"
+    },
+    "DescribeElasticBandwidthSpec": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeElasticBandwidthSpec"
+    },
+    "DescribeElasticQps": {
+      "required": [
+        "Region",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeElasticQps"
+    },
+    "DescribeElasticQpsRecord": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Ip"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeElasticQpsRecord"
+    },
+    "DescribeHeaders": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHeaders"
+    },
+    "DescribeHealthCheckList": {
+      "required": [
+        "NetworkRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHealthCheckList"
+    },
+    "DescribeHealthCheckStatus": {
+      "required": [
+        "NetworkRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHealthCheckStatus"
+    },
+    "DescribeInstanceDetails": {
+      "required": [
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceDetails"
+    },
+    "DescribeInstanceExt": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceExt"
+    },
+    "DescribeInstanceIds": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceIds"
+    },
+    "DescribeInstanceSpecs": {
+      "required": [
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceSpecs"
+    },
+    "DescribeInstanceStatistics": {
+      "required": [
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceStatistics"
+    },
+    "DescribeInstanceStatus": {
+      "required": [
+        "InstanceId",
+        "ProductType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceStatus"
+    },
+    "DescribeInstances": {
+      "required": [
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstances"
+    },
+    "DescribeL7GlobalRule": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeL7GlobalRule"
+    },
+    "DescribeL7RsPolicy": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeL7RsPolicy"
+    },
+    "DescribeL7UsKeepalive": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeL7UsKeepalive"
+    },
+    "DescribeLayer4RulePolicy": {
+      "required": [
+        "Listeners"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLayer4RulePolicy"
+    },
+    "DescribeLogStoreExistStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLogStoreExistStatus"
+    },
+    "DescribeNetworkRegionBlock": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkRegionBlock"
+    },
+    "DescribeNetworkRuleAttributes": {
+      "required": [
+        "NetworkRules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkRuleAttributes"
+    },
+    "DescribeNetworkRules": {
+      "required": [
+        "InstanceId",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkRules"
+    },
+    "DescribeOpEntities": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeOpEntities"
+    },
+    "DescribePort": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePort"
+    },
+    "DescribePortAttackMaxFlow": {
+      "required": [
+        "EndTime",
+        "StartTime",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortAttackMaxFlow"
+    },
+    "DescribePortAutoCcStatus": {
+      "required": [
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortAutoCcStatus"
+    },
+    "DescribePortConnsCount": {
+      "required": [
+        "EndTime",
+        "StartTime",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortConnsCount"
+    },
+    "DescribePortConnsList": {
+      "required": [
+        "EndTime",
+        "StartTime",
+        "Interval",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortConnsList"
+    },
+    "DescribePortFlowList": {
+      "required": [
+        "EndTime",
+        "StartTime",
+        "Interval",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortFlowList"
+    },
+    "DescribePortMaxConns": {
+      "required": [
+        "EndTime",
+        "StartTime",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortMaxConns"
+    },
+    "DescribePortViewSourceCountries": {
+      "required": [
+        "EndTime",
+        "StartTime",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortViewSourceCountries"
+    },
+    "DescribePortViewSourceIsps": {
+      "required": [
+        "EndTime",
+        "StartTime",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortViewSourceIsps"
+    },
+    "DescribePortViewSourceProvinces": {
+      "required": [
+        "StartTime",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortViewSourceProvinces"
+    },
+    "DescribeSceneDefenseObjects": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSceneDefenseObjects"
+    },
+    "DescribeSceneDefensePolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSceneDefensePolicies"
+    },
+    "DescribeSchedulerRules": {
+      "required": [
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSchedulerRules"
+    },
+    "DescribeSlaEventList": {
+      "required": [
+        "Region",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlaEventList"
+    },
+    "DescribeSlsAuthStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlsAuthStatus"
+    },
+    "DescribeSlsLogstoreInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlsLogstoreInfo"
+    },
+    "DescribeSlsOpenStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSlsOpenStatus"
+    },
+    "DescribeStsGrantStatus": {
+      "required": [
+        "Role"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeStsGrantStatus"
+    },
+    "DescribeSystemLog": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "PageNumber",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSystemLog"
+    },
+    "DescribeTagKeys": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTagKeys"
+    },
+    "DescribeTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTagResources"
+    },
+    "DescribeUdpReflect": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUdpReflect"
+    },
+    "DescribeUnBlackholeCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUnBlackholeCount"
+    },
+    "DescribeUnBlockCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUnBlockCount"
+    },
+    "DescribeWebAccessLogDispatchStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebAccessLogDispatchStatus"
+    },
+    "DescribeWebAccessLogEmptyCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebAccessLogEmptyCount"
+    },
+    "DescribeWebAccessLogStatus": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebAccessLogStatus"
+    },
+    "DescribeWebAccessMode": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebAccessMode"
+    },
+    "DescribeWebAreaBlockConfigs": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebAreaBlockConfigs"
+    },
+    "DescribeWebCCRules": {
+      "required": [
+        "Domain",
+        "PageSize"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeWebCCRules"
+    },
+    "DescribeWebCCRulesV2": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebCCRulesV2"
+    },
+    "DescribeWebCacheConfigs": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebCacheConfigs"
+    },
+    "DescribeWebCcProtectSwitch": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebCcProtectSwitch"
+    },
+    "DescribeWebCustomPorts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebCustomPorts"
+    },
+    "DescribeWebInstanceRelations": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebInstanceRelations"
+    },
+    "DescribeWebPreciseAccessRule": {
+      "required": [
+        "Domains"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebPreciseAccessRule"
+    },
+    "DescribeWebRules": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeWebRules"
+    },
+    "DetachSceneDefenseObject": {
+      "required": [
+        "PolicyId",
+        "Objects"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachSceneDefenseObject"
+    },
+    "DisableSceneDefensePolicy": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableSceneDefensePolicy"
+    },
+    "DisableWebAccessLogConfig": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableWebAccessLogConfig"
+    },
+    "DisableWebCC": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableWebCC"
+    },
+    "DisableWebCCRule": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableWebCCRule"
+    },
+    "EmptyAutoCcBlacklist": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EmptyAutoCcBlacklist"
+    },
+    "EmptyAutoCcWhitelist": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EmptyAutoCcWhitelist"
+    },
+    "EmptySlsLogstore": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EmptySlsLogstore"
+    },
+    "EnableSceneDefensePolicy": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableSceneDefensePolicy"
+    },
+    "EnableWebAccessLogConfig": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableWebAccessLogConfig"
+    },
+    "EnableWebCC": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableWebCC"
+    },
+    "EnableWebCCRule": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableWebCCRule"
+    },
+    "ModifyBlackholeStatus": {
+      "required": [
+        "BlackholeStatus",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBlackholeStatus"
+    },
+    "ModifyBlockStatus": {
+      "required": [
+        "Status",
+        "InstanceId",
+        "Lines"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyBlockStatus"
+    },
+    "ModifyCnameReuse": {
+      "required": [
+        "Domain",
+        "Enable"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCnameReuse"
+    },
+    "ModifyDomainResource": {
+      "required": [
+        "Domain",
+        "RsType",
+        "ProxyTypes",
+        "RealServers",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDomainResource"
+    },
+    "ModifyElasticBandWidth": {
+      "required": [
+        "ElasticBandwidth",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyElasticBandWidth"
+    },
+    "ModifyElasticBizQps": {
+      "required": [
+        "InstanceId",
+        "Mode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyElasticBizQps"
+    },
+    "ModifyFullLogTtl": {
+      "required": [
+        "Ttl"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyFullLogTtl"
+    },
+    "ModifyHeaders": {
+      "required": [
+        "Domain",
+        "CustomHeaders"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHeaders"
+    },
+    "ModifyHealthCheckConfig": {
+      "required": [
+        "InstanceId",
+        "ForwardProtocol",
+        "FrontendPort",
+        "HealthCheck"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHealthCheckConfig"
+    },
+    "ModifyHttp2Enable": {
+      "required": [
+        "Domain",
+        "Enable"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHttp2Enable"
+    },
+    "ModifyInstance": {
+      "required": [
+        "InstanceId",
+        "ModifyType",
+        "ProductType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstance"
+    },
+    "ModifyInstanceRemark": {
+      "required": [
+        "InstanceId",
+        "Remark"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceRemark"
+    },
+    "ModifyNetworkRuleAttribute": {
+      "required": [
+        "InstanceId",
+        "ForwardProtocol",
+        "FrontendPort",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNetworkRuleAttribute"
+    },
+    "ModifyOcspStatus": {
+      "required": [
+        "Domain",
+        "Enable"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyOcspStatus"
+    },
+    "ModifyPort": {
+      "required": [
+        "FrontendPort",
+        "FrontendProtocol",
+        "InstanceId",
+        "BackendPort",
+        "RealServers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPort"
+    },
+    "ModifyPortAutoCcStatus": {
+      "required": [
+        "InstanceId",
+        "Switch",
+        "Mode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPortAutoCcStatus"
+    },
+    "ModifyQpsMode": {
+      "required": [
+        "InstanceId",
+        "Mode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyQpsMode"
+    },
+    "ModifySceneDefensePolicy": {
+      "required": [
+        "PolicyId",
+        "Name",
+        "Template",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySceneDefensePolicy"
+    },
+    "ModifySchedulerRule": {
+      "required": [
+        "Rules",
+        "RuleName",
+        "RuleType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySchedulerRule"
+    },
+    "ModifyTlsConfig": {
+      "required": [
+        "Domain",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyTlsConfig"
+    },
+    "ModifyWebAIProtectMode": {
+      "required": [
+        "Domain",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebAIProtectMode"
+    },
+    "ModifyWebAIProtectSwitch": {
+      "required": [
+        "Domain",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebAIProtectSwitch"
+    },
+    "ModifyWebAccessMode": {
+      "required": [
+        "Domain",
+        "AccessMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebAccessMode"
+    },
+    "ModifyWebAreaBlock": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebAreaBlock"
+    },
+    "ModifyWebAreaBlockSwitch": {
+      "required": [
+        "Domain",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebAreaBlockSwitch"
+    },
+    "ModifyWebCCGlobalSwitch": {
+      "required": [
+        "Domain",
+        "CcGlobalSwitch"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebCCGlobalSwitch"
+    },
+    "ModifyWebCCRule": {
+      "required": [
+        "Domain",
+        "Name",
+        "Act",
+        "Count",
+        "Interval",
+        "Mode",
+        "Ttl",
+        "Uri"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyWebCCRule"
+    },
+    "ModifyWebCacheCustomRule": {
+      "required": [
+        "Domain",
+        "Rules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebCacheCustomRule"
+    },
+    "ModifyWebCacheMode": {
+      "required": [
+        "Domain",
+        "Mode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebCacheMode"
+    },
+    "ModifyWebCacheSwitch": {
+      "required": [
+        "Domain",
+        "Enable"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebCacheSwitch"
+    },
+    "ModifyWebIpSetSwitch": {
+      "required": [
+        "Domain",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebIpSetSwitch"
+    },
+    "ModifyWebPreciseAccessRule": {
+      "required": [
+        "Domain",
+        "Rules"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebPreciseAccessRule"
+    },
+    "ModifyWebPreciseAccessSwitch": {
+      "required": [
+        "Domain",
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebPreciseAccessSwitch"
+    },
+    "ModifyWebRule": {
+      "required": [
+        "Domain",
+        "ProxyTypes",
+        "RsType",
+        "RealServers"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyWebRule"
+    },
+    "ReleaseInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseInstance"
+    },
+    "SwitchSchedulerRule": {
+      "required": [
+        "RuleName",
+        "RuleType",
+        "SwitchData"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SwitchSchedulerRule"
+    }
+  }
+}

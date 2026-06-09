@@ -1,0 +1,769 @@
+{
+  "snapshotVersion": 1,
+  "product": "ess",
+  "openApiProduct": "Ess",
+  "version": "2014-08-28",
+  "source": "https://api.aliyun.com/meta/v1/products/Ess/versions/2014-08-28/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:42.093Z",
+  "actions": {
+    "ApplyScalingGroup": {
+      "required": [
+        "Content"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyScalingGroup"
+    },
+    "AttachAlbServerGroups": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId",
+        "AlbServerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add one or more ALB server groups"
+    },
+    "AttachDBInstances": {
+      "required": [
+        "ScalingGroupId",
+        "DBInstance"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add one or more RDS instances"
+    },
+    "AttachInstances": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Manually Add ECS Instances to a Scaling Group"
+    },
+    "AttachLoadBalancers": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add one or more SLB instances"
+    },
+    "AttachServerGroups": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId",
+        "ServerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Add one or more load balancing server groups"
+    },
+    "AttachVServerGroups": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId",
+        "VServerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachVServerGroups"
+    },
+    "CancelInstanceRefresh": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelInstanceRefresh"
+    },
+    "ChangeResourceGroup": {
+      "required": [
+        "RegionId",
+        "ResourceId",
+        "NewResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Change the resource group of a scaling group"
+    },
+    "CompleteLifecycleAction": {
+      "required": [
+        "LifecycleHookId",
+        "LifecycleActionToken"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "End the waiting state of a scaling activity in advance"
+    },
+    "CreateAlarm": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an event-triggered task"
+    },
+    "CreateEciScalingConfiguration": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a scaling configuration"
+    },
+    "CreateLifecycleHook": {
+      "required": [
+        "ScalingGroupId",
+        "LifecycleTransition"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create one or more lifecycle hooks for a scaling group"
+    },
+    "CreateNotificationConfiguration": {
+      "required": [
+        "ScalingGroupId",
+        "NotificationArn",
+        "NotificationType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create notifications for automatic scaling events and resource changes"
+    },
+    "CreateScalingConfiguration": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a scaling configuration"
+    },
+    "CreateScalingGroup": {
+      "required": [
+        "RegionId",
+        "MinSize",
+        "MaxSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a scaling group"
+    },
+    "CreateScalingRule": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateScalingRule"
+    },
+    "CreateScheduledTask": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a scheduled task"
+    },
+    "DeactivateScalingConfiguration": {
+      "required": [
+        "ScalingConfigurationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Deactivate the specified scaling configuration"
+    },
+    "DeleteAlarm": {
+      "required": [
+        "RegionId",
+        "AlarmTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete an event-triggered task"
+    },
+    "DeleteEciScalingConfiguration": {
+      "required": [
+        "ScalingConfigurationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a scaling configuration"
+    },
+    "DeleteLifecycleHook": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a lifecycle hook"
+    },
+    "DeleteNotificationConfiguration": {
+      "required": [
+        "ScalingGroupId",
+        "NotificationArn"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete an automatic scaling management event and resource change notification"
+    },
+    "DeleteScalingConfiguration": {
+      "required": [
+        "ScalingConfigurationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a scaling configuration"
+    },
+    "DeleteScalingGroup": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteScalingGroup"
+    },
+    "DeleteScalingRule": {
+      "required": [
+        "ScalingRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a scaling rule"
+    },
+    "DeleteScheduledTask": {
+      "required": [
+        "ScheduledTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a scheduled task"
+    },
+    "DescribeAlarms": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query information about event-triggered tasks"
+    },
+    "DescribeAlertConfiguration": {
+      "required": [
+        "ScalingGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAlertConfiguration"
+    },
+    "DescribeEciScalingConfigurations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query scaling configuration information"
+    },
+    "DescribeElasticStrength": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the elasticity strength of a scaling group"
+    },
+    "DescribeInstanceRefreshes": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceRefreshes"
+    },
+    "DescribeLifecycleActions": {
+      "required": [
+        "ScalingActivityId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Lifecycle Token"
+    },
+    "DescribeLifecycleHooks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLifecycleHooks"
+    },
+    "DescribeLimitation": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query resource quota limits"
+    },
+    "DescribeNotificationConfigurations": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query automatic scaling management events and resource change notifications"
+    },
+    "DescribeNotificationTypes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the types of automatic scaling management events and resource change notifications"
+    },
+    "DescribePatternTypes": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePatternTypes"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeScalingActivities": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query scaling activities"
+    },
+    "DescribeScalingActivityDetail": {
+      "required": [
+        "ScalingActivityId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the details of a scaling activity"
+    },
+    "DescribeScalingConfigurations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query scaling configuration information"
+    },
+    "DescribeScalingGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the scaling group list"
+    },
+    "DescribeScalingInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of instances in a scaling group"
+    },
+    "DescribeScalingRules": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query scaling rules"
+    },
+    "DescribeScheduledTasks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query information about scheduled tasks"
+    },
+    "DetachAlbServerGroups": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId",
+        "AlbServerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove one or more ALB server groups"
+    },
+    "DetachDBInstances": {
+      "required": [
+        "ScalingGroupId",
+        "DBInstance"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove one or more RDS instances"
+    },
+    "DetachInstances": {
+      "required": [
+        "ScalingGroupId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove one or more ECS instances from a scaling group"
+    },
+    "DetachLoadBalancers": {
+      "required": [
+        "ScalingGroupId",
+        "LoadBalancer"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove one or more SLB instances"
+    },
+    "DetachServerGroups": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId",
+        "ServerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove one or more load balancer server groups"
+    },
+    "DetachVServerGroups": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId",
+        "VServerGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachVServerGroups"
+    },
+    "DisableAlarm": {
+      "required": [
+        "RegionId",
+        "AlarmTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Disable an event-triggered task"
+    },
+    "DisableScalingGroup": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Disable a scaling group"
+    },
+    "EnableAlarm": {
+      "required": [
+        "RegionId",
+        "AlarmTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Enable an event-triggered task"
+    },
+    "EnableScalingGroup": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Enable a scaling group"
+    },
+    "EnterStandby": {
+      "required": [
+        "ScalingGroupId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Set ECS instances in a scaling group to the standby state"
+    },
+    "ExecuteScalingRule": {
+      "required": [
+        "ScalingRuleAri"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Execute a scaling rule"
+    },
+    "ExitStandby": {
+      "required": [
+        "ScalingGroupId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Bring instances in standby state into running state"
+    },
+    "ListTagKeys": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Queries the list of tag keys for automatic scaling resources"
+    },
+    "ListTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListTagValues": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "Key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the tag values corresponding to a tag key of automatic scaling resources"
+    },
+    "ModifyAlarm": {
+      "required": [
+        "RegionId",
+        "AlarmTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAlarm"
+    },
+    "ModifyAlertConfiguration": {
+      "required": [
+        "ScalingGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAlertConfiguration"
+    },
+    "ModifyEciScalingConfiguration": {
+      "required": [
+        "ScalingConfigurationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify a scaling configuration"
+    },
+    "ModifyInstanceAttribute": {
+      "required": [
+        "ScalingGroupId",
+        "Entrusted",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify partial information of an ECS instance in a scaling group"
+    },
+    "ModifyLifecycleHook": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the information of a lifecycle hook"
+    },
+    "ModifyNotificationConfiguration": {
+      "required": [
+        "ScalingGroupId",
+        "NotificationArn",
+        "NotificationType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify a notification for automatic scaling events and resource changes"
+    },
+    "ModifyScalingConfiguration": {
+      "required": [
+        "ScalingConfigurationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify a scaling configuration"
+    },
+    "ModifyScalingGroup": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify a scaling group"
+    },
+    "ModifyScalingRule": {
+      "required": [
+        "ScalingRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify a scaling rule"
+    },
+    "ModifyScheduledTask": {
+      "required": [
+        "ScheduledTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the information of a scheduled task"
+    },
+    "RebalanceInstances": {
+      "required": [
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Rebalance ECS Instance Distribution"
+    },
+    "RecordLifecycleActionHeartbeat": {
+      "required": [
+        "lifecycleHookId",
+        "lifecycleActionToken"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Extend the wait time after a lifecycle hook is triggered and the instance is suspended"
+    },
+    "RemoveInstances": {
+      "required": [
+        "ScalingGroupId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Remove one or more ECS instances from a scaling group"
+    },
+    "ResumeInstanceRefresh": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResumeInstanceRefresh"
+    },
+    "ResumeProcesses": {
+      "required": [
+        "ScalingGroupId",
+        "Process"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Recover the paused flows in a scaling group"
+    },
+    "RollbackInstanceRefresh": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RollbackInstanceRefresh"
+    },
+    "ScaleWithAdjustment": {
+      "required": [
+        "ScalingGroupId",
+        "AdjustmentType",
+        "AdjustmentValue"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Trigger Elastic Scaling Based on a Specified Adjustment Rule"
+    },
+    "SetGroupDeletionProtection": {
+      "required": [
+        "GroupDeletionProtection",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Enable or disable deletion protection for a scaling group"
+    },
+    "SetInstanceHealth": {
+      "required": [
+        "InstanceId",
+        "HealthStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Set the health status of ECS instances in a scaling group"
+    },
+    "SetInstancesProtection": {
+      "required": [
+        "ScalingGroupId",
+        "ProtectedFromScaleIn",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Enable or disable protection for ECS instances in a scaling group"
+    },
+    "StartInstanceRefresh": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartInstanceRefresh"
+    },
+    "SuspendInstanceRefresh": {
+      "required": [
+        "RegionId",
+        "ScalingGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SuspendInstanceRefresh"
+    },
+    "SuspendProcesses": {
+      "required": [
+        "ScalingGroupId",
+        "Process"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Pause the specified flow in a scaling group"
+    },
+    "TagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Detach tags from a specified list of automatic scaling resources in bulk"
+    },
+    "VerifyAuthentication": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Detect whether automatic scaling has been authorized to operate on ECS resources"
+    },
+    "VerifyUser": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Authenticate whether the automatic scaling service has been activated"
+    }
+  }
+}

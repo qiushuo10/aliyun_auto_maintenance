@@ -1,0 +1,437 @@
+{
+  "snapshotVersion": 1,
+  "product": "pvtz",
+  "openApiProduct": "pvtz",
+  "version": "2018-01-01",
+  "source": "https://api.aliyun.com/meta/v1/products/pvtz/versions/2018-01-01/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:47.082Z",
+  "actions": {
+    "AddCustomLine": {
+      "required": [
+        "Name",
+        "Ipv4s"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddCustomLine"
+    },
+    "AddResolverEndpoint": {
+      "required": [
+        "Name",
+        "VpcRegionId",
+        "VpcId",
+        "SecurityGroupId",
+        "IpConfig"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddResolverEndpoint"
+    },
+    "AddResolverRule": {
+      "required": [
+        "ZoneName",
+        "ForwardIp"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddResolverRule"
+    },
+    "AddUserVpcAuthorization": {
+      "required": [
+        "AuthorizedUserId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddUserVpcAuthorization"
+    },
+    "AddZone": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddZone"
+    },
+    "AddZoneRecord": {
+      "required": [
+        "ZoneId",
+        "Rr",
+        "Type",
+        "Value"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddZoneRecord"
+    },
+    "BindResolverRuleVpc": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BindResolverRuleVpc"
+    },
+    "BindZoneVpc": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BindZoneVpc"
+    },
+    "ChangeZoneDnsGroup": {
+      "required": [
+        "ZoneId",
+        "DnsGroup"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeZoneDnsGroup"
+    },
+    "CheckZoneName": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckZoneName"
+    },
+    "DeleteCustomLine": {
+      "required": [
+        "LineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCustomLine"
+    },
+    "DeleteResolverEndpoint": {
+      "required": [
+        "EndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteResolverEndpoint"
+    },
+    "DeleteResolverRule": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteResolverRule"
+    },
+    "DeleteUserVpcAuthorization": {
+      "required": [
+        "AuthorizedUserId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUserVpcAuthorization"
+    },
+    "DeleteZone": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteZone"
+    },
+    "DeleteZoneRecord": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteZoneRecord"
+    },
+    "DescribeChangeLogs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeChangeLogs"
+    },
+    "DescribeCustomLineInfo": {
+      "required": [
+        "LineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomLineInfo"
+    },
+    "DescribeCustomLines": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomLines"
+    },
+    "DescribeIntranetUserCanAnalysisVpcs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIntranetUserCanAnalysisVpcs"
+    },
+    "DescribePvtzStatisticsGlobalOverview": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePvtzStatisticsGlobalOverview"
+    },
+    "DescribePvtzStatisticsHistory": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePvtzStatisticsHistory"
+    },
+    "DescribePvtzStatisticsSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePvtzStatisticsSummary"
+    },
+    "DescribePvtzStatisticsZoneOverview": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePvtzStatisticsZoneOverview"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeRequestGraph": {
+      "required": [
+        "StartTimestamp",
+        "EndTimestamp"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRequestGraph"
+    },
+    "DescribeResolverAvailableZones": {
+      "required": [
+        "ResolverRegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResolverAvailableZones"
+    },
+    "DescribeResolverEndpoint": {
+      "required": [
+        "EndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResolverEndpoint"
+    },
+    "DescribeResolverEndpoints": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResolverEndpoints"
+    },
+    "DescribeResolverRule": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResolverRule"
+    },
+    "DescribeResolverRules": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResolverRules"
+    },
+    "DescribeStatisticSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeStatisticSummary"
+    },
+    "DescribeSyncEcsHostTask": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSyncEcsHostTask"
+    },
+    "DescribeTags": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTags"
+    },
+    "DescribeUserServiceStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserServiceStatus"
+    },
+    "DescribeUserVpcAuthorizations": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserVpcAuthorizations"
+    },
+    "DescribeZoneInfo": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZoneInfo"
+    },
+    "DescribeZoneRecord": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZoneRecord"
+    },
+    "DescribeZoneRecords": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZoneRecords"
+    },
+    "DescribeZoneVpcTree": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZoneVpcTree"
+    },
+    "DescribeZones": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZones"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "MoveResourceGroup": {
+      "required": [
+        "ResourceId",
+        "NewResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveResourceGroup"
+    },
+    "SearchCustomLines": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SearchCustomLines"
+    },
+    "SetProxyPattern": {
+      "required": [
+        "ZoneId",
+        "ProxyPattern"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetProxyPattern"
+    },
+    "SetZoneRecordStatus": {
+      "required": [
+        "RecordId",
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetZoneRecordStatus"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateCustomLine": {
+      "required": [
+        "LineId",
+        "Ipv4s"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCustomLine"
+    },
+    "UpdateRecordRemark": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecordRemark"
+    },
+    "UpdateResolverEndpoint": {
+      "required": [
+        "EndpointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateResolverEndpoint"
+    },
+    "UpdateResolverRule": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateResolverRule"
+    },
+    "UpdateSyncEcsHostTask": {
+      "required": [
+        "ZoneId",
+        "Status",
+        "Region"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateSyncEcsHostTask"
+    },
+    "UpdateZoneRecord": {
+      "required": [
+        "Rr",
+        "RecordId",
+        "Type",
+        "Value"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateZoneRecord"
+    },
+    "UpdateZoneRemark": {
+      "required": [
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateZoneRemark"
+    }
+  }
+}

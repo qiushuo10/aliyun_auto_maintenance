@@ -1,0 +1,1257 @@
+{
+  "snapshotVersion": 1,
+  "product": "oss",
+  "openApiProduct": "Oss",
+  "version": "2019-05-17",
+  "source": "https://api.aliyun.com/meta/v1/products/Oss/versions/2019-05-17/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:46.136Z",
+  "actions": {
+    "AbortBucketWorm": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AbortBucketWorm"
+    },
+    "AbortMultipartUpload": {
+      "required": [
+        "bucket",
+        "key",
+        "uploadId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Cancel a multipart upload task and delete the parts that are uploaded by the multipart upload task"
+    },
+    "AppendObject": {
+      "required": [
+        "key",
+        "position"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Upload an object by appending the object to an existing object"
+    },
+    "CleanRestoredObject": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CleanRestoredObject"
+    },
+    "CloseMetaQuery": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CloseMetaQuery"
+    },
+    "CompleteBucketWorm": {
+      "required": [
+        "wormId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CompleteBucketWorm"
+    },
+    "CompleteMultipartUpload": {
+      "required": [
+        "key",
+        "uploadId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Complete the multipart upload task of an object"
+    },
+    "CopyObject": {
+      "required": [
+        "key",
+        "x-oss-copy-source"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CopyObject"
+    },
+    "CreateAccessPoint": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessPoint"
+    },
+    "CreateAccessPointForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessPointForObjectProcess"
+    },
+    "CreateBucketDataRedundancyTransition": {
+      "required": [
+        "x-oss-target-redundancy-type"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateBucketDataRedundancyTransition"
+    },
+    "CreateCnameToken": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCnameToken"
+    },
+    "CreateSelectObjectMeta": {
+      "required": [
+        "key",
+        "x-oss-process"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Get Total Number of Rows, Columns, and Splits of the Target File"
+    },
+    "DeleteAccessPoint": {
+      "required": [
+        "x-oss-access-point-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessPoint"
+    },
+    "DeleteAccessPointForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessPointForObjectProcess"
+    },
+    "DeleteAccessPointPolicy": {
+      "required": [
+        "x-oss-access-point-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessPointPolicy"
+    },
+    "DeleteAccessPointPolicyForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessPointPolicyForObjectProcess"
+    },
+    "DeleteAccessPointPublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessPointPublicAccessBlock"
+    },
+    "DeleteBucket": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucket"
+    },
+    "DeleteBucketCommonHeader": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete the user-defined response header configuration of a bucket"
+    },
+    "DeleteBucketCors": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketCors"
+    },
+    "DeleteBucketDataRedundancyTransition": {
+      "required": [
+        "x-oss-redundancy-transition-taskid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketDataRedundancyTransition"
+    },
+    "DeleteBucketEncryption": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketEncryption"
+    },
+    "DeleteBucketInventory": {
+      "required": [
+        "inventoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketInventory"
+    },
+    "DeleteBucketLifecycle": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketLifecycle"
+    },
+    "DeleteBucketLogging": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketLogging"
+    },
+    "DeleteBucketOverwriteConfig": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketOverwriteConfig"
+    },
+    "DeleteBucketPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketPolicy"
+    },
+    "DeleteBucketPublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketPublicAccessBlock"
+    },
+    "DeleteBucketReplication": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketReplication"
+    },
+    "DeleteBucketTags": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketTags"
+    },
+    "DeleteBucketWebsite": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBucketWebsite"
+    },
+    "DeleteCname": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCname"
+    },
+    "DeleteLiveChannel": {
+      "required": [
+        "channel"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete a specified LiveChannel"
+    },
+    "DeleteObject": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete an object"
+    },
+    "DeleteObjectTagging": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete the tags configured for an object"
+    },
+    "DeletePublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePublicAccessBlock"
+    },
+    "DeleteStyle": {
+      "required": [
+        "styleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteStyle"
+    },
+    "DeleteUserDefinedLogFieldsConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUserDefinedLogFieldsConfig"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DoMetaQuery": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query objects that meet specified conditions"
+    },
+    "ExtendBucketWorm": {
+      "required": [
+        "wormId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ExtendBucketWorm"
+    },
+    "GetAccessPoint": {
+      "required": [
+        "x-oss-access-point-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessPoint"
+    },
+    "GetAccessPointConfigForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessPointConfigForObjectProcess"
+    },
+    "GetAccessPointForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessPointForObjectProcess"
+    },
+    "GetAccessPointPolicy": {
+      "required": [
+        "x-oss-access-point-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessPointPolicy"
+    },
+    "GetAccessPointPolicyForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessPointPolicyForObjectProcess"
+    },
+    "GetAccessPointPublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccessPointPublicAccessBlock"
+    },
+    "GetBucketAccessMonitor": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketAccessMonitor"
+    },
+    "GetBucketAcl": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketAcl"
+    },
+    "GetBucketArchiveDirectRead": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Obtain the real-time access configuration for Archive objects of a bucket"
+    },
+    "GetBucketCors": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketCors"
+    },
+    "GetBucketDataRedundancyTransition": {
+      "required": [
+        "x-oss-redundancy-transition-taskid"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketDataRedundancyTransition"
+    },
+    "GetBucketEncryption": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketEncryption"
+    },
+    "GetBucketEventNotification": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Get Bucket Event Notification Configuration"
+    },
+    "GetBucketHttpsConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketHttpsConfig"
+    },
+    "GetBucketInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketInfo"
+    },
+    "GetBucketInventory": {
+      "required": [
+        "bucket",
+        "inventoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketInventory"
+    },
+    "GetBucketLifecycle": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketLifecycle"
+    },
+    "GetBucketLocation": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketLocation"
+    },
+    "GetBucketLogging": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketLogging"
+    },
+    "GetBucketObjectWormConfiguration": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "GetBucketOverwriteConfig": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketOverwriteConfig"
+    },
+    "GetBucketPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketPolicy"
+    },
+    "GetBucketPolicyStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketPolicyStatus"
+    },
+    "GetBucketPublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketPublicAccessBlock"
+    },
+    "GetBucketReferer": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketReferer"
+    },
+    "GetBucketReplication": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketReplication"
+    },
+    "GetBucketReplicationLocation": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketReplicationLocation"
+    },
+    "GetBucketReplicationProgress": {
+      "required": [
+        "rule-id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketReplicationProgress"
+    },
+    "GetBucketRequestPayment": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketRequestPayment"
+    },
+    "GetBucketResourceGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketResourceGroup"
+    },
+    "GetBucketStat": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketStat"
+    },
+    "GetBucketTags": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketTags"
+    },
+    "GetBucketTransferAcceleration": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketTransferAcceleration"
+    },
+    "GetBucketVersioning": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketVersioning"
+    },
+    "GetBucketWebsite": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketWebsite"
+    },
+    "GetBucketWorm": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetBucketWorm"
+    },
+    "GetCnameToken": {
+      "required": [
+        "cname"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCnameToken"
+    },
+    "GetLiveChannelHistory": {
+      "required": [
+        "channel"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the stream ingestion records of a LiveChannel"
+    },
+    "GetLiveChannelInfo": {
+      "required": [
+        "channel"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the configuration information about a LiveChannel"
+    },
+    "GetLiveChannelStat": {
+      "required": [
+        "channel"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the stream ingestion status of a LiveChannel"
+    },
+    "GetMetaQueryStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetMetaQueryStatus"
+    },
+    "GetObject": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query an object"
+    },
+    "GetObjectAcl": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the ACL of an object"
+    },
+    "GetObjectLegalHold": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "GetObjectMeta": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the metadata of an object"
+    },
+    "GetObjectRetention": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "GetObjectTagging": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the tags of an object"
+    },
+    "GetPublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPublicAccessBlock"
+    },
+    "GetStyle": {
+      "required": [
+        "styleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetStyle"
+    },
+    "GetSymlink": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query a symbolic link"
+    },
+    "GetUserAntiDDosInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUserAntiDDosInfo"
+    },
+    "GetUserDefinedLogFieldsConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetUserDefinedLogFieldsConfig"
+    },
+    "GetVodPlaylist": {
+      "required": [
+        "channel",
+        "endTime",
+        "startTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the playlist that is generated by the streams ingested to the specified LiveChannel"
+    },
+    "HeadObject": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the metadata of an object"
+    },
+    "InitBucketAntiDDosInfo": {
+      "required": [
+        "x-oss-defender-instance",
+        "x-oss-defender-type"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InitBucketAntiDDosInfo"
+    },
+    "InitUserAntiDDosInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InitUserAntiDDosInfo"
+    },
+    "InitiateBucketWorm": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InitiateBucketWorm"
+    },
+    "InitiateMultipartUpload": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InitiateMultipartUpload"
+    },
+    "ListAccessPoints": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAccessPoints"
+    },
+    "ListAccessPointsForObjectProcess": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAccessPointsForObjectProcess"
+    },
+    "ListBucketAntiDDosInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListBucketAntiDDosInfo"
+    },
+    "ListBucketDataRedundancyTransition": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListBucketDataRedundancyTransition"
+    },
+    "ListBucketInventory": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListBucketInventory"
+    },
+    "ListBuckets": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListBuckets"
+    },
+    "ListCname": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListCname"
+    },
+    "ListDataLakeStorageTransferJob": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List data lake metadata transformation jobs"
+    },
+    "ListLiveChannel": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List specified LiveChannels"
+    },
+    "ListMultipartUploads": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List ongoing multipart upload tasks"
+    },
+    "ListObjectVersions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListObjectVersions"
+    },
+    "ListObjects": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListObjects"
+    },
+    "ListObjectsV2": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListObjectsV2"
+    },
+    "ListParts": {
+      "required": [
+        "key",
+        "uploadId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Lists all uploaded parts"
+    },
+    "ListStyle": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListStyle"
+    },
+    "ListUserDataRedundancyTransition": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List User-Level Storage Redundancy Type Transition Tasks"
+    },
+    "OpenMetaQuery": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Enable Metadata Management"
+    },
+    "OptionObject": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OptionObject"
+    },
+    "PostObject": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Upload files by using an HTML form"
+    },
+    "PostVodPlaylist": {
+      "required": [
+        "channel",
+        "playlist",
+        "endTime",
+        "startTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Generate a VOD playlist for live stream ingest"
+    },
+    "PutAccessPointConfigForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutAccessPointConfigForObjectProcess"
+    },
+    "PutAccessPointPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutAccessPointPolicy"
+    },
+    "PutAccessPointPolicyForObjectProcess": {
+      "required": [
+        "x-oss-access-point-for-object-process-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutAccessPointPolicyForObjectProcess"
+    },
+    "PutAccessPointPublicAccessBlock": {
+      "required": [
+        "x-oss-access-point-name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutAccessPointPublicAccessBlock"
+    },
+    "PutBucket": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucket"
+    },
+    "PutBucketAccessMonitor": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketAccessMonitor"
+    },
+    "PutBucketAcl": {
+      "required": [
+        "x-oss-acl"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketAcl"
+    },
+    "PutBucketArchiveDirectRead": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the real-time access configuration for Archive objects in a bucket"
+    },
+    "PutBucketCommonHeader": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Set User-Defined Response Headers Configuration for a Bucket"
+    },
+    "PutBucketCors": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketCors"
+    },
+    "PutBucketEncryption": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketEncryption"
+    },
+    "PutBucketHash": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Bucket Hash Algorithm Configuration"
+    },
+    "PutBucketHttpsConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketHttpsConfig"
+    },
+    "PutBucketInventory": {
+      "required": [
+        "bucket",
+        "inventoryId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketInventory"
+    },
+    "PutBucketLifecycle": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketLifecycle"
+    },
+    "PutBucketLogging": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketLogging"
+    },
+    "PutBucketObjectWormConfiguration": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "PutBucketOverwriteConfig": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketOverwriteConfig"
+    },
+    "PutBucketPolicy": {
+      "required": [
+        "bucket",
+        "body"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketPolicy"
+    },
+    "PutBucketPublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketPublicAccessBlock"
+    },
+    "PutBucketReferer": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketReferer"
+    },
+    "PutBucketReplication": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketReplication"
+    },
+    "PutBucketRequestPayment": {
+      "required": [
+        "bucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketRequestPayment"
+    },
+    "PutBucketResourceGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketResourceGroup"
+    },
+    "PutBucketRtc": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketRtc"
+    },
+    "PutBucketTags": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketTags"
+    },
+    "PutBucketTransferAcceleration": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketTransferAcceleration"
+    },
+    "PutBucketVersioning": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketVersioning"
+    },
+    "PutBucketWebsite": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutBucketWebsite"
+    },
+    "PutChannel": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Image Processing Channel"
+    },
+    "PutCname": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutCname"
+    },
+    "PutDataLakeCachePrefetchJob": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Configure OSS accelerator asynchronous prefetch rules"
+    },
+    "PutLiveChannel": {
+      "required": [
+        "bucket",
+        "channel"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a LiveChannel"
+    },
+    "PutLiveChannelStatus": {
+      "required": [
+        "channel",
+        "status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Switch the status of a LiveChannel"
+    },
+    "PutObject": {
+      "required": [
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Upload an object"
+    },
+    "PutObjectAcl": {
+      "required": [
+        "key",
+        "x-oss-object-acl"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the ACL of an object"
+    },
+    "PutObjectLegalHold": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "PutObjectRetention": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "PutObjectTagging": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Set or update tags for an object"
+    },
+    "PutProcessConfiguration": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Bucket Media Processing Configuration"
+    },
+    "PutPublicAccessBlock": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutPublicAccessBlock"
+    },
+    "PutStyle": {
+      "required": [
+        "styleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutStyle"
+    },
+    "PutSymlink": {
+      "required": [
+        "key",
+        "x-oss-symlink-target"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a symbolic link for an OSS object"
+    },
+    "PutUserDefinedLogFieldsConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PutUserDefinedLogFieldsConfig"
+    },
+    "RestoreObject": {
+      "required": [
+        "bucket",
+        "key"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Restore an Archive object or a Cold Archive object"
+    },
+    "SealAppendObject": {
+      "required": [
+        "bucket",
+        "key",
+        "position"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Seal Appendable Object"
+    },
+    "SelectObject": {
+      "required": [
+        "key",
+        "x-oss-process"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Execute SQL statements on an object and return the result"
+    },
+    "StartDataLakeCachePrefetchJob": {
+      "required": [
+        "x-oss-datalake-job-id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Start an asynchronous prefetch job for the OSS accelerator"
+    },
+    "UpdateBucketAntiDDosInfo": {
+      "required": [
+        "x-oss-defender-instance",
+        "x-oss-defender-status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateBucketAntiDDosInfo"
+    },
+    "UpdateUserAntiDDosInfo": {
+      "required": [
+        "x-oss-defender-instance",
+        "x-oss-defender-status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateUserAntiDDosInfo"
+    },
+    "UploadPart": {
+      "required": [
+        "key",
+        "partNumber",
+        "uploadId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Upload data by part"
+    },
+    "UploadPartCopy": {
+      "required": [
+        "bucket",
+        "key",
+        "x-oss-copy-source",
+        "partNumber",
+        "uploadId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Upload a block by copying data"
+    }
+  }
+}

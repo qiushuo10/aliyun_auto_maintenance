@@ -1,0 +1,39 @@
+{
+  "snapshotVersion": 1,
+  "product": "sts",
+  "openApiProduct": "Sts",
+  "version": "2015-04-01",
+  "source": "https://api.aliyun.com/meta/v1/products/Sts/versions/2015-04-01/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:59.167Z",
+  "actions": {
+    "AssumeRole": {
+      "required": [
+        "RoleArn",
+        "RoleSessionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssumeRole"
+    },
+    "AssumeRoleWithOIDC": {
+      "required": [
+        "RoleSessionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssumeRoleWithOIDC"
+    },
+    "AssumeRoleWithSAML": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssumeRoleWithSAML"
+    },
+    "GetCallerIdentity": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCallerIdentity"
+    }
+  }
+}

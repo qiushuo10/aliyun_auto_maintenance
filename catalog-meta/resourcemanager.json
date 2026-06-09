@@ -1,0 +1,887 @@
+{
+  "snapshotVersion": 1,
+  "product": "resourcemanager",
+  "openApiProduct": "ResourceManager",
+  "version": "2020-03-31",
+  "source": "https://api.aliyun.com/meta/v1/products/ResourceManager/versions/2020-03-31/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:56.064Z",
+  "actions": {
+    "AcceptHandshake": {
+      "required": [
+        "HandshakeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AcceptHandshake"
+    },
+    "AttachControlPolicy": {
+      "required": [
+        "PolicyId",
+        "TargetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachControlPolicy"
+    },
+    "AttachPolicy": {
+      "required": [
+        "ResourceGroupId",
+        "PolicyType",
+        "PolicyName",
+        "PrincipalType",
+        "PrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachPolicy"
+    },
+    "BindSecureMobilePhone": {
+      "required": [
+        "VerificationCode",
+        "SecureMobilePhone",
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BindSecureMobilePhone"
+    },
+    "CancelChangeAccountEmail": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelChangeAccountEmail"
+    },
+    "CancelCreateCloudAccount": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelCreateCloudAccount"
+    },
+    "CancelHandshake": {
+      "required": [
+        "HandshakeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelHandshake"
+    },
+    "CancelPromoteResourceAccount": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelPromoteResourceAccount"
+    },
+    "ChangeAccountEmail": {
+      "required": [
+        "AccountId",
+        "Email"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeAccountEmail"
+    },
+    "CheckAccountDelete": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckAccountDelete"
+    },
+    "CreateAutoGroupingRule": {
+      "required": [
+        "RuleName",
+        "RuleType",
+        "RuleContents"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAutoGroupingRule"
+    },
+    "CreateCloudAccount": {
+      "required": [
+        "DisplayName",
+        "Email"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCloudAccount"
+    },
+    "CreateControlPolicy": {
+      "required": [
+        "PolicyName",
+        "EffectScope",
+        "PolicyDocument"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateControlPolicy"
+    },
+    "CreateFolder": {
+      "required": [
+        "FolderName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateFolder"
+    },
+    "CreatePolicy": {
+      "required": [
+        "PolicyName",
+        "PolicyDocument"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolicy"
+    },
+    "CreatePolicyVersion": {
+      "required": [
+        "PolicyName",
+        "PolicyDocument"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePolicyVersion"
+    },
+    "CreateResourceAccount": {
+      "required": [
+        "DisplayName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateResourceAccount"
+    },
+    "CreateResourceGroup": {
+      "required": [
+        "Name",
+        "DisplayName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateResourceGroup"
+    },
+    "CreateRole": {
+      "required": [
+        "RoleName",
+        "AssumeRolePolicyDocument"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRole"
+    },
+    "CreateServiceLinkedRole": {
+      "required": [
+        "ServiceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateServiceLinkedRole"
+    },
+    "DeclineHandshake": {
+      "required": [
+        "HandshakeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeclineHandshake"
+    },
+    "DeleteAccount": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccount"
+    },
+    "DeleteAutoGroupingRule": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAutoGroupingRule"
+    },
+    "DeleteControlPolicy": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteControlPolicy"
+    },
+    "DeleteFolder": {
+      "required": [
+        "FolderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFolder"
+    },
+    "DeletePolicy": {
+      "required": [
+        "PolicyName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolicy"
+    },
+    "DeletePolicyVersion": {
+      "required": [
+        "PolicyName",
+        "VersionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePolicyVersion"
+    },
+    "DeleteResourceGroup": {
+      "required": [
+        "ResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteResourceGroup"
+    },
+    "DeleteRole": {
+      "required": [
+        "RoleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRole"
+    },
+    "DeleteServiceLinkedRole": {
+      "required": [
+        "RoleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteServiceLinkedRole"
+    },
+    "DeregisterDelegatedAdministrator": {
+      "required": [
+        "AccountId",
+        "ServicePrincipal"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeregisterDelegatedAdministrator"
+    },
+    "DestroyResourceDirectory": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DestroyResourceDirectory"
+    },
+    "DetachControlPolicy": {
+      "required": [
+        "PolicyId",
+        "TargetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachControlPolicy"
+    },
+    "DetachPolicy": {
+      "required": [
+        "ResourceGroupId",
+        "PolicyType",
+        "PolicyName",
+        "PrincipalType",
+        "PrincipalName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachPolicy"
+    },
+    "DisableAssociatedTransfer": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableAssociatedTransfer"
+    },
+    "DisableAutoGrouping": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableAutoGrouping"
+    },
+    "DisableControlPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableControlPolicy"
+    },
+    "DisableResourceGroupNotification": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableResourceGroupNotification"
+    },
+    "EnableAssociatedTransfer": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableAssociatedTransfer"
+    },
+    "EnableAutoGrouping": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableAutoGrouping"
+    },
+    "EnableControlPolicy": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableControlPolicy"
+    },
+    "EnableResourceDirectory": {
+      "required": [
+        "EnableMode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableResourceDirectory"
+    },
+    "EnableResourceGroupNotification": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableResourceGroupNotification"
+    },
+    "GetAccount": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccount"
+    },
+    "GetAccountDeletionCheckResult": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccountDeletionCheckResult"
+    },
+    "GetAccountDeletionStatus": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query member deletion status"
+    },
+    "GetAutoGroupingRule": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAutoGroupingRule"
+    },
+    "GetAutoGroupingStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAutoGroupingStatus"
+    },
+    "GetControlPolicy": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetControlPolicy"
+    },
+    "GetControlPolicyEnablementStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetControlPolicyEnablementStatus"
+    },
+    "GetFolder": {
+      "required": [
+        "FolderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetFolder"
+    },
+    "GetHandshake": {
+      "required": [
+        "HandshakeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetHandshake"
+    },
+    "GetPayerForAccount": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPayerForAccount"
+    },
+    "GetPolicy": {
+      "required": [
+        "PolicyName",
+        "PolicyType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPolicy"
+    },
+    "GetPolicyVersion": {
+      "required": [
+        "PolicyType",
+        "PolicyName",
+        "VersionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPolicyVersion"
+    },
+    "GetResourceDirectory": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourceDirectory"
+    },
+    "GetResourceGroup": {
+      "required": [
+        "ResourceGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourceGroup"
+    },
+    "GetResourceGroupAdminSetting": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourceGroupAdminSetting"
+    },
+    "GetResourceGroupNotificationSetting": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourceGroupNotificationSetting"
+    },
+    "GetResourceGroupResourceCounts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourceGroupResourceCounts"
+    },
+    "GetRole": {
+      "required": [
+        "RoleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRole"
+    },
+    "GetServiceLinkedRoleDeletionStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetServiceLinkedRoleDeletionStatus"
+    },
+    "InitResourceDirectory": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InitResourceDirectory"
+    },
+    "InviteAccountToResourceDirectory": {
+      "required": [
+        "TargetEntity",
+        "TargetType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InviteAccountToResourceDirectory"
+    },
+    "ListAccounts": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAccounts"
+    },
+    "ListAccountsForParent": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAccountsForParent"
+    },
+    "ListAncestors": {
+      "required": [
+        "ChildId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAncestors"
+    },
+    "ListAssociatedTransferSetting": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAssociatedTransferSetting"
+    },
+    "ListAutoGroupingRemediations": {
+      "required": [
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAutoGroupingRemediations"
+    },
+    "ListAutoGroupingRules": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListAutoGroupingRules"
+    },
+    "ListControlPolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListControlPolicies"
+    },
+    "ListControlPolicyAttachmentsForTarget": {
+      "required": [
+        "TargetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListControlPolicyAttachmentsForTarget"
+    },
+    "ListDelegatedAdministrators": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDelegatedAdministrators"
+    },
+    "ListDelegatedServicesForAccount": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDelegatedServicesForAccount"
+    },
+    "ListFoldersForParent": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListFoldersForParent"
+    },
+    "ListHandshakesForAccount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListHandshakesForAccount"
+    },
+    "ListHandshakesForResourceDirectory": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListHandshakesForResourceDirectory"
+    },
+    "ListPolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolicies"
+    },
+    "ListPolicyAttachments": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolicyAttachments"
+    },
+    "ListPolicyVersions": {
+      "required": [
+        "PolicyType",
+        "PolicyName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPolicyVersions"
+    },
+    "ListResourceGroupCapability": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "List resource group capabilities"
+    },
+    "ListResourceGroups": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query resource group list"
+    },
+    "ListResourceGroupsWithAuthDetails": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListResourceGroupsWithAuthDetails"
+    },
+    "ListResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListResources"
+    },
+    "ListRoles": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRoles"
+    },
+    "ListTagKeys": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagKeys"
+    },
+    "ListTagResources": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListTagValues": {
+      "required": [
+        "ResourceType",
+        "TagKey"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagValues"
+    },
+    "ListTargetAttachmentsForControlPolicy": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTargetAttachmentsForControlPolicy"
+    },
+    "ListTrustedServiceStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTrustedServiceStatus"
+    },
+    "LookupResourceGroupEvents": {
+      "required": [
+        "EventCategory"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "LookupResourceGroupEvents"
+    },
+    "MoveAccount": {
+      "required": [
+        "AccountId",
+        "DestinationFolderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveAccount"
+    },
+    "MoveResources": {
+      "required": [
+        "ResourceGroupId",
+        "Resources"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "MoveResources"
+    },
+    "PromoteResourceAccount": {
+      "required": [
+        "AccountId",
+        "Email"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PromoteResourceAccount"
+    },
+    "RegisterDelegatedAdministrator": {
+      "required": [
+        "AccountId",
+        "ServicePrincipal"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RegisterDelegatedAdministrator"
+    },
+    "RemoveCloudAccount": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveCloudAccount"
+    },
+    "ResendCreateCloudAccountEmail": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResendCreateCloudAccountEmail"
+    },
+    "ResendPromoteResourceAccountEmail": {
+      "required": [
+        "RecordId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResendPromoteResourceAccountEmail"
+    },
+    "RetryChangeAccountEmail": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RetryChangeAccountEmail"
+    },
+    "SendVerificationCodeForBindSecureMobilePhone": {
+      "required": [
+        "SecureMobilePhone",
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendVerificationCodeForBindSecureMobilePhone"
+    },
+    "SendVerificationCodeForEnableRD": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendVerificationCodeForEnableRD"
+    },
+    "SetDefaultPolicyVersion": {
+      "required": [
+        "PolicyName",
+        "VersionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDefaultPolicyVersion"
+    },
+    "SetMemberDeletionPermission": {
+      "required": [
+        "Status"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetMemberDeletionPermission"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateAccount": {
+      "required": [
+        "AccountId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAccount"
+    },
+    "UpdateAssociatedTransferSetting": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAssociatedTransferSetting"
+    },
+    "UpdateAutoGroupingConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAutoGroupingConfig"
+    },
+    "UpdateAutoGroupingRule": {
+      "required": [
+        "RuleId",
+        "RuleName",
+        "RuleContents"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateAutoGroupingRule"
+    },
+    "UpdateControlPolicy": {
+      "required": [
+        "PolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateControlPolicy"
+    },
+    "UpdateFolder": {
+      "required": [
+        "FolderId",
+        "NewFolderName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateFolder"
+    },
+    "UpdateResourceGroup": {
+      "required": [
+        "ResourceGroupId",
+        "NewDisplayName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateResourceGroup"
+    },
+    "UpdateResourceGroupAdminSetting": {
+      "required": [
+        "CreatorAsAdmin"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateResourceGroupAdminSetting"
+    },
+    "UpdateRole": {
+      "required": [
+        "RoleName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRole"
+    }
+  }
+}

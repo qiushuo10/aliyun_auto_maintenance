@@ -1,0 +1,1089 @@
+{
+  "snapshotVersion": 1,
+  "product": "nas",
+  "openApiProduct": "NAS",
+  "version": "2017-06-26",
+  "source": "https://api.aliyun.com/meta/v1/products/NAS/versions/2017-06-26/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:45.708Z",
+  "actions": {
+    "AddClientToBlackList": {
+      "required": [
+        "RegionId",
+        "FileSystemId",
+        "ClientIP",
+        "ClientToken"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddClientToBlackList"
+    },
+    "AddTags": {
+      "required": [
+        "FileSystemId",
+        "Tag"
+      ],
+      "deprecated": true,
+      "replacedBy": null
+    },
+    "ApplyAutoSnapshotPolicy": {
+      "required": [
+        "AutoSnapshotPolicyId",
+        "FileSystemIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyAutoSnapshotPolicy"
+    },
+    "ApplyDataFlowAutoRefresh": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId",
+        "AutoRefreshs"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyDataFlowAutoRefresh"
+    },
+    "AttachVscToFilesystems": {
+      "required": [
+        "ResourceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachVscToFilesystems"
+    },
+    "CancelAutoSnapshotPolicy": {
+      "required": [
+        "FileSystemIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelAutoSnapshotPolicy"
+    },
+    "CancelDataFlowAutoRefresh": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId",
+        "RefreshPath"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelDataFlowAutoRefresh"
+    },
+    "CancelDataFlowSubTask": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId",
+        "DataFlowTaskId",
+        "DataFlowSubTaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelDataFlowSubTask"
+    },
+    "CancelDataFlowTask": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelDataFlowTask"
+    },
+    "CancelDirQuota": {
+      "required": [
+        "FileSystemId",
+        "Path",
+        "UserType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelDirQuota"
+    },
+    "CancelFilesetQuota": {
+      "required": [
+        "FileSystemId",
+        "FsetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelFilesetQuota"
+    },
+    "CancelLifecycleRetrieveJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelLifecycleRetrieveJob"
+    },
+    "CancelRecycleBinJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelRecycleBinJob"
+    },
+    "ChangeResourceGroup": {
+      "required": [
+        "ResourceId",
+        "NewResourceGroupId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeResourceGroup"
+    },
+    "CreateAccessGroup": {
+      "required": [
+        "AccessGroupName",
+        "AccessGroupType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessGroup"
+    },
+    "CreateAccessPoint": {
+      "required": [
+        "FileSystemId",
+        "AccessGroup",
+        "VswId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessPoint"
+    },
+    "CreateAccessRule": {
+      "required": [
+        "AccessGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAccessRule"
+    },
+    "CreateAutoSnapshotPolicy": {
+      "required": [
+        "RepeatWeekdays",
+        "TimePoints",
+        "FileSystemType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAutoSnapshotPolicy"
+    },
+    "CreateDataFlow": {
+      "required": [
+        "FileSystemId",
+        "SourceStorage"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDataFlow"
+    },
+    "CreateDataFlowSubTask": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId",
+        "DataFlowTaskId",
+        "SrcFilePath",
+        "DstFilePath"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDataFlowSubTask"
+    },
+    "CreateDataFlowTask": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDataFlowTask"
+    },
+    "CreateDir": {
+      "required": [
+        "FileSystemId",
+        "RootDirectory",
+        "OwnerUserId",
+        "OwnerGroupId",
+        "Permission"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDir"
+    },
+    "CreateFile": {
+      "required": [
+        "FileSystemId",
+        "Path",
+        "Type"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateFile"
+    },
+    "CreateFileSystem": {
+      "required": [
+        "StorageType",
+        "ProtocolType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateFileSystem"
+    },
+    "CreateFileset": {
+      "required": [
+        "FileSystemId",
+        "FileSystemPath"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateFileset"
+    },
+    "CreateLDAPConfig": {
+      "required": [
+        "FileSystemId",
+        "URI",
+        "SearchBase"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateLDAPConfig"
+    },
+    "CreateLifecyclePolicy": {
+      "required": [
+        "FileSystemId",
+        "StorageType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLifecyclePolicy"
+    },
+    "CreateLifecycleRetrieveJob": {
+      "required": [
+        "FileSystemId",
+        "Paths"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLifecycleRetrieveJob"
+    },
+    "CreateLogAnalysis": {
+      "required": [
+        "RegionId",
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateLogAnalysis"
+    },
+    "CreateMountTarget": {
+      "required": [
+        "FileSystemId",
+        "NetworkType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateMountTarget"
+    },
+    "CreateProtocolMountTarget": {
+      "required": [
+        "ProtocolServiceId",
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateProtocolMountTarget"
+    },
+    "CreateProtocolService": {
+      "required": [
+        "FileSystemId",
+        "ProtocolSpec",
+        "ProtocolType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateProtocolService"
+    },
+    "CreateRecycleBinDeleteJob": {
+      "required": [
+        "FileSystemId",
+        "FileId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRecycleBinDeleteJob"
+    },
+    "CreateRecycleBinRestoreJob": {
+      "required": [
+        "FileSystemId",
+        "FileId",
+        "TargetFileId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRecycleBinRestoreJob"
+    },
+    "CreateSnapshot": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSnapshot"
+    },
+    "DeleteAccessGroup": {
+      "required": [
+        "AccessGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessGroup"
+    },
+    "DeleteAccessPoint": {
+      "required": [
+        "FileSystemId",
+        "AccessPointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessPoint"
+    },
+    "DeleteAccessRule": {
+      "required": [
+        "AccessGroupName",
+        "AccessRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAccessRule"
+    },
+    "DeleteAutoSnapshotPolicy": {
+      "required": [
+        "AutoSnapshotPolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAutoSnapshotPolicy"
+    },
+    "DeleteDataFlow": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDataFlow"
+    },
+    "DeleteFileSystem": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFileSystem"
+    },
+    "DeleteFileset": {
+      "required": [
+        "FileSystemId",
+        "FsetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFileset"
+    },
+    "DeleteLDAPConfig": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "{\"title1\":\"DeleteLDAPConfig\"}"
+    },
+    "DeleteLifecyclePolicy": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLifecyclePolicy"
+    },
+    "DeleteLogAnalysis": {
+      "required": [
+        "RegionId",
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLogAnalysis"
+    },
+    "DeleteMountTarget": {
+      "required": [
+        "FileSystemId",
+        "MountTargetDomain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteMountTarget"
+    },
+    "DeleteProtocolMountTarget": {
+      "required": [
+        "ProtocolServiceId",
+        "FileSystemId",
+        "ExportId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteProtocolMountTarget"
+    },
+    "DeleteProtocolService": {
+      "required": [
+        "ProtocolServiceId",
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteProtocolService"
+    },
+    "DeleteSnapshot": {
+      "required": [
+        "SnapshotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSnapshot"
+    },
+    "DescribeAccessGroups": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessGroups"
+    },
+    "DescribeAccessPoint": {
+      "required": [
+        "FileSystemId",
+        "AccessPointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessPoint"
+    },
+    "DescribeAccessPoints": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessPoints"
+    },
+    "DescribeAccessRules": {
+      "required": [
+        "AccessGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccessRules"
+    },
+    "DescribeAutoSnapshotPolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoSnapshotPolicies"
+    },
+    "DescribeAutoSnapshotTasks": {
+      "required": [
+        "FileSystemType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoSnapshotTasks"
+    },
+    "DescribeBlackListClients": {
+      "required": [
+        "RegionId",
+        "FileSystemId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeBlackListClients"
+    },
+    "DescribeDataFlowSubTasks": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDataFlowSubTasks"
+    },
+    "DescribeDataFlowTasks": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDataFlowTasks"
+    },
+    "DescribeDataFlows": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDataFlows"
+    },
+    "DescribeDirQuotas": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDirQuotas"
+    },
+    "DescribeFileSystemStatistics": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeFileSystemStatistics"
+    },
+    "DescribeFileSystems": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFileSystems"
+    },
+    "DescribeFilesets": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFilesets"
+    },
+    "DescribeFilesystemsAssociatedHpnZones": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFilesystemsAssociatedHpnZones"
+    },
+    "DescribeFilesystemsVscAttachInfo": {
+      "required": [
+        "ResourceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFilesystemsVscAttachInfo"
+    },
+    "DescribeLifecyclePolicies": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLifecyclePolicies"
+    },
+    "DescribeLifecyclePolicyLogs": {
+      "required": [
+        "FileSystemId",
+        "LifecyclePolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLifecyclePolicyLogs"
+    },
+    "DescribeLogAnalysis": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLogAnalysis"
+    },
+    "DescribeMountTargets": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMountTargets"
+    },
+    "DescribeMountedClients": {
+      "required": [
+        "RegionId",
+        "FileSystemId",
+        "MountTargetDomain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeMountedClients"
+    },
+    "DescribeNfsAcl": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNfsAcl"
+    },
+    "DescribeProtocolMountTarget": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeProtocolMountTarget"
+    },
+    "DescribeProtocolService": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeProtocolService"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeSmbAcl": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSmbAcl"
+    },
+    "DescribeSnapshots": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnapshots"
+    },
+    "DescribeStoragePackages": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeStoragePackages"
+    },
+    "DescribeZones": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZones"
+    },
+    "DetachVscFromFilesystems": {
+      "required": [
+        "ResourceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachVscFromFilesystems"
+    },
+    "DisableAndCleanRecycleBin": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableAndCleanRecycleBin"
+    },
+    "DisableNfsAcl": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableNfsAcl"
+    },
+    "DisableSmbAcl": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableSmbAcl"
+    },
+    "EnableNfsAcl": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableNfsAcl"
+    },
+    "EnableRecycleBin": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableRecycleBin"
+    },
+    "EnableSmbAcl": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableSmbAcl"
+    },
+    "GetDirectoryOrFileProperties": {
+      "required": [
+        "FileSystemId",
+        "Path"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetDirectoryOrFileProperties"
+    },
+    "GetFileset": {
+      "required": [
+        "FileSystemId",
+        "FsetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetFileset"
+    },
+    "GetProtocolMountTarget": {
+      "required": [
+        "FileSystemId",
+        "ProtocolServiceId",
+        "ExportId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetProtocolMountTarget"
+    },
+    "GetRecycleBinAttribute": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetRecycleBinAttribute"
+    },
+    "ListDirectoriesAndFiles": {
+      "required": [
+        "FileSystemId",
+        "Path",
+        "StorageType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDirectoriesAndFiles"
+    },
+    "ListLifecycleRetrieveJobs": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListLifecycleRetrieveJobs"
+    },
+    "ListRecentlyRecycledDirectories": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRecentlyRecycledDirectories"
+    },
+    "ListRecycleBinJobs": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRecycleBinJobs"
+    },
+    "ListRecycledDirectoriesAndFiles": {
+      "required": [
+        "FileSystemId",
+        "FileId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRecycledDirectoriesAndFiles"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ModifyAccessGroup": {
+      "required": [
+        "AccessGroupName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccessGroup"
+    },
+    "ModifyAccessPoint": {
+      "required": [
+        "FileSystemId",
+        "AccessPointId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccessPoint"
+    },
+    "ModifyAccessRule": {
+      "required": [
+        "AccessGroupName",
+        "AccessRuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccessRule"
+    },
+    "ModifyAutoSnapshotPolicy": {
+      "required": [
+        "AutoSnapshotPolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAutoSnapshotPolicy"
+    },
+    "ModifyDataFlow": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDataFlow"
+    },
+    "ModifyDataFlowAutoRefresh": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDataFlowAutoRefresh"
+    },
+    "ModifyFileSystem": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyFileSystem"
+    },
+    "ModifyFileset": {
+      "required": [
+        "FileSystemId",
+        "FsetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyFileset"
+    },
+    "ModifyLDAPConfig": {
+      "required": [
+        "FileSystemId",
+        "URI",
+        "SearchBase"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "用于修改LDAP配置"
+    },
+    "ModifyLifecyclePolicy": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyLifecyclePolicy"
+    },
+    "ModifyMountTarget": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyMountTarget"
+    },
+    "ModifyProtocolMountTarget": {
+      "required": [
+        "ProtocolServiceId",
+        "ExportId",
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyProtocolMountTarget"
+    },
+    "ModifyProtocolService": {
+      "required": [
+        "ProtocolServiceId",
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyProtocolService"
+    },
+    "ModifySmbAcl": {
+      "required": [
+        "FileSystemId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySmbAcl"
+    },
+    "OpenNASService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenNASService"
+    },
+    "RemoveClientFromBlackList": {
+      "required": [
+        "RegionId",
+        "FileSystemId",
+        "ClientIP",
+        "ClientToken"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "RemoveClientFromBlackList"
+    },
+    "RemoveTags": {
+      "required": [
+        "FileSystemId",
+        "Tag"
+      ],
+      "deprecated": true,
+      "replacedBy": null
+    },
+    "ResetFileSystem": {
+      "required": [
+        "FileSystemId",
+        "SnapshotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetFileSystem"
+    },
+    "RetryLifecycleRetrieveJob": {
+      "required": [
+        "JobId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RetryLifecycleRetrieveJob"
+    },
+    "SetDirQuota": {
+      "required": [
+        "FileSystemId",
+        "Path",
+        "QuotaType",
+        "UserType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetDirQuota"
+    },
+    "SetFilesetQuota": {
+      "required": [
+        "FileSystemId",
+        "FsetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetFilesetQuota"
+    },
+    "StartDataFlow": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartDataFlow"
+    },
+    "StartLifecyclePolicyExecution": {
+      "required": [
+        "FileSystemId",
+        "LifecyclePolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartLifecyclePolicyExecution"
+    },
+    "StopDataFlow": {
+      "required": [
+        "FileSystemId",
+        "DataFlowId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopDataFlow"
+    },
+    "StopLifecyclePolicyExecution": {
+      "required": [
+        "FileSystemId",
+        "LifecyclePolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopLifecyclePolicyExecution"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateLifecyclePolicy": {
+      "required": [
+        "FileSystemId",
+        "LifecyclePolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateLifecyclePolicy"
+    },
+    "UpdateRecycleBinAttribute": {
+      "required": [
+        "FileSystemId",
+        "ReservedDays"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateRecycleBinAttribute"
+    },
+    "UpgradeFileSystem": {
+      "required": [
+        "FileSystemId",
+        "Capacity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeFileSystem"
+    }
+  }
+}

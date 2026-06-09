@@ -1,0 +1,1347 @@
+{
+  "snapshotVersion": 1,
+  "product": "cdn",
+  "openApiProduct": "Cdn",
+  "version": "2018-05-10",
+  "source": "https://api.aliyun.com/meta/v1/products/Cdn/versions/2018-05-10/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:33.523Z",
+  "actions": {
+    "AddCdnDomain": {
+      "required": [
+        "CdnType",
+        "DomainName",
+        "Sources"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddCdnDomain"
+    },
+    "AddFCTrigger": {
+      "required": [
+        "TriggerARN",
+        "EventMetaName",
+        "EventMetaVersion",
+        "SourceARN",
+        "RoleARN",
+        "Notes"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddFCTrigger"
+    },
+    "BatchAddCdnDomain": {
+      "required": [
+        "CdnType",
+        "DomainName",
+        "Sources"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchAddCdnDomain"
+    },
+    "BatchDeleteCdnDomainConfig": {
+      "required": [
+        "DomainNames",
+        "FunctionNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchDeleteCdnDomainConfig"
+    },
+    "BatchDescribeCdnIpInfo": {
+      "required": [
+        "IpAddrList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchDescribeCdnIpInfo"
+    },
+    "BatchSetCdnDomainConfig": {
+      "required": [
+        "DomainNames",
+        "Functions"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchSetCdnDomainConfig"
+    },
+    "BatchStartCdnDomain": {
+      "required": [
+        "DomainNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchStartCdnDomain"
+    },
+    "BatchStopCdnDomain": {
+      "required": [
+        "DomainNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchStopCdnDomain"
+    },
+    "BatchUpdateCdnDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "BatchUpdateCdnDomain"
+    },
+    "CheckCdnDomainExist": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckCdnDomainExist"
+    },
+    "CheckCdnDomainICP": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CheckCdnDomainICP"
+    },
+    "CreateCdnCertificateSigningRequest": {
+      "required": [
+        "CommonName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCdnCertificateSigningRequest"
+    },
+    "CreateCdnDeliverTask": {
+      "required": [
+        "Name",
+        "Reports",
+        "Deliver",
+        "Schedule"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCdnDeliverTask"
+    },
+    "CreateCdnSubTask": {
+      "required": [
+        "ReportIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCdnSubTask"
+    },
+    "CreateRealTimeLogDelivery": {
+      "required": [
+        "Project",
+        "Logstore",
+        "Region",
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateRealTimeLogDelivery"
+    },
+    "CreateUsageDetailDataExportTask": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Type"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateUsageDetailDataExportTask"
+    },
+    "CreateUserUsageDataExportTask": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateUserUsageDataExportTask"
+    },
+    "DeleteCdnDeliverTask": {
+      "required": [
+        "DeliverId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCdnDeliverTask"
+    },
+    "DeleteCdnDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCdnDomain"
+    },
+    "DeleteCdnSubTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCdnSubTask"
+    },
+    "DeleteFCTrigger": {
+      "required": [
+        "TriggerARN"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteFCTrigger"
+    },
+    "DeleteRealTimeLogLogstore": {
+      "required": [
+        "Project",
+        "Logstore",
+        "Region"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRealTimeLogLogstore"
+    },
+    "DeleteRealtimeLogDelivery": {
+      "required": [
+        "Domain",
+        "Project",
+        "Logstore",
+        "Region"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteRealtimeLogDelivery"
+    },
+    "DeleteSpecificConfig": {
+      "required": [
+        "DomainName",
+        "ConfigId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSpecificConfig"
+    },
+    "DeleteSpecificStagingConfig": {
+      "required": [
+        "DomainName",
+        "ConfigId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSpecificStagingConfig"
+    },
+    "DeleteUsageDetailDataExportTask": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUsageDetailDataExportTask"
+    },
+    "DeleteUserUsageDataExportTask": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteUserUsageDataExportTask"
+    },
+    "DescribeBlockedRegions": {
+      "required": [
+        "Language"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBlockedRegions"
+    },
+    "DescribeCdnCertificateDetail": {
+      "required": [
+        "CertName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnCertificateDetail"
+    },
+    "DescribeCdnCertificateDetailById": {
+      "required": [
+        "CertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnCertificateDetailById"
+    },
+    "DescribeCdnCertificateList": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeCdnCertificateList"
+    },
+    "DescribeCdnConditionIPBInfo": {
+      "required": [
+        "DataId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnConditionIPBInfo"
+    },
+    "DescribeCdnDeletedDomains": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDeletedDomains"
+    },
+    "DescribeCdnDeliverList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDeliverList"
+    },
+    "DescribeCdnDiagnoseReport": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDiagnoseReport"
+    },
+    "DescribeCdnDomainByCertificate": {
+      "required": [
+        "SSLPub"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDomainByCertificate"
+    },
+    "DescribeCdnDomainConfigs": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDomainConfigs"
+    },
+    "DescribeCdnDomainDetail": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDomainDetail"
+    },
+    "DescribeCdnDomainLogs": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDomainLogs"
+    },
+    "DescribeCdnDomainStagingConfig": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnDomainStagingConfig"
+    },
+    "DescribeCdnFullDomainsBlockIPConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnFullDomainsBlockIPConfig"
+    },
+    "DescribeCdnFullDomainsBlockIPHistory": {
+      "required": [
+        "IPList",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnFullDomainsBlockIPHistory"
+    },
+    "DescribeCdnHttpsDomainList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnHttpsDomainList"
+    },
+    "DescribeCdnOrderCommodityCode": {
+      "required": [
+        "CommodityCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnOrderCommodityCode"
+    },
+    "DescribeCdnRegionAndIsp": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnRegionAndIsp"
+    },
+    "DescribeCdnReport": {
+      "required": [
+        "ReportId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnReport"
+    },
+    "DescribeCdnReportList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnReportList"
+    },
+    "DescribeCdnSMCertificateDetail": {
+      "required": [
+        "CertIdentifier"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnSMCertificateDetail"
+    },
+    "DescribeCdnSMCertificateList": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnSMCertificateList"
+    },
+    "DescribeCdnSSLCertificateList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnSSLCertificateList"
+    },
+    "DescribeCdnSecFuncInfo": {
+      "required": [
+        "SecFuncType",
+        "Lang"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnSecFuncInfo"
+    },
+    "DescribeCdnService": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnService"
+    },
+    "DescribeCdnSubList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnSubList"
+    },
+    "DescribeCdnTaskList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnTaskList"
+    },
+    "DescribeCdnTypes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnTypes"
+    },
+    "DescribeCdnUserBillHistory": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnUserBillHistory"
+    },
+    "DescribeCdnUserBillPrediction": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnUserBillPrediction"
+    },
+    "DescribeCdnUserBillType": {
+      "required": [
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnUserBillType"
+    },
+    "DescribeCdnUserConfigs": {
+      "required": [
+        "FunctionName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnUserConfigs"
+    },
+    "DescribeCdnUserDomainsByFunc": {
+      "required": [
+        "FuncId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnUserDomainsByFunc"
+    },
+    "DescribeCdnUserQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnUserQuota"
+    },
+    "DescribeCdnUserResourcePackage": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnUserResourcePackage"
+    },
+    "DescribeCdnWafDomain": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCdnWafDomain"
+    },
+    "DescribeCertificateInfoByID": {
+      "required": [
+        "CertId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCertificateInfoByID"
+    },
+    "DescribeCustomLogConfig": {
+      "required": [
+        "ConfigId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCustomLogConfig"
+    },
+    "DescribeDomainAverageResponseTime": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainAverageResponseTime"
+    },
+    "DescribeDomainBpsData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainBpsData"
+    },
+    "DescribeDomainBpsDataByLayer": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainBpsDataByLayer"
+    },
+    "DescribeDomainBpsDataByTimeStamp": {
+      "required": [
+        "DomainName",
+        "TimePoint",
+        "IspNames",
+        "LocationNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainBpsDataByTimeStamp"
+    },
+    "DescribeDomainCcActivityLog": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainCcActivityLog"
+    },
+    "DescribeDomainCertificateInfo": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainCertificateInfo"
+    },
+    "DescribeDomainCname": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainCname"
+    },
+    "DescribeDomainCustomLogConfig": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainCustomLogConfig"
+    },
+    "DescribeDomainDetailDataByLayer": {
+      "required": [
+        "Field",
+        "DomainName",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainDetailDataByLayer"
+    },
+    "DescribeDomainHitRateData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainHitRateData"
+    },
+    "DescribeDomainHttpCodeData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainHttpCodeData"
+    },
+    "DescribeDomainHttpCodeDataByLayer": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainHttpCodeDataByLayer"
+    },
+    "DescribeDomainISPData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainISPData"
+    },
+    "DescribeDomainMax95BpsData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainMax95BpsData"
+    },
+    "DescribeDomainMultiUsageData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainMultiUsageData"
+    },
+    "DescribeDomainPathData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainPathData"
+    },
+    "DescribeDomainPvData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainPvData"
+    },
+    "DescribeDomainQpsData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainQpsData"
+    },
+    "DescribeDomainQpsDataByLayer": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainQpsDataByLayer"
+    },
+    "DescribeDomainRealTimeBpsData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeBpsData"
+    },
+    "DescribeDomainRealTimeByteHitRateData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeByteHitRateData"
+    },
+    "DescribeDomainRealTimeDetailData": {
+      "required": [
+        "DomainName",
+        "StartTime",
+        "EndTime",
+        "Field"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeDetailData"
+    },
+    "DescribeDomainRealTimeHttpCodeData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeHttpCodeData"
+    },
+    "DescribeDomainRealTimeQpsData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeQpsData"
+    },
+    "DescribeDomainRealTimeReqHitRateData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeReqHitRateData"
+    },
+    "DescribeDomainRealTimeSrcBpsData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeSrcBpsData"
+    },
+    "DescribeDomainRealTimeSrcHttpCodeData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeSrcHttpCodeData"
+    },
+    "DescribeDomainRealTimeSrcTrafficData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeSrcTrafficData"
+    },
+    "DescribeDomainRealTimeTrafficData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealTimeTrafficData"
+    },
+    "DescribeDomainRealtimeLogDelivery": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRealtimeLogDelivery"
+    },
+    "DescribeDomainRegionData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainRegionData"
+    },
+    "DescribeDomainReqHitRateData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainReqHitRateData"
+    },
+    "DescribeDomainSrcBpsData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainSrcBpsData"
+    },
+    "DescribeDomainSrcHttpCodeData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainSrcHttpCodeData"
+    },
+    "DescribeDomainSrcQpsData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainSrcQpsData"
+    },
+    "DescribeDomainSrcTopUrlVisit": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainSrcTopUrlVisit"
+    },
+    "DescribeDomainSrcTrafficData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainSrcTrafficData"
+    },
+    "DescribeDomainTopClientIpVisit": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopClientIpVisit"
+    },
+    "DescribeDomainTopReferVisit": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopReferVisit"
+    },
+    "DescribeDomainTopUrlVisit": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTopUrlVisit"
+    },
+    "DescribeDomainTrafficData": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainTrafficData"
+    },
+    "DescribeDomainUsageData": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "Field"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainUsageData"
+    },
+    "DescribeDomainUvData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainUvData"
+    },
+    "DescribeDomainVerifyData": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainVerifyData"
+    },
+    "DescribeDomainsBySource": {
+      "required": [
+        "Sources"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainsBySource"
+    },
+    "DescribeDomainsUsageByDay": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDomainsUsageByDay"
+    },
+    "DescribeEsExceptionData": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEsExceptionData"
+    },
+    "DescribeEsExecuteData": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "RuleId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEsExecuteData"
+    },
+    "DescribeFCTrigger": {
+      "required": [
+        "TriggerARN"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeFCTrigger"
+    },
+    "DescribeIpInfo": {
+      "required": [
+        "IP"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIpInfo"
+    },
+    "DescribeIpStatus": {
+      "required": [
+        "Ips"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeIpStatus"
+    },
+    "DescribeL2VipsByDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeL2VipsByDomain"
+    },
+    "DescribePreloadDetailById": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePreloadDetailById"
+    },
+    "DescribeRangeDataByLocateAndIspService": {
+      "required": [
+        "DomainNames",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRangeDataByLocateAndIspService"
+    },
+    "DescribeRealtimeDeliveryAcc": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRealtimeDeliveryAcc"
+    },
+    "DescribeRefreshQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRefreshQuota"
+    },
+    "DescribeRefreshTaskById": {
+      "required": [
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRefreshTaskById"
+    },
+    "DescribeRefreshTasks": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRefreshTasks"
+    },
+    "DescribeStagingIp": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeStagingIp"
+    },
+    "DescribeTagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTagResources"
+    },
+    "DescribeTopDomainsByFlow": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTopDomainsByFlow"
+    },
+    "DescribeUserCdnStatus": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserCdnStatus"
+    },
+    "DescribeUserCertificateExpireCount": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserCertificateExpireCount"
+    },
+    "DescribeUserConfigs": {
+      "required": [
+        "Config"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserConfigs"
+    },
+    "DescribeUserDomains": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserDomains"
+    },
+    "DescribeUserTags": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserTags"
+    },
+    "DescribeUserUsageDataExportTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserUsageDataExportTask"
+    },
+    "DescribeUserUsageDetailDataExportTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserUsageDetailDataExportTask"
+    },
+    "DescribeUserVipsByDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserVipsByDomain"
+    },
+    "DescribeVerifyContent": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeVerifyContent"
+    },
+    "DisableRealtimeLogDelivery": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableRealtimeLogDelivery"
+    },
+    "EnableRealtimeLogDelivery": {
+      "required": [
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableRealtimeLogDelivery"
+    },
+    "GenerateCdnDiagnose": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GenerateCdnDiagnose"
+    },
+    "ListDomainsByLogConfigId": {
+      "required": [
+        "ConfigId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListDomainsByLogConfigId"
+    },
+    "ListFCTrigger": {
+      "required": [
+        "EventMetaName",
+        "EventMetaVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListFCTrigger"
+    },
+    "ListRealtimeLogDelivery": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRealtimeLogDelivery"
+    },
+    "ListRealtimeLogDeliveryDomains": {
+      "required": [
+        "Project",
+        "Logstore",
+        "Region"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRealtimeLogDeliveryDomains"
+    },
+    "ListRealtimeLogDeliveryInfos": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListRealtimeLogDeliveryInfos"
+    },
+    "ListTagResources": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "ListUserCustomLogConfig": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListUserCustomLogConfig"
+    },
+    "ModifyCdnDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCdnDomain"
+    },
+    "ModifyCdnDomainOwner": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCdnDomainOwner"
+    },
+    "ModifyCdnDomainSchdmByProperty": {
+      "required": [
+        "DomainName",
+        "Property"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCdnDomainSchdmByProperty"
+    },
+    "ModifyCdnService": {
+      "required": [
+        "InternetChargeType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCdnService"
+    },
+    "ModifyRealtimeLogDelivery": {
+      "required": [
+        "Project",
+        "Logstore",
+        "Region",
+        "Domain"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyRealtimeLogDelivery"
+    },
+    "OpenCdnService": {
+      "required": [
+        "InternetChargeType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenCdnService"
+    },
+    "PublishStagingConfigToProduction": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PublishStagingConfigToProduction"
+    },
+    "PushObjectCache": {
+      "required": [
+        "ObjectPath"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PushObjectCache"
+    },
+    "RefreshObjectCacheByCacheTag": {
+      "required": [
+        "DomainName",
+        "CacheTag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RefreshObjectCacheByCacheTag"
+    },
+    "RefreshObjectCaches": {
+      "required": [
+        "ObjectPath"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RefreshObjectCaches"
+    },
+    "RollbackStagingConfig": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RollbackStagingConfig"
+    },
+    "SetCdnDomainCSRCertificate": {
+      "required": [
+        "ServerCertificate",
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetCdnDomainCSRCertificate"
+    },
+    "SetCdnDomainSMCertificate": {
+      "required": [
+        "DomainName",
+        "CertIdentifier",
+        "SSLProtocol"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetCdnDomainSMCertificate"
+    },
+    "SetCdnDomainSSLCertificate": {
+      "required": [
+        "DomainName",
+        "SSLProtocol"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetCdnDomainSSLCertificate"
+    },
+    "SetCdnDomainStagingConfig": {
+      "required": [
+        "DomainName",
+        "Functions"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetCdnDomainStagingConfig"
+    },
+    "SetCdnFullDomainsBlockIP": {
+      "required": [
+        "IPList",
+        "OperationType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetCdnFullDomainsBlockIP"
+    },
+    "SetReqHeaderConfig": {
+      "required": [
+        "DomainName",
+        "Key",
+        "Value"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetReqHeaderConfig"
+    },
+    "SetWaitingRoomConfig": {
+      "required": [
+        "DomainName",
+        "WaitUri",
+        "AllowPct",
+        "MaxTimeWait",
+        "GapTime",
+        "WaitUrl"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetWaitingRoomConfig"
+    },
+    "StartCdnDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartCdnDomain"
+    },
+    "StopCdnDomain": {
+      "required": [
+        "DomainName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopCdnDomain"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpdateCdnDeliverTask": {
+      "required": [
+        "DeliverId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCdnDeliverTask"
+    },
+    "UpdateCdnSubTask": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateCdnSubTask"
+    },
+    "UpdateFCTrigger": {
+      "required": [
+        "TriggerARN"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpdateFCTrigger"
+    },
+    "VerifyDomainOwner": {
+      "required": [
+        "DomainName",
+        "VerifyType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "VerifyDomainOwner"
+    }
+  }
+}

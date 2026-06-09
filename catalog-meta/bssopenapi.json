@@ -1,0 +1,787 @@
+{
+  "snapshotVersion": 1,
+  "product": "bssopenapi",
+  "openApiProduct": "BssOpenApi",
+  "version": "2017-12-14",
+  "source": "https://api.aliyun.com/meta/v1/products/BssOpenApi/versions/2017-12-14/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:30.367Z",
+  "actions": {
+    "AddAccountRelation": {
+      "required": [
+        "RelationType",
+        "ParentUserId",
+        "ChildUserId",
+        "RequestId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AddAccountRelation"
+    },
+    "AllocateCostUnitResource": {
+      "required": [
+        "FromUnitUserId",
+        "FromUnitId",
+        "ToUnitUserId",
+        "ToUnitId",
+        "ResourceInstanceList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateCostUnitResource"
+    },
+    "ApplyInvoice": {
+      "required": [
+        "InvoiceAmount",
+        "CustomerId",
+        "AddressId",
+        "ApplyUserNick",
+        "SelectedIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyInvoice"
+    },
+    "CancelOrder": {
+      "required": [
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelOrder"
+    },
+    "ChangeResellerConsumeAmount": {
+      "required": [
+        "AdjustType",
+        "Amount",
+        "Currency",
+        "BusinessType",
+        "Source",
+        "OutBizId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ChangeResellerConsumeAmount"
+    },
+    "ConfirmRelation": {
+      "required": [
+        "ConfirmCode",
+        "RequestId",
+        "PermissionCodes"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConfirmRelation"
+    },
+    "ConvertChargeType": {
+      "required": [
+        "SubscriptionType",
+        "ProductCode",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConvertChargeType"
+    },
+    "CreateAgAccount": {
+      "required": [
+        "LoginEmail"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAgAccount"
+    },
+    "CreateCostUnit": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCostUnit"
+    },
+    "CreateInstance": {
+      "required": [
+        "ProductCode",
+        "SubscriptionType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateInstance"
+    },
+    "CreateResellerUserQuota": {
+      "required": [
+        "Amount",
+        "Currency"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateResellerUserQuota"
+    },
+    "DeleteCostUnit": {
+      "required": [
+        "OwnerUid",
+        "UnitId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCostUnit"
+    },
+    "DescribeCostBudgetsSummary": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCostBudgetsSummary"
+    },
+    "DescribeInstanceAmortizedCostByAmortizationPeriod": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceAmortizedCostByAmortizationPeriod"
+    },
+    "DescribeInstanceAmortizedCostByConsumePeriod": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceAmortizedCostByConsumePeriod"
+    },
+    "DescribeInstanceBill": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceBill"
+    },
+    "DescribePricingModule": {
+      "required": [
+        "ProductCode",
+        "SubscriptionType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePricingModule"
+    },
+    "DescribeProductAmortizedCostByAmortizationPeriod": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeProductAmortizedCostByAmortizationPeriod"
+    },
+    "DescribeProductAmortizedCostByConsumePeriod": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeProductAmortizedCostByConsumePeriod"
+    },
+    "DescribeResourceCoverageDetail": {
+      "required": [
+        "StartPeriod",
+        "PeriodType",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourceCoverageDetail"
+    },
+    "DescribeResourceCoverageTotal": {
+      "required": [
+        "StartPeriod",
+        "PeriodType",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourceCoverageTotal"
+    },
+    "DescribeResourcePackageProduct": {
+      "required": [
+        "ProductCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourcePackageProduct"
+    },
+    "DescribeResourceUsageDetail": {
+      "required": [
+        "StartPeriod",
+        "PeriodType",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourceUsageDetail"
+    },
+    "DescribeResourceUsageTotal": {
+      "required": [
+        "StartPeriod",
+        "PeriodType",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourceUsageTotal"
+    },
+    "DescribeSavingsPlansCoverageDetail": {
+      "required": [
+        "StartPeriod",
+        "PeriodType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSavingsPlansCoverageDetail"
+    },
+    "DescribeSavingsPlansCoverageTotal": {
+      "required": [
+        "StartPeriod",
+        "PeriodType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSavingsPlansCoverageTotal"
+    },
+    "DescribeSavingsPlansUsageDetail": {
+      "required": [
+        "StartPeriod",
+        "PeriodType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSavingsPlansUsageDetail"
+    },
+    "DescribeSavingsPlansUsageTotal": {
+      "required": [
+        "StartPeriod",
+        "PeriodType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSavingsPlansUsageTotal"
+    },
+    "DescribeSplitItemBill": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSplitItemBill"
+    },
+    "GetAccountRelation": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetAccountRelation"
+    },
+    "GetCustomerAccountInfo": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCustomerAccountInfo"
+    },
+    "GetCustomerList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetCustomerList"
+    },
+    "GetOrderDetail": {
+      "required": [
+        "OrderId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetOrderDetail"
+    },
+    "GetPayAsYouGoPrice": {
+      "required": [
+        "ProductCode",
+        "SubscriptionType",
+        "ModuleList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetPayAsYouGoPrice"
+    },
+    "GetResourcePackagePrice": {
+      "required": [
+        "ProductCode",
+        "PackageType",
+        "Specification",
+        "Duration"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetResourcePackagePrice"
+    },
+    "GetSubscriptionPrice": {
+      "required": [
+        "SubscriptionType",
+        "ProductCode",
+        "OrderType",
+        "ModuleList"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetSubscriptionPrice"
+    },
+    "InquiryPriceRefundInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InquiryPriceRefundInstance"
+    },
+    "ModifyAccountRelation": {
+      "required": [
+        "RelationOperation",
+        "RequestId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAccountRelation"
+    },
+    "ModifyCostUnit": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCostUnit"
+    },
+    "ModifyInstance": {
+      "required": [
+        "ProductCode",
+        "SubscriptionType",
+        "ModifyType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstance"
+    },
+    "QueryAccountBalance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryAccountBalance"
+    },
+    "QueryAccountBill": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryAccountBill"
+    },
+    "QueryAccountTransactionDetails": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryAccountTransactionDetails"
+    },
+    "QueryAccountTransactions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryAccountTransactions"
+    },
+    "QueryAvailableInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryAvailableInstances"
+    },
+    "QueryBill": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryBill"
+    },
+    "QueryBillOverview": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryBillOverview"
+    },
+    "QueryBillToOSSSubscription": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryBillToOSSSubscription"
+    },
+    "QueryCashCoupons": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCashCoupons"
+    },
+    "QueryCommodityList": {
+      "required": [
+        "ProductCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCommodityList"
+    },
+    "QueryCostUnit": {
+      "required": [
+        "OwnerUid",
+        "ParentUnitId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCostUnit"
+    },
+    "QueryCostUnitResource": {
+      "required": [
+        "OwnerUid",
+        "UnitId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCostUnitResource"
+    },
+    "QueryCustomerAddressList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryCustomerAddressList"
+    },
+    "QueryDPUtilizationDetail": {
+      "required": [
+        "StartTime",
+        "EndTime",
+        "IncludeShare"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryDPUtilizationDetail"
+    },
+    "QueryEvaluateList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryEvaluateList"
+    },
+    "QueryFinancialAccountInfo": {
+      "required": [
+        "UserId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryFinancialAccountInfo"
+    },
+    "QueryInstanceBill": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryInstanceBill"
+    },
+    "QueryInstanceByTag": {
+      "required": [
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryInstanceByTag"
+    },
+    "QueryInstanceGaapCost": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query monthly cost allocation service"
+    },
+    "QueryInvoicingCustomerList": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryInvoicingCustomerList"
+    },
+    "QueryOrders": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryOrders"
+    },
+    "QueryPermissionList": {
+      "required": [
+        "RelationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryPermissionList"
+    },
+    "QueryPrepaidCards": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryPrepaidCards"
+    },
+    "QueryPriceEntityList": {
+      "required": [
+        "CommodityCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryPriceEntityList"
+    },
+    "QueryProductList": {
+      "required": [
+        "PageNum"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryProductList"
+    },
+    "QueryRIUtilizationDetail": {
+      "required": [
+        "RICommodityCode",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryRIUtilizationDetail"
+    },
+    "QueryRedeem": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryRedeem"
+    },
+    "QueryRelationList": {
+      "required": [
+        "UserId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryRelationList"
+    },
+    "QueryResellerAvailableQuota": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryResellerAvailableQuota"
+    },
+    "QueryResellerUserAlarmThreshold": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryResellerUserAlarmThreshold"
+    },
+    "QueryResourcePackageInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryResourcePackageInstances"
+    },
+    "QuerySavingsPlansDeductLog": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySavingsPlansDeductLog"
+    },
+    "QuerySavingsPlansDiscount": {
+      "required": [
+        "PayMode",
+        "SpnType",
+        "Cycle",
+        "CommodityCode"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySavingsPlansDiscount"
+    },
+    "QuerySavingsPlansInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySavingsPlansInstance"
+    },
+    "QuerySettleBill": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySettleBill"
+    },
+    "QuerySkuPriceList": {
+      "required": [
+        "CommodityCode",
+        "PriceEntityCode",
+        "PageSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySkuPriceList"
+    },
+    "QuerySplitItemBill": {
+      "required": [
+        "BillingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QuerySplitItemBill"
+    },
+    "QueryUserOmsData": {
+      "required": [
+        "Table",
+        "DataType",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "QueryUserOmsData"
+    },
+    "RefundInstance": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RefundInstance"
+    },
+    "ReleaseInstance": {
+      "required": [
+        "ProductCode",
+        "SubscriptionType",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseInstance"
+    },
+    "RelieveAccountRelation": {
+      "required": [
+        "RequestId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RelieveAccountRelation"
+    },
+    "RenewChangeInstance": {
+      "required": [
+        "ProductCode",
+        "InstanceId",
+        "RenewPeriod"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewChangeInstance"
+    },
+    "RenewInstance": {
+      "required": [
+        "ProductCode",
+        "InstanceId",
+        "RenewPeriod"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewInstance"
+    },
+    "RenewResourcePackage": {
+      "required": [
+        "InstanceId",
+        "Duration",
+        "PricingCycle"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewResourcePackage"
+    },
+    "SetAllExpirationDay": {
+      "required": [
+        "UnifyExpireDay"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetAllExpirationDay"
+    },
+    "SetRenewal": {
+      "required": [
+        "InstanceIDs",
+        "ProductCode",
+        "RenewalStatus"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetRenewal"
+    },
+    "SetResellerUserAlarmThreshold": {
+      "required": [
+        "AlarmType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetResellerUserAlarmThreshold"
+    },
+    "SetResellerUserQuota": {
+      "required": [
+        "Amount"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify the quota ledger and consumption ledger."
+    },
+    "SetResellerUserStatus": {
+      "required": [
+        "Status",
+        "BusinessType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SetResellerUserStatus"
+    },
+    "SubscribeBillToOSS": {
+      "required": [
+        "SubscribeBucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SubscribeBillToOSS"
+    },
+    "TagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "UnsubscribeBillToOSS": {
+      "required": [
+        "SubscribeType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnsubscribeBillToOSS"
+    },
+    "UntagResources": {
+      "required": [
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    },
+    "UpgradeResourcePackage": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UpgradeResourcePackage"
+    }
+  }
+}

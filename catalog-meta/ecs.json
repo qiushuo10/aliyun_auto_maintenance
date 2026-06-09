@@ -1,0 +1,3260 @@
+{
+  "snapshotVersion": 1,
+  "product": "ecs",
+  "openApiProduct": "Ecs",
+  "version": "2014-05-26",
+  "source": "https://api.aliyun.com/meta/v1/products/Ecs/versions/2014-05-26/api-docs.json?language=EN_US",
+  "fetchedAt": "2026-06-03T05:46:41.511Z",
+  "actions": {
+    "AcceptInquiredSystemEvent": {
+      "required": [
+        "RegionId",
+        "EventId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Accept and authorize the execution of a system event operation"
+    },
+    "ActivateRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ActivateRouterInterface"
+    },
+    "AddBandwidthPackageIps": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "IpCount"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddBandwidthPackageIps"
+    },
+    "AddTags": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AddTags"
+    },
+    "AllocateDedicatedHosts": {
+      "required": [
+        "RegionId",
+        "DedicatedHostType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocateDedicatedHosts"
+    },
+    "AllocateEipAddress": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Request an Elastic IP Address (EIP)"
+    },
+    "AllocatePublicIpAddress": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AllocatePublicIpAddress"
+    },
+    "ApplyAutoSnapshotPolicy": {
+      "required": [
+        "regionId",
+        "autoSnapshotPolicyId",
+        "diskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ApplyAutoSnapshotPolicy"
+    },
+    "AssignIpv6Addresses": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssignIpv6Addresses"
+    },
+    "AssignPrivateIpAddresses": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AssignPrivateIpAddresses"
+    },
+    "AssociateEipAddress": {
+      "required": [
+        "AllocationId",
+        "InstanceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AssociateEipAddress"
+    },
+    "AssociateHaVip": {
+      "required": [
+        "RegionId",
+        "HaVipId",
+        "InstanceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "AssociateHaVip"
+    },
+    "AttachClassicLinkVpc": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachClassicLinkVpc"
+    },
+    "AttachDisk": {
+      "required": [
+        "InstanceId",
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachDisk"
+    },
+    "AttachInstanceRamRole": {
+      "required": [
+        "RegionId",
+        "RamRoleName",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachInstanceRamRole"
+    },
+    "AttachKeyPair": {
+      "required": [
+        "RegionId",
+        "KeyPairName",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachKeyPair"
+    },
+    "AttachNetworkInterface": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AttachNetworkInterface"
+    },
+    "AuthorizeSecurityGroup": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AuthorizeSecurityGroup"
+    },
+    "AuthorizeSecurityGroupEgress": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "AuthorizeSecurityGroupEgress"
+    },
+    "CancelAutoSnapshotPolicy": {
+      "required": [
+        "regionId",
+        "diskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Cancel the automatic snapshot policy for a disk"
+    },
+    "CancelCopyImage": {
+      "required": [
+        "RegionId",
+        "ImageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelCopyImage"
+    },
+    "CancelImagePipelineExecution": {
+      "required": [
+        "RegionId",
+        "ExecutionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelImagePipelineExecution"
+    },
+    "CancelPhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CancelPhysicalConnection"
+    },
+    "CancelSimulatedSystemEvents": {
+      "required": [
+        "RegionId",
+        "EventId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelSimulatedSystemEvents"
+    },
+    "CancelTask": {
+      "required": [
+        "RegionId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CancelTask"
+    },
+    "CloneDisks": {
+      "required": [
+        "RegionId",
+        "SourceDiskId",
+        "DiskCategory",
+        "Size",
+        "MultiAttach"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CloneDisks"
+    },
+    "ConnectRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ConnectRouterInterface"
+    },
+    "ConvertNatPublicIpToEip": {
+      "required": [
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ConvertNatPublicIpToEip"
+    },
+    "CopyImage": {
+      "required": [
+        "ImageId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CopyImage"
+    },
+    "CopySnapshot": {
+      "required": [
+        "RegionId",
+        "DestinationRegionId",
+        "SnapshotId",
+        "DestinationSnapshotName",
+        "DestinationSnapshotDescription"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CopySnapshot"
+    },
+    "CreateActivation": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an activation code"
+    },
+    "CreateAutoProvisioningGroup": {
+      "required": [
+        "RegionId",
+        "TotalTargetCapacity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create an auto provisioning group"
+    },
+    "CreateAutoSnapshotPolicy": {
+      "required": [
+        "regionId",
+        "timePoints",
+        "repeatWeekdays",
+        "retentionDays"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateAutoSnapshotPolicy"
+    },
+    "CreateCapacityReservation": {
+      "required": [
+        "RegionId",
+        "InstanceAmount",
+        "InstanceType",
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateCapacityReservation"
+    },
+    "CreateCommand": {
+      "required": [
+        "RegionId",
+        "Name",
+        "Type",
+        "CommandContent"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create Cloud Assistant Command"
+    },
+    "CreateDedicatedHostCluster": {
+      "required": [
+        "RegionId",
+        "ZoneId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDedicatedHostCluster"
+    },
+    "CreateDeploymentSet": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDeploymentSet"
+    },
+    "CreateDiagnosticMetricSet": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "MetricIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDiagnosticMetricSet"
+    },
+    "CreateDiagnosticReport": {
+      "required": [
+        "RegionId",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDiagnosticReport"
+    },
+    "CreateDisk": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateDisk"
+    },
+    "CreateElasticityAssurance": {
+      "required": [
+        "RegionId",
+        "ZoneId",
+        "InstanceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateElasticityAssurance"
+    },
+    "CreateForwardEntry": {
+      "required": [
+        "RegionId",
+        "ForwardTableId",
+        "ExternalIp",
+        "ExternalPort",
+        "InternalIp",
+        "InternalPort",
+        "IpProtocol"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateForwardEntry"
+    },
+    "CreateHaVip": {
+      "required": [
+        "RegionId",
+        "VSwitchId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateHaVip"
+    },
+    "CreateHpcCluster": {
+      "required": [
+        "RegionId",
+        "Name"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateHpcCluster"
+    },
+    "CreateImage": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateImage"
+    },
+    "CreateImageComponent": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateImageComponent"
+    },
+    "CreateImagePipeline": {
+      "required": [
+        "RegionId",
+        "BaseImageType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateImagePipeline"
+    },
+    "CreateInstance": {
+      "required": [
+        "RegionId",
+        "InstanceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateInstance"
+    },
+    "CreateKeyPair": {
+      "required": [
+        "RegionId",
+        "KeyPairName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateKeyPair"
+    },
+    "CreateLaunchTemplate": {
+      "required": [
+        "RegionId",
+        "LaunchTemplateName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a launch template"
+    },
+    "CreateLaunchTemplateVersion": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create a New Version in a Launch Template"
+    },
+    "CreateNatGateway": {
+      "required": [
+        "RegionId",
+        "VpcId",
+        "BandwidthPackage"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateNatGateway"
+    },
+    "CreateNetworkInterface": {
+      "required": [
+        "RegionId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNetworkInterface"
+    },
+    "CreateNetworkInterfacePermission": {
+      "required": [
+        "RegionId",
+        "AccountId",
+        "NetworkInterfaceId",
+        "Permission"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateNetworkInterfacePermission"
+    },
+    "CreatePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "AccessPointId",
+        "LineOperator",
+        "PeerLocation",
+        "ClientToken"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreatePhysicalConnection"
+    },
+    "CreatePlanMaintenanceWindow": {
+      "required": [
+        "PlanWindowName",
+        "Enable",
+        "SupportMaintenanceAction",
+        "RegionId",
+        "TimePeriod",
+        "TargetResource"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create O&M Window"
+    },
+    "CreatePortRangeList": {
+      "required": [
+        "RegionId",
+        "MaxEntries",
+        "PortRangeListName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePortRangeList"
+    },
+    "CreatePrefixList": {
+      "required": [
+        "RegionId",
+        "MaxEntries",
+        "AddressFamily",
+        "PrefixListName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreatePrefixList"
+    },
+    "CreateRouteEntry": {
+      "required": [
+        "RouteTableId",
+        "DestinationCidrBlock"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateRouteEntry"
+    },
+    "CreateRouterInterface": {
+      "required": [
+        "RegionId",
+        "Role",
+        "OppositeRegionId",
+        "Spec",
+        "RouterType",
+        "RouterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateRouterInterface"
+    },
+    "CreateSecurityGroup": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSecurityGroup"
+    },
+    "CreateSimulatedSystemEvents": {
+      "required": [
+        "RegionId",
+        "EventType",
+        "NotBefore",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSimulatedSystemEvents"
+    },
+    "CreateSnapshot": {
+      "required": [
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSnapshot"
+    },
+    "CreateSnapshotGroup": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "CreateSnapshotGroup"
+    },
+    "CreateVSwitch": {
+      "required": [
+        "ZoneId",
+        "CidrBlock",
+        "VpcId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateVSwitch"
+    },
+    "CreateVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId",
+        "VlanId",
+        "ClientToken"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateVirtualBorderRouter"
+    },
+    "CreateVpc": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "CreateVpc"
+    },
+    "CreateVsc": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "DeactivateRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeactivateRouterInterface"
+    },
+    "DeleteActivation": {
+      "required": [
+        "RegionId",
+        "ActivationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteActivation"
+    },
+    "DeleteAutoProvisioningGroup": {
+      "required": [
+        "RegionId",
+        "AutoProvisioningGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAutoProvisioningGroup"
+    },
+    "DeleteAutoSnapshotPolicy": {
+      "required": [
+        "regionId",
+        "autoSnapshotPolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteAutoSnapshotPolicy"
+    },
+    "DeleteBandwidthPackage": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteBandwidthPackage"
+    },
+    "DeleteCommand": {
+      "required": [
+        "RegionId",
+        "CommandId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteCommand"
+    },
+    "DeleteDedicatedHostCluster": {
+      "required": [
+        "RegionId",
+        "DedicatedHostClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDedicatedHostCluster"
+    },
+    "DeleteDeploymentSet": {
+      "required": [
+        "RegionId",
+        "DeploymentSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDeploymentSet"
+    },
+    "DeleteDiagnosticMetricSets": {
+      "required": [
+        "RegionId",
+        "MetricSetIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDiagnosticMetricSets"
+    },
+    "DeleteDiagnosticReports": {
+      "required": [
+        "RegionId",
+        "ReportIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDiagnosticReports"
+    },
+    "DeleteDisk": {
+      "required": [
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteDisk"
+    },
+    "DeleteForwardEntry": {
+      "required": [
+        "RegionId",
+        "ForwardTableId",
+        "ForwardEntryId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteForwardEntry"
+    },
+    "DeleteHaVip": {
+      "required": [
+        "RegionId",
+        "HaVipId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteHaVip"
+    },
+    "DeleteHpcCluster": {
+      "required": [
+        "RegionId",
+        "HpcClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteHpcCluster"
+    },
+    "DeleteImage": {
+      "required": [
+        "RegionId",
+        "ImageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteImage"
+    },
+    "DeleteImageComponent": {
+      "required": [
+        "RegionId",
+        "ImageComponentId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteImageComponent"
+    },
+    "DeleteImagePipeline": {
+      "required": [
+        "RegionId",
+        "ImagePipelineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteImagePipeline"
+    },
+    "DeleteInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteInstance"
+    },
+    "DeleteInstances": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteInstances"
+    },
+    "DeleteKeyPairs": {
+      "required": [
+        "RegionId",
+        "KeyPairNames"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteKeyPairs"
+    },
+    "DeleteLaunchTemplate": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLaunchTemplate"
+    },
+    "DeleteLaunchTemplateVersion": {
+      "required": [
+        "RegionId",
+        "DeleteVersion"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteLaunchTemplateVersion"
+    },
+    "DeleteNatGateway": {
+      "required": [
+        "RegionId",
+        "NatGatewayId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteNatGateway"
+    },
+    "DeleteNetworkInterface": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteNetworkInterface"
+    },
+    "DeleteNetworkInterfacePermission": {
+      "required": [
+        "RegionId",
+        "NetworkInterfacePermissionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteNetworkInterfacePermission"
+    },
+    "DeletePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeletePhysicalConnection"
+    },
+    "DeletePlanMaintenanceWindow": {
+      "required": [
+        "PlanWindowId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Delete O&M window"
+    },
+    "DeletePortRangeList": {
+      "required": [
+        "RegionId",
+        "PortRangeListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePortRangeList"
+    },
+    "DeletePrefixList": {
+      "required": [
+        "RegionId",
+        "PrefixListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeletePrefixList"
+    },
+    "DeleteRouteEntry": {
+      "required": [
+        "RouteTableId",
+        "DestinationCidrBlock"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteRouteEntry"
+    },
+    "DeleteRouterInterface": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteRouterInterface"
+    },
+    "DeleteSecurityGroup": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSecurityGroup"
+    },
+    "DeleteSnapshot": {
+      "required": [
+        "SnapshotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSnapshot"
+    },
+    "DeleteSnapshotGroup": {
+      "required": [
+        "RegionId",
+        "SnapshotGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DeleteSnapshotGroup"
+    },
+    "DeleteVSwitch": {
+      "required": [
+        "VSwitchId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteVSwitch"
+    },
+    "DeleteVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteVirtualBorderRouter"
+    },
+    "DeleteVpc": {
+      "required": [
+        "VpcId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DeleteVpc"
+    },
+    "DeleteVsc": {
+      "required": [
+        "RegionId",
+        "VscId"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "DeregisterManagedInstance": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Log off a managed instance"
+    },
+    "DescribeAccessPoints": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeAccessPoints"
+    },
+    "DescribeAccountAttributes": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAccountAttributes"
+    },
+    "DescribeActivations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeActivations"
+    },
+    "DescribeAutoProvisioningGroupHistory": {
+      "required": [
+        "RegionId",
+        "AutoProvisioningGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoProvisioningGroupHistory"
+    },
+    "DescribeAutoProvisioningGroupInstances": {
+      "required": [
+        "RegionId",
+        "AutoProvisioningGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoProvisioningGroupInstances"
+    },
+    "DescribeAutoProvisioningGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoProvisioningGroups"
+    },
+    "DescribeAutoSnapshotPolicyAssociations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoSnapshotPolicyAssociations"
+    },
+    "DescribeAutoSnapshotPolicyEx": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeAutoSnapshotPolicyEx"
+    },
+    "DescribeAvailableResource": {
+      "required": [
+        "RegionId",
+        "DestinationResource"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the Inventory of Resources in a Zone"
+    },
+    "DescribeBandwidthLimitation": {
+      "required": [
+        "RegionId",
+        "InstanceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBandwidthLimitation"
+    },
+    "DescribeBandwidthPackages": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeBandwidthPackages"
+    },
+    "DescribeCapacityReservationInstances": {
+      "required": [
+        "RegionId",
+        "PrivatePoolOptions.Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCapacityReservationInstances"
+    },
+    "DescribeCapacityReservations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCapacityReservations"
+    },
+    "DescribeClassicLinkInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeClassicLinkInstances"
+    },
+    "DescribeCloudAssistantSettings": {
+      "required": [
+        "SettingType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudAssistantSettings"
+    },
+    "DescribeCloudAssistantStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCloudAssistantStatus"
+    },
+    "DescribeClusters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Obtain cluster information"
+    },
+    "DescribeCommands": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeCommands"
+    },
+    "DescribeDedicatedHostAutoRenew": {
+      "required": [
+        "DedicatedHostIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDedicatedHostAutoRenew"
+    },
+    "DescribeDedicatedHostClusters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDedicatedHostClusters"
+    },
+    "DescribeDedicatedHostTypes": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDedicatedHostTypes"
+    },
+    "DescribeDedicatedHosts": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query detailed information about Dedicated Hosts"
+    },
+    "DescribeDeploymentSetSupportedInstanceTypeFamily": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDeploymentSetSupportedInstanceTypeFamily"
+    },
+    "DescribeDeploymentSets": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDeploymentSets"
+    },
+    "DescribeDiagnosticMetricSets": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDiagnosticMetricSets"
+    },
+    "DescribeDiagnosticMetrics": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDiagnosticMetrics"
+    },
+    "DescribeDiagnosticReportAttributes": {
+      "required": [
+        "RegionId",
+        "ReportId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDiagnosticReportAttributes"
+    },
+    "DescribeDiagnosticReports": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDiagnosticReports"
+    },
+    "DescribeDiskDefaultKMSKeyId": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDiskDefaultKMSKeyId"
+    },
+    "DescribeDiskEncryptionByDefaultStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDiskEncryptionByDefaultStatus"
+    },
+    "DescribeDiskMonitorData": {
+      "required": [
+        "DiskId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDiskMonitorData"
+    },
+    "DescribeDisks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDisks"
+    },
+    "DescribeDisksFullStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeDisksFullStatus"
+    },
+    "DescribeEipAddresses": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeEipAddresses"
+    },
+    "DescribeEipMonitorData": {
+      "required": [
+        "AllocationId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeEipMonitorData"
+    },
+    "DescribeElasticityAssuranceAutoRenewAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeElasticityAssuranceAutoRenewAttribute"
+    },
+    "DescribeElasticityAssuranceInstances": {
+      "required": [
+        "RegionId",
+        "PrivatePoolOptions.Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeElasticityAssuranceInstances"
+    },
+    "DescribeElasticityAssurances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeElasticityAssurances"
+    },
+    "DescribeEniMonitorData": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeEniMonitorData"
+    },
+    "DescribeForwardTableEntries": {
+      "required": [
+        "RegionId",
+        "ForwardTableId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeForwardTableEntries"
+    },
+    "DescribeHaVips": {
+      "required": [
+        "RegionId",
+        "Filter"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeHaVips"
+    },
+    "DescribeHpcClusters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeHpcClusters"
+    },
+    "DescribeImageComponents": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeImageComponents"
+    },
+    "DescribeImageFromFamily": {
+      "required": [
+        "RegionId",
+        "ImageFamily"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeImageFromFamily"
+    },
+    "DescribeImagePipelineExecutions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeImagePipelineExecutions"
+    },
+    "DescribeImagePipelines": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeImagePipelines"
+    },
+    "DescribeImageSharePermission": {
+      "required": [
+        "RegionId",
+        "ImageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeImageSharePermission"
+    },
+    "DescribeImageSupportInstanceTypes": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeImageSupportInstanceTypes"
+    },
+    "DescribeImages": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query image resources"
+    },
+    "DescribeInstanceAttachmentAttributes": {
+      "required": [
+        "RegionId",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceAttachmentAttributes"
+    },
+    "DescribeInstanceAttribute": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query instance property information"
+    },
+    "DescribeInstanceAutoRenewAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceAutoRenewAttribute"
+    },
+    "DescribeInstanceHistoryEvents": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query system event information for a specified instance"
+    },
+    "DescribeInstanceMaintenanceAttributes": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceMaintenanceAttributes"
+    },
+    "DescribeInstanceModificationPrice": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceModificationPrice"
+    },
+    "DescribeInstanceMonitorData": {
+      "required": [
+        "InstanceId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceMonitorData"
+    },
+    "DescribeInstanceRamRole": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceRamRole"
+    },
+    "DescribeInstanceStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceStatus"
+    },
+    "DescribeInstanceTypeFamilies": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceTypeFamilies"
+    },
+    "DescribeInstanceTypes": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query instance type information list"
+    },
+    "DescribeInstanceVncUrl": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstanceVncUrl"
+    },
+    "DescribeInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstances"
+    },
+    "DescribeInstancesFullStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeInstancesFullStatus"
+    },
+    "DescribeInvocationResults": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query Cloud Assistant command execution results"
+    },
+    "DescribeInvocations": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the list of Cloud Assistant command execution information"
+    },
+    "DescribeKeyPairs": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeKeyPairs"
+    },
+    "DescribeLaunchTemplateVersions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query the version information of a launch template"
+    },
+    "DescribeLaunchTemplates": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLaunchTemplates"
+    },
+    "DescribeLimitation": {
+      "required": [
+        "Limitation"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Query resource quota limits"
+    },
+    "DescribeLockedSnapshots": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeLockedSnapshots"
+    },
+    "DescribeManagedInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeManagedInstances"
+    },
+    "DescribeNatGateways": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeNatGateways"
+    },
+    "DescribeNetworkInterfaceAttribute": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkInterfaceAttribute"
+    },
+    "DescribeNetworkInterfacePermissions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkInterfacePermissions"
+    },
+    "DescribeNetworkInterfaces": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeNetworkInterfaces"
+    },
+    "DescribeNewProjectEipMonitorData": {
+      "required": [
+        "AllocationId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeNewProjectEipMonitorData"
+    },
+    "DescribePhysicalConnections": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribePhysicalConnections"
+    },
+    "DescribePlanMaintenanceWindows": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query O&M windows"
+    },
+    "DescribePortRangeListAssociations": {
+      "required": [
+        "RegionId",
+        "PortRangeListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortRangeListAssociations"
+    },
+    "DescribePortRangeListEntries": {
+      "required": [
+        "RegionId",
+        "PortRangeListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortRangeListEntries"
+    },
+    "DescribePortRangeLists": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePortRangeLists"
+    },
+    "DescribePrefixListAssociations": {
+      "required": [
+        "RegionId",
+        "PrefixListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrefixListAssociations"
+    },
+    "DescribePrefixListAttributes": {
+      "required": [
+        "RegionId",
+        "PrefixListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrefixListAttributes"
+    },
+    "DescribePrefixLists": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribePrefixLists"
+    },
+    "DescribePrice": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query price"
+    },
+    "DescribeRecommendInstanceType": {
+      "required": [
+        "NetworkType",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRecommendInstanceType"
+    },
+    "DescribeRegions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeRegions"
+    },
+    "DescribeRenewalPrice": {
+      "required": [
+        "RegionId",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query resource renewal price"
+    },
+    "DescribeReservedInstanceAutoRenewAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeReservedInstanceAutoRenewAttribute"
+    },
+    "DescribeReservedInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeReservedInstances"
+    },
+    "DescribeResourceByTags": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeResourceByTags"
+    },
+    "DescribeResourcesModification": {
+      "required": [
+        "RegionId",
+        "ResourceId",
+        "DestinationResource"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeResourcesModification"
+    },
+    "DescribeRouteTables": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeRouteTables"
+    },
+    "DescribeRouterInterfaces": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeRouterInterfaces"
+    },
+    "DescribeSecurityGroupAttribute": {
+      "required": [
+        "SecurityGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecurityGroupAttribute"
+    },
+    "DescribeSecurityGroupReferences": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecurityGroupReferences"
+    },
+    "DescribeSecurityGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSecurityGroups"
+    },
+    "DescribeSendFileResults": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSendFileResults"
+    },
+    "DescribeSnapshotGroups": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnapshotGroups"
+    },
+    "DescribeSnapshotLinks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnapshotLinks"
+    },
+    "DescribeSnapshotMonitorData": {
+      "required": [
+        "RegionId",
+        "StartTime",
+        "EndTime"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnapshotMonitorData"
+    },
+    "DescribeSnapshotPackage": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnapshotPackage"
+    },
+    "DescribeSnapshots": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnapshots"
+    },
+    "DescribeSnapshotsUsage": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSnapshotsUsage"
+    },
+    "DescribeSpotAdvice": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSpotAdvice"
+    },
+    "DescribeSpotPriceHistory": {
+      "required": [
+        "RegionId",
+        "NetworkType",
+        "InstanceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeSpotPriceHistory"
+    },
+    "DescribeStorageCapacityUnits": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeStorageCapacityUnits"
+    },
+    "DescribeTags": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeTags"
+    },
+    "DescribeTaskAttribute": {
+      "required": [
+        "RegionId",
+        "TaskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTaskAttribute"
+    },
+    "DescribeTasks": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Query task list"
+    },
+    "DescribeTerminalSessions": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeTerminalSessions"
+    },
+    "DescribeUserBusinessBehavior": {
+      "required": [
+        "statusKey"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeUserBusinessBehavior"
+    },
+    "DescribeUserData": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeUserData"
+    },
+    "DescribeVRouters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Query the vRouter List in a Specified Region"
+    },
+    "DescribeVSwitches": {
+      "required": [],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeVSwitches"
+    },
+    "DescribeVirtualBorderRouters": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeVirtualBorderRouters"
+    },
+    "DescribeVirtualBorderRoutersForPhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeVirtualBorderRoutersForPhysicalConnection"
+    },
+    "DescribeVpcs": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "DescribeVpcs"
+    },
+    "DescribeVscs": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null
+    },
+    "DescribeZones": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DescribeZones"
+    },
+    "DetachClassicLinkVpc": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "VpcId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachClassicLinkVpc"
+    },
+    "DetachDisk": {
+      "required": [
+        "InstanceId",
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachDisk"
+    },
+    "DetachInstanceRamRole": {
+      "required": [
+        "RegionId",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachInstanceRamRole"
+    },
+    "DetachKeyPair": {
+      "required": [
+        "RegionId",
+        "KeyPairName",
+        "InstanceIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachKeyPair"
+    },
+    "DetachNetworkInterface": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DetachNetworkInterface"
+    },
+    "DisableActivation": {
+      "required": [
+        "RegionId",
+        "ActivationId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableActivation"
+    },
+    "DisableDiskEncryptionByDefault": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableDiskEncryptionByDefault"
+    },
+    "DisableNetworkInterfaceQoS": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "DisableNetworkInterfaceQoS"
+    },
+    "EnableDiskEncryptionByDefault": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableDiskEncryptionByDefault"
+    },
+    "EnableNetworkInterfaceQoS": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EnableNetworkInterfaceQoS"
+    },
+    "EnablePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId",
+        "ClientToken"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "EnablePhysicalConnection"
+    },
+    "EndTerminalSession": {
+      "required": [
+        "RegionId",
+        "SessionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "EndTerminalSession"
+    },
+    "ExportImage": {
+      "required": [
+        "RegionId",
+        "ImageId",
+        "OSSBucket"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ExportImage"
+    },
+    "ExportSnapshot": {
+      "required": [
+        "SnapshotId",
+        "RegionId",
+        "OssBucket"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ExportSnapshot"
+    },
+    "GetInstanceConsoleOutput": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceConsoleOutput"
+    },
+    "GetInstanceScreenshot": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "GetInstanceScreenshot"
+    },
+    "ImportImage": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ImportImage"
+    },
+    "ImportKeyPair": {
+      "required": [
+        "RegionId",
+        "KeyPairName",
+        "PublicKeyBody"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ImportKeyPair"
+    },
+    "InstallCloudAssistant": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "InstallCloudAssistant"
+    },
+    "InvokeCommand": {
+      "required": [
+        "RegionId",
+        "CommandId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Execute a Cloud Assistant command"
+    },
+    "JoinResourceGroup": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "JoinResourceGroup"
+    },
+    "JoinSecurityGroup": {
+      "required": [
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "JoinSecurityGroup"
+    },
+    "LeaveSecurityGroup": {
+      "required": [
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "LeaveSecurityGroup"
+    },
+    "ListPluginStatus": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListPluginStatus"
+    },
+    "ListTagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ListTagResources"
+    },
+    "LockSnapshot": {
+      "required": [
+        "RegionId",
+        "SnapshotId",
+        "LockMode",
+        "LockDuration",
+        "CoolOffPeriod"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "LockSnapshot"
+    },
+    "ModifyAutoProvisioningGroup": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAutoProvisioningGroup"
+    },
+    "ModifyAutoSnapshotPolicyEx": {
+      "required": [
+        "regionId",
+        "autoSnapshotPolicyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyAutoSnapshotPolicyEx"
+    },
+    "ModifyBandwidthPackageSpec": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "Bandwidth"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyBandwidthPackageSpec"
+    },
+    "ModifyCapacityReservation": {
+      "required": [
+        "RegionId",
+        "PrivatePoolOptions.Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCapacityReservation"
+    },
+    "ModifyCloudAssistantSettings": {
+      "required": [
+        "RegionId",
+        "SettingType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCloudAssistantSettings"
+    },
+    "ModifyCommand": {
+      "required": [
+        "RegionId",
+        "CommandId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyCommand"
+    },
+    "ModifyDedicatedHostAttribute": {
+      "required": [
+        "RegionId",
+        "DedicatedHostId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDedicatedHostAttribute"
+    },
+    "ModifyDedicatedHostAutoReleaseTime": {
+      "required": [
+        "RegionId",
+        "DedicatedHostId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDedicatedHostAutoReleaseTime"
+    },
+    "ModifyDedicatedHostAutoRenewAttribute": {
+      "required": [
+        "DedicatedHostIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDedicatedHostAutoRenewAttribute"
+    },
+    "ModifyDedicatedHostClusterAttribute": {
+      "required": [
+        "RegionId",
+        "DedicatedHostClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDedicatedHostClusterAttribute"
+    },
+    "ModifyDedicatedHostsChargeType": {
+      "required": [
+        "DedicatedHostIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDedicatedHostsChargeType"
+    },
+    "ModifyDeploymentSetAttribute": {
+      "required": [
+        "DeploymentSetId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDeploymentSetAttribute"
+    },
+    "ModifyDiagnosticMetricSet": {
+      "required": [
+        "RegionId",
+        "MetricSetId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDiagnosticMetricSet"
+    },
+    "ModifyDiskAttribute": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDiskAttribute"
+    },
+    "ModifyDiskChargeType": {
+      "required": [
+        "InstanceId",
+        "RegionId",
+        "DiskIds"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDiskChargeType"
+    },
+    "ModifyDiskDefaultKMSKeyId": {
+      "required": [
+        "RegionId",
+        "KMSKeyId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDiskDefaultKMSKeyId"
+    },
+    "ModifyDiskDeployment": {
+      "required": [
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDiskDeployment"
+    },
+    "ModifyDiskSpec": {
+      "required": [
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyDiskSpec"
+    },
+    "ModifyEipAddressAttribute": {
+      "required": [
+        "AllocationId",
+        "Bandwidth"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyEipAddressAttribute"
+    },
+    "ModifyElasticityAssurance": {
+      "required": [
+        "RegionId",
+        "PrivatePoolOptions.Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyElasticityAssurance"
+    },
+    "ModifyElasticityAssuranceAutoRenewAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyElasticityAssuranceAutoRenewAttribute"
+    },
+    "ModifyForwardEntry": {
+      "required": [
+        "ForwardTableId",
+        "ForwardEntryId",
+        "RegionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyForwardEntry"
+    },
+    "ModifyHaVipAttribute": {
+      "required": [
+        "RegionId",
+        "HaVipId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyHaVipAttribute"
+    },
+    "ModifyHpcClusterAttribute": {
+      "required": [
+        "RegionId",
+        "HpcClusterId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyHpcClusterAttribute"
+    },
+    "ModifyImageAttribute": {
+      "required": [
+        "RegionId",
+        "ImageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyImageAttribute"
+    },
+    "ModifyImageShareGroupPermission": {
+      "required": [
+        "RegionId",
+        "ImageId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyImageShareGroupPermission"
+    },
+    "ModifyImageSharePermission": {
+      "required": [
+        "RegionId",
+        "ImageId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyImageSharePermission"
+    },
+    "ModifyInstanceAttachmentAttributes": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "PrivatePoolOptions.MatchCriteria"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceAttachmentAttributes"
+    },
+    "ModifyInstanceAttribute": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify Instance Attributes"
+    },
+    "ModifyInstanceAutoReleaseTime": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceAutoReleaseTime"
+    },
+    "ModifyInstanceAutoRenewAttribute": {
+      "required": [
+        "InstanceId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceAutoRenewAttribute"
+    },
+    "ModifyInstanceChargeType": {
+      "required": [
+        "InstanceIds",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceChargeType"
+    },
+    "ModifyInstanceClockOptions": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceClockOptions"
+    },
+    "ModifyInstanceDeployment": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceDeployment"
+    },
+    "ModifyInstanceMaintenanceAttributes": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceMaintenanceAttributes"
+    },
+    "ModifyInstanceMetadataOptions": {
+      "required": [
+        "RegionId",
+        "HttpEndpoint"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceMetadataOptions"
+    },
+    "ModifyInstanceNetworkOptions": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceNetworkOptions"
+    },
+    "ModifyInstanceNetworkSpec": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceNetworkSpec"
+    },
+    "ModifyInstanceSpec": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceSpec"
+    },
+    "ModifyInstanceVncPasswd": {
+      "required": [
+        "InstanceId",
+        "RegionId",
+        "VncPassword"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceVncPasswd"
+    },
+    "ModifyInstanceVpcAttribute": {
+      "required": [
+        "InstanceId",
+        "VSwitchId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInstanceVpcAttribute"
+    },
+    "ModifyInvocationAttribute": {
+      "required": [
+        "RegionId",
+        "InvokeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyInvocationAttribute"
+    },
+    "ModifyLaunchTemplateDefaultVersion": {
+      "required": [
+        "RegionId",
+        "DefaultVersionNumber"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyLaunchTemplateDefaultVersion"
+    },
+    "ModifyManagedInstance": {
+      "required": [
+        "RegionId",
+        "InstanceId",
+        "InstanceName"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyManagedInstance"
+    },
+    "ModifyNetworkInterfaceAttribute": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyNetworkInterfaceAttribute"
+    },
+    "ModifyPhysicalConnectionAttribute": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyPhysicalConnectionAttribute"
+    },
+    "ModifyPlanMaintenanceWindow": {
+      "required": [
+        "PlanWindowId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Modify O&M window"
+    },
+    "ModifyPortRangeList": {
+      "required": [
+        "RegionId",
+        "PortRangeListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPortRangeList"
+    },
+    "ModifyPrefixList": {
+      "required": [
+        "RegionId",
+        "PrefixListId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPrefixList"
+    },
+    "ModifyPrepayInstanceSpec": {
+      "required": [
+        "InstanceId",
+        "RegionId",
+        "InstanceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyPrepayInstanceSpec"
+    },
+    "ModifyReservedInstanceAttribute": {
+      "required": [
+        "RegionId",
+        "ReservedInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyReservedInstanceAttribute"
+    },
+    "ModifyReservedInstanceAutoRenewAttribute": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyReservedInstanceAutoRenewAttribute"
+    },
+    "ModifyReservedInstances": {
+      "required": [
+        "RegionId",
+        "ReservedInstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyReservedInstances"
+    },
+    "ModifyRouterInterfaceAttribute": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyRouterInterfaceAttribute"
+    },
+    "ModifyRouterInterfaceSpec": {
+      "required": [
+        "RegionId",
+        "RouterInterfaceId",
+        "Spec"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyRouterInterfaceSpec"
+    },
+    "ModifySecurityGroupAttribute": {
+      "required": [
+        "SecurityGroupId",
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySecurityGroupAttribute"
+    },
+    "ModifySecurityGroupEgressRule": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySecurityGroupEgressRule"
+    },
+    "ModifySecurityGroupPolicy": {
+      "required": [
+        "SecurityGroupId",
+        "RegionId",
+        "InnerAccessPolicy"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySecurityGroupPolicy"
+    },
+    "ModifySecurityGroupRule": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySecurityGroupRule"
+    },
+    "ModifySnapshotAttribute": {
+      "required": [
+        "SnapshotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySnapshotAttribute"
+    },
+    "ModifySnapshotCategory": {
+      "required": [
+        "SnapshotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySnapshotCategory"
+    },
+    "ModifySnapshotGroup": {
+      "required": [
+        "RegionId",
+        "SnapshotGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifySnapshotGroup"
+    },
+    "ModifyStorageCapacityUnitAttribute": {
+      "required": [
+        "RegionId",
+        "StorageCapacityUnitId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ModifyStorageCapacityUnitAttribute"
+    },
+    "ModifyUserBusinessBehavior": {
+      "required": [
+        "statusKey",
+        "statusValue"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "Modify user business behavior"
+    },
+    "ModifyVRouterAttribute": {
+      "required": [
+        "VRouterId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyVRouterAttribute"
+    },
+    "ModifyVSwitchAttribute": {
+      "required": [
+        "VSwitchId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyVSwitchAttribute"
+    },
+    "ModifyVirtualBorderRouterAttribute": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyVirtualBorderRouterAttribute"
+    },
+    "ModifyVpcAttribute": {
+      "required": [
+        "VpcId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ModifyVpcAttribute"
+    },
+    "OpenSnapshotService": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "OpenSnapshotService"
+    },
+    "PurchaseElasticityAssurance": {
+      "required": [
+        "RegionId",
+        "PrivatePoolOptions.Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PurchaseElasticityAssurance"
+    },
+    "PurchaseReservedInstancesOffering": {
+      "required": [
+        "RegionId",
+        "InstanceType"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PurchaseReservedInstancesOffering"
+    },
+    "PurchaseStorageCapacityUnit": {
+      "required": [
+        "RegionId",
+        "Capacity"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "PurchaseStorageCapacityUnit"
+    },
+    "ReActivateInstances": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReActivateInstances"
+    },
+    "ReInitDisk": {
+      "required": [
+        "DiskId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReInitDisk"
+    },
+    "RebootInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RebootInstance"
+    },
+    "RebootInstances": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RebootInstances"
+    },
+    "RecoverVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "RecoverVirtualBorderRouter"
+    },
+    "RedeployDedicatedHost": {
+      "required": [
+        "RegionId",
+        "DedicatedHostId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RedeployDedicatedHost"
+    },
+    "RedeployInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RedeployInstance"
+    },
+    "ReleaseCapacityReservation": {
+      "required": [
+        "RegionId",
+        "PrivatePoolOptions.Id"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseCapacityReservation"
+    },
+    "ReleaseDedicatedHost": {
+      "required": [
+        "RegionId",
+        "DedicatedHostId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReleaseDedicatedHost"
+    },
+    "ReleaseEipAddress": {
+      "required": [
+        "AllocationId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ReleaseEipAddress"
+    },
+    "ReleasePublicIpAddress": {
+      "required": [
+        "PublicIpAddress"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "ReleasePublicIpAddress"
+    },
+    "RemoveBandwidthPackageIps": {
+      "required": [
+        "RegionId",
+        "BandwidthPackageId",
+        "RemovedIpAddresses"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RemoveBandwidthPackageIps"
+    },
+    "RemoveTags": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "RemoveTags"
+    },
+    "RenewDedicatedHosts": {
+      "required": [
+        "DedicatedHostIds",
+        "RegionId",
+        "Period"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewDedicatedHosts"
+    },
+    "RenewElasticityAssurances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewElasticityAssurances"
+    },
+    "RenewInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewInstance"
+    },
+    "RenewReservedInstances": {
+      "required": [],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RenewReservedInstances"
+    },
+    "ReplaceSystemDisk": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReplaceSystemDisk"
+    },
+    "ReportInstancesStatus": {
+      "required": [
+        "RegionId",
+        "Description",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ReportInstancesStatus"
+    },
+    "ResetDisk": {
+      "required": [
+        "DiskId",
+        "SnapshotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetDisk"
+    },
+    "ResetDiskDefaultKMSKeyId": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetDiskDefaultKMSKeyId"
+    },
+    "ResetDisks": {
+      "required": [
+        "RegionId",
+        "Disk"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResetDisks"
+    },
+    "ResizeDisk": {
+      "required": [
+        "DiskId",
+        "NewSize"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "ResizeDisk"
+    },
+    "RevokeSecurityGroup": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeSecurityGroup"
+    },
+    "RevokeSecurityGroupEgress": {
+      "required": [
+        "RegionId",
+        "SecurityGroupId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "RevokeSecurityGroupEgress"
+    },
+    "RunCommand": {
+      "required": [
+        "RegionId",
+        "Type",
+        "CommandContent"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Create and execute a Cloud Assistant command"
+    },
+    "RunInstances": {
+      "required": [
+        "RegionId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Batch Create Instances"
+    },
+    "SendFile": {
+      "required": [
+        "RegionId",
+        "Name",
+        "TargetDir",
+        "Content",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "SendFile"
+    },
+    "StartImagePipelineExecution": {
+      "required": [
+        "RegionId",
+        "ImagePipelineId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartImagePipelineExecution"
+    },
+    "StartInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartInstance"
+    },
+    "StartInstances": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StartInstances"
+    },
+    "StartTerminalSession": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "Start Terminal Session"
+    },
+    "StopInstance": {
+      "required": [
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopInstance"
+    },
+    "StopInstances": {
+      "required": [
+        "RegionId",
+        "InstanceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopInstances"
+    },
+    "StopInvocation": {
+      "required": [
+        "RegionId",
+        "InvokeId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "StopInvocation"
+    },
+    "TagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId",
+        "Tag"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "TagResources"
+    },
+    "TerminatePhysicalConnection": {
+      "required": [
+        "RegionId",
+        "PhysicalConnectionId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "TerminatePhysicalConnection"
+    },
+    "TerminateVirtualBorderRouter": {
+      "required": [
+        "RegionId",
+        "VbrId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "TerminateVirtualBorderRouter"
+    },
+    "UnassignIpv6Addresses": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassignIpv6Addresses"
+    },
+    "UnassignPrivateIpAddresses": {
+      "required": [
+        "RegionId",
+        "NetworkInterfaceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnassignPrivateIpAddresses"
+    },
+    "UnassociateEipAddress": {
+      "required": [
+        "AllocationId",
+        "InstanceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UnassociateEipAddress"
+    },
+    "UnassociateHaVip": {
+      "required": [
+        "RegionId",
+        "HaVipId",
+        "InstanceId"
+      ],
+      "deprecated": true,
+      "replacedBy": null,
+      "summary": "UnassociateHaVip"
+    },
+    "UnlockSnapshot": {
+      "required": [
+        "RegionId",
+        "SnapshotId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UnlockSnapshot"
+    },
+    "UntagResources": {
+      "required": [
+        "RegionId",
+        "ResourceType",
+        "ResourceId"
+      ],
+      "deprecated": false,
+      "replacedBy": null,
+      "summary": "UntagResources"
+    }
+  }
+}
