@@ -1,10 +1,10 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "dysmsapi",
   "openApiProduct": "Dysmsapi",
   "version": "2017-05-25",
   "source": "https://api.aliyun.com/meta/v1/products/Dysmsapi/versions/2017-05-25/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:37.840Z",
+  "fetchedAt": "2026-06-10T02:58:10.775Z",
   "actions": {
     "AddShortUrl": {
       "required": [
@@ -14,7 +14,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddShortUrl"
+      "summary": "Creates a short URL.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SourceUrl",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The URL that you want to shorten. Maximum length: 1,000 characters. > Short Message Service does not currently support this API operation. >",
+          "example": "https://www.****.com/product/sms"
+        },
+        {
+          "name": "ShortUrlName",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The name of the short URL. Maximum length: 13 characters.",
+          "example": "阿里短链测试"
+        },
+        {
+          "name": "EffectiveDays",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The validity period of the short URL, in days. The maximum value is 90.",
+          "example": "7"
+        }
+      ]
     },
     "AddSmsSign": {
       "required": [
@@ -25,7 +52,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddSmsSign"
+      "summary": "Apply for an SMS signature (discontinued)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature name. The signature name must comply with the [Signature specifications](~~108076#section-0p8-qn8-mmy~~). > - Signature names are case-insensitive. For example, [Aliyun Communication] an",
+          "example": "阿里云"
+        },
+        {
+          "name": "SignSource",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The source of the signature. Valid values: - **0**: Full name or abbreviation of an enterprise or public institution. - **1**: Full name or abbreviation of a website registered with the Ministry of In",
+          "example": "1"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The description of the SMS signature scenario. The description cannot exceed 200 characters in length. This is reference information for signature review. Providing a complete application description ",
+          "example": "当前的短信签名应用于双11大促推广营销"
+        },
+        {
+          "name": "SignFileList",
+          "in": "formData",
+          "type": "array",
+          "required": true,
+          "description": "The list of signature files.",
+          "children": [
+            {
+              "name": "FileContents",
+              "type": "string",
+              "required": true,
+              "description": "The Base64-encoded string of the qualification certificate file for the signature. The image size cannot exceed 2 MB. In some scenarios, you need to upload a certificate file when you apply for a sign"
+            },
+            {
+              "name": "FileSuffix",
+              "type": "string",
+              "required": true,
+              "description": "The format of the signature certificate file. Multiple images can be uploaded. Currently, JPG, PNG, GIF, and JPEG formats are supported. In some scenarios, you need to upload a certificate file when y"
+            }
+          ]
+        },
+        {
+          "name": "SignType",
+          "in": "query",
+          "type": "integer",
+          "description": "The type of the signature. - **0**: Verification code - **1**: General-purpose",
+          "example": "1"
+        }
+      ]
     },
     "AddSmsTemplate": {
       "required": [
@@ -36,7 +118,42 @@
       ],
       "deprecated": true,
       "replacedBy": null,
-      "summary": "AddSmsTemplate"
+      "summary": "Apply for SMS template (discontinued)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateType",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The SMS type. Valid values: - **0**: verification code. - **1**: notification SMS. - **2**: promotional SMS. - **3**: international/Hong Kong, Macao, and Taiwan messages. > Only enterprise-verified us",
+          "example": "0"
+        },
+        {
+          "name": "TemplateName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template name. The length must not exceed 30 characters.",
+          "example": "验证码"
+        },
+        {
+          "name": "TemplateContent",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template content. The length must not exceed 500 characters. The template content and variable content must comply with the [SMS template specifications](~~463161~~); otherwise, the template revie",
+          "example": "您正在申请手机注册，验证码为：${code}，5分钟内有效！"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The description for the SMS template application. The length must not exceed 100 characters. This is reference information for template review. Providing a complete application description helps revie",
+          "example": "申请验证码短信"
+        }
+      ]
     },
     "ChangeSignatureQualification": {
       "required": [
@@ -45,7 +162,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Replace the Qualification and Letter of Authorization for a Signature (to be unpublished)"
+      "summary": "Replace the Qualification and Letter of Authorization for a Signature (to be unpublished)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignatureName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature.",
+          "example": "阿里云"
+        },
+        {
+          "name": "QualificationId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the qualification, which is returned when you apply for it. You can also find this ID on the [Qualification Management](https://dysms.console.aliyun.com/domestic/text/qualification) page in ",
+          "example": "1*****2"
+        },
+        {
+          "name": "AuthorizationLetterId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the authorization letter.",
+          "example": "1000********1234"
+        }
+      ]
     },
     "CheckMobilesCardSupport": {
       "required": [
@@ -54,7 +197,31 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CheckMobilesCardSupport"
+      "summary": "Check whether phone numbers support card SMS (Old API)",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the card SMS template. Log on to the SMS Service console and go to the [Domestic Card SMS](https://dysms.console.aliyun.com/domestic/card) page. On the **Template Management** tab, you can",
+          "example": "CARD_SMS_****"
+        },
+        {
+          "name": "Mobiles",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of phone numbers to be queried.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "object"
+            }
+          ]
+        }
+      ]
     },
     "ConversionDataIntl": {
       "required": [
@@ -62,7 +229,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ConversionDataIntl"
+      "summary": "Report conversion rate data for international SMS sent from China",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ReportTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The point in time when the conversion rate is observed. The value must be a Unix timestamp in milliseconds, represented as a long integer. >If you do not specify this parameter, the current timestamp ",
+          "example": "1349055900000"
+        },
+        {
+          "name": "ConversionRate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The conversion rate monitoring value. >This parameter is of the double type. Valid values: \\[0,1].",
+          "example": "0.53"
+        }
+      ]
     },
     "CreateCardSmsTemplate": {
       "required": [
@@ -71,13 +256,134 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCardSmsTemplate"
+      "summary": "Creates a card SMS template.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the card SMS template.",
+          "example": "阿里云图文类模板"
+        },
+        {
+          "name": "Template",
+          "in": "query",
+          "type": "object",
+          "required": true,
+          "description": "The content of the card SMS template. > - For more information about the `Template`, `ExtendInfo`, `TemplateContent`, `TmpCard`, and `Action` fields, see [Card SMS template parameters](~~434929~~). > ",
+          "example": "{ \"extendInfo\":{ \"scene\":\"HMOVM图文\", \"purpose\":\"2\", \"userExt\":{ \"outId\":\"1234554321\" } }, \"templateCo"
+        },
+        {
+          "name": "Memo",
+          "in": "query",
+          "type": "string",
+          "description": "A description of the template.",
+          "example": "图文类模板"
+        },
+        {
+          "name": "Factorys",
+          "in": "query",
+          "type": "string",
+          "description": "The vendors to which the template will be submitted. Valid values: - **HuaWei**: Huawei - **XiaoMi**: Xiaomi - **OPPO**: OPPO - **VIVO**: VIVO - **MEIZU**: MEIZU - **HONOR**: HONOR > If you do not spe",
+          "example": "[\"HuaWei\",\"XiaoMi\"]"
+        }
+      ]
     },
     "CreateDigitalSignOrder": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Digital Message SMS Signature Management"
+      "summary": "Digital Message SMS Signature Management",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderType",
+          "in": "query",
+          "type": "string",
+          "description": "The operation to perform on the signature. Valid values: - `UPDATE_DIGITALSMS_SIGN`: Update a signature. - `DELETE_DIGITALSMS_SIGN`: Delete a signature. - `CREATE_DIGITALSMS_SIGN`: Create a signature.",
+          "enum": [
+            "UPDATE_DIGITALSMS_SIGN",
+            "DELETE_DIGITALSMS_SIGN",
+            "CREATE_DIGITALSMS_SIGN"
+          ],
+          "example": "CREATE_DIGITALSMS_SIGN"
+        },
+        {
+          "name": "Submitter",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the user who submits the order.",
+          "example": "110000001750080"
+        },
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "description": "The signature name. This parameter is required for creating, updating, and deleting signatures. 1. The name must be 2 to 16 characters in length. 2. The name can contain Chinese characters, letters, a",
+          "example": "阿里云商城"
+        },
+        {
+          "name": "QualificationId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the qualification.",
+          "example": "41"
+        },
+        {
+          "name": "QualificationVersion",
+          "in": "query",
+          "type": "integer",
+          "description": "The version of the qualification.",
+          "example": "49"
+        },
+        {
+          "name": "OrderContext",
+          "in": "query",
+          "type": "object",
+          "description": "The qualification information. This object is required when you create a signature, or when you update a signature's qualification information. - qualificationCompanyName: Company name. The name can b",
+          "example": "{ \"qualificationCompanyName\": \"阿里阿巴\", \"qualificationOrganizationCode\": \"91330106MA2A0XABCD\", \"qualif"
+        },
+        {
+          "name": "SignIndustry",
+          "in": "query",
+          "type": "integer",
+          "description": "The industry type. This parameter is required when you create or update a signature. It is optional when you delete a signature. Valid values: - `0`: General (GENERAL) - `1`: E-commerce and retail (EC",
+          "enum": [
+            "0",
+            "1"
+          ],
+          "example": "0"
+        },
+        {
+          "name": "SignId",
+          "in": "query",
+          "type": "integer",
+          "description": "The unique ID of the signature.",
+          "example": "80"
+        },
+        {
+          "name": "SignSource",
+          "in": "query",
+          "type": "integer",
+          "description": "The signature source. This parameter is required when you create or update a signature. It is optional when you delete a signature. Valid values: - `0`: Enterprises and public institutions - `2`: App",
+          "enum": [
+            "0",
+            "2",
+            "5",
+            "7"
+          ],
+          "example": "0"
+        },
+        {
+          "name": "ExtendMessage",
+          "in": "query",
+          "type": "string",
+          "description": "Reserved for future use.",
+          "example": "example"
+        }
+      ]
     },
     "CreateDigitalSmsTemplate": {
       "required": [
@@ -87,7 +393,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Digital SMS Template Creation"
+      "summary": "Digital SMS Template Creation",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template name. The name can contain up to 20 characters.",
+          "example": "****模板"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The application description. Describe your business use case for the template.",
+          "example": "***业务需要"
+        },
+        {
+          "name": "TemplateContents",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "An array of objects that define the template content.",
+          "children": [
+            {
+              "name": "FileContents",
+              "type": "string",
+              "description": "The file content, converted to a Base64 string. The file must be UTF-8 encoded before the Base64 conversion."
+            },
+            {
+              "name": "FileSuffix",
+              "type": "string",
+              "description": "The file suffix. Supported formats are `txt` for text; `gif`, `jpg`, and `png` for images; `mp3` for audio; and `mp4` for video. You can upload only one video file per template."
+            },
+            {
+              "name": "FileName",
+              "type": "string",
+              "description": "The file name without the extension."
+            },
+            {
+              "name": "FileSize",
+              "type": "integer",
+              "description": "The file size, in bytes."
+            }
+          ]
+        },
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "description": "The signature.",
+          "example": "签名"
+        }
+      ]
     },
     "CreateSmsAppIcpRecord": {
       "required": [
@@ -100,7 +461,58 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Create an ICP Filing Entity"
+      "summary": "Create an ICP Filing Entity",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppIcpRecordPic",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The fileKey for the screenshot of your app's ICP filing details. 1. To look up your ICP filing, go to the [MIIT service platform](https://beian.miit.gov.cn/#/Integrated/recordQuery), search for your f",
+          "example": "123456/test1719383196031.jpg"
+        },
+        {
+          "name": "AppServiceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The service name from your ICP filing. The name must not exceed 15 characters.",
+          "example": "阿里云"
+        },
+        {
+          "name": "AppPrincipalUnitName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The principal unit name from your ICP filing. The name must not exceed 50 characters.",
+          "example": "阿里云计算有限公司"
+        },
+        {
+          "name": "AppIcpLicenseNumber",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ICP record/license number. The number must not exceed 15 characters.",
+          "example": "浙B2-20080101"
+        },
+        {
+          "name": "AppApprovalDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ICP filing approval date.",
+          "example": "2025-05-22"
+        },
+        {
+          "name": "Domain",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The app store link. > - The link must start with `http://` or `https://`.",
+          "example": "https://apps.apple.com/cn/app/阿里云/id981011420"
+        }
+      ]
     },
     "CreateSmsAuthorizationLetter": {
       "required": [
@@ -114,7 +526,71 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Create a Letter of Authorization"
+      "summary": "Create an Authorization Letter",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AuthorizationLetterPic",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The fileKey of the authorization letter. 1. The authorization letter file uploaded to OSS. Download the [Authorization Letter Template](https://help-static-aliyun-doc.aliyuncs.com/file-manage-files/zh",
+          "example": "123456/test1719383196031.jpg"
+        },
+        {
+          "name": "SignList",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of authorized signatures. The number of signatures cannot exceed 100. > We recommend that you authorize all signatures that may be used at once in the authorization letter. This prevents subs",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "AuthorizationLetterExpDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The validity period of the authorization letter. Format: `YYYY-MM-DD~YYYY-MM-DD`. > The recommended validity period is 1 to 3 years. Set a reasonable time period and avoid making the validity period t",
+          "example": "2023-01-01~2026-01-01"
+        },
+        {
+          "name": "Authorization",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The authorizing party, that is, the owner of the signature. Only the middle dot `·`, Chinese `【】（）`, English `()`, and spaces are supported. Other symbols or purely numeric input are not allowed. The ",
+          "example": "菜鸟网络科技有限公司"
+        },
+        {
+          "name": "OrganizationCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unified social credit code of the authorizing party. The length cannot exceed 150 characters. The credit code must be consistent with the unified social credit code field in the qualification info",
+          "example": "9****************A"
+        },
+        {
+          "name": "ProxyAuthorization",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The authorized party, that is, the signature applicant. Only the middle dot `·`, Chinese `【】（）`, English `()`, and spaces are supported. Other symbols or purely numeric input are not allowed. The leng",
+          "example": "支付宝（中国）网络技术有限公司"
+        },
+        {
+          "name": "AuthorizationLetterName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the authorization letter. The name cannot be the same as any of your other authorization letters. Only Chinese characters, English characters, or a combination with numbers are supported. ",
+          "example": "菜鸟公司授权书"
+        }
+      ]
     },
     "CreateSmsSign": {
       "required": [
@@ -124,7 +600,103 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Apply for SMS Signature (New Interface)"
+      "summary": "Apply for SMS Signature (New Interface)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The sign name. The sign name must comply with the [signature specifications](~~108076#section-0p8-qn8-mmy~~): - The sign name must be 2 to 12 characters long and cannot contain test-related words, suc",
+          "example": "阿里云验证码"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "The use case description for the signature. This description is used for the signature review and must not exceed 200 characters. > - Provide the use case for your launched service, including links to",
+          "example": "登录场景使用验证码"
+        },
+        {
+          "name": "SignType",
+          "in": "query",
+          "type": "integer",
+          "description": "The signature type. Valid values: - **0**: verification code. - **1**: general (default). We recommend using the default value: **general**.",
+          "example": "1"
+        },
+        {
+          "name": "MoreData",
+          "in": "query",
+          "type": "array",
+          "description": "Additional materials. You can upload supplementary business documents or screenshots to help reviewers understand your business. For information about what to upload, see [Signature application materi",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "QualificationId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of an approved qualification. > - Before you apply for a signature, you must first [apply for a qualification](~~2539801~~). > > - You can find the qualification ID on the [qualification manage",
+          "example": "8563**"
+        },
+        {
+          "name": "ApplySceneContent",
+          "in": "query",
+          "type": "string",
+          "description": "> Using a launched app as a signature source is no longer supported.> The URL of your app in an app store. If the signature source is a launched app (which means the `SignSource` parameter is set to 2",
+          "example": "http://www.aliyun.com/"
+        },
+        {
+          "name": "SignSource",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The signature source. Valid values: - **0**: The full or abbreviated name of an enterprise or public institution. **(Recommended)** - **5**: The full or abbreviated name of a trademark. - **2**: The f",
+          "enum": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "example": "0"
+        },
+        {
+          "name": "ThirdParty",
+          "in": "query",
+          "type": "boolean",
+          "description": "The signature purpose. Valid values: - false: for own use (default). The signature belongs to an enterprise, website, or product verified under your account. - true: for third-party use. The signature",
+          "example": "false"
+        },
+        {
+          "name": "AuthorizationLetterId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the authorization letter. This parameter is required if the signature is for third-party use. The Unified Social Credit Code on the authorization letter must match the one in the associated ",
+          "example": "1000********1234"
+        },
+        {
+          "name": "TrademarkId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the trademark entity. > - This parameter is required if `SignSource` is set to `5`. > > - You can obtain the trademark entity ID by calling the [Create trademark entity](~~CreateSmsTrademark",
+          "example": "1000009081***"
+        },
+        {
+          "name": "AppIcpRecordId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the app ICP filing entity. > - This parameter is required if `SignSource` is set to `2`. > > - You can obtain the app ICP filing entity ID by calling the [Create ICP filing entity](~~CreateS",
+          "example": "10000****029"
+        }
+      ]
     },
     "CreateSmsTemplate": {
       "required": [
@@ -134,7 +706,94 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Apply for SMS Template (New Interface)"
+      "summary": "Apply for SMS Template (New Interface)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template name. The name must be 30 characters or less.",
+          "example": "验证码"
+        },
+        {
+          "name": "TemplateContent",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template content. The content must be 500 characters or less. The template content and variables must comply with the [SMS Template Specifications](~~463161~~). Templates that do not comply may be",
+          "example": "您正在申请手机注册，验证码为：${code}，5分钟内有效！"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "Describe the business scenario for the SMS messages, or provide a URL for online scenarios. You must also provide a complete SMS example with actual values for any variables. Complete information incr",
+          "example": "申请验证码短信"
+        },
+        {
+          "name": "TemplateType",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The SMS type. Valid values: - **0**: verification code. - **1**: notification message. - **2**: promotional message. - **3**: international/Hong Kong, Macao, and Taiwan messages. > Only enterprise-ver",
+          "enum": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "example": "0"
+        },
+        {
+          "name": "RelatedSignName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the signature to associate with the template. The signature must be an approved signature. > - This parameter is required if **TemplateType** is set to **0**, **1**, or **2**. - Associatin",
+          "example": "验证码签名"
+        },
+        {
+          "name": "TemplateRule",
+          "in": "query",
+          "type": "string",
+          "description": "The rules for variables in the template. For instructions on how to define these rules, see [Sample Document](~~2806243~~). > - This parameter is required if the message template contains variables.",
+          "example": "{\"code\":\"characterWithNumber2\"}"
+        },
+        {
+          "name": "MoreData",
+          "in": "query",
+          "type": "array",
+          "description": "Additional information. You can upload supporting documents or business screenshots to help reviewers better understand your business scenario. If you are applying for a promotional message template (",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ApplySceneContent",
+          "in": "query",
+          "type": "string",
+          "description": "The business scenario. - If the associated signature's use case is \"Live App\", `ApplySceneContent` must be an app URL that starts with `http://` or `https://`. - This parameter is required if the asso",
+          "example": "http://www.aliyun.com/"
+        },
+        {
+          "name": "IntlType",
+          "in": "query",
+          "type": "integer",
+          "description": "The type of the template for international/Hong Kong, Macao, and Taiwan messages. This parameter is required when **TemplateType** is set to **3**. Valid values: - **0**: notification message. - **1**",
+          "example": "0"
+        },
+        {
+          "name": "TrafficDriving",
+          "in": "query",
+          "type": "string",
+          "description": "> To control the security of SMS content, messages that contain traffic-driving information, such as phone numbers and links, may be blocked by carriers, which can lead to delivery failures. To reduce",
+          "example": "[{\"trafficDrivingType\":\"DOMAIN\",\"trafficDrivingContent\":\"aliyun.com\",\"companyName\":\"阿里云计算有限公司\",\"orga"
+        }
+      ]
     },
     "CreateSmsTrademark": {
       "required": [
@@ -146,7 +805,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Create Trademark Entity"
+      "summary": "Create a trademark entity",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TrademarkPic",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The fileKey of the trademark details screenshot. 1. How to query a trademark: - Log on to the China Trademark Network, click **Trademark Online Query**, and take a screenshot of the trademark details.",
+          "example": "123456/test1719383196031.jpg"
+        },
+        {
+          "name": "TrademarkRegistrationNumber",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The trademark registration number. The value can be up to 15 characters in length.",
+          "example": "766905"
+        },
+        {
+          "name": "TrademarkName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The trademark name. The value can be up to 15 characters in length.",
+          "example": "阿里云"
+        },
+        {
+          "name": "TrademarkApplicantName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the applicant. The value can be up to 50 characters in length.",
+          "example": "阿里巴巴（中国）有限公司"
+        },
+        {
+          "name": "TrademarkEffExpDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The effective and expiration dates of the exclusive right.",
+          "example": "2010-12-14~2030-12-13"
+        }
+      ]
     },
     "DeleteShortUrl": {
       "required": [
@@ -154,7 +856,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteShortUrl"
+      "summary": "Deletes a short URL. After deletion, the short URL is no longer usable and cannot be resolved to the source URL.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SourceUrl",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The source URL. The URL must not exceed 1,000 characters. > Short Message Service does not currently support this API operation. >",
+          "example": "https://www.****.com/product/sms"
+        }
+      ]
     },
     "DeleteSmsQualification": {
       "required": [
@@ -163,7 +876,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Delete SMS Qualification"
+      "summary": "Delete an SMS qualification",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "QualificationGroupId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The qualification ID, which is the ID returned when you [apply for a qualification](~~SubmitSmsQualification~~). You can obtain the qualification ID under the current account by calling the [QuerySmsQ",
+          "example": "10000****"
+        },
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The review ticket ID. You can obtain the qualification and its corresponding review ticket ID under the current account by calling the [QuerySmsQualificationRecord](~~QuerySmsQualificationRecord~~) op",
+          "example": "2001****"
+        }
+      ]
     },
     "DeleteSmsSign": {
       "required": [
@@ -171,7 +903,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteSmsSign"
+      "summary": "Delete an SMS signature",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The SMS signature. You can delete signatures that are in the Withdrawn, Failed, or Approved state. You cannot delete signatures that are in the Pending Approval state. You can call the [QuerySmsSignLi",
+          "example": "阿里云"
+        }
+      ]
     },
     "DeleteSmsTemplate": {
       "required": [
@@ -179,7 +922,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteSmsTemplate"
+      "summary": "Delete an SMS template",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The SMS template code. You can delete SMS templates that are recalled, rejected, or approved. You cannot delete SMS templates that are being reviewed. - You can call the [QuerySmsTemplateList](~~41928",
+          "example": "SMS_152550****"
+        }
+      ]
     },
     "GetCardSmsDetails": {
       "required": [
@@ -188,7 +942,61 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the card SMS sending records and status for a single phone number."
+      "summary": "Queries the card SMS sending records and sending status of a single phone number",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The current page number when you paginate sending records.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of card SMS records to display on each page when you paginate sending records. Valid values: 1 to 50.",
+          "example": "10"
+        },
+        {
+          "name": "SendDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The card SMS sending date. Records from the last 30 days can be queried. Format: yyyyMMdd. For example, 20240112.",
+          "example": "20240112"
+        },
+        {
+          "name": "PhoneNumber",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The domestic mobile phone number that received the SMS. Format: an 11-digit mobile phone number. For example, 1390000****.",
+          "example": "1390000****"
+        },
+        {
+          "name": "BizCardId",
+          "in": "query",
+          "type": "string",
+          "description": "The card SMS sending ID. When you send a card SMS by calling the [SendCardSms](~~434120~~) or [SendBatchCardSms](~~434119~~) operation, obtain the BizCardId field from the response.",
+          "example": "123456^0"
+        },
+        {
+          "name": "BizSmsId",
+          "in": "query",
+          "type": "string",
+          "description": "The text SMS sending ID. When you send a card SMS by calling the [SendCardSms](~~434120~~) or [SendBatchCardSms](~~434119~~) operation, obtain the BizSmsId field from the response.",
+          "example": "1234576^0"
+        },
+        {
+          "name": "BizDigitId",
+          "in": "query",
+          "type": "string",
+          "description": "The digital SMS sending ID. When you send a card SMS by calling the [SendCardSms](~~434120~~) or [SendBatchCardSms](~~434119~~) operation, obtain the BizDigitalId field from the response.",
+          "example": "12346^0"
+        }
+      ]
     },
     "GetCardSmsLink": {
       "required": [
@@ -197,7 +1005,75 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCardSmsLink"
+      "summary": "Retrieve the short URL for a card message",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CardTemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the card message template. In the console, go to the [Card Messages > Template Management](https://dysms.console.aliyun.com/domestic/card) page and select the code of an approved card mess",
+          "example": "CARD_SMS_****"
+        },
+        {
+          "name": "OutId",
+          "in": "query",
+          "type": "string",
+          "description": "The external extension field.",
+          "example": "BC20220608102511660860762****"
+        },
+        {
+          "name": "PhoneNumberJson",
+          "in": "query",
+          "type": "string",
+          "description": "The phone number, user ID, or internal system identifier. > - Supports up to 10,000 phone numbers. > - You can also specify a custom identifier of up to 60 characters. > - For OPPO templates, you can ",
+          "example": "[\\\"1390000**** \\\",\\\"1370000**** \\\"]"
+        },
+        {
+          "name": "SignNameJson",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature name of the SMS message. In the console, go to the [Domestic Messages > Signature Management](https://dysms.console.aliyun.com/domestic/text/sign) tab and view the name in the **Signatur",
+          "example": "[\\\"阿里云\\\", \\\"阿里云2\\\"]"
+        },
+        {
+          "name": "CardTemplateParamJson",
+          "in": "query",
+          "type": "string",
+          "description": "The variables of the card message template.",
+          "example": "[{\\\"customUrl\\\":\\\"https://alibaba.com\\\",\\\"dyncParams\\\": \\\"{\\\\\\\"动参key\\\\\\\":\\\\\\\"动参value\\\\\\\"}\\\"},{\\\"cust"
+        },
+        {
+          "name": "CardCodeType",
+          "in": "query",
+          "type": "integer",
+          "description": "The encoding type of the short URL for the card message. Valid values: - 1: bulk sending. - 2: personalized.",
+          "example": "2"
+        },
+        {
+          "name": "CardLinkType",
+          "in": "query",
+          "type": "integer",
+          "description": "The type of the short URL for the card message. Valid values: - 1: standard short URL. - 2: custom short URL. > If **CardLinkType** is left empty, the default value is standard short URL. To generate ",
+          "example": "1"
+        },
+        {
+          "name": "Domain",
+          "in": "query",
+          "type": "string",
+          "description": "The short URL domain assigned to the sending account. The domain must be registered in advance. > - When **CardLinkType** is set to **2**, the **Domain** parameter is required. > - If the **Domain** p",
+          "example": "xxx.com"
+        },
+        {
+          "name": "CustomShortCodeJson",
+          "in": "query",
+          "type": "string",
+          "description": "The custom short code. The value must be 4 to 8 digits or letters. > This parameter is required when the generation type is custom short URL.",
+          "example": "abCde"
+        }
+      ]
     },
     "GetMediaResourceId": {
       "required": [
@@ -207,19 +1083,71 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetMediaResourceId"
+      "summary": "Retrieve a media resource ID",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The resource type. - **1**: Text - **2**: Image. Small images must not exceed 100 KB. Large images must not exceed 2 MB. Images must be clear. Supported formats: JPG, JPEG, PNG. - **3**: Audio - **4**",
+          "example": "1"
+        },
+        {
+          "name": "OssKey",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The address of the resource to retrieve.",
+          "example": "oss://alicom-fc-media/1947741454322274/alicom-fc-media/pic/202205191526575398603697152.png"
+        },
+        {
+          "name": "FileSize",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The file size. Unit: bytes.",
+          "example": "12"
+        },
+        {
+          "name": "ExtendInfo",
+          "in": "query",
+          "type": "string",
+          "description": "The extended field. > Required when the resource type is **image**.",
+          "example": "{\\\"img_rate\\\":\\\"oneToOne\\\"}"
+        },
+        {
+          "name": "Memo",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the uploaded resource.",
+          "example": "图片信息"
+        }
+      ]
     },
     "GetOSSInfoForCardTemplate": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetOSSInfoForCardTemplate"
+      "summary": "Retrieve OSS upload information",
+      "method": "GET"
     },
     "GetOSSInfoForUploadFile": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Text SMS Obtain OSS Upload Information"
+      "summary": "Obtain OSS Configuration Information for Signature/Template Materials",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BizType",
+          "in": "query",
+          "type": "string",
+          "description": "The business type. Default value: **fcMediaSms**. When you create a signature or template and upload **More Materials**, the value is **fcMediaSms**.",
+          "example": "fcMediaSms"
+        }
+      ]
     },
     "GetQualificationOssInfo": {
       "required": [
@@ -227,13 +1155,37 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Obtain OSS Configuration Information for Qualification Materials or Letter of Authorization"
+      "summary": "Obtain the OSS configuration information for qualification materials/authorization letters",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BizType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The business type. When applying for a qualification or creating an authorization letter file, enter **dysms**.",
+          "example": "dysms"
+        }
+      ]
     },
     "GetSmsOcrOssInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Obtain OCR Image Recognition OSS Information"
+      "summary": "Retrieve OSS information for OCR image recognition",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TaskType",
+          "in": "query",
+          "type": "string",
+          "description": "The OCR task type. Valid values: - ICP_DOMAIN: ICP filing screenshot for domain-type links.",
+          "enum": [
+            "ICP_DOMAIN"
+          ],
+          "example": "ICP_DOMAIN"
+        }
+      ]
     },
     "GetSmsSign": {
       "required": [
@@ -241,7 +1193,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query Signature Details (New Interface)"
+      "summary": "Query signature details (new operation)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature name. The signature must be applied for by your account. - After you call the [CreateSmsSign](~~2807427~~) operation, obtain the signature name from the response. - View the signature on",
+          "example": "阿里云"
+        }
+      ]
     },
     "GetSmsTemplate": {
       "required": [
@@ -249,7 +1212,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query SMS Template Audit Details (New Interface)"
+      "summary": "Query template approval details (new operation)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the SMS template. - Obtain the SMS template code from the response parameters of the [CreateSmsTemplate](~~2807431~~) operation. - View the SMS template code on the [Templates](https://dys",
+          "example": "SMS_20375****"
+        }
+      ]
     },
     "ListTagResources": {
       "required": [
@@ -258,7 +1232,78 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagResources"
+      "summary": "Queries the tags of a template",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Default value: TEMPLATE.",
+          "example": "TEMPLATE"
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID. Default value: **cn-hangzhou**.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token used to query the next page of tags.",
+          "example": "23432453245"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "20"
+        },
+        {
+          "name": "ProdCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product name. Default value: **dysms**.",
+          "example": "dysms"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag list. The tag list and **ResourceId** (SMS template code) cannot be empty at the same time. You can specify up to 20 tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The SMS template code. The SMS template code and the tag list **Tag** cannot be empty at the same time.",
+          "example": "SMS_23423423",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "ModifySmsSign": {
       "required": [
@@ -269,7 +1314,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ModifySmsSign"
+      "summary": "Modify an SMS signature (discontinued)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature name. > You can modify a signature that has been approved, but you cannot change its name. The modified signature must be reviewed and approved before it can be used. The original signat",
+          "example": "阿里云"
+        },
+        {
+          "name": "SignSource",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The signature source. Valid values: - **0**: full name or abbreviation of an enterprise or public institution. - **1**: full name or abbreviation of a website filed with the Ministry of Industry and I",
+          "example": "1"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The description of the SMS signature application. The description cannot exceed 200 characters in length. The description is used as a reference for signature review. A complete description helps revi",
+          "example": "当前的短信签名应用于双11大促推广营销"
+        },
+        {
+          "name": "SignFileList",
+          "in": "formData",
+          "type": "array",
+          "required": true,
+          "description": "The list of signature files.",
+          "children": [
+            {
+              "name": "FileContents",
+              "type": "string",
+              "required": true,
+              "description": "签名的纸质证明文件经base64编码后的字符串。图片不超过2 MB。 个别场景下，申请签名需要上传证明文件。详细说明，请参见[短信签名规范](~~108076~~)。"
+            },
+            {
+              "name": "FileSuffix",
+              "type": "string",
+              "required": true,
+              "description": "签名的证明文件格式，支持上传多张图片。当前支持JPG、PNG、GIF或JPEG格式的图片。 个别场景下，申请签名需要上传证明文件。详细说明，请参见[短信签名规范](~~108076~~)。 > 如果签名用途为他用或个人认证用户的自用签名来源为企事业单位名时，还需上传证明文件和委托授权书，详情请参见[证明文件](~~108076~~)和[授权委托书](~~56741~~)。"
+            }
+          ]
+        },
+        {
+          "name": "SignType",
+          "in": "query",
+          "type": "integer",
+          "description": "The signature type. Valid values: - **0**: verification code. - **1**: general.",
+          "example": "1"
+        }
+      ]
     },
     "ModifySmsTemplate": {
       "required": [
@@ -281,7 +1381,50 @@
       ],
       "deprecated": true,
       "replacedBy": null,
-      "summary": "ModifySmsTemplate"
+      "summary": "Modify SMS template (discontinued)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateType",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The SMS type. Valid values: - **0**: verification code. - **1**: SMS notification. - **2**: promotional message. - **3**: international or Hong Kong, Macao, and Taiwan message.",
+          "example": "0"
+        },
+        {
+          "name": "TemplateName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template name. The name must be 1 to 30 characters in length.",
+          "example": "验证码模板"
+        },
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the SMS template that failed the review. - Call the [QuerySmsTemplateList](~~419288~~) operation to obtain the code of the SMS template that failed the review. - View the code of the SMS t",
+          "example": "SMS_15255****"
+        },
+        {
+          "name": "TemplateContent",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template content. The content cannot exceed 500 characters in length. The template content and variable content must comply with the [SMS template specifications](~~463161~~). Otherwise, the templ",
+          "example": "您正在申请手机注册，验证码为：${code}，5分钟内有效！"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The description of the SMS template application. The description cannot exceed 100 characters in length. This information helps reviewers understand your business scenarios and improves review efficie",
+          "example": "手机注册登录"
+        }
+      ]
     },
     "QueryCardSmsTemplate": {
       "required": [
@@ -289,7 +1432,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryCardSmsTemplate"
+      "summary": "Queries the status of a card SMS template",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the card SMS template. Valid values: - After you call the [CreateCardSmsTemplate](~~CreateCardSmsTemplate~~) operation, the value of the **TemplateCode** response parameter is the code of ",
+          "example": "CARD_SMS_2****"
+        }
+      ]
     },
     "QueryCardSmsTemplateReport": {
       "required": [
@@ -299,13 +1453,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryCardSmsTemplateReport"
+      "summary": "Queries the parsing data of a specified card SMS template",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "TemplateCodes",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The card SMS object.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "StartDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The start time. Format: yyyy-MM-dd HH:mm:ss.",
+          "example": "2020-10-10 00:00:01"
+        },
+        {
+          "name": "EndDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The end time. Format: yyyy-MM-dd HH:mm:ss.",
+          "example": "2020-10-11 00:00:01"
+        }
+      ]
     },
     "QueryDigitalSignByName": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query Digital Message SMS Signature"
+      "summary": "Query Digital Message SMS Signature",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the digital SMS signature. The signature must belong to your Alibaba Cloud account.",
+          "example": "阿里云数字商城"
+        }
+      ]
     },
     "QueryMobilesCardSupport": {
       "required": [
@@ -314,7 +1510,42 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query Whether a Phone Number Supports Card SMS (New API)"
+      "summary": "Query whether a phone number supports card SMS messages (new API)",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the card SMS template. To view the code, log on to the console and choose **Domestic Messages** > [Template Management](https://dysms.console.aliyun.com/domestic/text/template). >The templ",
+          "example": "CARD_SMS_2****"
+        },
+        {
+          "name": "Mobiles",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of phone numbers.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "object"
+            }
+          ]
+        },
+        {
+          "name": "EncryptType",
+          "in": "query",
+          "type": "string",
+          "description": "The encryption method for the phone number. Valid values: - SHA1: SHA1 encryption. - NORMAL: no encryption. The phone number is transmitted in plaintext.",
+          "enum": [
+            "SHA1",
+            "NORMAL"
+          ],
+          "example": "NORMAL"
+        }
+      ]
     },
     "QuerySendDetails": {
       "required": [
@@ -325,7 +1556,49 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySendDetails"
+      "summary": "Queries the delivery records and status of SMS messages sent to a single phone number.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PhoneNumber",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The phone number to query. The format is as follows: - For messages to the Chinese mainland, use an 11-digit phone number, such as 1390000\\*\\*\\*\\*. - For international SMS, use the format: country/reg",
+          "example": "1390000****"
+        },
+        {
+          "name": "BizId",
+          "in": "query",
+          "type": "string",
+          "description": "The delivery receipt ID. This is the `BizId` returned in the response when you call the [SendSms](~~419273~~) or [SendBatchSms](~~419274~~) operation. > You can specify only one `BizId`.",
+          "example": "134523^435****"
+        },
+        {
+          "name": "SendDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The date when the SMS message was sent. You can query records from the past 30 days. Format: **yyyyMMdd**, for example, 20250601.",
+          "example": "20250601"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The number of delivery records to return on each page. Valid values: 1 to 50.",
+          "example": "20"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The current page number for paginated results.",
+          "example": "1"
+        }
+      ]
     },
     "QuerySendStatistics": {
       "required": [
@@ -337,7 +1610,64 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySendStatistics"
+      "summary": "Queries message delivery statistics, including send dates, the number of successfully sent messages, and the number of received delivery receipts.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "IsGlobe",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The destination scope of the messages. Valid values: - **1**: domestic messages. - **2**: international messages.",
+          "example": "1"
+        },
+        {
+          "name": "StartDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The start date. The format is yyyyMMdd.",
+          "example": "20201002"
+        },
+        {
+          "name": "EndDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The end date. The format is yyyyMMdd.",
+          "example": "20201003"
+        },
+        {
+          "name": "PageIndex",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The current page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The page size. Valid values: **1 to 50**.",
+          "example": "10"
+        },
+        {
+          "name": "TemplateType",
+          "in": "query",
+          "type": "integer",
+          "description": "The template type. Valid values: - **0**: verification code. - **1**: notification message. - **2**: promotional message. (Enterprise customers only) - **3**: international message. (Enterprise custom",
+          "example": "0"
+        },
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "description": "The signature.",
+          "example": "阿里云平台"
+        }
+      ]
     },
     "QueryShortUrl": {
       "required": [
@@ -345,7 +1675,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryShortUrl"
+      "summary": "Checks the status and availability of a short link.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ShortUrl",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The short link to query. Obtain this URL by calling the [AddShortUrl](~~186774~~) API. > This API is not currently supported by Short Message Service. >",
+          "example": "http://****.cn/6y8uy7"
+        }
+      ]
     },
     "QuerySingleSmsQualification": {
       "required": [
@@ -353,7 +1694,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the details of a single qualification"
+      "summary": "Query the details of a single qualification",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "QualificationGroupId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The qualification ID, which is the ID returned when you [apply for a qualification](~~SubmitSmsQualification~~). You can call the [QuerySmsQualificationRecord](~~QuerySmsQualificationRecord~~) operati",
+          "example": "10000****"
+        },
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "description": "The review ticket ID. You can call the [QuerySmsQualificationRecord](~~QuerySmsQualificationRecord~~) operation to obtain the qualifications and corresponding review ticket IDs under your current acco",
+          "example": "2001****"
+        }
+      ]
     },
     "QuerySmsAppIcpRecord": {
       "required": [
@@ -361,19 +1720,145 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query ICP Filing Entity"
+      "summary": "Query ICP Filing Entity",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppIcpRecordIdList",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "A list of icp record entity IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "integer"
+            }
+          ]
+        }
+      ]
     },
     "QuerySmsAuthorizationLetter": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query Authorization Letters"
+      "summary": "Query letters of authorization",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AuthorizationLetterIdList",
+          "in": "query",
+          "type": "array",
+          "description": "The list of letter of authorization IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "integer"
+            }
+          ]
+        },
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "description": "The signature name. If the authorization scope includes multiple signatures when you create the letter of authorization, the letters of authorization that contain the signature are returned.",
+          "example": "菜鸟网络"
+        },
+        {
+          "name": "OrganizationCode",
+          "in": "query",
+          "type": "string",
+          "description": "The unified social credit code of the authorizing party. The length cannot exceed 150 characters.",
+          "example": "9****************A"
+        },
+        {
+          "name": "State",
+          "in": "query",
+          "type": "string",
+          "description": "The review status of the letter of authorization, which is related to the review status of the signature. Valid values: - **INT**: Pending review. The letter of authorization has been created. After y",
+          "enum": [
+            "INT",
+            "PASSED"
+          ],
+          "example": "PASSED"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The availability status of the letter of authorization, which is related to the validity period of the letter of authorization. Valid values: - **VALID**: Available. The letter of authorization is wit",
+          "enum": [
+            "VALID",
+            "INVALID"
+          ],
+          "example": "VALID"
+        }
+      ]
     },
     "QuerySmsQualificationRecord": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query Qualification List"
+      "summary": "Query qualification list",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "QualificationGroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The qualification name.",
+          "example": "阿里云云通信有限公司李华"
+        },
+        {
+          "name": "CompanyName",
+          "in": "query",
+          "type": "string",
+          "description": "The company name.",
+          "example": "阿里云云通信有限公司"
+        },
+        {
+          "name": "State",
+          "in": "query",
+          "type": "string",
+          "description": "The review status. Valid values: - INIT: Under review. - NOT_PASS: Review rejected. - PASS: Review approved. - NOT_FINISH: Additional information required. - CANCEL: Withdrawn.",
+          "example": "PASS"
+        },
+        {
+          "name": "WorkOrderId",
+          "in": "query",
+          "type": "integer",
+          "description": "The review ticket ID.",
+          "example": "2001****"
+        },
+        {
+          "name": "LegalPersonName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the legal representative.",
+          "example": "李华"
+        },
+        {
+          "name": "UseBySelf",
+          "in": "query",
+          "type": "boolean",
+          "description": "The purpose of the qualification application. Valid values: - **true**: For self-use. - **false**: For use by others.",
+          "example": "true"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: **1 to 50**.",
+          "example": "20"
+        }
+      ]
     },
     "QuerySmsSign": {
       "required": [
@@ -381,13 +1866,41 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySmsSign"
+      "summary": "Queries the review status of an SMS signature.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of an existing SMS signature in your account.",
+          "example": "阿里云"
+        }
+      ]
     },
     "QuerySmsSignList": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query Detail of Sign List"
+      "summary": "Query signature list details",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageIndex",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: **1**.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of signatures to return on each page. Default value: **10**. Valid values: **1 to 50**.",
+          "example": "10"
+        }
+      ]
     },
     "QuerySmsTemplate": {
       "required": [
@@ -395,13 +1908,41 @@
       ],
       "deprecated": true,
       "replacedBy": null,
-      "summary": "QuerySmsTemplate"
+      "summary": "This API has been deprecated.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The template code. - The template code is returned in the response of the [AddSmsTemplate](~~121208~~) API. - The template code is available on the [Template Management](https://dysms.console.aliyun.c",
+          "example": "SMS_1525****"
+        }
+      ]
     },
     "QuerySmsTemplateList": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySmsTemplateList"
+      "summary": "Queries the details of template lists",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageIndex",
+          "in": "query",
+          "type": "integer",
+          "description": "The current page number. Default value: **1**.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of templates displayed per page. Valid values: **1 to 50**. Default value: **10**.",
+          "example": "10"
+        }
+      ]
     },
     "QuerySmsTrademark": {
       "required": [
@@ -409,7 +1950,23 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query trademark entity"
+      "summary": "Query trademark entity",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TrademarkIdList",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "A list of trademark IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "integer"
+            }
+          ]
+        }
+      ]
     },
     "RequiredPhoneCode": {
       "required": [
@@ -417,7 +1974,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Obtain Phone Verification Code"
+      "summary": "Obtain a phone verification code",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PhoneNo",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The administrator's phone number that receives the verification code. - The account that **calls this operation to send the verification code must be the same account that submits the qualification**.",
+          "example": "137****1234"
+        }
+      ]
     },
     "SendBatchCardSms": {
       "required": [
@@ -428,7 +1996,105 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SendBatchCardSms"
+      "summary": "Sends card SMS messages in batches",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CardTemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the card SMS template. On the **Card SMS** [Template Management](https://dysms.console.aliyun.com/domestic/card) page in the console, select the code of a card SMS template that has been *",
+          "example": "CARD_SMS_3**5"
+        },
+        {
+          "name": "SmsTemplateCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the text SMS template used for fallback. This parameter is required when **FallbackType** is set to **SMS** (fallback to text SMS). You can call the [QuerySmsTemplateList](~~419288~~) oper",
+          "example": "SMS_23425****"
+        },
+        {
+          "name": "FallbackType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The fallback type. Valid values: - **SMS**: Phone numbers that do not support card SMS messages fall back to text SMS messages. - **DIGITALSMS**: Phone numbers that do not support card SMS messages fa",
+          "example": "SMS"
+        },
+        {
+          "name": "DigitalTemplateCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the digital SMS template used for fallback. This parameter is required when **FallbackType** is set to **DIGITALSMS** (fallback to digital SMS). You can view the list of digital SMS templa",
+          "example": "DIGITAL_SMS_23408****"
+        },
+        {
+          "name": "OutId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID reserved for the caller.",
+          "example": "16545681783595370"
+        },
+        {
+          "name": "PhoneNumberJson",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The mobile phone numbers that receive the SMS messages.",
+          "example": "[\"1390000****\",\"1370000****\"]"
+        },
+        {
+          "name": "SignNameJson",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the SMS signature. You can call the [QuerySmsSignList](~~419282~~) operation to query the signatures that have been submitted under the current account, or you can view the list of signatu",
+          "example": "[\"阿里云\",\"阿里巴巴\"]"
+        },
+        {
+          "name": "CardTemplateParamJson",
+          "in": "query",
+          "type": "string",
+          "description": "The actual values of the variables in the card SMS template. This parameter is required when the card SMS template specified by **CardTemplateCode** contains variables. >If the JSON contains line brea",
+          "example": "[{\"customurl\":\"http://www.alibaba.com\",\"dyncParams\":\"{\"a\":\"hello\",\"b\":\"world\"}\"}]"
+        },
+        {
+          "name": "SmsTemplateParamJson",
+          "in": "query",
+          "type": "string",
+          "description": "The actual values of the variables in the text SMS template. This parameter is required when the fallback text SMS template specified by **SmsTemplateCode** contains variables. >If the JSON contains l",
+          "example": "[{\"a\":1,\"b\":2},{\"a\":9,\"b\":8}]"
+        },
+        {
+          "name": "DigitalTemplateParamJson",
+          "in": "query",
+          "type": "string",
+          "description": "The actual values of the variables in the digital SMS template. This parameter is required when the fallback digital SMS template specified by **DigitalTemplateCode** contains variables. >If the JSON ",
+          "example": "[{\"a\":1,\"b\":2},{\"a\":9,\"b\":8}]"
+        },
+        {
+          "name": "SmsUpExtendCodeJson",
+          "in": "query",
+          "type": "string",
+          "description": "The extension code of the MO (mobile-originated) SMS message.",
+          "example": "[\\\"6\\\",\\\"6\\\"]"
+        },
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the custom send content template. The custom content is sent to the terminal in the form of the selected text SMS template plus the card parsing link. You can log on to the [Short Message ",
+          "example": "SMS_20375****"
+        },
+        {
+          "name": "TemplateParamJson",
+          "in": "query",
+          "type": "string",
+          "description": "The actual values of the variables in the custom send content template. This parameter is required when the SMS template specified by **TemplateCode** contains variables. > - If the JSON contains line",
+          "example": "[{\"name\":\"TemplateParamJson\"},{\"name\":\"TemplateParamJson\"}]"
+        }
+      ]
     },
     "SendBatchSms": {
       "required": [
@@ -438,7 +2104,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SendBatchSms"
+      "summary": "This operation sends messages to different phone numbers using a single template, with different signatures and template variables for each recipient.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PhoneNumberJson",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The recipient phone numbers. Format: - For domestic SMS: Phone numbers with or without a country code such as `+`, `+86`, `0086`, or `86`. Example: `1590000****`. - For international SMS: The country ",
+          "example": "[\"1590000****\",\"1350000****\"]"
+        },
+        {
+          "name": "SignNameJson",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The signature names. The number of signatures must match the number of phone numbers. You can call the [QuerySmsSignList](~~419282~~) operation or check the [Short Message Service console](https://dys",
+          "example": "[\"阿里云\",\"阿里巴巴\"]"
+        },
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The message template code. You cannot use templates for domestic SMS and international SMS interchangeably. You can call the [QuerySmsTemplateList](~~419288~~) operation or check the [Short Message Se",
+          "example": "SMS_15255****"
+        },
+        {
+          "name": "TemplateParamJson",
+          "in": "formData",
+          "type": "string",
+          "description": "The actual values for the template variables. This parameter is required if the template contains variables. > - The number of template variable sets must match the number of phone numbers and signatu",
+          "example": "[{\"name\":\"TemplateParamJson\"},{\"name\":\"TemplateParamJson\"}]"
+        },
+        {
+          "name": "SmsUpExtendCodeJson",
+          "in": "formData",
+          "type": "string",
+          "description": "A JSON array of MO SMS extension codes. > You can leave this parameter empty if you have no special requirements.",
+          "example": "[\"90999\",\"90998\"]"
+        },
+        {
+          "name": "OutId",
+          "in": "query",
+          "type": "string",
+          "description": "An external business ID. It must be a string of fewer than 256 characters. > You can leave this parameter empty if you have no special requirements.",
+          "example": "abcdefg"
+        }
+      ]
     },
     "SendCardSms": {
       "required": [
@@ -449,7 +2163,115 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SendCardSms"
+      "summary": "Send card message",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CardObjects",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The card message objects.",
+          "example": "SendCardSms",
+          "children": [
+            {
+              "name": "customUrl",
+              "type": "string",
+              "description": "渲染失败后跳转链接。"
+            },
+            {
+              "name": "dyncParams",
+              "type": "string",
+              "description": "动态参数。动参变量不需要${}"
+            },
+            {
+              "name": "mobile",
+              "type": "string",
+              "description": "接收卡片短信的手机号码。"
+            }
+          ]
+        },
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature name. You can call the [QuerySmsSignList](~~419282~~) operation to query the signatures applied for under the current account or view the signature list in the [Short Message Service (SM",
+          "example": "阿里云"
+        },
+        {
+          "name": "CardTemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the card message template. On the [Template Management](https://dysms.console.aliyun.com/domestic/card) page of the **Card Messages** module in the console, select the code of an approved ",
+          "example": "CARD_SMS_70"
+        },
+        {
+          "name": "SmsTemplateCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the fallback text message template. This parameter is required if you set **FallbackType** to **SMS**. You can call the [QuerySmsTemplateList](~~419288~~) operation to query the templates ",
+          "example": "SMS_48068****"
+        },
+        {
+          "name": "SmsUpExtendCode",
+          "in": "query",
+          "type": "string",
+          "description": "The extension code of the MO message. An MO message is a message sent to the communications service provider to customize a service, perform a query, or handle other business. The message is charged a",
+          "example": "1"
+        },
+        {
+          "name": "FallbackType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The fallback type. Valid values: - **SMS**: Falls back to a text message for phone numbers that do not support card messages. - **DIGITALSMS**: Falls back to a digital message for phone numbers that d",
+          "example": "SMS"
+        },
+        {
+          "name": "DigitalTemplateCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the fallback digital message template. This parameter is required if you set **FallbackType** to **DIGITALSMS**. You can view the digital message template list on the [Template Management]",
+          "example": "DIGITAL_SMS_31359****"
+        },
+        {
+          "name": "OutId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID reserved for the caller.",
+          "example": "38d76c9b-4a9a-4c89-afae-61fd8e0e****"
+        },
+        {
+          "name": "SmsTemplateParam",
+          "in": "query",
+          "type": "string",
+          "description": "The actual values of the variables in the fallback text message template. This parameter is required if the text message template specified by **SmsTemplateCode** contains variables. > If the JSON val",
+          "example": "{\"jifen\":\"积分\"}"
+        },
+        {
+          "name": "DigitalTemplateParam",
+          "in": "query",
+          "type": "string",
+          "description": "The actual values of the variables in the fallback digital message template. This parameter is required if the digital message template specified by **DigitalTemplateCode** contains variables. > If th",
+          "example": "{\"msg\",\"xxxd\"}"
+        },
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the custom content template. The custom content is sent to the recipient as a text message template combined with a card parsing link. Log on to the [SMS console](https://dysms.console.ali",
+          "example": "SMS_2322****"
+        },
+        {
+          "name": "TemplateParam",
+          "in": "query",
+          "type": "string",
+          "description": "The actual values of the variables in the custom content template. This parameter is required if the message template specified by **TemplateCode** contains variables. > If the JSON value contains lin",
+          "example": "{ \"code\": \"1111\" }"
+        }
+      ]
     },
     "SendSms": {
       "required": [
@@ -459,7 +2281,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SendSms"
+      "summary": "Sends an SMS message to one or more specified mobile numbers.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PhoneNumbers",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The recipient's mobile number. The format varies based on the destination region: - For messages to the Chinese mainland: A mobile number, with or without a country code. Valid prefixes are +, +86, 00",
+          "example": "1390000****"
+        },
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature name. Call the [QuerySmsSignList](~~419282~~) API or view your list of signatures in the [Short Message Service console](https://dysms.console.aliyun.com/domestic/text/sign). You must us",
+          "example": "阿里云"
+        },
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the template. Call the [QuerySmsTemplateList](~~419288~~) API or view your list of templates in the [Short Message Service console](https://dysms.console.aliyun.com/domestic/text/template)",
+          "example": "SMS_15305****"
+        },
+        {
+          "name": "TemplateParam",
+          "in": "query",
+          "type": "string",
+          "description": "The values for the template variables, specified as a **JSON string**. This parameter is required if the template contains variables. The JSON string must provide a value for each variable. > - If the",
+          "example": "{\"name\":\"张三\",\"number\":\"1390000****\"}"
+        },
+        {
+          "name": "SmsUpExtendCode",
+          "in": "query",
+          "type": "string",
+          "description": "The upstream SMS extension code. An upstream SMS message is a message sent from a user to a service provider to subscribe to a service, make a query, or perform other tasks. Such messages are charged ",
+          "example": "90999"
+        },
+        {
+          "name": "OutId",
+          "in": "query",
+          "type": "string",
+          "description": "The external transaction ID. > You can ignore this parameter if you do not have special requirements.",
+          "example": "abcdefgh"
+        }
+      ]
     },
     "SmsConversionIntl": {
       "required": [
@@ -468,7 +2338,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SmsConversionIntl"
+      "summary": "Domestic-to-International SMS Conversion Feedback",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "MessageId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Message ID.",
+          "example": "1008030300****"
+        },
+        {
+          "name": "Delivered",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "Set to true if your user replied to the message you sent. Otherwise, set to false.",
+          "example": "true"
+        },
+        {
+          "name": "ConversionTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The timestamp at which the message reached the recipient. Must be a Unix timestamp, expressed as a long integer in milliseconds. - If this field is not specified: defaults to the current timestamp. - ",
+          "example": "1349055900000"
+        }
+      ]
     },
     "SubmitSmsQualification": {
       "required": [
@@ -494,7 +2390,218 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Request SMS Qualification"
+      "summary": "Apply for an SMS qualification",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "QualificationName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The qualification name. The name distinguishes between multiple qualifications that you apply for and does not appear in SMS content. The name must be unique. Only Chinese characters, English letters,",
+          "example": "阿里云云通信有限公司资质李华"
+        },
+        {
+          "name": "UseBySelf",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "The intended use of the qualification. Valid values: - **true**: **Self-use**. The signature owner is the same as the entity verified by the real-name verification of the current account. - **false**:",
+          "example": "true"
+        },
+        {
+          "name": "CompanyType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the enterprise. Valid values: - COMPANY: enterprise. - NON_PROFIT_ORGANIZATION: government agency or public institution.",
+          "example": "COMPANY"
+        },
+        {
+          "name": "BusinessLicensePics",
+          "in": "query",
+          "type": "array",
+          "description": "The business license information of the enterprise. This parameter is required when UseBySelf is set to false (third-party use).",
+          "children": [
+            {
+              "name": "Type",
+              "type": "string",
+              "description": "营业证件类型。取值： - socialCreditLicense：社会信用代码证书。 - businessLicense：企业营业执照。 - signLegalLicense：事业单位法人证书。 - otherLicense：其他。 选择一种上传即可，证件上需含有：企业名称、统一社会信用代码、证件有效期。"
+            },
+            {
+              "name": "LicensePic",
+              "type": "string",
+              "description": "营业证件图片，仅支持jpg、png、gif、jpeg格式的图片，图片不大于5MB。请填写上传到OSS的文件路径参数，待上传的文件命名不可包含中文和特殊字符，上传操作请参见通过[OSS上传文件](~~2833114~~)。 > 证件的彩色原件无需盖章，若上传复印件/黑白照片，需要在复印件上加盖企业红章并拍照上传。 >"
+            }
+          ]
+        },
+        {
+          "name": "CompanyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the enterprise. Only the middle dot (·), Chinese brackets 【】（）, English parentheses (), and spaces are supported as symbols. Other symbols or pure digits are not allowed. The name can be u",
+          "example": "阿里云云通信有限公司"
+        },
+        {
+          "name": "OrganizationCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Unified Social Credit Code. The code can be up to 150 characters in length.",
+          "example": "910X********0012"
+        },
+        {
+          "name": "BussinessLicenseExpDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The validity period of the business license. The format is YYYY-MM-DD~YYYY-MM-DD. > If the validity period is permanent, set the end date to 2099-12-31.",
+          "example": "2023-01-01~2033-01-01"
+        },
+        {
+          "name": "LegalPersonIdCardFrontSide",
+          "in": "query",
+          "type": "string",
+          "description": "The photo of the national emblem side of the legal representative's ID card. Only images in JPG, PNG, GIF, or JPEG format are supported. The image cannot exceed 5 MB. Specify the file path uploaded to",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "LegalPersonIdCardBackSide",
+          "in": "query",
+          "type": "string",
+          "description": "The photo of the portrait side of the legal representative's ID card. Only images in JPG, PNG, GIF, or JPEG format are supported. The image cannot exceed 5 MB. Specify the file path uploaded to OSS. T",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "LegalPersonName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the legal representative. The name can be up to 50 characters in length. > - If the organization's certificate does not contain the legal representative information but contains informatio",
+          "example": "李华"
+        },
+        {
+          "name": "LegalPersonIDCardNo",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID number of the legal representative.",
+          "example": "511391********5123"
+        },
+        {
+          "name": "LegalPersonIdCardEffTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The validity period of the legal representative's ID card. The format is YYYY-MM-DD~YYYY-MM-DD. > If the validity period is permanent, set the end date to 2099-12-31.",
+          "example": "2023-01-01~2033-01-01"
+        },
+        {
+          "name": "LegalPersonIDCardType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID type of the legal representative. Valid values: - identityCard: Resident Identity Card of the People's Republic of China. - passport: passport. - homeReturnPermit: Mainland Travel Permit for Ho",
+          "example": "identityCard"
+        },
+        {
+          "name": "AdminIDCardPic",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The photo of the portrait side of the administrator's ID card. Only images in JPG, PNG, GIF, or JPEG format are supported. The image cannot exceed 5 MB. Specify the file path uploaded to OSS. The file",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "AdminIDCardFrontFace",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The photo of the national emblem side of the administrator's ID card. Only images in JPG, PNG, GIF, or JPEG format are supported. The image cannot exceed 5 MB. Specify the file path uploaded to OSS. T",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "AdminName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the administrator. The name can be up to 50 characters in length. **Under the current [SMS signature real-name verification](~~2873145~~) requirements, if the same administrator applies fo",
+          "example": "李华"
+        },
+        {
+          "name": "AdminIDCardNo",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID number of the administrator.",
+          "example": "511391********5123"
+        },
+        {
+          "name": "AdminIDCardType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID type of the administrator. Valid values: - identityCard: Resident Identity Card of the People's Republic of China. - passport: passport. - homeReturnPermit: Mainland Travel Permit for Hong Kong",
+          "example": "identityCard"
+        },
+        {
+          "name": "AdminIDCardExpDate",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The validity period of the administrator's ID card. The format is YYYY-MM-DD~YYYY-MM-DD. > If the validity period is permanent, set the end date to 2099-12-31.",
+          "example": "2023-01-01~2033-01-01"
+        },
+        {
+          "name": "AdminPhoneNo",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The mobile phone number of the administrator. The format is +/+86/0086/86 followed by the mobile phone number, or the mobile phone number without any prefix. For example, 1390000****.",
+          "example": "137****1234"
+        },
+        {
+          "name": "CertifyCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The mobile phone verification code. Call the [RequiredPhoneCode](~~RequiredPhoneCode~~) operation and pass in the **administrator's mobile phone number**. Then enter the verification code that you rec",
+          "example": "1234"
+        },
+        {
+          "name": "OtherFiles",
+          "in": "query",
+          "type": "array",
+          "description": "Additional materials. If you have other proof or remark materials, photos, or other materials, you can upload them here.",
+          "children": [
+            {
+              "name": "LicensePic",
+              "type": "string",
+              "description": "更多资料文件，仅支持png、jpg、jpeg、doc、docx、pdf格式，文件不大于5MB。请填写上传到OSS的文件路径参数，待上传的文件命名不可包含中文和特殊字符，上传操作请参见通过[OSS上传文件](~~2833114~~)。"
+            }
+          ]
+        },
+        {
+          "name": "WhetherShare",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "The qualification authorization. Specifies whether to share the qualification with other cloud communications services, such as Voice Messaging Service and Phone Number Privacy Protection. The qualifi",
+          "enum": [
+            "true",
+            "false"
+          ],
+          "example": "false"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "The remarks. If you have additional information to describe or want to add remarks for the qualification verification reviewer, you can add the description here.",
+          "example": "无"
+        }
+      ]
     },
     "TagResources": {
       "required": [
@@ -504,7 +2611,65 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResources"
+      "summary": "Add template tags",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Default value: **TEMPLATE**.",
+          "example": "TEMPLATE"
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID. Default value: **cn-hangzhou**. For more region IDs, see [Endpoints](~~419270~~).",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "ProdCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product name. Default value: **dysms**.",
+          "example": "dysms"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The tags. You can add up to 20 tags at a time.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The SMS template codes. The number of codes cannot exceed 20.",
+          "example": "SMS_23423423",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UntagResources": {
       "required": [
@@ -513,7 +2678,66 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResources"
+      "summary": "Delete Template Tags",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Set the value to TEMPLATE by default.",
+          "example": "TEMPLATE"
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID. Set the value to cn-hangzhou by default. For more region IDs, see [Service endpoints](~~419270~~).",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "All",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to delete all tags under the template. Valid values: - **true**: yes. - **false**: no.",
+          "example": "false"
+        },
+        {
+          "name": "ProdCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product name. Default value: **dysms**.",
+          "example": "dysms"
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "array",
+          "description": "The tag key. You can add no more than 20 tags at a time.",
+          "example": "TestKey",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The SMS template code. The number of codes cannot exceed 20.",
+          "example": "SMS_23423423",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpdateSmsQualification": {
       "required": [
@@ -524,7 +2748,171 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Modify Short Message Service Qualification"
+      "summary": "Modify SMS Qualification",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "QualificationGroupId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The qualification ID, that is, the ID returned when you [apply for SMS qualification](~~SubmitSmsQualification~~). You can obtain the qualification IDs under the current account by calling [Query Qual",
+          "example": "10000****"
+        },
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The review order ID. You can obtain the qualifications and their corresponding review order IDs under the current account by calling [Query Qualification List](~~QuerySmsQualificationRecord~~).",
+          "example": "2001*****"
+        },
+        {
+          "name": "BusinessLicensePics",
+          "in": "query",
+          "type": "array",
+          "description": "Enterprise business license information. This parameter is required when the purpose of the qualification to be modified is for use by others.",
+          "children": [
+            {
+              "name": "Type",
+              "type": "string",
+              "description": "Business license type. Valid values: - socialCreditLicense: Social credit code certificate. - businessLicense: Enterprise business license. - signLegalLicense: Public institution legal person certific"
+            },
+            {
+              "name": "LicensePic",
+              "type": "string",
+              "description": "Business license image. Only jpg, png, gif, and jpeg image formats are supported, and the image must not exceed 5 MB. Please provide the path of the file uploaded to OSS. The file name to be uploaded "
+            }
+          ]
+        },
+        {
+          "name": "CompanyName",
+          "in": "query",
+          "type": "string",
+          "description": "Enterprise name. Supported symbols are only the middle dot `·`, the Chinese symbols `【】（）`, the English symbols `()`, and the `space`. Other symbols or pure numbers are not allowed. The length must no",
+          "example": "阿里云云通信有限公司"
+        },
+        {
+          "name": "BussinessLicenseExpDate",
+          "in": "query",
+          "type": "string",
+          "description": "Validity period of the business license. Format: YYYY-MM-DD~YYYY-MM-DD. > When the certificate validity period is long-term, the end date can be set to 2099-12-31.",
+          "example": "2023-01-01~2033-01-01"
+        },
+        {
+          "name": "LegalPersonIdCardFrontSide",
+          "in": "query",
+          "type": "string",
+          "description": "Photo of the front of the legal representative's ID card (national emblem side). Only jpg, png, gif, and jpeg image formats are supported, and the image must not exceed 5 MB. Please provide the path o",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "LegalPersonIdCardBackSide",
+          "in": "query",
+          "type": "string",
+          "description": "Photo of the back of the legal representative's ID card (portrait side). Only jpg, png, gif, and jpeg image formats are supported, and the image must not exceed 5 MB. Please provide the path of the fi",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "LegalPersonName",
+          "in": "query",
+          "type": "string",
+          "description": "Name of the legal representative. > - If there is no legal representative information on the organization's certificate, but there is information about a person in charge / chief representative or sim",
+          "example": "李华"
+        },
+        {
+          "name": "LegalPersonIDCardNo",
+          "in": "query",
+          "type": "string",
+          "description": "Legal person's ID number.",
+          "example": "511391********5123"
+        },
+        {
+          "name": "LegalPersonIdCardEffTime",
+          "in": "query",
+          "type": "string",
+          "description": "Validity period of the legal person ID card. Format: YYYY-MM-DD~YYYY-MM-DD. > When the certificate validity period is long-term, the end date can be set to 2099-12-31.",
+          "example": "2023-01-01~2033-01-01"
+        },
+        {
+          "name": "LegalPersonIDCardType",
+          "in": "query",
+          "type": "string",
+          "description": "Legal person ID card type. Valid values: - identityCard: ID card. - passport: Passport. - homeReturnPermit: Mainland Travel Permit for Hong Kong and Macao Residents. - TaiwanCompatriotPermit: Mainland",
+          "example": "identityCard"
+        },
+        {
+          "name": "AdminIDCardPic",
+          "in": "query",
+          "type": "string",
+          "description": "Photo of the back of the administrator's ID card (portrait side). Only jpg, png, gif, and jpeg image formats are supported, and the image must not exceed 5 MB. Please provide the path of the file uplo",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "AdminIDCardFrontFace",
+          "in": "query",
+          "type": "string",
+          "description": "Photo of the front of the administrator's ID card (national emblem side). Only jpg, png, gif, and jpeg image formats are supported, and the image must not exceed 5 MB. Please provide the path of the f",
+          "example": "123456/111.png"
+        },
+        {
+          "name": "AdminName",
+          "in": "query",
+          "type": "string",
+          "description": "Administrator name. > The administrator (also known as the operator) refers to the person who logs in to the Alibaba Cloud account and manages the SMS service. Generally, this is the operations person",
+          "example": "李华"
+        },
+        {
+          "name": "AdminIDCardNo",
+          "in": "query",
+          "type": "string",
+          "description": "Administrator's ID number.",
+          "example": "511391********5123"
+        },
+        {
+          "name": "AdminIDCardExpDate",
+          "in": "query",
+          "type": "string",
+          "description": "Validity period of the administrator ID card. Format: YYYY-MM-DD~YYYY-MM-DD. > When the certificate validity period is long-term, the end date can be set to 2099-12-31.",
+          "example": "2023-01-01~2033-01-01"
+        },
+        {
+          "name": "AdminPhoneNo",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Administrator's mobile phone number. Format: +/+86/0086/86 prefix or a phone number without any prefix, for example, 1390000****.",
+          "example": "137********"
+        },
+        {
+          "name": "CertifyCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Phone verification code. Please call the [RequiredPhoneCode](~~RequiredPhoneCode~~) API and pass in the **administrator's phone number**, then enter the SMS verification code you receive here. > You c",
+          "example": "1234"
+        },
+        {
+          "name": "AdminIDCardType",
+          "in": "query",
+          "type": "string",
+          "description": "Administrator ID card type. Valid values: - identityCard: ID card. - passport: Passport. - homeReturnPermit: Mainland Travel Permit for Hong Kong and Macao Residents. - TaiwanCompatriotPermit: Mainlan",
+          "example": "identityCard"
+        },
+        {
+          "name": "OtherFiles",
+          "in": "query",
+          "type": "array",
+          "description": "Additional materials. If you have other supporting or supplementary materials, photos, etc., you can upload them here.",
+          "children": [
+            {
+              "name": "LicensePic",
+              "type": "string",
+              "description": "Additional material file. Only png, jpg, jpeg, doc, docx, and pdf formats are supported, and the file must not exceed 5 MB. Please provide the path of the file uploaded to OSS. The file name to be upl"
+            }
+          ]
+        }
+      ]
     },
     "UpdateSmsSign": {
       "required": [
@@ -534,7 +2922,103 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Update SMS Signature (New Interface)"
+      "summary": "Update SMS Signature (New Interface)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SignName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the rejected SMS signature. You can find rejected SMS signatures on the [Domestic Messages > Signature Management](https://dysms.console.aliyun.com/domestic/text/sign) page in the console,",
+          "example": "阿里云验证码"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "A description of the SMS signature's use case. This information is used during the review and must be 200 characters or less. > - Describe the use case for your live service. Include relevant links, s",
+          "example": "登录场景申请验证码"
+        },
+        {
+          "name": "SignType",
+          "in": "query",
+          "type": "integer",
+          "description": "The signature type. Valid values: - **0**: verification code. - **1**: general (default). We recommend that you use the default value, **general**.",
+          "example": "1"
+        },
+        {
+          "name": "MoreData",
+          "in": "query",
+          "type": "array",
+          "description": "Additional supporting materials. You can upload supporting business documents or business screenshots to help with the review. For details on what to upload, see [Signature application materials](~~10",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "QualificationId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the approved qualification. > - You must [apply for a qualification](https://help.aliyun.com/zh/sms/user-guide/new-qualification?spm=a2c4g.11186623.0.0.718d187bbkpMRK) before applying for an",
+          "example": "8563**"
+        },
+        {
+          "name": "ApplySceneContent",
+          "in": "query",
+          "type": "string",
+          "description": "The app store link. This parameter is required if the signature source (`SignSource`) is an app (the value is 2). The link must start with `http://` or `https://`, and the app must be published in the",
+          "example": "http://www.aliyun.com/"
+        },
+        {
+          "name": "SignSource",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The signature source. Valid values: - **0**: The full or abbreviated name of an enterprise or public institution. **(Recommended)** - **5**: The full or abbreviated trademark name. - **2**: The full o",
+          "enum": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "example": "2"
+        },
+        {
+          "name": "ThirdParty",
+          "in": "query",
+          "type": "boolean",
+          "description": "The signature purpose. Valid values: - false: for own use (default). The signature is for a business, website, or product owned by your account's verified entity. - true: for third-party use. The sign",
+          "example": "false"
+        },
+        {
+          "name": "AuthorizationLetterId",
+          "in": "query",
+          "type": "integer",
+          "description": "The authorization letter ID. This parameter is required if the signature is for third-party use (`ThirdParty` is set to `true`). The Unified Social Credit Code on the authorization letter must match t",
+          "example": "1000********1234"
+        },
+        {
+          "name": "TrademarkId",
+          "in": "query",
+          "type": "integer",
+          "description": "The trademark entity ID. > - This parameter is required if `SignSource` is set to 5. > > - You can obtain the trademark entity ID by calling the [Create Trademark Entity](~~CreateSmsTrademark~~) opera",
+          "example": "1000009081***"
+        },
+        {
+          "name": "AppIcpRecordId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the app's ICP filing entity. > - This parameter is required if `SignSource` is set to 2. > > - You can obtain the filing entity ID by calling the [Create ICP Filing Entity](~~CreateSmsAppIcp",
+          "example": "100001***1234"
+        }
+      ]
     },
     "UpdateSmsTemplate": {
       "required": [
@@ -545,7 +3029,102 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Update SMS Template (New Interface)"
+      "summary": "Update SMS Template (New Interface)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TemplateName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the SMS template, up to 30 characters long. You can find the names of rejected templates on the [Messages in Chinese Mainland > Template Management](https://dysms.console.aliyun.com/domest",
+          "example": "验证码模板"
+        },
+        {
+          "name": "TemplateCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the rejected SMS template. You can find the template code on the [Messages in Chinese Mainland > Template Management](https://dysms.console.aliyun.com/domestic/text/template) tab in the co",
+          "example": "SMS_152550****"
+        },
+        {
+          "name": "TemplateContent",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The new template content, up to 500 characters long. The template content and its variables must comply with [SMS template specifications](~~463161~~) to be approved. To increase the approval rate and",
+          "example": "您正在申请手机注册，验证码为：${code}，5分钟内有效！"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "Describe your business scenario, including a URL if applicable. You must also provide a complete SMS message example with populated variables. Providing this information as required is critical for te",
+          "example": "登录场景使用验证码"
+        },
+        {
+          "name": "TemplateType",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The SMS type. Valid values: - **0**: verification code. - **1**: SMS notification. - **2**: promotional SMS. - **3**: international/regional message. > Only enterprise-verified users can apply for pro",
+          "enum": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "example": "0"
+        },
+        {
+          "name": "RelatedSignName",
+          "in": "query",
+          "type": "string",
+          "description": "The SMS signature associated with the template.",
+          "example": "阿里云"
+        },
+        {
+          "name": "TemplateRule",
+          "in": "query",
+          "type": "string",
+          "description": "The rules for the variables in the template. For details on how to define these rules, see the [example document](~~2806243~~).",
+          "example": "{\"code\":\"characterWithNumber\"}"
+        },
+        {
+          "name": "MoreData",
+          "in": "query",
+          "type": "array",
+          "description": "Additional materials, such as supporting documents or business screenshots, to help reviewers understand your business. If `TemplateType` is set to `2` (promotional SMS), you must upload proof of user",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ApplySceneContent",
+          "in": "query",
+          "type": "string",
+          "description": "The business scenario. - If the associated SMS signature's business scenario is \"Live App\", the `ApplySceneContent` parameter must be an app URL starting with `http://` or `https://`. - The `ApplyScen",
+          "example": "http://www.aliyun.com/"
+        },
+        {
+          "name": "IntlType",
+          "in": "query",
+          "type": "integer",
+          "description": "The type of the international/regional template. This parameter is required when the **TemplateType** parameter is set to **3**. Valid values: - **0**: SMS notification. - **1**: promotional SMS. - **",
+          "example": "0"
+        },
+        {
+          "name": "TrafficDriving",
+          "in": "query",
+          "type": "string",
+          "description": "> To manage SMS content security, messages that contain traffic-driving information such as phone numbers and URLs may be blocked by carriers, which can cause delivery failures. We recommend that you ",
+          "example": "[{\"trafficDrivingType\":\"DOMAIN\",\"trafficDrivingContent\":\"aliyun.com\",\"companyName\":\"阿里云计算有限公司\",\"orga"
+        }
+      ]
     },
     "ValidPhoneCode": {
       "required": [
@@ -554,7 +3133,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Validate Phone Verification Code"
+      "summary": "Verify the phone verification code",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PhoneNo",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The phone number.",
+          "example": "137****1234"
+        },
+        {
+          "name": "CertifyCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The verification code.",
+          "example": "1234"
+        }
+      ]
     }
   }
 }

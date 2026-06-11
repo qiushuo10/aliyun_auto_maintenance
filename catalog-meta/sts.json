@@ -1,10 +1,10 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "sts",
   "openApiProduct": "Sts",
   "version": "2015-04-01",
   "source": "https://api.aliyun.com/meta/v1/products/Sts/versions/2015-04-01/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:59.167Z",
+  "fetchedAt": "2026-06-10T02:58:31.378Z",
   "actions": {
     "AssumeRole": {
       "required": [
@@ -13,7 +13,54 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AssumeRole"
+      "summary": "Obtains a Security Token Service (STS) token to assume a Resource Access Management (RAM) role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "DurationSeconds",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the STS token. Unit: seconds. Minimum value: 900. Maximum value: the value of the `MaxSessionDuration` parameter. Default value: 3600. You can call the CreateRole or UpdateRole ",
+          "example": "3600"
+        },
+        {
+          "name": "Policy",
+          "in": "query",
+          "type": "string",
+          "description": "The policy that specifies the permissions of the returned STS token. This allows you to implement more fine-grained access control. - If you specify this parameter, the permissions of the returned STS",
+          "example": "{\"Statement\": [{\"Action\": [\"*\"],\"Effect\": \"Allow\",\"Resource\": [\"*\"]}],\"Version\":\"1\"}"
+        },
+        {
+          "name": "RoleArn",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud Resource Name (ARN) of the RAM role. The trusted entity of the RAM role is an Alibaba Cloud account. For more information, see [Create a RAM role for a trusted Alibaba Cloud account]",
+          "example": "acs:ram::123456789012****:role/adminrole"
+        },
+        {
+          "name": "RoleSessionName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the role session. The value is user-defined. In most cases, you can set this parameter to the identity of the user who calls the operation. For example, you can specify a username. You can",
+          "example": "alice"
+        },
+        {
+          "name": "ExternalId",
+          "in": "query",
+          "type": "string",
+          "description": "The external ID of the RAM role. The value of this parameter is provided by an external party and is used to prevent the confused deputy issue. For more information, see [Use external IDs to prevent t",
+          "example": "abcd1234"
+        },
+        {
+          "name": "SourceIdentity",
+          "in": "query",
+          "type": "string",
+          "description": "The source identity information. When a user assumes a role, the source identity of the user can be specified as the initial identity of a session. The specified source identity persists throughout th",
+          "example": "Alice"
+        }
+      ]
     },
     "AssumeRoleWithOIDC": {
       "required": [
@@ -21,19 +68,104 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AssumeRoleWithOIDC"
+      "summary": "For role-based single sign-on (SSO) that uses OpenID Connect (OIDC), call the AssumeRoleWithOIDC operation to obtain a temporary identity credential (a Security Token Service token) to assume a RAM role.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "OIDCProviderArn",
+          "in": "query",
+          "type": "string",
+          "description": "The Alibaba Cloud Resource Name (ARN) of the OIDC identity provider. You can view the ARN of the OIDC identity provider in the RAM console or by calling an API operation: - RAM console: For more infor",
+          "example": "acs:ram::113511544585****:oidc-provider/TestOidcIdp"
+        },
+        {
+          "name": "RoleArn",
+          "in": "query",
+          "type": "string",
+          "description": "The ARN of the RAM role that you want to assume. You can view the ARN of the role in the RAM console or by calling an API operation: - RAM console: For more information, see [View the ARN of a RAM rol",
+          "example": "acs:ram::113511544585****:role/testoidc"
+        },
+        {
+          "name": "OIDCToken",
+          "in": "query",
+          "type": "string",
+          "description": "The OIDC token that is issued by an external IdP. The token must be 4 to 20,000 characters long. > Enter the original OIDC token. Do not Base64-decode the token.",
+          "example": "eyJraWQiOiJKQzl3eHpyaHFKMGd0****"
+        },
+        {
+          "name": "Policy",
+          "in": "query",
+          "type": "string",
+          "description": "An access policy to further restrict the permissions of the STS token. - If you specify this policy, the permissions of the STS token are the intersection of the permissions that are granted to the RA",
+          "example": "{\"Statement\": [{\"Action\": [\"*\"],\"Effect\": \"Allow\",\"Resource\": [\"*\"]}],\"Version\":\"1\"}"
+        },
+        {
+          "name": "DurationSeconds",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the token, in seconds. Valid values: 900 to the value of the `MaxSessionDuration` parameter. The default value is 3600. For more information about how to set the `MaxSessionDura",
+          "example": "3600"
+        },
+        {
+          "name": "RoleSessionName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the role session. A custom parameter used to distinguish role sessions. The value is typically the identity of the user who calls the operation, such as a username. In ActionTrail, you can",
+          "example": "TestOidcAssumedRoleSession"
+        }
+      ]
     },
     "AssumeRoleWithSAML": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AssumeRoleWithSAML"
+      "summary": "For role-based single sign-on (SSO) that uses Security Assertion Markup Language (SAML), call the AssumeRoleWithSAML operation to obtain a temporary identity credential (a Security Token Service (STS) token) for a RAM role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SAMLProviderArn",
+          "in": "query",
+          "type": "string",
+          "description": "The Alibaba Cloud Resource Name (ARN) of the SAML IdP that is created in RAM. Format: `acs:ram:: :saml-provider/ `. You can view the ARN of the IdP in the RAM console or by calling an API operation: -",
+          "example": "acs:ram::123456789012****:saml-provider/company1"
+        },
+        {
+          "name": "RoleArn",
+          "in": "query",
+          "type": "string",
+          "description": "The ARN of the RAM role to assume. The trusted entity of the RAM role is a SAML IdP. For more information, see [Create a RAM role for an identity provider](~~116805~~) or [CreateRole](~~28710~~). Form",
+          "example": "acs:ram::123456789012****:role/adminrole"
+        },
+        {
+          "name": "SAMLAssertion",
+          "in": "query",
+          "type": "string",
+          "description": "The Base64-encoded SAML assertion. The value must be 4 to 100,000 characters in length. > Obtain the complete SAML response from the IdP. Do not use only the SAML assertion field.",
+          "example": "base64_encoded_saml_assertion"
+        },
+        {
+          "name": "Policy",
+          "in": "query",
+          "type": "string",
+          "description": "An access policy to further limit the permissions of the STS token. This parameter works as follows: - If you specify this policy, the permissions of the STS token are the intersection of the permissi",
+          "example": "url_encoded_policy"
+        },
+        {
+          "name": "DurationSeconds",
+          "in": "query",
+          "type": "integer",
+          "description": "The expiration duration of the token. Unit: seconds. The minimum value is 900 seconds. The maximum value is the value of the `MaxSessionDuration` parameter. The default value is 3600 seconds. You can ",
+          "example": "3600"
+        }
+      ]
     },
     "GetCallerIdentity": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCallerIdentity"
+      "summary": "A call to the GetCallerIdentity operation returns information about the identity of the current caller.",
+      "method": "POST"
     }
   }
 }

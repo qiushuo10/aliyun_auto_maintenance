@@ -40,6 +40,20 @@ interface CatalogMetaSnapshotAction {
   deprecated?: unknown;
   replacedBy?: unknown;
   summary?: unknown;
+  method?: unknown;
+  path?: unknown;
+  parameters?: unknown;
+}
+
+interface SnapshotParameter {
+  name: string;
+  in?: string;
+  type?: string;
+  required: boolean;
+  description?: string;
+  enum?: string[];
+  example?: string;
+  children?: Array<Record<string, unknown>>;
 }
 
 type DangerRule = {
@@ -77,6 +91,13 @@ const DANGER_RULES: DangerRule[] = [
   }
 ];
 
+// The OSS SDK declares its endpoint as `oss.{region}.aliyuncs.com`, but the
+// real public endpoints use a dash (`oss-{region}.aliyuncs.com`). Fix the fact
+// at the catalog layer instead of patching it at request time.
+const ENDPOINT_TPL_OVERRIDES: Record<string, string> = {
+  oss: 'oss-{region}.aliyuncs.com'
+};
+
 const KEYWORD_OVERRIDES: Record<string, string> = {
   alb: 'alb application load balancer 负载均衡 应用型负载均衡 listener server group',
   alidns: 'dns domain record 云解析 域名 解析 记录',
@@ -90,6 +111,14 @@ const KEYWORD_OVERRIDES: Record<string, string> = {
 };
 
 const ACTION_SUMMARY_OVERRIDES: Record<string, Record<string, string>> = {
+  oss: {
+    GetPublicAccessBlock: 'Queries the account-level Block Public Access configuration. OSS 查询账号级阻止公共访问 公共访问 public access block',
+    PutPublicAccessBlock: 'Enables or modifies account-level Block Public Access. OSS 设置账号级阻止公共访问 公共访问 public access block',
+    DeletePublicAccessBlock: 'Deletes the account-level Block Public Access configuration. OSS 删除账号级阻止公共访问 公共访问 public access block',
+    GetBucketPublicAccessBlock: 'Queries the Block Public Access configuration of a bucket. OSS 查询存储桶阻止公共访问 公共访问 public access block',
+    PutBucketPublicAccessBlock: 'Enables or modifies Block Public Access for a bucket. OSS 设置存储桶阻止公共访问 公共访问 public access block',
+    DeleteBucketPublicAccessBlock: 'Deletes the Block Public Access configuration of a bucket. OSS 删除存储桶阻止公共访问 公共访问 public access block'
+  },
   cas: {
     CreateDeploymentJob: 'Creates a certificate deployment job for cloud resources. CAS 证书部署 HTTPS 绑定 OSS ALB CDN ResourceIds ContactIds',
     ListCloudResources: 'Lists cloud resources that can receive certificate deployment. CAS 查询可部署云资源 OSS bucket 自定义域名 ResourceIds',
@@ -313,7 +342,8 @@ function packageToSpec(entry: string): SdkProductSpec | null {
   const product = extractProductId(clientJs) ?? productFallback;
   const endpointRule = extractEndpointRule(clientJs);
   const endpointMap = extractEndpointMap(clientJs);
-  const endpointTpl = endpointRule === 'central' ? `${product}.aliyuncs.com` : `${product}.{region}.aliyuncs.com`;
+  const endpointTpl = ENDPOINT_TPL_OVERRIDES[product]
+    ?? (endpointRule === 'central' ? `${product}.aliyuncs.com` : `${product}.{region}.aliyuncs.com`);
 
   return {
     packageName,
@@ -432,17 +462,40 @@ function createSnapshotOnlyAction(
 ): LoadedAction {
   const override = productSpec.product === 'oss' ? OSS_RAW_ACTION_OVERRIDES[action] : undefined;
   const danger = resolveDanger(productSpec.product, action);
+  const parameters = normalizeSnapshotParameters(snapshotAction.parameters);
   const required = applyRequiredOverrides(
     productSpec.product,
     action,
-    override?.required ?? normalizeSnapshotRequired(snapshotAction.required) ?? []
+    override?.required
+      ?? (parameters ? parameters.filter((parameter) => parameter.required).map((parameter) => parameter.name) : null)
+      ?? normalizeSnapshotRequired(snapshotAction.required)
+      ?? []
   );
   const summary = override?.summary ?? normalizeSnapshotString(snapshotAction.summary) ?? `${productSpec.product} ${action}`;
-  return {
+  const method = override?.raw.method ?? normalizeSnapshotString(snapshotAction.method) ?? resolveSnapshotOnlyMethod(action);
+  const pathname = override?.raw.pathname ?? normalizeSnapshotString(snapshotAction.path) ?? undefined;
+  const requiredSet = new Set(required);
+  const params = parameters
+    ? parameters.map((parameter) => compactRecord({
+        name: parameter.name,
+        type: parameter.type ?? 'string',
+        required: requiredSet.has(parameter.name) || parameter.required,
+        in: parameter.in,
+        description: parameter.description,
+        enum: parameter.enum,
+        example: parameter.example,
+        children: parameter.children
+      }))
+    : required.map((name) => ({
+        name,
+        type: name === 'BlockPublicAccess' ? 'boolean' : 'string',
+        required: true
+      }));
+  return applyActionSummaryOverride({
     product: productSpec.product,
     action,
     version: productSpec.version,
-    method: resolveSnapshotOnlyMethod(action),
+    method,
     style: 'ROA',
     required,
     danger: danger.level,
@@ -451,19 +504,15 @@ function createSnapshotOnlyAction(
     paramsBlob: JSON.stringify(
       {
         requestClass: `${action}Request`,
-        params: required.map((name) => ({
-          name,
-          type: name === 'BlockPublicAccess' ? 'boolean' : 'string',
-          required: true
-        })),
+        params,
         source: 'catalog-meta:snapshot-only-allowlist',
-        raw: {
-          method: override?.raw.method ?? resolveSnapshotOnlyMethod(action),
-          pathname: override?.raw.pathname,
+        raw: compactRecord({
+          method,
+          pathname,
           style: override?.raw.style ?? 'ROA',
           reqBodyType: override?.raw.reqBodyType ?? 'xml',
           bodyType: override?.raw.bodyType ?? 'xml'
-        },
+        }),
         dangerSource: danger.source,
         dangerRuleId: danger.ruleId
       },
@@ -472,9 +521,9 @@ function createSnapshotOnlyAction(
     ),
     deprecated: normalizeSnapshotBoolean(snapshotAction.deprecated) ?? false,
     replacedBy: normalizeSnapshotNullableString(snapshotAction.replacedBy) ?? null,
-    keywords: `${productSpec.summaryKeywords} ${action} ${summary} public access block 阻止公共访问 公共访问`,
+    keywords: `${productSpec.summaryKeywords} ${action} ${summary}`,
     deprecationSource: 'snapshot'
-  };
+  }, productSpec.summaryKeywords);
 }
 
 function resolveSnapshotOnlyMethod(action: string): string {
@@ -543,12 +592,33 @@ function applySnapshotOverrides(action: LoadedAction, snapshotAction: CatalogMet
   if (!snapshotAction || typeof snapshotAction !== 'object') return applyActionSummaryOverride(action, summaryKeywords);
 
   const next: LoadedAction = { ...action };
-  if (hasOwn(snapshotAction, 'required')) {
+  const parameters = normalizeSnapshotParameters(snapshotAction.parameters);
+  if (parameters) {
+    // snapshotVersion 2: the OpenAPI metadata snapshot carries the full
+    // parameter schema (type/enum/description/position). It is the ground
+    // truth; the SDK .d.ts-derived blob only survives as a fallback for v1
+    // snapshots or products whose fetch failed.
+    next.required = applyRequiredOverrides(
+      action.product,
+      action.action,
+      parameters.filter((parameter) => parameter.required).map((parameter) => parameter.name)
+    );
+    next.paramsBlob = buildSnapshotParamsBlob(action, parameters, next.required);
+  } else if (hasOwn(snapshotAction, 'required')) {
     const required = normalizeSnapshotRequired(snapshotAction.required);
     if (required) {
       next.required = required;
       next.paramsBlob = updateParamsBlobRequired(action.paramsBlob, required);
     }
+  }
+
+  // OSS dispatch falls back to a raw ROA/XML execute; give every action the
+  // real HTTP method and pathname from the snapshot so that fallback always
+  // has data, including actions whose parameter list is empty upstream.
+  const rawSpec = buildOssRawSpec(action.product, snapshotAction);
+  if (rawSpec) {
+    next.paramsBlob = injectRawSpec(next.paramsBlob, rawSpec);
+    if (typeof rawSpec.method === 'string') next.method = rawSpec.method;
   }
 
   if (hasOwn(snapshotAction, 'deprecated')) {
@@ -590,6 +660,105 @@ function applyActionSummaryOverride(action: LoadedAction, summaryKeywords: strin
 
 function hasOwn<T extends object>(value: T, property: PropertyKey): boolean {
   return Object.prototype.hasOwnProperty.call(value, property);
+}
+
+function normalizeSnapshotParameters(value: unknown): SnapshotParameter[] | null {
+  if (!Array.isArray(value)) return null;
+  const parameters: SnapshotParameter[] = [];
+  for (const entry of value) {
+    if (!entry || typeof entry !== 'object') continue;
+    const record = entry as Record<string, unknown>;
+    const name = normalizeSnapshotString(record.name);
+    if (!name) continue;
+    const children = Array.isArray(record.children)
+      ? record.children.filter((child): child is Record<string, unknown> => Boolean(child) && typeof child === 'object')
+      : undefined;
+    parameters.push({
+      name,
+      in: normalizeSnapshotString(record.in) ?? undefined,
+      type: normalizeSnapshotString(record.type) ?? undefined,
+      required: normalizeSnapshotBoolean(record.required) === true,
+      description: normalizeSnapshotString(record.description) ?? undefined,
+      enum: normalizeSnapshotStringArray(record.enum) ?? undefined,
+      example: normalizeSnapshotString(record.example) ?? undefined,
+      children: children?.length ? children : undefined
+    });
+  }
+  return parameters.length ? parameters : null;
+}
+
+function normalizeSnapshotStringArray(value: unknown): string[] | null {
+  if (!Array.isArray(value)) return null;
+  const values = value
+    .map((item) => normalizeSnapshotString(item))
+    .filter((item): item is string => Boolean(item));
+  return values.length ? values : null;
+}
+
+function buildSnapshotParamsBlob(
+  action: LoadedAction,
+  parameters: SnapshotParameter[],
+  required: string[]
+): string {
+  const previous = parsePreviousParamsBlob(action.paramsBlob);
+  const requiredSet = new Set(required);
+  const blob: Record<string, unknown> = {
+    requestClass: previous.requestClass ?? `${action.action}Request`,
+    params: parameters.map((parameter) => compactRecord({
+      name: parameter.name,
+      type: parameter.type ?? 'string',
+      required: requiredSet.has(parameter.name) || parameter.required,
+      in: parameter.in,
+      description: parameter.description,
+      enum: parameter.enum,
+      example: parameter.example,
+      children: parameter.children
+    })),
+    source: 'catalog-meta:openapi-parameters',
+    dangerSource: action.dangerSource,
+    dangerRuleId: previous.dangerRuleId
+  };
+  return JSON.stringify(blob, null, 2);
+}
+
+function buildOssRawSpec(product: string, snapshotAction: CatalogMetaSnapshotAction): Record<string, unknown> | null {
+  if (product !== 'oss') return null;
+  const method = normalizeSnapshotString(snapshotAction.method);
+  const path = normalizeSnapshotString(snapshotAction.path);
+  if (!method && !path) return null;
+  return compactRecord({
+    method,
+    pathname: path,
+    style: 'ROA',
+    reqBodyType: 'xml',
+    bodyType: 'xml'
+  });
+}
+
+function injectRawSpec(paramsBlob: string, rawSpec: Record<string, unknown>): string {
+  try {
+    const parsed = JSON.parse(paramsBlob) as Record<string, unknown>;
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return paramsBlob;
+    return JSON.stringify({ ...parsed, raw: rawSpec }, null, 2);
+  } catch {
+    return paramsBlob;
+  }
+}
+
+function parsePreviousParamsBlob(paramsBlob: string): { requestClass?: string; dangerRuleId?: string } {
+  try {
+    const parsed = JSON.parse(paramsBlob) as { requestClass?: unknown; dangerRuleId?: unknown };
+    return {
+      requestClass: typeof parsed.requestClass === 'string' ? parsed.requestClass : undefined,
+      dangerRuleId: typeof parsed.dangerRuleId === 'string' ? parsed.dangerRuleId : undefined
+    };
+  } catch {
+    return {};
+  }
+}
+
+function compactRecord(value: Record<string, unknown>): Record<string, unknown> {
+  return Object.fromEntries(Object.entries(value).filter(([, entry]) => entry !== undefined && entry !== null));
 }
 
 function normalizeSnapshotRequired(value: unknown): string[] | null {

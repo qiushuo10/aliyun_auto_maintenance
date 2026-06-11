@@ -1,22 +1,56 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "ims",
   "openApiProduct": "Ims",
   "version": "2019-08-15",
   "source": "https://api.aliyun.com/meta/v1/products/Ims/versions/2019-08-15/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:42.354Z",
+  "fetchedAt": "2026-06-10T02:58:13.417Z",
   "actions": {
     "AddClientIdToOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddClientIdToOIDCProvider"
+      "summary": "Adds a client ID to an OpenID Connect (OIDC) identity provider (IdP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP.",
+          "example": "TestOIDCProvider"
+        },
+        {
+          "name": "ClientId",
+          "in": "query",
+          "type": "string",
+          "description": "The client ID that you want to add. The client ID can contain letters, digits, and special characters and cannot start with the special characters. The special characters are `periods, (.), hyphens (-",
+          "example": "598469743454717****"
+        }
+      ]
     },
     "AddFingerprintToOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddFingerprintToOIDCProvider"
+      "summary": "Adds a fingerprint to an OpenID Connect (OIDC) identity provider (IdP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP.",
+          "example": "TestOIDCProvider"
+        },
+        {
+          "name": "Fingerprint",
+          "in": "query",
+          "type": "string",
+          "description": "The fingerprint of the HTTPS CA certificate. The fingerprint can contain letters and digits. The fingerprint can be up to 128 characters in length.",
+          "example": "902ef2deeb3c5b13ea4c3d5193629309e231****"
+        }
+      ]
     },
     "AddUserToGroup": {
       "required": [
@@ -24,7 +58,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddUserToGroup"
+      "summary": "Adds a Resource Access Management (RAM) user to a RAM user group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "GroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM user group.",
+          "example": "Test-Team"
+        }
+      ]
     },
     "BindMFADevice": {
       "required": [
@@ -32,7 +84,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "BindMFADevice"
+      "summary": "Binds a multi-factor authentication (MFA) device to a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SerialNumber",
+          "in": "query",
+          "type": "string",
+          "description": "The serial number of the MFA device. > You can call the [CreateVirtualMFADevice](~~186179~~) operation to obtain the serial number of the MFA device.",
+          "example": "acs:ram::177242285274****:mfa/device001"
+        },
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "AuthenticationCode1",
+          "in": "query",
+          "type": "string",
+          "description": "The first verification code. > You can call the [CreateVirtualMFADevice](~~186179~~) operation to create an MFA device and generate a key (value of `Base32StringSeed`). Then, use the key on the Alibab",
+          "example": "123456"
+        },
+        {
+          "name": "AuthenticationCode2",
+          "in": "query",
+          "type": "string",
+          "description": "The second verification code. > You can call the [CreateVirtualMFADevice](~~186179~~) operation to create an MFA device and generate a key (value of `Base32StringSeed`). Then, use the key on the Aliba",
+          "example": "654321"
+        }
+      ]
     },
     "ChangePassword": {
       "required": [
@@ -41,13 +125,42 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ChangePassword"
+      "summary": "Changes the password that is used to log on to the console for a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OldPassword",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The old password that is used to log on to the console.",
+          "example": "mypassword"
+        },
+        {
+          "name": "NewPassword",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The new password that is used to log on to the console. The password must meet the complexity requirements. For more information, see [GetPasswordPolicy](~~186691~~).",
+          "example": "newpassword"
+        }
+      ]
     },
     "CreateAccessKey": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateAccessKey"
+      "summary": "Creates an AccessKey pair for an Alibaba Cloud account or a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. If this parameter is empty, an AccessKey pair is created for the current user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "CreateAppSecret": {
       "required": [
@@ -55,7 +168,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateAppSecret"
+      "summary": "Creates an application secret for an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "472457090344041****"
+        }
+      ]
     },
     "CreateApplication": {
       "required": [
@@ -64,13 +188,119 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateApplication"
+      "summary": "Creates an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The display name of the application. It can be up to 24 characters in length.",
+          "example": "myapp"
+        },
+        {
+          "name": "AppType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the application. Valid values: - WebApp: a web application that is based on browser interaction. - NativeApp: a native application that runs on an operating system, such as a desktop or mo",
+          "example": "WebApp"
+        },
+        {
+          "name": "RedirectUris",
+          "in": "query",
+          "type": "string",
+          "description": "The redirect URL of the application. To specify multiple URLs, separate them with semicolons (;).",
+          "example": "https://www.example.com"
+        },
+        {
+          "name": "SecretRequired",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether a secret is required. Valid values: - true - false > * For applications of the WebApp and ServerApp types, this parameter is required and is always set to true. - For applications of",
+          "example": "true"
+        },
+        {
+          "name": "AccessTokenValidity",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the access token. Valid values: 900 to 10800. Unit: seconds. Default value: 3600.",
+          "example": "3600"
+        },
+        {
+          "name": "RefreshTokenValidity",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the refresh token. Valid values: 7200 to 31536000. Unit: seconds. Default value: - If not specified, the default value is 2,592,000 seconds (30 days) for NativeApp and ServerApp",
+          "example": "2592000"
+        },
+        {
+          "name": "PredefinedScopes",
+          "in": "query",
+          "type": "string",
+          "description": "The scope of application permissions. For more information about the application permission scope, see [OAuth overview](~~93693~~). You can also call the [ListPredefinedScopes](~~187206~~) operation t",
+          "example": "aliuid;profile"
+        },
+        {
+          "name": "RequiredScopes",
+          "in": "query",
+          "type": "string",
+          "description": "The required permission. You can specify one or more permissions for the `RequiredScopes` parameter. When a user grants permissions to the application, the scopes specified in this parameter are pre-s",
+          "example": "aliuid"
+        },
+        {
+          "name": "IsMultiTenant",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the application can be installed by other Alibaba Cloud accounts. Valid values: - true: If not specified, the default value is true for NativeApp and ServerApp applications. - false:",
+          "example": "false"
+        },
+        {
+          "name": "AppName",
+          "in": "query",
+          "type": "string",
+          "description": "The application name. It can be up to 64 characters in length and can contain letters, digits, periods (.), underscores (\\_), and hyphens (-).",
+          "example": "myapp"
+        },
+        {
+          "name": "ProtocolVersion",
+          "in": "query",
+          "type": "string",
+          "description": "The OAuth protocol version of the application. Valid values: - `2.0`: OAuth 2.0 - `2.1`: OAuth 2.1 Default value: `2.0`.",
+          "example": "2.0"
+        }
+      ]
     },
     "CreateGroup": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateGroup"
+      "summary": "Creates a Resource Access Management (RAM) user group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The display name of the RAM user group. The name can be up to 24 characters in length.",
+          "example": "Dev-Team"
+        },
+        {
+          "name": "Comments",
+          "in": "query",
+          "type": "string",
+          "description": "The description. The description can be up to 128 characters in length.",
+          "example": "开发团队"
+        },
+        {
+          "name": "GroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM user group. You must specify this parameter. The name can be up to 64 characters in length and can contain letters, digits, periods (.), underscores (\\_), and hyphens (-).",
+          "example": "Dev-Team"
+        }
+      ]
     },
     "CreateLoginProfile": {
       "required": [
@@ -78,13 +308,97 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateLoginProfile"
+      "summary": "Creates a logon configuration for a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "Password",
+          "in": "query",
+          "type": "string",
+          "description": "The logon password for the RAM user. The password must meet the password policy.",
+          "example": "mypassword"
+        },
+        {
+          "name": "PasswordResetRequired",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the RAM user must reset the password at the next logon. Valid values: - true - false (default)",
+          "example": "false"
+        },
+        {
+          "name": "MFABindRequired",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the RAM user must enable multi-factor authentication (MFA). Valid values: - true: MFA is required. The RAM user must bind an MFA device at the next logon. - false (default): MFA is n",
+          "example": "false"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable password-based logon to the console. Valid values: - Active (default): Enable - Inactive: Disable",
+          "example": "Active"
+        }
+      ]
     },
     "CreateOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateOIDCProvider"
+      "summary": "Creates an OpenID Connect (OIDC) identity provider (IdP) to configure a trust relationship between Alibaba Cloud and an external IdP. This topic provides an example on how to create an IdP named TestOIDCProvider to configure a trust relationship between the external IdP Okta and Alibaba Cloud.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP. The name can contain letters, digits, and special characters and cannot start or end with the special characters. The special characters are `periods, (.), hyphens (-), and u",
+          "example": "TestOIDCProvider"
+        },
+        {
+          "name": "IssuerUrl",
+          "in": "query",
+          "type": "string",
+          "description": "The URL of the issuer, which is provided by the external IdP. The URL of the issuer must be unique within an Alibaba Cloud account. The URL of the issuer must start with `https` and be in the valid UR",
+          "example": "https://xxxxxx.example.com"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the OIDC IdP. The description can be up to 256 characters in length.",
+          "example": "This is an OIDC Provider."
+        },
+        {
+          "name": "ClientIds",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the client, which is provided by the external IdP. If you want to specify multiple client IDs, separate the client IDs with commas (,). The client ID can contain letters, digits, and special",
+          "example": "498469743454717****"
+        },
+        {
+          "name": "Fingerprints",
+          "in": "query",
+          "type": "string",
+          "description": "The fingerprint of the HTTPS CA certificate, which is provided by the external IdP. If you want to specify multiple fingerprints, separate the fingerprints with commas (,). The fingerprint can contain",
+          "example": "902ef2deeb3c5b13ea4c3d5193629309e231****"
+        },
+        {
+          "name": "IssuanceLimitTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The earliest time when an external IdP can issue an ID token. If the value of the iat field in the ID token is later than the current time, the request is rejected. Unit: hours. Valid values: 1 to 168",
+          "example": "6"
+        }
+      ]
     },
     "CreateSAMLProvider": {
       "required": [
@@ -92,7 +406,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateSAMLProvider"
+      "summary": "Creates an identity provider (IdP) for role-based single sign-on (SSO).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SAMLProviderName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The IdP name. It can be up to 128 characters in length, and can contain letters, digits, `periods (.), hyphens (-), and underscores (_)`. The name cannot start or end with `periods (.), hyphens (-), o",
+          "example": "test-provider"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The IdP escription.",
+          "example": "This is a provider."
+        },
+        {
+          "name": "EncodedSAMLMetadataDocument",
+          "in": "query",
+          "type": "string",
+          "description": "The metadata file, which is Base64-encoded. The file is provided by an IdP that supports Security Assertion Markup Language (SAML) 2.0.",
+          "example": "PD94bWwgdmVy****"
+        },
+        {
+          "name": "AuthnSignAlgo",
+          "in": "query",
+          "type": "string",
+          "description": "The supported signature algorithm. Valid values: - rsa-sha256 - rsa-sha1 (default)",
+          "example": "rsa-sha1"
+        }
+      ]
     },
     "CreateUser": {
       "required": [
@@ -101,7 +447,65 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateUser"
+      "summary": "Creates a RAM user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the Resource Access Management (RAM) user. The name is in the format of ` @ .onaliyun.com`. ` ` indicates the name of the RAM user. ` .onaliyun.com` indicates the default domain name",
+          "example": "Test@example.onaliyun.com"
+        },
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The display name of the RAM user. The name must be 1 to 24 characters in length.",
+          "example": "test"
+        },
+        {
+          "name": "MobilePhone",
+          "in": "query",
+          "type": "string",
+          "description": "The mobile number of the RAM user. Format: Country code-Mobile phone number. > This parameter is valid only on the China site (aliyun.com).",
+          "example": "86-1868888****"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "description": "The email address of the RAM user. > This parameter is valid only on the China site (aliyun.com).",
+          "example": "alice@example.com"
+        },
+        {
+          "name": "Comments",
+          "in": "query",
+          "type": "string",
+          "description": "The description. The description must be 1 to 128 characters in length.",
+          "example": "This is a cloud computing engineer."
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tags. You can specify up to 20 tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the tag. The tag key cannot be an empty string. The tag key can be up to 128 characters in length and cannot start with `acs:` or `aliyun`. The tag key cannot contain `http://` or `https://"
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the tag. The tag value can be an empty string. The tag value can be up to 128 characters in length. The tag value cannot start with `acs:` or contain `http://` or `https://`."
+            }
+          ]
+        }
+      ]
     },
     "CreateVirtualMFADevice": {
       "required": [
@@ -109,7 +513,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateVirtualMFADevice"
+      "summary": "Creates a virtual multi-factor authentication (MFA) device.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "VirtualMFADeviceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the MFA device. The name must be 1 to 64 characters in length and can contain letters, digits, and hyphens (-).",
+          "example": "device001"
+        }
+      ]
     },
     "DeleteAccessKey": {
       "required": [
@@ -117,13 +532,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccessKey"
+      "summary": "Deletes an AccessKey pair for an Alibaba Cloud account or a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the AccessKey pair that you want to delete.",
+          "example": "LTAI*******************"
+        },
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. If this parameter is empty, the AccessKey pair of the current user is deleted.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "DeleteAccessKeyInRecycleBin": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccessKeyInRecycleBin"
+      "summary": "Deletes a specific AccessKey pair that belongs to a Resource Access Management (RAM) user from the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RAM user. > - If you use an Alibaba Cloud account to call the operation, you must specify the parameter. > > - If you use a RAM user to call the operation, you can leave the parameter em",
+          "example": "20732900249392****"
+        },
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The AccessKey ID of the RAM user.",
+          "example": "LTAI*******************"
+        }
+      ]
     },
     "DeleteAppSecret": {
       "required": [
@@ -132,7 +582,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAppSecret"
+      "summary": "Deletes the application secret of an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "472457090344041****"
+        },
+        {
+          "name": "AppSecretId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application secret.",
+          "example": "2efd5004-005c-4f05-83c6-5b1dd176****"
+        }
+      ]
     },
     "DeleteApplication": {
       "required": [
@@ -140,13 +609,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteApplication"
+      "summary": "Deletes an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "472457090344041****"
+        }
+      ]
     },
     "DeleteGroup": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteGroup"
+      "summary": "Deletes a Resource Access Management (RAM) user group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "GroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM user group.",
+          "example": "Dev-Team"
+        }
+      ]
     },
     "DeleteLoginProfile": {
       "required": [
@@ -154,19 +644,57 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteLoginProfile"
+      "summary": "Disables logon to the console for a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "DeleteOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteOIDCProvider"
+      "summary": "Deletes an OpenID Connect (OIDC) identity provider (IdP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP.",
+          "example": "TestOIDCProvider"
+        }
+      ]
     },
     "DeletePasskey": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeletePasskey"
+      "summary": "Deletes a passkey for a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "PasskeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the passkey.",
+          "example": "PASSKEY-CuZjEHhWcr7GIQOMGvkS"
+        }
+      ]
     },
     "DeleteSAMLProvider": {
       "required": [
@@ -174,19 +702,57 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteSAMLProvider"
+      "summary": "Deletes an identity provider (IdP) for role-based single sign-on (SSO).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SAMLProviderName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the IdP that you want to delete.",
+          "example": "test-provider"
+        }
+      ]
     },
     "DeleteUser": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteUser"
+      "summary": "Deletes a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. > You must specify only one of the following parameters: `UserPrincipalName` and `UserId`.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RAM user. > You must specify only one of the following parameters: `UserPrincipalName` and `UserId`.",
+          "example": "20732900249392****"
+        }
+      ]
     },
     "DeleteUserInRecycleBin": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteUserInRecycleBin"
+      "summary": "Deletes a specific Resource Access Management (RAM) user from the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RAM user.",
+          "example": "20732900249392****"
+        }
+      ]
     },
     "DeleteVirtualMFADevice": {
       "required": [
@@ -194,7 +760,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteVirtualMFADevice"
+      "summary": "Deletes a multi-factor authentication (MFA) device.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SerialNumber",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The serial number of the MFA device.",
+          "example": "acs:ram::123456789012****:mfa/device002"
+        }
+      ]
     },
     "DeprovisionApplication": {
       "required": [
@@ -202,7 +779,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeprovisionApplication"
+      "summary": "Uninstalls an external application or an internal application of the ServerApp type.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "407342493648015****"
+        }
+      ]
     },
     "DeprovisionExternalApplication": {
       "required": [
@@ -210,7 +798,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeprovisionExternalApplication"
+      "summary": "Deletes an installed external application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "417273362044613****"
+        }
+      ]
     },
     "DisableVirtualMFA": {
       "required": [
@@ -218,19 +817,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DisableVirtualMFA"
+      "summary": "Unbinds and deletes a multi-factor authentication (MFA) device from a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "GenerateCredentialReport": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GenerateCredentialReport"
+      "summary": "Generates the user credential report of an Alibaba Cloud account.",
+      "method": "POST"
     },
     "GenerateGovernanceReport": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GenerateGovernanceReport"
+      "summary": "Generates a check report for Cloud Governance.",
+      "method": "POST"
     },
     "GetAccessKeyInfoInRecycleBin": {
       "required": [
@@ -238,7 +850,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessKeyInfoInRecycleBin"
+      "summary": "Queries information about a specific AccessKey pair of a Resource Access Management (RAM) user in the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The AccessKey ID of the Resource Access Management (RAM) user.",
+          "example": "LTAI*******************"
+        }
+      ]
     },
     "GetAccessKeyLastUsed": {
       "required": [
@@ -246,25 +869,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessKeyLastUsed"
+      "summary": "Queries the time when an AccessKey pair was used for the last time.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. If you do not specify this parameter, the AccessKey pair of the current user is queried.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the AccessKey pair that you want to query.",
+          "example": "LTAI*******************"
+        }
+      ]
     },
     "GetAccountMFAInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccountMFAInfo"
+      "summary": "Queries information about the multi-factor authentication (MFA) devices of an Alibaba Cloud account.",
+      "method": "POST"
     },
     "GetAccountSecurityPracticeReport": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccountSecurityPracticeReport"
+      "summary": "Queries the security report of an Alibaba Cloud account.",
+      "method": "POST"
     },
     "GetAccountSummary": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccountSummary"
+      "summary": "Retrieves the overview for an Alibaba Cloud account (root account).",
+      "method": "POST"
     },
     "GetAppSecret": {
       "required": [
@@ -273,7 +917,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAppSecret"
+      "summary": "Queries the details of an application secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "472457090344041****"
+        },
+        {
+          "name": "AppSecretId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application secret.",
+          "example": "2efd5004-005c-4f05-83c6-5b1dd176****"
+        }
+      ]
     },
     "GetApplication": {
       "required": [
@@ -281,7 +944,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetApplication"
+      "summary": "Queries the configuration information of an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The application ID.",
+          "example": "472457090344041****"
+        }
+      ]
     },
     "GetApplicationProvisionInfo": {
       "required": [
@@ -289,19 +963,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetApplicationProvisionInfo"
+      "summary": "Queries installation information about a specified installed application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "452392483381546****"
+        }
+      ]
     },
     "GetCredentialReport": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCredentialReport"
+      "summary": "Queries the user credential reports of an Alibaba Cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to initiate the next request if the response of the current request is truncated. You can use the token to initiate another request and obtain the remaining records.\\`\\`",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "string",
+          "description": "The number of entries per page. If a response is truncated because it reaches the value of `MaxItems`, the value of `IsTruncated` will be true. Valid values: 1 to 3501. Default value: 3501.",
+          "example": "1000"
+        }
+      ]
     },
     "GetDefaultDomain": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetDefaultDomain"
+      "summary": "Queries the default domain name of an Alibaba Cloud account.",
+      "method": "POST"
     },
     "GetExternalApplication": {
       "required": [
@@ -309,25 +1012,71 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetExternalApplication"
+      "summary": "Queries information about an installed external application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "472457090344041****"
+        }
+      ]
     },
     "GetGovernanceItemReport": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the detection report of a specified identity permission administration check item"
+      "summary": "Query the detection report of a specified identity permission administration check item",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "GovernanceItemType",
+          "in": "query",
+          "type": "string",
+          "description": "The check item. For more information, see [Identity and access governance check items](https://help.aliyun.com/zh/ram/user-guide/overview-of-cloud-governance-for-ram?spm=a2c4g.11174283.0.0.88b3de53tfL",
+          "example": "SSOLoginEnabled"
+        },
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "If the response is truncated, use the `Marker` to retrieve the subsequent content.",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "string",
+          "description": "The number of entries to return. If the response is truncated because the number of entries exceeds the value of `MaxItems`, the value of the `IsTruncated` parameter is true. Valid values: 1 to 1000. ",
+          "example": "1000"
+        }
+      ]
     },
     "GetGovernanceReportStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the generation status of the identity permission governance detection report"
+      "summary": "Query the generation status of the identity permission governance detection report",
+      "method": "POST"
     },
     "GetGroup": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetGroup"
+      "summary": "Queries the information about a Resource Access Management (RAM) user group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "GroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM user group.",
+          "example": "Dev-Team"
+        }
+      ]
     },
     "GetLoginProfile": {
       "required": [
@@ -335,19 +1084,41 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetLoginProfile"
+      "summary": "Queries the console logon settings for a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "GetOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetOIDCProvider"
+      "summary": "Queries the information about an OIDC IdP.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP.",
+          "example": "TestOIDCProvider"
+        }
+      ]
     },
     "GetPasswordPolicy": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetPasswordPolicy"
+      "summary": "Queries the password policy for Resource Access Management (RAM) users.",
+      "method": "POST"
     },
     "GetSAMLProvider": {
       "required": [
@@ -355,55 +1126,149 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetSAMLProvider"
+      "summary": "Queries the information about an identity provider (IdP) for role-based single sign-on (SSO).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SAMLProviderName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the IdP whose information you want to query.",
+          "example": "test-provider"
+        }
+      ]
     },
     "GetSecurityPreference": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetSecurityPreference"
+      "summary": "Use `GetSecurityPreference` to query the global security preferences of a RAM user.",
+      "method": "POST"
     },
     "GetUser": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetUser"
+      "summary": "Queries the information about a RAM user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. The name is in the format of ` @ .onaliyun.com`. ` ` indicates the name of the RAM user. ` .onaliyun.com` indicates the default domain name. The value of `UserPrincipal",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RAM user. > You must specify only one of the following parameters: `UserPrincipalName`, `UserId`, and `UserAccessKeyId`.",
+          "example": "20732900249392****"
+        },
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The AccessKey ID of the RAM user. > You must specify only one of the following parameters: `UserPrincipalName`, `UserId`, and `UserAccessKeyId`.",
+          "example": "LTAI*******************"
+        }
+      ]
     },
     "GetUserInRecycleBin": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetUserInRecycleBin"
+      "summary": "Queries information about a specific Resource Access Management (RAM) user in the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RAM user. > You must specify only one of the following parameters: `UserId` and `UserAccessKeyId`.",
+          "example": "20732900249392****"
+        },
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The AccessKey ID of the RAM user. > You must specify only one of the following parameters: `UserId` and `UserAccessKeyId`.",
+          "example": "LTAI*******************"
+        }
+      ]
     },
     "GetUserMFAInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetUserMFAInfo"
+      "summary": "Queries information about the multi-factor authentication (MFA) device that is bound to a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. This parameter is differently set in the following scenarios: - If you use a RAM user to call this operation, this parameter can be left empty. If you do not specify th",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "GetUserSsoSettings": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetUserSsoSettings"
+      "summary": "Queries the configurations of user-based single sign-on (SSO).",
+      "method": "POST"
     },
     "GetVerificationInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetVerificationInfo"
+      "summary": "Queries the status of the mobile phone or email that is bound to a Resource Access Management (RAM) user.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "ListAccessKeys": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAccessKeys"
+      "summary": "Queries the AccessKey pairs of an Alibaba Cloud account or a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. If this parameter is empty, the AccessKey pairs of the current user are queried.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "ListAccessKeysInRecycleBin": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAccessKeysInRecycleBin"
+      "summary": "Queries the AccessKey pairs of a specific Resource Access Management (RAM) user in the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the Resource Access Management (RAM) user.",
+          "example": "20732900249392****"
+        }
+      ]
     },
     "ListAppSecretIds": {
       "required": [
@@ -411,31 +1276,71 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAppSecretIds"
+      "summary": "Queries the secret IDs of an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "472457090344041****"
+        }
+      ]
     },
     "ListApplicationProvisionInfos": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListApplicationProvisionInfos"
+      "summary": "Queries installation information about all installed applications.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The source of the applications. Valid values: - inner: The applications are from the current account. - external: The applications are from other accounts.",
+          "example": "external"
+        }
+      ]
     },
     "ListApplications": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListApplications"
+      "summary": "Lists the applications that you have created.",
+      "method": "POST"
     },
     "ListExternalApplications": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListExternalApplications"
+      "summary": "Queries information about all installed external applications.",
+      "method": "POST"
     },
     "ListGroups": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListGroups"
+      "summary": "Queries Resource Access Management (RAM) user groups.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The `marker`. If part of a previous response is truncated, you can use this parameter to obtain the truncated part.",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return. If a response is truncated because it reaches the value of `MaxItems`, the value of `IsTruncated` will be `true`. Valid values: 1 to 100. Default value: 100.",
+          "example": "100"
+        }
+      ]
     },
     "ListGroupsForUser": {
       "required": [
@@ -443,73 +1348,354 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListGroupsForUser"
+      "summary": "Queries the Resource Access Management (RAM) user groups to which a RAM user belongs.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "ListOIDCProviders": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListOIDCProviders"
+      "summary": "Queries OIDC IdPs.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The `marker`. If part of a previous response is truncated, you can use this parameter to obtain the truncated part.",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. If a response is truncated because it reaches the value of `MaxItems`, the value of `IsTruncated` will be `true`. Valid values: 1 to 100. Default value: 100.",
+          "example": "100"
+        }
+      ]
     },
     "ListPasskeys": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListPasskeys"
+      "summary": "Queries the information about the passkeys that are bound to a Resource Access Management (RAM) user.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "ListPredefinedScopes": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListPredefinedScopes"
+      "summary": "Queries predefined application permissions.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the application. Valid values: - WebApp - NativeApp - ServerApp If this parameter is empty, the permissions on all types of applications are queried.",
+          "example": "WebApp"
+        }
+      ]
     },
     "ListRecentGovernanceMetrics": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRecentGovernanceMetrics"
+      "summary": "Queries all metric values in the most recent governance check.",
+      "method": "POST"
     },
     "ListSAMLProviders": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListSAMLProviders"
+      "summary": "Queries information about identity providers (IdPs) for role-based single sign-on (SSO).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The `marker`. If part of a previous response is truncated, you can use this parameter to obtain the truncated part.",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return. If a response is truncated because it reaches the value of `MaxItems`, the value of `IsTruncated` will be `true`. Valid values: 1 to 100. Default value: 100.",
+          "example": "100"
+        }
+      ]
     },
     "ListTagResources": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagResources"
+      "summary": "Queries the tags that are added resources.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourcePrincipalName",
+          "in": "query",
+          "type": "array",
+          "description": "The name of resource N. Valid values of N: 1 to 50. If ResourceType is set to user, the resource name is the name of the RAM user. > You must specify only one of the following parameters: ResourceId a",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to initiate the next request if the response of the current request is truncated. You can use the token to initiate another request and obtain the remaining records.",
+          "example": "caeba0bbb2be03f84eb48b699f0a4883"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. If a response is truncated because it reaches the value of PageSize, the value of IsTruncated will be true. Valid values: 1 to 100. Default value: 100.",
+          "example": "2"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the resource. Valid value: - user: a RAM user",
+          "example": "user"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The ID of resource N. Valid values of N: 1 to 50. If ResourceType is set to user, the resource ID is the ID of the RAM user. > You must specify only one of the following parameters: ResourceId and Res",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag value. Valid values of N: 1 to 20. N must be consecutive.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of tag N. Valid values of N: 1 to 20. N must be consecutive."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of tag N. Valid values of N: 1 to 20. N must be consecutive."
+            }
+          ]
+        }
+      ]
     },
     "ListUserBasicInfos": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListUserBasicInfos"
+      "summary": "Queries the basic information about all Resource Access Management (RAM) users.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The `marker`. If part of a previous response is truncated, you can use this parameter to obtain the truncated part.",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return. If a response is truncated because it reaches the value of `MaxItems`, the value of `IsTruncated` will be `true`. Valid values: 1 to 1000. Default value: 100.",
+          "example": "100"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of tag N. Valid values of N: 1 to 20. N must be consecutive."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of tag N. Valid values of N: 1 to 20. N must be consecutive."
+            }
+          ]
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the RAM users that you want to query. Valid values: active, freeze, and active,freeze. If you set the value to active,freeze, RAM users in both active and freeze states are queried. If y",
+          "example": "active"
+        }
+      ]
     },
     "ListUsers": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListUsers"
+      "summary": "Queries information about all Resource Access Management (RAM) users.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The `marker`. If part of a previous response is truncated, you can use this parameter to obtain the truncated part.",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. If a response is truncated because it reaches the value of `MaxItems`, the value of `IsTruncated` will be true. Valid values: 1 to 1000. Default value: 1000.",
+          "example": "1000"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tags. A maximum number of 20 tags are supported.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of tag N. Valid values of N: 1 to 20. N must be consecutive."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of tag N. Valid values of N: 1 to 20. N must be consecutive."
+            }
+          ]
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the RAM users that you want to query. Valid values: active, freeze, and active,freeze. If you leave the parameter empty, the value active is used by default. If you specify a value for t",
+          "example": "active"
+        }
+      ]
     },
     "ListUsersForGroup": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListUsersForGroup"
+      "summary": "Queries Resource Access Management (RAM) users in a RAM user group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "GroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM user group.",
+          "example": "Test-Team"
+        },
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. You do not need to specify this parameter for the first request.\\`\\` When you call the operation for the first ",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 100.",
+          "example": "100"
+        }
+      ]
     },
     "ListUsersInRecycleBin": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListUsersInRecycleBin"
+      "summary": "Queries the basic information about all Resource Access Management (RAM) users in the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The `marker`. If part of a previous response is truncated, you can use this parameter to obtain the truncated part.",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return. If a response is truncated because it reaches the value of `MaxItems`, the value of `IsTruncated` will be true. Valid values: 1 to 100. Default value: 100.",
+          "example": "100"
+        },
+        {
+          "name": "Filter",
+          "in": "query",
+          "type": "string",
+          "description": "The filter condition that is used to query information about a specified RAM user in the recycle bin. You must specify this parameter in the `UserPrincipalName eq @ .onaliyun.com` format.",
+          "example": "UserPrincipalName eq test@example.onaliyun.com"
+        }
+      ]
     },
     "ListVirtualMFADevices": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListVirtualMFADevices"
+      "summary": "Queries multi-factor authentication (MFA) devices.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. You do not need to specify this parameter for the first request.\\`\\` When you call the operation for the first ",
+          "example": "EXAMPLE"
+        },
+        {
+          "name": "MaxItems",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 100.",
+          "example": "100"
+        }
+      ]
     },
     "ProvisionApplication": {
       "required": [
@@ -517,7 +1703,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ProvisionApplication"
+      "summary": "Installs an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "407426893752729****"
+        },
+        {
+          "name": "Scopes",
+          "in": "query",
+          "type": "string",
+          "description": "The permissions that are granted to the application. Separate multiple permissions with a semicolon (;). > For more information about the supported permissions, see [Overview](~~93693~~).",
+          "example": "openid;aliuid"
+        }
+      ]
     },
     "ProvisionExternalApplication": {
       "required": [
@@ -525,19 +1729,71 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ProvisionExternalApplication"
+      "summary": "Installs an external application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the application.",
+          "example": "403550611646604****"
+        },
+        {
+          "name": "Scopes",
+          "in": "query",
+          "type": "string",
+          "description": "The permissions that are granted to the application. Separate multiple permissions with a semicolon (;). > For more information about the supported permissions, see [Overview](~~93693~~).",
+          "example": "openid;aliuid"
+        }
+      ]
     },
     "RemoveClientIdFromOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RemoveClientIdFromOIDCProvider"
+      "summary": "Removes a client ID from an OpenID Connect (OIDC) identity provider (IdP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP.",
+          "example": "TestOIDCProvider"
+        },
+        {
+          "name": "ClientId",
+          "in": "query",
+          "type": "string",
+          "description": "The client ID that you want to remove. The client ID can contain letters, digits, and special characters and cannot start with the special characters. The special characters are `periods, (.), hyphens",
+          "example": "498469743454717****"
+        }
+      ]
     },
     "RemoveFingerprintFromOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RemoveFingerprintFromOIDCProvider"
+      "summary": "Removes a fingerprint from an OpenID Connect (OIDC) identity provider (IdP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP.",
+          "example": "TestOIDCProvider"
+        },
+        {
+          "name": "Fingerprint",
+          "in": "query",
+          "type": "string",
+          "description": "The fingerprint that you want to remove.",
+          "example": "6938fd4d98bab03faadb97b34396831e3780****"
+        }
+      ]
     },
     "RemoveUserFromGroup": {
       "required": [
@@ -545,19 +1801,64 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RemoveUserFromGroup"
+      "summary": "Removes a Resource Access Management (RAM) user from a RAM user group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "alice@example.onaliyun.com"
+        },
+        {
+          "name": "GroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM user group.",
+          "example": "Test-Team"
+        }
+      ]
     },
     "RestoreAccessKeyFromRecycleBin": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RestoreAccessKeyFromRecycleBin"
+      "summary": "Restores a specific AccessKey pair that belongs to a Resource Access Management (RAM) user from the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the Resource Access Management (RAM) user.",
+          "example": "20732900249392****"
+        },
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The AccessKey ID of the RAM user.",
+          "example": "LTAI*******************"
+        }
+      ]
     },
     "RestoreUserFromRecycleBin": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RestoreUserFromRecycleBin"
+      "summary": "Restores a specific Resource Access Management (RAM) user from the recycle bin.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RAM user.",
+          "example": "20732900249392****"
+        }
+      ]
     },
     "SetDefaultDomain": {
       "required": [
@@ -565,37 +1866,370 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetDefaultDomain"
+      "summary": "Configures the default domain name for an Alibaba Cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "DefaultDomainName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The default domain name. The default domain name is in the format of ` .onaliyun.com`. ` ` indicates the account alias. By default, the value of AccountAlias is the ID of the Alibaba Cloud account. Th",
+          "example": "examplecompany.onaliyun.com"
+        }
+      ]
     },
     "SetPasswordPolicy": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetPasswordPolicy"
+      "summary": "Set the password policy for Resource Access Management (RAM) users.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "MinimumPasswordLength",
+          "in": "query",
+          "type": "integer",
+          "description": "Minimum password length. Valid values: 8 to 32. Default value: 8.",
+          "example": "8"
+        },
+        {
+          "name": "RequireLowercaseCharacters",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether passwords must contain lowercase letters. - true - false (default)",
+          "example": "false"
+        },
+        {
+          "name": "RequireUppercaseCharacters",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether passwords must contain uppercase letters. - true - false (default)",
+          "example": "false"
+        },
+        {
+          "name": "RequireNumbers",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether passwords must contain numbers. - true - false (default)",
+          "example": "false"
+        },
+        {
+          "name": "RequireSymbols",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether passwords must contain special characters. - true - false (default)",
+          "example": "false"
+        },
+        {
+          "name": "HardExpire",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether logon is blocked after a password expires. - true: After a password expires, the RAM user cannot log on to the console. An Alibaba Cloud account owner or a RAM administrator must res",
+          "example": "false"
+        },
+        {
+          "name": "MaxLoginAttemps",
+          "in": "query",
+          "type": "integer",
+          "description": "Maximum number of failed password attempts. After the specified number of consecutive incorrect password attempts, the account is locked for one hour. Valid values: 0 to 32. Default value: 0, which di",
+          "example": "0"
+        },
+        {
+          "name": "PasswordReusePrevention",
+          "in": "query",
+          "type": "integer",
+          "description": "Prevents reuse of previous passwords. Valid values: 0 to 24. This value specifies how many previous passwords are blocked from reuse. Default value: 0, which disables this constraint.",
+          "example": "0"
+        },
+        {
+          "name": "MaxPasswordAge",
+          "in": "query",
+          "type": "integer",
+          "description": "Password validity period. Valid values: 0 to 1095. Unit: days. Default value: 0, which means passwords never expire.",
+          "example": "0"
+        },
+        {
+          "name": "MinimumPasswordDifferentCharacter",
+          "in": "query",
+          "type": "integer",
+          "description": "Minimum number of unique characters in a password. Valid values: 0 to 8. Default value: 0, which imposes no restriction.",
+          "example": "0"
+        },
+        {
+          "name": "PasswordNotContainUserName",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether passwords must not contain the user name. - true - false (default)",
+          "example": "false"
+        },
+        {
+          "name": "InitialPasswordAge",
+          "in": "query",
+          "type": "integer",
+          "description": "Validity period for initial passwords. Initial passwords apply to newly created RAM users or users whose console logon settings are re-enabled. Valid values: 0 to 90. Unit: days. Default value: 14. A ",
+          "example": "14"
+        },
+        {
+          "name": "InterceptRiskPasswordOnApi",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether threat passwords are blocked when set using APIs. Default value: false - true - false (default)",
+          "example": "false"
+        }
+      ]
     },
     "SetSecurityPreference": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetSecurityPreference"
+      "summary": "Configure the global security preferences for a RAM user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "EnableSaveMFATicket",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether a RAM user who logs on with multi-factor authentication (MFA) can skip MFA for the next seven days. Valid values: - true: Allowed. - false (default): Not allowed.",
+          "example": "false"
+        },
+        {
+          "name": "AllowUserToChangePassword",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether RAM users can change their own passwords. Valid values: - true (default): Allowed. - false: Not allowed.",
+          "example": "true"
+        },
+        {
+          "name": "AllowUserToManageAccessKeys",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether RAM users can manage their own AccessKeys. Valid values: - true: Allowed. - false (default): Not allowed.",
+          "example": "false"
+        },
+        {
+          "name": "AllowUserToManageMFADevices",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether RAM users can manage their own MFA devices. Valid values: - true (default): Allowed. - false: Not allowed.",
+          "example": "true"
+        },
+        {
+          "name": "LoginSessionDuration",
+          "in": "query",
+          "type": "integer",
+          "description": "The session duration of a RAM user who logs on to the console. Unit: hours. Valid values: 1 to 24. Default value: 6.",
+          "example": "6"
+        },
+        {
+          "name": "LoginNetworkMasks",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address mask that is used to log on to the console. This mask applies to password-based logons and single sign-on (SSO) logons, but does not affect API calls that are initiated by using an Acce",
+          "example": "10.0.0.0/8"
+        },
+        {
+          "name": "VerificationTypes",
+          "in": "query",
+          "type": "array",
+          "description": "The MFA methods.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "AllowUserToManagePersonalDingTalk",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether RAM users can link or unlink their personal DingTalk accounts. Valid values: - true (default): Allowed. - false: Not allowed.",
+          "example": "true"
+        },
+        {
+          "name": "OperationForRiskLogin",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is deprecated.",
+          "example": "autonomous"
+        },
+        {
+          "name": "MFAOperationForLogin",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies the MFA policy for user logon. This parameter replaces `EnforceMFAForLogin`. We recommend that you use this parameter. `EnforceMFAForLogin` is still valid. Valid values: - `mandatory`: enfor",
+          "example": "adaptive"
+        },
+        {
+          "name": "MaxIdleDaysForAccessKeys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum idle period of the AccessKey pairs of RAM users. An AccessKey pair that is not used for the specified period of time is automatically disabled on the next day. You can set the value to one",
+          "example": "365"
+        },
+        {
+          "name": "MaxIdleDaysForUsers",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum idle period of RAM users. If a RAM user who can log on to the console does not log on to the console for the specified period of time (SSO logons are not included), the console logon featu",
+          "example": "365"
+        },
+        {
+          "name": "AllowUserToLoginWithPasskey",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether RAM users can use passkeys to log on to the console. Valid values: - true (default): Allowed. - false: Not allowed.",
+          "example": "true"
+        },
+        {
+          "name": "AllowUserToManageServiceCredentials",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether RAM users can manage their own API keys. Valid values: - true: Allowed. - false: Not allowed.",
+          "example": "false"
+        }
+      ]
     },
     "SetUserSsoSettings": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetUserSsoSettings"
+      "summary": "Configures information about user-based single sign-on (SSO).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "MetadataDocument",
+          "in": "query",
+          "type": "string",
+          "description": "The metadata file, which is Base64-encoded. The file is provided by an identity provider (IdP) that supports Security Assertion Markup Language (SAML) 2.0.",
+          "example": "PD94bWwgdmVy****"
+        },
+        {
+          "name": "SsoEnabled",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enable SSO for the RAM user. Valid values: - true - false (default)",
+          "example": "true"
+        },
+        {
+          "name": "AuxiliaryDomain",
+          "in": "query",
+          "type": "string",
+          "description": "The auxiliary domain name.",
+          "example": "example.com"
+        },
+        {
+          "name": "SsoLoginWithDomain",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the SAML SSO requires a domain name in the ` ` element of the SAML response. If yes, the username specified by the IdP for SSO must have a domain name as the suffix. - If the value o",
+          "example": "true"
+        },
+        {
+          "name": "AuthnSignAlgo",
+          "in": "query",
+          "type": "string",
+          "description": "The supported signature algorithm. Valid values: - rsa-sha256 - rsa-sha1 (default)",
+          "example": "rsa-sha1"
+        }
+      ]
     },
     "SetVerificationInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetVerificationInfo"
+      "summary": "Binds a mobile phone or email to a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "VerifyType",
+          "in": "query",
+          "type": "string",
+          "description": "The multi-factor authentication (MFA) method. Valid values: - sms: mobile phone. - email: email.",
+          "example": "sms"
+        },
+        {
+          "name": "MobilePhone",
+          "in": "query",
+          "type": "string",
+          "description": "The mobile phone number. > If you set `VerifyType` to `sms`, you must specify this parameter.",
+          "example": "86-13900001234"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "description": "The email address. > If you set `VerifyType` to `email`, you must specify this parameter.",
+          "example": "username@example.com"
+        }
+      ]
     },
     "TagResources": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResources"
+      "summary": "Adds tags to resources.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the resource. Valid value: - user: a Resource Access Management (RAM) user.",
+          "example": "user"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The ID of resource N. Valid values of N: 1 to 50. If the ResourceType parameter is set to user, the resource ID is the ID of the RAM user. > You must specify only one of the following parameters: `Res",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ResourcePrincipalName",
+          "in": "query",
+          "type": "array",
+          "description": "The name of resource N. Valid values of N: 1 to 50. If the ResourceType parameter is set to user, the resource name is the name of the RAM user. > You must specify only one of the following parameters",
+          "example": "TagResources",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The key of tag N. Valid values of N: 1 to 20. You cannot specify empty strings as tag keys. The tag key can be up to 128 characters in length. The tag key cannot start with aliyun or acs: and cannot c",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of tag N. Valid values of N: 1 to 20. You cannot specify empty strings as tag keys. The tag key can be up to 128 characters in length. The tag key cannot start with `aliyun` or `acs:` and cann"
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of tag N. Valid values of N: 1 to 20. The tag value can be an empty string. The tag value can be up to 128 characters in length and cannot contain `http://` or `https://`."
+            }
+          ]
+        }
+      ]
     },
     "UnbindMFADevice": {
       "required": [
@@ -603,19 +2237,115 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UnbindMFADevice"
+      "summary": "Unbinds a multi-factor authentication (MFA) device from a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        }
+      ]
     },
     "UnbindVerification": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UnbindVerification"
+      "summary": "Unbinds a mobile phone or email from a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "VerifyType",
+          "in": "query",
+          "type": "string",
+          "description": "The multi-factor authentication (MFA) method. Valid values: - sms: mobile phone. - email: email.",
+          "example": "sms"
+        },
+        {
+          "name": "MobilePhone",
+          "in": "query",
+          "type": "string",
+          "description": "The mobile phone number. > If you set `VerifyType` to `sms`, you must specify this parameter.",
+          "example": "86-13900001234"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "description": "The email address. > If you set `VerifyType` to `email`, you must specify this parameter.",
+          "example": "username@example.com"
+        }
+      ]
     },
     "UntagResources": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResources"
+      "summary": "Removes tags from a resource.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the resource. Valid value: - user: a RAM user",
+          "example": "user"
+        },
+        {
+          "name": "All",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to remove all tags from the resource. Valid values: - true: remove all tags from the resources. - false (default): does not remove all tags from the resources. > This parameter takes",
+          "example": "false"
+        },
+        {
+          "name": "ResourcePrincipalName",
+          "in": "query",
+          "type": "array",
+          "description": "The names of resources. Valid values of N: 1 to 50. If the ResourceType parameter is set to user, the resource name is the name of the RAM user. > You must specify only one of the following parameters",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The IDs of resources. Valid values of N: 1 to 50. If the ResourceType parameter is set to user, the resource ID is the ID of the RAM user. > You must specify only one of the following parameters: Reso",
+          "example": "UntagResources",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "array",
+          "description": "The tag keys of resources. Valid values of N: 1 to 20. N must be consecutive.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpdateAccessKey": {
       "required": [
@@ -624,7 +2354,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateAccessKey"
+      "summary": "Modifies the status of an AccessKey pair for an Alibaba Cloud account or a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. If this parameter is empty, the status of the AccessKey pair for the current user is modified.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "UserAccessKeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The AccessKey ID of the AccessKey pair for which you want to modify the status.",
+          "example": "LTAI*******************"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The status of the AccessKey pair. Valid values: - Active - Inactive",
+          "example": "Active"
+        }
+      ]
     },
     "UpdateApplication": {
       "required": [
@@ -632,13 +2388,111 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateApplication"
+      "summary": "Modifies the configuration information of an application.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AppId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The application ID.",
+          "example": "472457090344041****"
+        },
+        {
+          "name": "NewDisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The display name of the application.",
+          "example": "NewApp"
+        },
+        {
+          "name": "NewRedirectUris",
+          "in": "query",
+          "type": "string",
+          "description": "The redirect URL. To specify multiple URLs, separate them with semicolons (;).",
+          "example": "https://www.example.com"
+        },
+        {
+          "name": "NewPredefinedScopes",
+          "in": "query",
+          "type": "string",
+          "description": "The scope of application permissions. For more information about the application permission scope, see [OAuth overview](~~93693~~). You can also call the [ListPredefinedScopes](~~187206~~) operation t",
+          "example": "openid"
+        },
+        {
+          "name": "NewRequiredScopes",
+          "in": "query",
+          "type": "string",
+          "description": "The required permission. You can specify one or more permissions for the `RequiredScopes` parameter. When a user grants permissions to the application, the scopes specified in this parameter are pre-s",
+          "example": "profile;aliuid"
+        },
+        {
+          "name": "NewSecretRequired",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether a secret is required. Valid values: - true - false > * For applications of the WebApp and ServerApp types, this parameter is automatically set to true and cannot be changed. > > * Fo",
+          "example": "true"
+        },
+        {
+          "name": "NewAccessTokenValidity",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the access token. Valid values: 900 to 10800. Unit: seconds.",
+          "example": "3600"
+        },
+        {
+          "name": "NewRefreshTokenValidity",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the refresh token. Valid values: 7200 to 31536000. Unit: seconds.",
+          "example": "7776000"
+        },
+        {
+          "name": "NewIsMultiTenant",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the application can be installed by using other Alibaba Cloud accounts. Valid values: - true - false",
+          "example": "true"
+        }
+      ]
     },
     "UpdateGroup": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateGroup"
+      "summary": "Modifies information about a Resource Access Management (RAM) user group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NewComments",
+          "in": "query",
+          "type": "string",
+          "description": "The new description. The description can be up to 128 characters in length.",
+          "example": "测试团队"
+        },
+        {
+          "name": "NewDisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The new display name of the RAM user group. The name can be up to 24 characters in length.",
+          "example": "Test-Team"
+        },
+        {
+          "name": "NewGroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The new name of the RAM user group. The name can be up to 64 characters in length and can contain letters, digits, periods (.), underscores (\\_), and hyphens (-).",
+          "example": "Test-Team"
+        },
+        {
+          "name": "GroupName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM user group.",
+          "example": "Dev-Team"
+        }
+      ]
     },
     "UpdateLoginProfile": {
       "required": [
@@ -646,19 +2500,113 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateLoginProfile"
+      "summary": "Modifies the console logon settings for a Resource Access Management (RAM) user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon name of the RAM user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "Password",
+          "in": "query",
+          "type": "string",
+          "description": "The new console logon password for the RAM user. The password must meet the password policy.",
+          "example": "mypassword"
+        },
+        {
+          "name": "PasswordResetRequired",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the RAM user must reset the password at the next logon. Valid values: - true - false",
+          "example": "false"
+        },
+        {
+          "name": "MFABindRequired",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enforce multi-factor authentication (MFA) for the RAM user. Valid values: - true: Enforce MFA. The RAM user must attach an MFA device at the next logon. - false: Do not enforce MF",
+          "example": "false"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable password-based logon to the console. Valid values: - Active: Enable - Inactive: Disable",
+          "example": "Active"
+        }
+      ]
     },
     "UpdateOIDCProvider": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateOIDCProvider"
+      "summary": "Modifies the description and client IDs of an OpenID Connect (OIDC) identity provider (IdP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OIDCProviderName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the OIDC IdP.",
+          "example": "TestOIDCProvider"
+        },
+        {
+          "name": "ClientIds",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the client. If you want to specify multiple client IDs, separate the client IDs with commas (,). A client ID can contain letters, digits, and special characters and cannot start with the spe",
+          "example": "498469743454717****"
+        },
+        {
+          "name": "NewDescription",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the OIDC IdP. The description can be up to 256 characters in length.",
+          "example": "This is a new OIDC Provider."
+        },
+        {
+          "name": "IssuanceLimitTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The earliest time when an external IdP can issue an ID token. If the value of the iat field in the ID token is later than the current time, the request is rejected. Unit: hours. Valid values: 1 to 168",
+          "example": "6"
+        }
+      ]
     },
     "UpdatePasskey": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdatePasskey"
+      "summary": "Updates the name of a passkey.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the Resource Access Management (RAM) user.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "PasskeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the passkey.",
+          "example": "PASSKEY-CuZjEHhWcr7GIQOMGvkS"
+        },
+        {
+          "name": "PasskeyName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the passkey.",
+          "example": "device1"
+        }
+      ]
     },
     "UpdateSAMLProvider": {
       "required": [
@@ -666,13 +2614,97 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateSAMLProvider"
+      "summary": "Updates the information about a specified identity provider for role-based single sign-on (SSO).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SAMLProviderName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the identity provider to modify.",
+          "example": "test-provider"
+        },
+        {
+          "name": "NewDescription",
+          "in": "query",
+          "type": "string",
+          "description": "The new description. > Specify at least one of the `NewDescription` and `NewEncodedSAMLMetadataDocument` parameters.",
+          "example": "This is a new provider."
+        },
+        {
+          "name": "NewEncodedSAMLMetadataDocument",
+          "in": "query",
+          "type": "string",
+          "description": "The new metadata file. > Specify at least one of the `NewDescription` and `NewEncodedSAMLMetadataDocument` parameters.",
+          "example": "PD94bWwgdmVy****"
+        },
+        {
+          "name": "AuthnSignAlgo",
+          "in": "query",
+          "type": "string",
+          "description": "The signature algorithm supported by the Alibaba Cloud service provider (SP). Valid values: - rsa-sha256 - rsa-sha1",
+          "example": "rsa-sha1"
+        }
+      ]
     },
     "UpdateUser": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateUser"
+      "summary": "Modifies the information about a RAM user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The logon name of the RAM user. > You must specify only one of the following parameters: `UserPrincipalName` and `UserId`.",
+          "example": "test@example.onaliyun.com"
+        },
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RAM user. > You must specify only one of the following parameters: `UserPrincipalName` and `UserId`.",
+          "example": "20732900249392****"
+        },
+        {
+          "name": "NewUserPrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The new logon name of the RAM user. The name is in the format of ` @ .onaliyun.com`. ` ` indicates the name of the RAM user. ` .onaliyun.com` indicates the default domain name. The value of `NewUserPr",
+          "example": "new@example.onaliyun.com"
+        },
+        {
+          "name": "NewDisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The new display name of the RAM user. The name must be 1 to 24 characters in length.",
+          "example": "new"
+        },
+        {
+          "name": "NewMobilePhone",
+          "in": "query",
+          "type": "string",
+          "description": "The new mobile phone number of the RAM user. Format: \\ -\\ . > This parameter is valid only on the China site (aliyun.com).",
+          "example": "86-1868888****"
+        },
+        {
+          "name": "NewEmail",
+          "in": "query",
+          "type": "string",
+          "description": "The new email address of the RAM user. > This parameter is valid only on the China site (aliyun.com).",
+          "example": "alice@example.com"
+        },
+        {
+          "name": "NewComments",
+          "in": "query",
+          "type": "string",
+          "description": "The new description of the RAM user. The description must be 1 to 128 characters in length.",
+          "example": "This is a cloud computing engineer."
+        }
+      ]
     }
   }
 }

@@ -1,10 +1,10 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "pvtz",
   "openApiProduct": "pvtz",
   "version": "2018-01-01",
   "source": "https://api.aliyun.com/meta/v1/products/pvtz/versions/2018-01-01/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:47.082Z",
+  "fetchedAt": "2026-06-10T02:58:17.906Z",
   "actions": {
     "AddCustomLine": {
       "required": [
@@ -13,7 +13,52 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddCustomLine"
+      "summary": "Creates a custom line.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language.",
+          "example": "en"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the custom line.",
+          "example": "Custom Route-test"
+        },
+        {
+          "name": "ShareScope",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is not available to users. You do not need to specify this parameter.",
+          "example": "GLOBAL"
+        },
+        {
+          "name": "DnsCategory",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is not available to users. You do not need to specify this parameter.",
+          "example": "INTRANET"
+        },
+        {
+          "name": "Ipv4s",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of IPv4 address segments.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "AddResolverEndpoint": {
       "required": [
@@ -25,7 +70,81 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddResolverEndpoint"
+      "summary": "You can call this operation to add an endpoint.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the endpoint. The name can be up to 20 characters long. An error is reported if the limit is exceeded.",
+          "example": "endpoint-test-name"
+        },
+        {
+          "name": "VpcRegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID of the outbound VPC.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "VpcId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the outbound virtual private cloud (VPC). All outbound DNS query traffic from the Resolver is forwarded through this VPC. > To prevent service interruptions, you cannot change this value aft",
+          "example": "vpc-0jl96awrjt75ezglc****"
+        },
+        {
+          "name": "SecurityGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the security group. The rules in the security group are applied to the outbound VPC. > To prevent service interruptions, you cannot change this value after you create the outbound endpoint.",
+          "example": "sg-0jld3m9yq7l2cw12****"
+        },
+        {
+          "name": "IpConfig",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of source IP addresses for outbound traffic. You must add at least two IP addresses. You can add up to six IP addresses. > To ensure high availability (HA), add at least two source IP address",
+          "children": [
+            {
+              "name": "VSwitchId",
+              "type": "string",
+              "required": true,
+              "description": "The vSwitch ID."
+            },
+            {
+              "name": "CidrBlock",
+              "type": "string",
+              "required": true,
+              "description": "The IPv4 CIDR block of the vSwitch."
+            },
+            {
+              "name": "AzId",
+              "type": "string",
+              "required": true,
+              "description": "The ID of the zone where the vSwitch resides."
+            },
+            {
+              "name": "Ip",
+              "type": "string",
+              "description": "The IP address. The IP address must be within the specified CIDR block. If you leave this parameter empty, the system automatically assigns an IP address."
+            }
+          ]
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        }
+      ]
     },
     "AddResolverRule": {
       "required": [
@@ -34,7 +153,101 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddResolverRule"
+      "summary": "Adds a forwarding rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the forwarding rule. Name the rule as needed.",
+          "example": "test"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the forwarding rule. The only valid value is OUTBOUND. This value indicates that DNS queries are forwarded to an external IP address. > You cannot change this value after the forwarding ru",
+          "example": "OUTBOUND"
+        },
+        {
+          "name": "ZoneName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The domain name (zone) for which you want to forward DNS queries. > You cannot change this value after the forwarding rule is created.",
+          "example": "example.com"
+        },
+        {
+          "name": "EndpointId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the outbound endpoint. The outbound endpoint forwards DNS queries to the specified destination IP addresses.",
+          "example": "hr****"
+        },
+        {
+          "name": "ForwardIp",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The IP addresses and ports of the destination servers in the external DNS system to which DNS queries are forwarded. You can specify up to **6** destination servers. Both private and public IP address",
+          "children": [
+            {
+              "name": "Ip",
+              "type": "string",
+              "required": true,
+              "description": "The IP address of the destination server. > The IP addresses in the following ranges are reserved by the system and cannot be used as the IP addresses of external DNS systems: 100.100.2.136 to 100.100"
+            },
+            {
+              "name": "Port",
+              "type": "integer",
+              "required": true,
+              "description": "The port number of the destination server."
+            }
+          ]
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "Vpcs",
+          "in": "query",
+          "type": "array",
+          "children": [
+            {
+              "name": "VpcUserId",
+              "type": "integer"
+            },
+            {
+              "name": "VpcType",
+              "type": "string"
+            },
+            {
+              "name": "RegionId",
+              "type": "string"
+            },
+            {
+              "name": "VpcId",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "EdgeDnsClusters",
+          "in": "query",
+          "type": "array",
+          "children": [
+            {
+              "name": "ClusterId",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "AddUserVpcAuthorization": {
       "required": [
@@ -42,13 +255,108 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddUserVpcAuthorization"
+      "summary": "Grants cross-account authorization for a VPC.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AuthorizedUserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the Alibaba Cloud account that owns the authorized resources. > Only Alibaba Cloud accounts are supported. RAM users are not supported. You can associate accounts only if they are on the sam",
+          "example": "141339776561****"
+        },
+        {
+          "name": "AuthCode",
+          "in": "query",
+          "type": "string",
+          "description": "The verification code. > - If AuthChannel is empty or set to AUTH\\_CODE, specify the verification code. > > - In other cases, you can enter a random 6-digit number, such as 123456.",
+          "example": "123456"
+        },
+        {
+          "name": "AuthType",
+          "in": "query",
+          "type": "string",
+          "description": "The authorization type. Valid values: - NORMAL: standard authorization. - CLOUD\\_PRODUCT: cloud product authorization.",
+          "example": "NORMAL"
+        },
+        {
+          "name": "AuthChannel",
+          "in": "query",
+          "type": "string",
+          "description": "The authorization channel. Valid values: - AUTH\\_CODE: authorization by verification code. - RESOURCE\\_DIRECTORY: authorization by Resource Directory. Default: AUTH\\_CODE.",
+          "example": "AUTH_CODE"
+        }
+      ]
     },
     "AddZone": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddZone"
+      "summary": "Call the AddZone operation to create a built-in authoritative zone. The built-in authoritative zone can be a standard zone or an accelerated zone.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - **zh**: Chinese. - **en**: English. Default value: **en**.",
+          "example": "en"
+        },
+        {
+          "name": "ZoneName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the zone to add.",
+          "example": "example.com"
+        },
+        {
+          "name": "ProxyPattern",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable subdomain recursive proxy. Valid values: - **ZONE**: Disables the feature. If a DNS query for a subdomain that does not exist under the current domain name is received, an ",
+          "example": "ZONE"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group.",
+          "example": "rg-acfmykd63gt****"
+        },
+        {
+          "name": "ZoneType",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is not available to users. You do not need to specify this parameter.",
+          "example": "CLOUD_PRODUCT_ZONE"
+        },
+        {
+          "name": "ZoneTag",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is not available to users. You do not need to specify this parameter.",
+          "example": "BLINK"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token that is used to ensure the idempotence of the request. You can use the client to generate a token, but you must make sure that the token is unique among different requests. The token ca",
+          "example": "21079fa016944979537637959d09bc"
+        },
+        {
+          "name": "DnsGroup",
+          "in": "query",
+          "type": "string",
+          "description": "The location of the built-in authoritative zone. Valid values: - **NORMAL\\_ZONE**: Standard zone. DNS responses are cached. If a cache miss occurs, the query is sent to the built-in authoritative stan",
+          "enum": [
+            "NORMAL_ZONE",
+            "FAST_ZONE"
+          ],
+          "example": "FAST_ZONE"
+        }
+      ]
     },
     "AddZoneRecord": {
       "required": [
@@ -59,7 +367,98 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddZoneRecord"
+      "summary": "Call the AddZoneRecord operation to add a DNS record to an authoritative zone. Within the effective scope of the zone, the internal DNS record for a domain name overwrites its public DNS record.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the zone. This is the unique identifier of the zone.",
+          "example": "df2d03865266bd9842306db586d3****"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "Rr",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The host record. A host record is the prefix of a domain name. Common host records include www, @, \\* (for wildcard DNS), and mail (for mailboxes). For example, to resolve @.example.com, set the host ",
+          "example": "www"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the DNS record. The following types are supported: - **A**: Maps a domain name to an IPv4 address in dotted decimal notation. - **AAAA**: Maps a domain name to an IPv6 address. - **CNAME**",
+          "example": "A"
+        },
+        {
+          "name": "Line",
+          "in": "query",
+          "type": "string",
+          "description": "The source of the DNS resolution request. Valid values: - default: The default line. This is equivalent to a global line. Configure a default line to ensure that a DNS record is returned even if no sm",
+          "example": "default"
+        },
+        {
+          "name": "Weight",
+          "in": "query",
+          "type": "integer",
+          "description": "The weight. Valid values are integers from 1 to 100. The default value is 1. Set different weights for each address to return addresses based on the weight ratio for DNS queries.",
+          "example": "1"
+        },
+        {
+          "name": "Ttl",
+          "in": "query",
+          "type": "integer",
+          "description": "The time to live (TTL). The unit is seconds (s). Valid values are 5, 30, 60, 3600 (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.",
+          "example": "60"
+        },
+        {
+          "name": "Priority",
+          "in": "query",
+          "type": "integer",
+          "description": "The priority of the MX record. A smaller value indicates a higher priority. Valid values: **\\[1, 99]**.",
+          "example": "5"
+        },
+        {
+          "name": "Value",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The record value. Enter a value based on the DNS record type.",
+          "example": "114.55.XX.XX"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "127.0.XX.XX"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "The remarks.",
+          "example": "en"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "The client token that is used to ensure the idempotence of the request. A client generates this value to ensure that it is unique among different requests. The value can be up to 64 ASCII characters i",
+          "example": "6447728c8578e66aacf062d2df4446dc"
+        }
+      ]
     },
     "BindResolverRuleVpc": {
       "required": [
@@ -67,7 +466,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "BindResolverRuleVpc"
+      "summary": "The BindResolverRuleVpc operation associates a forwarding rule with a virtual private cloud (VPC).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The forwarding rule ID.",
+          "example": "hr****"
+        },
+        {
+          "name": "Vpc",
+          "in": "query",
+          "type": "array",
+          "description": "The VPCs to associate.",
+          "children": [
+            {
+              "name": "VpcId",
+              "type": "string",
+              "description": "The VPC ID."
+            },
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The region ID of the outbound VPC."
+            },
+            {
+              "name": "VpcType",
+              "type": "string",
+              "description": "The VPC type. Valid values: - STANDARD: standard VPC. - EDS: Elastic Desktop Service workspace VPC."
+            }
+          ]
+        }
+      ]
     },
     "BindZoneVpc": {
       "required": [
@@ -75,7 +515,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "BindZoneVpc"
+      "summary": "Binds a Zone to, or unbinds it from, one or more VPCs to define its effective scope.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - `zh`: Chinese. - `en`: English. Default value: `en`.",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "34d4031b63c527358b710a61346a****"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "127.0.XX.XX"
+        },
+        {
+          "name": "Vpcs",
+          "in": "query",
+          "type": "array",
+          "description": "The VPCs. > If you leave this parameter empty, all VPCs bound to the zone are unbound.",
+          "children": [
+            {
+              "name": "VpcId",
+              "type": "string",
+              "description": "The ID of the VPC."
+            },
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The ID of the region where the VPC is located."
+            },
+            {
+              "name": "VpcType",
+              "type": "string",
+              "description": "The type of the VPC. Valid values: - **STANDARD**: a standard VPC. - **EDS**: an Elastic Desktop Service VPC."
+            }
+          ]
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client-generated token that is used to ensure the idempotence of the request. You can use the client to generate a unique token for the request. The token can contain only ASCII characters and canno",
+          "example": "6447728c8578e66aacf062d2df4446dc"
+        }
+      ]
     },
     "ChangeZoneDnsGroup": {
       "required": [
@@ -84,13 +579,63 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ChangeZoneDnsGroup"
+      "summary": "Modify the location of a ZONE.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The global ID of the zone.",
+          "example": "e0cff188756b1d4579b25e54b66cb830"
+        },
+        {
+          "name": "DnsGroup",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The built-in authoritative DNS group. - Standard zone group: NORMAL\\_ZONE - Acceleration zone group: FAST\\_ZONE > Starting from April 30, 2025 (UTC+8), when new users of Alibaba Cloud DNS PrivateZone ",
+          "example": "NORMAL_ZONE"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token that is used to ensure the idempotence of the request. Generate a unique value for this parameter on your client. The token can contain only ASCII characters and cannot exceed 64 charac",
+          "example": "85456erer657cfgfg3437"
+        }
+      ]
     },
     "CheckZoneName": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CheckZoneName"
+      "summary": "You can call the CheckZoneName operation to check whether a zone name is available.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese - en: English Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "ZoneName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the zone. This parameter is required.",
+          "example": "example.com"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the user.",
+          "example": "127.0.XX.XX"
+        }
+      ]
     },
     "DeleteCustomLine": {
       "required": [
@@ -98,7 +643,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteCustomLine"
+      "summary": "Deletes a custom line.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language.",
+          "example": "en"
+        },
+        {
+          "name": "LineId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the custom line.",
+          "example": "1045001"
+        }
+      ]
     },
     "DeleteResolverEndpoint": {
       "required": [
@@ -106,7 +669,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteResolverEndpoint"
+      "summary": "You can call the DeleteResolverEndpoint operation to delete an endpoint by its ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "EndpointId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the endpoint.",
+          "example": "hra0**"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        }
+      ]
     },
     "DeleteResolverRule": {
       "required": [
@@ -114,7 +695,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteResolverRule"
+      "summary": "Deletes a forwarding rule by its ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the forwarding rule.",
+          "example": "hr****"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language.",
+          "example": "en"
+        }
+      ]
     },
     "DeleteUserVpcAuthorization": {
       "required": [
@@ -122,7 +721,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteUserVpcAuthorization"
+      "summary": "Deletes a cross-account authorization based on a specified account ID and authorization type.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AuthorizedUserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the Alibaba Cloud account that owns the authorized resources.",
+          "example": "141339776561****"
+        },
+        {
+          "name": "AuthType",
+          "in": "query",
+          "type": "string",
+          "description": "The authorization type. Valid values: - NORMAL: Standard authorization. - CLOUD\\_PRODUCT: Cloud product authorization. Default value: NORMAL",
+          "example": "NORMAL"
+        }
+      ]
     },
     "DeleteZone": {
       "required": [
@@ -130,7 +747,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteZone"
+      "summary": "Deletes an idle zone (built-in authoritative domain name).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default: en.",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone. > You must dissociate a built-in authoritative domain name from its scope before you delete it.",
+          "example": "0e41496f12da01311d314f17b801****"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "127.0.XX.XX"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token to ensure the idempotence of the request. Generate a unique value from your client for this parameter. The token must contain only ASCII characters and be no more than 64 characters in ",
+          "example": "21079fa016944979537637959d09bc"
+        }
+      ]
     },
     "DeleteZoneRecord": {
       "required": [
@@ -138,13 +787,111 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteZoneRecord"
+      "summary": "The DeleteZoneRecord operation deletes a DNS record by its ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the DNS record.",
+          "example": "306279****"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "127.0.XX.XX"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "The client token that is used to ensure the idempotence of the request. Generate a value that is unique for each request. The token can contain a maximum of 64 ASCII characters.",
+          "example": "6447728c8578e66aacf062d2df4446dc"
+        }
+      ]
     },
     "DescribeChangeLogs": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeChangeLogs"
+      "summary": "You can call the DescribeChangeLogs operation to retrieve the operation logs for a private zone. The logs record operations related to built-in authoritative zones, cache management, forwarding management, endpoints, and DNS record queries. You can perform a fuzzy search by keywords such as behavior and content.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword, such as a behavior or content. Fuzzy search is supported. The keyword is not case-sensitive.",
+          "example": "test"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the zone. - If you specify this parameter, the operation returns the change logs of DNS records for the specified zone. - If you leave this parameter empty, the operation returns the change ",
+          "example": "df2d03865266bd9842306db586d3****"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. The value must be an integer that is greater than 0. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Maximum value: 100. Default value: 20.",
+          "example": "100"
+        },
+        {
+          "name": "StartTimestamp",
+          "in": "query",
+          "type": "integer",
+          "description": "The start time. This value is a UNIX timestamp.",
+          "example": "1516779348000"
+        },
+        {
+          "name": "EndTimestamp",
+          "in": "query",
+          "type": "integer",
+          "description": "The end time. This value is a UNIX timestamp.",
+          "example": "2516779348000"
+        },
+        {
+          "name": "EntityType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of log to obtain. Valid values: - **PV\\_ZONE**: operation logs of built-in authoritative zones. - **PV\\_RECORD**: operation logs of DNS records. - **RESOLVER\\_RULE**: operation logs of forwar",
+          "example": "PV_ZONE"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the user.",
+          "example": "192.0.XX.XX"
+        }
+      ]
     },
     "DescribeCustomLineInfo": {
       "required": [
@@ -152,49 +899,515 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeCustomLineInfo"
+      "summary": "Retrieves the details of a custom line.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response.",
+          "example": "en"
+        },
+        {
+          "name": "LineId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the custom line.",
+          "example": "11271"
+        }
+      ]
     },
     "DescribeCustomLines": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeCustomLines"
+      "summary": "Queries a list of custom lines.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language.",
+          "example": "en"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. The maximum value is **100**. The default value is **10**.",
+          "example": "10"
+        }
+      ]
     },
     "DescribeIntranetUserCanAnalysisVpcs": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeIntranetUserCanAnalysisVpcs"
+      "summary": "Retrieves a list of VPCs that a user can analyze.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NetworkType",
+          "in": "query",
+          "type": "string",
+          "description": "The network type.",
+          "example": "CLOUD"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "100"
+        },
+        {
+          "name": "QueryTreeLevel",
+          "in": "query",
+          "type": "integer",
+          "description": "The level in the query hierarchy. For example, you can query for VPCs that belong to a specific cloud account.",
+          "example": "1"
+        },
+        {
+          "name": "VpcOwner",
+          "in": "query",
+          "type": "integer",
+          "description": "The owner of the VPC.",
+          "example": "1204673843521685"
+        },
+        {
+          "name": "VpcType",
+          "in": "query",
+          "type": "string",
+          "description": "The VPC type.",
+          "example": "STANDARD"
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "description": "The region ID.",
+          "example": "cn-beijing"
+        }
+      ]
     },
     "DescribePvtzStatisticsGlobalOverview": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribePvtzStatisticsGlobalOverview"
+      "summary": "Retrieves global DNS resolution statistics for PrivateZone.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ServerRegion",
+          "in": "query",
+          "type": "string",
+          "description": "The region.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "OverviewPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The statistical period. Valid values: `DAY`, `WEEK`, and `MONTH`.",
+          "example": "DAY, WEEK, MONTH"
+        },
+        {
+          "name": "NetworkParams",
+          "in": "query",
+          "type": "array",
+          "description": "The network parameters.",
+          "children": [
+            {
+              "name": "VpcOwner",
+              "type": "string",
+              "description": "The ID of the Alibaba Cloud account to which the VPC belongs."
+            },
+            {
+              "name": "VpcType",
+              "type": "string",
+              "description": "The type of the VPC. Valid values: - **STANDARD**: standard VPC - **EDS**: Elastic Desktop Service (EDS) VPC"
+            },
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The region ID."
+            },
+            {
+              "name": "VpcId",
+              "type": "string",
+              "description": "The VPC ID."
+            }
+          ]
+        }
+      ]
     },
     "DescribePvtzStatisticsHistory": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribePvtzStatisticsHistory"
+      "summary": "PrivateZone Resolution Trends",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ServerRegion",
+          "in": "query",
+          "type": "string",
+          "description": "The service region.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "Module",
+          "in": "query",
+          "type": "string",
+          "description": "The statistics module.",
+          "example": "AUTH"
+        },
+        {
+          "name": "StatisticalType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of statistics to collect.",
+          "example": "- PROTOCOL: DNS request statistics by UDP and TCP protocol (global domain statistics only). - FORWAR"
+        },
+        {
+          "name": "StartTimestamp",
+          "in": "query",
+          "type": "string",
+          "description": "The start of the query time range. This value is a UNIX timestamp in milliseconds.",
+          "example": "1516779348000"
+        },
+        {
+          "name": "EndTimestamp",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the query time range. This value is a UNIX timestamp in milliseconds.",
+          "example": "1571673600000"
+        },
+        {
+          "name": "ZoneName",
+          "in": "query",
+          "type": "string",
+          "description": "The zone name.",
+          "example": "host.local"
+        },
+        {
+          "name": "DomainName",
+          "in": "query",
+          "type": "string",
+          "description": "The domain name.",
+          "example": "example.com"
+        },
+        {
+          "name": "Rcode",
+          "in": "query",
+          "type": "string",
+          "description": "The DNS response code.",
+          "example": "0"
+        },
+        {
+          "name": "NetworkParams",
+          "in": "query",
+          "type": "array",
+          "description": "The network parameters.",
+          "children": [
+            {
+              "name": "VpcOwner",
+              "type": "string",
+              "description": "The ID of the VPC owner."
+            },
+            {
+              "name": "VpcType",
+              "type": "string",
+              "description": "The VPC type. Valid values: - `STANDARD`: Standard VPC. - `EDS`: Elastic Desktop Service VPC."
+            },
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The region ID."
+            },
+            {
+              "name": "VpcId",
+              "type": "string",
+              "description": "The ID of the VPC."
+            }
+          ]
+        }
+      ]
     },
     "DescribePvtzStatisticsSummary": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribePvtzStatisticsSummary"
+      "summary": "PrivateZone Resolution Statistics Summary",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ServerRegion",
+          "in": "query",
+          "type": "string",
+          "description": "The region.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "StartTimestamp",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the time range to query, specified as a UNIX timestamp in milliseconds.",
+          "example": "1571587200000"
+        },
+        {
+          "name": "EndTimestamp",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query, specified as a UNIX timestamp in milliseconds.",
+          "example": "1571673600000"
+        },
+        {
+          "name": "Module",
+          "in": "query",
+          "type": "string",
+          "description": "The statistics module. Valid values: AUTHORITY, AUTH\\_FAST, AUTH\\_SLOW, GLOBAL, CACHE, FORWARD, and RECURSION.",
+          "example": "AUTH_FAST"
+        },
+        {
+          "name": "StatisticalType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of statistics to collect. Valid values: QTYPE\\_RATIO: The ratio of DNS request record types. NEGATIVE\\_RCODE: Statistics on negative DNS responses. RCODE\\_DOMAIN: The top domain names that re",
+          "example": "- QTYPE_RATIO: Distribution ratio of DNS request record types. - NEGATIVE_RCODE: Negative DNS respon"
+        },
+        {
+          "name": "ZoneName",
+          "in": "query",
+          "type": "string",
+          "description": "The zone name.",
+          "example": "host.local"
+        },
+        {
+          "name": "DomainName",
+          "in": "query",
+          "type": "string",
+          "description": "The domain name.",
+          "example": "example.com"
+        },
+        {
+          "name": "Rcode",
+          "in": "query",
+          "type": "string",
+          "description": "The DNS response code.",
+          "example": "0"
+        },
+        {
+          "name": "Direction",
+          "in": "query",
+          "type": "string",
+          "description": "The sort order. Valid values: ASC and DESC.",
+          "example": "ASC"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number to return.",
+          "example": "2"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "1"
+        },
+        {
+          "name": "NetworkParams",
+          "in": "query",
+          "type": "array",
+          "description": "The network parameters.",
+          "children": [
+            {
+              "name": "VpcOwner",
+              "type": "string",
+              "description": "The ID of the Alibaba Cloud account that owns the VPC."
+            },
+            {
+              "name": "VpcType",
+              "type": "string",
+              "description": "The type of the VPC. - STANDARD: A standard VPC. - EDS: A VPC for Elastic Desktop Service (EDS)."
+            },
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The ID of the region where the VPC is deployed."
+            },
+            {
+              "name": "VpcId",
+              "type": "string",
+              "description": "The ID of the VPC."
+            }
+          ]
+        },
+        {
+          "name": "Period",
+          "in": "query",
+          "type": "string",
+          "description": "The time granularity for the statistics.",
+          "example": "day"
+        },
+        {
+          "name": "GrowType",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies the type of change in request volume to report. Valid values: up (request spikes) and down (request drops).",
+          "example": "up"
+        },
+        {
+          "name": "OrderBy",
+          "in": "query",
+          "type": "string",
+          "description": "The field by which to sort the results. To sort by fluctuation ratio, set this parameter to fluctuation\\_ratio.",
+          "example": "fluctuation_ratio"
+        }
+      ]
     },
     "DescribePvtzStatisticsZoneOverview": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribePvtzStatisticsZoneOverview"
+      "summary": "Provides an overview of resolution statistics for zones in PrivateZone.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "AcceptLanguage",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - `zh-CN`: Chinese - `en-US`: English Default value: `en-US`. > This parameter takes precedence over the `Lang` parameter.",
+          "example": "zh-CN"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token to ensure request idempotence. Your client must generate a unique token for each request. The token can contain only ASCII characters.",
+          "example": "234534535432323..."
+        },
+        {
+          "name": "ServerRegion",
+          "in": "query",
+          "type": "string",
+          "description": "The region ID.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "OverviewPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The statistical period.",
+          "example": "DAY"
+        },
+        {
+          "name": "Module",
+          "in": "query",
+          "type": "string",
+          "description": "The statistical module.",
+          "example": "AUTHORITY"
+        },
+        {
+          "name": "NetworkParams",
+          "in": "query",
+          "type": "array",
+          "description": "The network parameters.",
+          "children": [
+            {
+              "name": "VpcOwner",
+              "type": "string",
+              "description": "The ID of the Alibaba Cloud account to which the VPC belongs."
+            },
+            {
+              "name": "VpcType",
+              "type": "string",
+              "description": "The type of the VPC. Valid values: - `STANDARD`: standard VPC - `EDS`: Elastic Desktop Service (EDS) VPC"
+            },
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The region ID of the VPC."
+            },
+            {
+              "name": "VpcId",
+              "type": "string",
+              "description": "The ID of the VPC."
+            }
+          ]
+        }
+      ]
     },
     "DescribeRegions": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeRegions"
+      "summary": "Call the DescribeRegions operation to query a list of available regions. You can filter the list by criteria such as the scenario and VPC type.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - **zh**: Chinese. - **en**: English. Default value: **en**. > This parameter has a lower priority than AcceptLanguage.",
+          "example": "zh"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the user.",
+          "example": "192.0.XX.XX"
+        },
+        {
+          "name": "AcceptLanguage",
+          "in": "query",
+          "type": "string",
+          "description": "The supported language. Valid values: - zh-CN: Chinese - en-US: English Default value: en-US. > This parameter has a higher priority than Lang.",
+          "example": "zh-CN"
+        },
+        {
+          "name": "AuthorizedUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the Alibaba Cloud account to which the authorized resources belong.",
+          "example": "141339776561****"
+        },
+        {
+          "name": "VpcType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the VPC. Valid values: - STANDARD: standard VPC. - EDS: Elastic Desktop Service (EDS) VPC.",
+          "example": "STANDARD"
+        },
+        {
+          "name": "Scene",
+          "in": "query",
+          "type": "string",
+          "description": "The scenario. Valid values: - AUTH: built-in authoritative server - FWD: forwarding management - RA: traffic analysis",
+          "example": "AUTH"
+        }
+      ]
     },
     "DescribeRequestGraph": {
       "required": [
@@ -203,7 +1416,68 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeRequestGraph"
+      "summary": "Queries details about the number of requests based on conditions such as a time range.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The user's IP address.",
+          "example": "192.168.XX.XX"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "description": "The zone ID. > To query the number of requests for a zone, specify either ZoneId or both BizType and BizId.",
+          "example": "29c752a01cd281a20ddcfa****"
+        },
+        {
+          "name": "VpcId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the Virtual Private Cloud (VPC).",
+          "example": "vpc-f8zvrvr1payllgz38****"
+        },
+        {
+          "name": "StartTimestamp",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The start of the time range to query. This is a UNIX timestamp.",
+          "example": "1721036404000"
+        },
+        {
+          "name": "EndTimestamp",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The end of the time range to query. This is a UNIX timestamp.",
+          "example": "1721723624000"
+        },
+        {
+          "name": "BizType",
+          "in": "query",
+          "type": "string",
+          "description": "The business type. Valid values: - AUTH\\_ZONE: An authoritative zone. - RESOLVER\\_RULE: A forwarding rule.",
+          "example": "AUTH_ZONE"
+        },
+        {
+          "name": "BizId",
+          "in": "query",
+          "type": "string",
+          "description": "The data ID. This parameter is used with BizType. - If BizType is set to AUTH\\_ZONE, set this parameter to the zone ID. - If BizType is set to RESOLVER\\_RULE, set this parameter to the forwarding rule",
+          "example": "b9c93a8954c4098731e863c04302f45a"
+        }
+      ]
     },
     "DescribeResolverAvailableZones": {
       "required": [
@@ -211,7 +1485,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResolverAvailableZones"
+      "summary": "Call DescribeResolverAvailableZones to retrieve a list of available zones.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "ResolverRegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID.",
+          "example": "cn-zhangjiakou"
+        },
+        {
+          "name": "AzId",
+          "in": "query",
+          "type": "string",
+          "description": "The zone ID.",
+          "example": "cn-zhangjiakou-a"
+        }
+      ]
     },
     "DescribeResolverEndpoint": {
       "required": [
@@ -219,13 +1518,76 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResolverEndpoint"
+      "summary": "You can call DescribeResolverEndpoint to retrieve the details of an endpoint by its ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "EndpointId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the endpoint.",
+          "example": "hra0**"
+        }
+      ]
     },
     "DescribeResolverEndpoints": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResolverEndpoints"
+      "summary": "You can call DescribeResolverEndpoints to retrieve a list of endpoints.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword for the endpoint name. A fuzzy search is performed.",
+          "example": "Endpoint-test"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number for a paged query. The value starts from 1. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. The maximum value is 100. The default value is 20.",
+          "example": "20"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the endpoint. Valid values: - SUCCESS: The endpoint is working as expected. - INIT: The endpoint is being created. - FAILED: The endpoint failed to be created. - CHANGE\\_INIT: The endpoi",
+          "example": "SUCCESS"
+        },
+        {
+          "name": "VpcRegionId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the region where the outbound virtual private cloud (VPC) is located.",
+          "example": "cn-zhangjiakou"
+        }
+      ]
     },
     "DescribeResolverRule": {
       "required": [
@@ -233,19 +1595,99 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResolverRule"
+      "summary": "Call the DescribeResolverRule operation to retrieve the details of a forwarding rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The forwarding rule ID.",
+          "example": "hr****"
+        }
+      ]
     },
     "DescribeResolverRules": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResolverRules"
+      "summary": "Describes one or more forwarding rules.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword for the name of the forwarding rule. The search is case-insensitive and supports fuzzy match.",
+          "example": "test"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. The start value is 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Maximum value: 100. Default value: 20.",
+          "example": "20"
+        },
+        {
+          "name": "NeedDetailAttributes",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the list of virtual private clouds (VPCs) that are associated with the forwarding rule. Valid values: - true: returns the list. - false: does not return the list. Default v",
+          "example": "true"
+        },
+        {
+          "name": "EndpointId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the outbound endpoint.",
+          "example": "hr****"
+        }
+      ]
     },
     "DescribeStatisticSummary": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeStatisticSummary"
+      "summary": "Call the DescribeStatisticSummary operation to retrieve a summary of yesterday's request volume. This summary includes the top three zones and top three VPCs ranked by request volume.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "zh"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The user's IP address.",
+          "example": "127.0.XX.XX"
+        }
+      ]
     },
     "DescribeSyncEcsHostTask": {
       "required": [
@@ -253,7 +1695,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeSyncEcsHostTask"
+      "summary": "Call DescribeSyncEcsHostTask to retrieve the details of a hostname sync task based on a zone ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "pvtz-test-id-2989149d628c5****"
+        }
+      ]
     },
     "DescribeTags": {
       "required": [
@@ -261,19 +1721,92 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeTags"
+      "summary": "Queries the tags that are added to resources in PrivateZone.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Set the value to ZONE.",
+          "example": "ZONE"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The start value is 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Maximum value: 100. Default value: 20.",
+          "example": "20"
+        }
+      ]
     },
     "DescribeUserServiceStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeUserServiceStatus"
+      "summary": "Queries the service status of the current user, which indicates whether the service is activated or has overdue payments.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default: en.",
+          "example": "en"
+        }
+      ]
     },
     "DescribeUserVpcAuthorizations": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeUserVpcAuthorizations"
+      "summary": "Call the DescribeUserVpcAuthorizations operation to retrieve a list of cross-account authorizations.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AuthType",
+          "in": "query",
+          "type": "string",
+          "description": "The authorization type. Valid values: - NORMAL: A regular authorization. - CLOUD\\_PRODUCT: An authorization for an Alibaba Cloud service.",
+          "example": "NORMAL"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The value starts from 1. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. The maximum value is 100. The default value is 20.",
+          "example": "20"
+        },
+        {
+          "name": "AuthorizedUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the Alibaba Cloud account that owns the authorized resources.",
+          "example": "141339776561****"
+        }
+      ]
     },
     "DescribeZoneInfo": {
       "required": [
@@ -281,7 +1814,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeZoneInfo"
+      "summary": "Call the DescribeZoneInfo operation to retrieve the details of a specified built-in authoritative zone. The details include the list of VPCs that are bound to the zone.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - **zh**: Chinese. - **en**: English. Default: **en**",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "df2d03865266bd9842306db586d3****"
+        }
+      ]
     },
     "DescribeZoneRecord": {
       "required": [
@@ -289,7 +1840,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeZoneRecord"
+      "summary": "Queries the details of a DNS record.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the DNS record.",
+          "example": "5808"
+        }
+      ]
     },
     "DescribeZoneRecords": {
       "required": [
@@ -297,19 +1859,193 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeZoneRecords"
+      "summary": "You can call DescribeZoneRecords to query DNS records for a zone.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword for the hostname. The search is not case-sensitive. Use the SearchMode parameter to switch between a fuzzy search and an exact search. The default is an exact search.",
+          "example": "test"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "a96d70eb4ab8ef01503dc5486914****"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Pages start from 1. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. The maximum value is 100. The default value is 20.",
+          "example": "20"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The client IP address of the user.",
+          "example": "127.0.XX.XX"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "description": "The tag. Valid values: - ecs: Queries the hostnames that are synchronized from ECS instances to the zone. - If you do not specify this parameter, all DNS records in the zone are queried.",
+          "example": "ecs"
+        },
+        {
+          "name": "SearchMode",
+          "in": "query",
+          "type": "string",
+          "description": "The search mode. Valid values: - **LIKE**: fuzzy search - **EXACT**: exact search (default) This parameter is used with the Keyword parameter.",
+          "example": "EXACT"
+        }
+      ]
     },
     "DescribeZoneVpcTree": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeZoneVpcTree"
+      "summary": "Call the DescribeZoneVpcTree operation to query the zones and the Virtual Private Clouds (VPCs) attached to them in your account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "127.0.XX.XX"
+        }
+      ]
     },
     "DescribeZones": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeZones"
+      "summary": "You can call the DescribeZones operation to query a list of zones available to your account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Maximum value: **100**. Default value: **20**.",
+          "example": "20"
+        },
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword of the zone name. The search is not case-sensitive. You can set the SearchMode parameter to switch between exact search and fuzzy search. The default mode is fuzzy search.",
+          "example": "test"
+        },
+        {
+          "name": "SearchMode",
+          "in": "query",
+          "type": "string",
+          "description": "The search mode. This parameter takes effect only when the Keyword parameter is specified. Valid values: - **LIKE**: fuzzy search (default) - **EXACT**: exact search Default value: **LIKE**.",
+          "example": "EXACT"
+        },
+        {
+          "name": "QueryRegionId",
+          "in": "query",
+          "type": "string",
+          "description": "The region ID of the VPC that is associated with the zone.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "QueryVpcId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the VPC that is associated with the zone.",
+          "example": "vpc-f8zvrvr1payllgz38****"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group to which the zone belongs.",
+          "example": "rg-aekz2qj7awz****"
+        },
+        {
+          "name": "ZoneType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the zones to query. Valid values: - **AUTH\\_ZONE**: authoritative zones. - **CLOUD\\_PRODUCT\\_ZONE**: zones for cloud services. Default value: **AUTH\\_ZONE**.",
+          "example": "AUTH_ZONE"
+        },
+        {
+          "name": "ZoneTag",
+          "in": "query",
+          "type": "array",
+          "description": "The list of cloud service types.",
+          "example": "BLINK",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ResourceTag",
+          "in": "query",
+          "type": "array",
+          "description": "The resource tags that are added to the zone.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the resource tag."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the resource tag."
+            }
+          ]
+        }
+      ]
     },
     "ListTagResources": {
       "required": [
@@ -317,7 +2053,70 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagResources"
+      "summary": "Queries the tags that are added to resources in Private Zone.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese - en: English Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Set the value to ZONE.",
+          "example": "ZONE"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to start the next query. It is returned in the response to the previous query.",
+          "example": "23423****"
+        },
+        {
+          "name": "Size",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Maximum value: 200. Default value: 20.",
+          "example": "20"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "A list of resource IDs. In this case, a list of zone IDs. You can specify up to 50 IDs.",
+          "example": "97fe9321a476d0861f624d3f738dcc38",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the tag."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the tag."
+            }
+          ]
+        }
+      ]
     },
     "MoveResourceGroup": {
       "required": [
@@ -326,13 +2125,124 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "MoveResourceGroup"
+      "summary": "You can call the MoveResourceGroup operation to move a resource to a different resource group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese - en: English Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "df2d03865266bd9842306db586d4****"
+        },
+        {
+          "name": "NewResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the destination resource group.",
+          "example": "rg-aekz2qj7awz****"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token that ensures the idempotence of the request. Generate a unique value on your client. The token must contain only ASCII characters and be no more than 64 characters in length.",
+          "example": "21079fa016944979537637959d09bc"
+        }
+      ]
     },
     "SearchCustomLines": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SearchCustomLines"
+      "summary": "Searches for custom access control lists (ACLs).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language.",
+          "example": "zh"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The value starts from **1**. The default value is **1**.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page for a paged query. The maximum value is **100**. The default value is **10**.",
+          "example": "10"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the custom ACL.",
+          "example": "Test"
+        },
+        {
+          "name": "Ipv4",
+          "in": "query",
+          "type": "string",
+          "description": "The IPv4 address.",
+          "example": "1.1.1.1"
+        },
+        {
+          "name": "Creator",
+          "in": "query",
+          "type": "array",
+          "description": "The list of creator IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "CreateTimestampStart",
+          "in": "query",
+          "type": "integer",
+          "description": "The start of the creation time range. This value is a UNIX timestamp.",
+          "example": "1672136518123"
+        },
+        {
+          "name": "CreateTimestampEnd",
+          "in": "query",
+          "type": "integer",
+          "description": "The end of the creation time range. This value is a UNIX timestamp.",
+          "example": "1672136518234"
+        },
+        {
+          "name": "UpdateTimestampStart",
+          "in": "query",
+          "type": "integer",
+          "description": "The start of the update time range. This value is a UNIX timestamp.",
+          "example": "1672136515000"
+        },
+        {
+          "name": "UpdateTimestampEnd",
+          "in": "query",
+          "type": "integer",
+          "description": "The end of the update time range. This value is a UNIX timestamp.",
+          "example": "1672136518000"
+        }
+      ]
     },
     "SetProxyPattern": {
       "required": [
@@ -341,7 +2251,47 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetProxyPattern"
+      "summary": "Sets the recursive resolution proxy for subdomains.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "df2d03865266bd9842306db586d3****"
+        },
+        {
+          "name": "ProxyPattern",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The proxy mode for recursive resolution of subdomains. Valid values: - **ZONE**: Disables the proxy. If a subdomain does not exist, an NXDOMAIN response is returned. - **RECORD**: Enables the proxy. I",
+          "example": "ZONE"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "10.61.XX.XX"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token to ensure the idempotence of the request. The token must be unique for each request. It can contain only ASCII characters and must be no more than 64 characters in length.",
+          "example": "21079fa016944979537637959d09bc"
+        }
+      ]
     },
     "SetZoneRecordStatus": {
       "required": [
@@ -350,7 +2300,51 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetZoneRecordStatus"
+      "summary": "You can call SetZoneRecordStatus to set the status of a DNS record for a zone. This enables or pauses DNS resolution.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. The default value is en.",
+          "example": "en"
+        },
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the DNS record.",
+          "example": "207541****"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The status of the DNS record. Valid values: - ENABLE: Enables DNS resolution. - DISABLE: Pauses DNS resolution.",
+          "enum": [
+            "ENABLE",
+            "DISABLE"
+          ],
+          "example": "ENABLE"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The client IP address.",
+          "example": "127.XX.XX"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token that is used to ensure the idempotence of the request. The client generates this value. The value must be unique among different requests and can be up to 64 ASCII characters in length.",
+          "example": "6447728c8578e66aacf062d2df4446dc"
+        }
+      ]
     },
     "TagResources": {
       "required": [
@@ -360,7 +2354,65 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResources"
+      "summary": "You can call the TagResources operation to add or modify tags for one or more zones in a batch.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. The value must be ZONE.",
+          "example": "ZONE"
+        },
+        {
+          "name": "OverWrite",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to modify the tag list. Valid values: - True: Overwrites the existing tag list. - False (default): Appends tags to the existing list. If a tag key already exists, its value is update",
+          "example": "true"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of resource IDs. These are the IDs of the zones. You can specify up to 50 IDs.",
+          "example": "97fe9321a476d0861f624d3f738dcc38",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        }
+      ]
     },
     "UntagResources": {
       "required": [
@@ -369,7 +2421,59 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResources"
+      "summary": "You can call the UntagResources operation to remove tags from one or more zones in PrivateZone.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the return value. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Set the value to ZONE.",
+          "example": "ZONE"
+        },
+        {
+          "name": "All",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to remove all tags. Valid values: - true: Removes all tags from the specified zones. - false: Removes only the tags that have the specified tag keys (TagKey.N). Default value: false.",
+          "example": "false"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "A list of resource IDs, which are the zone IDs. You can specify up to 50 resource IDs.",
+          "example": "97fe9321a476d0861f624d3f738dcc38",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tag keys. You can specify up to 20 tag keys.",
+          "example": "env",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpdateCustomLine": {
       "required": [
@@ -378,7 +2482,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateCustomLine"
+      "summary": "Updates a custom line.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: `en` and `zh`. Default value: `en`.",
+          "example": "en"
+        },
+        {
+          "name": "LineId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the custom line.",
+          "example": "100003"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the custom line.",
+          "example": "Test"
+        },
+        {
+          "name": "Ipv4s",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "An array of IPv4 address ranges for the custom line. Specify each range in the `StartIP-EndIP` format.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "DnsCategory",
+          "in": "query",
+          "type": "string"
+        }
+      ]
     },
     "UpdateRecordRemark": {
       "required": [
@@ -386,7 +2533,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateRecordRemark"
+      "summary": "You can call the UpdateRecordRemark operation to modify the remarks of a DNS record based on its ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the DNS record.",
+          "example": "202991****"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "The remarks.",
+          "example": "test record"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token used to ensure the idempotence of a request. The client generates this value, which must be unique across different requests. The token can be up to 64 ASCII characters in length.",
+          "example": "6447728c8578e66aacf062d2df4446dc"
+        }
+      ]
     },
     "UpdateResolverEndpoint": {
       "required": [
@@ -394,7 +2573,60 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateResolverEndpoint"
+      "summary": "Updates an endpoint.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "EndpointId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The endpoint ID.",
+          "example": "hr****"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the endpoint.",
+          "example": "endpoint-test-name"
+        },
+        {
+          "name": "IpConfig",
+          "in": "query",
+          "type": "array",
+          "description": "A list of source IP addresses for outbound traffic. Specify at least two and up to six IP addresses. > To ensure high availability (HA), an outbound endpoint requires at least two source IP addresses.",
+          "children": [
+            {
+              "name": "VSwitchId",
+              "type": "string",
+              "description": "The vSwitch ID."
+            },
+            {
+              "name": "CidrBlock",
+              "type": "string",
+              "description": "The IPv4 CIDR block of the vSwitch."
+            },
+            {
+              "name": "AzId",
+              "type": "string",
+              "description": "The ID of the zone where the vSwitch is located."
+            },
+            {
+              "name": "Ip",
+              "type": "string",
+              "description": "An IP address that is within the CIDR block of the vSwitch. If you leave this parameter empty, the system automatically assigns an IP address."
+            }
+          ]
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        }
+      ]
     },
     "UpdateResolverRule": {
       "required": [
@@ -402,7 +2634,84 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateResolverRule"
+      "summary": "Modifies a forwarding rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the forwarding rule.",
+          "example": "hr****"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the forwarding rule.",
+          "example": "Forwarding rule-test"
+        },
+        {
+          "name": "ForwardIp",
+          "in": "query",
+          "type": "array",
+          "description": "The IP addresses and ports of external DNS servers. DNS queries are forwarded to these servers. You can specify up to six servers. Both private and public IP addresses are supported. > If you specify ",
+          "children": [
+            {
+              "name": "Ip",
+              "type": "string",
+              "description": "The IP address of the destination server. > The IP addresses in the following ranges are reserved by the system and cannot be used for external DNS servers: > 100.100.2.136-100.100.2.138 > 100.100.2.1"
+            },
+            {
+              "name": "Port",
+              "type": "integer",
+              "description": "The port number of the destination server."
+            }
+          ]
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "EndpointId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the endpoint.",
+          "example": "hr****"
+        },
+        {
+          "name": "PriorityForwardConfigs",
+          "in": "query",
+          "type": "array",
+          "children": [
+            {
+              "name": "Protocol",
+              "type": "string"
+            },
+            {
+              "name": "EnableStatus",
+              "type": "string"
+            },
+            {
+              "name": "Priority",
+              "type": "integer"
+            },
+            {
+              "name": "AlidnsServiceAddresses",
+              "type": "array"
+            },
+            {
+              "name": "CustomAddresses",
+              "type": "array"
+            }
+          ]
+        }
+      ]
     },
     "UpdateSyncEcsHostTask": {
       "required": [
@@ -412,7 +2721,56 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateSyncEcsHostTask"
+      "summary": "Call the UpdateSyncEcsHostTask operation to add or update a hostname sync task.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "df2d03865266bd9842306db586d3****"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The status of the ECS hostname sync task. Valid values: - ON: enables the task. - OFF: disables the task.",
+          "enum": [
+            "OFF",
+            "ON"
+          ],
+          "example": "ON"
+        },
+        {
+          "name": "Region",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The regions for synchronization.",
+          "children": [
+            {
+              "name": "UserId",
+              "type": "integer",
+              "description": "The ID of the user who owns the region. This parameter is used for cross-account synchronization."
+            },
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The region ID."
+            }
+          ]
+        }
+      ]
     },
     "UpdateZoneRecord": {
       "required": [
@@ -423,7 +2781,91 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateZoneRecord"
+      "summary": "The UpdateZoneRecord operation modifies a DNS record for a zone. You can change properties such as the host record, record type, and weight.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Rr",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The host record. This is the prefix of a domain name. Common examples include www, @, \\* (for wildcard DNS), and mail (for mailboxes). For example, to resolve @.example.com, set the host record to \"@\"",
+          "example": "www"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en",
+          "example": "en"
+        },
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the DNS record. To obtain the ID, call the DescribeZoneRecords operation to query a list of DNS records.",
+          "example": "172223****"
+        },
+        {
+          "name": "Line",
+          "in": "query",
+          "type": "string",
+          "description": "The DNS resolution line. The default value is default.",
+          "example": "default"
+        },
+        {
+          "name": "Weight",
+          "in": "query",
+          "type": "integer",
+          "description": "The weight of the record. Valid values are integers from 1 to 100. The default value is 1. You can set different weights for records to return IP addresses in proportion to their weights.",
+          "example": "1"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the DNS record. The following types are supported: - **A**: Maps a domain name to an IPv4 address in dotted decimal notation. - **AAAA**: Maps a domain name to an IPv6 address. - **CNAME**",
+          "example": "A"
+        },
+        {
+          "name": "Ttl",
+          "in": "query",
+          "type": "integer",
+          "description": "The time to live (TTL) in seconds (s). Valid values: 5, 30, 60, 3600 (1 hour), 43200 (12 hours), and 86400 (1 day).",
+          "example": "60"
+        },
+        {
+          "name": "Priority",
+          "in": "query",
+          "type": "integer",
+          "description": "The priority of the MX record. You can set different priorities for mail servers. Valid values: 1 to 99. A smaller value indicates a higher priority. > This parameter is required if the record type is",
+          "example": "1"
+        },
+        {
+          "name": "Value",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The record value. Enter a value that corresponds to the record type.",
+          "example": "192.16.XX.XX"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "127.0.XX.XX"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token that is used to ensure the idempotence of the request. The client generates the value, which must be unique among different requests. The token can contain a maximum of 64 ASCII charact",
+          "example": "6447728c8578e66aacf062d2df4446dc"
+        }
+      ]
     },
     "UpdateZoneRemark": {
       "required": [
@@ -431,7 +2873,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateZoneRemark"
+      "summary": "Modifies the remark for a built-in authoritative domain name (zone).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Valid values: - zh: Chinese. - en: English. Default value: en.",
+          "example": "en"
+        },
+        {
+          "name": "ZoneId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the zone.",
+          "example": "df2d03865266bd9842306db586d3****"
+        },
+        {
+          "name": "Remark",
+          "in": "query",
+          "type": "string",
+          "description": "The new remark. To clear the remark, set this parameter to an empty string.",
+          "example": "test"
+        },
+        {
+          "name": "UserClientIp",
+          "in": "query",
+          "type": "string",
+          "description": "The IP address of the client.",
+          "example": "127.0.XX.XX"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client-generated token that is used to ensure the idempotence of the request. Make sure that the token is unique for each request. The token can contain only ASCII characters and cannot exceed 64 ch",
+          "example": "21079fa016944979537637959d09bc"
+        }
+      ]
     }
   }
 }

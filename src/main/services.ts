@@ -4519,17 +4519,30 @@ function isCatalogDeprecated(product: string, action: string, deprecated: number
 function summarizeParamsMetadata(product: string, action: string, params: unknown, required: string[]): unknown {
   if (!params || typeof params !== 'object') return { required, optionalExamples: [] };
   const record = params as { requestClass?: string; params?: Array<Record<string, unknown>> };
-  const optionalExamples = Array.isArray(record.params)
-    ? record.params
-        .filter((param) => typeof param.name === 'string' && !required.includes(String(param.name)))
-        .slice(0, 12)
-        .map((param) => ({ name: param.name, type: param.type, required: false }))
-    : [];
+  const catalogParams = Array.isArray(record.params) ? record.params : [];
+  const requiredDetails = catalogParams
+    .filter((param) => typeof param.name === 'string' && required.includes(String(param.name)))
+    .map((param) => pickParamDetail(param, true));
+  const optionalParams = catalogParams.filter(
+    (param) => typeof param.name === 'string' && !required.includes(String(param.name))
+  );
+  const optionalExamples = optionalParams.slice(0, 24).map((param) => pickParamDetail(param, false));
+  const moreOptionalNames = optionalParams.slice(24).map((param) => String(param.name));
   return normalizeParamsMetadata(product, action, {
     requestClass: record.requestClass,
     required,
-    optionalExamples
+    ...(requiredDetails.length ? { requiredDetails } : {}),
+    optionalExamples,
+    ...(moreOptionalNames.length ? { moreOptionalNames } : {})
   });
+}
+
+function pickParamDetail(param: Record<string, unknown>, required: boolean): Record<string, unknown> {
+  const detail: Record<string, unknown> = { name: param.name, type: param.type, required };
+  for (const key of ['in', 'description', 'enum', 'example'] as const) {
+    if (param[key] !== undefined && param[key] !== null) detail[key] = param[key];
+  }
+  return detail;
 }
 
 function normalizeParamsMetadata(product: string, action: string, params: unknown): unknown {

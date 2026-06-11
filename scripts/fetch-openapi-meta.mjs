@@ -11,9 +11,16 @@
   - Required parameters are `apis[Action].parameters[]` entries whose
     `parameter.schema.required === true`; top-level `parameter.required` is not
     used.
-  - API summary comes from `apis[Action].title`, falling back to `.summary`.
-    Deprecated status comes from `apis[Action].deprecated`; replacement actions
+  - API summary comes from `apis[Action].title`, falling back to `.summary`
+    and the first sentence of `.description` (OSS sets `title` to the bare
+    action name, which is useless for search).
+  - Deprecated status comes from `apis[Action].deprecated`; replacement actions
     are normally absent, so snapshots write `replacedBy: null`.
+  - snapshotVersion 2 additionally stores, per action: the HTTP `method`
+    (`apis[Action].methods[0]`), the REST `path`, and the full `parameters`
+    list (name / in / type / required / description / enum / example plus one
+    level of object children). This is the ground truth that catalogLoader.ts
+    uses to build params_blob; SDK .d.ts comment parsing is only a fallback.
 */
 
 import http from 'node:http';
@@ -414,7 +421,7 @@ function normalizeMetadataSnapshot(productSpec, openApiProduct, sourceUrl, raw) 
   const actions = {};
   for (const [action, api] of apiEntries) {
     if (!api || typeof api !== 'object') continue;
-    actions[action] = normalizeApiEntry(api);
+    actions[action] = normalizeApiEntry(action, api);
   }
 
   if (!Object.keys(actions).length) {
@@ -422,7 +429,7 @@ function normalizeMetadataSnapshot(productSpec, openApiProduct, sourceUrl, raw) 
   }
 
   return {
-    snapshotVersion: 1,
+    snapshotVersion: 2,
     product: productSpec.product,
     openApiProduct,
     version: productSpec.version,
@@ -438,14 +445,49 @@ function extractApiEntries(raw) {
   return Object.entries(apis);
 }
 
-function normalizeApiEntry(api) {
-  const summary = firstString(api.title, api.summary);
+function normalizeApiEntry(action, api) {
+  const summary = extractSummary(action, api);
+  const method = extractHttpMethod(api);
+  const path = firstString(api.path);
+  const parameters = extractParameterSchemas(api);
   return {
     required: extractRequiredParameters(api),
     deprecated: normalizeBoolean(api.deprecated) ?? false,
     replacedBy: extractReplacement(api),
-    ...(summary ? { summary } : {})
+    ...(summary ? { summary } : {}),
+    ...(method ? { method } : {}),
+    ...(path ? { path } : {}),
+    ...(parameters.length ? { parameters } : {})
   };
+}
+
+function extractSummary(action, api) {
+  // Many products (notably OSS) set `title` to the bare action name, which
+  // carries no semantics for catalog search. Prefer a real sentence instead.
+  const title = firstString(api.title);
+  const candidates = [
+    title && title.toLowerCase() !== action.toLowerCase() ? title : null,
+    firstString(api.summary),
+    firstSentence(api.description),
+    title
+  ];
+  for (const candidate of candidates) {
+    if (candidate) return candidate;
+  }
+  return null;
+}
+
+function firstSentence(value) {
+  const text = firstString(value);
+  if (!text) return null;
+  const match = /^.*?[.。!?！？]/.exec(text);
+  return (match ? match[0] : text).slice(0, 300);
+}
+
+function extractHttpMethod(api) {
+  const methods = Array.isArray(api.methods) ? api.methods : [];
+  const method = firstString(methods[0]);
+  return method ? method.toUpperCase() : null;
 }
 
 function extractRequiredParameters(api) {
@@ -454,6 +496,85 @@ function extractRequiredParameters(api) {
     .filter((parameter) => normalizeBoolean(parameter?.schema?.required) === true)
     .map((parameter) => firstString(parameter.name))
     .filter(Boolean));
+}
+
+const PARAM_DESCRIPTION_LIMIT = 200;
+const PARAM_ENUM_LIMIT = 20;
+const PARAM_CHILDREN_LIMIT = 30;
+
+function extractParameterSchemas(api) {
+  const parameters = Array.isArray(api.parameters) ? api.parameters : [];
+  const out = [];
+  for (const parameter of parameters) {
+    const name = firstString(parameter?.name);
+    if (!name) continue;
+    const schema = parameter?.schema && typeof parameter.schema === 'object' ? parameter.schema : {};
+    out.push(compactObject({
+      name,
+      in: firstString(parameter.in),
+      type: firstString(schema.type),
+      required: normalizeBoolean(schema.required) === true ? true : undefined,
+      description: shortText(schema.description ?? parameter.description, PARAM_DESCRIPTION_LIMIT),
+      enum: extractEnumValues(schema),
+      example: shortText(schema.example, 100),
+      children: extractParameterChildren(schema)
+    }));
+  }
+  return out;
+}
+
+function extractParameterChildren(schema) {
+  let properties = null;
+  if (schema?.type === 'object' && schema.properties && typeof schema.properties === 'object') {
+    properties = schema.properties;
+  } else if (schema?.type === 'array' && schema.items && typeof schema.items === 'object') {
+    if (schema.items.properties && typeof schema.items.properties === 'object') {
+      properties = schema.items.properties;
+    } else {
+      const itemType = firstString(schema.items.type);
+      return itemType ? [{ name: '<item>', type: itemType }] : undefined;
+    }
+  }
+  if (!properties) return undefined;
+
+  const children = [];
+  for (const [name, child] of Object.entries(properties).slice(0, PARAM_CHILDREN_LIMIT)) {
+    if (!child || typeof child !== 'object') continue;
+    children.push(compactObject({
+      name,
+      type: firstString(child.type),
+      required: normalizeBoolean(child.required) === true ? true : undefined,
+      description: shortText(child.description, PARAM_DESCRIPTION_LIMIT),
+      enum: extractEnumValues(child)
+    }));
+  }
+  return children.length ? children : undefined;
+}
+
+function extractEnumValues(schema) {
+  let values = null;
+  if (Array.isArray(schema?.enum)) {
+    values = schema.enum;
+  } else if (schema?.enumValueTitles && typeof schema.enumValueTitles === 'object') {
+    values = Object.keys(schema.enumValueTitles);
+  }
+  if (!values) return undefined;
+  const normalized = values
+    .filter((value) => typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean')
+    .map((value) => String(value))
+    .slice(0, PARAM_ENUM_LIMIT);
+  return normalized.length ? normalized : undefined;
+}
+
+function shortText(value, limit) {
+  if (typeof value === 'number' || typeof value === 'boolean') return String(value);
+  if (typeof value !== 'string') return undefined;
+  const normalized = value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  return normalized ? normalized.slice(0, limit) : undefined;
+}
+
+function compactObject(value) {
+  return Object.fromEntries(Object.entries(value).filter(([, entry]) => entry !== undefined && entry !== null));
 }
 
 function extractReplacement(api) {

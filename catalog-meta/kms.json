@@ -1,10 +1,10 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "kms",
   "openApiProduct": "Kms",
   "version": "2016-01-20",
   "source": "https://api.aliyun.com/meta/v1/products/Kms/versions/2016-01-20/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:42.529Z",
+  "fetchedAt": "2026-06-10T02:58:15.183Z",
   "actions": {
     "AsymmetricDecrypt": {
       "required": [
@@ -15,7 +15,49 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AsymmetricDecrypt"
+      "summary": "Decrypts data by using the private key of an asymmetric CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CiphertextBlob",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ciphertext to be decrypted. The ciphertext is encoded in Base64. > You can generate a ciphertext by calling the [AsymmetricEncrypt](~~148131~~) operation.",
+          "example": "BQKP+1zK6+ZEMxTP5qaVzcsgXtWplYBKm0NXdSnB5FzliFxE1bSiu4dnEIlca2JpeH7yz1/S6fed630H+hIH6DoM25fTLNcKj+mF"
+        },
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key. You can also specify the alias or Amazon Resource Name (ARN) of the key. For more information about aliases, see [Manage aliases](~~480655~~). > When you access a key in another Ali",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "KeyVersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key version. The globally unique identifier of the key version.",
+          "example": "2ab1a983-7072-4bbc-a582-584b5bd8****"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The decryption algorithm.",
+          "example": "RSAES_OAEP_SHA_1"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the dry run feature. - true: enables the dry run feature. - false: disables the dry run feature. This is the default value. The dry run feature is used to test API calls, v",
+          "example": "false"
+        }
+      ]
     },
     "AsymmetricEncrypt": {
       "required": [
@@ -26,7 +68,49 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AsymmetricEncrypt"
+      "summary": "Encrypts data by using the public key of an asymmetric CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Plaintext",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The plaintext to be encrypted. The value must be Base64-encoded.",
+          "example": "SGVsbG8gd29ybGQ="
+        },
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key. You can also specify the alias or the Amazon Resource Name (ARN) of the key. For more information about aliases, see [Manage aliases](~~480655~~). > To access a key of another Aliba",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "KeyVersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key version. The ID must be a globally unique identifier. > To obtain the key version ID, call the [ListKeyVersions](~~133966~~) operation.",
+          "example": "2ab1a983-7072-4bbc-a582-584b5bd8****"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The encryption algorithm.",
+          "example": "RSAES_OAEP_SHA_1"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the dry run feature. - true: enables the feature. - false (default): disables the feature. The dry run feature is used to test the API call and verify the permissions on th",
+          "example": "false"
+        }
+      ]
     },
     "AsymmetricSign": {
       "required": [
@@ -37,7 +121,49 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AsymmetricSign"
+      "summary": "Generates a digital signature by using an asymmetric CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique identifier (GUID) of the customer master key (CMK). > You can also specify the alias that is bound to the CMK. For more information, see [Overview of aliases](~~68522~~).",
+          "example": "5c438b18-05be-40ad-b6c2-3be6752c****"
+        },
+        {
+          "name": "KeyVersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key version. The ID must be the GUID of the key version.",
+          "example": "2ab1a983-7072-4bbc-a582-584b5bd8****"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature algorithm.",
+          "example": "RSA_PSS_SHA_256"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The digest of the original message. The digest is generated using the hash algorithm that corresponds to the value of the Algorithm parameter. > - The value is Base64-encoded. - For information about ",
+          "example": "ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiu****="
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the dry-run feature. - true: enables the feature. - false (default): disables the feature. The dry-run feature is used to test API calls and verify the permissions on the r",
+          "example": "false"
+        }
+      ]
     },
     "AsymmetricVerify": {
       "required": [
@@ -49,7 +175,57 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AsymmetricVerify"
+      "summary": "Verifies a digital signature by using the public key of an asymmetric CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique identifier (GUID) of the customer master key (CMK). > You can also specify the alias that is bound to the CMK. For more information, see [Overview of aliases](~~68522~~).",
+          "example": "5c438b18-05be-40ad-b6c2-3be6752c****"
+        },
+        {
+          "name": "KeyVersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key version. The ID must be the GUID of the key version.",
+          "example": "2ab1a983-7072-4bbc-a582-584b5bd8****"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature algorithm.",
+          "example": "RSA_PSS_SHA_256"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The digest that is generated using the hash algorithm that corresponds to the value of **Algorithm** to hash the original message. > The value is Base64-encoded.",
+          "example": "ZOyIygCyaOW6GjVnihtTFtIS9PNmskdyMlNKiuy****="
+        },
+        {
+          "name": "Value",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature value to be verified. > The value is Base64-encoded.",
+          "example": "M2CceNZH00ZgL9ED/ZHFp21YRAvYeZHknJUc207OCZ0N9wNn9As4z2bON3FF3je+1Nu+2+/8Zj50HpMTpzYpMp2R93cYmACCmhaY"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to perform a dry run. - true: performs a dry run. - false (default): does not perform a dry run. A dry run is used to test API calls and verify whether you have the permissions to ac",
+          "example": "false"
+        }
+      ]
     },
     "CancelKeyDeletion": {
       "required": [
@@ -57,7 +233,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelKeyDeletion"
+      "summary": "Cancels the deletion task of a CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK. The ID must be globally unique.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        }
+      ]
     },
     "ConnectKmsInstance": {
       "required": [
@@ -69,7 +256,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ConnectKmsInstance"
+      "summary": "Enables a Key Management Service (KMS) instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KmsInstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the KMS instance that you want to enable.",
+          "example": "kst-phzz64f722a1buamw0****"
+        },
+        {
+          "name": "VpcId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the virtual private cloud (VPC) that is associated with the KMS instance.",
+          "example": "vpc-bp19z7cwmltad5dff****"
+        },
+        {
+          "name": "ZoneIds",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The two zones for the KMS instance. Dual-zone deployment improves service availability and disaster recovery capabilities.",
+          "example": "cn-hangzhou-k,cn-hangzhou-j"
+        },
+        {
+          "name": "VSwitchIds",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The vSwitch in the two zones. The vSwitch must have at least one available IP address.",
+          "example": "vsw-bp1i512amda6d10a0****"
+        },
+        {
+          "name": "KMProvider",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The provider of the KMS instance. Set the value to Aliyun.",
+          "example": "Aliyun"
+        }
+      ]
     },
     "CreateAlias": {
       "required": [
@@ -78,7 +308,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateAlias"
+      "summary": "Creates an alias for a key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK. The ID must be globally unique.",
+          "example": "7906979c-8e06-46a2-be2d-68e3ccbc****"
+        },
+        {
+          "name": "AliasName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The alias of the CMK. The alias must be 1 to 255 characters in length and must contain the prefix `alias/`. The alias cannot be prefixed with the reserved word `alias/acs`.",
+          "example": "alias/example"
+        }
+      ]
     },
     "CreateApplicationAccessPoint": {
       "required": [
@@ -87,7 +336,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateApplicationAccessPoint"
+      "summary": "Creates an application access point (AAP)",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the AAP.",
+          "example": "aap_test"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the AAP.",
+          "example": "aap description"
+        },
+        {
+          "name": "AuthenticationMethod",
+          "in": "query",
+          "type": "string",
+          "description": "The authentication method. Currently, only ClientKey is supported.",
+          "example": "ClientKey"
+        },
+        {
+          "name": "Policies",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The permission policy. > You can bind up to three permission policies to each AAP.",
+          "example": "[\"kst-hzz62ee817bvyyr5x****.efkd\",\"kst-hzz62ee817bvyyr5x****.eyyp\"]"
+        }
+      ]
     },
     "CreateClientKey": {
       "required": [
@@ -96,13 +378,126 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateClientKey"
+      "summary": "Creates a client key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AapName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The operation that you want to perform. Set the value to **CreateClientKey**.",
+          "example": "aap_test"
+        },
+        {
+          "name": "Password",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the AAP.",
+          "example": "bcfefe15-46f0****"
+        },
+        {
+          "name": "NotAfter",
+          "in": "query",
+          "type": "string",
+          "description": "The encryption password of the client key. The password must be 8 to 64 characters in length and must contain at least two of the following types: digits, letters, and special characters. Special char",
+          "example": "2028-08-31T17:14:33Z"
+        },
+        {
+          "name": "NotBefore",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the validity period of the client key. Specify the time in the ISO 8601 standard. The time must be in UTC. The time must be in the yyyy-MM-ddTHH:mm:ssZ format. > * If you do not configure N",
+          "example": "2023-08-31T17:14:33Z"
+        }
+      ]
     },
     "CreateKey": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateKey"
+      "summary": "Creates a customer master key (CMK) for envelope encryption, digital signatures, or other cryptographic operations.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the key. The description can be 0 to 8,192 characters in length.",
+          "example": "key description example"
+        },
+        {
+          "name": "KeyUsage",
+          "in": "query",
+          "type": "string",
+          "description": "The usage of the key. Valid values: - ENCRYPT/DECRYPT: encrypts and decrypts data. - SIGN/VERIFY: generates and verifies digital signatures. Default value: If the key supports signature verification, ",
+          "example": "ENCRYPT/DECRYPT"
+        },
+        {
+          "name": "Origin",
+          "in": "query",
+          "type": "string",
+          "description": "The source of the key material. Valid values: - Aliyun\\_KMS (default): The key material is generated by Alibaba Cloud KMS. - EXTERNAL: The key material is imported. > * The value is case-sensitive. - ",
+          "example": "Aliyun_KMS"
+        },
+        {
+          "name": "ProtectionLevel",
+          "in": "query",
+          "type": "string",
+          "description": "You do not need to specify this parameter. KMS automatically sets an appropriate protection level for your key. The protection level of the key. Valid values: - SOFTWARE - HSM > * If you specify DKMSI",
+          "example": "SOFTWARE"
+        },
+        {
+          "name": "EnableAutomaticRotation",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enable automatic key rotation. Valid values: - true: enables automatic key rotation. - false (default): disables automatic key rotation. This parameter is valid only when the key ",
+          "example": "true"
+        },
+        {
+          "name": "RotationInterval",
+          "in": "query",
+          "type": "string",
+          "description": "The automatic rotation period. The format is \\`integer\\[unit]\\`. \\`integer\\` indicates the length of the period. \\`unit\\` indicates the unit of time. Valid units: d (day), h (hour), m (minute), and s ",
+          "example": "365d"
+        },
+        {
+          "name": "KeySpec",
+          "in": "query",
+          "type": "string",
+          "description": "The specification of the key. The valid values vary based on the key management type. For more information about key specifications, supported standards, and algorithms, see [Key management types and ",
+          "example": "Aliyun_AES_256"
+        },
+        {
+          "name": "DKMSInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the KMS instance. > This parameter is required when you create a key for a KMS instance. This parameter is not required when you create a default key (master key).",
+          "example": "kst-bjj62d8f5e0sgtx8h****"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "string",
+          "description": "The tags to bind to the key. Each tag consists of a key-value pair (Key:Value), which includes a tag key and a tag value. Specify a maximum of 20 tags. To specify multiple tags, use the following form",
+          "example": "[{\"TagKey\":\"disk-encryption\",\"TagValue\":\"true\"}]"
+        },
+        {
+          "name": "Policy",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the key policy. The value is in the JSON format. The policy can be up to 32,768 bytes in length. For more information about key policies, see [Key policy overview](~~2716468~~). If you ",
+          "example": "{\"Statement\":[{\"Action\":[\"kms:*\"],\"Effect\":\"Allow\",\"Principal\":{\"RAM\":[\"acs:ram::119285303511****:*\""
+        },
+        {
+          "name": "KeyStorageMechanism",
+          "in": "query",
+          "type": "string",
+          "description": "The key storage location. This parameter is valid only when DKMSInstanceId is specified for a hardware key management instance. Valid values: - HsmInternal (default): The key is stored in an HSM and d",
+          "example": "HsmInternal"
+        }
+      ]
     },
     "CreateKeyVersion": {
       "required": [
@@ -110,7 +505,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateKeyVersion"
+      "summary": "Creates a version for a customer master key (CMK).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK. The ID must be globally unique. > You can also set the value to an alias that is bound to the CMK. For more information, see [Overview of aliases](~~68522~~).",
+          "example": "key-hzz62f1cb66fa42qo***"
+        }
+      ]
     },
     "CreateNetworkRule": {
       "required": [
@@ -119,7 +525,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateNetworkRule"
+      "summary": "Creates a network access rule to configure the private IP addresses or private CIDR blocks that are allowed to access a Key Management Service (KMS) instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the access control rule.",
+          "example": "networkrule_test"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The network type. Only private IP addresses are supported. Set the value to Private.",
+          "example": "Private"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description.",
+          "example": "networkrule description"
+        },
+        {
+          "name": "SourcePrivateIp",
+          "in": "query",
+          "type": "string",
+          "description": "The private IP address or private CIDR block. Separate multiple items with commas (,).",
+          "example": "[\"192.10.XX.XX\",\"192.168.XX.XX/24\"]"
+        }
+      ]
     },
     "CreatePolicy": {
       "required": [
@@ -129,7 +568,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreatePolicy"
+      "summary": "Creates a permission policy to configure the keys and secrets that are allowed to access.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy.",
+          "example": "policy_test"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description.",
+          "example": "policy description"
+        },
+        {
+          "name": "KmsInstance",
+          "in": "query",
+          "type": "string",
+          "description": "The scope of the permission policy. You need to specify the KMS instance that you want to access.",
+          "example": "kst-hzz634e67d126u9p9****"
+        },
+        {
+          "name": "Permissions",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The operations that can be performed. Valid values: * RbacPermission/Template/CryptoServiceKeyUser: allows you to perform cryptographic operations. * RbacPermission/Template/CryptoServiceSecretUser: a",
+          "example": "[\"RbacPermission/Template/CryptoServiceKeyUser\", \"RbacPermission/Template/CryptoServiceSecretUser\"]"
+        },
+        {
+          "name": "Resources",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The key and secret that are allowed to access. * Key: Enter a key in the `key/${KeyId}` format. To allow access to all keys of a KMS instance, enter key/\\*. * Secret: Enter a secret in the `secret/${S",
+          "example": "[\"secret/acs/ram/user/ram-secret\", \"secret/acs/ram/user/acr-master\", \"key/key-hzz63d9c8d3dfv8cv****\""
+        },
+        {
+          "name": "AccessControlRules",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the access control rule. > For more information about how to query created access control rules, see [ListNetworkRules](~~2539433~~).",
+          "example": "{\"NetworkRules\":[\"kst-hzz62ee817bvyyr5x****.efkd\",\"kst-hzz62ee817bvyyr5x****.eyyp\"]}"
+        }
+      ]
     },
     "CreateSecret": {
       "required": [
@@ -139,7 +626,108 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateSecret"
+      "summary": "Creates a secret and stores its initial version.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the secret. The name must be unique in the same region. The name can be up to 192 characters in length and can contain letters, digits, underscores (\\_), forward slashes (/), plus signs (+",
+          "example": "mydbconninfo"
+        },
+        {
+          "name": "VersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The version number of the initial version. The version number must be unique within the secret. The version number can be up to 64 characters in length.",
+          "example": "v1"
+        },
+        {
+          "name": "EncryptionKeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the key used to encrypt the secret value. > The key and the secret must be in the same KMS instance. The key must be a symmetric key.",
+          "example": "key-gzz63ff0db5hg3qje****"
+        },
+        {
+          "name": "SecretData",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The value of the secret. The value can be up to 30,720 bytes (30 KB) in length. KMS encrypts the secret value with the specified key and stores the encrypted value in the initial version. - If SecretT",
+          "example": "{\"Accounts\":[{\"AccountName\":\"user1\",\"AccountPassword\":\"****\"}]}"
+        },
+        {
+          "name": "SecretDataType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the secret value. Valid values: - text (default): The secret value is a text string. - binary: The secret value is a binary string. > If SecretType is set to Rds, Redis, PolarDB, RAMCreden",
+          "enum": [
+            "text",
+            "binary"
+          ],
+          "example": "text"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the secret.",
+          "example": "mydbinfo"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "string",
+          "description": "The tags of the secret. Each tag consists of a key-value pair. A tag consists of a tag key and a tag value. The tag key and tag value can be up to 128 characters in length and can contain letters, dig",
+          "example": "[{\\\"TagKey\\\":\\\"key1\\\",\\\"TagValue\\\":\\\"val1\\\"},{\\\"TagKey\\\":\\\"key2\\\",\\\"TagValue\\\":\\\"val2\\\"}]"
+        },
+        {
+          "name": "SecretType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the secret. Valid values: - Generic (default): a generic secret. - Rds: an RDS secret. - Redis: a Redis secret. - RAMCredentials: a RAM secret. - ECS: an ECS secret. - PolarDB: a PolarDB s",
+          "example": "Rds"
+        },
+        {
+          "name": "ExtendedConfig",
+          "in": "query",
+          "type": "object",
+          "description": "The extended configuration of the secret. This parameter specifies the properties of the secret of a specific type. The value can be up to 1,024 characters in length. - If SecretType is set to Generic",
+          "example": "{\"SecretSubType\":\"SingleUser\", \"DBInstanceId\":\"rm-bp1b3dd3a506e****\" ,\"CustomData\":{\"Key1\": \"v1\", \"f"
+        },
+        {
+          "name": "EnableAutomaticRotation",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enable automatic rotation. Valid values: - true: enables automatic rotation. - false (default): disables automatic rotation. > This parameter is valid only if SecretType is set to",
+          "example": "true"
+        },
+        {
+          "name": "RotationInterval",
+          "in": "query",
+          "type": "string",
+          "description": "The interval for automatic rotation. The value is in the range of 6 hours to 8,760 hours (365 days). The value is in the `integer[unit]` format. `integer` indicates the interval. `unit` indicates the ",
+          "example": "30d"
+        },
+        {
+          "name": "DKMSInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the KMS instance.",
+          "example": "kst-bjj62d8f5e0sgtx8h****"
+        },
+        {
+          "name": "Policy",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the secret policy. The value is in the JSON format. The value can be up to 32,768 bytes in length. For more information about secret policies, see [Overview of secret policies](~~271646",
+          "example": "{\"Version\":\"1\",\"Statement\": [{\"Sid\":\"kms default secret policy\",\"Effect\":\"Allow\",\"Principal\":{\"RAM\":"
+        }
+      ]
     },
     "Decrypt": {
       "required": [
@@ -147,7 +735,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Decrypt"
+      "summary": "Decrypts ciphertext that was encrypted by using a CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CiphertextBlob",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ciphertext that you want to decrypt. The ciphertext is generated by calling the following API operations: - [GenerateDataKey](~~28948~~) - [Encrypt](~~28949~~) - [GenerateDataKeyWithoutPlaintext](",
+          "example": "DZhOWVmZDktM2QxNi00ODk0LWJkNGYtMWZjNDNmM2YyYWJmaaSl+TztSIMe43nbTH/Z1Wr4XfLftKhAciUmDQXuMRl4WTvKhxjMT"
+        },
+        {
+          "name": "EncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string that consists of key-value pairs. > If you specify EncryptionContext when you call the [GenerateDataKey](~~28948~~), [Encrypt](~~28949~~), or [GenerateDataKeyWithoutPlaintext](~~134043~~",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the dry run feature. - true: enables the dry run feature. - false (default): disables the dry run feature. The dry run feature lets you test API calls, check whether you ha",
+          "example": "false"
+        }
+      ]
     },
     "DeleteAlias": {
       "required": [
@@ -155,7 +768,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAlias"
+      "summary": "Deletes an alias.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AliasName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The alias that you want to delete. The value must be 1 to 255 characters in length and must include the alias/ prefix.",
+          "example": "alias/example"
+        }
+      ]
     },
     "DeleteApplicationAccessPoint": {
       "required": [
@@ -163,7 +787,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteApplicationAccessPoint"
+      "summary": "Deletes an application access point (AAP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the AAP that you want to delete.",
+          "example": "aap_test"
+        }
+      ]
     },
     "DeleteClientKey": {
       "required": [
@@ -171,7 +806,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteClientKey"
+      "summary": "Deletes a client key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ClientKeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the client key.",
+          "example": "KAAP.66abf237-63f6-4625-b8cf-47e1086e****"
+        }
+      ]
     },
     "DeleteKeyMaterial": {
       "required": [
@@ -179,7 +825,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteKeyMaterial"
+      "summary": "Deletes the imported key material from a CMK. After deletion, the CMK enters the PendingImport state until you re-import key material.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        }
+      ]
     },
     "DeleteNetworkRule": {
       "required": [
@@ -187,7 +844,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteNetworkRule"
+      "summary": "Deletes a network access rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the network control rule to delete.",
+          "example": "networkrule_test"
+        }
+      ]
     },
     "DeletePolicy": {
       "required": [
@@ -195,7 +863,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeletePolicy"
+      "summary": "Deletes a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy that you want to delete.",
+          "example": "policy_test"
+        }
+      ]
     },
     "DeleteSecret": {
       "required": [
@@ -203,13 +882,43 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteSecret"
+      "summary": "Deletes a secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the secret.",
+          "example": "secret001"
+        },
+        {
+          "name": "ForceDeleteWithoutRecovery",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to forcibly delete the secret. If this parameter is set to true, the secret cannot be recovered. Valid values: * **true** * **false** (default value)",
+          "enum": [
+            "false",
+            "true"
+          ],
+          "example": "false"
+        },
+        {
+          "name": "RecoveryWindowInDays",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30. Unit: Days.",
+          "example": "10"
+        }
+      ]
     },
     "DescribeAccountKmsStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeAccountKmsStatus"
+      "summary": "Queries the status of Key Management Service (KMS) within your Alibaba Cloud account.",
+      "method": "POST"
     },
     "DescribeApplicationAccessPoint": {
       "required": [
@@ -217,7 +926,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeApplicationAccessPoint"
+      "summary": "Retrieves the details of an application access point (AAP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the application access point (AAP) to query.",
+          "example": "aap_test"
+        }
+      ]
     },
     "DescribeKey": {
       "required": [
@@ -225,7 +945,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeKey"
+      "summary": "Queries the metadata of a CMK, such as the key state, usage, and rotation configuration.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK. The ID must be globally unique. You can also set this parameter to an alias that is bound to the CMK. For more information, see [Overview of aliases](~~68522~~).",
+          "example": "key-hzz630494463ejqjx****"
+        }
+      ]
     },
     "DescribeKeyVersion": {
       "required": [
@@ -234,7 +965,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeKeyVersion"
+      "summary": "Queries the metadata of a specific CMK version.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK. You can also set this parameter to an alias that is bound to the CMK. For more information, see [Alias overview](~~68522~~).",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "KeyVersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK version. You can call the [ListKeyVersions](~~133966~~) operation to query the versions of the CMK.",
+          "example": "2ab1a983-7072-4bbc-a582-584b5bd8****"
+        }
+      ]
     },
     "DescribeNetworkRule": {
       "required": [
@@ -242,7 +992,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeNetworkRule"
+      "summary": "Retrieves the details of a network access rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the network rule to query.",
+          "example": "networkrule_test"
+        }
+      ]
     },
     "DescribePolicy": {
       "required": [
@@ -250,13 +1011,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribePolicy"
+      "summary": "Retrieves the details of a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy that you want to query.",
+          "example": "policy_test"
+        }
+      ]
     },
     "DescribeRegions": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeRegions"
+      "summary": "Queries the regions where KMS is available.",
+      "method": "POST"
     },
     "DescribeSecret": {
       "required": [
@@ -264,7 +1037,29 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeSecret"
+      "summary": "Queries the metadata of a secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the secret.",
+          "example": "secret001"
+        },
+        {
+          "name": "FetchTags",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to return the resource tags of the secret. Valid values: * true: The resource tags are returned. * false: The resource tags are not returned. This is the default value.",
+          "enum": [
+            "false",
+            "true"
+          ],
+          "example": "true"
+        }
+      ]
     },
     "DisableKey": {
       "required": [
@@ -272,7 +1067,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DisableKey"
+      "summary": "Disables a key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK. The ID must be globally unique.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        }
+      ]
     },
     "EnableKey": {
       "required": [
@@ -280,7 +1086,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "EnableKey"
+      "summary": "Enables a key to encrypt and decrypt data.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        }
+      ]
     },
     "Encrypt": {
       "required": [
@@ -289,7 +1106,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Encrypt"
+      "summary": "Encrypts plaintext by using a symmetric CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key. You can also specify the alias or Amazon Resource Name (ARN) of the key. For more information about aliases, see [Manage aliases](~~480655~~). > When you access a key in another Ali",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "Plaintext",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The plaintext to be encrypted. The plaintext must be Base64-encoded.",
+          "example": "SGVsbG8gd29y****"
+        },
+        {
+          "name": "EncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string that consists of key-value pairs. If you specify this parameter, you must specify the same parameter when you call the Decrypt operation. For more information, see [EncryptionContext](~~",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the dry run feature. - true: enables the dry run feature. - false (default): disables the dry run feature. The dry run feature is used to test API calls and verify the perm",
+          "example": "false"
+        }
+      ]
     },
     "ExportDataKey": {
       "required": [
@@ -300,7 +1150,56 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ExportDataKey"
+      "summary": "Exports a data key encrypted by a CMK. The data key is re-encrypted by a public key that you specify for secure transmission.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CiphertextBlob",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ciphertext of the data key that is encrypted using a master key (CMK).",
+          "example": "ODZhOWVmZDktM2QxNi00ODk0LWJkNGYtMWZjNDNmM2YyYWJmS7FmDBBQ0BkKsQrtRnidtPwirmDcS0ZuJCU41xxAAWk4Z8qsADfb"
+        },
+        {
+          "name": "EncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string that consists of key-value pairs. EncryptionContext is the encryption context that is passed in when the data key is encrypted using a CMK. For more information, see [EncryptionContext](",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "PublicKeyBlob",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The public key in Base64 format.",
+          "example": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAndKfC2ReLL2+y8a0+ZBBeAft/uBYo86GZiYJuflqgUzKxpyuvlo3uQkB"
+        },
+        {
+          "name": "WrappingKeySpec",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the public key specified by PublicKeyBlob. For more information about key types, see [Introduction to asymmetric keys](~~148147~~). Valid values: - RSA\\_2048 - EC\\_SM2",
+          "example": "RSA_2048"
+        },
+        {
+          "name": "WrappingAlgorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The encryption algorithm that is used to encrypt the data key using the public key specified by PublicKeyBlob. For more information about the algorithms, see [AsymmetricDecrypt](~~148130~~). Valid val",
+          "example": "RSAES_OAEP_SHA_256"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the DryRun mode. - true - false (default) The DryRun mode is used to test the API call and verify the permissions on the specified resources and the validity of the request",
+          "example": "false"
+        }
+      ]
     },
     "GenerateAndExportDataKey": {
       "required": [
@@ -311,7 +1210,74 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GenerateAndExportDataKey"
+      "summary": "Generates a random data key, encrypts it by using a CMK and a public key that you specify, and returns both ciphertexts.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key. You can also specify the alias or Amazon Resource Name (ARN) of the key. For more information about aliases, see [Manage aliases](~~480655~~). > To access a key in another Alibaba C",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        },
+        {
+          "name": "KeySpec",
+          "in": "query",
+          "type": "string",
+          "description": "The length of the data key that you want to generate. Valid values: - AES\\_256: a 256-bit symmetric key. - AES\\_128: a 128-bit symmetric key. > We recommend that you use the KeySpec or NumberOfBytes p",
+          "enum": [
+            "AES_256",
+            " AES_128"
+          ],
+          "example": "AES_256"
+        },
+        {
+          "name": "NumberOfBytes",
+          "in": "query",
+          "type": "integer",
+          "description": "The length of the data key that you want to generate. Valid values: 1 to 1024. Unit: bytes.",
+          "example": "32"
+        },
+        {
+          "name": "EncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string that consists of key-value pairs. If you specify this parameter, you must specify the same parameter when you call the Decrypt operation or other operations to re-encrypt the data key. F",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "PublicKeyBlob",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The public key that is encoded in Base64.",
+          "example": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAndKfC2ReLL2+y8a0+ZBBeAft/uBYo86GZiYJuflqgUzKxpyuvlo3uQkB"
+        },
+        {
+          "name": "WrappingKeySpec",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the key specified by PublicKeyBlob. For more information about key types, see [Introduction to asymmetric keys](~~148147~~). Valid values: - RSA\\_2048 - EC\\_SM2",
+          "example": "RSA_2048"
+        },
+        {
+          "name": "WrappingAlgorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The encryption algorithm that is used to encrypt the data key using the public key specified by PublicKeyBlob. For more information about encryption algorithms, see [AsymmetricDecrypt](~~148130~~). Va",
+          "example": "RSAES_OAEP_SHA_256"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the dry run feature. - true: enables the feature. - false (default): disables the feature. The DryRun mode is used to test API calls and verify the permissions on the resou",
+          "example": "false"
+        }
+      ]
     },
     "GenerateDataKey": {
       "required": [
@@ -319,7 +1285,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GenerateDataKey"
+      "summary": "Generates a random data key for envelope encryption. The data key is returned in both plaintext and ciphertext forms.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the key. You can also specify the alias or the key resource name (ARN) of the key. For more information about aliases, see [Manage aliases](~~480655~~). > When you access a key in another Al",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "KeySpec",
+          "in": "query",
+          "type": "string",
+          "description": "The length of the data key to be generated. Valid values: - AES\\_256: a 256-bit symmetric key. - AES\\_128: a 128-bit symmetric key. > We recommend that you use the KeySpec or NumberOfBytes parameter t",
+          "enum": [
+            "AES_256",
+            " AES_128"
+          ],
+          "example": "AES_256"
+        },
+        {
+          "name": "NumberOfBytes",
+          "in": "query",
+          "type": "integer",
+          "description": "The length of the data key that you want to generate. Unit: bytes. Valid values: 1 to 1024. Default values: - If you set KeySpec to AES\\_256, the default value of NumberOfBytes is 32. - If you set Key",
+          "example": "256"
+        },
+        {
+          "name": "EncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string that consists of key-value pairs. If you specify this parameter, you must also specify the same parameter when you call the [Decrypt](~~28950~~) operation. For more information, see [Enc",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the DryRun mode. - true: enables the DryRun mode. - false (default): disables the DryRun mode. The DryRun mode is used to test the API call. It verifies whether you have th",
+          "example": "false"
+        }
+      ]
     },
     "GenerateDataKeyWithoutPlaintext": {
       "required": [
@@ -327,7 +1336,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GenerateDataKeyWithoutPlaintext"
+      "summary": "Generates a random data key in only ciphertext form, without the plaintext copy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique identifier of the CMK. You can also specify an alias that is bound to the CMK. For more information about how to use an alias, see Alias overview.",
+          "example": "599fa825-17de-417e-9554-bb032cc6****"
+        },
+        {
+          "name": "KeySpec",
+          "in": "query",
+          "type": "string",
+          "description": "The length of the data key to generate. Valid values: - AES\\_256: a 256-bit symmetric key - AES\\_128: a 128-bit symmetric key > Use KeySpec or NumberOfBytes to specify the length of the data key. If y",
+          "enum": [
+            "AES_256",
+            " AES_128"
+          ],
+          "example": "AES_256"
+        },
+        {
+          "name": "NumberOfBytes",
+          "in": "query",
+          "type": "integer",
+          "description": "The length of the data key to generate. Valid values: 1 to 1024. Unit: bytes",
+          "example": "256"
+        },
+        {
+          "name": "EncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string of key-value pairs. If you specify this parameter, you must provide the same parameter when you call the Decrypt operation. For more information, see [EncryptionContext](~~42975~~).",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the DryRun mode. - true: enables the DryRun mode. - false (default): disables the DryRun mode. The DryRun mode is used to test API calls, verify your permissions on the req",
+          "example": "false"
+        }
+      ]
     },
     "GetClientKey": {
       "required": [
@@ -335,13 +1387,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetClientKey"
+      "summary": "Retrieves information about a client key.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ClientKeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the client key.",
+          "example": "KAAP.66abf237-63f6-4625-b8cf-47e1086e****"
+        }
+      ]
     },
     "GetDefaultKmsInstance": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetDefaultKmsInstance"
+      "summary": "Queries the default KMS instance in a specified region.",
+      "method": "GET"
     },
     "GetKeyPolicy": {
       "required": [
@@ -349,7 +1413,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetKeyPolicy"
+      "summary": "Queries the key policy of a CMK in a KMS instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID or Alibaba Cloud Resource Name (ARN) of the key. > When you access a key in another Alibaba Cloud account, you must enter the ARN of the key. The ARN of a key is in the `acs:kms:${region}:${acc",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the key policy. Only the static value default is supported.",
+          "example": "default"
+        }
+      ]
     },
     "GetKmsInstance": {
       "required": [
@@ -357,13 +1439,47 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetKmsInstance"
+      "summary": "Retrieves the details of a KMS instance.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "KmsInstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the KMS instance to query.",
+          "example": "kst-bjj62f5ba3dnpb6v8****"
+        }
+      ]
     },
     "GetKmsInstanceQuotaInfos": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetKmsInstanceQuotaInfos"
+      "summary": "Queries the quota usage and limits for a KMS instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KmsInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the KMS instance to query.",
+          "example": "kst-bjj62f5ba3dnpb6v8****"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The resource type. Valid values: - `key`: key quota - `secret`: secret quota - `qps`: queries per second (QPS) quota - `vpc`: Virtual Private Cloud (VPC) quota",
+          "enum": [
+            "qps",
+            "vpc",
+            "secret",
+            "key"
+          ],
+          "example": "key"
+        }
+      ]
     },
     "GetParametersForImport": {
       "required": [
@@ -373,7 +1489,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetParametersForImport"
+      "summary": "Queries the parameters that are used to import key material for a customer master key (CMK).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK. > You can import key material only for CMKs whose Origin parameter is set to EXTERNAL.",
+          "example": "202b9877-5a25-46e3-a763-e20791b5****"
+        },
+        {
+          "name": "WrappingAlgorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The algorithm that is used to encrypt key material.",
+          "example": "RSAES_PKCS1_V1_5"
+        },
+        {
+          "name": "WrappingKeySpec",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the public key that is used to encrypt key material.",
+          "example": "RSA_2048"
+        }
+      ]
     },
     "GetPublicKey": {
       "required": [
@@ -382,13 +1525,111 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetPublicKey"
+      "summary": "Retrieves the public key of an asymmetric key. You can use the public key to encrypt data or verify a signature on your device.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique identifier of the customer master key (CMK). This parameter can also be an alias that is bound to the CMK. For more information, see [Use of aliases](~~68522~~).",
+          "example": "5c438b18-05be-40ad-b6c2-3be6752c****"
+        },
+        {
+          "name": "KeyVersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique identifier of the key version.",
+          "example": "2ab1a983-7072-4bbc-a582-584b5bd8****"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the DryRun mode. - true: enables the DryRun mode. - false (default): disables the DryRun mode. The DryRun mode is used to test API calls, verify your permissions on resourc",
+          "example": "false"
+        }
+      ]
     },
     "GetRandomPassword": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRandomPassword"
+      "summary": "Generates a random password string.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PasswordLength",
+          "in": "query",
+          "type": "string",
+          "description": "The number of bytes that the password to be generated contains. Valid values: 8 to 128. Default value: 32",
+          "example": "32"
+        },
+        {
+          "name": "ExcludeCharacters",
+          "in": "query",
+          "type": "string",
+          "description": "The characters that are not included in the password to be generated. Valid values: `Valid characters: 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ! \\\"#$%&'()*+,-. /:; ? @[\\] your_pr",
+          "example": "ABCabc"
+        },
+        {
+          "name": "ExcludeLowercase",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to exclude lowercase letters. Valid values: - true - false",
+          "enum": [
+            "false",
+            "true"
+          ],
+          "example": "false"
+        },
+        {
+          "name": "ExcludeUppercase",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to exclude uppercase letters. Valid values: - true - false",
+          "enum": [
+            "false",
+            "true"
+          ],
+          "example": "false"
+        },
+        {
+          "name": "ExcludeNumbers",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to exclude digits. Valid values: - true - false",
+          "enum": [
+            "false",
+            "true"
+          ],
+          "example": "false"
+        },
+        {
+          "name": "ExcludePunctuation",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to exclude special characters. Valid values: - true - false",
+          "enum": [
+            "false",
+            "true"
+          ],
+          "example": "false"
+        },
+        {
+          "name": "RequireEachIncludedType",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to include all the preceding character types. Valid values: - true - false",
+          "enum": [
+            "false",
+            "true"
+          ],
+          "example": "true"
+        }
+      ]
     },
     "GetSecretPolicy": {
       "required": [
@@ -396,7 +1637,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetSecretPolicy"
+      "summary": "Queries the access policy of a specified secret in a KMS instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name or Alibaba Cloud Resource Name (ARN) of the credential. > If you access a credential that belongs to another Alibaba Cloud account, you must specify the ARN of the credential. The ARN of a cr",
+          "example": "secret_test"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the credential policy. Only the static field default is supported.",
+          "example": "default"
+        }
+      ]
     },
     "GetSecretValue": {
       "required": [
@@ -404,7 +1663,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Retrieve Credential Value"
+      "summary": "Retrieve Credential Value",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name or ARN of the credential. > When accessing a credential under another Alibaba Cloud account, you must specify the credential ARN. The ARN format is `acs:kms:${region}:${account}:secret/${secr",
+          "example": "secret001"
+        },
+        {
+          "name": "VersionStage",
+          "in": "query",
+          "type": "string",
+          "description": "The version stage. Default value: ACSCurrent. If you specify this parameter, the credential value of the specified version stage is returned. If you do not specify this parameter, the credential value",
+          "example": "ACSCurrent"
+        },
+        {
+          "name": "VersionId",
+          "in": "query",
+          "type": "string",
+          "description": "Version number. > The VersionId parameter is not supported for RDS credentials, PolarDB credentials, Redis/Tair credentials, RAM credentials, and ECS credentials. If you specify this parameter, it wil",
+          "example": "v1"
+        },
+        {
+          "name": "FetchExtendedConfig",
+          "in": "query",
+          "type": "boolean",
+          "description": "Indicates whether to retrieve the extended configuration of the credential. Valid values: - true: Retrieve - false (Default Value): Do not retrieve > Generic secrets do not support extended configurat",
+          "example": "true"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Indicates whether to enable DryRun mode. - true: Enabled - false (Default Value): Disabled DryRun mode is used for Testing API Calls to authenticate whether you have the required permissions on the sp",
+          "example": "false"
+        }
+      ]
     },
     "ImportKeyMaterial": {
       "required": [
@@ -415,13 +1713,65 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ImportKeyMaterial"
+      "summary": "Imports externally generated key material into a CMK whose origin is EXTERNAL.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK to be imported.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        },
+        {
+          "name": "EncryptedKeyMaterial",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The key material encrypted with the public key returned by **GetParametersForImport**, and then Base64-encoded.",
+          "example": "bCPZx7I6v6KXsqEpr2OXKxuj2CCRtKdwp75Bw+BGncYqBdfjFBYRtOE6HRlT0oeiRDWzwnw9OA54OL36smDJrq4Lo9x0CyYDiuKn"
+        },
+        {
+          "name": "ImportToken",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The import token obtained by calling **GetParametersForImport**.",
+          "example": "Base64String"
+        },
+        {
+          "name": "KeyMaterialExpireUnix",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The time when the key material expires. If this parameter is not specified or set this parameter to 0, the key material does not expire. > The value cannot be earlier than the time when the operation ",
+          "example": "0"
+        }
+      ]
     },
     "ListAliases": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAliases"
+      "summary": "Queries all aliases in the current region for the current account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 0 to 100. Default value: 10.",
+          "example": "10"
+        }
+      ]
     },
     "ListAliasesByKeyId": {
       "required": [
@@ -429,19 +1779,71 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAliasesByKeyId"
+      "summary": "Queries all aliases that are bound to a key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Valid values: an integer that is greater than 0. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 0 to 101. Default value: 10",
+          "example": "10"
+        }
+      ]
     },
     "ListApplicationAccessPoints": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListApplicationAccessPoints"
+      "summary": "Queries all application access points (AAPs) in the current region.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 20.",
+          "example": "10"
+        }
+      ]
     },
     "ListClientKeys": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListClientKeys"
+      "summary": "Queries all client keys within an AAP.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "AapName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the application access point (AAP).",
+          "example": "aap_test"
+        }
+      ]
     },
     "ListKeyVersions": {
       "required": [
@@ -449,31 +1851,131 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListKeyVersions"
+      "summary": "Queries all versions of a specified CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK. You can also set this parameter to an alias that is bound to the CMK. For more information, see [Use aliases](~~68522~~).",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 0 to 101. Default value: 10.",
+          "example": "10"
+        }
+      ]
     },
     "ListKeys": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListKeys"
+      "summary": "Queries the IDs and ARNs of all CMKs in the current region.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Valid values: greater than 0. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Filters",
+          "in": "query",
+          "type": "string",
+          "description": "A filter for master keys. The filter consists of 0 to 10 key-value pairs. - Key - Description: The property to filter. - Type: String. - Values - Description: The value to be included after filtering.",
+          "example": "[{\"Key\":\"KeyState\", \"Values\":[\"Enabled\",\"Disabled\"]}]"
+        }
+      ]
     },
     "ListKmsInstances": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListKmsInstances"
+      "summary": "Queries all KMS instances in the current region.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 20.",
+          "example": "10"
+        }
+      ]
     },
     "ListNetworkRules": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListNetworkRules"
+      "summary": "Queries all network access rules in the current region.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 20.",
+          "example": "10"
+        }
+      ]
     },
     "ListPolicies": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListPolicies"
+      "summary": "Queries all permission policies in the current region.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 20.",
+          "example": "10"
+        }
+      ]
     },
     "ListResourceTags": {
       "required": [
@@ -481,7 +1983,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListResourceTags"
+      "summary": "Queries the tags of a customer master key (CMK).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The globally unique ID of the CMK.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        }
+      ]
     },
     "ListSecretVersionIds": {
       "required": [
@@ -489,13 +2002,76 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListSecretVersionIds"
+      "summary": "Queries all version IDs and stage labels of a specified secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name or Alibaba Cloud Resource Name (ARN) of the credential. > When you access a credential that belongs to another Alibaba Cloud account, you must specify the ARN of the credential. The ARN of a ",
+          "example": "secret001"
+        },
+        {
+          "name": "IncludeDeprecated",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to include credential versions that have no version stages in the response. Valid values: - false (default): No - true: Yes",
+          "example": "false"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return for a paged query. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page for a paged query. Default value: 20.",
+          "example": "10"
+        }
+      ]
     },
     "ListSecrets": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListSecrets"
+      "summary": "Queries all secrets in the current region.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "FetchTags",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to return resource tags for each secret. Valid values: - `true`: Resource tags are returned. - `false` (default): Resource tags are not returned.",
+          "example": "false"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The value must be greater than 0. Default: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The page size. The value must be between 1 and 100. Default: 10.",
+          "example": "2"
+        },
+        {
+          "name": "Filters",
+          "in": "query",
+          "type": "string",
+          "description": "Filters secrets based on specified conditions. The value is a list of up to 10 key-value pairs. When you filter by tag, the query returns a maximum of 4,000 resources. If more than 4,000 resources mat",
+          "example": "[{\"Key\":\"SecretName\", \"Values\":[\"Val1\",\"Val2\"]}]"
+        }
+      ]
     },
     "ListTagResources": {
       "required": [
@@ -504,13 +2080,70 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagResources"
+      "summary": "Lists the tags that are bound to a key or a secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID of the resource. > Call [DescribeRegions](~~601478~~) to query the most recent region list.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. > If not all results are returned, the NextToken value is included in the response. By default, 200 rows are re",
+          "example": "caeba0bbb2be03f84eb48b699f0a4883"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of resource whose tags you want to query. Valid value: - key - secret",
+          "example": "key"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "A list of resource IDs for which you want to query tags. You can enter a maximum of 50 resource IDs. Enter multiple resource IDs in the `[\"ResourceId. 1\",\"ResourceId. 2\",...]` format.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags that you want to query. Valid values of N: 1 to 20.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the tag. A tag consists of a key-value pair. You can enter up to 20 tags. Enter multiple tags in the `[{\"Key\":\"key1\",\"Value\":\"value1\"},{\"Key\":\"key2\",\"Value\":\"value2\"},..]` format. > The key"
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the tag. A tag consists of a key-value pair. You can enter up to 20 tags. Enter multiple tags in the `[{\"Key\":\"key1\",\"Value\":\"value1\"},{\"Key\":\"key2\",\"Value\":\"value2\"},..]` format."
+            }
+          ]
+        }
+      ]
     },
     "OpenKmsService": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "OpenKmsService"
+      "summary": "Activates Key Management Service (KMS) for your Alibaba Cloud account.",
+      "method": "POST"
     },
     "PutSecretValue": {
       "required": [
@@ -520,7 +2153,52 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutSecretValue"
+      "summary": "Stores a new version of a secret value for a generic secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "VersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The version number of the secret. The value must be unique in the secret.",
+          "example": "v3"
+        },
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name or Alibaba Cloud Resource Name (ARN) of the secret. > When you access a secret in another Alibaba Cloud account, you must specify the ARN of the secret. The ARN of a secret is in the format o",
+          "example": "secret001"
+        },
+        {
+          "name": "SecretData",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The secret value. The value is encrypted and stored in the specified new version.",
+          "example": "importantdata"
+        },
+        {
+          "name": "SecretDataType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the secret value. Valid values: - text (default) - binary",
+          "enum": [
+            "text",
+            "binary"
+          ],
+          "example": "text"
+        },
+        {
+          "name": "VersionStages",
+          "in": "query",
+          "type": "string",
+          "description": "The stage labels that are used to mark the new version. If you do not specify this parameter, KMS marks the new version with ACSCurrent.",
+          "example": "[\"ACSCurrent\",\"ACSNext\"]"
+        }
+      ]
     },
     "ReEncrypt": {
       "required": [
@@ -529,7 +2207,68 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ReEncrypt"
+      "summary": "Re-encrypts ciphertext under a different CMK without exposing the plaintext.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CiphertextBlob",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ciphertext that you want to re-encrypt. This parameter can be the ciphertext that is returned after symmetric or asymmetric key encryption. - Symmetric encryption: the ciphertext that is returned ",
+          "example": "ODZhOWVmZDktM2QxNi00ODk0LWJkNGYtMWZjNDNmM2YyYWJmS7FmDBBQ0BkKsQrtRnidtPwirmDcS0ZuJCU41xxAAWk4Z8qsADfb"
+        },
+        {
+          "name": "SourceKeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the master key that is used to decrypt the ciphertext. The globally unique identifier of the master key. > You must specify this parameter when CiphertextBlob is the data that is encrypted u",
+          "example": "5c438b18-05be-40ad-b6c2-3be6752c****"
+        },
+        {
+          "name": "SourceKeyVersionId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the key version that is used to decrypt the ciphertext. > You must specify this parameter when CiphertextBlob is the data that is encrypted using a public key after asymmetric key encryption",
+          "example": "2ab1a983-7072-4bbc-a582-584b5bd8****"
+        },
+        {
+          "name": "SourceEncryptionAlgorithm",
+          "in": "query",
+          "type": "string",
+          "description": "If CiphertextBlob is the result of public key encryption, specify the public key encryption algorithm. For more information about the algorithms, see [AsymmetricDecrypt](~~148130~~). Valid values: - R",
+          "example": "RSAES_OAEP_SHA_256"
+        },
+        {
+          "name": "SourceEncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string that consists of key-value pairs. If you specify this parameter when you call the [Encrypt](~~28949~~), [GenerateDataKey](~~28948~~), [GenerateDataKeyWithoutPlaintext](~~134043~~), or [G",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "DestinationKeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the symmetric master key that is used to re-encrypt the data after the ciphertext is decrypted.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        },
+        {
+          "name": "DestinationEncryptionContext",
+          "in": "query",
+          "type": "object",
+          "description": "A JSON string that consists of key-value pairs. This parameter specifies the encryption context for the destination master key.",
+          "example": "{\"Example\":\"Example\"}"
+        },
+        {
+          "name": "DryRun",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the DryRun mode. - true: enables the DryRun mode. - false (default): disables the DryRun mode. The DryRun mode is used to test API calls, verify whether you have the permis",
+          "example": "false"
+        }
+      ]
     },
     "ReleaseKmsInstance": {
       "required": [
@@ -537,7 +2276,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ReleaseKmsInstance"
+      "summary": "Releases a pay-as-you-go KMS instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KmsInstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the KMS instance.",
+          "example": "kst-hzz6****"
+        },
+        {
+          "name": "ForceDeleteWithoutBackup",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to forcibly release the KMS instance if it has not been backed up. - true: forcibly releases the instance. - false (default): does not release the instance.",
+          "example": "false"
+        }
+      ]
     },
     "RestoreSecret": {
       "required": [
@@ -545,7 +2302,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RestoreSecret"
+      "summary": "Restores a deleted secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the secret you want to restore.",
+          "example": "secret001"
+        }
+      ]
     },
     "RotateSecret": {
       "required": [
@@ -554,7 +2322,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RotateSecret"
+      "summary": "Immediately rotates a secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the secret.",
+          "example": "RdsSecret/Mysql5.4/MyCred"
+        },
+        {
+          "name": "VersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The version number of the secret after the secret is rotated. > The version number is used to ensure the idempotence of the request. Secrets Manager uses this version number to prevent your applicatio",
+          "example": "000000123"
+        }
+      ]
     },
     "ScheduleKeyDeletion": {
       "required": [
@@ -563,7 +2350,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ScheduleKeyDeletion"
+      "summary": "Deletes a specified customer master key (CMK).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the customer master key (CMK). The ID must be globally unique.",
+          "example": "7906979c-8e06-46a2-be2d-68e3ccbc****"
+        },
+        {
+          "name": "PendingWindowInDays",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The scheduled period after which the CMK is deleted. During this period, the CMK is in the PendingDeletion state. After this period ends, you cannot cancel the key deletion task. Valid values: 7 to 36",
+          "example": "7"
+        }
+      ]
     },
     "SetDeletionProtection": {
       "required": [
@@ -571,7 +2377,44 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetDeletionProtection"
+      "summary": "Enables or disables deletion protection for a customer master key (CMK).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProtectedResourceArn",
+          "in": "query",
+          "type": "string",
+          "description": "The ARN of the CMK for which you want to configure deletion protection. You can call the [DescribeKey](~~28952~~) operation to query the ARN of the CMK.",
+          "example": "acs:kms:cn-hangzhou:123213123****:key/0225f411-b21d-46d1-be5b-93931c82****"
+        },
+        {
+          "name": "EnableDeletionProtection",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "Specifies whether to enable deletion protection. Valid values: - true: enables deletion protection. - false: disables deletion protection. This is the default value.",
+          "example": "true"
+        },
+        {
+          "name": "DeletionProtectionDescription",
+          "in": "query",
+          "type": "string",
+          "description": "The description of deletion protection. > This parameter is available only when EnableDeletionProtection is set to true.",
+          "example": "The CMK is being used by XXX. Deletion protection is set."
+        },
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the key.",
+          "example": "key-hzz65f3a68554s6ms****"
+        },
+        {
+          "name": "KmsInstanceId",
+          "in": "query",
+          "type": "string"
+        }
+      ]
     },
     "SetKeyPolicy": {
       "required": [
@@ -580,7 +2423,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetKeyPolicy"
+      "summary": "Sets the key policy for a CMK in a KMS instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID or Alibaba Cloud Resource Name (ARN) of the key. > To access a key of another Alibaba Cloud account, you must specify the ARN of the key. The key ARN is in the format of `acs:kms:${region}:${ac",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the key policy. The name can only be \\`default\\`.",
+          "example": "default"
+        },
+        {
+          "name": "Policy",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The key policy. The policy is in the JSON format. The policy can be up to 32,768 bytes in length. A key policy contains the following elements: - Version: The version of the key policy. The value can ",
+          "example": "{\"Statement\":[{\"Action\":[\"kms:*\"],\"Effect\":\"Allow\",\"Principal\":{\"RAM\":[\"acs:ram::119285303511****:*\""
+        }
+      ]
     },
     "SetSecretPolicy": {
       "required": [
@@ -589,7 +2458,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetSecretPolicy"
+      "summary": "Sets the access policy for a secret in a KMS instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name or Alibaba Cloud Resource Name (ARN) of the secret. > When you access a secret in another Alibaba Cloud account, you must specify the ARN of the secret. The ARN of a secret is in the format o",
+          "example": "secret_test"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the secret policy. The value can only be \\`default\\`.",
+          "example": "default"
+        },
+        {
+          "name": "Policy",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The content of the secret policy. The value must be in the JSON format. The value can be up to 32,768 bytes in length. A secret policy contains the following elements: - Version: The version of the se",
+          "example": "{\"Version\":\"1\",\"Statement\": [{\"Sid\":\"kms default secret policy\",\"Effect\":\"Allow\",\"Principal\":{\"RAM\":"
+        }
+      ]
     },
     "TagResource": {
       "required": [
@@ -597,7 +2492,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResource"
+      "summary": "Adds tags to a CMK, secret, or certificate.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the customer master key (CMK). The ID must be globally unique. > You can configure only one of the KeyId, SecretName, and CertificateId parameters.",
+          "example": "key-hzz630494463ejqjx****"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "One or more tags that you want to add. The value is in the array format. Tag attributes: - TagKey: the tag key. - TagValue: the tag value.",
+          "example": "[{\"TagKey\":\"S1key1\",\"TagValue\":\"S1val1\"},{\"TagKey\":\"S1key2\",\"TagValue\":\"S2val2\"}]"
+        },
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the secret. > You can configure only one of the KeyId, SecretName, and CertificateId parameters.",
+          "example": "MyDbC****"
+        },
+        {
+          "name": "CertificateId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the certificate. > You can configure only one of the KeyId, SecretName, and CertificateId parameters.",
+          "example": "770dbe42-e146-43d1-a55a-1355db86****"
+        }
+      ]
     },
     "TagResources": {
       "required": [
@@ -608,7 +2535,58 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResources"
+      "summary": "Adds tags to one or more keys or secrets.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID of the resource. > You can call the [DescribeRegions](~~601478~~) to query the most recent region list.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resource to which you want to add tags. Valid values: - key - secret",
+          "example": "key"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The IDs of the resources to which you want to add tags. You can enter a maximum of 50 resource IDs. Enter multiple resource IDs in the `[\"ResourceId. 1\",\"ResourceId. 2\",...]` format.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "A list of tags. You can enter up to 20 tags. A tag consists of a key-value pair. Enter multiple tags in the `[{\"Key\":\"key1\",\"Value\":\"value1\"},{\"Key\":\"key2\",\"Value\":\"value2\"},..]` format.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the tag. A tag consists of a key-value pair. You can enter up to 20 tags. Enter multiple tags in the `[{\"Key\":\"key1\",\"Value\":\"value1\"},{\"Key\":\"key2\",\"Value\":\"value2\"},..]` format. Each key "
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the tag. A tag consists of a key-value pair. You can enter up to 20 tags. Enter multiple tags in the `[{\"Key\":\"key1\",\"Value\":\"value1\"},{\"Key\":\"key2\",\"Value\":\"value2\"},..]` format. Each va"
+            }
+          ]
+        }
+      ]
     },
     "UntagResource": {
       "required": [
@@ -616,7 +2594,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResource"
+      "summary": "Removes tags from a CMK, secret, or certificate.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the key. This is the globally unique identifier (GUID) of the master key (CMK). > You must specify one and only one of the KeyId, SecretName, and CertificateId parameters.",
+          "example": "08c33a6f-4e0a-4a1b-a3fa-7ddf****"
+        },
+        {
+          "name": "TagKeys",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "One or more tag keys. Separate multiple tag keys with commas (,). You need to specify only tag keys, not tag values. The tag key can be 1 to 128 bytes in length.",
+          "example": "[\"tagkey1\",\"tagkey2\"]"
+        },
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the credential. > You must specify one and only one of the KeyId, SecretName, and CertificateId parameters.",
+          "example": "MyDbC****"
+        },
+        {
+          "name": "CertificateId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the certificate. > You must specify one and only one of the KeyId, SecretName, and CertificateId parameters.",
+          "example": "770dbe42-e146-43d1-a55a-1355db86****"
+        }
+      ]
     },
     "UntagResources": {
       "required": [
@@ -626,7 +2636,58 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResources"
+      "summary": "Removes tags from keys or secrets.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID of the resource. > You can call the [DescribeRegions](~~601478~~) operation to query the most recent region list.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resource from which you want to remove tags. Valid values: * key * secret",
+          "example": "key"
+        },
+        {
+          "name": "All",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to remove all tags from resources. Valid values: * true * false (default) > This parameter takes effect only when you specify an empty tag key.",
+          "example": "false"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The IDs of the resources from which you want to remove tags. You can enter up to 50 resource IDs. Enter multiple resource IDs in the `[\"ResourceId.1\",\"ResourceId.2\",...]` format.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "array",
+          "description": "The keys of the tags that you want to remove. You can enter up to 20 tag keys. Enter multiple tag keys in the `[\"key.1\",\"key.2\",...]` format. > The tag key cannot start with aliyun or acs:.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpdateAlias": {
       "required": [
@@ -635,7 +2696,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateAlias"
+      "summary": "Binds an existing alias to a different customer master key (CMK) ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK. The ID must be globally unique.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        },
+        {
+          "name": "AliasName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The alias that you want to bind. The value must be 1 to 255 characters in length and must include the alias/ prefix.",
+          "example": "alias/example"
+        }
+      ]
     },
     "UpdateApplicationAccessPoint": {
       "required": [
@@ -643,7 +2723,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateApplicationAccessPoint"
+      "summary": "Updates the information about an application access point (AAP).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the AAP that you want to update.",
+          "example": "aap_test"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description.",
+          "example": "aap description"
+        },
+        {
+          "name": "Policies",
+          "in": "query",
+          "type": "string",
+          "description": "The permission policy that you want to update. > You can associate up to three permission policies with each AAP.",
+          "example": "[\"kst-hzz62ee817bvyyr5x****.efkd\",\"kst-hzz62ee817bvyyr5x****.eyyp\"]"
+        }
+      ]
     },
     "UpdateKeyDescription": {
       "required": [
@@ -652,7 +2757,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateKeyDescription"
+      "summary": "Updates the description of a CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the CMK. The ID must be globally unique.",
+          "example": "1234abcd-12ab-34cd-56ef-12345678****"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The description of the CMK. This description includes the purpose of the CMK, such as the types of data that you want to protect and applications that can use the CMK.",
+          "example": "key description example"
+        }
+      ]
     },
     "UpdateKmsInstanceBindVpc": {
       "required": [
@@ -661,7 +2785,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateKmsInstanceBindVpc"
+      "summary": "Updates the VPC bindings of a KMS instance.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "KmsInstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the KMS instance.",
+          "example": "kst-phzz64f722a1buamw0****"
+        },
+        {
+          "name": "BindVpcs",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The VPC configuration. Each VPC configuration contains the following parameters: - VpcId: The ID of the VPC. - VSwitchId: The vSwitch in the VPC. - RegionID: The region where the VPC resides. - VpcOwn",
+          "example": "[{\"VpcId\":\"vpc-bp1go9qvmj78j4f4c****\",\"VSwitchId\":\"vsw-bp16c5pvvcf0fp5b9****\",\"RegionId\":\"cn-hangzho"
+        }
+      ]
     },
     "UpdateNetworkRule": {
       "required": [
@@ -669,7 +2812,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateNetworkRule"
+      "summary": "Updates a network access rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the network control rule that you want to update.",
+          "example": "networkrule_test"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The updated description.",
+          "example": "Create by kst-hzz62ee817bvyyr5****"
+        },
+        {
+          "name": "SourcePrivateIp",
+          "in": "query",
+          "type": "string",
+          "description": "The updated private IP addresses or private CIDR blocks. Separate multiple IP addresses or private CIDR blocks with a comma (,).",
+          "example": "[\"192.10.XX.XX\",\"192.168.XX.XX/24\"]"
+        }
+      ]
     },
     "UpdatePolicy": {
       "required": [
@@ -677,7 +2845,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdatePolicy"
+      "summary": "Updates a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy that you want to update.",
+          "example": "policy_test"
+        },
+        {
+          "name": "Permissions",
+          "in": "query",
+          "type": "string",
+          "description": "The operations that are supported by the updated policy. Valid values: * RbacPermission/Template/CryptoServiceKeyUser: allows you to perform cryptographic operations. * RbacPermission/Template/CryptoS",
+          "example": "[\"RbacPermission/Template/CryptoServiceKeyUser\", \"RbacPermission/Template/CryptoServiceSecretUser\"]"
+        },
+        {
+          "name": "Resources",
+          "in": "query",
+          "type": "string",
+          "description": "The key and secret that are allowed to access after the update. * Key: Enter a key in the `key/${KeyId}` format. To allow access to all keys of a KMS instance, enter key/\\*. * Secret: Enter a secret i",
+          "example": "[\"secret/acs/ram/user/ram-secret\", \"secret/acs/ram/user/acr-master\", \"key/key-hzz63d9c8d3dfv8cv****\""
+        },
+        {
+          "name": "AccessControlRules",
+          "in": "query",
+          "type": "string",
+          "description": "The access control rule. > For more information about how to query created access control rules, see [ListNetworkRules](~~2539433~~).",
+          "example": "{\"NetworkRules\":[\"kst-hzz62ee817bvyyr5x****.efkd\",\"kst-hzz62ee817bvyyr5x****.eyyp\"]}"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description.",
+          "example": "policy description"
+        }
+      ]
     },
     "UpdateRotationPolicy": {
       "required": [
@@ -686,7 +2893,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateRotationPolicy"
+      "summary": "Updates the automatic rotation policy of a CMK.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the customer master key (CMK). The ID must be globally unique.",
+          "example": "key-hzz62f1cb66fa42qo****"
+        },
+        {
+          "name": "EnableAutomaticRotation",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "Specifies whether to enable automatic key rotation. Valid values: - true: enables automatic key rotation. - false: disables automatic key rotation.",
+          "example": "true"
+        },
+        {
+          "name": "RotationInterval",
+          "in": "query",
+          "type": "string",
+          "description": "The period of automatic key rotation. Specify the value in the integer\\[unit] format. The following units are supported: d (day), h (hour), m (minute), and s (second). For example, you can use either ",
+          "example": "30d"
+        }
+      ]
     },
     "UpdateSecret": {
       "required": [
@@ -694,7 +2927,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateSecret"
+      "summary": "Updates the metadata of a secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the secret.",
+          "example": "secret001"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the secret.",
+          "example": "datainfo"
+        },
+        {
+          "name": "ExtendedConfig.CustomData",
+          "in": "query",
+          "type": "object",
+          "description": "The custom data in the extended configuration of the secret. > * If this parameter is specified, the existing extended configuration of the secret is updated. > * This parameter is unavailable for gen",
+          "example": "{\"DBName\":\"app1\",\"Port\":\"3306\"}"
+        }
+      ]
     },
     "UpdateSecretRotationPolicy": {
       "required": [
@@ -703,7 +2961,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateSecretRotationPolicy"
+      "summary": "Updates the rotation policy of a secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the secret.",
+          "example": "RdsSecret/Mysql5.4/MyCred"
+        },
+        {
+          "name": "EnableAutomaticRotation",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "Specifies whether to enable automatic rotation. Valid values: * true: enables automatic rotation. * false: does not enable automatic rotation. This is the default value.",
+          "example": "true"
+        },
+        {
+          "name": "RotationInterval",
+          "in": "query",
+          "type": "string",
+          "description": "The interval for automatic rotation. Valid values: 6 hours to 8,760 hours (365 days). The value is in the `integer[unit]` format.```` The unit can be d (day), h (hour), m (minute), or s (second). For ",
+          "example": "30d"
+        }
+      ]
     },
     "UpdateSecretVersionStage": {
       "required": [
@@ -712,7 +2996,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateSecretVersionStage"
+      "summary": "Moves a version stage label to a different version of a secret.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecretName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name or Alibaba Cloud Resource Name (ARN) of the secret. > To access a secret in a different Alibaba Cloud account, you must specify the ARN of the secret. The ARN is in the format of `acs:kms:${r",
+          "example": "secret001"
+        },
+        {
+          "name": "VersionStage",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The version stage of the secret. **Scenario 1: Add a version stage to a specified secret version.** Specify this parameter and MoveToVersion. Do not specify RemoveFromVersion. This parameter can be se",
+          "example": "ACSCurrent"
+        },
+        {
+          "name": "RemoveFromVersion",
+          "in": "query",
+          "type": "string",
+          "description": "The version number of the secret. This parameter specifies that the version stage set by VersionStage is removed from this version. > You must specify at least one of RemoveFromVersion and MoveToVersi",
+          "example": "001"
+        },
+        {
+          "name": "MoveToVersion",
+          "in": "query",
+          "type": "string",
+          "description": "The version number of the secret. This parameter specifies that the version stage set by VersionStage is attached to this version. > - You must specify at least one of RemoveFromVersion and MoveToVers",
+          "example": "002"
+        }
+      ]
     }
   }
 }

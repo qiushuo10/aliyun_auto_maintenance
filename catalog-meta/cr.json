@@ -1,10 +1,10 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "cr",
   "openApiProduct": "cr",
   "version": "2018-12-01",
   "source": "https://api.aliyun.com/meta/v1/products/cr/versions/2018-12-01/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:36.664Z",
+  "fetchedAt": "2026-06-10T02:58:07.486Z",
   "actions": {
     "CancelArtifactBuildTask": {
       "required": [
@@ -13,7 +13,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelArtifactBuildTask"
+      "summary": "Cancels an artifact building task.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-shac42yvqzvq****"
+        },
+        {
+          "name": "BuildTaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the artifact building task.",
+          "example": "i2ei-12****"
+        }
+      ]
     },
     "CancelRepoBuildRecord": {
       "required": [
@@ -23,7 +42,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelRepoBuildRecord"
+      "summary": "Cancels a repository building record.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-tquyps22md8p****"
+        },
+        {
+          "name": "BuildRecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image building record.",
+          "example": "74FDBA62-30C0-4F22-BE7B-F1D36FD1****"
+        }
+      ]
     },
     "CancelRepoSyncTask": {
       "required": [
@@ -32,7 +78,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelRepoSyncTask"
+      "summary": "Cancels a single replication task.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "SyncTaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the replication task.",
+          "example": "rst-biu4u4pm4it5****"
+        }
+      ]
     },
     "ChangeResourceGroup": {
       "required": [
@@ -42,7 +107,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ChangeResourceGroup"
+      "summary": "Changes the resource group to which a resource belongs.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource.",
+          "example": "cri-8qong6ve5p3mhlgt"
+        },
+        {
+          "name": "ResourceRegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the region.",
+          "example": "cn-shenzhen-finance-1"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource group to which you want to move the resource.",
+          "example": "rg-aekz5nlvlaksnvi"
+        }
+      ]
     },
     "CreateArtifactBuildRule": {
       "required": [
@@ -53,7 +145,49 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateArtifactBuildRule"
+      "summary": "Create image repository acceleration rules for image building.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-cxreylqvcyje****"
+        },
+        {
+          "name": "ScopeType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The effective range of the rule. Valid values: * `REPOSITORY`",
+          "example": "REPOSITORY"
+        },
+        {
+          "name": "ScopeId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the effective range of the rule. * Set the value to the ID of the image repository.",
+          "example": "crr-pmajihou6cg0****"
+        },
+        {
+          "name": "ArtifactType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the artifact. * `ACCELERATED_IMAGE`: accelerated images.",
+          "example": "ACCELERATED_IMAGE"
+        },
+        {
+          "name": "Parameters",
+          "in": "query",
+          "type": "object",
+          "description": "Additional parameters.",
+          "example": "{}"
+        }
+      ]
     },
     "CreateArtifactLifecycleRule": {
       "required": [
@@ -61,7 +195,74 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateArtifactLifecycleRule"
+      "summary": "Creates a lifecycle management rule for an artifact.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-gbwfk7qbgrxe****"
+        },
+        {
+          "name": "Auto",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specify whether to automatically execute the lifecycle management rule.",
+          "example": "false"
+        },
+        {
+          "name": "ScheduleTime",
+          "in": "query",
+          "type": "string",
+          "description": "The execution cycle of the lifecycle management rule.",
+          "example": "WEEK"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "dev-backend"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image repository.",
+          "example": "test_1"
+        },
+        {
+          "name": "TagRegexp",
+          "in": "query",
+          "type": "string",
+          "description": "The regular expression that is used to indicate which image tags are retained.",
+          "example": "release-.*"
+        },
+        {
+          "name": "RetentionTagCount",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of images that you want to retain.",
+          "example": "30"
+        },
+        {
+          "name": "EnableDeleteTag",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specify whether to enable lifecycle management for the artifact.",
+          "example": "true"
+        },
+        {
+          "name": "Scope",
+          "in": "query",
+          "type": "string",
+          "description": "The deletion scope.",
+          "example": "INSTANCE"
+        }
+      ]
     },
     "CreateArtifactSubscriptionRule": {
       "required": [
@@ -76,7 +277,105 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateArtifactSubscriptionRule"
+      "summary": "Creates an artifact subscription rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-c0o11woew0k****"
+        },
+        {
+          "name": "SourceProvider",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The source of the artifact. Valid values: * DOCKER_HUB: Docker Hub * GCR: GCR * QUAY: Quay.io",
+          "enum": [
+            "DOCKER_HUB",
+            "GCR",
+            "QUAY"
+          ],
+          "example": "DOCKER_HUB"
+        },
+        {
+          "name": "SourceNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The source namespace.",
+          "example": "library"
+        },
+        {
+          "name": "SourceRepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The source repository.",
+          "example": "nginx"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Container Registry namespace.",
+          "example": "test-ns"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Container Registry repository.",
+          "example": "test-repo"
+        },
+        {
+          "name": "TagRegexp",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The image tag in the subscription source repository. Regular expressions are supported.",
+          "example": "release-v.*"
+        },
+        {
+          "name": "TagCount",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The number of subscribed images.",
+          "example": "1"
+        },
+        {
+          "name": "Override",
+          "in": "query",
+          "type": "boolean",
+          "description": "Indicates whether the original image is overwritten.",
+          "example": "true"
+        },
+        {
+          "name": "Accelerate",
+          "in": "query",
+          "type": "boolean",
+          "description": "Indicates whether an acceleration link is enabled for image subscription. The subscription acceleration feature is in public preview. The feature is optimized based on scheduling policies and network ",
+          "example": "true"
+        },
+        {
+          "name": "Platform",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The operating system and architecture. If the source repository contains a multi-arch image, only the specified operating system and architecture are subscribed to the destination repository of the En",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "CreateArtifactSubscriptionTask": {
       "required": [
@@ -85,7 +384,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateArtifactSubscriptionTask"
+      "summary": "Creates an artifact subscription task.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-4ec5xvj4j0l****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "crasr-88s7vmelc3m****"
+        }
+      ]
     },
     "CreateBuildRecordByRecord": {
       "required": [
@@ -95,7 +413,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateBuildRecordByRecord"
+      "summary": "Creates an image building record based on an existing record.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-hpdfkc6utbaq****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-hnoq7j93or3k****"
+        },
+        {
+          "name": "BuildRecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image building record.",
+          "example": "0A311FC5-B8C6-4332-80E4-539EB73****"
+        }
+      ]
     },
     "CreateBuildRecordByRule": {
       "required": [
@@ -105,7 +450,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateBuildRecordByRule"
+      "summary": "Creates an image building record based on a rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-asd6vujuhay0****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-8dz3aedjqlmk****"
+        },
+        {
+          "name": "BuildRuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image building rule.",
+          "example": "crbr-1j95g4bu2s1i****"
+        }
+      ]
     },
     "CreateChain": {
       "required": [
@@ -114,7 +486,66 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateChain"
+      "summary": "Creates a delivery chain.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-4cdrlqmhn4gm****"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the repository.",
+          "example": "repo1"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "ns1"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the delivery chain.",
+          "example": "test"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the delivery chain.",
+          "example": "description"
+        },
+        {
+          "name": "ChainConfig",
+          "in": "query",
+          "type": "string",
+          "description": "The configuration of the delivery chain in the JSON format.",
+          "example": "chainconfig"
+        },
+        {
+          "name": "ScopeExclude",
+          "in": "query",
+          "type": "array",
+          "description": "Repositories in which the delivery chain does not take effect.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "CreateChartNamespace": {
       "required": [
@@ -123,7 +554,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateChartNamespace"
+      "summary": "Creates a chart namespace in an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "namespace01"
+        },
+        {
+          "name": "AutoCreateRepo",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to automatically create repositories in the namespace. Valid values: \\-` true `: automatically creates repositories in the namespace. \\-` false `: does not automatically create repos",
+          "example": "true"
+        },
+        {
+          "name": "DefaultRepoType",
+          "in": "query",
+          "type": "string",
+          "description": "The default repository type. Valid values: * `PUBLIC`: a public repository * `PRIVATE`: a private repository",
+          "example": "PUBLIC"
+        }
+      ]
     },
     "CreateChartRepository": {
       "required": [
@@ -133,7 +597,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateChartRepository"
+      "summary": "Creates a chart repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the repository.",
+          "example": "repo01"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "namespace01"
+        },
+        {
+          "name": "RepoType",
+          "in": "query",
+          "type": "string",
+          "description": "The default repository type. Valid values: * `PUBLIC`: a public repository. * `PRIVATE`: a private repository. You can specify the RepoType or Summary parameter. The RepoType parameter is optional.",
+          "example": "PUBLIC"
+        },
+        {
+          "name": "Summary",
+          "in": "query",
+          "type": "string",
+          "description": "The summary of the repository.",
+          "example": "summary"
+        }
+      ]
     },
     "CreateInstanceEndpointAclPolicy": {
       "required": [
@@ -143,7 +648,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateInstanceEndpointAclPolicy"
+      "summary": "Creates a whitelist policy for the public endpoint of the instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "EndpointType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the endpoint. Set the value to Internet.",
+          "example": "internet"
+        },
+        {
+          "name": "Entry",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The CIDR block that is accessible.",
+          "example": "192.168.1.1/32"
+        },
+        {
+          "name": "Comment",
+          "in": "query",
+          "type": "string",
+          "description": "The description.",
+          "example": "test"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: the image repository. * `Chart`: a Helm chart.",
+          "example": "Registry"
+        }
+      ]
     },
     "CreateInstanceVpcEndpointLinkedVpc": {
       "required": [
@@ -153,7 +699,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateInstanceVpcEndpointLinkedVpc"
+      "summary": "Associates a virtual private cloud (VPC) with a Container Registry instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "VpcId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The VPC ID.",
+          "example": "vpc-uf6pa68zxnnlc48dd****"
+        },
+        {
+          "name": "VswitchId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the vSwitch that is associated with the specified VPC.",
+          "example": "vsw-uf6u0kn8x2gbzxfn2****"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: image repositories. * `Chart`: Helm charts.",
+          "example": "Registry"
+        },
+        {
+          "name": "EnableCreateDNSRecordInPvzt",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to automatically create Alibaba Cloud DNS PrivateZone records. Valid values: > If you enable automatic creation of PrivateZone records, a PrivateZone record is automatically created ",
+          "example": "false"
+        }
+      ]
     },
     "CreateNamespace": {
       "required": [
@@ -162,7 +749,44 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateNamespace"
+      "summary": "Creates a repository namespace.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace. The name must be 2 to 120 characters long and can contain only lowercase letters, digits, and the following separators: underscores (\\_), hyphens (-), and periods (.). A sep",
+          "example": "namespace1"
+        },
+        {
+          "name": "AutoCreateRepo",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether a repository is automatically created when an image is pushed to a repository that does not yet exist in the namespace.",
+          "example": "true"
+        },
+        {
+          "name": "DefaultRepoType",
+          "in": "query",
+          "type": "string",
+          "description": "The default type of automatically created repositories. Valid values: - `PUBLIC`: public - `PRIVATE`: private",
+          "example": "PUBLIC"
+        },
+        {
+          "name": "DefaultRepoConfiguration",
+          "in": "query"
+        }
+      ]
     },
     "CreateRepoBuildRule": {
       "required": [
@@ -174,7 +798,88 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepoBuildRule"
+      "summary": "Creates an image building rule for a repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-8dz3aedjqlmk****"
+        },
+        {
+          "name": "DockerfileLocation",
+          "in": "query",
+          "type": "string",
+          "description": "The path of the Dockerfile.",
+          "example": "/"
+        },
+        {
+          "name": "DockerfileName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the Dockerfile.",
+          "example": "Dockerfile"
+        },
+        {
+          "name": "PushType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the push that triggers the building rule. Valid values: * `GIT_TAG`: tag push * `GIT_BRANCH`: branch push",
+          "example": "GIT_BRANCH"
+        },
+        {
+          "name": "PushName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the push that triggers the building rule.",
+          "example": "master"
+        },
+        {
+          "name": "ImageTag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The tag of the image.",
+          "example": "v0.9.5"
+        },
+        {
+          "name": "BuildArgs",
+          "in": "query",
+          "type": "array",
+          "description": "Building arguments.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Platforms",
+          "in": "query",
+          "type": "array",
+          "description": "Architecture for image building. Valid values: * `linux/amd64` * `linux/arm64` * `linux/386` * `linux/arm/v7` * `inux/arm/v6` Default value: `linux/amd64`",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "CreateRepoSourceCodeRepo": {
       "required": [
@@ -186,7 +891,71 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepoSourceCodeRepo"
+      "summary": "Binds a source code repository to an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-shac42yvqzvq****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-gzsrlevmvoaq****"
+        },
+        {
+          "name": "CodeRepoType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the source code hosting platform. Valid values: `GITHUB`, `GITLAB`, `GITEE`, `CODE`, and `CODEUP`.",
+          "example": "GITHUB"
+        },
+        {
+          "name": "CodeRepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The namespace to which the source code repository belongs.",
+          "example": "namespace"
+        },
+        {
+          "name": "CodeRepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the source code repository.",
+          "example": "repo"
+        },
+        {
+          "name": "AutoBuild",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to trigger image building when source code is committed. Valid values: * `true`: triggers image building when source code is committed. * `false`: does not trigger image building whe",
+          "example": "true"
+        },
+        {
+          "name": "OverseaBuild",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enable Build With Servers Deployed Outside Chinese Mainland. Valid values: * `true`: enables Build With Servers Deployed Outside Chinese Mainland. * `false`: does not enable Build",
+          "example": "false"
+        },
+        {
+          "name": "DisableCacheBuild",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to disable building caches. Valid values: * `true`: disables building caches. * `false`: enables building caches.",
+          "example": "false"
+        }
+      ]
     },
     "CreateRepoSyncRule": {
       "required": [
@@ -201,7 +970,109 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepoSyncRule"
+      "summary": "Creates an image synchronization rule for an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The source instance ID.",
+          "example": "cri-hpdfkc6utbaq****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The namespace name of the source instance.",
+          "example": "ns1"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image repository in the source instance.",
+          "example": "repo1"
+        },
+        {
+          "name": "TargetRegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID of the destination instance.",
+          "example": "cn-shanghai"
+        },
+        {
+          "name": "TargetInstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The destination instance ID.",
+          "example": "cri-ibxs3piklys3****"
+        },
+        {
+          "name": "TargetNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The namespace name of the destination instance.",
+          "example": "ns1"
+        },
+        {
+          "name": "TargetRepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image repository in the destination instance.",
+          "example": "repo1"
+        },
+        {
+          "name": "RepoNameFilter",
+          "in": "query",
+          "type": "string",
+          "description": "The regular expression that is used to filter repositories. > This parameter is valid only when SyncScope is set to `NAMESPACE`.",
+          "example": ".*"
+        },
+        {
+          "name": "TagFilter",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The regular expression that is used to filter image tags.",
+          "example": ".*"
+        },
+        {
+          "name": "SyncScope",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The synchronization scope. Valid values: * `REPO`: synchronizes the image tags in an image repository that meet the synchronization rule. * `NAMESPACE`: synchronizes the image tags in a namespace that",
+          "example": "REPO"
+        },
+        {
+          "name": "SyncRuleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the image synchronization rule.",
+          "example": "rule"
+        },
+        {
+          "name": "SyncTrigger",
+          "in": "query",
+          "type": "string",
+          "description": "The mode of triggering the synchronization rule. Valid values: * `INITIATIVE`: manually triggers the synchronization rule. * `PASSIVE`: automatically triggers the synchronization rule.",
+          "example": "PASSIVE"
+        },
+        {
+          "name": "TargetUserId",
+          "in": "query",
+          "type": "string",
+          "description": "The user ID (UID) of the account to which the destination instance belongs. > If you synchronize images across accounts, you must use the UID.",
+          "example": "12645940***"
+        }
+      ]
     },
     "CreateRepoSyncTask": {
       "required": [
@@ -216,7 +1087,88 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Manually create a repository synchronization task"
+      "summary": "Manually create a repository synchronization task",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Source instance ID",
+          "example": "cri-hpdfkc6utbaq****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Image repository ID in the source instance",
+          "example": "crr-iql7jalx4g0****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Image tag in the source instance",
+          "example": "tag1"
+        },
+        {
+          "name": "TargetRegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Region ID of the target instance",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "TargetInstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Target instance ID",
+          "example": "cri-ibxs3piklys3****"
+        },
+        {
+          "name": "TargetNamespace",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Namespace in the target instance",
+          "example": "ns1"
+        },
+        {
+          "name": "TargetRepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Name of the image repository in the target instance",
+          "example": "repo1"
+        },
+        {
+          "name": "TargetTag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Image tag in the target instance",
+          "example": "tag1"
+        },
+        {
+          "name": "TargetUserId",
+          "in": "query",
+          "type": "string",
+          "description": "UID of the account to which the target instance belongs",
+          "example": "12345***"
+        },
+        {
+          "name": "Override",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to overwrite an existing image: - `true`: Overwrite the existing image. - `false`: Do not overwrite the existing image.",
+          "example": "true"
+        }
+      ]
     },
     "CreateRepoSyncTaskByRule": {
       "required": [
@@ -227,7 +1179,42 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepoSyncTaskByRule"
+      "summary": "Creates an image replication task based on a manual replication rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-hpdfkc6utbaq****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-hnoq7j93or3k****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The version of the image to be synchronized.",
+          "example": "1.24"
+        },
+        {
+          "name": "SyncRuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the synchronization rule.",
+          "example": "crsr-o8n4dijbumgq****"
+        }
+      ]
     },
     "CreateRepoTag": {
       "required": [
@@ -239,7 +1226,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepoTag"
+      "summary": "Creates an image tag based on an existing image tag in an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-shac42yvqzv****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "ns"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the image repository.",
+          "example": "repo1"
+        },
+        {
+          "name": "FromTag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The source image tag.",
+          "example": "v1"
+        },
+        {
+          "name": "ToTag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The image tag that you want to create.",
+          "example": "v2"
+        }
+      ]
     },
     "CreateRepoTagScanTask": {
       "required": [
@@ -249,7 +1279,53 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepoTagScanTask"
+      "summary": "Creates a security scan task for an image.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The image repository ID.",
+          "example": "crr-xwvi3osiy4ff****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The image tag.",
+          "example": "1.24"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "description": "The image digest.",
+          "example": "sha256:815386ebbe9a3490f38785ab11bda34ec8dacf4634af77b8912832d4f85dca04"
+        },
+        {
+          "name": "ScanService",
+          "in": "query",
+          "type": "string",
+          "description": "The scan engine type: - `SAS_SCAN_SERVICE`: The cloud security scan engine. This is a paid service. - `ACR_SCAN_SERVICE`: The ACR scan engine.",
+          "example": "ACR_SCAN_SERVICE"
+        },
+        {
+          "name": "ScanType",
+          "in": "query",
+          "type": "string"
+        }
+      ]
     },
     "CreateRepoTrigger": {
       "required": [
@@ -261,7 +1337,57 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepoTrigger"
+      "summary": "Creates a trigger for a repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-xwvi3osiy4ff****"
+        },
+        {
+          "name": "TriggerName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the trigger.",
+          "example": "trigger1"
+        },
+        {
+          "name": "TriggerUrl",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The URL of the trigger.",
+          "example": "http://www.mysite.com"
+        },
+        {
+          "name": "TriggerType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the trigger. Valid values: * `ALL`: a trigger that supports both tags and regular expressions. * `TAG_LIST`: a tag-based trigger. * `TAG_REG_EXP`: a regular expression-based trigger.",
+          "example": "ALL"
+        },
+        {
+          "name": "TriggerTag",
+          "in": "query",
+          "type": "string",
+          "description": "The image tag based on which the trigger is set. > * If `TriggerType` is set to `ALL`, `TriggerTag` can be set to a string or an array, for example, `*`. * If `TriggerType` is set to `TAG_LIST`, `Trig",
+          "example": "[1]"
+        }
+      ]
     },
     "CreateRepository": {
       "required": [
@@ -273,7 +1399,64 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRepository"
+      "summary": "Creates an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the image repository.",
+          "example": "repo1"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace to which the image repository belongs.",
+          "example": "namespace01"
+        },
+        {
+          "name": "RepoType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the repository. Valid values: * `PUBLIC`: The repository is a public repository. * `PRIVATE`: The repository is a private repository.",
+          "example": "PRIVATE"
+        },
+        {
+          "name": "Summary",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The summary about the repository.",
+          "example": "repo1"
+        },
+        {
+          "name": "Detail",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the repository.",
+          "example": "repo1"
+        },
+        {
+          "name": "TagImmutability",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enable the feature of image tag immutability. Valid values: * `true`: enables the feature of image tag immutability. * `false`: disables the feature of image tag immutability.",
+          "example": "true"
+        }
+      ]
     },
     "CreateScanRule": {
       "required": [
@@ -285,7 +1468,94 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateScanRule"
+      "summary": "Creates a scan or content analysis rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID",
+          "example": "cri-dqwc**********"
+        },
+        {
+          "name": "RuleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule name",
+          "example": "default"
+        },
+        {
+          "name": "ScanScope",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The scan scope Valid values: - NAMESPACE: namespace. - REPO: repository.",
+          "enum": [
+            "INSTANCE",
+            "NAMESPACE",
+            "REPO"
+          ],
+          "example": "NAMESPACE"
+        },
+        {
+          "name": "TriggerType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Trigger type Valid values: - AUTO: automatically trigger. - MANUAL: manually trigger.",
+          "enum": [
+            "MANUAL",
+            "AUTO"
+          ],
+          "example": "AUTO"
+        },
+        {
+          "name": "Namespaces",
+          "in": "query",
+          "type": "array",
+          "description": "The list of namespaces. - When the scan scope is NAMESPACE, this parameter cannot be empty. - If the scan scope is REPO, you must specify a unique Namespace for this parameter.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RepoNames",
+          "in": "query",
+          "type": "array",
+          "description": "The list of repositories. - When the scan scope is NAMESPACE, this parameter must be empty. - When the scan scope is REPO, this parameter cannot be empty.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RepoTagFilterPattern",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The tag that triggers the scan matches the regular expression",
+          "example": ".*"
+        },
+        {
+          "name": "ScanType",
+          "in": "query",
+          "type": "string",
+          "description": "The scan type. Valid values: - `VUL`: Products Cloud Security Scanner - `SBOM`: Product Content Analysis Default value: `VUL`",
+          "enum": [
+            "VUL",
+            "SBOM"
+          ],
+          "example": "VUL"
+        }
+      ]
     },
     "CreateStorageDomainRoutingRule": {
       "required": [
@@ -294,7 +1564,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateStorageDomainRoutingRule"
+      "summary": "Creates an instance store domain name routing rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "Routes",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The route list"
+        }
+      ]
     },
     "DeleteArtifactLifecycleRule": {
       "required": [
@@ -303,7 +1591,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteArtifactLifecycleRule"
+      "summary": "Deletes an artifact lifecycle management rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-brlg4cbj2ylkrqqq"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "cralr-3v8pao9k7chb8q62"
+        }
+      ]
     },
     "DeleteArtifactSubscriptionRule": {
       "required": [
@@ -312,7 +1619,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteArtifactSubscriptionRule"
+      "summary": "Deletes an artifact subscription rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-c0o11woew0k****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "crasr-mdbpung4i1rm****"
+        }
+      ]
     },
     "DeleteChain": {
       "required": [
@@ -321,7 +1647,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteChain"
+      "summary": "Deletes a delivery chain.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-4cdrlqmhn4gm****"
+        },
+        {
+          "name": "ChainId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the delivery pipeline.",
+          "example": "chi-02ymhtwl3cq8****"
+        }
+      ]
     },
     "DeleteChartNamespace": {
       "required": [
@@ -330,7 +1675,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteChartNamespace"
+      "summary": "Deletes a chart namespace from an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the chart namespace that you want to delete.",
+          "example": "ns2"
+        }
+      ]
     },
     "DeleteChartRelease": {
       "required": [
@@ -342,7 +1706,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteChartRelease"
+      "summary": "Deletes a chart version from a chart repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "Chart",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the chart.",
+          "example": "chart3"
+        },
+        {
+          "name": "Release",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The version of the chart that you want to delete.",
+          "example": "0.1.0"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the repository.",
+          "example": "repo1"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "ns1"
+        }
+      ]
     },
     "DeleteChartRepository": {
       "required": [
@@ -352,13 +1759,57 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteChartRepository"
+      "summary": "Deletes a chart repository from an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay****"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "namespace01"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the repository.",
+          "example": "repo01"
+        }
+      ]
     },
     "DeleteEventCenterRule": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteEventCenterRule"
+      "summary": "Deletes an event notification rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the event notification rule.",
+          "example": "crecr-n6pbhgjx*****"
+        }
+      ]
     },
     "DeleteInstanceEndpointAclPolicy": {
       "required": [
@@ -368,7 +1819,41 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteInstanceEndpointAclPolicy"
+      "summary": "Deletes a whitelist policy for the public endpoint of an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "EndpointType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the endpoint. Set the value to Internet.",
+          "example": "internet"
+        },
+        {
+          "name": "Entry",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The CIDR block.",
+          "example": "127.0.0.1/32"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: the image repository. * `Chart`: a Helm chart.",
+          "example": "Chart"
+        }
+      ]
     },
     "DeleteInstanceVpcEndpointLinkedVpc": {
       "required": [
@@ -378,7 +1863,41 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteInstanceVpcEndpointLinkedVpc"
+      "summary": "Disassociates a virtual private cloud (VPC) from an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "VpcId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the VPC.",
+          "example": "vpc-uf6pa68zxnnlc48dd****"
+        },
+        {
+          "name": "VswitchId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the vSwitch.",
+          "example": "vpc-uf6pa68zxnnlc48dd****"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: the image repository. * `Chart`: a Helm chart.",
+          "example": "Chart"
+        }
+      ]
     },
     "DeleteNamespace": {
       "required": [
@@ -387,7 +1906,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteNamespace"
+      "summary": "Deletes a namespace.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "ns3"
+        }
+      ]
     },
     "DeleteRepoBuildRule": {
       "required": [
@@ -397,7 +1935,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteRepoBuildRule"
+      "summary": "Deletes an image building rule of a repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-xwvi3osiy4ff****"
+        },
+        {
+          "name": "BuildRuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image building rule.",
+          "example": "crbr-36tffn0kouvi****"
+        }
+      ]
     },
     "DeleteRepoSyncRule": {
       "required": [
@@ -406,7 +1971,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteRepoSyncRule"
+      "summary": "Deletes an image replication rule of an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-hpdfkc6utbaq****"
+        },
+        {
+          "name": "SyncRuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the synchronization rule.",
+          "example": "crsr-gk5p2ns1kzns****"
+        }
+      ]
     },
     "DeleteRepoTag": {
       "required": [
@@ -416,7 +2000,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteRepoTag"
+      "summary": "Deletes an image tag.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-xwvi3osiy4ff****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The tag of the image.",
+          "example": "1.24"
+        }
+      ]
     },
     "DeleteRepoTrigger": {
       "required": [
@@ -426,7 +2037,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteRepoTrigger"
+      "summary": "Deletes a trigger of an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-xwvi3osiy4ff****"
+        },
+        {
+          "name": "TriggerId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the trigger.",
+          "example": "crw-0z4pf81pgz35****"
+        }
+      ]
     },
     "DeleteRepository": {
       "required": [
@@ -434,13 +2072,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteRepository"
+      "summary": "Deletes an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the image repository.",
+          "example": "crr-l4933wbcmun2****"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the repository.",
+          "example": "test-repo"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "test-namespace"
+        }
+      ]
     },
     "DeleteScanRule": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteScanRule"
+      "summary": "Deletes a scan rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "ScanRuleId",
+          "in": "query",
+          "type": "string",
+          "description": "The rule ID",
+          "example": "crscnr-aemytkwad2h7fyhb"
+        }
+      ]
     },
     "DeleteStorageDomainRoutingRule": {
       "required": [
@@ -449,7 +2136,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteStorageDomainRoutingRule"
+      "summary": "Deletes an instance store domain name routing rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID",
+          "example": "cri-4cdrlqmhn4gm****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "crsdr-n6pbhgjxtla***"
+        }
+      ]
     },
     "GetArtifactBuildRule": {
       "required": [
@@ -457,7 +2163,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetArtifactBuildRule"
+      "summary": "Queries the details of an artifact building rule.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "ScopeType",
+          "in": "query",
+          "type": "string",
+          "description": "The effective range of the artifact building rule. Valid values: * `REPOSITORY`: The artifact building rule is effective in the repository level.",
+          "example": "REPOSITORY"
+        },
+        {
+          "name": "ScopeId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the effective range of the artifact building rule. * Set the value to the ID of the image repository.",
+          "example": "crr-8dz3aedjqlmk****"
+        },
+        {
+          "name": "ArtifactType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the artifact. * `ACCELERATED_IMAGE`: accelerated images.",
+          "example": "ACCELERATED_IMAGE"
+        },
+        {
+          "name": "BuildRuleId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the artifact building rule.",
+          "example": "crabr-o2670wqz2n70****"
+        }
+      ]
     },
     "GetArtifactBuildTask": {
       "required": [
@@ -466,7 +2211,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetArtifactBuildTask"
+      "summary": "Retrieves the details of an artifact build task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-shac42yvqzvq****"
+        },
+        {
+          "name": "BuildTaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the artifact build task.",
+          "example": "i2a-1yu****"
+        }
+      ]
     },
     "GetArtifactLifecycleRule": {
       "required": [
@@ -475,7 +2239,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetArtifactLifecycleRule"
+      "summary": "Lists artifact lifecycle management rules.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-hpdfkc6utbaq****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the rule.",
+          "example": "cralr-a18bkiajy81****"
+        }
+      ]
     },
     "GetArtifactSubscriptionRule": {
       "required": [
@@ -484,7 +2267,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetArtifactSubscriptionRule"
+      "summary": "Retrieves the details of an artifact subscription rule.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-c0o11woew0k****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "crasr-mdbpung4i1rm****"
+        }
+      ]
     },
     "GetArtifactSubscriptionTask": {
       "required": [
@@ -493,7 +2295,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetArtifactSubscriptionTask"
+      "summary": "Queries an artifact subscription task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "TaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The task ID.",
+          "example": "crast-40le4es9yh0p****"
+        }
+      ]
     },
     "GetArtifactSubscriptionTaskResult": {
       "required": [
@@ -502,7 +2323,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetArtifactSubscriptionTaskResult"
+      "summary": "Queries the details of an artifact subscription task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-90fxryf9pwf****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "30"
+        },
+        {
+          "name": "TaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The task ID.",
+          "example": "crast-y64sq01bgad****"
+        }
+      ]
     },
     "GetAuthorizationToken": {
       "required": [
@@ -510,7 +2364,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAuthorizationToken"
+      "summary": "Queries a pair of temporary username and password that you use to log on to a Container Registry instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the request.",
+          "example": "cri-kmsiwlxxdcvaduwb"
+        }
+      ]
     },
     "GetChain": {
       "required": [
@@ -519,7 +2384,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Retrieve delivery chain definition"
+      "summary": "Retrieve delivery chain definition",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Instance ID",
+          "example": "cri-4cdrlqmhn4gm****"
+        },
+        {
+          "name": "ChainId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Delivery chain ID",
+          "example": "chi-0ops0gsmw5x2****"
+        }
+      ]
     },
     "GetChartNamespace": {
       "required": [
@@ -528,7 +2412,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetChartNamespace"
+      "summary": "Queries a chart namespace in an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "ns1"
+        }
+      ]
     },
     "GetChartRepository": {
       "required": [
@@ -538,7 +2441,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetChartRepository"
+      "summary": "Queries the information about a chart repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "test"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the repository.",
+          "example": "test"
+        }
+      ]
     },
     "GetInstance": {
       "required": [
@@ -546,13 +2476,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query instance information"
+      "summary": "Query instance information",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-xkx6vujuhay0****"
+        }
+      ]
     },
     "GetInstanceCount": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetInstanceCount"
+      "summary": "Queries the number of instances.",
+      "method": "POST"
     },
     "GetInstanceEndpoint": {
       "required": [
@@ -561,7 +2503,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetInstanceEndpoint"
+      "summary": "Queries an endpoint of an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "EndpointType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the endpoint. Set the value to Internet.",
+          "example": "internet"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: the image repository. * `Chart`: a Helm chart.",
+          "example": "Registry"
+        }
+      ]
     },
     "GetInstanceUsage": {
       "required": [
@@ -569,7 +2537,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetInstanceUsage"
+      "summary": "Queries the quota usage of an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        }
+      ]
     },
     "GetInstanceVpcEndpoint": {
       "required": [
@@ -577,7 +2556,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetInstanceVpcEndpoint"
+      "summary": "Queries the endpoints of the virtual private clouds (VPCs) in which a Container Registry instance is deployed.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: the image repository. * `Chart`: a Helm chart.",
+          "example": "Chart"
+        }
+      ]
     },
     "GetNamespace": {
       "required": [
@@ -585,7 +2582,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetNamespace"
+      "summary": "Retrieves information about a namespace.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "test"
+        },
+        {
+          "name": "NamespaceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the namespace.",
+          "example": "crn-tiw8t3f8i5lta****"
+        }
+      ]
     },
     "GetRepoBuildRecord": {
       "required": [
@@ -594,7 +2616,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRepoBuildRecord"
+      "summary": "Queries the information about image building records of a repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "BuildRecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image building record.",
+          "example": "a78ec6fb-16ea-4649-93b7-f52afba7d****"
+        }
+      ]
     },
     "GetRepoBuildRecordStatus": {
       "required": [
@@ -604,7 +2645,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRepoBuildRecordStatus"
+      "summary": "Queries the status of an image building task.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-jnzm47ihjmgc****"
+        },
+        {
+          "name": "BuildRecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image building record.",
+          "example": "a78ec6fb-16ea-4649-93b7-f52afba7d****"
+        }
+      ]
     },
     "GetRepoSourceCodeRepo": {
       "required": [
@@ -613,7 +2681,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRepoSourceCodeRepo"
+      "summary": "Queries the information about the source code repository that is bound to an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-shac42yvqzvq****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the repository.",
+          "example": "crr-gzsrlevmvoaq****"
+        }
+      ]
     },
     "GetRepoSyncTask": {
       "required": [
@@ -622,7 +2709,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRepoSyncTask"
+      "summary": "Queries an image synchronization task in an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-sgedpenzw80e****"
+        },
+        {
+          "name": "SyncTaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the synchronization task.",
+          "example": "rst-zxjkiv5oil6f****"
+        }
+      ]
     },
     "GetRepoTag": {
       "required": [
@@ -632,7 +2738,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query a specific image version (tag)"
+      "summary": "Query a specific image version (tag)",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The return value of status code.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The operation that you want to perform. Set the value to **GetRepoTag**.",
+          "example": "crr-tquyps22md8p****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The number of milliseconds that have elapsed since the image was created.",
+          "example": "1.0"
+        }
+      ]
     },
     "GetRepoTagScanStatus": {
       "required": [
@@ -640,7 +2773,51 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRepoTagScanStatus"
+      "summary": "Retrieves the scan status of a specific image tag.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-2j88dtld8yel****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the repository.",
+          "example": "crr-uf082u9dg8do****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "description": "The image tag.",
+          "example": "1"
+        },
+        {
+          "name": "ScanTaskId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the image scan task.",
+          "example": "838152F9-F725-5A52-A344-8972D65AC045"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "description": "The image digest.",
+          "example": "67bfbcc12b67936ec7f867927817cbb071832b873dbcaed312a1930ba5f1d529"
+        },
+        {
+          "name": "ScanType",
+          "in": "query",
+          "type": "string"
+        }
+      ]
     },
     "GetRepoTagScanSummary": {
       "required": [
@@ -648,7 +2825,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Obtain the number of scan results for an image version"
+      "summary": "Obtain the number of scan results for an image version",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "cri-2j88dtld8yel****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image tag.",
+          "example": "crr-c2i5yk6h6pu9d5o8"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the security scan task.",
+          "example": "1"
+        },
+        {
+          "name": "ScanTaskId",
+          "in": "query",
+          "type": "string",
+          "description": "The digest of the image.",
+          "example": "47A3E5A3-6AD4-5F02-93B8-59F778AE25D4"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "description": "The number of unknown-severity vulnerabilities.",
+          "example": "sha256:c9f370a4eb1c00d0b0d7212a0a9fa4a7697756c90f0f680afaf9737a25725f4c"
+        }
+      ]
     },
     "GetRepository": {
       "required": [
@@ -656,7 +2872,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRepository"
+      "summary": "Queries details about an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the repository.",
+          "example": "crr-03cuozrsqhkw****"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "test"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the repository.",
+          "example": "test"
+        }
+      ]
     },
     "GetScanRule": {
       "required": [
@@ -665,7 +2913,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "获取扫描规则"
+      "summary": "获取扫描规则",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "ScanRuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The scan rule ID.",
+          "example": "crscnr-2sdveqjhpzdcafyq"
+        }
+      ]
     },
     "GetStorageDomainRoutingRule": {
       "required": [
@@ -673,7 +2940,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "获取实例存储域名路由列表"
+      "summary": "获取实例存储域名路由列表",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "description": "The rule ID.",
+          "example": "crasr-mdbpung4i1rm****"
+        }
+      ]
     },
     "ListArtifactBuildTaskLog": {
       "required": [
@@ -684,7 +2969,42 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListArtifactBuildTaskLog"
+      "summary": "Queries the log entries of an artifact building task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-shac42yvqzvq****"
+        },
+        {
+          "name": "BuildTaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the artifact build task.",
+          "example": "i2a-1yu****"
+        },
+        {
+          "name": "Page",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The number of entries per page. Maximum value: 100. If you specify a value greater than 100 for this parameter, the system reports a parameter error or uses 100 as the maximum value.",
+          "example": "100"
+        }
+      ]
     },
     "ListArtifactLifecycleRule": {
       "required": [
@@ -692,7 +3012,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListArtifactLifecycleRule"
+      "summary": "Lists artifact lifecycle management rules.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Enterprise Edition instance.",
+          "example": "cri-eztul9ucz76q****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return per page. The maximum value is 100. If you specify a value greater than 100, the system may return a parameter error or use a page size of 100.",
+          "example": "10"
+        },
+        {
+          "name": "EnableDeleteTag",
+          "in": "query",
+          "type": "boolean",
+          "description": "Indicates whether automatic tag deletion is enabled.",
+          "example": "true"
+        }
+      ]
     },
     "ListArtifactSubscriptionRule": {
       "required": [
@@ -700,7 +3052,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListArtifactSubscriptionRule"
+      "summary": "List artifact subscription rules.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-c0o11woew0k****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The current page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. The maximum value is 100. If you specify a value greater than 100, the system either caps the page size at 100 or returns a parameter error.",
+          "example": "30"
+        }
+      ]
     },
     "ListArtifactSubscriptionTask": {
       "required": [
@@ -708,7 +3085,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListArtifactSubscriptionTask"
+      "summary": "Lists artifact subscription tasks.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-m9ob8792vm****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "30"
+        }
+      ]
     },
     "ListChain": {
       "required": [
@@ -716,7 +3118,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListChain"
+      "summary": "Queries delivery chains.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-4cdrlqmhn4gm****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "10"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "ns1"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image repository.",
+          "example": "repo1"
+        }
+      ]
     },
     "ListChainInstance": {
       "required": [
@@ -724,7 +3165,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListChainInstance"
+      "summary": "Queries execution records of delivery chains.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The operation that you want to perform. Set this parameter to **ListChainInstance**.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The time when the delivery chain started.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The name of the image repository.",
+          "example": "30"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the delivery chain.",
+          "example": "test-namespace"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The time when the delivery chain is completed.",
+          "example": "test-repo"
+        }
+      ]
     },
     "ListChartNamespace": {
       "required": [
@@ -732,7 +3212,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListChartNamespace"
+      "summary": "Queries the chart namespaces of a Container Registry instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "NamespaceStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the namespace. Valid values: * `NORMAL`: The namespace is normal. * `DELETING`: The namespace is being deleted.",
+          "example": "NORMAL"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "test"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "30"
+        }
+      ]
     },
     "ListChartRelease": {
       "required": [
@@ -742,7 +3261,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListChartRelease"
+      "summary": "Queries the versions of a chart in a chart repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the repository.",
+          "example": "repo1"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "ns1"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "20"
+        },
+        {
+          "name": "Chart",
+          "in": "query",
+          "type": "string",
+          "description": "The chart whose versions you want to query.",
+          "example": "null"
+        }
+      ]
     },
     "ListChartRepository": {
       "required": [
@@ -750,7 +3317,53 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListChartRepository"
+      "summary": "Queries the chart repositories of a Container Registry instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-xkx6vujuhay0****"
+        },
+        {
+          "name": "RepoStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the chart repositories that you want to query. Valid values: * `ALL`: query repositories of all status. * `NORMAL`: query normal repositories. * `DELETING`: query repositories that are b",
+          "example": "NORMAL"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the repository.",
+          "example": "ns1"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "repo1"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "30"
+        }
+      ]
     },
     "ListEventCenterRecord": {
       "required": [
@@ -758,7 +3371,60 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListEventCenterRecord"
+      "summary": "Queries the historical events of an event rule.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "EventType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the event. Valid values: * `cr:Artifact:DeliveryChainCompleted`: The delivery chain is processed. * `cr:Artifact:SynchronizationCompleted`: The image is replicated. * `cr:Artifact:BuildCom",
+          "example": "cr:Artifact:DeliveryChainCompleted"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the event notification rule.",
+          "example": "crecr-n6pbhgjxtla***"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "test"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the repository.",
+          "example": "test"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "30"
+        }
+      ]
     },
     "ListEventCenterRuleName": {
       "required": [
@@ -766,13 +3432,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListEventCenterRuleName"
+      "summary": "Queries the name of an event rule.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        }
+      ]
     },
     "ListInstance": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListInstance"
+      "summary": "Queries Container Registry instances.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceName",
+          "in": "query",
+          "type": "string",
+          "description": "The instance name.",
+          "example": "test"
+        },
+        {
+          "name": "InstanceStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the instance. Valid values: * `PENDING`: The instance is being initialized. * `INIT_ERROR`: The initialization of the instance fails. * `STARTING`: The instance is being started. * `RUNN",
+          "example": "RUNNING"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "30"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group to which the instance belongs.",
+          "example": "rg-acfmv36i4is****"
+        }
+      ]
     },
     "ListInstanceEndpoint": {
       "required": [
@@ -780,13 +3495,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListInstanceEndpoint"
+      "summary": "Queries the endpoints of a Container Registry instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: image repositories. * `Chart`: Helm charts.",
+          "example": "Registry"
+        },
+        {
+          "name": "Summary",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specify whether to return endpoints in simple mode. If yes, no access control information about the endpoint is returned.",
+          "example": "false"
+        }
+      ]
     },
     "ListInstanceRegion": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListInstanceRegion"
+      "summary": "Queries regions in which you can create Container Registry instances.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language used for response parameters. Set this parameter to `zh-CN`.",
+          "example": "zh_CN"
+        }
+      ]
     },
     "ListNamespace": {
       "required": [
@@ -794,7 +3544,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListNamespace"
+      "summary": "Lists namespaces.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry (ACR) instance.",
+          "example": "cri-94klsruryslx****"
+        },
+        {
+          "name": "NamespaceStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the namespace. Valid values: - `NORMAL`: The namespace is normal. - `DELETING`: The namespace is being deleted.",
+          "example": "NORMAL"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "test-namespace"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "30"
+        }
+      ]
     },
     "ListRepoBuildRecord": {
       "required": [
@@ -803,7 +3592,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRepoBuildRecord"
+      "summary": "Queries image building records of an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the repository.",
+          "example": "crr-tquyps22md8****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "30"
+        }
+      ]
     },
     "ListRepoBuildRecordLog": {
       "required": [
@@ -812,7 +3634,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRepoBuildRecordLog"
+      "summary": "Queries the log of an image building record.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-nmbv37dlv5d3****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the image repository.",
+          "example": "crr-z4dvahhku9wv4****"
+        },
+        {
+          "name": "BuildRecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image building record.",
+          "example": "C5B4D5D7-A1C6-4E9B-ABD2-401361C4****"
+        },
+        {
+          "name": "Offset",
+          "in": "query",
+          "type": "integer",
+          "description": "The offset of log lines.",
+          "example": "0"
+        }
+      ]
     },
     "ListRepoBuildRule": {
       "required": [
@@ -821,7 +3676,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the list of build rules for an image repository"
+      "summary": "Query the list of build rules for an image repository",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-tquyps22md8****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return per page.",
+          "example": "30"
+        }
+      ]
     },
     "ListRepoSyncRule": {
       "required": [
@@ -829,7 +3717,60 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRepoSyncRule"
+      "summary": "Returns a list of repository synchronization rules.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "30"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "test-namespace"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image repository.",
+          "example": "test-repo"
+        },
+        {
+          "name": "TargetInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the target instance.",
+          "example": "cri-k77rd2eo9ztt****"
+        },
+        {
+          "name": "TargetRegionId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the target region.",
+          "example": "cn-shenzhen"
+        }
+      ]
     },
     "ListRepoSyncTask": {
       "required": [
@@ -837,7 +3778,60 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRepoSyncTask"
+      "summary": "Lists repository synchronization tasks.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the repository namespace.",
+          "example": "ns"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The repository name.",
+          "example": "test"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "description": "The image tag.",
+          "example": "nginx"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The page size.",
+          "example": "30"
+        },
+        {
+          "name": "SyncRecordId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the sync task. This ID is also the `SyncBatchTaskId` returned in the response, which identifies the image's sync batch task. > An image that matches multiple sync rules generates multiple sy",
+          "example": "9d8ac4f6-8138-4c15-a2e3-60624ad3****"
+        }
+      ]
     },
     "ListRepoTag": {
       "required": [
@@ -846,7 +3840,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRepoTag"
+      "summary": "Queries image tags in a repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the repository.",
+          "example": "crr-tquyps22md8p****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Maximum value: 100.",
+          "example": "30"
+        }
+      ]
     },
     "ListRepoTagScanResult": {
       "required": [
@@ -854,7 +3881,88 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRepoTagScanResult"
+      "summary": "Queries the results of a security scan that is created for an image tag.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-2j88dtld8yel****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the image repository.",
+          "example": "crr-uf082u9dg8do****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image tag.",
+          "example": "1"
+        },
+        {
+          "name": "ScanTaskId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the security scan task.",
+          "example": "6b0b094f-8a90-4f8f-b660-2427aed0****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "30"
+        },
+        {
+          "name": "Severity",
+          "in": "query",
+          "type": "string",
+          "description": "The severity of the vulnerability. Valid values: * `High` * `Medium` * `Low` * `Unknown`",
+          "example": "High"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "description": "The digest of the image.",
+          "example": "sha256:6b0b094f8a904f8fb6602427aed0d1fa"
+        },
+        {
+          "name": "ScanType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the vulnerability. Valid values: * `cve`: image system vulnerability * `sca`: image application vulnerability",
+          "example": "sca"
+        },
+        {
+          "name": "VulQueryKey",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword for fuzzy search used in scanning. The value can be a CVE name.",
+          "example": "CVE-2021"
+        },
+        {
+          "name": "FilterValue",
+          "in": "query",
+          "type": "string",
+          "description": "The parameter whose value that you want to query. Fox example, if the value is `FixCmd`, only the `FixCmd` parameter is returned.",
+          "example": "FixCmd"
+        }
+      ]
     },
     "ListRepoTrigger": {
       "required": [
@@ -863,7 +3971,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRepoTrigger"
+      "summary": "Queries the triggers of a repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the repository.",
+          "example": "crr-tquyps22md8p****"
+        }
+      ]
     },
     "ListRepository": {
       "required": [
@@ -871,25 +3998,224 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query image repository list"
+      "summary": "Query image repository list",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoStatus",
+          "in": "query",
+          "type": "string",
+          "description": "Repository status. Valid values: - `NORMAL`: Normal. - `DELETING`: Deleting. - `DELETED`: Deleted. - `ALL`: All repository statuses.",
+          "example": "ALL"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the repository.",
+          "example": "repo-test"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "repo-namespace-test"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Maximum value: 100. If you specify a value larger than 100 for this parameter, the system reports a parameter error or uses 100 as the maximum value.",
+          "example": "30"
+        }
+      ]
     },
     "ListScanBaselineByTask": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListScanBaselineByTask"
+      "summary": "Queries the baseline risks of a scan task by page.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the Container Registry instance.",
+          "example": "cri-***********"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "30"
+        },
+        {
+          "name": "Level",
+          "in": "query",
+          "type": "string",
+          "description": "The level of the baseline risk.",
+          "example": "High"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the image repository.",
+          "example": "crr-**************"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "description": "The image version.",
+          "example": "1.1.36"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "description": "The digest value of the image.",
+          "example": "sha256:1c89806cfaf66d2990e2cf1131ebd56ff24b133745a33abf1228*************"
+        },
+        {
+          "name": "ScanTaskId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the image scan task.",
+          "example": "3e526d7e-4b45-4703-b046-***********"
+        }
+      ]
     },
     "ListScanMaliciousFileByTask": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListScanMaliciousFileByTask"
+      "summary": "Queries the malicious files of a scan task by page.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID.",
+          "example": "cri-gu94qynvpwk*****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Maximum value: 100. If you specify a value greater than 100 for this parameter, the system reports a parameter error or uses 100 as the maximum value.",
+          "example": "30"
+        },
+        {
+          "name": "Level",
+          "in": "query",
+          "type": "string",
+          "description": "The severity of the malicious file.",
+          "example": "serious、suspicious、remind"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The image repository ID.",
+          "example": "crr-h1y4l279wb8*****"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "string",
+          "description": "The image tag.",
+          "example": "V6.11"
+        },
+        {
+          "name": "Digest",
+          "in": "query",
+          "type": "string",
+          "description": "The image digest.",
+          "example": "sha256:aa4bffff6406785e930dab1f94c9a1297ba22xxxx71d71504a015764*********"
+        },
+        {
+          "name": "ScanTaskId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the image scan task.",
+          "example": "79ee6bc2-3288-4c56-b967-**********"
+        }
+      ]
     },
     "ListScanRule": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListScanRule"
+      "summary": "Lists the scan rules.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID.",
+          "example": "cri-upoulewerx*****"
+        },
+        {
+          "name": "PageNo",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "30"
+        },
+        {
+          "name": "ScanType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the vulnerability. Valid values: * `VUL`: Products Cloud Security Scanner. * `SBOM`: Product Content Analysis. Default value: `VUL`",
+          "enum": [
+            "SBOM",
+            "VUL"
+          ],
+          "example": "SBOM"
+        }
+      ]
     },
     "ListTagResources": {
       "required": [
@@ -898,7 +4224,66 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagResources"
+      "summary": "Queries the tags that are added to cloud resources. Instance resources are supported.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resources. Instance resources are supported.",
+          "enum": [
+            "Instance"
+          ],
+          "example": "Instance"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The resource IDs. You can specify a maximum of 20 resource IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the region in which the resources are deployed.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag list.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key of the resource. You can specify up to 20 tag keys. The tag key cannot be an empty string. A tag key can be up to 128 characters in length. It cannot start with acs: or aliyun, and cannot "
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value of the resource. You can specify up to 20 tag values. The tag value can be an empty string. It can be up to 128 characters in length. It cannot start with acs: or aliyun and cannot conta"
+            }
+          ]
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. You do not need to specify this parameter for the first request or if no next query exists. You must specify th",
+          "example": "AAAAAfj+3fkqd8igM6VLaQjlaYc="
+        }
+      ]
     },
     "ResetLoginPassword": {
       "required": [
@@ -907,7 +4292,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ResetLoginPassword"
+      "summary": "Resets the logon password of a Container Registry instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "Password",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The new password that you specify to log on to the instance. The password must be 8 to 32 bits in length, and must contain at least two of the following character types: letters, special characters, a",
+          "example": "test"
+        }
+      ]
     },
     "TagResources": {
       "required": [
@@ -918,7 +4322,61 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResources"
+      "summary": "Adds tags to resources. Instance resources are supported.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resource. Instance resources are supported.",
+          "enum": [
+            "Instance"
+          ],
+          "example": "Instance"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The resource IDs. You can specify a maximum of 20 resource IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The region ID of the resources.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The tag list.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key of the resource. You can specify up to 20 tag keys. The tag key cannot be an empty string. A tag key can be up to 128 characters in length. It cannot start with acs: or aliyun, and cannot "
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value of the resource. You can specify up to 20 tag values. The tag value can be an empty string. A tag value can be up to 128 characters in length. It cannot start with acs: or aliyun, and ca"
+            }
+          ]
+        }
+      ]
     },
     "UntagResources": {
       "required": [
@@ -927,7 +4385,60 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResources"
+      "summary": "Removes tags from resources. Instance resources are supported.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resources. Instance resources are supported.",
+          "enum": [
+            "Instance"
+          ],
+          "example": "Instance"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The resource IDs. You can specify a maximum of 20 resource IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the region in which the resources are deployed.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "array",
+          "description": "The key of tag N added to the resource. Valid values of N: 1 to 20.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "All",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to remove all tags from the resource. Valid values: * **true** * **false** >If you specify both this parameter and the TagKey parameter, this parameter does not take effect.",
+          "example": "true"
+        }
+      ]
     },
     "UpdateArtifactLifecycleRule": {
       "required": [
@@ -936,7 +4447,82 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateArtifactLifecycleRule"
+      "summary": "Updates a lifecycle management rule of an artifact.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-r6ym0lerldp****"
+        },
+        {
+          "name": "Auto",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to automatically execute the lifecycle management rule.",
+          "example": "false"
+        },
+        {
+          "name": "ScheduleTime",
+          "in": "query",
+          "type": "string",
+          "description": "The execution cycle of the lifecycle management rule.",
+          "example": "WEEK"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the namespace.",
+          "example": "test-ns"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the image repository.",
+          "example": "test_1"
+        },
+        {
+          "name": "TagRegexp",
+          "in": "query",
+          "type": "string",
+          "description": "The regular expression that indicates which image tags you want to retain.",
+          "example": ".*production_.*"
+        },
+        {
+          "name": "RetentionTagCount",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of images that you want to retain.",
+          "example": "30"
+        },
+        {
+          "name": "EnableDeleteTag",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enable lifecycle management for the artifact.",
+          "example": "true"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "cralr-luq6qiegzvx****"
+        },
+        {
+          "name": "Scope",
+          "in": "query",
+          "type": "string",
+          "description": "The deletion scope of artifacts.",
+          "example": "REPO"
+        }
+      ]
     },
     "UpdateArtifactSubscriptionRule": {
       "required": [
@@ -945,7 +4531,106 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateArtifactSubscriptionRule"
+      "summary": "Updates an artifact subscription rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-c0o11woew0k****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "crasr-mdbpung4i1rm****"
+        },
+        {
+          "name": "SourceProvider",
+          "in": "query",
+          "type": "string",
+          "description": "The source of the artifacts. Valid values: * DOCKER_HUB: Docker Hub * GCR: GCR * QUAY: Quay.io",
+          "enum": [
+            "DOCKER_HUB",
+            "GCR",
+            "QUAY"
+          ],
+          "example": "DOCKER_HUB"
+        },
+        {
+          "name": "SourceNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the source namespace.",
+          "example": "library"
+        },
+        {
+          "name": "SourceRepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The source repository.",
+          "example": "nginx"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the Container Registry namespace.",
+          "example": "test-ns"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the Container Registry repository.",
+          "example": "test-repo"
+        },
+        {
+          "name": "TagRegexp",
+          "in": "query",
+          "type": "string",
+          "description": "The image tags in the subscription source repository. Regular expressions are supported.",
+          "example": "release-v.*"
+        },
+        {
+          "name": "TagCount",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of subscribed images.",
+          "example": "1"
+        },
+        {
+          "name": "Override",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to overwrite the original image.",
+          "example": "true"
+        },
+        {
+          "name": "Accelerate",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable an acceleration link for image subscription. The subscription acceleration feature is in public preview. The feature is optimized based on scheduling policies and network l",
+          "example": "true"
+        },
+        {
+          "name": "Platform",
+          "in": "query",
+          "type": "array",
+          "description": "The operating system and architecture. If the source repository contains multi-arch images, only the images with the specified operating system and architecture are subscribed to the destination repos",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpdateChain": {
       "required": [
@@ -956,7 +4641,61 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateChain"
+      "summary": "Updates the information about a delivery chain, such as the node execution sequence of the delivery chain.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-4cdrlqmhn4gm****"
+        },
+        {
+          "name": "ChainId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the delivery chain.",
+          "example": "chi-02ymhtwl3cq8****"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the delivery chain.",
+          "example": "test"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the delivery chain.",
+          "example": "description"
+        },
+        {
+          "name": "ChainConfig",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The configuration of the delivery chain in the JSON format.",
+          "example": "chainconfig"
+        },
+        {
+          "name": "ScopeExclude",
+          "in": "query",
+          "type": "array",
+          "description": "Repositories in which the delivery chain does not take effect.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpdateChartNamespace": {
       "required": [
@@ -965,7 +4704,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateChartNamespace"
+      "summary": "Updates a chart namespace.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "test"
+        },
+        {
+          "name": "AutoCreateRepo",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to automatically create repositories in the namespace. Valid values: * `true`: automatically creates repositories in the namespace. * `false`: does not automatically create repositor",
+          "example": "true"
+        },
+        {
+          "name": "DefaultRepoType",
+          "in": "query",
+          "type": "string",
+          "description": "The default type of the repository. Valid values: * `PUBLIC`: a public repository * `PRIVATE`: a private repository",
+          "example": "PUBLIC"
+        }
+      ]
     },
     "UpdateChartRepository": {
       "required": [
@@ -975,7 +4747,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateChartRepository"
+      "summary": "Updates a chart repository of a Container Registry instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the repository. Valid values: * `PUBLIC`: a public repository. * `PRIVATE`: a private repository.",
+          "example": "PUBLIC"
+        },
+        {
+          "name": "Summary",
+          "in": "query",
+          "type": "string",
+          "description": "The summary of the repository.",
+          "example": "test"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace to which the repository belongs.",
+          "example": "test"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the repository.",
+          "example": "test"
+        }
+      ]
     },
     "UpdateEventCenterRule": {
       "required": [
@@ -984,7 +4797,94 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateEventCenterRule"
+      "summary": "Updates an event rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the event notification rule.",
+          "example": "crecr-n6pbhgjxt*****"
+        },
+        {
+          "name": "RuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the event notification rule.",
+          "example": "chain-demo"
+        },
+        {
+          "name": "EventChannel",
+          "in": "query",
+          "type": "string",
+          "description": "The event notification channel.",
+          "example": "EVENT_BRIDGE"
+        },
+        {
+          "name": "EventType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the event. Valid values: * `cr:Artifact:DeliveryChainCompleted`: The delivery chain is processed. * `cr:Artifact:SynchronizationCompleted`: The image is replicated. * `cr:Artifact:BuildCom",
+          "example": "cr:Artifact:DeliveryChainCompleted"
+        },
+        {
+          "name": "EventScope",
+          "in": "query",
+          "type": "string",
+          "description": "The event scope. Valid values: * `INSTANCE` * `NAMESPACE` * `REPO` Default value: `INSTANCE`",
+          "example": "INSTANCE"
+        },
+        {
+          "name": "Namespaces",
+          "in": "query",
+          "type": "array",
+          "description": "The namespaces to which the event notification rule applies.",
+          "example": "ns",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RepoNames",
+          "in": "query",
+          "type": "array",
+          "description": "The names of the repositories to which the event notification rule applies.",
+          "example": "reponame",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RepoTagFilterPattern",
+          "in": "query",
+          "type": "string",
+          "description": "The regular expression for image tags.",
+          "example": ".*"
+        },
+        {
+          "name": "EventConfig",
+          "in": "query",
+          "type": "string",
+          "description": "The event configuration.",
+          "example": "{ \"notifyMethod\":\"http\", \"notifyConfig\":{ \"Url\":\"http://www.aliyundoc.com\", \"id\":\"MaAV3HgTkO5Fh8l1V*"
+        }
+      ]
     },
     "UpdateInstanceEndpointStatus": {
       "required": [
@@ -994,7 +4894,41 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateInstanceEndpointStatus"
+      "summary": "Updates the status of an instance endpoint.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "EndpointType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the endpoint. Set the value to Internet.",
+          "example": "internet"
+        },
+        {
+          "name": "Enable",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "Specifies whether to enable the instance endpoint. Valid values: * `true`: enables the instance endpoint. * `false`: disables the instance endpoint",
+          "example": "false"
+        },
+        {
+          "name": "ModuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the module that you want to access. Valid values: * `Registry`: the image repository. * `Chart`: a Helm chart.",
+          "example": "Chart"
+        }
+      ]
     },
     "UpdateNamespace": {
       "required": [
@@ -1003,7 +4937,45 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateNamespace"
+      "summary": "Updates a namespace.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "NamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the namespace.",
+          "example": "test"
+        },
+        {
+          "name": "AutoCreateRepo",
+          "in": "query",
+          "type": "boolean",
+          "description": "Whether to automatically create a repository when an image is pushed.",
+          "example": "true"
+        },
+        {
+          "name": "DefaultRepoType",
+          "in": "query",
+          "type": "string",
+          "description": "The default type for automatically created repositories. This parameter applies only if `AutoCreateRepo` is set to `true`. Valid values: - `PUBLIC`: a public repository - `PRIVATE`: a private reposito",
+          "example": "PRIVATE"
+        },
+        {
+          "name": "DefaultRepoConfiguration",
+          "in": "query",
+          "description": "The default configuration for automatically created repositories."
+        }
+      ]
     },
     "UpdateRepoBuildRule": {
       "required": [
@@ -1013,7 +4985,94 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateRepoBuildRule"
+      "summary": "Updates an image building rule for a repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-tquyps22md8p****"
+        },
+        {
+          "name": "DockerfileLocation",
+          "in": "query",
+          "type": "string",
+          "description": "The path of the Dockerfile.",
+          "example": "/"
+        },
+        {
+          "name": "DockerfileName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the Dockerfile.",
+          "example": "Dockerfile"
+        },
+        {
+          "name": "PushType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the push that triggers the building rule. Valid values: * `GIT_TAG`: tag push * `GIT_BRANCH`: branch push",
+          "example": "GIT_BRANCH"
+        },
+        {
+          "name": "PushName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the push that triggers the building rule.",
+          "example": "master"
+        },
+        {
+          "name": "ImageTag",
+          "in": "query",
+          "type": "string",
+          "description": "The tag of the image.",
+          "example": "v0.9.5"
+        },
+        {
+          "name": "BuildRuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the building rule.",
+          "example": "crbr-ly77w5i3t31f****"
+        },
+        {
+          "name": "BuildArgs",
+          "in": "query",
+          "type": "array",
+          "description": "Building arguments.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Platforms",
+          "in": "query",
+          "type": "array",
+          "description": "Architecture for image building. Valid values: * `linux/amd64` * `linux/arm64` * `linux/386` * `linux/arm/v7` * `linux/arm/v6` Default value: `linux/amd64`",
+          "example": "linux/amd64",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpdateRepoSourceCodeRepo": {
       "required": [
@@ -1025,7 +5084,78 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateRepoSourceCodeRepo"
+      "summary": "Updates the URL of the source code repository that is bound to an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Container Registry Enterprise Edition instance.",
+          "example": "cri-shac42yvqzvq****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-gzsrlevmvoa****"
+        },
+        {
+          "name": "CodeRepoType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the source code hosting platform. Valid values: GITHUB, GITLAB, GITEE, CODE, and CODEUP.",
+          "example": "GITHUB"
+        },
+        {
+          "name": "CodeRepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The namespace to which the source code repository belongs.",
+          "example": "namespace"
+        },
+        {
+          "name": "CodeRepoName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the source code repository.",
+          "example": "repo"
+        },
+        {
+          "name": "AutoBuild",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable automatic image building when code is committed. Valid values: * `true`: enables automatic image building when code is committed. * `false`: disables automatic image buildi",
+          "example": "true"
+        },
+        {
+          "name": "OverseaBuild",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable Build With Servers Deployed Outside Chinese Mainland. Valid values: * `true`: enables Build With Servers Deployed Outside Chinese Mainland. * `false`: disables Build With S",
+          "example": "false"
+        },
+        {
+          "name": "DisableCacheBuild",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to disable building caches. Valid values: * `true`: disables building caches. * `false`: enables building caches.",
+          "example": "false"
+        },
+        {
+          "name": "CodeRepoId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the source code repository.",
+          "example": "crr-cp7d6sget5r****"
+        }
+      ]
     },
     "UpdateRepoTrigger": {
       "required": [
@@ -1035,7 +5165,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateRepoTrigger"
+      "summary": "Updates a trigger of an image repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the image repository.",
+          "example": "crr-tquyps22md8p****"
+        },
+        {
+          "name": "TriggerName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the trigger. You can specify the TriggerName or TriggerUrl parameter. The TriggerName parameter is optional.",
+          "example": "test_trigger"
+        },
+        {
+          "name": "TriggerUrl",
+          "in": "query",
+          "type": "string",
+          "description": "The URL of the trigger.",
+          "example": "https://www.test.com"
+        },
+        {
+          "name": "TriggerType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the trigger. Valid values: * `ALL`: a trigger that supports both tags and regular expressions. * `TAG_LISTTAG`: a tag-based trigger. * `TAG_REG_EXP`: a regular expression-based trigger.",
+          "example": "ALL"
+        },
+        {
+          "name": "TriggerTag",
+          "in": "query",
+          "type": "string",
+          "description": "The image tag based on which the trigger is set.",
+          "example": "master"
+        },
+        {
+          "name": "TriggerId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the trigger.",
+          "example": "crw-k7bdx4kt52ty****"
+        }
+      ]
     },
     "UpdateRepository": {
       "required": [
@@ -1045,7 +5230,69 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Update repository information"
+      "summary": "Update repository information",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Instance ID",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "RepoId",
+          "in": "query",
+          "type": "string",
+          "description": "Repository ID",
+          "example": "crr-tquyps22md8p****"
+        },
+        {
+          "name": "RepoType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Repository type. Valid values: - `PUBLIC`: Public repository - `PRIVATE`: Private repository",
+          "example": "PUBLIC"
+        },
+        {
+          "name": "Summary",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Summary information",
+          "example": "test repo"
+        },
+        {
+          "name": "Detail",
+          "in": "query",
+          "type": "string",
+          "description": "Repository description",
+          "example": "repo-for-test"
+        },
+        {
+          "name": "TagImmutability",
+          "in": "query",
+          "type": "boolean",
+          "description": "Image tag immutability. Valid values: - `true`: Enabled - `false`: Shutdown",
+          "example": "true"
+        },
+        {
+          "name": "RepoNamespaceName",
+          "in": "query",
+          "type": "string",
+          "description": "Repository namespace name",
+          "example": "ejiayou-other"
+        },
+        {
+          "name": "RepoName",
+          "in": "query",
+          "type": "string",
+          "description": "Repository name",
+          "example": "dsp/domain-microapp"
+        }
+      ]
     },
     "UpdateScanRule": {
       "required": [
@@ -1058,7 +5305,91 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateScanRule"
+      "summary": "Updates a scan rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "cri-4abntrj42twd****"
+        },
+        {
+          "name": "ScanRuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "crscnr-3qmkeiuggfpjkfrq"
+        },
+        {
+          "name": "RuleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule name.",
+          "example": "scan-test"
+        },
+        {
+          "name": "ScanScope",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The scan scope. Valid values: - NAMESPACE: namespace. - REPO: repository.",
+          "enum": [
+            "INSTANCE",
+            "NAMESPACE",
+            "REPO"
+          ],
+          "example": "REPO"
+        },
+        {
+          "name": "TriggerType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The trigger type. Valid values: - AUTO: automatically triggers. - MANUAL: manually triggers.",
+          "enum": [
+            "AUTO",
+            "MANUAL"
+          ],
+          "example": "AUTO"
+        },
+        {
+          "name": "Namespaces",
+          "in": "query",
+          "type": "array",
+          "description": "The list of namespaces. - When the scan scope is NAMESPACE, this parameter cannot be empty. - If the scan scope is REPO, you must specify a unique Namespace for this parameter.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RepoNames",
+          "in": "query",
+          "type": "array",
+          "description": "The list of repositories. - When the scan scope is NAMESPACE, this parameter must be empty. - When the scan scope is REPO, this parameter cannot be empty.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RepoTagFilterPattern",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The tag filtering rules.",
+          "example": "prod-.*"
+        }
+      ]
     },
     "UpdateStorageDomainRoutingRule": {
       "required": [
@@ -1068,7 +5399,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateStorageDomainRoutingRule"
+      "summary": "Updates a routing rule for an instance store domain name.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID",
+          "example": "cri-kmsiwlxxdcva****"
+        },
+        {
+          "name": "Routes",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The route list"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "crsdr-b6thg027zmk1****"
+        }
+      ]
     }
   }
 }

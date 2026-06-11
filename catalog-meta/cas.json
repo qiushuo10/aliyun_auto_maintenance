@@ -1,16 +1,40 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "cas",
   "openApiProduct": "cas",
   "version": "2020-04-07",
   "source": "https://api.aliyun.com/meta/v1/products/cas/versions/2020-04-07/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:31.412Z",
+  "fetchedAt": "2026-06-10T02:58:03.529Z",
   "actions": {
     "AddCloudAccess": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddCloudAccess"
+      "summary": "Adds an AccessKey for authorization.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CloudName",
+          "in": "query",
+          "type": "string",
+          "description": "The cloud service provider. This API supports multiple providers as detailed in the SecretKey parameter description. For example, to add credentials for Tencent Cloud, set this parameter to **Tencent*",
+          "example": "Tencent"
+        },
+        {
+          "name": "SecretId",
+          "in": "query",
+          "type": "string",
+          "description": "The Secret ID for accessing the cloud resource set.",
+          "example": "xcxx"
+        },
+        {
+          "name": "SecretKey",
+          "in": "query",
+          "type": "string",
+          "description": "The secret corresponding to the AccessKey. The value is determined by the `AkType` parameter as follows: 1\\. If `AkType` is set to `primary`: - **Tencent**: The SecretAccessKey of the primary account.",
+          "example": "xxx"
+        }
+      ]
     },
     "ApplyCertificate": {
       "required": [
@@ -18,7 +42,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ApplyCertificate"
+      "summary": "Submits a certificate application for a Certificate Management Service instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance. Before you request a certificate, call the UpdateInstance operation to update and complete the application information for the instance.",
+          "example": "cas_dv-cn-rp643r82d0i1"
+        }
+      ]
     },
     "BatchUpdateNoticeStatus": {
       "required": [
@@ -26,7 +61,48 @@
         "NoticeStatus"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Updates the status of message notification",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SourceIp",
+          "in": "query",
+          "type": "string",
+          "description": "The source IP address of the request.",
+          "example": "47.98.242.200"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language type for the request and the received message. Valid values: - **zh**: Chinese - **en**: English",
+          "example": "zh"
+        },
+        {
+          "name": "Ids",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The list of primary key identifiers to be synchronized to Certificate Management Service. Separate multiple IDs with commas (,).",
+          "example": "888"
+        },
+        {
+          "name": "NoticeStatus",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Specifies whether to enable message notification. \\--enable: enables message notification. \\--disable: disables message notification.",
+          "example": "disable"
+        },
+        {
+          "name": "NoticeBiz",
+          "in": "query",
+          "type": "string",
+          "description": "The business code of message notification. The value is fixed as ssl.",
+          "example": "ssl"
+        }
+      ]
     },
     "CancelCertificateForPackageRequest": {
       "required": [
@@ -34,7 +110,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelCertificateForPackageRequest"
+      "summary": "Revokes an issued certificate or cancels a pending certificate order and restores the quota.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the order. > Call [ListUserCertificateOrder](~~455804~~) to obtain this ID.",
+          "example": "123456"
+        }
+      ]
     },
     "CancelOrderRequest": {
       "required": [
@@ -42,7 +129,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelOrderRequest"
+      "summary": "Cancels a certificate application order that is pending domain verification or under review.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the certificate order to cancel. > Obtain this ID by calling [ListUserCertificateOrder](~~455804~~).",
+          "example": "123451222"
+        }
+      ]
     },
     "CancelPendingCertificate": {
       "required": [
@@ -50,13 +148,101 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelPendingCertificate"
+      "summary": "Cancels a pending certificate application that has not been issued.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cas_dv-cn-rp643r82d0i1"
+        }
+      ]
     },
     "CreateCertificateForPackageRequest": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCertificateForPackageRequest"
+      "summary": "Submits a certificate application by using a purchased certificate package quota.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Csr",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the certificate signing request (CSR) file that is manually generated by using OpenSSL or Keytool for the domain name. The key algorithm in the CSR file must be Rivest-Shamir-Adleman (R",
+          "example": "-----BEGIN CERTIFICATE REQUEST----- ...... -----END CERTIFICATE REQUEST-----"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The specifications of the certificate that you want to apply for. Valid values: - **digicert-free-1-free** (default): DigiCert single-domain domain validated (DV) certificate, which is free and valid ",
+          "example": "digicert-free-1-free"
+        },
+        {
+          "name": "Username",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the applicant. If you do not specify this parameter, the information about the most recent contact that is added to the **Information Management** module is used. For more information abou",
+          "example": "Tom"
+        },
+        {
+          "name": "Phone",
+          "in": "query",
+          "type": "string",
+          "description": "The contact phone number of the applicant. CA staff can call the phone number to confirm the information in your certificate application. If you do not specify this parameter, the information about th",
+          "example": "1390000****"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "description": "The email address of the applicant. After the CA receives your certificate application, the CA sends a verification email to the email address that you specify. You must log on to the mailbox, open th",
+          "example": "username@example.com"
+        },
+        {
+          "name": "Domain",
+          "in": "query",
+          "type": "string",
+          "description": "The domain name that you want to bind to the certificate. The domain name must meet the following requirements: - The domain name must be a single domain name or a wildcard domain name. Example: `*.al",
+          "example": "aliyundoc.com"
+        },
+        {
+          "name": "CompanyName",
+          "in": "query",
+          "type": "string",
+          "description": "The company name of the certificate application. > This parameter is available only when you apply for OV certificates. For more information, see [Manage company profiles](~~198289~~). If you want to ",
+          "example": "某公司"
+        },
+        {
+          "name": "ValidateType",
+          "in": "query",
+          "type": "string",
+          "description": "The verification method of the domain name ownership. Valid values: - **DNS**: DNS verification. If you use this method, you must add a TXT record to the DNS records of the domain name in the manageme",
+          "example": "DNS"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        }
+      ]
     },
     "CreateCertificateRequest": {
       "required": [
@@ -68,7 +254,75 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCertificateRequest"
+      "summary": "Purchases, applies for, and issues a domain validated (DV) certificate by using extended certificate services.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The specifications of the certificate. Valid values: - **digicert-free-1-free** (default): DigiCert single-domain DV certificate, which is free and valid for 3 months. - **symantec-free-1-free**: Digi",
+          "example": "symantec-dv-1-starter"
+        },
+        {
+          "name": "Username",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the applicant.",
+          "example": "Tom"
+        },
+        {
+          "name": "Phone",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The phone number of the applicant.",
+          "example": "1390000****"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The contact email address of the applicant.",
+          "example": "username@example.com"
+        },
+        {
+          "name": "Domain",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The domain name that you want to bind to the certificate. You can specify only one domain name. > The domain name must match the certificate specifications that you specify for the **ProductCode** par",
+          "example": "www.aliyundoc.com"
+        },
+        {
+          "name": "ValidateType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The method to verify the ownership of a domain name. Valid values: - **DNS**: DNS verification. If you use this method, you must add a TXT record to the DNS records of the domain name in the managemen",
+          "example": "DNS"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key of the resource. You can specify up to 20 tag keys. You cannot specify empty strings as tag keys. The key can be up to 64 characters in length and can contain letters, digits, periods (.),"
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value. You can specify up to 20 tag values. The tag value can be an empty string. The tag value cannot exceed 128 characters in length, and can contain digits, periods (.), underscores (\\_), a"
+            }
+          ]
+        }
+      ]
     },
     "CreateCertificateWithCsrRequest": {
       "required": [
@@ -80,7 +334,75 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCertificateWithCsrRequest"
+      "summary": "Purchases, applies for, and issues a domain validated (DV) certificate by using a custom certificate signing request (CSR) file.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Csr",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The content of the CSR file. The key algorithm in the CSR file must be Rivest-Shamir-Adleman (RSA) or elliptic-curve cryptography (ECC), and the key length of the RSA algorithm must be greater than or",
+          "example": "-----BEGIN CERTIFICATE REQUEST----- ...... -----END CERTIFICATE REQUEST-----"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The specifications of the certificate that you want to apply for. Valid values: - **digicert-free-1-free** (default): DigiCert single-domain DV certificate in a three-month free trial, available only ",
+          "example": "digicert-free-1-free"
+        },
+        {
+          "name": "Username",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the applicant.",
+          "example": "Tom"
+        },
+        {
+          "name": "Phone",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The phone number of the applicant.",
+          "example": "1390000****"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The contact email address of the applicant.",
+          "example": "username@example.com"
+        },
+        {
+          "name": "ValidateType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The method to verify the ownership of a domain name. Valid values: - **DNS**: DNS verification. If you use this method, you must add a TXT record to the DNS records of the domain name in the managemen",
+          "example": "DNS"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key. Valid values of N: 1 to 20. The tag key cannot be an empty string. The tag key can be up to 128 characters in length and cannot start with `acs:` or `aliyun`. The tag key cannot contain `"
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the tag."
+            }
+          ]
+        }
+      ]
     },
     "CreateCsr": {
       "required": [
@@ -93,7 +415,91 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCsr"
+      "summary": "Creates a certificate signing request (CSR) that contains information about an SSL certificate to apply for, such as the domain names and the certificate holder. You must provide a CSR when you submit a certificate application to a certificate authority (CA).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeySize",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The key length that is used by the algorithm. - The key length for RSA algorithms can be 2,048, 3,072, and 4,096 bits. - The key length for ECC and SM2 algorithms can be 256 bits.",
+          "example": "2048"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The algorithm. Valid values: RSA, SM2, and ECC. For more information about algorithms, see [Select an SSL certificate](~~197871~~).",
+          "enum": [
+            "RSA",
+            "ECC",
+            "SM2"
+          ],
+          "example": "RSA"
+        },
+        {
+          "name": "CommonName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The primary domain name, which is a common name.",
+          "example": "example.com"
+        },
+        {
+          "name": "Sans",
+          "in": "query",
+          "type": "string",
+          "description": "The secondary domain names. Separate multiple domain names with commas (,). You can use the CSR to apply for a certificate for both the primary and secondary domain names.",
+          "example": "www.aliyundoc.com,www.example.com"
+        },
+        {
+          "name": "CountryCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the country or region in which the organization is located. For example, you can use CN to indicate China and use US to indicate the United States.",
+          "example": "CN"
+        },
+        {
+          "name": "Province",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The province or location where the company is located.",
+          "example": "Beijing"
+        },
+        {
+          "name": "Locality",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The city where the company is located.",
+          "example": "Beijing"
+        },
+        {
+          "name": "CorpName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the company.",
+          "example": "北京CSR科技有效公司"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the CSR. The name can be up to 50 characters in length and can contain letters, digits, underscores (\\_), hyphens (-), and periods (.).",
+          "example": "csr-123"
+        },
+        {
+          "name": "Department",
+          "in": "query",
+          "type": "string",
+          "description": "The department that uses the certificate.",
+          "example": "IT"
+        }
+      ]
     },
     "CreateDeploymentJob": {
       "required": [
@@ -105,7 +511,61 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateDeploymentJob"
+      "summary": "Creates a certificate deployment task to deploy an SSL certificate to one or more Alibaba Cloud services immediately or at a scheduled time.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the deployment task.",
+          "example": "jobName"
+        },
+        {
+          "name": "JobType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the deployment task. Valid values: - cloud: multi-cloud deployment task. - user: cloud service deployment task. This type of task does not support cloud servers.",
+          "enum": [
+            "cloud",
+            "user"
+          ],
+          "example": "user"
+        },
+        {
+          "name": "CertIds",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the certificate. Separate multiple certificate IDs with commas (,). You can call the [ListUserCertificateOrder](~~455804~~) operation to obtain the IDs of certificates from the **Certificate",
+          "example": "12342649,12304338,12067351,9957285"
+        },
+        {
+          "name": "ResourceIds",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the cloud resource. Separate multiple resource IDs with commas (,). You can call the [ListCloudResources](~~2712230~~) operation to obtain the IDs of cloud resources from the **Id** paramete",
+          "example": "6591316,6585549,6190248,5811894,5775176,5772504"
+        },
+        {
+          "name": "ContactIds",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the contact. Separate multiple contact IDs with commas (,). You can call the [ListContact](~~2712221~~) operation to obtain the IDs of contacts from the **ContactId** parameter.",
+          "example": "1,2"
+        },
+        {
+          "name": "ScheduleTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The time when the task starts. The value is a UNIX timestamp. If you do not specify this parameter, the system immediately starts the task after the task is in the pending state.",
+          "example": "1706613560008"
+        }
+      ]
     },
     "CreateWHClientCertificate": {
       "required": [
@@ -113,13 +573,168 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateWHClientCertificate"
+      "summary": "Issues a single client certificate from the general user certificate repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SanType",
+          "in": "query",
+          "type": "integer",
+          "description": "The type of the subject alternative name (SAN) for the client certificate. Valid values: - **1**: email address. - **2**: domain name. - **6**: Uniform Resource Identifier (URI). - **7**: IP address.",
+          "example": "2"
+        },
+        {
+          "name": "SanValue",
+          "in": "query",
+          "type": "string",
+          "description": "The value of the SAN extension. To specify multiple values, separate them with commas (,).",
+          "example": "example.com"
+        },
+        {
+          "name": "CommonName",
+          "in": "query",
+          "type": "string",
+          "description": "The common name of the client certificate. Supports Chinese, English, and other characters.",
+          "example": "aliyun"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "description": "The key algorithm for the client certificate. The format is ` _ `. Valid values: - **RSA\\_1024**: The corresponding signature algorithm is Sha256WithRSA. - **RSA\\_2048**: The corresponding signature a",
+          "example": "RSA_2048"
+        },
+        {
+          "name": "Csr",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the certificate signing request (CSR). You can generate a CSR with tools like OpenSSL or Keytool.",
+          "example": "-----BEGIN CERTIFICATE REQUEST----- ...... -----END CERTIFICATE REQUEST-----"
+        },
+        {
+          "name": "ParentIdentifier",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique identifier of the issuing subordinate CA certificate.",
+          "example": "273ae6bb538d538c70c01f81jh2****"
+        },
+        {
+          "name": "Days",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the client certificate, in days. You cannot leave the `Days`, `BeforeTime`, and `AfterTime` parameters all empty. The `BeforeTime` and `AfterTime` parameters must be specified t",
+          "example": "365"
+        },
+        {
+          "name": "BeforeTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The issuance time of the client certificate, as a Unix timestamp in seconds. If omitted, this defaults to the time of the API call. > The `BeforeTime` and `AfterTime` parameters must be specified toge",
+          "example": "1634283958"
+        },
+        {
+          "name": "AfterTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The expiration time of the client certificate, specified as a Unix timestamp in seconds. > The `BeforeTime` and `AfterTime` parameters must be specified together or not at all.",
+          "example": "1665819958"
+        },
+        {
+          "name": "Organization",
+          "in": "query",
+          "type": "string",
+          "description": "The organization name associated with the root CA certificate, typically your company or enterprise name. Supports Chinese, English, and other characters.",
+          "example": "阿里巴巴网络技术有限公司"
+        },
+        {
+          "name": "OrganizationUnit",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the department or business unit within the organization.",
+          "example": "IT"
+        },
+        {
+          "name": "Country",
+          "in": "query",
+          "type": "string",
+          "description": "The country where the organization is located.",
+          "example": "CN"
+        },
+        {
+          "name": "State",
+          "in": "query",
+          "type": "string",
+          "description": "The province, municipality, or autonomous region where the organization is located. Chinese, English, and other characters are supported.",
+          "example": "Zhejiang"
+        },
+        {
+          "name": "Locality",
+          "in": "query",
+          "type": "string",
+          "description": "The city where the organization is located. Chinese, English, and other characters are supported.",
+          "example": "Hangzhou"
+        },
+        {
+          "name": "Years",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the certificate, in years.",
+          "example": "1"
+        },
+        {
+          "name": "Months",
+          "in": "query",
+          "type": "integer",
+          "description": "The validity period of the certificate, in months.",
+          "example": "12"
+        },
+        {
+          "name": "Immediately",
+          "in": "query",
+          "type": "integer",
+          "description": "Specifies which certificate content to return in the response. - **0**: Does not return the certificate (default). - **1**: Returns the certificate. - **2**: Returns the certificate and its certificat",
+          "example": "1"
+        }
+      ]
     },
     "CreateWarehouse": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateWarehouse"
+      "summary": "Creates a certificate warehouse.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the certificate warehouse.",
+          "example": "MyCertificateWarehouse"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the certificate warehouse. Valid values:",
+          "enum": [
+            "uploadedAuthorityCertificate",
+            "pcaCertificate",
+            "uploadedCertificate",
+            "personal",
+            "ssl",
+            "pcaAuthorityCertificate"
+          ],
+          "example": "pcaCertificate"
+        },
+        {
+          "name": "Biz",
+          "in": "query",
+          "type": "string",
+          "description": "The use case of the certificate warehouse.",
+          "example": "contract"
+        }
+      ]
     },
     "Decrypt": {
       "required": [
@@ -128,7 +743,58 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Decrypt"
+      "summary": "Decrypts data that was encrypted by using a certificate in a certificate application repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CertIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "The unique identifier of the certificate. Call [ListCert](~~455806~~) to obtain this parameter. - The identifier of an SSL certificate is typically in the format {Certificate ID}-cn-hangzhou. - For a ",
+          "example": "1ef1da5f-38ed-69b3-****-037781890265"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The encryption algorithm. Valid values: - **RSAES\\_OAEP\\_SHA\\_1** - **RSAES\\_OAEP\\_SHA\\_256** - **SM2PKE**",
+          "example": "RSAESOAEPSHA_1"
+        },
+        {
+          "name": "CiphertextBlob",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Base64-encoded data to decrypt.",
+          "example": "ZOyIygCyaOW6Gj****MlNKiuyjfzw="
+        },
+        {
+          "name": "MessageType",
+          "in": "query",
+          "type": "string",
+          "description": "The message type. Valid values: - RAW: The response returns the plaintext in UTF-8 encoding. - Base64 (default): The response returns the Base64-encoded plaintext.",
+          "enum": [
+            "Base64",
+            "RAW"
+          ],
+          "example": "Base64"
+        },
+        {
+          "name": "CustomIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "A custom identifier that serves as a unique key.",
+          "example": "****6bb538d538c70c01f81jh2****"
+        },
+        {
+          "name": "WarehouseId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the repository. > Call [ListCertWarehouse](~~455805~~) to obtain this ID.",
+          "example": "1"
+        }
+      ]
     },
     "DeleteCertificateRequest": {
       "required": [
@@ -136,13 +802,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteCertificateRequest"
+      "summary": "Deletes a failed domain validated (DV) certificate application order.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the certificate application order that you want to delete. > After you call the [CreateCertificateForPackageRequest](~~455296~~), [CreateCertificateRequest](~~455292~~), or [CreateCertificat",
+          "example": "123451222"
+        }
+      ]
     },
     "DeleteCloudAccess": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteCloudAccess"
+      "summary": "Deletes an access key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccessId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the access key.",
+          "example": "132"
+        }
+      ]
     },
     "DeleteCsr": {
       "required": [
@@ -150,7 +837,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteCsr"
+      "summary": "Deletes a certificate signing request (CSR).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CsrId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the CSR.",
+          "example": "3013"
+        }
+      ]
     },
     "DeleteDeploymentJob": {
       "required": [
@@ -158,7 +856,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteDeploymentJob"
+      "summary": "Deletes a certificate deployment task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task.",
+          "example": "8888"
+        }
+      ]
     },
     "DeleteInstance": {
       "required": [
@@ -166,7 +875,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteInstance"
+      "summary": "Deletes a Certificate Management Service instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cas-cn-68n1mm16****"
+        }
+      ]
     },
     "DeletePCACert": {
       "required": [
@@ -174,7 +894,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeletePCACert"
+      "summary": "Deletes a private certificate from a certificate application repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Identifier",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique identifier of the certificate. You can call the [ListCert](~~452331~~) operation to query the unique identifiers of certificates.",
+          "example": "ccaf0c629c2be1e2ab"
+        }
+      ]
     },
     "DeleteUserCertificate": {
       "required": [
@@ -182,13 +913,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteUserCertificate"
+      "summary": "Deletes an expired, revoked, or manually uploaded certificate from Certificate Management Service.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CertId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The certificate ID. > To obtain the certificate ID, call the [ListUserCertificateOrder](~~455804~~) operation.",
+          "example": "7562353"
+        }
+      ]
     },
     "DeleteWarehouse": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteWarehouse"
+      "summary": "Deletes a certificate warehouse.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "WarehouseInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The certificate warehouse instance ID.",
+          "example": "cas-wh-Q7ID6V"
+        }
+      ]
     },
     "DeleteWorkerResource": {
       "required": [
@@ -197,7 +949,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteWorkerResource"
+      "summary": "Deletes a worker task from a certificate deployment task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task.",
+          "example": "8888"
+        },
+        {
+          "name": "WorkerId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the worker for the deployment task.",
+          "example": "13"
+        }
+      ]
     },
     "DescribeCertificateState": {
       "required": [
@@ -205,13 +976,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeCertificateState"
+      "summary": "Queries the status of a certificate application order, such as domain validation progress.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the certificate request order to query. > You can call [ListUserCertificateOrder](~~455804~~) to obtain this ID.",
+          "example": "123451222"
+        }
+      ]
     },
     "DescribeCloudResourceStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeCloudResourceStatus"
+      "summary": "Queries the number of cloud resources on which certificates were deployed by using a multi-cloud deployment task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "SecretId",
+          "in": "query",
+          "type": "string",
+          "description": "The AccessKey secret used to access cloud resources. > You can call the [ListCloudAccess](~~2712219~~) operation to obtain the ID.",
+          "example": "AKID9AHG6iCZlncN7yPmOsQ1X******"
+        }
+      ]
     },
     "DescribeDeploymentJob": {
       "required": [
@@ -219,25 +1011,66 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeDeploymentJob"
+      "summary": "Retrieves information about a certificate deployment task, including the task status, target resources, and certificates.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment job. To get the job ID, call the [CreateDeploymentJob](~~2712234~~) or [ListDeploymentJob](~~2712223~~) operation.",
+          "example": "8888"
+        }
+      ]
     },
     "DescribeDeploymentJobStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeDeploymentJobStatus"
+      "summary": "Queries the execution status summary of a certificate deployment task, including the number of succeeded and failed workers.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the deployment task. You can call the [CreateDeploymentJob](~~2712234~~) operation to obtain the ID of a deployment task from the **JobId** parameter. You can also call the [ListDeploymentJo",
+          "example": "8888"
+        }
+      ]
     },
     "DescribePackageState": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribePackageState"
+      "summary": "Queries the quota and usage of domain validated (DV) certificate packages.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The specifications of the certificate resource plan. Valid values: - **digicert-free-1-free** (default): DigiCert single-domain domain validated (DV) certificate in a three-month free trial, available",
+          "example": "digicert-free-1-free"
+        }
+      ]
     },
     "DescribeWarehouseCert": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeWarehouseCert"
+      "summary": "Retrieves the details of a certificate stored in a certificate warehouse.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CertIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "The unique identifier of the certificate.",
+          "example": "1ef1da5f-38ed-69b3-****-037781890265"
+        }
+      ]
     },
     "Encrypt": {
       "required": [
@@ -246,19 +1079,72 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Encrypt"
+      "summary": "Encrypts data by using a certificate in a certificate application repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Plaintext",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The data to encrypt. The data can be plaintext or Base64-encoded plaintext. For more information, see the MessageType parameter. If you use Base64 encoding, for example, if the hexadecimal content of ",
+          "example": "1234***"
+        },
+        {
+          "name": "CertIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "The unique identifier of the certificate. To obtain this parameter, call the [ListCert](~~455806~~) operation. - The identifier of an SSL certificate is usually in the {Certificate ID}-cn-hangzhou for",
+          "example": "1ef1da5f-38ed-69b3-****-037781890265"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The encryption algorithm. Valid values: - **RSAES\\_OAEP\\_SHA\\_1** - **RSAES\\_OAEP\\_SHA\\_256** - **SM2PKE**",
+          "example": "RSAESOAEPSHA_1"
+        },
+        {
+          "name": "MessageType",
+          "in": "query",
+          "type": "string",
+          "description": "The message type. Valid values: - RAW (default): Directly encrypts the value of Plaintext. - Base64: Decodes the Base64-encoded value of Plaintext and then encrypts the decoded data.",
+          "enum": [
+            "Base64",
+            "RAW"
+          ],
+          "example": "RAW"
+        },
+        {
+          "name": "CustomIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "The custom identifier, which serves as a unique key.",
+          "example": "****6bb538d538c70c01f81dg3****"
+        },
+        {
+          "name": "WarehouseId",
+          "in": "query",
+          "type": "integer",
+          "description": "The repository ID. > To obtain this ID, call the [ListCertWarehouse](~~455805~~) operation.",
+          "example": "12"
+        }
+      ]
     },
     "GetAssetCount": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAssetCount"
+      "summary": "Queries the total number of certificate-related assets, such as websites and cloud resources.",
+      "method": "GET"
     },
     "GetCertWarehouseQuota": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCertWarehouseQuota"
+      "summary": "Queries the remaining quota for certificate application repository operations.",
+      "method": "POST"
     },
     "GetCertificateDetail": {
       "required": [
@@ -266,7 +1152,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCertificateDetail"
+      "summary": "Retrieves certificate details, excluding the certificate body and private key.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CertificateId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The certificate ID.",
+          "example": "18594156"
+        }
+      ]
     },
     "GetCsrDetail": {
       "required": [
@@ -274,7 +1171,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCsrDetail"
+      "summary": "Queries the content of a certificate signing request (CSR).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CsrId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the CSR.",
+          "example": "3924"
+        }
+      ]
     },
     "GetInstanceDetail": {
       "required": [
@@ -282,26 +1190,81 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetInstanceDetail"
+      "summary": "Retrieves information about a Certificate Management Service instance, including the bound domain and certificate status.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cas_dv-cn-123"
+        }
+      ]
     },
     "GetInstanceSummary": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetInstanceSummary"
+      "summary": "Queries the summary statistics of Certificate Management Service instances, such as certificate counts by status.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "InstanceType",
+          "in": "query",
+          "type": "string",
+          "description": "The instance type. Valid values: BUY: a paid certificate. TEST: a test certificate.",
+          "example": "TEST"
+        }
+      ]
     },
     "GetMatchedResources": {
       "required": [
         "CertIds"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Retrieve matched resources for a certificate",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CertIds",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The certificate IDs.",
+          "example": "19736665"
+        },
+        {
+          "name": "ResourceScope",
+          "in": "query",
+          "type": "string",
+          "description": "The resource match scope. This parameter can be empty.",
+          "example": "目前支持全部云产品"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "Because of the large number of matched resources, the backend uses aggregation and does not support pagination. This parameter is reserved. By default, a maximum of 2,000 entries are returned.",
+          "example": "2000"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "Because of the large number of matched resources, the backend uses aggregation and does not support pagination. This parameter is reserved.",
+          "example": "666"
+        }
+      ]
     },
     "GetRiskCount": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRiskCount"
+      "summary": "Queries the number of assets with certificate-related risks, such as expired or soon-to-expire certificates.",
+      "method": "GET"
     },
     "GetTaskAttribute": {
       "required": [
@@ -309,7 +1272,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetTaskAttribute"
+      "summary": "Queries the processing result and status of a submitted certificate application.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "TaskType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the asynchronous task. The default value is ApplyCertificate, which specifies a query for the result of a certificate application.",
+          "example": "ApplyCertificate"
+        },
+        {
+          "name": "TaskId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the task.",
+          "example": "123"
+        }
+      ]
     },
     "GetUserCertificateDetail": {
       "required": [
@@ -317,61 +1298,456 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetUserCertificateDetail"
+      "summary": "Retrieves certificate details, including the basic information, certificate body, and private key. You can also use this operation to download the certificate content and private key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CertId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the certificate. To get this ID, call the [ListUserCertificateOrder](~~455804~~) operation.",
+          "example": "6055048"
+        },
+        {
+          "name": "CertFilter",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to filter the certificate content from the response. Valid values: **true**: The Cert, Key, EncryptCert, EncryptPrivateKey, SignCert, and SignPrivateKey parameters are not returned. ",
+          "example": "false"
+        }
+      ]
     },
     "ListAssetCount": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAssetCount"
+      "summary": "Queries the certificate deployment statistics by cloud service type.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartDate",
+          "in": "query",
+          "type": "integer",
+          "description": "The date of certificate issuance.",
+          "example": "2018-07-13"
+        },
+        {
+          "name": "EndDate",
+          "in": "query",
+          "type": "integer",
+          "description": "The expiration date of the certificate.",
+          "example": "2020-07-13"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 50.",
+          "example": "1"
+        }
+      ]
     },
     "ListCert": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListCert"
+      "summary": "This API queries certificates in the certificate store.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyWord",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword for a fuzzy search by name, domain name, or subject alternative name.",
+          "example": "test_name"
+        },
+        {
+          "name": "WarehouseId",
+          "in": "query",
+          "type": "integer",
+          "description": "The warehouse ID. You can obtain this ID by calling the [ListCertWarehouse](~~453246~~) API.",
+          "example": "12"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The certificate status. Valid values: - **ISSUE**: issued - **REVOKE**: revoked",
+          "example": "ISSUE"
+        },
+        {
+          "name": "SourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The source of the certificate. Valid values: - **upload**: uploaded certificate - **aliyun**: Alibaba Cloud certificate",
+          "example": "aliyun"
+        },
+        {
+          "name": "CertType",
+          "in": "query",
+          "type": "string",
+          "description": "The certificate type. Valid values: - **CA**: CA certificate - **CERT**: issued certificate",
+          "example": "CERT"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number to return. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. The default value is 50.",
+          "example": "50"
+        },
+        {
+          "name": "Identifiers",
+          "in": "query",
+          "type": "string",
+          "description": "A comma-separated list of certificate identifiers.",
+          "example": "aaa,bbb"
+        }
+      ]
     },
     "ListCertWarehouse": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListCertWarehouse"
+      "summary": "Queries the certificate application repositories in your account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the certificate application repository. Fuzzy match is supported.",
+          "example": "name"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID of the certificate application repository.",
+          "example": "14dcc8afc7578e1f"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the certificate application repository. Valid values: - **ssl**: certificate application repository of SSL certificates - **uploadPCA**: certificate application repository of uploaded priv",
+          "example": "aliyunPCA"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 50.",
+          "example": "50"
+        }
+      ]
     },
     "ListCertificates": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListCertificates"
+      "summary": "Queries the certificates managed by Certificate Management Service.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "A keyword for a fuzzy query. The keyword can be a domain name, a certificate name, or a resource ID.",
+          "example": "test"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance.",
+          "example": "cas-ivauto-hqito6"
+        },
+        {
+          "name": "CertificateStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the certificate. - **issued**: The certificate is issued. - **revoked**: The certificate is revoked. - **willExpire**: The certificate is about to expire. - **expired**: The certificate ",
+          "example": "issued"
+        },
+        {
+          "name": "CertificateSource",
+          "in": "query",
+          "type": "string",
+          "description": "The source of the certificate. - BUY: A purchased certificate. - TEST: A test certificate. - UPLOAD: An uploaded certificate.",
+          "example": "BUY"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group.",
+          "example": "rg-aek****wia"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 10. Maximum value: 100.",
+          "example": "10"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        }
+      ]
     },
     "ListCloudAccess": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListCloudAccess"
+      "summary": "Queries the AccessKey pairs that are configured for multi-cloud certificate deployment.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "SecretId",
+          "in": "query",
+          "type": "string",
+          "description": "The AccessKey ID that is used to access cloud resources.",
+          "example": "276"
+        },
+        {
+          "name": "CloudName",
+          "in": "query",
+          "type": "string",
+          "description": "The cloud service provider. Set the value to **Tencent**, which indicates Tencent Cloud.",
+          "example": "Tencent"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: **10**, **20**, and **50**.",
+          "example": "20"
+        }
+      ]
     },
     "ListCloudResources": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListCloudResources"
+      "summary": "Queries the cloud resources on which certificates are deployed, such as Server Load Balancer (SLB) instances and CDN domains.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CloudName",
+          "in": "query",
+          "type": "string",
+          "description": "The cloud service provider. Valid values: - Tencent - Huawei - Aws - aliyun",
+          "enum": [
+            "Tencent",
+            "Huawei",
+            "Aws",
+            "aliyun"
+          ],
+          "example": "aliyun"
+        },
+        {
+          "name": "CloudProduct",
+          "in": "query",
+          "type": "string",
+          "description": "The cloud service name. Used to filter resources by cloud service. Valid values when CloudName is set to aliyun: - SLB: Classic Load Balancer (CLB). This value is available only on the China site (ali",
+          "example": "SLB"
+        },
+        {
+          "name": "SecretId",
+          "in": "query",
+          "type": "string",
+          "description": "The AccessKey ID that is used to access cloud resources.",
+          "example": "AK96*******6M"
+        },
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword of the domain name or instance ID bound to the cloud resource.",
+          "example": "cert-instanceId"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: **1**.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: **20**.",
+          "example": "20"
+        },
+        {
+          "name": "CertIds",
+          "in": "query",
+          "type": "array",
+          "description": "The certificate IDs. Separate multiple IDs with commas (,).",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "integer"
+            }
+          ]
+        }
+      ]
     },
     "ListContact": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListContact"
+      "summary": "Queries the contacts that receive certificate deployment notifications.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword used in the query. For example, you can specify a keyword in names, email addresses, and mobile phone numbers.",
+          "example": "186"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 20.",
+          "example": "20"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        }
+      ]
     },
     "ListCsr": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListCsr"
+      "summary": "Queries the certificate signing requests (CSRs) in your account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "KeyWord",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword for fuzzy search. For example, you can specify a domain name.",
+          "example": "test_name"
+        },
+        {
+          "name": "Algorithm",
+          "in": "query",
+          "type": "string",
+          "description": "The algorithm. Valid values: RSA, ECC, and SM2.",
+          "enum": [
+            "RSA",
+            "ECC",
+            "SM2"
+          ],
+          "example": "RSA"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: 50.",
+          "example": "10"
+        }
+      ]
     },
     "ListDeploymentJob": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListDeploymentJob"
+      "summary": "Queries the certificate deployment tasks that are created in your account.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the deployment task. Valid values: - cloud: multi-cloud deployment task. - user: cloud service deployment task. This type of task does not support Elastic Compute Service (ECS) instances.",
+          "enum": [
+            "cloud",
+            "user"
+          ],
+          "example": "user"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the deployment task. Valid values: - success - pending - scheduling - processing - error - editing",
+          "enum": [
+            "success",
+            "pending",
+            "scheduling",
+            "processing",
+            "error",
+            "editing"
+          ],
+          "example": "pending"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 50.",
+          "example": "50"
+        }
+      ]
     },
     "ListDeploymentJobCert": {
       "required": [
@@ -379,7 +1755,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListDeploymentJobCert"
+      "summary": "Queries the certificates associated with a deployment task, such as the certificate instance ID, type, and name.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task. You can call the [CreateDeploymentJob](~~2712234~~) operation to obtain the ID of a deployment task from the **JobId** parameter. You can also call the [ListDeploymentJo",
+          "example": "8888"
+        }
+      ]
     },
     "ListDeploymentJobResource": {
       "required": [
@@ -387,25 +1774,190 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListDeploymentJobResource"
+      "summary": "Queries the cloud resources associated with a deployment task. An empty list indicates that the resources are invalid and must be re-associated.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task.",
+          "example": "8888"
+        }
+      ]
     },
     "ListInstances": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListInstances"
+      "summary": "Queries the Certificate Management Service instances in your account.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "A fuzzy query that matches a domain name, instance name, or resource ID.",
+          "example": "test"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The instance status. Used to filter instances. - **inactive**: The instance is ready for use. - **pending**: The latest certificate application is under review. - **willExpire**: The instance is about",
+          "example": "inactive"
+        },
+        {
+          "name": "Brand",
+          "in": "query",
+          "type": "string",
+          "description": "The certificate authority (CA) brand. Valid values: WoSign, CFCA, DigiCert, GeoTrust, GlobalSign, vTrus, and Alibaba.",
+          "example": "Digicert"
+        },
+        {
+          "name": "CertificateType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the certificate. Valid values: DV (domain validated), OV (organization validated), and EV (extended validation).",
+          "example": "DV"
+        },
+        {
+          "name": "CertificateStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the certificate. Used to filter instances by certificate status. - **issued**: The certificate is issued. - **revoked**: The certificate is revoked. - **willExpire**: The certificate is ",
+          "example": "issued"
+        },
+        {
+          "name": "InstanceType",
+          "in": "query",
+          "type": "string",
+          "description": "The instance type. BUY indicates a paid certificate. TEST indicates a test certificate.",
+          "example": "BUY"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group.",
+          "example": "rg-ae******4wia"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 10. Maximum value: 100.",
+          "example": "10"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        }
+      ]
     },
     "ListUserCertificateOrder": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListUserCertificateOrder"
+      "summary": "Queries the SSL certificates and certificate orders in your account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Keyword",
+          "in": "query",
+          "type": "string",
+          "description": "Performs a fuzzy query. The keyword can be a domain name or a resource ID.",
+          "example": "cert-instanceId"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the order. Valid values: - **PAYED**: The certificate is pending application. This value is valid only when OrderType is set to CPACK or BUY. - **CHECKING**: The certificate is under rev",
+          "example": "ISSUED"
+        },
+        {
+          "name": "OrderType",
+          "in": "query",
+          "type": "string",
+          "description": "The resource type. Default value: **CPACK**. Valid values: - **CPACK**: An order for a resource plan. Only orders created from a resource plan are returned. - **BUY**: A direct purchase. Only orders c",
+          "example": "CPACK"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 50.",
+          "example": "10"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group. For more information, see [ListResources](~~2716559~~).",
+          "example": "rg-ae******4wia"
+        }
+      ]
     },
     "ListWarehouse": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListWarehouse"
+      "summary": "Lists warehouses.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "WarehouseInstanceIds",
+          "in": "query",
+          "type": "array",
+          "description": "A list of warehouse instance IDs.",
+          "example": "cas-wh-uc-gl2bsq",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "WarehouseTypes",
+          "in": "query",
+          "type": "array",
+          "description": "A list of warehouse types.",
+          "example": "pcaCaCert",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token from a previous response. Use this token to retrieve the next page of results. Omit this parameter for the first request.",
+          "example": "1d2db86sca4384811e0b5e8707e68181f"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of entries to return on each page.",
+          "example": "20"
+        }
+      ]
     },
     "ListWorkerResource": {
       "required": [
@@ -413,7 +1965,57 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListWorkerResource"
+      "summary": "Queries the worker tasks of a deployment task. Each worker task deploys a certificate to a specific cloud resource in a cloud service.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task. You can call the [CreateDeploymentJob](~~2712234~~) operation to obtain the ID of a deployment task from the **ID** parameter. You can also call the [ListDeploymentJob](",
+          "example": "8888"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the worker task. Valid values: - rollback - rollback\\_error - success - rollback\\_success - pending - scheduling - processing - error - editing",
+          "enum": [
+            "rollback",
+            "rollback_error",
+            "success",
+            "rollback_success",
+            "pending",
+            "scheduling",
+            "processing",
+            "error",
+            "editing"
+          ],
+          "example": "editing"
+        },
+        {
+          "name": "CloudProduct",
+          "in": "query",
+          "type": "string",
+          "description": "The cloud service in the deployment task.",
+          "example": "NLB"
+        },
+        {
+          "name": "CurrentPage",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: **1**.",
+          "example": "1"
+        },
+        {
+          "name": "ShowSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: 50.",
+          "example": "50"
+        }
+      ]
     },
     "MoveResourceGroup": {
       "required": [
@@ -423,7 +2025,45 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "MoveResourceGroup"
+      "summary": "Changes the resource group to which a certificate or certificate order belongs.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource.",
+          "example": "cas-cn-4591d3xa****"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource group.",
+          "example": "rg-acfmykgxu5d46ey"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resource. Default value: **instance** Valid values: - instance: certificate order - Certificate: certificate",
+          "enum": [
+            "instance",
+            "Certificate"
+          ],
+          "example": "instance"
+        },
+        {
+          "name": "RegionId",
+          "in": "query",
+          "type": "string",
+          "description": "The region of the organization to which the owner of the certificate belongs. Valid values: ap-southeast-1 and cn-hangzhou.",
+          "example": "cn-hangzhou"
+        }
+      ]
     },
     "RefundInstance": {
       "required": [
@@ -431,7 +2071,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RefundInstance"
+      "summary": "Refunds a Certificate Management Service instance if the refund is requested within seven days of purchase.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cas-ivauto-hqito6"
+        }
+      ]
     },
     "RenewCertificateOrderForPackageRequest": {
       "required": [
@@ -439,7 +2090,43 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RenewCertificateOrderForPackageRequest"
+      "summary": "Submits a renewal application for an issued SSL certificate.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the certificate application order that you want to renew. > After you call the [CreateCertificateForPackageRequest](~~455296~~), [CreateCertificateRequest](~~455292~~), or [CreateCertificate",
+          "example": "123451222"
+        },
+        {
+          "name": "Csr",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the certificate signing request (CSR) file that is manually generated for the domain name by using OpenSSL or Keytool. The key algorithm in the CSR file must be Rivest-Shamir-Adleman (R",
+          "example": "-----BEGIN CERTIFICATE REQUEST----- MIIC1TCCAb0CAQAwgY8xCzAJBgNVBAYTAkNOMRIwEAYDVQQIDAlHdWFuZ3pob3Ux"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key. You can specify at most 20 tag keys. The tag key cannot be an empty string. A tag key can be up to 128 characters in length. It cannot start with aliyun or acs:, and cannot contain http\\:"
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the resource tag. A maximum of 20 tag values can be entered. If this value needs to be passed in, an empty string can be entered. A maximum of 128 characters are supported, it cannot star"
+            }
+          ]
+        }
+      ]
     },
     "RevokeCertificate": {
       "required": [
@@ -447,7 +2134,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RevokeCertificate"
+      "summary": "Revokes an issued certificate managed by Certificate Management Service.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cas-cn-68n1mm16****"
+        }
+      ]
     },
     "RevokeWHClientCertificate": {
       "required": [
@@ -455,7 +2153,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RevokeWHClientCertificate"
+      "summary": "Revokes a client certificate from the certificate repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Identifier",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique identifier of the client or server certificate to revoke.",
+          "example": "160ae6bb538d538c70c01f81dcf2****"
+        }
+      ]
     },
     "Sign": {
       "required": [
@@ -465,7 +2174,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Sign"
+      "summary": "This operation creates a digital signature with a PCA certificate from a certificate repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Message",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The data to sign. The MessageType parameter determines the format of this data. If MessageType is set to RAW, Message is the raw data. If MessageType is set to BASE64, Message is the Base64-encoded ra",
+          "example": "MTIzNA=="
+        },
+        {
+          "name": "CertIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "The unique identifier of the certificate. You can get this value by calling the [ListCert](~~455806~~) operation. - The identifier of an SSL certificate is typically in the format '{Certificate ID}-cn",
+          "example": "1ef1da5f-38ed-69b3-****-037781890265"
+        },
+        {
+          "name": "SigningAlgorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature algorithm. Valid values: - `SHA256withRSA` - `SHA256withRSA/PSS` - `SHA256withECDSA` - `SM3withSM2` - `SHA256withRSA/P7`",
+          "example": "SHA256withRSA"
+        },
+        {
+          "name": "MessageType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The message type. Valid values: - `RAW` (default): The raw data. - `DIGEST`: The message digest (hash value) of the raw data. - `BASE64`: The Base64-encoded raw data. - `BLIND`: Enables blind signing.",
+          "example": "RAW"
+        },
+        {
+          "name": "CustomIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "A unique, user-defined identifier.",
+          "example": "***e6bb538d538c70c01f81fg3****"
+        },
+        {
+          "name": "WarehouseId",
+          "in": "query",
+          "type": "integer",
+          "description": "The repository ID. > You can get this ID by calling the [ListCertWarehouse](~~455805~~) operation.",
+          "example": "1"
+        }
+      ]
     },
     "UpdateCsr": {
       "required": [
@@ -474,7 +2231,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateCsr"
+      "summary": "Updates the private key associated with a certificate signing request (CSR).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CsrId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The unique ID of the CSR. This ID is generated when you upload a CSR. To obtain the ID, call the [ListCsr](~~2709717~~) operation.",
+          "example": "5209"
+        },
+        {
+          "name": "Key",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The content of the certificate private key in PEM format.",
+          "example": "-----BEGIN RSA PRIVATE KEY----- MII.... -----END RSA PRIVATE KEY-----"
+        }
+      ]
     },
     "UpdateDeploymentJob": {
       "required": [
@@ -482,7 +2258,53 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateDeploymentJob"
+      "summary": "Updates the configuration of a certificate deployment task, such as the certificates or target resources.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task. You can call the [CreateDeploymentJob](~~2712234~~) operation to obtain the ID of a deployment task from the JobId parameter. You can also call the [ListDeploymentJob](~",
+          "example": "8888"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the deployment task.",
+          "example": "cert-1"
+        },
+        {
+          "name": "CertIds",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the certificate. Separate multiple certificate IDs with commas (,). You can call the [ListUserCertificateOrder](~~455804~~) operation to obtain the ID of a certificate from the **Certificate",
+          "example": "9957285,12067351,12304338,12342649"
+        },
+        {
+          "name": "ResourceIds",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the cloud resource. Separate multiple resource IDs with commas (,). You can call the [ListCloudResources](~~2712230~~) operation to obtain the ID of a cloud resource from the **Id** paramete",
+          "example": "9957285,12067351,12304338,12342649"
+        },
+        {
+          "name": "ContactIds",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the contact. Separate multiple contact IDs with commas (,). You can call the [ListContact](~~2712221~~) operation to obtain the ID of a contact from the **ContactId** parameter.",
+          "example": "9957285,12067351,12304338,12342649"
+        },
+        {
+          "name": "ScheduleTime",
+          "in": "query",
+          "type": "integer",
+          "description": "The time when the task starts. The value is a UNIX timestamp. If you do not specify this parameter, the system immediately starts the task after it is created.",
+          "example": "1606482979000"
+        }
+      ]
     },
     "UpdateDeploymentJobStatus": {
       "required": [
@@ -491,7 +2313,31 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateDeploymentJobStatus"
+      "summary": "Updates the status of a certificate deployment task, such as changing from editing to pending execution.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task.",
+          "example": "8888"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The desired status of the deployment task. Valid values: - pending - scheduling - editing",
+          "enum": [
+            "pending",
+            "scheduling",
+            "editing"
+          ],
+          "example": "editing"
+        }
+      ]
     },
     "UpdateInstance": {
       "required": [
@@ -499,7 +2345,132 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateInstance"
+      "summary": "Updates the configuration of a Certificate Management Service instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "cas-cn-68n1mm16****"
+        },
+        {
+          "name": "CertificateName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the instance. When issuing a certificate, this value serves as the default certificate name.",
+          "example": "123"
+        },
+        {
+          "name": "Domain",
+          "in": "query",
+          "type": "string",
+          "description": "The domain name to bind to the certificate. Requirements are as follows: - Supports single domain names or wildcard domain names (for example, `*.aliyundoc.com`). - Supports multiple domain names. Sep",
+          "example": "test.com"
+        },
+        {
+          "name": "KeyAlgorithm",
+          "in": "query",
+          "type": "string",
+          "description": "The certificate algorithm. Default value: RSA\\_2048. - **RSA\\_2048** - **RSA\\_3072** - **RSA\\_4096** - **ECC\\_256** - **SM2**",
+          "example": "RSA_2048"
+        },
+        {
+          "name": "AutoReissue",
+          "in": "query",
+          "type": "string",
+          "description": "Whether to enable automatic management. - enable: enabled - disable: disabled",
+          "example": "enable"
+        },
+        {
+          "name": "CompanyId",
+          "in": "query",
+          "type": "integer",
+          "description": "The company information ID. Required for OV and EV certificates. Otherwise, you cannot call ApplyCertificate to request a certificate.",
+          "example": "44211"
+        },
+        {
+          "name": "ContactIdList",
+          "in": "query",
+          "type": "array",
+          "description": "The list of contact IDs. You must specify at least one contact. Otherwise, you cannot call ApplyCertificate to request a certificate.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "integer"
+            }
+          ]
+        },
+        {
+          "name": "GenerateCsrMethod",
+          "in": "query",
+          "type": "string",
+          "description": "The CSR generation method. Default value: online. - online: The system generates the CSR. The Csr field is ignored. - upload: You upload the CSR. The Csr field is required.",
+          "example": "online"
+        },
+        {
+          "name": "Csr",
+          "in": "query",
+          "type": "string",
+          "description": "The CSR content. You can generate a CSR using OpenSSL or Keytool. For more information, see [How to create a CSR file](~~42218~~).",
+          "example": "-----BEGIN CERTIFICATE REQUEST----- ...... -----END CERTIFICATE REQUEST-----"
+        },
+        {
+          "name": "ValidationMethod",
+          "in": "query",
+          "type": "string",
+          "description": "The certificate validation method. - DNS: DNS validation using TXT or CNAME records. - HTTP: File-based validation.",
+          "example": "DNS"
+        },
+        {
+          "name": "City",
+          "in": "query",
+          "type": "string",
+          "description": "The city where the company or organization of the certificate requester is located. Required when generating a CSR for a DV certificate. Default value: Beijing.",
+          "example": "Beijing"
+        },
+        {
+          "name": "Province",
+          "in": "query",
+          "type": "string",
+          "description": "The province or region where the company is located. Required when generating a CSR for a DV certificate. Default value: Beijing.",
+          "example": "Beijing"
+        },
+        {
+          "name": "CountryCode",
+          "in": "query",
+          "type": "string",
+          "description": "The country or region code of the certificate organization. For example, CN represents China, and US represents the United States. Required when generating a CSR for a DV certificate. Default value: C",
+          "example": "CN"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group to which the instance belongs.",
+          "example": "rg-ae******4wia"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "TagKey",
+              "type": "string",
+              "description": "The tag key of the instance. Valid values for N: **1** to **20**. If you specify this value, it cannot be an empty string. It can contain up to 64 characters. It cannot start with `aliyun` or `acs:`, "
+            },
+            {
+              "name": "TagValue",
+              "type": "string",
+              "description": "The tag value of the instance. Valid values for N: **1** to **20**. If you specify this value, it can be an empty string. It can contain up to 128 characters. It cannot start with `aliyun` or `acs:`, "
+            }
+          ]
+        }
+      ]
     },
     "UpdateWorkerResourceStatus": {
       "required": [
@@ -509,7 +2480,37 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateWorkerResourceStatus"
+      "summary": "Rolls back or re-executes a worker task in a certificate deployment task.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "JobId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the deployment task. You can call the [CreateDeploymentJob](~~2712234~~) operation to obtain the ID of a deployment task from the **JobId** parameter. You can also call the [ListDeploymentJo",
+          "example": "8888"
+        },
+        {
+          "name": "WorkerId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the worker task. You can call the [ListWorkerResource](~~2712224~~) operation to obtain the ID of a worker task.",
+          "example": "1234"
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The desired status of the worker resource. Valid values: - rollback",
+          "enum": [
+            "rollback"
+          ],
+          "example": "rollback"
+        }
+      ]
     },
     "UploadCsr": {
       "required": [
@@ -517,7 +2518,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UploadCsr"
+      "summary": "Uploads an existing certificate signing request (CSR) to Certificate Management Service. After the upload, you can use the CSR to apply for certificates.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the CSR. The name can be up to 50 characters long and can contain uppercase letters (A–Z), lowercase letters (a–z), digits (0–9), underscores (\\_), and hyphens (-).",
+          "example": "name"
+        },
+        {
+          "name": "Csr",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The content of the CSR.",
+          "example": "-----BEGIN CERTIFICATE REQUEST----- ...... -----END CERTIFICATE REQUEST-----"
+        },
+        {
+          "name": "Key",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the certificate's private key in PEM format.",
+          "example": "-----BEGIN RSA PRIVATE KEY----- MII.... -----END RSA PRIVATE KEY-----"
+        }
+      ]
     },
     "UploadPCACert": {
       "required": [
@@ -526,7 +2552,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UploadPCACert"
+      "summary": "Uploads a PCA certificate to a certificate warehouse.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "WarehouseId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the certificate warehouse. > Call [ListCertWarehouse](~~455805~~) to obtain this ID.",
+          "example": "1"
+        },
+        {
+          "name": "Cert",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The content of the certificate and its chain, in PEM format.",
+          "example": "-----BEGIN CERTIFICATE----- MIIEJDCCAwygAwIBAgIQITRHItTLTQizTyd3K7AMRTANBgkqhkiG9w0BAQsFADBe *******"
+        },
+        {
+          "name": "PrivateKey",
+          "in": "query",
+          "type": "string",
+          "description": "The private key of the certificate, in PEM format.",
+          "example": "-----BEGIN RSA PRIVATE KEY----- MIIEowIBAAKCAQEA5SIfpNCBoiDrZhX1H39CHwQMVD0kBNeBTWfP9xkeesvfzbOz ***"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "A custom name for the certificate.",
+          "example": "cert_name"
+        }
+      ]
     },
     "UploadUserCertificate": {
       "required": [
@@ -534,7 +2593,85 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UploadUserCertificate"
+      "summary": "Uploads a certificate and its private key to Certificate Management Service. Both SM and non-SM certificates are supported.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The custom name of the certificate. The name can be up to 63 characters long and can contain letters, digits, and underscores (\\_). > Certificate names must be unique for each user.",
+          "example": "cert-1"
+        },
+        {
+          "name": "Cert",
+          "in": "query",
+          "type": "string",
+          "description": "The content of a non-SM certificate in PEM format.",
+          "example": "-----BEGIN CERTIFICATE----- MIIF...... -----END CERTIFICATE-----"
+        },
+        {
+          "name": "Key",
+          "in": "query",
+          "type": "string",
+          "description": "The private key of a non-SM certificate in PEM format.",
+          "example": "-----BEGIN CERTIFICATE----- MIICDzCCAbagAw**** -----END CERTIFICATE-----"
+        },
+        {
+          "name": "EncryptCert",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the SM encryption certificate in PEM format. This parameter is invalid if Cert and Key are not empty.",
+          "example": "-----BEGIN CERTIFICATE----- MIICDzCCA*** -----END CERTIFICATE-----"
+        },
+        {
+          "name": "EncryptPrivateKey",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the private key of the SM encryption certificate in PEM format. This parameter is invalid if Cert and Key are not empty.",
+          "example": "-----BEGIN EC PRIVATE KEY----- MHcCAQEEI**** -----END EC PRIVATE KEY-----"
+        },
+        {
+          "name": "SignCert",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the SM signing certificate in PEM format. This parameter is invalid if Cert and Key are not empty.",
+          "example": "-----BEGIN CERTIFICATE----- MIICDzCCAbagAw**** -----END CERTIFICATE-----"
+        },
+        {
+          "name": "SignPrivateKey",
+          "in": "query",
+          "type": "string",
+          "description": "The content of the private key of the SM signing certificate in PEM format. This parameter is invalid if Cert and Key are not empty.",
+          "example": "-----BEGIN EC PRIVATE KEY----- MHcCAQEEILR**** -----END EC PRIVATE KEY-----"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group.",
+          "example": "rg-ae****vty"
+        },
+        {
+          "name": "Tags",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        }
+      ]
     },
     "Verify": {
       "required": [
@@ -545,7 +2682,63 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Verify"
+      "summary": "Verifies a data signature by using a private certificate in a certificate application repository.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Message",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The data to verify. The data must be Base64-encoded. For example, if the hexadecimal content of the data to sign is \\`\\[0x31, 0x32, 0x33, 0x34]\\`, the Base64-encoded value is \\`MTIzNA==\\`. If you set ",
+          "example": "MTIzNA=="
+        },
+        {
+          "name": "CertIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "The unique identifier of the certificate. To get this parameter, call the [ListCert](~~455806~~) operation. - The identifier for an SSL certificate is typically in the format \\`{Certificate ID}-cn-han",
+          "example": "1ef1da5f-38ed-69b3-****-037781890265"
+        },
+        {
+          "name": "SigningAlgorithm",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature algorithm. Valid values: - **SHA256withRSA** - **SHA256withRSA/PSS** - **SHA256withECDSA** - **SM3withSM2**",
+          "example": "SHA256withRSA"
+        },
+        {
+          "name": "MessageType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The message type. Valid values: - **RAW** (default): The raw data. - **DIGEST**: The message digest of the raw data.",
+          "example": "RAW"
+        },
+        {
+          "name": "SignatureValue",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The signature value. The value must be Base64-encoded.",
+          "example": "eyaC0w3ROK5b3QcHmUtAhMY/sQjKu2t3uBfnf6J/gn7JfZtyxwcCUjzXbw5jmqJQRbj1te670Bshg9kUdanKhtHFhJjU5jX+ZMMB"
+        },
+        {
+          "name": "CustomIdentifier",
+          "in": "query",
+          "type": "string",
+          "description": "The custom identifier. This key must be unique.",
+          "example": "****6bb538d538c70c01f81jh2****"
+        },
+        {
+          "name": "WarehouseId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the repository. To get this parameter, call the [ListCertWarehouse](~~453246~~) operation.",
+          "example": "1"
+        }
+      ]
     }
   }
 }

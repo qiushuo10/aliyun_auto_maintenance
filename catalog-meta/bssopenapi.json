@@ -1,10 +1,10 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "bssopenapi",
   "openApiProduct": "BssOpenApi",
   "version": "2017-12-14",
   "source": "https://api.aliyun.com/meta/v1/products/BssOpenApi/versions/2017-12-14/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:30.367Z",
+  "fetchedAt": "2026-06-10T02:58:02.708Z",
   "actions": {
     "AddAccountRelation": {
       "required": [
@@ -15,7 +15,75 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AddAccountRelation"
+      "summary": "Creates a financial relationship.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RelationType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the financial relationship. Set the value to enterprise_group.",
+          "example": "enterprise_group"
+        },
+        {
+          "name": "ParentUserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the Alibaba Cloud account that is used as the management account.",
+          "example": "1738376485192612"
+        },
+        {
+          "name": "ChildNick",
+          "in": "query",
+          "type": "string",
+          "description": "The display name of the member. This helps clarify the scenario in which the account is used.",
+          "example": "xxx project"
+        },
+        {
+          "name": "ChildUserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the Alibaba Cloud account that is used as the member.",
+          "example": "1512996702208737"
+        },
+        {
+          "name": "RequestId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the request. The ID is used to mark a request and troubleshoot a problem.",
+          "example": "32324242444"
+        },
+        {
+          "name": "PermissionCodes",
+          "in": "query",
+          "type": "array",
+          "description": "The permissions that can be granted to the member. Valid values: * SYNCHRONIZE_FINANCE_IDENTITY: allows the credit control identity to be shared with the member. * SYNCHRONIZE_FINANCE_DISCOUNT_POLICY_",
+          "example": "CHECK_TARGET_CONSUMPTION",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RoleCodes",
+          "in": "query",
+          "type": "array",
+          "description": "The roles that can be assigned to the member. Set the value to trusteeship.",
+          "example": "trusteeship",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "AllocateCostUnitResource": {
       "required": [
@@ -27,7 +95,74 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AllocateCostUnitResource"
+      "summary": "Transfers resource instances from the source cost center to the destination cost center.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "FromUnitUserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The user ID of the owner of the source cost center.",
+          "example": "273394581313325532"
+        },
+        {
+          "name": "FromUnitId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the source cost center. * A value of 0 indicates that the resources to be transferred have not been allocated to a cost center. * A value greater than 0 indicates the ID of an existing cost ",
+          "example": "0"
+        },
+        {
+          "name": "ToUnitUserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The user ID of the owner of the destination cost center.",
+          "example": "241021678450941490"
+        },
+        {
+          "name": "ToUnitId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the destination cost center. * A value of -1 indicates that the allocated resources are changed to unallocated. * A value greater than 0 indicates the ID of an existing cost center.",
+          "example": "186419"
+        },
+        {
+          "name": "ResourceInstanceList",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The resource instances to be transferred.",
+          "children": [
+            {
+              "name": "ApportionCode",
+              "type": "string",
+              "description": "The split item of the shared instance. This parameter is required only for shared instances. * Eight cloud services support bill splitting. The commodity codes of the eight services are oss, dcdn, sna"
+            },
+            {
+              "name": "CommodityCode",
+              "type": "string",
+              "required": true,
+              "description": "The commodity code of the resource instance."
+            },
+            {
+              "name": "ResourceUserId",
+              "type": "integer",
+              "required": true,
+              "description": "The user ID of the resource instance owner."
+            },
+            {
+              "name": "ResourceId",
+              "type": "string",
+              "required": true,
+              "description": "The ID of the resource instance."
+            }
+          ]
+        }
+      ]
     },
     "ApplyInvoice": {
       "required": [
@@ -39,7 +174,91 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ApplyInvoice"
+      "summary": "Submits an invoicing request.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InvoiceAmount",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The invoice amount, in cents.",
+          "example": "10000"
+        },
+        {
+          "name": "CustomerId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The invoicing customer ID. This ID corresponds to the `ID` parameter returned by the `QueryInvoicingCustomerList` operation.",
+          "example": "124132423"
+        },
+        {
+          "name": "AddressId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The mailing address ID. This ID corresponds to the `ID` parameter returned by the `QueryCustomerAddressList` operation.",
+          "example": "237958367"
+        },
+        {
+          "name": "InvoicingType",
+          "in": "query",
+          "type": "integer",
+          "description": "The invoice type. Valid values: - 0: special invoice - 1: general invoice",
+          "example": "1"
+        },
+        {
+          "name": "ProcessWay",
+          "in": "query",
+          "type": "integer",
+          "description": "The invoicing channel. This parameter must be set to 1. The following list describes the channel types: - 0: Processed by Alibaba Cloud (Not applicable to this operation) - 1: Processed by the tax pla",
+          "example": "1"
+        },
+        {
+          "name": "ApplyUserNick",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The applicant nickname. The system does not verify this value.",
+          "example": "test"
+        },
+        {
+          "name": "InvoiceByAmount",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to create an invoice for a specific amount. If you set this parameter to `true`, an invoice is created for the amount specified in the `InvoiceAmount` parameter. If you set this para",
+          "example": "true"
+        },
+        {
+          "name": "UserRemark",
+          "in": "query",
+          "type": "string",
+          "description": "The user's remarks.",
+          "example": "test"
+        },
+        {
+          "name": "SelectedIds",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The IDs of the items to be invoiced. These IDs correspond to the `ID` parameter returned by the `QueryEvaluateList` operation.",
+          "example": "384752367",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "integer"
+            }
+          ]
+        },
+        {
+          "name": "emails",
+          "in": "query",
+          "type": "string",
+          "description": "The email addresses of the invoice recipient. To specify multiple addresses, separate them with commas (,). The value cannot exceed 200 characters.",
+          "example": "aaa@aa.com,bbb@bb.com"
+        }
+      ]
     },
     "CancelOrder": {
       "required": [
@@ -47,7 +266,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelOrder"
+      "summary": "Cancels an unpaid order.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The order ID.",
+          "example": "73465432785"
+        }
+      ]
     },
     "ChangeResellerConsumeAmount": {
       "required": [
@@ -60,7 +290,65 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ChangeResellerConsumeAmount"
+      "summary": "Adjusts the consumed quota amount for a user.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AdjustType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The adjustment direction for the consumption amount. This parameter is required. Valid values: \\`increase\\` and \\`decrease\\`.",
+          "example": "increase/decrease"
+        },
+        {
+          "name": "Amount",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The adjustment amount, in CNY. The value must be greater than 0.",
+          "example": "10.00"
+        },
+        {
+          "name": "Currency",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The currency.",
+          "example": "CNY"
+        },
+        {
+          "name": "BusinessType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The business type.",
+          "example": "quota_amount_adjust"
+        },
+        {
+          "name": "Source",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The source of the request. Specify the system name.",
+          "example": "system"
+        },
+        {
+          "name": "OutBizId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the business operation. This ID is used to ensure idempotence.",
+          "example": "1647396865"
+        },
+        {
+          "name": "ExtendMap",
+          "in": "query",
+          "type": "string",
+          "description": "The extended message fields.",
+          "example": "{}"
+        }
+      ]
     },
     "ConfirmRelation": {
       "required": [
@@ -70,7 +358,68 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ConfirmRelation"
+      "summary": "Confirms an invitation from an Alibaba Cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RelationType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of relationship. Currently, only enterprise\\_group is supported.",
+          "example": "enterprise_group"
+        },
+        {
+          "name": "ParentUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The UID of the Alibaba Cloud account.",
+          "example": "1738376485192612"
+        },
+        {
+          "name": "ConfirmCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The confirmation action. Valid values: - `child_agree`: The RAM user agrees to the invitation. - `child_disagree`: The RAM user rejects the invitation. - Alibaba Cloud account cancellation confirmatio",
+          "example": "child_agree"
+        },
+        {
+          "name": "ChildUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The UID of the RAM user.",
+          "example": "1512996702208737"
+        },
+        {
+          "name": "RequestId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the request.",
+          "example": "request_id"
+        },
+        {
+          "name": "PermissionCodes",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The permissions to grant to the RAM user. Valid values: - SYNCHRONIZE\\_FINANCE\\_IDENTITY: Allows the synchronization of financial identity to the linked account. - SYNCHRONIZE\\_FINANCE\\_DISCOUNT\\_POLI",
+          "example": "SYNCHRONIZE_FINANCE_IDENTITY",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RelationId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the relationship. Obtain this value from the relationId parameter in the response of the QueryRelationList operation.",
+          "example": "51463"
+        }
+      ]
     },
     "ConvertChargeType": {
       "required": [
@@ -80,7 +429,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ConvertChargeType"
+      "summary": "Changes the billing method for an instance. You can convert Server Load Balancer (SLB), elastic IP addresses (EIPs), and NAT Gateway instances from pay-as-you-go to subscription. You can also convert SLB and EIP instances from subscription to pay-as-you-go.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The current billing method of the instance. Valid values: - Subscription: The instance is a subscription instance. - PayAsYouGo: The instance is a pay-as-you-go instance. > After a successful call, th",
+          "example": "Subscription"
+        },
+        {
+          "name": "Period",
+          "in": "query",
+          "type": "integer",
+          "description": "The subscription duration, in months. This parameter is required if you change the billing method to subscription. Valid values: - 1 to 9. - 12\\. - 24\\. - 36\\.",
+          "example": "6"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "rm-kasjgfjshgf"
+        }
+      ]
     },
     "CreateAgAccount": {
       "required": [
@@ -88,13 +478,109 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateAgAccount"
+      "summary": "Creates an account linking relationship.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "LoginEmail",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The logon email address of the member account.",
+          "example": "email"
+        },
+        {
+          "name": "AccountAttr",
+          "in": "query",
+          "type": "string",
+          "description": "The properties of the new account. In the console, click Account Properties in the top menu bar to go to the **Security Settings** page and view the properties.",
+          "example": "1"
+        },
+        {
+          "name": "EnterpriseName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the enterprise. This is the enterprise name that corresponds to the Unified Social Credit Code.",
+          "example": "阿里云测试有限公司"
+        },
+        {
+          "name": "FirstName",
+          "in": "query",
+          "type": "string",
+          "description": "The first name of the user under the level 1 category.",
+          "example": "志成"
+        },
+        {
+          "name": "LastName",
+          "in": "query",
+          "type": "string",
+          "description": "The last name of the user. Maximum length: 64 characters.",
+          "example": "吴"
+        },
+        {
+          "name": "NationCode",
+          "in": "query",
+          "type": "string",
+          "description": "The country code.",
+          "example": "CN"
+        },
+        {
+          "name": "ProvinceName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the province. This parameter is optional.",
+          "example": "北京"
+        },
+        {
+          "name": "CityName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the city in English.",
+          "example": "北京"
+        },
+        {
+          "name": "Postcode",
+          "in": "query",
+          "type": "string",
+          "description": "The postal code.",
+          "example": "350000"
+        }
+      ]
     },
     "CreateCostUnit": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCostUnit"
+      "summary": "Creates one or more cost centers.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UnitEntityList",
+          "in": "query",
+          "type": "array",
+          "description": "The list of cost centers.",
+          "children": [
+            {
+              "name": "ParentUnitId",
+              "type": "integer",
+              "required": true,
+              "description": "The ID of the parent cost center. A value of -1 indicates the root cost center."
+            },
+            {
+              "name": "OwnerUid",
+              "type": "integer",
+              "required": true,
+              "description": "The user ID of the owner of the new cost center."
+            },
+            {
+              "name": "UnitName",
+              "type": "string",
+              "required": true,
+              "description": "The name of the cost center."
+            }
+          ]
+        }
+      ]
     },
     "CreateInstance": {
       "required": [
@@ -103,7 +589,95 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateInstance"
+      "summary": "Creates an instance. If you call this operation, an order for a new instance is created and the order is automatically paid for. You cannot create Elastic Compute Service (ECS) instances or ApsaraDB RDS instances by calling the operation.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the service to which the instance belongs. You can query the service code by calling the **QueryProductList** operation or viewing **Codes of Alibaba Cloud Services**.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the service.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing method. Valid values: * Subscription: the subscription billing method. * PayAsYouGo: the pay-as-you-go billing method.",
+          "example": "Subscription"
+        },
+        {
+          "name": "Period",
+          "in": "query",
+          "type": "integer",
+          "description": "The subscription duration. Unit: month. The value must be an integral multiple of 12. > This parameter is required if you create a subscription instance.",
+          "example": "12"
+        },
+        {
+          "name": "RenewalStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The renewal method. Valid values: * AutoRenewal: The instance is automatically renewed. * ManualRenewal: The instance is manually renewed. Default value: ManualRenewal.",
+          "example": "ManualRenewal"
+        },
+        {
+          "name": "RenewPeriod",
+          "in": "query",
+          "type": "integer",
+          "description": "The auto-renewal period. Unit: month. > This parameter is required if the **RenewalStatus** parameter is set to **AutoRenewal**.",
+          "example": "12"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "The client token that is used to ensure the idempotence of the request. The server checks whether a request that uses the same client token has been received. If a request that uses the same client to",
+          "example": "JASIOFKVNVIXXXXXX"
+        },
+        {
+          "name": "Logistics",
+          "in": "query",
+          "type": "string",
+          "description": "The logistics address of this order. This parameter is generally valid for physical orders.",
+          "example": "{\"cityCode\":\"330100\",\"cityName\":\"Hangzhou\",\"contactName\":\"Test\",\"countryCode\":\"\",\"districtName\":\"Puy"
+        },
+        {
+          "name": "Parameter",
+          "in": "query",
+          "type": "array",
+          "description": "The details of the modules.",
+          "children": [
+            {
+              "name": "Value",
+              "type": "string",
+              "required": true,
+              "description": "The value property of the Nth module. Value of N: 1 to 100."
+            },
+            {
+              "name": "Code",
+              "type": "string",
+              "required": true,
+              "description": "The code property of the Nth module. Value of N: 1 to 100. If multiple module property parameters are involved, concatenate multiple parameters based on the value of N in sequence."
+            }
+          ]
+        },
+        {
+          "name": "PricingCycle",
+          "in": "query",
+          "type": "integer",
+          "description": "The cycle type of the prepaid period - PricingCycle=1 indicates that the unit of the prepaid period is in years; - PricingCycle=2 indicates that the unit of the prepaid period is in months; - PricingC",
+          "example": "2"
+        }
+      ]
     },
     "CreateResellerUserQuota": {
       "required": [
@@ -112,7 +686,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateResellerUserQuota"
+      "summary": "Creates a user quota ledger and a quota consumption ledger.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Amount",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The amount in CNY. This parameter is required to activate a quota.",
+          "example": "100"
+        },
+        {
+          "name": "Currency",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The currency.",
+          "example": "CNY：人民币。USD：美元。JPY：日元。"
+        },
+        {
+          "name": "OutBizId",
+          "in": "query",
+          "type": "string",
+          "description": "The business transaction ID of the external system.",
+          "example": "7ed0bedc-056e-4a71-9249-4581615c028f"
+        }
+      ]
     },
     "DeleteCostUnit": {
       "required": [
@@ -121,13 +721,79 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteCostUnit"
+      "summary": "Deletes a cost center.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OwnerUid",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The user ID of the cost center owner.",
+          "example": "2135342"
+        },
+        {
+          "name": "UnitId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the cost center. A value of -1 indicates the root cost center.",
+          "example": "376348"
+        }
+      ]
     },
     "DescribeCostBudgetsSummary": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeCostBudgetsSummary"
+      "summary": "Queries a summary of cost budgets.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BudgetName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the budget. Supports fuzzy search.",
+          "example": "全年预算"
+        },
+        {
+          "name": "BudgetStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the budget. If you do not specify this parameter, budgets in all statuses are returned.",
+          "enum": [
+            "notOverdue",
+            "overdue"
+          ],
+          "example": "notOverdue"
+        },
+        {
+          "name": "BudgetType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the budget. If you do not specify this parameter, budgets of all types are returned.",
+          "enum": [
+            "cost",
+            "byquantity",
+            "asset"
+          ],
+          "example": "cost"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to retrieve the next page of results. Set this parameter to the NextToken value that is returned in the response to the previous request. If you do not specify this parameter, t",
+          "example": "eyJwYWdlTnVtIjoyLCJwYWdlU2l6ZSI6NH0="
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of items to return. Valid values: 1 to 10. Default value: 10.",
+          "example": "5"
+        }
+      ]
     },
     "DescribeInstanceAmortizedCostByAmortizationPeriod": {
       "required": [
@@ -135,7 +801,108 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeInstanceAmortizedCostByAmortizationPeriod"
+      "summary": "Queries the monthly amortized costs of instances for a specified amortization month.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The amortization month. Format: YYYY-MM.",
+          "example": "2022-10"
+        },
+        {
+          "name": "ConsumePeriodFilter",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter condition for the billing cycle. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "formData",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go.",
+          "example": "Subscription"
+        },
+        {
+          "name": "ProductCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The product code. To obtain the value of this parameter, call QueryProductList or DescribeResourcePackageProduct.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductDetail",
+          "in": "formData",
+          "type": "string",
+          "description": "The details of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "CostUnitCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The code of the cost center.",
+          "example": "123#"
+        },
+        {
+          "name": "BillUserIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter condition for the ID of the bill owner. This parameter specifies the ID of a RAM user. You can set this parameter to query the bills of a RAM user. If you do not set this parameter, the bil",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "BillOwnerIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter condition for the account to which the resource belongs. The resource ownership account is the account that actually uses the resource. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "InstanceIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter condition for the instance ID. You can query multiple instances. If you do not set this parameter, all instances are queried. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "NextToken",
+          "in": "formData",
+          "type": "string",
+          "description": "The position from which to start reading the current call. The value of this parameter must be empty or the value of NextToken that is returned in the last call. Otherwise, an error is reported. If th",
+          "example": "CAESEgoQCg4KCmdtdF9jcmVhdGUEARgBIkgKCQBwhGmPcAEAAAo7AzYAAAAxTDgwMDcxMjg3ZDJhNmM3ZDguTDgwMDAwMDAwMDAw"
+        },
+        {
+          "name": "MaxResults",
+          "in": "formData",
+          "type": "integer",
+          "description": "The maximum number of data records to return. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        }
+      ]
     },
     "DescribeInstanceAmortizedCostByConsumePeriod": {
       "required": [
@@ -143,7 +910,108 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeInstanceAmortizedCostByConsumePeriod"
+      "summary": "Queries the monthly amortized cost of an instance by billing cycle.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle. Format: YYYY-MM.",
+          "example": "2022-10"
+        },
+        {
+          "name": "AmortizationPeriodFilter",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter for the amortization month. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "formData",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go.",
+          "example": "Subscription"
+        },
+        {
+          "name": "ProductCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The product code. To obtain the value of this parameter, call QueryProductList to query product information, or call DescribeResourcePackageProduct to query information about a specific resource plan.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductDetail",
+          "in": "formData",
+          "type": "string",
+          "description": "The details of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "CostUnitCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The code of the cost center.",
+          "example": "123#"
+        },
+        {
+          "name": "BillUserIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter for the ID of the bill payer. This is the ID of a RAM user. If you specify this parameter, you can view the bills of the RAM user. If you leave this parameter empty, the bills of the curren",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "BillOwnerIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter for the ID of the resource owner. The resource owner is the account that actually uses the resource. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "InstanceIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter for the instance ID. You can query multiple instances. If you leave this parameter empty, all instances are queried. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "NextToken",
+          "in": "formData",
+          "type": "string",
+          "description": "The token that is used to retrieve the next page of results. You do not need to specify this parameter for the first request. You must set the value to the token that is returned in the previous call.",
+          "example": "CAESEgoQCg4KCmdtdF9jcmVhdGUEARgBIkgKCQBwhGmPcAEAAAo7AzYAAAAxTDgwMDcxMjg3ZDJhNmM3ZDguTDgwMDAwMDAwMDAw"
+        },
+        {
+          "name": "MaxResults",
+          "in": "formData",
+          "type": "integer",
+          "description": "The maximum number of data records to return in this call. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        }
+      ]
     },
     "DescribeInstanceBill": {
       "required": [
@@ -151,7 +1019,102 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeInstanceBill"
+      "summary": "Queries the consumption summary of all product instances or billable items for an account within a billing cycle.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle in YYYY-MM format. Only billing cycles within the past 18 months are supported.",
+          "example": "2020-03"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription - PayAsYouGo: pay-as-you-go",
+          "example": "PayAsYouGo"
+        },
+        {
+          "name": "IsBillingItem",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to pull data by billing item dimension. - false (default): The data is consistent with the Instance Bill page under Expenses and Costs > Bills > Bill Details. - true: The data is con",
+          "example": "false"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that specifies the starting point for reading data. Leave this parameter empty to read the first page of results. To read the next page, set this parameter to the NextToken value that was re",
+          "example": "CAESEgoQCg4KCm"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of data records to return. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "IsHideZeroCharge",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to exclude bills where both PretaxGrossAmount and PretaxAmount are 0. - false - true",
+          "example": "false"
+        },
+        {
+          "name": "BillingDate",
+          "in": "query",
+          "type": "string",
+          "description": "The bill date. This parameter is required only when Granularity is set to DAILY. The format is YYYY-MM-DD. > The month of BillingDate must match the month of BillingCycle. For example, if BillingCycle",
+          "example": "2020-03-02"
+        },
+        {
+          "name": "Granularity",
+          "in": "query",
+          "type": "string",
+          "description": "The granularity of the bills to query. Valid values: - MONTHLY: Monthly. This corresponds to the bills on the Bills by Billing Cycle tab of the Bill Details page. - DAILY: Daily. This corresponds to t",
+          "example": "MONTHLY"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the resource ownership account. This is the account that actually uses the resources.",
+          "example": "122"
+        },
+        {
+          "name": "InstanceID",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID.",
+          "example": "abc"
+        },
+        {
+          "name": "PipCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code. This is the same as the product code on the bill in the User Center.",
+          "example": "rds"
+        }
+      ]
     },
     "DescribePricingModule": {
       "required": [
@@ -160,7 +1123,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribePricingModule"
+      "summary": "Queries the pricing modules of an Alibaba Cloud product.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the product. Call the **QueryProductList** operation to query product codes.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the product. Call the **QueryProductList** operation to query product types. > The value must be the same as the product type returned by the **QueryProductList** operation. >",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing method. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go.",
+          "example": "Subscription"
+        }
+      ]
     },
     "DescribeProductAmortizedCostByAmortizationPeriod": {
       "required": [
@@ -168,7 +1157,96 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeProductAmortizedCostByAmortizationPeriod"
+      "summary": "Queries the monthly amortized cost of products for a specified month.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The amortization month. Format: YYYY-MM.",
+          "example": "2022-10"
+        },
+        {
+          "name": "ConsumePeriodFilter",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter for billing cycle months. You can specify a maximum of 10 elements.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "formData",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go.",
+          "example": "Subscription"
+        },
+        {
+          "name": "ProductCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The product code. For more information about how to obtain this parameter, see QueryProductList and DescribeResourcePackageProduct.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductDetail",
+          "in": "formData",
+          "type": "string",
+          "description": "The details of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "CostUnitCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The code of the cost center.",
+          "example": "123#"
+        },
+        {
+          "name": "BillUserIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The IDs of billable accounts. This parameter is used to filter bills by the RAM user who pays for the resources. If you specify this parameter, you can query the bills of the specified RAM user. If yo",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "BillOwnerIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The IDs of resource owners. The resource owner is the account that uses the resources. You can specify a maximum of 10 IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "NextToken",
+          "in": "formData",
+          "type": "string",
+          "description": "The token that marks the position to start the query. If you leave this parameter empty, the query starts from the beginning. Set this parameter to the value of NextToken that is returned in the last ",
+          "example": "CAESEgoQCg4KCmdtdF9jcmVhdGUEARgBIkgKCQBwhGmPcAEAAAo7AzYAAAAxTDgwMDcxMjg3ZDJhNmM3ZDguTDgwMDAwMDAwMDAw"
+        },
+        {
+          "name": "MaxResults",
+          "in": "formData",
+          "type": "integer",
+          "description": "The maximum number of entries to return. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        }
+      ]
     },
     "DescribeProductAmortizedCostByConsumePeriod": {
       "required": [
@@ -176,7 +1254,96 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeProductAmortizedCostByConsumePeriod"
+      "summary": "Queries the monthly amortized cost of a product for a specific billing cycle.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "formData",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle. Format: YYYY-MM.",
+          "example": "2022-10"
+        },
+        {
+          "name": "AmortizationPeriodFilter",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter conditions for the amortization month. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "formData",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go.",
+          "example": "Subscription"
+        },
+        {
+          "name": "ProductCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The product code. To obtain this value, call the QueryProductList operation to query product information or the DescribeResourcePackageProduct operation to query information about a resource plan.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductDetail",
+          "in": "formData",
+          "type": "string",
+          "description": "The details of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "CostUnitCode",
+          "in": "formData",
+          "type": "string",
+          "description": "The code of the cost center.",
+          "example": "123#"
+        },
+        {
+          "name": "BillUserIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter conditions for the IDs of bill purchasers. This is the ID of a RAM user. Set this parameter to view the bills of a RAM user. If you do not set this parameter, the bills of the current accou",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "BillOwnerIdList",
+          "in": "formData",
+          "type": "array",
+          "description": "The filter conditions for the IDs of resource owners. The resource owner is the account that actually uses the resources. Maximum number of elements: 10.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "NextToken",
+          "in": "formData",
+          "type": "string",
+          "description": "The token that marks the position from which to start the query. If you leave this parameter empty, the query starts from the beginning. If you specify this parameter, set it to the value of `NextToke",
+          "example": "CAESEgoQCg4KCmdtdF9jcmVhdGUEARgBIkgKCQBwhGmPcAEAAAo7AzYAAAAxTDgwMDcxMjg3ZDJhNmM3ZDguTDgwMDAwMDAwMDAw"
+        },
+        {
+          "name": "MaxResults",
+          "in": "formData",
+          "type": "integer",
+          "description": "The maximum number of data records to return in this call. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        }
+      ]
     },
     "DescribeResourceCoverageDetail": {
       "required": [
@@ -186,7 +1353,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResourceCoverageDetail"
+      "summary": "Queries the coverage details of reserved instances (RIs) or storage capacity units (SCUs).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The beginning of the time range to query. The beginning is included in the time range. Specify the time in the format of yyyy-MM-dd HH:mm:ss.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. The end is excluded from the time range. If you do not set this parameter, the end time is the current time. Specify the time in the format of yyyy-MM-dd HH:mm:ss.",
+          "example": "2021-01-02 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity at which coverage details are queried. Valid values: MONTH, DAY, and HOUR.",
+          "example": "HOUR"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to retrieve the next page of results. You do not need to set this parameter if you query coverage details within a specific time range for the first time. The response returns a",
+          "example": "eyJwYWdlTnVtIjoyLCJwYWdlU2l6ZSI6MTB9"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of entries to return. Default value: 20. Maximum value: 300.",
+          "example": "200"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account for which you want to query coverage details. If you do not set this parameter, the data of the current Alibaba Cloud account and its RAM users is queried. To query the data of a",
+          "example": "123745698925000"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of deduction plans whose coverage details are queried. Valid values: RI and SCU.",
+          "example": "RI"
+        }
+      ]
     },
     "DescribeResourceCoverageTotal": {
       "required": [
@@ -196,7 +1418,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResourceCoverageTotal"
+      "summary": "Queries the total coverage data of reserved instances (RIs) or storage capacity units (SCUs).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The beginning of the time range to query. The beginning is included in the time range. Specify the time in the format of yyyy-MM-dd HH:mm:ss.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. The end is excluded from the time range. If you do not set this parameter, the end time is the current time. Specify the time in the format of yyyy-MM-dd HH:mm:ss.",
+          "example": "2021-01-02 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity at which total coverage data is queried. Valid values: MONTH, DAY, and HOUR.",
+          "example": "HOUR"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account for which you want to query total coverage data. If you do not set this parameter, the data of the current Alibaba Cloud account and its RAM users is queried. To query the data o",
+          "example": "123745698925000"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of deduction plans whose total coverage data is queried. Valid values: RI and SCU.",
+          "example": "RI"
+        }
+      ]
     },
     "DescribeResourcePackageProduct": {
       "required": [
@@ -204,7 +1467,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResourcePackageProduct"
+      "summary": "Queries the information about resource plans of an Alibaba Cloud service.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the service.",
+          "example": "ossbag"
+        }
+      ]
     },
     "DescribeResourceUsageDetail": {
       "required": [
@@ -214,7 +1488,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResourceUsageDetail"
+      "summary": "Queries the usage details of reserved instances (RIs) or storage capacity units (SCUs).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The beginning of the time range to query. The beginning is included in the time range. Specify the time in the yyyy-MM-dd HH:mm:ss format.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. The end is excluded from the time range. If you do not set this parameter, the end time is the current time. Specify the time in the format of yyyy-MM-dd HH:mm:ss.",
+          "example": "2021-01-02 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity at which usage details are queried. Valid values: MONTH, DAY, and HOUR.",
+          "example": "HOUR"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. You do not need to specify this parameter for the first request. You must specify the token that is obtained fr",
+          "example": "eyJwYWdlTnVtIjoyLCJwYWdlU2l6ZSI6MTB9"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of entries to return. Default value: 20. The maximum value is 300.",
+          "example": "200"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account whose data you want to query. If you do not specify this parameter, the data of the current Alibaba Cloud account and its Resource Access Management (RAM) users is queried. To qu",
+          "example": "123745698925000"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of deduction plan whose usage details are queried. Valid values: RI and SCU.",
+          "example": "RI"
+        }
+      ]
     },
     "DescribeResourceUsageTotal": {
       "required": [
@@ -224,7 +1553,57 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeResourceUsageTotal"
+      "summary": "Queries the total usage data of reserved instances or storage capacity units (SCUs).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The beginning of the time range to query. Specify the time in the yyyy-MM-dd HH:mm:ss format. The specified time is included in the time range.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. Specify the time in the yyyy-MM-dd HH:mm:ss format. The specified time is excluded from the time range. If you do not specify this parameter, this parameter is set ",
+          "example": "2021-01-02 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity at which the data is queried. Valid values: MONTH, DAY, and HOUR.",
+          "enum": [
+            "MONTH",
+            "HOUR",
+            "DAY"
+          ],
+          "example": "HOUR"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account whose data you want to query. If you do not specify this parameter, the data of the current account and its linked accounts is queried. To query the data of a linked account, spe",
+          "example": "123745698925000"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resource plan. Valid values: RI and SCU.",
+          "enum": [
+            "SCU",
+            "RI"
+          ],
+          "example": "RI"
+        }
+      ]
     },
     "DescribeSavingsPlansCoverageDetail": {
       "required": [
@@ -233,7 +1612,69 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeSavingsPlansCoverageDetail"
+      "summary": "Queries detailed information about savings plan coverage.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The beginning of the time range to query. The start time is inclusive. The time format is yyyy-MM-dd HH:mm:ss.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. The end time is exclusive. If you do not set this parameter, the current time is used as the end time. The time format is yyyy-MM-dd HH:mm:ss.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity for the usage summary. Valid values: MONTH, DAY, and HOUR.",
+          "example": "HOUR"
+        },
+        {
+          "name": "Token",
+          "in": "query",
+          "type": "string",
+          "description": "The token for paging. Leave this empty for the first query. The response includes a token for the next page. An empty token means all data has been returned.",
+          "example": "eyJwYWdlTnVtIjoyLCJwYWdlU2l6ZSI6MTB9"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of results to return.",
+          "example": "20"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns the resource. The resource owner is the account that uses the resource.",
+          "example": "123745698925000"
+        },
+        {
+          "name": "FilterParam",
+          "in": "query",
+          "type": "object",
+          "children": [
+            {
+              "name": "Dimensions",
+              "type": "array"
+            },
+            {
+              "name": "Tags",
+              "type": "array"
+            }
+          ]
+        }
+      ]
     },
     "DescribeSavingsPlansCoverageTotal": {
       "required": [
@@ -242,7 +1683,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeSavingsPlansCoverageTotal"
+      "summary": "Queries the total coverage of savings plans.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The start time of the savings plan. Format: yyyy-MM-dd HH:mm:ss. The query includes this time.",
+          "example": "2021-07-15 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end time of the savings plan. Format: yyyy-MM-dd HH:mm:ss. The query excludes this time. If empty, the query ends at the current time.",
+          "example": "2021-07-20 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time dimension of the savings plan. MONTH: monthly. DAY: daily. HOUR: hourly.",
+          "example": "HOUR"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the resource ownership account. This is the account that actually uses the resources.",
+          "example": "123745698925000"
+        },
+        {
+          "name": "FilterParam",
+          "in": "query",
+          "type": "object",
+          "children": [
+            {
+              "name": "Dimensions",
+              "type": "array"
+            },
+            {
+              "name": "Tags",
+              "type": "array"
+            }
+          ]
+        }
+      ]
     },
     "DescribeSavingsPlansUsageDetail": {
       "required": [
@@ -251,7 +1740,69 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeSavingsPlansUsageDetail"
+      "summary": "Queries the usage details of savings plans.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The start of the time range to query. The format is yyyy-MM-dd HH:mm:ss. The query includes data from this time.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. The format is yyyy-MM-dd HH:mm:ss. The query does not include data from this time. If you leave this parameter empty, the query ends at the current time.",
+          "example": "2021-01-02 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity of the usage summary. Valid values: MONTH, DAY, and HOUR.",
+          "example": "HOUR"
+        },
+        {
+          "name": "Token",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token. For the first query, leave this parameter empty. The response returns a token for the next page. If the returned token is empty, all data has been retrieved.",
+          "example": "eyJwYWdlTnVtIjoyLCJwYWdlU2l6ZSI6MTB9"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of data records to return on each page. The default value is 20. The maximum value is 300.",
+          "example": "300"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account for which you want to query usage details. If you leave this parameter empty, the system queries data for the current account and its trusteeship linked accounts. Specify the ID ",
+          "example": "123745698925000"
+        },
+        {
+          "name": "FilterParam",
+          "in": "query",
+          "type": "object",
+          "children": [
+            {
+              "name": "Dimensions",
+              "type": "array"
+            },
+            {
+              "name": "Tags",
+              "type": "array"
+            }
+          ]
+        }
+      ]
     },
     "DescribeSavingsPlansUsageTotal": {
       "required": [
@@ -260,7 +1811,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeSavingsPlansUsageTotal"
+      "summary": "Queries the total usage of savings plans.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartPeriod",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The beginning of the time range to query. The beginning of the time range is included in the query. The time is in the yyyy-MM-dd HH:mm:ss format.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "EndPeriod",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. The end of the time range is not included in the query. If you do not specify this parameter, the current time is used. The time is in the yyyy-MM-dd HH:mm:ss forma",
+          "example": "2021-01-02 00:00:00"
+        },
+        {
+          "name": "PeriodType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity of the usage summary to query. Valid values: MONTH, DAY, and HOUR.",
+          "example": "HOUR"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns the resource. The resource owner is the account that uses the resource.",
+          "example": "123745698925000"
+        },
+        {
+          "name": "FilterParam",
+          "in": "query",
+          "type": "object",
+          "children": [
+            {
+              "name": "Dimensions",
+              "type": "array"
+            },
+            {
+              "name": "Tags",
+              "type": "array"
+            }
+          ]
+        }
+      ]
     },
     "DescribeSplitItemBill": {
       "required": [
@@ -268,25 +1867,157 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeSplitItemBill"
+      "summary": "Queries split bills.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle. Format: YYYY-MM.",
+          "example": "2020-03"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The billing method. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go. > This parameter must be used with the ProductCode parameter.",
+          "example": "PayAsYouGo"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to retrieve the next page of results. You do not need to specify this parameter for the first request. The value is the NextToken value that is returned in the previous API call",
+          "example": "CAESEgoQCg4KCmd"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of entries to return. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns the resource. The account that owns the resource is the account that actually uses the resource.",
+          "example": "123"
+        },
+        {
+          "name": "InstanceID",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance.",
+          "example": "i-kjhdskjgshfdlkjfdh"
+        },
+        {
+          "name": "SplitItemID",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the split item.",
+          "example": "i-kjhdskjgshfdlkjfdh"
+        },
+        {
+          "name": "Granularity",
+          "in": "query",
+          "type": "string",
+          "description": "The granularity to query bills. Valid values: - MONTHLY: queries bills by month. The data is consistent with the data on the Billing Cycle tab of the Split Bill page in User Center. - DAILY: queries b",
+          "example": "Monthly"
+        },
+        {
+          "name": "BillingDate",
+          "in": "query",
+          "type": "string",
+          "description": "The billing date. This parameter is required only when the Granularity parameter is set to DAILY. Format: YYYY-MM-DD.",
+          "example": "2020-03-02"
+        },
+        {
+          "name": "TagFilter",
+          "in": "query",
+          "type": "array",
+          "description": "The tag filter. You can specify multiple tag values for the TagValues parameter. The relationship between multiple tag values is OR.",
+          "children": [
+            {
+              "name": "TagValues",
+              "type": "array",
+              "description": "The tag values. A list of strings. TagValues.N can be 1 to 20, and 1 to 128 characters in length. - If you specify the TagValues.N parameter, you must also specify TagFilter.N.TagKey. Otherwise, an In"
+            },
+            {
+              "name": "TagKey",
+              "type": "string",
+              "description": "Specifies the tag key for filtering cost allocation or billing data. - Valid range for N: 1 to 20 (you can define up to 20 tag filters). - Length: 1 to 128 characters. Behavior: - If you specify only "
+            }
+          ]
+        },
+        {
+          "name": "IsHideZeroCharge",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to filter out bills for which the PretaxGrossAmount and PretaxAmount are both 0. Valid values: - false - true",
+          "example": "false"
+        },
+        {
+          "name": "PipCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the product. This code is consistent with the product code on the bill in User Center.",
+          "example": "rds"
+        }
+      ]
     },
     "GetAccountRelation": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccountRelation"
+      "summary": "Queries the details of a financial relationship.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "RelationId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the financial relationship. Value returned by calling the AddAccountRelation operation.",
+          "example": "1234"
+        },
+        {
+          "name": "RequestId",
+          "in": "query",
+          "type": "string",
+          "description": "The unique ID of the request. The ID is used to mark a request and troubleshoot a problem.",
+          "example": "requestId"
+        }
+      ]
     },
     "GetCustomerAccountInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCustomerAccountInfo"
+      "summary": "Queries the account information of a customer.",
+      "method": "POST"
     },
     "GetCustomerList": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCustomerList"
+      "summary": "Queries the IDs of customers of a virtual network operator (VNO).",
+      "method": "POST"
     },
     "GetOrderDetail": {
       "required": [
@@ -294,7 +2025,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetOrderDetail"
+      "summary": "Queries the details of an order that belongs to your Alibaba Cloud account or distributors.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OrderId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The order ID.",
+          "example": "32453453"
+        }
+      ]
     },
     "GetPayAsYouGoPrice": {
       "required": [
@@ -304,7 +2046,67 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetPayAsYouGoPrice"
+      "summary": "Queries the prices of pay-as-you-go products.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product code.",
+          "example": "ecs"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "ecs"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The subscription type. Valid value: PayAsYouGo.",
+          "example": "PayAsYouGo"
+        },
+        {
+          "name": "Region",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the region where the instance resides.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "ModuleList",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of pricing modules.",
+          "children": [
+            {
+              "name": "ModuleCode",
+              "type": "string",
+              "required": true,
+              "description": "The code of the Nth pricing module. > Obtain the module code by calling the [DescribePricingModule](~~96469~~) operation."
+            },
+            {
+              "name": "PriceType",
+              "type": "string",
+              "required": true,
+              "description": "The price type of the Nth pricing module. Valid values: - Hour: hourly price. - Usage: usage. - Month: monthly price. - Year: yearly price. > Obtain the price type by calling the [DescribePricingModul"
+            },
+            {
+              "name": "Config",
+              "type": "string",
+              "required": true,
+              "description": "The configuration of the Nth pricing module. The value of N can be an integer from 1 to 50. The configuration is in the \"AA:aa,BB:bb\" format. In this format, AA and BB are the property codes of the pr"
+            }
+          ]
+        }
+      ]
     },
     "GetResourcePackagePrice": {
       "required": [
@@ -315,7 +2117,70 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetResourcePackagePrice"
+      "summary": "Queries the price of a resource plan.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of service. You can query the service code by calling the **QueryProductList** operation or viewing **Codes of Alibaba Cloud Services**.",
+          "example": "ossbag"
+        },
+        {
+          "name": "PackageType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resource plan. The value must be the same as the value of the **ProductCode** parameter that is returned when you call the **DescribeResourcePackageProduct** operation.",
+          "example": "FPT_ossbag_periodMonthlyAcc_NetworkOut_finance_common"
+        },
+        {
+          "name": "EffectiveDate",
+          "in": "query",
+          "type": "string",
+          "description": "The time when the resource plan takes effect. If you do not specify this parameter, the resource plan immediately takes effect by default. When the **OrderType** is **BUY**, resource packs with the **",
+          "example": "2020-02-10T12:00:00Z"
+        },
+        {
+          "name": "Specification",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The specifications of the resource plan.",
+          "example": "500"
+        },
+        {
+          "name": "Duration",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The validity period of the resource plan. The value must be the same as the duration of the resource plan specified in the specifications.",
+          "example": "6"
+        },
+        {
+          "name": "PricingCycle",
+          "in": "query",
+          "type": "string",
+          "description": "The unit of validity period of the resource plan. Valid values: - Month - Year",
+          "example": "Month"
+        },
+        {
+          "name": "OrderType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the order. Valid values: - BUY: You place the order to purchase an instance. - UPGRADE: You place the order to upgrade an instance. - RENEW: You place the order to renew an instance. Defau",
+          "example": "BUY"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance. **This parameter is required when the order type is renewal or upgrade.**",
+          "example": "OSSBAG-cn-0xl0002"
+        }
+      ]
     },
     "GetSubscriptionPrice": {
       "required": [
@@ -326,13 +2191,144 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetSubscriptionPrice"
+      "summary": "This operation queries the price of a subscription product.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ServicePeriodUnit",
+          "in": "query",
+          "type": "string",
+          "description": "The unit of the subscription duration. Valid values: - Year - Month",
+          "example": "Year"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The subscription type. The value is fixed as `Subscription`.",
+          "example": "Subscription"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product code.",
+          "example": "ecs"
+        },
+        {
+          "name": "OrderType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The order type. Valid values: - `NewOrder`: a new purchase. - `Renewal`: a renewal. - `Upgrade`: an upgrade.",
+          "example": "NewOrder"
+        },
+        {
+          "name": "ServicePeriodQuantity",
+          "in": "query",
+          "type": "integer",
+          "description": "The subscription duration.",
+          "example": "1"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type. Whether this parameter is required depends on the pricing documentation of the specific product.",
+          "example": "ecs"
+        },
+        {
+          "name": "Region",
+          "in": "query",
+          "type": "string",
+          "description": "The region ID.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID for which you want to query the price. This parameter is required for upgrades (when `OrderType` is set to `Upgrade`) to obtain the pre-upgrade configuration of the instance.",
+          "example": "i-khkjhxxxxxxxxx"
+        },
+        {
+          "name": "Quantity",
+          "in": "query",
+          "type": "integer",
+          "description": "The quantity.",
+          "example": "1"
+        },
+        {
+          "name": "ModuleList",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of pricing modules.",
+          "children": [
+            {
+              "name": "ModuleStatus",
+              "type": "integer",
+              "description": "This parameter is required only when `OrderType` is set to `Upgrade`. It specifies the change status of the pricing module. Valid values: - 1: Added. - 2: Changed. If the configuration of a pricing mo"
+            },
+            {
+              "name": "ModuleCode",
+              "type": "string",
+              "required": true,
+              "description": "The pricing module code."
+            },
+            {
+              "name": "Tag",
+              "type": "string",
+              "description": "This parameter is required only for upgrades or downgrades of some products. It specifies the identifier of a specific resource. For example, if you change disk specifications, you can use this parame"
+            },
+            {
+              "name": "Config",
+              "type": "string",
+              "required": true,
+              "description": "The configuration of the pricing module. n is an integer from 1 to 50. The value must be in the \"AA:aa,BB:bb\" format. In this format, `AA` and `BB` are property identifiers of the pricing module, and "
+            }
+          ]
+        }
+      ]
     },
     "InquiryPriceRefundInstance": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "InquiryPriceRefundInstance"
+      "summary": "Queries the refundable amount for an instance from which you want to unsubscribe.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is required for scenarios that need idempotence. The UUID that is used to ensure the idempotence of the request.",
+          "example": "793F021C-B589-1225-82A9-99232AEBE494"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the service. This parameter is required for unsubscription scenarios.",
+          "example": "ecs"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance. This parameter is required for unsubscription scenarios.",
+          "example": "i-bp1etb69sqxgl4*******"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the service. This parameter is required for unsubscription scenarios. Unless otherwise specified, set this parameter to an empty string.",
+          "example": "”“"
+        }
+      ]
     },
     "ModifyAccountRelation": {
       "required": [
@@ -341,13 +2337,122 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ModifyAccountRelation"
+      "summary": "Adds or deletes permissions for an account linking relationship.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RelationType",
+          "in": "query",
+          "type": "string",
+          "description": "The relationship type. Currently, only enterprise\\_group is supported.",
+          "example": "enterprise_group"
+        },
+        {
+          "name": "RelationOperation",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The action to perform. Valid values: - ADD: Adds the permission. - DELETE: Deletes the permission.",
+          "example": "ADD"
+        },
+        {
+          "name": "ParentUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The UID of the Alibaba Cloud account.",
+          "example": "1738376485192612"
+        },
+        {
+          "name": "ChildNick",
+          "in": "query",
+          "type": "string",
+          "description": "The display name. This name is shown on the page to help you identify the use case of the account.",
+          "example": "用户昵称"
+        },
+        {
+          "name": "ChildUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The UID of the member account.",
+          "example": "1512996702208737"
+        },
+        {
+          "name": "RequestId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the request. This ID is used to mark a request and troubleshoot issues.",
+          "example": "request_id"
+        },
+        {
+          "name": "RoleCodes",
+          "in": "query",
+          "type": "array",
+          "description": "Modifying roles is not supported.",
+          "example": "trusteeship",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "PermissionCodes",
+          "in": "query",
+          "type": "array",
+          "description": "The permissions that can be modified. Valid values: - SYNCHRONIZE\\_FINANCE\\_IDENTITY: Allow synchronizing the credit control identity with the linked account. - SYNCHRONIZE\\_FINANCE\\_DISCOUNT\\_POLICY\\",
+          "example": "SYNCHRONIZE_FINANCE_IDENTITY",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "RelationId",
+          "in": "query",
+          "type": "integer",
+          "description": "The relationship ID. Obtain this value from the relationId field returned by the QueryRelationList operation.",
+          "example": "51463"
+        }
+      ]
     },
     "ModifyCostUnit": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ModifyCostUnit"
+      "summary": "Modifies one or more cost centers.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UnitEntityList",
+          "in": "query",
+          "type": "array",
+          "description": "A list of cost centers.",
+          "children": [
+            {
+              "name": "UnitId",
+              "type": "integer",
+              "required": true,
+              "description": "The ID of the cost center."
+            },
+            {
+              "name": "NewUnitName",
+              "type": "string",
+              "required": true,
+              "description": "The new name of the cost center."
+            },
+            {
+              "name": "OwnerUid",
+              "type": "integer",
+              "required": true,
+              "description": "The user ID of the cost center owner."
+            }
+          ]
+        }
+      ]
     },
     "ModifyInstance": {
       "required": [
@@ -357,13 +2462,82 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ModifyInstance"
+      "summary": "Modifies the configuration of an instance resource. Calling this operation creates an order to modify the instance configuration and automatically completes the payment. This operation does not support configuration changes for ECS or RDS products. To do so, call the product-specific API operation instead.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing method. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go.",
+          "example": "Subscription"
+        },
+        {
+          "name": "ModifyType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of configuration change. Valid values: - Upgrade - Downgrade",
+          "example": "Upgrade"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance whose configuration you want to change.",
+          "example": "rm-akjhkdsjhfskjfhd"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "The client token that is used to ensure the idempotence of the request.",
+          "example": "JAKSJFHFAKJSF"
+        },
+        {
+          "name": "Parameter",
+          "in": "query",
+          "type": "array",
+          "description": "The list of parameters. You can specify up to 100 parameters.",
+          "children": [
+            {
+              "name": "Value",
+              "type": "string",
+              "required": true,
+              "description": "The value of the module property."
+            },
+            {
+              "name": "Code",
+              "type": "string",
+              "required": true,
+              "description": "The code of the module property. > Specify only the module properties that you want to change. For example, if you have two properties, A and B, and you only want to change property A, pass only the i"
+            }
+          ]
+        }
+      ]
     },
     "QueryAccountBalance": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryAccountBalance"
+      "summary": "Queries the user's account balance.",
+      "method": "POST"
     },
     "QueryAccountBill": {
       "required": [
@@ -371,25 +2545,336 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryAccountBill"
+      "summary": "Queries account spending within a billing cycle and aggregates the data by resource owner.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing date. Format: YYYY-MM.",
+          "example": "2018-07"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. The default value is 20. The maximum value is 300.",
+          "example": "20"
+        },
+        {
+          "name": "IsGroupByProduct",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to aggregate the results by product code. - true: Results are aggregated by product code. - false: Results are not aggregated by product code. Default value: false.",
+          "example": "false"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns and actually uses the resource.",
+          "example": "122"
+        },
+        {
+          "name": "Granularity",
+          "in": "query",
+          "type": "string",
+          "description": "The granularity for querying the bill. Valid values: - MONTHLY: Queries bills on a monthly basis. Corresponds to the monthly bills in **Expenses & Costs&#xA;**> **Bills&#xA;**> **Bill Details&#xA;**. ",
+          "example": "MONTHLY"
+        },
+        {
+          "name": "BillingDate",
+          "in": "query",
+          "type": "string",
+          "description": "The billing date. This parameter is required only when you set Granularity to DAILY. Format: YYYY-MM-DD.",
+          "example": "2021-06-01"
+        }
+      ]
     },
     "QueryAccountTransactionDetails": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryAccountTransactionDetails"
+      "summary": "Queries the details of account transactions (income and expenditure).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TransactionNumber",
+          "in": "query",
+          "type": "string",
+          "description": "The transaction number.",
+          "example": "410874027490089"
+        },
+        {
+          "name": "RecordID",
+          "in": "query",
+          "type": "string",
+          "description": "The order number or bill number.",
+          "example": "2022120336190912"
+        },
+        {
+          "name": "TransactionChannelSN",
+          "in": "query",
+          "type": "string",
+          "description": "The transaction serial number (SN) assigned by the payment channel.",
+          "example": "2022112122001470591458665933"
+        },
+        {
+          "name": "CreateTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The start of the creation time range.",
+          "example": "2022-01-20"
+        },
+        {
+          "name": "CreateTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the creation time range.",
+          "example": "2022-12-20"
+        },
+        {
+          "name": "TransactionType",
+          "in": "query",
+          "type": "string",
+          "description": "Valid values: - Payment - Withdraw - Refund - Consumption - Transfer - Adjust",
+          "example": "Payment"
+        },
+        {
+          "name": "TransactionChannel",
+          "in": "query",
+          "type": "string",
+          "description": "Valid values: - AccountBalance: Account balance - BankTransfer: Bank transfer - Alipay: Alipay - AntCreditPay: Ant Credit Pay - OfflineRemittance: Offline remittance - RegularBankCreditRefund: Credit ",
+          "example": "AccountBalance"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token for a paged query.",
+          "example": "ABEDSDS124DASA"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "This parameter is not in use.",
+          "example": "0"
+        }
+      ]
     },
     "QueryAccountTransactions": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryAccountTransactions"
+      "summary": "Queries transactions within your Alibaba Cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TransactionNumber",
+          "in": "query",
+          "type": "string",
+          "description": "The number of the transaction.",
+          "example": "133314076"
+        },
+        {
+          "name": "RecordID",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the order or bill.",
+          "example": "20200302"
+        },
+        {
+          "name": "TransactionChannelSN",
+          "in": "query",
+          "type": "string",
+          "description": "The serial number of the transaction channel.",
+          "example": "12342134"
+        },
+        {
+          "name": "CreateTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the creation time range to query. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. Example: 2018-01-01T00:00:00Z.",
+          "example": "2020-03-05T01:46:09Z"
+        },
+        {
+          "name": "CreateTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the creation time range to query. By default, the transactions in the last month are queried. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. Example: 2018-01-",
+          "example": "2020-03-06T01:55:00Z"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value is 20.",
+          "example": "10"
+        },
+        {
+          "name": "TransactionType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the transaction. If you specify one of the following transaction types for this parameter, the results for the specified transaction type are returned. If the transaction type that you spe",
+          "enum": [
+            "Adjust",
+            "Payment",
+            "Refund",
+            "Withdraw",
+            "Consumption",
+            "Pay_Fail_Refund",
+            "Transfer"
+          ],
+          "example": "Payment"
+        },
+        {
+          "name": "TransactionFlow",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the transaction flow. If you specify one of the following types for this parameter, the results for the specified type are returned. If the type that you specify does not belong to the fol",
+          "enum": [
+            "Income",
+            "Expense"
+          ],
+          "example": "Income"
+        },
+        {
+          "name": "TransactionChannel",
+          "in": "query",
+          "type": "string",
+          "description": "The transaction channel. If you specify one of the following transaction channels for this parameter, the results for the specified transaction channel are returned. If the transaction channel that yo",
+          "enum": [
+            "Alipay",
+            "AntCreditPay",
+            "MyBankCredit",
+            "HuaxiaBankCInstallment",
+            "BankTransfer",
+            "OfflineRemittance",
+            "CreditCard",
+            "AccountBalance",
+            "RegularBankCreditRefund",
+            "ApplePay"
+          ],
+          "example": "AccountBalance"
+        }
+      ]
     },
     "QueryAvailableInstances": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryAvailableInstances"
+      "summary": "Queries available instances.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Region",
+          "in": "query",
+          "type": "string",
+          "description": "The region.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. The default value is 20. The maximum value is 300.",
+          "example": "20"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code. You can call the **QueryProductList** operation to query the product code. > Required when you specify the Region parameter.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. - Subscription: subscription - PayAsYouGo: pay-as-you-go",
+          "example": "Subscription"
+        },
+        {
+          "name": "InstanceIDs",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID. You can specify up to 100 instance IDs. Separate multiple IDs with commas (,).",
+          "example": "rm-xxxxxxxxxxxx"
+        },
+        {
+          "name": "EndTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the end time range. The time must be in UTC and in the ISO 8601 format. For example, 2016-05-23T12:00:00Z.",
+          "example": "2016-05-23T12:00:00Z"
+        },
+        {
+          "name": "EndTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the end time range. The time must be in UTC and in the ISO 8601 format. For example, 2016-05-23T12:00:00Z.",
+          "example": "2016-05-23T12:00:00Z"
+        },
+        {
+          "name": "CreateTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the creation time range. The time must be in UTC and in the ISO 8601 format.",
+          "example": "2016-05-23T12:00:00Z"
+        },
+        {
+          "name": "CreateTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the creation time range. The time must be in UTC and in the ISO 8601 format.",
+          "example": "2016-05-23T12:00:00Z"
+        },
+        {
+          "name": "RenewStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The renewal status. Valid values: - AutoRenewal: auto-renewal - ManualRenewal: manual renewal - NotRenewal: no renewal",
+          "example": "AutoRenewal"
+        }
+      ]
     },
     "QueryBill": {
       "required": [
@@ -397,7 +2882,74 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryBill"
+      "summary": "Queries the settlement bills for an account in a specified billing cycle.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle. The format is YYYY-MM.",
+          "example": "2018-07"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "description": "The type. Valid values: - SubscriptionOrder - PayAsYouGoBill - Refund - Adjustment",
+          "example": "SubscriptionOrder"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription - PayAsYouGo > This parameter must be used with the ProductCode parameter.",
+          "example": "Subscription"
+        },
+        {
+          "name": "IsHideZeroCharge",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to exclude bills with a pretax gross amount (PretaxGrossAmount) of 0. The default value is false. This ensures backward compatibility. - true: Yes. - false: No.",
+          "example": "true"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns the resource. This is the account that actually uses the resource.",
+          "example": "123"
+        }
+      ]
     },
     "QueryBillOverview": {
       "required": [
@@ -405,19 +2957,83 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryBillOverview"
+      "summary": "Retrieves the bill overview for an account for a specified billing cycle.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle in `YYYY-MM` format.",
+          "example": "2018-07"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The billing method. Valid values: - `Subscription`: The subscription billing method. - `PayAsYouGo`: The pay-as-you-go billing method.",
+          "example": "Subscription"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the resource owner account. This refers to the account that uses the resource.",
+          "example": "1234"
+        }
+      ]
     },
     "QueryBillToOSSSubscription": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryBillToOSSSubscription"
+      "summary": "Queries the subscribed bills that are stored in Object Storage Service (OSS) bucket.",
+      "method": "POST"
     },
     "QueryCashCoupons": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryCashCoupons"
+      "summary": "Queries the information about vouchers.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ExpiryTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end time of the validity period of the voucher. Specify the parameter in the yyyy-MM-ddTHH:mm:ssZ format. Example: 2018-08-01T00:00:00Z.",
+          "example": "2018-08-01T00:00:00Z"
+        },
+        {
+          "name": "ExpiryTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The start time of the validity period of the voucher. Specify the parameter in the yyyy-MM-ddTHH:mm:ssZ format. Example: 2018-08-01T00:00:00Z.",
+          "example": "2018-08-01T00:00:00Z"
+        },
+        {
+          "name": "EffectiveOrNot",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the voucher takes effect. Valid values: * true: The voucher takes effect. * false: The voucher does not take effect.",
+          "example": "true"
+        }
+      ]
     },
     "QueryCommodityList": {
       "required": [
@@ -425,7 +3041,29 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryCommodityList"
+      "summary": "Queries a list of commodity information by product code.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product code.",
+          "example": "ecs"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language. If you do not specify this parameter, the default value \\`zh\\` (Chinese) is used.",
+          "enum": [
+            "en",
+            "zh"
+          ],
+          "example": "en"
+        }
+      ]
     },
     "QueryCostUnit": {
       "required": [
@@ -434,7 +3072,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryCostUnit"
+      "summary": "Queries all cost centers within the current node of the cost center tree. If the ParentUnitId parameter is set to -1, all cost centers are queried.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OwnerUid",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The user ID of the cost center owner.",
+          "example": "28394563429587"
+        },
+        {
+          "name": "ParentUnitId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the parent cost center. A value of -1 indicates the root cost center.",
+          "example": "-1"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. A maximum of 300 entries can be returned per page.",
+          "example": "20"
+        }
+      ]
     },
     "QueryCostUnitResource": {
       "required": [
@@ -443,13 +3114,47 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryCostUnitResource"
+      "summary": "Queries the resource instances that are allocated to a cost center. If the unitId parameter is set to 0, the unallocated primary resource instances and sub-resource instances are queried.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "OwnerUid",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The user ID of the cost center owner.",
+          "example": "23453245"
+        },
+        {
+          "name": "UnitId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The ID of the cost center.",
+          "example": "235325"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "20"
+        }
+      ]
     },
     "QueryCustomerAddressList": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryCustomerAddressList"
+      "summary": "Queries the mailing addresses for Alibaba Cloud invoices.",
+      "method": "POST"
     },
     "QueryDPUtilizationDetail": {
       "required": [
@@ -459,13 +3164,189 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryDPUtilizationDetail"
+      "summary": "Queries the usage of resource plans, including reserved instances (RIs) and storage capacity units (SCUs).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance to query. If this parameter is not specified, the details of all used instances are returned.",
+          "example": "oss-123123"
+        },
+        {
+          "name": "InstanceSpec",
+          "in": "query",
+          "type": "string",
+          "description": "The instance type of the instance.",
+          "example": "Instancetyp"
+        },
+        {
+          "name": "CommodityCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the resource, such as ecsRi and scu_bag. If this parameter is specified, the ProdCode parameter does not take effect for the request.",
+          "example": "ecsRi"
+        },
+        {
+          "name": "DeductedInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the deducted instance. If this parameter is not specified, the details of all instances are returned.",
+          "example": "oss-123123"
+        },
+        {
+          "name": "StartTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The beginning of the time range to query. Specify the time in the YYYY-MM-DD HH:mm:ss format.",
+          "example": "2019-05-23 12:00:00"
+        },
+        {
+          "name": "EndTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The end of the time range to query. Specify the time in the YYYY-MM-DD HH:mm:ss format.",
+          "example": "2019-05-23 12:00:00"
+        },
+        {
+          "name": "LastToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to retrieve the next page of results. For the first query, set the value to null. For subsequent queries, set the value to the token that is obtained from the NextToken paramete",
+          "example": "CAESF***zNTAw"
+        },
+        {
+          "name": "Limit",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "IncludeShare",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "Specifies whether to query the resource plan usage of linked accounts. Valid values: * true: queries the resource plan usage of linked accounts. * false: does not query the resource plan usage of link",
+          "example": "true"
+        },
+        {
+          "name": "ProdCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the service. Example: ecs.",
+          "example": "oss"
+        }
+      ]
     },
     "QueryEvaluateList": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryEvaluateList"
+      "summary": "Queries a list of objects that are eligible for invoicing.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "integer",
+          "description": "The type. Valid values: - 1: queries objects with a negative invoiceable amount. - 2: queries objects with a positive invoiceable amount. - 3: queries all objects with a non-zero invoiceable amount. -",
+          "example": "1"
+        },
+        {
+          "name": "OutBizId",
+          "in": "query",
+          "type": "string",
+          "description": "The order ID, bill ID, or contract ID.",
+          "example": "2387432832696"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: 20. Maximum value: 300.",
+          "example": "10"
+        },
+        {
+          "name": "StartAmount",
+          "in": "query",
+          "type": "integer",
+          "description": "The minimum amount for the query.",
+          "example": "100"
+        },
+        {
+          "name": "EndAmount",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum amount for the query.",
+          "example": "1000"
+        },
+        {
+          "name": "StartBizTime",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the time range to query based on the successful payment time. The format is yyyy-mm-dd hh:mm:ss.",
+          "example": "2025-02-01 00:00:00"
+        },
+        {
+          "name": "EndBizTime",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query based on the successful payment time. The format is yyyy-mm-dd hh:mm:ss.",
+          "example": "2025-03-01 00:00:00"
+        },
+        {
+          "name": "SortType",
+          "in": "query",
+          "type": "integer",
+          "description": "The sorting type. Valid values: - 1: sorts the results by ID in descending order. - 2: sorts the results by type in descending order, and then by ID in descending order. - 3: sorts the results by type",
+          "example": "1"
+        },
+        {
+          "name": "StartSearchTime",
+          "in": "query",
+          "type": "string",
+          "description": "The start of the time range to query.",
+          "example": "2025-02-01 00:00:00"
+        },
+        {
+          "name": "EndSearchTime",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query.",
+          "example": "2025-03-01 00:00:00"
+        },
+        {
+          "name": "BillCycle",
+          "in": "query",
+          "type": "string",
+          "description": "The billing cycle.",
+          "example": "202502"
+        },
+        {
+          "name": "BizTypeList",
+          "in": "query",
+          "type": "array",
+          "description": "The list of invoicing entities to which the invoiceable objects belong.",
+          "example": "ALIYUN",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "QueryFinancialAccountInfo": {
       "required": [
@@ -473,7 +3354,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryFinancialAccountInfo"
+      "summary": "Queries the financial information of an enterprise account that is part of a management-member relationship.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The user ID (UID) of the Alibaba Cloud account.",
+          "example": "1990699401005016"
+        }
+      ]
     },
     "QueryInstanceBill": {
       "required": [
@@ -481,7 +3373,88 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryInstanceBill"
+      "summary": "Queries the usage summary of all product instances or billable items for an account in a billing cycle. This operation has been upgraded to DescribeInstanceBill. This operation no longer queries data beyond the 50,000th row.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle in YYYY-MM format. Data from the last 18 months is supported.",
+          "example": "2020-03"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the product.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the product. Required when the ProductCode parameter is set to the code of an Alibaba Cloud Marketplace product.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go. > This parameter must be used with the **ProductCode** parameter.",
+          "example": "PayAsYouGo"
+        },
+        {
+          "name": "IsBillingItem",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to query data by billable item. - false: The data is consistent with the bill details on the Instance tab of the Bills page in the User Center. - true: The data is consistent with th",
+          "example": "false"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "IsHideZeroCharge",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to filter out bills for which the pretax gross amount (**PretaxGrossAmount**) and pretax amount (**PretaxAmount**) are both 0. Valid values: - false. - true.",
+          "example": "false"
+        },
+        {
+          "name": "BillingDate",
+          "in": "query",
+          "type": "string",
+          "description": "The billing date. This parameter is required only when the **Granularity** parameter is set to DAILY. The value must be in the YYYY-MM-DD format.",
+          "example": "2020-03-03"
+        },
+        {
+          "name": "Granularity",
+          "in": "query",
+          "type": "string",
+          "description": "The granularity at which to query bills. Valid values: - MONTHLY: queries bills by month. The data is consistent with the bill details on the Billing Cycle tab of the Bills page in the User Center. - ",
+          "example": "MONTHLY"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns the resources. This account is the actual user of the resources.",
+          "example": "122"
+        }
+      ]
     },
     "QueryInstanceByTag": {
       "required": [
@@ -489,7 +3462,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryInstanceByTag"
+      "summary": "Queries a list of instances by tags.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the resource. Set this parameter to `instance` to query savings plan instances.",
+          "example": "instance"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "A list of resource IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "A list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        }
+      ]
     },
     "QueryInstanceGaapCost": {
       "required": [
@@ -497,19 +3511,132 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query monthly cost allocation service"
+      "summary": "Query monthly cost allocation service",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: 20. Maximum value: 100.",
+          "example": "20"
+        },
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle, in the YYYY-MM format.",
+          "example": "2020-03"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The billing method. Valid values: - `Subscription`: subscription - `PayAsYouGo`: pay-as-you-go",
+          "example": "PayAsYouGo"
+        }
+      ]
     },
     "QueryInvoicingCustomerList": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryInvoicingCustomerList"
+      "summary": "Queries the invoicing information of an Alibaba Cloud user.",
+      "method": "POST"
     },
     "QueryOrders": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryOrders"
+      "summary": "Queries the orders of a user or a distribution customer. By default, the query returns orders created within the last hour. To query orders over a longer period, set the CreateTimeStart and CreateTimeEnd parameters.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CreateTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. If you do not set this parameter, orders created within the past hour are queried. The format is YYYY-MM-ddTHH:mm:ssZ. The time zone is UTC.",
+          "example": "2016-05-23T12:00:00Z"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "20"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription. - PayAsYouGo: pay-as-you-go.",
+          "example": "Subscription"
+        },
+        {
+          "name": "OrderType",
+          "in": "query",
+          "type": "string",
+          "description": "The order type. Valid values: - New: a new purchase - Renew: a renewal - Upgrade: an upgrade - TempUpgrade: a temporary upgrade - Downgrade: a downgrade - Refund: a refund - Convert: a billing method ",
+          "example": "New"
+        },
+        {
+          "name": "PaymentStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The payment status. For orders that are not refunds, valid values are: - Unpaid: The order is unpaid. - Paid: The order is paid. - Cancelled: The order is canceled. > For refund orders, you can leave ",
+          "example": "Paid"
+        },
+        {
+          "name": "CreateTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the time range to query. If you do not set this parameter, orders created within the last hour are queried. The format is YYYY-MM-ddTHH:mm:ssZ. The time zone is UTC.",
+          "example": "2016-05-23T13:00:00Z"
+        }
+      ]
     },
     "QueryPermissionList": {
       "required": [
@@ -517,13 +3644,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryPermissionList"
+      "summary": "Queries the permissions for a master-member relationship based on the relationship ID.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RelationId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The relationship ID. Obtain this ID from the RelationId parameter in the response of the QueryRelationList operation.",
+          "example": "51463"
+        }
+      ]
     },
     "QueryPrepaidCards": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryPrepaidCards"
+      "summary": "Queries information about a user's prepaid cards.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ExpiryTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the expiration time range to query. The format is `YYYY-MM-DDThh:mm:ssZ`.",
+          "example": "2018-08-01 00:00:00"
+        },
+        {
+          "name": "ExpiryTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The start of the expiration time range to query. The format is `YYYY-MM-DDThh:mm:ssZ`.",
+          "example": "2018-08-01 00:00:00"
+        },
+        {
+          "name": "EffectiveOrNot",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to query for prepaid cards that are in effect. Valid values: `true` and `false`.",
+          "example": "true"
+        }
+      ]
     },
     "QueryPriceEntityList": {
       "required": [
@@ -531,7 +3693,29 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryPriceEntityList"
+      "summary": "Queries the pricing objects of a product. A pricing object is the smallest unit of a product's capability used for metering and billing.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CommodityCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the product. To find the product code, call the **QueryCommodityList** operation.",
+          "example": "ecs"
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language. The default value is zh (Chinese).",
+          "enum": [
+            "en",
+            "zh"
+          ],
+          "example": "en"
+        }
+      ]
     },
     "QueryProductList": {
       "required": [
@@ -539,7 +3723,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryProductList"
+      "summary": "Queries the product list for the current account and returns the product code, product name, and billing method (subscription or pay-as-you-go).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "QueryTotalCount",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the total count. The default value is false.",
+          "example": "true"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. The maximum value is 300. The default value is 20.",
+          "example": "10"
+        }
+      ]
     },
     "QueryRIUtilizationDetail": {
       "required": [
@@ -549,13 +3758,113 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryRIUtilizationDetail"
+      "summary": "Queries the usage details of a reserved instance (RI).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RIInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the RI. If this parameter is left empty, the usage details of all RIs are queried.",
+          "example": "dsudfgdsjh"
+        },
+        {
+          "name": "InstanceSpec",
+          "in": "query",
+          "type": "string",
+          "description": "The instance type of the RI.",
+          "example": "Instancetyp"
+        },
+        {
+          "name": "RICommodityCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the service to which the RI is applied. Default value: ecsRi. Valid values: * ecsRi: ECS RI. * scu_bag: storage capacity unit (SCU).",
+          "example": "ecsRi"
+        },
+        {
+          "name": "DeductedInstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance whose fees are deducted by using the RI. If this parameter is left empty, the usage details of all instances are queried.",
+          "example": "jsdgfsdhgsdjh"
+        },
+        {
+          "name": "StartTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time when the RI was created. Specify the time in the YYYY-MM-DD HH:mm:ss format.",
+          "example": "2019-05-23 12:00:00"
+        },
+        {
+          "name": "EndTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time when the RI expires. Specify the time in the YYYY-MM-DD HH:mm:ss format.",
+          "example": "2019-05-23 12:00:00"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        }
+      ]
     },
     "QueryRedeem": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryRedeem"
+      "summary": "Queries the information about a voucher.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ExpiryTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The start time when the redemption coupon expires. The value must be in the yyyy-MM-ddTHH:mm:ssZ format.",
+          "example": "2018-08-01T00:00:00Z"
+        },
+        {
+          "name": "ExpiryTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end time when the redemption coupon expires. The value must be in the yyyy-MM-ddTHH:mm:ssZ format.",
+          "example": "2018-08-01T00:00:00Z"
+        },
+        {
+          "name": "EffectiveOrNot",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether the redemption coupon takes effect. Valid values: * true * false Default value: false.",
+          "example": "true"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page.",
+          "example": "10"
+        }
+      ]
     },
     "QueryRelationList": {
       "required": [
@@ -563,31 +3872,189 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryRelationList"
+      "summary": "Queries a list of the relationships of member accounts.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UserId",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The UID of the Alibaba Cloud account.",
+          "example": "1990699401005016"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. The default value is 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. The default value is 20.",
+          "example": "20"
+        },
+        {
+          "name": "StatusList",
+          "in": "query",
+          "type": "array",
+          "description": "A list of relationship statuses. The value is an enumeration of RelationshipStatusEnum. If you do not specify this parameter, only relationships that are in effect are queried.",
+          "example": "RELATED",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "QueryResellerAvailableQuota": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryResellerAvailableQuota"
+      "summary": "Queries the available quota for a user in a reseller payment scenario.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ItemCodes",
+          "in": "query",
+          "type": "string",
+          "description": "You do not need to specify this parameter.",
+          "example": "无"
+        }
+      ]
     },
     "QueryResellerUserAlarmThreshold": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryResellerUserAlarmThreshold"
+      "summary": "Queries the alarm thresholds for low quotas.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AlarmType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of alert. This parameter is required. Set the value to quota\\_low\\_balance, which indicates a low quota alert.",
+          "enum": [
+            "quota_low_balance"
+          ],
+          "example": "quota_low_balance"
+        }
+      ]
     },
     "QueryResourcePackageInstances": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryResourcePackageInstances"
+      "summary": "Queries the instances of a resource plan. You can query the resource plans that are valid.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the service.",
+          "example": "rds"
+        },
+        {
+          "name": "ExpiryTimeStart",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the expiration time range to query. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.",
+          "example": "2020-02-02T12:00:00Z"
+        },
+        {
+          "name": "ExpiryTimeEnd",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the expiration time range to query. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.",
+          "example": "2020-02-02T13:00:00Z"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "IncludePartner",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether partners are involved.",
+          "example": "true"
+        }
+      ]
     },
     "QuerySavingsPlansDeductLog": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySavingsPlansDeductLog"
+      "summary": "Queries the details of savings plan deductions.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceType",
+          "in": "query",
+          "type": "string",
+          "description": "The query type. Valid values: - spn: savings plan instance - product: deducted cloud service instance",
+          "example": "spn"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "20"
+        },
+        {
+          "name": "Locale",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. Default value: ZH. Valid values: \\`ZH\\`: Chinese. \\`EN\\`: English.",
+          "example": "ZH"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The instance ID.",
+          "example": "spn-XXXXXXX"
+        },
+        {
+          "name": "StartTime",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the time range to query.",
+          "example": "2022-01-01 00:00:00"
+        },
+        {
+          "name": "EndTime",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query.",
+          "example": "2022-01-05 00:00:00"
+        }
+      ]
     },
     "QuerySavingsPlansDiscount": {
       "required": [
@@ -598,13 +4065,187 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySavingsPlansDiscount"
+      "summary": "Queries the discount information for savings plans.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ModuleCode",
+          "in": "query",
+          "type": "string",
+          "description": "The code of the module.",
+          "example": "instance_type"
+        },
+        {
+          "name": "PayMode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The payment mode. Valid values: total: all upfront. half: partial upfront. zero: no upfront.",
+          "enum": [
+            "zero",
+            "total",
+            "half"
+          ],
+          "example": "total"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "20"
+        },
+        {
+          "name": "SpnType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the savings plan. Valid values: ecs: compute-optimized. universal: universal.",
+          "enum": [
+            "ecs",
+            "universal"
+          ],
+          "example": "universal"
+        },
+        {
+          "name": "Locale",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response.",
+          "enum": [
+            "EN",
+            "ZH"
+          ],
+          "example": "ZH"
+        },
+        {
+          "name": "Cycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The query cycle.",
+          "example": "1:Year"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "Spec",
+          "in": "query",
+          "type": "string",
+          "description": "The resource type.",
+          "example": "ecs.g6"
+        },
+        {
+          "name": "CommodityCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The commodity code.",
+          "example": "ecs"
+        },
+        {
+          "name": "Region",
+          "in": "query",
+          "type": "string",
+          "description": "The region.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "SpnCommodityCode",
+          "in": "query",
+          "type": "string",
+          "description": "The commodity code of the savings plan.",
+          "example": "savingplan_common_public_cn"
+        }
+      ]
     },
     "QuerySavingsPlansInstance": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySavingsPlansInstance"
+      "summary": "Queries information about your savings plan instances.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page.",
+          "example": "20"
+        },
+        {
+          "name": "Locale",
+          "in": "query",
+          "type": "string",
+          "description": "The language of the response. - EN: English - ZH: Chinese",
+          "example": "ZH"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number.",
+          "example": "1"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the savings plan instance.",
+          "example": "spn-xxxxxxx"
+        },
+        {
+          "name": "StartTime",
+          "in": "query",
+          "type": "string",
+          "description": "The start time. The time is in the yyyy-MM-dd HH:mm:ss format.",
+          "example": "2020-01-01 00:00:00"
+        },
+        {
+          "name": "EndTime",
+          "in": "query",
+          "type": "string",
+          "description": "The end time. The time is in the yyyy-MM-dd HH:mm:ss format.",
+          "example": "2021-01-01 00:00:00"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The list of tag elements.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the tag."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the tag."
+            }
+          ]
+        },
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the instance. Valid values: NORMAL: The instance is active. RELEASE: The instance is released.",
+          "example": "NORMAL"
+        },
+        {
+          "name": "CommodityCode",
+          "in": "query",
+          "type": "string",
+          "description": "The commodity code.",
+          "example": "savingplan_common_public_cn"
+        }
+      ]
     },
     "QuerySettleBill": {
       "required": [
@@ -612,7 +4253,81 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySettleBill"
+      "summary": "Queries the settlement bills of an account for a specific billing cycle. This operation is available for accounts on the Alibaba Cloud China Website that have more than 50,000 bill entries.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle, in YYYY-MM format.",
+          "example": "2018-07"
+        },
+        {
+          "name": "Type",
+          "in": "query",
+          "type": "string",
+          "description": "The type. Valid values: - SubscriptionOrder: subscription order - PayAsYouGoBill: pay-as-you-go bill - Refund: refund bill - Adjustment: adjustment bill",
+          "example": "SubscriptionOrder"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. Valid values: - Subscription: subscription - PayAsYouGo: pay-as-you-go > This parameter must be used with the ProductCode parameter.",
+          "example": "Subscription"
+        },
+        {
+          "name": "IsHideZeroCharge",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to filter out bills with a pretax gross amount of 0. The default value is false to ensure backward compatibility. - true: Yes. - false: No.",
+          "example": "true"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that specifies the position from which the query starts. If you leave this parameter empty, the query starts from the beginning.",
+          "example": "CAESEgoQCg4KCmdtdF9jcmVhdGUEARgBIkgKCQBwhGmPcAEAAAo7AzYAAAAxTDgwMDcxMjg3ZDJhNmM3ZDguTDgwMDAwMDAwMDAw"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of records to return. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns the resource. The resource owner is the account that uses the resource.",
+          "example": "123"
+        },
+        {
+          "name": "RecordID",
+          "in": "query",
+          "type": "string",
+          "description": "The order number or bill number.",
+          "example": "12233"
+        }
+      ]
     },
     "QuerySkuPriceList": {
       "required": [
@@ -622,7 +4337,58 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySkuPriceList"
+      "summary": "Queries the SKUs and their list prices for a specific product feature. You can also filter the query by specifying SKU configurations in the request parameters.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "CommodityCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The commodity code. Call the **QueryCommodityList** operation to query the commodity code.",
+          "example": "ecs"
+        },
+        {
+          "name": "PriceEntityCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The pricing entity code. Call the **QueryPriceEntityList** operation to query the pricing entity code.",
+          "example": "instance_type"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The number of entries to return on each page. The maximum value is 50.",
+          "example": "20"
+        },
+        {
+          "name": "NextPageToken",
+          "in": "query",
+          "type": "string",
+          "description": "The paging token. Leave this parameter empty for the first query. The token for the next page is returned in the query result. An empty token indicates that all results have been returned. You can get",
+          "example": "080112060a0422020800180022490a4703420000003153333033323634363633363334333936363331363333383337333733"
+        },
+        {
+          "name": "PriceFactorConditionMap",
+          "in": "query",
+          "type": "object",
+          "description": "A collection of pricing factor conditions. Call the **QueryPriceEntityList** operation to query pricing factor codes and their values."
+        },
+        {
+          "name": "Lang",
+          "in": "query",
+          "type": "string",
+          "description": "The language. If you do not specify this parameter, the default value \\`zh\\` (Chinese) is used.",
+          "enum": [
+            "en",
+            "zh"
+          ],
+          "example": "en"
+        }
+      ]
     },
     "QuerySplitItemBill": {
       "required": [
@@ -630,7 +4396,60 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QuerySplitItemBill"
+      "summary": "Queries split bills. This API has been upgraded. We recommend that you use the new DescribeSplitItemBill operation.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "BillingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing cycle. Format: YYYY-MM.",
+          "example": "2020-03"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. Valid values: Subscription: subscription. PayAsYouGo: pay-as-you-go. Note: This parameter must be used with the ProductCode parameter.",
+          "example": "PayAsYouGo"
+        },
+        {
+          "name": "PageNum",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Default value: 20. Maximum value: 300.",
+          "example": "20"
+        },
+        {
+          "name": "BillOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account that owns the resource. The resource owner is the account that actually uses the resource.",
+          "example": "123"
+        }
+      ]
     },
     "QueryUserOmsData": {
       "required": [
@@ -641,13 +4460,100 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "QueryUserOmsData"
+      "summary": "Queries the metering records for a specified cloud product.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Table",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product and details of the usage data. This is typically the `ProductCode`. Different products may have multiple metering models.",
+          "example": "rds"
+        },
+        {
+          "name": "DataType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The time granularity of the metering data. For more information, see the documentation for the specific product. - `Raw`: by hour. - `Hour`: by hour. - `Day`: by day. - `Month`: by month.",
+          "example": "Hour"
+        },
+        {
+          "name": "StartTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The start of the time range to query. The time must be in UTC and in the `yyyy-mm-ddThh:mm:ssZ` format, which complies with the ISO 8601 standard.",
+          "example": "2020-02-20T12:00:00Z"
+        },
+        {
+          "name": "EndTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The end of the time range to query. The time must be in UTC and in the `yyyy-mm-ddThh:mm:ssZ` format, which complies with the ISO 8601 standard.",
+          "example": "2020-02-21T12:00:00Z"
+        },
+        {
+          "name": "Marker",
+          "in": "query",
+          "type": "string",
+          "description": "The position from which to start reading the query results. The results are returned in alphabetical order, starting from the entry that follows the `NextToken` value. If you do not specify this param",
+          "example": "NextToken"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page for a paged query. Valid values: 1 to 200. Default value: 100.",
+          "example": "1"
+        }
+      ]
     },
     "RefundInstance": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RefundInstance"
+      "summary": "Cancels subscriptions for instances that you no longer need.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client-generated universally unique identifier (UUID) that is used to ensure the idempotence of the request. If you make multiple calls with the same ClientToken, the system returns the result of th",
+          "example": "793F021C-B589-1225-82A9-99232AEBE494"
+        },
+        {
+          "name": "ImmediatelyRelease",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is required for unsubscription. Valid values: 1: The instance is released immediately. 0: The instance is first stopped according to its stop policy. This feature is supported only for ",
+          "example": "1"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "description": "The product code. This parameter is required for unsubscription. If an error code indicates that the product is not supported, submit a ticket to request that this feature be enabled.",
+          "example": "ecs"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the instance. This is not a custom name. This parameter is required for unsubscription.",
+          "example": "i-bp1etb69sqxgl4*******"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type. This parameter is required for unsubscription. Unless otherwise specified, pass an empty string. In API Explorer, you can automatically enter an empty string by moving your mouse poi",
+          "example": "空字符串"
+        }
+      ]
     },
     "ReleaseInstance": {
       "required": [
@@ -657,7 +4563,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ReleaseInstance"
+      "summary": "Releases instances by Virtual Network Operators (VNOs).",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the service.",
+          "example": "ecs"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The billing method. Valid values: Subscription: the subscription billing method. PayAsYouGo: the pay-as-you-go billing method.",
+          "example": "PayAsYouGo"
+        },
+        {
+          "name": "InstanceIds",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance. Separate multiple IDs with commas (,). A maximum of 100 IDs can be specified.",
+          "example": "rm-xxxxxxxxxxxx"
+        },
+        {
+          "name": "RenewStatus",
+          "in": "query",
+          "type": "string",
+          "description": "The method that is used to renew the instance. Valid values: AutoRenewal: automatically renews the instance. ManualRenewal: manually renews the instance. NotRenewal: does not renew the instance.",
+          "example": "AutoRenewal"
+        },
+        {
+          "name": "Region",
+          "in": "query",
+          "type": "string",
+          "description": "The region in which the instance resides.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the service.",
+          "example": "ecs"
+        }
+      ]
     },
     "RelieveAccountRelation": {
       "required": [
@@ -665,7 +4619,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RelieveAccountRelation"
+      "summary": "Disassociates a RAM user from an Alibaba Cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RelationType",
+          "in": "query",
+          "type": "string",
+          "description": "The relationship type. Only enterprise\\_group is supported.",
+          "example": "enterprise_group"
+        },
+        {
+          "name": "ParentUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The UID of the Alibaba Cloud account. You must specify either the RelationId parameter, or the ParentUserId, ChildUserId, and RelationType parameters.",
+          "example": "1738376485192612"
+        },
+        {
+          "name": "ChildUserId",
+          "in": "query",
+          "type": "integer",
+          "description": "The UID of the RAM user. You must specify either the RelationId parameter, or the ParentUserId, ChildUserId, and RelationType parameters.",
+          "example": "1512996702208737"
+        },
+        {
+          "name": "RequestId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique ID of the request. This ID is used to troubleshoot issues.",
+          "example": "request_id"
+        },
+        {
+          "name": "RelationId",
+          "in": "query",
+          "type": "integer",
+          "description": "The ID of the account association. You must specify either the RelationId parameter, or the ParentUserId, ChildUserId, and RelationType parameters.",
+          "example": "RelationId"
+        }
+      ]
     },
     "RenewChangeInstance": {
       "required": [
@@ -675,7 +4668,68 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RenewChangeInstance"
+      "summary": "Renews an instance and changes its configuration. The configuration change is applied after the renewal order takes effect. Payment is processed automatically. This operation cannot be used to create ECS or RDS instances.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product code. To obtain it, call **QueryProductList**.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "Product type",
+          "example": "rds"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "rm-skjdhaskjdh"
+        },
+        {
+          "name": "Parameter",
+          "in": "query",
+          "type": "array",
+          "description": "Module list",
+          "children": [
+            {
+              "name": "Value",
+              "type": "string",
+              "required": true,
+              "description": "The value configuration for the nth module property. The value of n ranges from 1 to 100."
+            },
+            {
+              "name": "Code",
+              "type": "string",
+              "required": true,
+              "description": "The code configuration for the Nth module property. The value of N can be an integer from 1 to 100. If you have multiple module properties, create a separate parameter for each by setting n to 1, 2, 3"
+            }
+          ]
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "Ensures the idempotence of the request.",
+          "example": "JASIOFKVNVIXXXXXX"
+        },
+        {
+          "name": "RenewPeriod",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The subscription renewal duration, in months. Valid values: - 1-9 - 12 - 24 - 36",
+          "example": "2"
+        }
+      ]
     },
     "RenewInstance": {
       "required": [
@@ -685,7 +4739,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RenewInstance"
+      "summary": "Renews a specified instance. This operation cannot be used to renew ECS, RDS, or Redis instances. To renew these instances, call the dedicated renewal API for the specific product.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The product code.",
+          "example": "rds"
+        },
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The instance ID.",
+          "example": "rm-skjdhaskjdh"
+        },
+        {
+          "name": "RenewPeriod",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The renewal period for the subscription instance, in months. Valid values: - 1-9 - 12 - 24 - 36",
+          "example": "6"
+        },
+        {
+          "name": "ClientToken",
+          "in": "query",
+          "type": "string",
+          "description": "A client token to ensure the idempotence of the request.",
+          "example": "ASKJHKLASJHAFSLKJH"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The product type.",
+          "example": "rds"
+        }
+      ]
     },
     "RenewResourcePackage": {
       "required": [
@@ -695,7 +4790,41 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RenewResourcePackage"
+      "summary": "Renews a resource package instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance.",
+          "example": "lskd****sljhsdj"
+        },
+        {
+          "name": "EffectiveDate",
+          "in": "query",
+          "type": "string",
+          "description": "The time when the resource package takes effect. If you leave this parameter empty, the resource package takes effect immediately. Specify the time in the yyyy-MM-ddTHH:mm:ssZ format. The time zone mu",
+          "example": "2020-02-02T12:00:00Z"
+        },
+        {
+          "name": "Duration",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The renewal duration of the resource package.",
+          "example": "1"
+        },
+        {
+          "name": "PricingCycle",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unit of the renewal duration. Valid values: - Month - Year Default value: Month.",
+          "example": "Month"
+        }
+      ]
     },
     "SetAllExpirationDay": {
       "required": [
@@ -703,7 +4832,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetAllExpirationDay"
+      "summary": "Sets an expiration date for all Elastic Compute Service (ECS) instances.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "UnifyExpireDay",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The expiration date. You can set an expiration date only for ECS instances that have not expired. The expiration date that you specify do not take effect on expired ECS instances. After the expiration",
+          "example": "10"
+        }
+      ]
     },
     "SetRenewal": {
       "required": [
@@ -713,7 +4853,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetRenewal"
+      "summary": "Enables auto-renewal for an instance.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RenewalPeriod",
+          "in": "query",
+          "type": "integer",
+          "description": "The auto-renewal period. Valid values: * 1 * 2 * 3 * 6 * 12 > This parameter is required if the RenewalStatus parameter is set to AutoRenewal.",
+          "example": "1"
+        },
+        {
+          "name": "InstanceIDs",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the instance. You can enable auto-renewal for up to 100 subscription instances at a time. Separate multiple instance IDs with commas (,).",
+          "example": "rm-askjdhaskfjh"
+        },
+        {
+          "name": "ProductCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The code of the service.",
+          "example": "rds"
+        },
+        {
+          "name": "ProductType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the service.",
+          "example": "rds"
+        },
+        {
+          "name": "SubscriptionType",
+          "in": "query",
+          "type": "string",
+          "description": "The billing method. Valid values: * Subscription: subscription * PayAsYouGo: pay-as-you-go",
+          "example": "PayAsYouGo"
+        },
+        {
+          "name": "RenewalPeriodUnit",
+          "in": "query",
+          "type": "string",
+          "description": "The unit of the auto-renewal period. Valid values: * M: months * Y: years > This parameter is required if the RenewalStatus parameter is set to AutoRenewal.",
+          "example": "M"
+        },
+        {
+          "name": "RenewalStatus",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The status of renewal. Valid values: * AutoRenewal: The instance is automatically renewed. * ManualRenewal: The instance is manually renewed. * NotRenewal: The instance is not renewed.",
+          "example": "AutoRenewal"
+        }
+      ]
     },
     "SetResellerUserAlarmThreshold": {
       "required": [
@@ -721,7 +4916,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetResellerUserAlarmThreshold"
+      "summary": "Sets a low-balance alert rule for a user's quota.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AlarmType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The alert type. The value quota\\_low\\_balance indicates a low-balance alert for a quota.",
+          "example": "quota_low_balance"
+        },
+        {
+          "name": "AlarmThresholds",
+          "in": "query",
+          "type": "string",
+          "description": "A list of alert rules for the specified alert type. If you do not specify this parameter, no alert threshold is set.",
+          "example": "[{\\\"denominator\\\":100,\\\"numerator\\\":30,\\\"thresholdType\\\":1}]"
+        }
+      ]
     },
     "SetResellerUserQuota": {
       "required": [
@@ -729,7 +4942,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Modify the quota ledger and consumption ledger."
+      "summary": "Modify the quota ledger and consumption ledger.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Amount",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The quota of a quota ledger. Unit: CNY.",
+          "example": "750"
+        },
+        {
+          "name": "Currency",
+          "in": "query",
+          "type": "string",
+          "description": "You do not need to set the parameter.",
+          "example": "N/A"
+        },
+        {
+          "name": "OutBizId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the business.",
+          "example": "OD2022040818295234777795624764689"
+        }
+      ]
     },
     "SetResellerUserStatus": {
       "required": [
@@ -738,7 +4976,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetResellerUserStatus"
+      "summary": "Enables or disables the SQL audit feature for users.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The status to set for the user account. Valid values: Freeze: The user account is frozen. Thaw: The user account is restored. Trusteeship: The user account is hosted. TrusteeshipCancel: The user accou",
+          "example": "Freeze"
+        },
+        {
+          "name": "BusinessType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of business operation. Valid values: FREEZE: Freeze operations. TRUSTEESHIP: Hosting operations.",
+          "example": "FREEZE"
+        },
+        {
+          "name": "StopMode",
+          "in": "query",
+          "type": "string",
+          "description": "The stopping mode. Valid values: 0: Normal shutdown. 1: Immediate shutdown.",
+          "example": "0"
+        }
+      ]
     },
     "SubscribeBillToOSS": {
       "required": [
@@ -746,7 +5010,67 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SubscribeBillToOSS"
+      "summary": "Subscribes to bill files and stores the bill data in a specified Object Storage Service (OSS) bucket.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SubscribeBucket",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the OSS bucket where the subscribed bill files are stored.",
+          "example": "xxxxxx-bucket"
+        },
+        {
+          "name": "SubscribeType",
+          "in": "query",
+          "type": "string",
+          "description": "The subscription type. Valid values: - BillingItemDetailForBillingPeriod: bill details by billing item. - InstanceDetailForBillingPeriod: bill details by instance. - BillingItemDetailMonthly: monthly ",
+          "example": "BillingItemDetailForBillingPeriod"
+        },
+        {
+          "name": "MultAccountRelSubscribe",
+          "in": "query",
+          "type": "string",
+          "description": "The type of bill to which you want to subscribe. This parameter is available only for multi-tier accounts. Valid values: - MA: Pushes the bills of the Alibaba Cloud account and the bills of non-truste",
+          "example": "MA"
+        },
+        {
+          "name": "BucketOwnerId",
+          "in": "query",
+          "type": "integer",
+          "description": "The UID of the OSS bucket owner. This parameter is required only when a distributor subscribes to bills and saves them to an OSS bucket of a sub-account. In this case, the sub-account must be a sub-ac",
+          "example": "12341324"
+        },
+        {
+          "name": "BeginBillingCycle",
+          "in": "query",
+          "type": "string",
+          "description": "The initial billing cycle from which bills are pushed. After you subscribe to the bills, the system automatically pushes the data from the initial billing cycle to the current time. This parameter is ",
+          "example": "2021-03"
+        },
+        {
+          "name": "BucketPath",
+          "in": "query",
+          "type": "string",
+          "description": "The specified folder in the bucket to which you subscribe.",
+          "example": "testpath"
+        },
+        {
+          "name": "RowLimitPerFile",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of rows in a single file. If a bill file exceeds this limit, it is split into multiple files. The files are then merged and compressed into a ZIP package.",
+          "example": "300000"
+        },
+        {
+          "name": "UsingSsl",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to use Secure Sockets Layer (SSL) to protect network communications. Valid values: - true: Enables SSL encryption to ensure data security and integrity during transmission. - false (",
+          "example": "true"
+        }
+      ]
     },
     "TagResources": {
       "required": [
@@ -756,7 +5080,52 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResources"
+      "summary": "Adds tags to resources.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Set the value to instance for savings plan instances.",
+          "example": "instance"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of resource IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of tags. You can add 1 to 20 tags at a time.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "required": true,
+              "description": "The tag key. An empty string is allowed."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "required": true,
+              "description": "The tag value."
+            }
+          ]
+        }
+      ]
     },
     "UnsubscribeBillToOSS": {
       "required": [
@@ -764,7 +5133,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UnsubscribeBillToOSS"
+      "summary": "Unsubscribes from the detailed bill export service.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SubscribeType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The subscription type. Valid values: - BillingItemDetailForBillingPeriod: detailed bills of billable items. - InstanceDetailForBillingPeriod: detailed bills of instances. - BillingItemDetailMonthly: m",
+          "example": "BillingItemDetailForBillingPeriod"
+        },
+        {
+          "name": "MultAccountRelSubscribe",
+          "in": "query",
+          "type": "string",
+          "description": "The type of bill to push for a multi-level account. Valid values: - MA: pushes the bills of the Alibaba Cloud account. - ACP1: pushes the bills of a reseller's sub-account. Default value: MA.",
+          "example": "MA"
+        }
+      ]
     },
     "UntagResources": {
       "required": [
@@ -773,7 +5160,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResources"
+      "summary": "Removes tags from resources.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. Set the value to `instance`. This value indicates a savings plan instance.",
+          "example": "instance"
+        },
+        {
+          "name": "All",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to remove all tags. This parameter is valid only when `TagKey.N` is not specified. Valid values: `true` and `false`.",
+          "example": "true"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The list of resource IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "array",
+          "description": "The list of tag keys.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "UpgradeResourcePackage": {
       "required": [
@@ -781,7 +5211,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpgradeResourcePackage"
+      "summary": "Upgrades a resource plan.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "InstanceId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource plan.",
+          "example": "OSSBAG-cn-0xl*****x002"
+        },
+        {
+          "name": "EffectiveDate",
+          "in": "query",
+          "type": "string",
+          "description": "The time when the resource plan takes effect. If you leave this parameter empty, the resource plan immediately takes effect by default. Specify the time in the ISO 8601 standard in the yyyy-MM-ddTHH:m",
+          "example": "2020-02-02T12:00:00Z"
+        },
+        {
+          "name": "Specification",
+          "in": "query",
+          "type": "string",
+          "description": "The specifications to which you want to upgrade the resource plan.",
+          "example": "51200"
+        }
+      ]
     }
   }
 }

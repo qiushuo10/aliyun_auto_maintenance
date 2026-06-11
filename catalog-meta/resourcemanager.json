@@ -1,10 +1,10 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "resourcemanager",
   "openApiProduct": "ResourceManager",
   "version": "2020-03-31",
   "source": "https://api.aliyun.com/meta/v1/products/ResourceManager/versions/2020-03-31/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:56.064Z",
+  "fetchedAt": "2026-06-10T02:58:28.248Z",
   "actions": {
     "AcceptHandshake": {
       "required": [
@@ -12,7 +12,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AcceptHandshake"
+      "summary": "Accepts an invitation.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "HandshakeId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the invitation. You can call the [ListHandshakesForAccount](~~160006~~) operation to obtain the ID.",
+          "example": "h-Ih8IuPfvV0t0****"
+        }
+      ]
     },
     "AttachControlPolicy": {
       "required": [
@@ -21,7 +32,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AttachControlPolicy"
+      "summary": "Attaches an access control policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the access control policy.",
+          "example": "cp-jExXAqIYkwHN****"
+        },
+        {
+          "name": "TargetId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the object to which you want to attach the access control policy. Access control policies can be attached to the following objects: * Root folder * Subfolders of the Root folder * Members",
+          "example": "fd-ZDNPiT****"
+        }
+      ]
     },
     "AttachPolicy": {
       "required": [
@@ -33,7 +63,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AttachPolicy"
+      "summary": "Attaches a permission policy to an object, which can be a RAM user, RAM user group, or RAM role. After you attach a permission policy to an object, the object has the operation permissions on the resources in a specific resource group or within a specific Alibaba Cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The effective scope of the permission policy. Valid values: * ID of a resource group: indicates that the permission policy takes effect for the resources in the resource group. * ID of the Alibaba Clo",
+          "example": "rg-9gLOoK****"
+        },
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the permission policy. Valid values: * Custom * System",
+          "example": "System"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphens (-).",
+          "example": "AdministratorAccess"
+        },
+        {
+          "name": "PrincipalType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the object to which you want to attach the permission policy. Valid values: * IMSUser: RAM user * IMSGroup: RAM user group * ServiceRole: RAM role",
+          "example": "IMSUser"
+        },
+        {
+          "name": "PrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object to which you want to attach the permission policy. * If you want to attach the permission policy to a RAM user, specify the name in the @.onaliyun.com format. indicates the name",
+          "example": "alice@demo.onaliyun.com"
+        }
+      ]
     },
     "BindSecureMobilePhone": {
       "required": [
@@ -43,7 +116,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "BindSecureMobilePhone"
+      "summary": "Binds a mobile phone number to a member of the resource account type in a resource directory for security purposes.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "VerificationCode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The verification code. You can call the [SendVerificationCodeForBindSecureMobilePhone](~~372556~~) operation to obtain the verification code.",
+          "example": "123456"
+        },
+        {
+          "name": "SecureMobilePhone",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The mobile phone number that you want to bind to the member for security purposes. The mobile phone number you specify must be the same as the mobile phone number that you specify when you call the [S",
+          "example": "xx-13900001234"
+        },
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud account ID of the member.",
+          "example": "138660628348****"
+        }
+      ]
     },
     "CancelChangeAccountEmail": {
       "required": [
@@ -51,7 +151,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelChangeAccountEmail"
+      "summary": "Cancels the email address change of a member.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud account ID of the member.",
+          "example": "181761095690****"
+        }
+      ]
     },
     "CancelCreateCloudAccount": {
       "required": [
@@ -59,7 +170,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelCreateCloudAccount"
+      "summary": "Cancels the creation of a cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The account record ID.",
+          "example": "06950264-3f0d-4ca9-82dd-6ee7a3d3****"
+        }
+      ]
     },
     "CancelHandshake": {
       "required": [
@@ -67,7 +189,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelHandshake"
+      "summary": "Cancels an invitation.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "HandshakeId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the invitation.",
+          "example": "h-ycm4rp****"
+        }
+      ]
     },
     "CancelPromoteResourceAccount": {
       "required": [
@@ -75,7 +208,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CancelPromoteResourceAccount"
+      "summary": "Cancels the upgrade from a resource account to a cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The account record ID.",
+          "example": "06950264-3f0d-4ca9-82dd-6ee7a3d3****"
+        }
+      ]
     },
     "ChangeAccountEmail": {
       "required": [
@@ -84,7 +228,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ChangeAccountEmail"
+      "summary": "Changes the email address that is bound to a member.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud account ID of the member.",
+          "example": "181761095690****"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The email address to be bound to the member. > The system automatically sends a verification email to the email address. After the verification is passed, the email address takes effect, and the syste",
+          "example": "someone@example.com"
+        }
+      ]
     },
     "CheckAccountDelete": {
       "required": [
@@ -92,7 +255,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CheckAccountDelete"
+      "summary": "Performs a member deletion check.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the member that you want to delete.",
+          "example": "179855839641****"
+        }
+      ]
     },
     "CreateAutoGroupingRule": {
       "required": [
@@ -102,7 +276,113 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateAutoGroupingRule"
+      "summary": "Creates a transfer rule. Custom transfer rules and transfer rules for associated resources are supported.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the rule.",
+          "example": "A项目线上资源自动转组规则"
+        },
+        {
+          "name": "RuleDesc",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the rule.",
+          "example": "带有标签 {\"env\": \"online\"} 和 {\"project\": \"A\"} 的资源转移到资源组 rg-aek2********qcy"
+        },
+        {
+          "name": "RuleType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the rule. Valid values: * custom_condition: custom transfer rule * associated_transfer: transfer rule for associated resources",
+          "enum": [
+            "associated_transfer",
+            "custom_condition"
+          ],
+          "example": "custom_condition"
+        },
+        {
+          "name": "RuleContents",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The content records of the rule.",
+          "children": [
+            {
+              "name": "AutoGroupingScopeCondition",
+              "type": "string",
+              "description": "The condition for the range of resources to be automatically transferred."
+            },
+            {
+              "name": "TargetResourceGroupCondition",
+              "type": "string",
+              "required": true,
+              "description": "The condition for the destination resource group."
+            }
+          ]
+        },
+        {
+          "name": "ResourceGroupIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resource groups. Separate multiple IDs with commas (,).",
+          "example": "rg-aekz******4b5ea,rg-aek2******fxykq"
+        },
+        {
+          "name": "ExcludeResourceGroupIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resource groups to be excluded. Separate multiple IDs with commas (,).",
+          "example": "rg-aekz******zj2oi,rg-aekz******r62ua"
+        },
+        {
+          "name": "RegionIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of regions. Separate multiple IDs with commas (,).",
+          "example": "cn-hangzhou,cn-shanghai"
+        },
+        {
+          "name": "ExcludeRegionIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of regions to be excluded. Separate multiple IDs with commas (,).",
+          "example": "cn-beijing,cn-guangzhou"
+        },
+        {
+          "name": "ResourceIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resources. Separate multiple IDs with commas (,).",
+          "example": "i-2zee******ym49kfmwis,vpc-5ts6******fnw493g849a"
+        },
+        {
+          "name": "ExcludeResourceIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resources to be excluded. Separate multiple IDs with commas (,).",
+          "example": "pc-uf6p******4h784y,rmq-cn-******ny0y"
+        },
+        {
+          "name": "ResourceTypesScope",
+          "in": "query",
+          "type": "string",
+          "description": "The resource types. Separate multiple resource types with commas (,).",
+          "example": "rds.dbinstance,oss.bucket"
+        },
+        {
+          "name": "ExcludeResourceTypesScope",
+          "in": "query",
+          "type": "string",
+          "description": "The resource types to be excluded. Separate multiple resource types with commas (,).",
+          "example": "mse.cluster,slb.loadbalancer"
+        }
+      ]
     },
     "CreateCloudAccount": {
       "required": [
@@ -111,7 +391,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCloudAccount"
+      "summary": "Creates a cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The display name of the member account. The name must be 2 to 50 characters in length and can contain letters, digits, underscores (\\_), periods (.), and hyphens (-). The name must be unique in the cu",
+          "example": "admin-****"
+        },
+        {
+          "name": "ParentFolderId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the parent folder.",
+          "example": "fd-bVaRIG****"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The email address used to log on to the cloud account.",
+          "example": "someone@example.com"
+        },
+        {
+          "name": "PayerAccountId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the settlement account. If you do not specify this parameter, the current account is used for settlement.",
+          "example": "12323344****"
+        }
+      ]
     },
     "CreateControlPolicy": {
       "required": [
@@ -121,7 +434,41 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateControlPolicy"
+      "summary": "Creates a custom access control policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the access control policy. The name must be 1 to 128 characters in length. The name can contain letters, digits, and hyphens (-) and must start with a letter.",
+          "example": "ExampleControlPolicy"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the access control policy. The description must be 1 to 1,024 characters in length. The description can contain letters, digits, underscores (\\_), and hyphens (-) and must start wit",
+          "example": "ExampleControlPolicy"
+        },
+        {
+          "name": "EffectScope",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The effective scope of the access control policy. The value RAM indicates that the access control policy takes effect only for RAM users and RAM roles.",
+          "example": "RAM"
+        },
+        {
+          "name": "PolicyDocument",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The document of the access control policy. The document can be a maximum of 4,096 characters in length. For more information about the languages of access control policies, see [Languages of access co",
+          "example": "{\"Version\":\"1\",\"Statement\":[{\"Effect\":\"Deny\",\"Action\":[\"ram:UpdateRole\",\"ram:DeleteRole\",\"ram:Attach"
+        }
+      ]
     },
     "CreateFolder": {
       "required": [
@@ -129,7 +476,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateFolder"
+      "summary": "Creates a folder.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ParentFolderId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the parent folder.",
+          "example": "r-b1****"
+        },
+        {
+          "name": "FolderName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the folder. The name must be 1 to 24 characters in length and can contain letters, digits, underscores (\\_), periods (.),and hyphens (-).",
+          "example": "rdFolder"
+        }
+      ]
     },
     "CreatePolicy": {
       "required": [
@@ -138,7 +503,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreatePolicy"
+      "summary": "Creates a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphens (-).",
+          "example": "OSS-Administrator"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the permission policy. The description must be 1 to 1,024 characters in length.",
+          "example": "OSS管理员权限"
+        },
+        {
+          "name": "PolicyDocument",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The document of the policy. The document must be 1 to 6,144 characters in length.",
+          "example": "{ \"Statement\": [{ \"Action\": [\"oss:*\"], \"Effect\": \"Allow\", \"Resource\": [\"acs:oss:*:*:*\"]}], \"Version\""
+        }
+      ]
     },
     "CreatePolicyVersion": {
       "required": [
@@ -147,7 +538,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreatePolicyVersion"
+      "summary": "Creates a version for a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "OSS-Administrator"
+        },
+        {
+          "name": "PolicyDocument",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The document of the permission policy. The document must be 1 to 6,144 characters in length.",
+          "example": "{ \"Statement\": [{ \"Action\": [\"oss:*\"], \"Effect\": \"Allow\", \"Resource\": [\"acs:oss:*:*:*\"]}], \"Version\""
+        },
+        {
+          "name": "SetAsDefault",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to set the policy version as the default version. * false (default) * true",
+          "example": "false"
+        }
+      ]
     },
     "CreateResourceAccount": {
       "required": [
@@ -155,7 +572,64 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateResourceAccount"
+      "summary": "Creates a member of the resource account type.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The display name of the member. The name must be 2 to 50 characters in length. The name can contain letters, digits, underscores (\\_), periods (.), hyphens (-), and spaces. The name must be unique in ",
+          "example": "Dev"
+        },
+        {
+          "name": "ParentFolderId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the parent folder.",
+          "example": "fd-r23M55****"
+        },
+        {
+          "name": "PayerAccountId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the billing account. If you leave this parameter empty, the newly created member is used as its billing account.",
+          "example": "12323344****"
+        },
+        {
+          "name": "AccountNamePrefix",
+          "in": "query",
+          "type": "string",
+          "description": "The prefix for the Alibaba Cloud account name of the member. If you leave this parameter empty, the system randomly generates a prefix. The prefix must be 2 to 37 characters in length. The prefix can ",
+          "example": "alice"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag of the member.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        },
+        {
+          "name": "ResellAccountType",
+          "in": "query",
+          "type": "string",
+          "description": "The identity type of the member. Valid values: * resell (default): The member is an account for a reseller. A relationship is automatically established between the member and the reseller. The managem",
+          "example": "resell"
+        }
+      ]
     },
     "CreateResourceGroup": {
       "required": [
@@ -164,7 +638,44 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateResourceGroup"
+      "summary": "Creates a resource group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The unique identifier of the resource group. It must be 2 to 50 characters in length and can contain letters, digits, and hyphens (-). It must start with a letter.",
+          "example": "my-project"
+        },
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The display name of the resource group. It must be 1 to 50 characters in length.",
+          "example": "my-project"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The list of tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the tag. The tag key can be up to 128 characters in length and cannot start with `acs:` or `aliyun`. It cannot contain `http://` or `https://`."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the tag. The tag value can be up to 128 characters in length and cannot start with `acs:` or `aliyun`. It cannot contain `http://` or `https://`."
+            }
+          ]
+        }
+      ]
     },
     "CreateRole": {
       "required": [
@@ -173,7 +684,40 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateRole"
+      "summary": "Creates a RAM role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RoleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the role. The name must be 1 to 64 characters in length, and can contain letters, digits, periods (.), and hyphens (-).",
+          "example": "ECSAdmin"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the role. The description must be 1 to 1,024 characters in length.",
+          "example": "ECS管理角色"
+        },
+        {
+          "name": "AssumeRolePolicyDocument",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The document of the policy that specifies one or more trusted entities to assume the role. The trusted entities can be Alibaba Cloud accounts, Alibaba Cloud services, or identity providers (IdPs). > R",
+          "example": "{ \"Statement\": [ { \"Action\": \"sts:AssumeRole\", \"Effect\": \"Allow\", \"Principal\": { \"RAM\": \"acs:ram::12"
+        },
+        {
+          "name": "MaxSessionDuration",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum session duration of the role. Valid values: 3600 to 43200. Unit: seconds. Default value: 3600. If you do not specify this parameter, the default value is used.",
+          "example": "3600"
+        }
+      ]
     },
     "CreateServiceLinkedRole": {
       "required": [
@@ -181,7 +725,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateServiceLinkedRole"
+      "summary": "Creates a service-linked role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ServiceName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The service name. For more information about the service name, see [Alibaba Cloud services that support service-linked roles](~~461722~~).",
+          "example": "polardb.aliyuncs.com"
+        },
+        {
+          "name": "CustomSuffix",
+          "in": "query",
+          "type": "string",
+          "description": "The suffix of the role name. The role name (including its suffix) must be 1 to 64 characters in length and can contain letters, digits, periods (.), and hyphens (-). For example, if the suffix is `Exa",
+          "example": "Example"
+        },
+        {
+          "name": "Description",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the service-linked role. You must configure this parameter for service-linked roles that support custom suffixes. Otherwise, the preset value is used and cannot be modified. The des",
+          "example": "Service Linked Role for PolarDB. PolarDB will use this role to access your resources in other servic"
+        }
+      ]
     },
     "DeclineHandshake": {
       "required": [
@@ -189,7 +758,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeclineHandshake"
+      "summary": "Rejects an invitation.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "HandshakeId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the invitation.",
+          "example": "h-ycm4rp****"
+        }
+      ]
     },
     "DeleteAccount": {
       "required": [
@@ -197,7 +777,30 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccount"
+      "summary": "Deletes a member of the resource account type.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud account ID of the member that you want to delete.",
+          "example": "169946124551****"
+        },
+        {
+          "name": "AbandonableCheckId",
+          "in": "query",
+          "type": "array",
+          "description": "The ID of a check item that you can choose to ignore for the member deletion. You can obtain the ID from the response of the [GetAccountDeletionCheckResult](~~448775~~) operation.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "DeleteAutoGroupingRule": {
       "required": [
@@ -205,7 +808,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAutoGroupingRule"
+      "summary": "Deletes a transfer rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the rule.",
+          "example": "gr-acfo******hy6a"
+        }
+      ]
     },
     "DeleteControlPolicy": {
       "required": [
@@ -213,7 +827,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteControlPolicy"
+      "summary": "Deletes a custom control policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the control policy.",
+          "example": "cp-SImPt8GCEwiq****"
+        }
+      ]
     },
     "DeleteFolder": {
       "required": [
@@ -221,7 +846,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteFolder"
+      "summary": "Deletes a folder.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "FolderId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the folder.",
+          "example": "fd-ae1in7****"
+        }
+      ]
     },
     "DeletePolicy": {
       "required": [
@@ -229,7 +865,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeletePolicy"
+      "summary": "Deletes a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "OSS-Administrator"
+        }
+      ]
     },
     "DeletePolicyVersion": {
       "required": [
@@ -238,7 +885,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeletePolicyVersion"
+      "summary": "Deletes a version of a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "OSS-Administrator"
+        },
+        {
+          "name": "VersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the policy version. You can call the [ListPolicyVersions](~~159982~~) operation to query the ID.",
+          "example": "v3"
+        }
+      ]
     },
     "DeleteResourceGroup": {
       "required": [
@@ -246,7 +912,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteResourceGroup"
+      "summary": "Deletes a resource group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource group. You can call the [ListResourceGroups](~~158855~~) operation to obtain the ID.",
+          "example": "rg-9gLOoK****"
+        }
+      ]
     },
     "DeleteRole": {
       "required": [
@@ -254,7 +931,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteRole"
+      "summary": "Deletes a RAM role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RoleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the role. The name must be 1 to 64 characters in length and can contain letters, digits, periods (.), and hyphens (-).",
+          "example": "ECSAdmin"
+        }
+      ]
     },
     "DeleteServiceLinkedRole": {
       "required": [
@@ -262,7 +950,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteServiceLinkedRole"
+      "summary": "Deletes a service-linked role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RoleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the role.",
+          "example": "AliyunServiceRoleForPolarDB"
+        }
+      ]
     },
     "DeregisterDelegatedAdministrator": {
       "required": [
@@ -271,13 +970,33 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeregisterDelegatedAdministrator"
+      "summary": "Removes a delegated administrator account for a trusted service.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the member in the resource directory.",
+          "example": "181761095690****"
+        },
+        {
+          "name": "ServicePrincipal",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The identifier of the trusted service. For more information, see the `Trusted service identifier` column in [Supported trusted services](~~208133~~).",
+          "example": "cloudfw.aliyuncs.com"
+        }
+      ]
     },
     "DestroyResourceDirectory": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DestroyResourceDirectory"
+      "summary": "Disables a resource directory. This operation cannot be undone. Therefore, exercise caution when you perform it.",
+      "method": "POST"
     },
     "DetachControlPolicy": {
       "required": [
@@ -286,7 +1005,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DetachControlPolicy"
+      "summary": "Detaches an access control policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the access control policy.",
+          "example": "cp-jExXAqIYkwHN****"
+        },
+        {
+          "name": "TargetId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the object from which you want to detach the access control policy. Access control policies can be attached to the following objects: * Root folder * Subfolders of the Root folder * Members",
+          "example": "fd-ZDNPiT****"
+        }
+      ]
     },
     "DetachPolicy": {
       "required": [
@@ -298,49 +1036,99 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DetachPolicy"
+      "summary": "Detaches a permission policy from an object. After you detach a policy from an object, the object does not have the operation permissions on the current resource group or the resources within the current account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs. This parameter specifies the resource group or Alibaba Cloud account for which you want to revo",
+          "example": "rg-9gLOoK****"
+        },
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the permission policy. Valid values: * Custom * System",
+          "example": "Custom"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "OSS-Administrator"
+        },
+        {
+          "name": "PrincipalType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the object to which you want to attach the permission policy. Valid values: * IMSUser: RAM user * IMSGroup: RAM user group * ServiceRole: RAM role",
+          "example": "IMSUser"
+        },
+        {
+          "name": "PrincipalName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object to which you want to attach the permission policy.",
+          "example": "alice@demo.onaliyun.com"
+        }
+      ]
     },
     "DisableAssociatedTransfer": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DisableAssociatedTransfer"
+      "summary": "Disables the Transfer Associated Resources feature.",
+      "method": "POST"
     },
     "DisableAutoGrouping": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DisableAutoGrouping"
+      "summary": "Disables the Automatic Resource Transfer feature. After the feature is disabled, existing custom transfer rules and existing transfer rules for associated resources are deleted. However, existing relationships between resources and resource groups are not affected. If you still want to use this feature, you can enable it again 1 minute later.",
+      "method": "POST"
     },
     "DisableControlPolicy": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DisableControlPolicy"
+      "summary": "Disables the Control Policy feature.",
+      "method": "POST"
     },
     "DisableResourceGroupNotification": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DisableResourceGroupNotification"
+      "summary": "Disables group event notification.",
+      "method": "POST"
     },
     "EnableAssociatedTransfer": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "EnableAssociatedTransfer"
+      "summary": "Enables the Transfer Associated Resources feature.",
+      "method": "POST"
     },
     "EnableAutoGrouping": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "EnableAutoGrouping"
+      "summary": "Enables the Automatic Resource Transfer feature. After the feature is enabled, you can create, update, delete, and query transfer rules.",
+      "method": "POST"
     },
     "EnableControlPolicy": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "EnableControlPolicy"
+      "summary": "Enables the Control Policy feature.",
+      "method": "POST"
     },
     "EnableResourceDirectory": {
       "required": [
@@ -348,13 +1136,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "EnableResourceDirectory"
+      "summary": "Enables a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "MAName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the newly created account. Specify the name in the ` @rdadmin.aliyunid.com` format. The prefix can contain letters, digits, and special characters but cannot contain consecutive special ch",
+          "example": "user01@rdadmin.aliyunid.com"
+        },
+        {
+          "name": "MASecureMobilePhone",
+          "in": "query",
+          "type": "string",
+          "description": "The mobile phone number that is bound to the newly created account. If you leave this parameter empty, the mobile phone number that is bound to the current account is used. The mobile phone number you",
+          "example": "xx-13900001234"
+        },
+        {
+          "name": "VerificationCode",
+          "in": "query",
+          "type": "string",
+          "description": "The verification code. You can call the [SendVerificationCodeForEnableRD](~~364248~~) operation to obtain the verification code.",
+          "example": "123456"
+        },
+        {
+          "name": "EnableMode",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The mode in which you enable a resource directory. Valid values: * CurrentAccount: indicates that the current account is used to enable a resource directory. * NewManagementAccount: indicates that a n",
+          "example": "CurrentAccount"
+        }
+      ]
     },
     "EnableResourceGroupNotification": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "EnableResourceGroupNotification"
+      "summary": "Enables group event notification.",
+      "method": "POST"
     },
     "GetAccount": {
       "required": [
@@ -362,7 +1183,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccount"
+      "summary": "Queries the information of a member.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud account ID of the member.",
+          "example": "181761095690****"
+        },
+        {
+          "name": "IncludeTags",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the information of tags. Valid values: * false (default value) * true",
+          "example": "true"
+        }
+      ]
     },
     "GetAccountDeletionCheckResult": {
       "required": [
@@ -370,7 +1209,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccountDeletionCheckResult"
+      "summary": "Queries the result of a member deletion check.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the member that you want to delete.",
+          "example": "179855839641****"
+        }
+      ]
     },
     "GetAccountDeletionStatus": {
       "required": [
@@ -378,7 +1228,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query member deletion status"
+      "summary": "Query member deletion status",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud account ID of the member.",
+          "example": "169946124551****"
+        }
+      ]
     },
     "GetAutoGroupingRule": {
       "required": [
@@ -386,13 +1247,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAutoGroupingRule"
+      "summary": "Queries the information about a transfer rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the rule.",
+          "example": "gr-acfo******hy6a"
+        }
+      ]
     },
     "GetAutoGroupingStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAutoGroupingStatus"
+      "summary": "Queries the status of the Automatic Resource Transfer feature.",
+      "method": "POST"
     },
     "GetControlPolicy": {
       "required": [
@@ -400,13 +1273,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetControlPolicy"
+      "summary": "Queries the details of an access control policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the access control policy.",
+          "example": "cp-SImPt8GCEwiq****"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the description of the access control policy. Valid values: * zh-CN (default value): Chinese * en: English * ja: Japanese > This parameter is valid only for sy",
+          "example": "zh-CN"
+        }
+      ]
     },
     "GetControlPolicyEnablementStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetControlPolicyEnablementStatus"
+      "summary": "Queries the status of the Control Policy feature.",
+      "method": "POST"
     },
     "GetFolder": {
       "required": [
@@ -414,7 +1306,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetFolder"
+      "summary": "Queries the information of a folder.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "FolderId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the folder.",
+          "example": "fd-Jyl5U7****"
+        }
+      ]
     },
     "GetHandshake": {
       "required": [
@@ -422,7 +1325,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetHandshake"
+      "summary": "Queries the information of an invitation.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "HandshakeId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the invitation.",
+          "example": "h-ycm4rp****"
+        }
+      ]
     },
     "GetPayerForAccount": {
       "required": [
@@ -430,7 +1344,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetPayerForAccount"
+      "summary": "Queries the information of a settlement account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the account.",
+          "example": "12323344****"
+        }
+      ]
     },
     "GetPolicy": {
       "required": [
@@ -439,7 +1364,37 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetPolicy"
+      "summary": "Queries the information about a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphens (-).",
+          "example": "OSS-Administrator"
+        },
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the permission policy. Valid values: * Custom * System",
+          "enum": [
+            "Custom",
+            "System"
+          ],
+          "example": "Custom"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the description of the system permission policy. Valid values: * en: English * zh-CN: Chinese * ja: Japanese",
+          "example": "zh-CN"
+        }
+      ]
     },
     "GetPolicyVersion": {
       "required": [
@@ -449,13 +1404,45 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetPolicyVersion"
+      "summary": "Queries the information about a version of a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the permission policy. Valid values: * Custom * System",
+          "enum": [
+            "Custom",
+            "System"
+          ],
+          "example": "Custom"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "OSS-Administrator"
+        },
+        {
+          "name": "VersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the policy version.",
+          "example": "v3"
+        }
+      ]
     },
     "GetResourceDirectory": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetResourceDirectory"
+      "summary": "Queries the information of a resource directory. If you use a management account to call this API operation, the system returns the information of the resource directory that is enabled by using the management account. If you use a member to call this operation, the system returns the information of",
+      "method": "POST"
     },
     "GetResourceGroup": {
       "required": [
@@ -463,25 +1450,91 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetResourceGroup"
+      "summary": "Queries the information of a resource group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource group. You can call the [ListResourceGroups](~~158855~~) operation to obtain the ID of the resource group.",
+          "example": "rg-9gLOoK****"
+        },
+        {
+          "name": "IncludeTags",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the information of tags. Valid values: * false (default value) * true",
+          "example": "true"
+        }
+      ]
     },
     "GetResourceGroupAdminSetting": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetResourceGroupAdminSetting"
+      "summary": "Queries the configurations of a resource group administrator.",
+      "method": "POST"
     },
     "GetResourceGroupNotificationSetting": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetResourceGroupNotificationSetting"
+      "summary": "Queries the notification settings of a resource group.",
+      "method": "POST"
     },
     "GetResourceGroupResourceCounts": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetResourceGroupResourceCounts"
+      "summary": "Queries the number of resources in a visible resource group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceTypes",
+          "in": "query",
+          "type": "array",
+          "description": "The resource types.",
+          "children": [
+            {
+              "name": "ResourceTypeCode",
+              "type": "string",
+              "description": "The resource type. You can obtain the resource type from the **Resource type** column in [Services that work with Resource Group](~~94479~~)."
+            },
+            {
+              "name": "Service",
+              "type": "string",
+              "description": "The service code. You can obtain the code from the **Service code** column in [Services that work with Resource Group](~~94479~~)."
+            }
+          ]
+        },
+        {
+          "name": "GroupByKey",
+          "in": "query",
+          "type": "string",
+          "description": "The dimension by which resources are queried. > If you do not specify a dimension, no results are returned. Valid values: * ResourceGroupId * ResourceType",
+          "enum": [
+            "ResourceGroupId",
+            "ResourceType"
+          ],
+          "example": "ResourceGroupId"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The resource group ID. You can call the [ListResourceGroups](~~2716558~~) operation to obtain the ID.",
+          "example": "rg-9gLOoK****"
+        },
+        {
+          "name": "ResourceRegionId",
+          "in": "query",
+          "type": "string",
+          "description": "The region ID of the resources.",
+          "example": "cn-shanghai"
+        }
+      ]
     },
     "GetRole": {
       "required": [
@@ -489,19 +1542,48 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetRole"
+      "summary": "Queries the information about a RAM role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RoleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the role. The name must be 1 to 64 characters in length, and can contain letters, digits, periods (.), and hyphens (-).",
+          "example": "ECSAdmin"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the description of the role. Valid values: * en: English * zh-CN: Chinese * ja: Japanese",
+          "example": "zh-CN"
+        }
+      ]
     },
     "GetServiceLinkedRoleDeletionStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetServiceLinkedRoleDeletionStatus"
+      "summary": "Queries the status of the task that is used to delete a service-linked role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "DeletionTaskId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the deletion task.",
+          "example": "task/acs-service-role/hdr.aliyuncs.com/AliyunServiceRoleForHdr/c4d22c52-247f-4ee1-83a2-6c0460bd****"
+        }
+      ]
     },
     "InitResourceDirectory": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "InitResourceDirectory"
+      "summary": "Enables a resource directory. After you enable a resource directory, the system automatically creates a root folder and sets the current account as the enterprise management account of the resource directory. The enterprise management account has all administrative permissions on this resource direc",
+      "method": "POST"
     },
     "InviteAccountToResourceDirectory": {
       "required": [
@@ -510,19 +1592,161 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "InviteAccountToResourceDirectory"
+      "summary": "Invites an account to join a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TargetEntity",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID or logon email address of the account that you want to invite.",
+          "example": "someone@example.com"
+        },
+        {
+          "name": "TargetType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the account. Valid values: * Account: indicates the ID of the account. * Email: indicates the logon email address of the account.",
+          "example": "Email"
+        },
+        {
+          "name": "Note",
+          "in": "query",
+          "type": "string",
+          "description": "The comment on the invitation. The comment can be up to 1,024 characters in length.",
+          "example": "欢迎您加入"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag key and value.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "A tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "A tag value."
+            }
+          ]
+        }
+      ]
     },
     "ListAccounts": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAccounts"
+      "summary": "Queries all the members in a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag key and value.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "A tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "A tag value."
+            }
+          ]
+        },
+        {
+          "name": "IncludeTags",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the information of tags. Valid values: * false (default value) * true",
+          "example": "true"
+        }
+      ]
     },
     "ListAccountsForParent": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAccountsForParent"
+      "summary": "Queries the information of members in a folder.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ParentFolderId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the folder.",
+          "example": "fd-bVaRIG****"
+        },
+        {
+          "name": "QueryKeyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword used for the query, such as the display name of a member. Fuzzy match is supported.",
+          "example": "admin"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag key and value.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "A tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "A tag value."
+            }
+          ]
+        },
+        {
+          "name": "IncludeTags",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the information of tags. Valid values: false (default value) true",
+          "example": "true"
+        }
+      ]
     },
     "ListAncestors": {
       "required": [
@@ -530,13 +1754,25 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAncestors"
+      "summary": "Queries the information of all the parent folders of a specified folder. The system returns the information of the folders based on their top-down hierarchy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ChildId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the child folder.",
+          "example": "fd-i1c9nr****"
+        }
+      ]
     },
     "ListAssociatedTransferSetting": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAssociatedTransferSetting"
+      "summary": "Queries the settings of the Transfer Associated Resources feature.",
+      "method": "GET"
     },
     "ListAutoGroupingRemediations": {
       "required": [
@@ -544,19 +1780,159 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAutoGroupingRemediations"
+      "summary": "Queries a list of automatic grouping remediation records.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. If you leave this parameter empty, the query starts from the beginning.",
+          "example": "TGlzdFJlc291cm****"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of data entries to return.",
+          "example": "10"
+        },
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The rule ID.",
+          "example": "gr-acfnugygwms32yy"
+        },
+        {
+          "name": "Service",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the Alibaba Cloud service. You can obtain the ID from the **Service code** column in [Services that work with Resource Group](~~94479~~).",
+          "example": "ecs"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The resource type, You can obtain the resource type from the **Resource type** column in [Services that work with Resource Group](~~94479~~).",
+          "example": "instance"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "string",
+          "description": "The resource ID,",
+          "example": "i-23v38****"
+        },
+        {
+          "name": "TargetResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the new resource group.",
+          "example": "rg-aekz26emqhc****"
+        },
+        {
+          "name": "EarliestRemediationTime",
+          "in": "query",
+          "type": "string",
+          "description": "The earliest remediation time. This parameter is empty by default.",
+          "example": "2022-01-01 00:00:00"
+        },
+        {
+          "name": "LatestRemediationTime",
+          "in": "query",
+          "type": "string",
+          "description": "The latest remediation time. This parameter is empty by default.",
+          "example": "2022-02-01 00:00:00"
+        }
+      ]
     },
     "ListAutoGroupingRules": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAutoGroupingRules"
+      "summary": "Queries a list of transfer rules.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the rule.",
+          "example": "gr-acfo******hy6a"
+        },
+        {
+          "name": "RuleName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the rule.",
+          "example": "A项目线上资源自动转组规则"
+        },
+        {
+          "name": "RuleType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the rule. Valid values: * custom_condition: custom transfer rule * associated_transfer: transfer rule for associated resources",
+          "enum": [
+            "associated_transfer",
+            "custom_condition"
+          ],
+          "example": "custom_condition"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. You do not need to specify this parameter for the first request. You must specify the token that is obtained fr",
+          "example": "TGlzdFJlc291cm****"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of entries to return for a single request. Valid values: 1 to 50.",
+          "example": "10"
+        }
+      ]
     },
     "ListControlPolicies": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListControlPolicies"
+      "summary": "Queries access control policies.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the access control policy. Valid values: - System: system access control policy - Custom: custom access control policy",
+          "example": "System"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Page start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the descriptions of the access control policies. Valid values: - zh-CN (default value): Chinese - en: English - ja: Japanese > This parameter is valid only for",
+          "example": "zh-CN"
+        }
+      ]
     },
     "ListControlPolicyAttachmentsForTarget": {
       "required": [
@@ -564,13 +1940,55 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListControlPolicyAttachmentsForTarget"
+      "summary": "Queries the access control policies that are attached to a folder or member.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "TargetId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the object whose access control policies you want to query. Access control policies can be attached to the following objects: * Root folder * Subfolders of the Root folder * Members",
+          "example": "fd-ZDNPiT****"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the descriptions of the access control policies. Valid values: * zh-CN (default value): Chinese * en: English * ja: Japanese > This parameter is valid only for",
+          "example": "zh-CN"
+        }
+      ]
     },
     "ListDelegatedAdministrators": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListDelegatedAdministrators"
+      "summary": "Queries delegated administrator accounts.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ServicePrincipal",
+          "in": "query",
+          "type": "string",
+          "description": "The identifier of the trusted service. For more information, see the `Trusted service identifier` column in [Supported trusted services](~~208133~~).",
+          "example": "cloudfw.aliyuncs.com"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        }
+      ]
     },
     "ListDelegatedServicesForAccount": {
       "required": [
@@ -578,37 +1996,203 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListDelegatedServicesForAccount"
+      "summary": "Queries the trusted services for which a member is specified as a delegated administrator account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the member.",
+          "example": "138660628348****"
+        }
+      ]
     },
     "ListFoldersForParent": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListFoldersForParent"
+      "summary": "Queries the information of all subfolders of a folder.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ParentFolderId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the parent folder. If you leave this parameter empty, the information of the first-level subfolders of the Root folder is queried.",
+          "example": "r-b1****"
+        },
+        {
+          "name": "QueryKeyword",
+          "in": "query",
+          "type": "string",
+          "description": "The keyword used for the query, such as a folder name. Fuzzy match is supported.",
+          "example": "rdFolder"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        }
+      ]
     },
     "ListHandshakesForAccount": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListHandshakesForAccount"
+      "summary": "Queries the invitations that are associated with an account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        }
+      ]
     },
     "ListHandshakesForResourceDirectory": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListHandshakesForResourceDirectory"
+      "summary": "Queries invitations in a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        }
+      ]
     },
     "ListPolicies": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListPolicies"
+      "summary": "Queries a list of permission policies.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the permission policy. If you do not configure this parameter, all types of permission policies are returned. Valid values: * Custom * System",
+          "example": "Custom"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the descriptions of the system permission policies. Valid values: * en: English. * zh-CN: Chinese * ja: Japanese",
+          "example": "zh-CN"
+        }
+      ]
     },
     "ListPolicyAttachments": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListPolicyAttachments"
+      "summary": "Queries policy attachment records.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs. If you do not configure this parameter, the system lists all policy attachment records within t",
+          "example": "rg-001"
+        },
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the permission policy. If you do not configure this parameter, all types of policies are returned. Valid values: * Custom * System",
+          "example": "System"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "AdministratorAccess"
+        },
+        {
+          "name": "PrincipalType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the object to which you want to attach the permission policy. If you do not configure this parameter, the system lists all types of objects. Valid values: * IMSUser: RAM user * IMSGroup: R",
+          "example": "IMSUser"
+        },
+        {
+          "name": "PrincipalName",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the object to which you want to attach the permission policy.",
+          "example": "alice@demo.onaliyun.com"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the description of the system policy. Valid values: * en: English * zh-CN: Chinese * ja: Japanese",
+          "example": "zh-CN"
+        }
+      ]
     },
     "ListPolicyVersions": {
       "required": [
@@ -617,37 +2201,356 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListPolicyVersions"
+      "summary": "Queries a list of versions of a policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The type of the permission policy. Valid values: * Custom * System",
+          "example": "Custom"
+        },
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "OSS-Administrator"
+        }
+      ]
     },
     "ListResourceGroupCapability": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "List resource group capabilities"
+      "summary": "List resource group capabilities",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Service",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the Alibaba Cloud service. You can obtain the service code from the **Service code** column in [Services that work with Resource Group](~~94479~~).",
+          "example": "ecs"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The resource type. You can obtain the resource type from the **Resource type** column in [Services that work with Resource Group](~~94479~~).",
+          "example": "instance"
+        },
+        {
+          "name": "SupportResourceGroupEvent",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether a specific resource type or cloud service supports resource group events.",
+          "example": "true"
+        }
+      ]
     },
     "ListResourceGroups": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query resource group list"
+      "summary": "Query resource group list",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the resource group. This parameter specifies a filter condition for the query. Valid values: * Creating: The resource group is being created. * OK: The resource group is created. * Pendi",
+          "example": "OK"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group. This parameter specifies a filter condition for the query. The ID can be a maximum of 18 characters in length and must start with `rg-`. > This parameter is incorporated ",
+          "example": "rg-9gLOoK****"
+        },
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The display name of the resource group. This parameter specifies a filter condition for the query. Fuzzy match is supported. The display name can be a maximum of 50 characters in length.",
+          "example": "my-project"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The identifier of the resource group. This parameter specifies a filter condition for the query. Fuzzy match is supported. The identifier can be a maximum of 50 characters in length and can contain le",
+          "example": "my-project"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag. This parameter specifies a filter condition for the query.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        },
+        {
+          "name": "IncludeTags",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the information of tags. Valid values: * false (default value) * true > If you configure the Tag parameter, the system returns the information of tags regardless of the set",
+          "example": "false"
+        },
+        {
+          "name": "ResourceGroupIds",
+          "in": "query",
+          "type": "array",
+          "description": "The IDs of the resource groups. This parameter specifies a filter condition for the query. You can specify a maximum of 100 resource group IDs. > If you configure both the `ResourceGroupId` and `Resou",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     },
     "ListResourceGroupsWithAuthDetails": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListResourceGroupsWithAuthDetails"
+      "summary": "Queries resource groups and their user authorization information.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "description": "The status of the resource group. This parameter specifies a filter condition for the query. Valid values: * Creating: The resource group is being created. * OK: The resource group is created. * Pendi",
+          "example": "OK"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number of the returned page.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries returned per page.",
+          "example": "10"
+        },
+        {
+          "name": "DisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The display name of the resource group. This parameter specifies a filter condition for the query. Fuzzy search is supported. The display name can be a maximum of 50 characters in length.",
+          "example": "TestRG-BVT1"
+        },
+        {
+          "name": "Name",
+          "in": "query",
+          "type": "string",
+          "description": "The identifier of the resource group. This parameter specifies a filter condition for the query. Fuzzy search is supported. The identifier can be a maximum of 50 characters in length and can contain l",
+          "example": "prod-rg"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The tag value."
+            }
+          ]
+        },
+        {
+          "name": "IncludeTags",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to return the information of tags. Valid values: * false (default) * true > If you set a tag filter condition, the tag information is returned regardless of the `IncludeTags` value.",
+          "example": "true"
+        },
+        {
+          "name": "ResourceGroupIds",
+          "in": "query",
+          "type": "array",
+          "description": "The IDs of the resource groups that you want to query.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ResourceTypes",
+          "in": "query",
+          "type": "array",
+          "description": "The resource types.",
+          "children": [
+            {
+              "name": "ResourceTypeCode",
+              "type": "string",
+              "description": "The resource type. You can obtain the resource type from the **Resource type** column in [Services that work with Resource Group](~~94479~~)."
+            },
+            {
+              "name": "Service",
+              "type": "string",
+              "description": "The service code. You can obtain the code from the **Service code** column in [Services that work with Resource Group](~~94479~~)."
+            }
+          ]
+        },
+        {
+          "name": "ResourceRegionId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the region where the resource resides.",
+          "example": "cn-shenzhen"
+        }
+      ]
     },
     "ListResources": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListResources"
+      "summary": "Queries resources that can be accessed by the current account in resource groups.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource group.",
+          "example": "rg-uPJpP****"
+        },
+        {
+          "name": "Service",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the Alibaba Cloud service. You can obtain the ID from the **Service code** column in [Services that work with Resource Group](~~94479~~).",
+          "example": "ecs"
+        },
+        {
+          "name": "Region",
+          "in": "query",
+          "type": "string",
+          "description": "The region ID.",
+          "example": "cn-hangzhou"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The resource type. For more information about the supported resource types, see the **Resource type** column in [Services that work with Resource Group](~~94479~~).",
+          "example": "instance"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the resource.",
+          "example": "i-23v38****"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "ResourceTypes",
+          "in": "query",
+          "type": "array",
+          "description": "The resource types. A maximum of 50 resource types are supported. > If you configure `ResourceTypes`, you must configure both `Service` and `ResourceType`. Otherwise, the configured Service or Resourc",
+          "children": [
+            {
+              "name": "ResourceType",
+              "type": "string",
+              "description": "The resource type. Valid values of N: 1 to 50. For more information about the supported resource types, see the **Resource type** column in [Services that work with Resource Group](~~94479~~). > You m"
+            },
+            {
+              "name": "Service",
+              "type": "string",
+              "description": "The ID of the Alibaba Cloud service. Valid values of N: 1 to 50. You can obtain the ID from the **Service code** column in [Services that work with Resource Group](~~94479~~). > You must configure bot"
+            }
+          ]
+        }
+      ]
     },
     "ListRoles": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListRoles"
+      "summary": "Queries a list of RAM roles.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The page number. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Language",
+          "in": "query",
+          "type": "string",
+          "description": "The language in which you want to return the descriptions of the RAM roles. Valid values: * en: English * zh-CN: Chinese * ja: Japanese",
+          "example": "zh-CN"
+        }
+      ]
     },
     "ListTagKeys": {
       "required": [
@@ -655,13 +2558,99 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagKeys"
+      "summary": "Queries tag keys.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to start the next query.",
+          "example": "TGlzdFJlc291cm****"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of entries to return for a single request. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. The value Account indicates the members of the resource directory.",
+          "example": "Account"
+        },
+        {
+          "name": "KeyFilter",
+          "in": "query",
+          "type": "string",
+          "description": "The tag key for a fuzzy query.",
+          "example": "team"
+        }
+      ]
     },
     "ListTagResources": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagResources"
+      "summary": "Queries the tags that are added to resource groups or the members in a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to start the next query.",
+          "example": "caeba0bbb2be03f84eb48b699f0a****"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "description": "The tag key and value.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "A tag key."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "A tag value."
+            }
+          ]
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "description": "The resource ID.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the objects whose tags you want to query. This parameter specifies a filter condition for the query. Valid values: * ResourceGroup: resource group. This is the default value. * Account: me",
+          "example": "ResourceGroup"
+        }
+      ]
     },
     "ListTagValues": {
       "required": [
@@ -670,7 +2659,47 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTagValues"
+      "summary": "Queries the tag values of a tag key.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The token that is used to start the next query.",
+          "example": "TGlzdFJlc291cm****"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of entries to return for a single request. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The resource type. The value Account indicates the members of the resource directory.",
+          "example": "Account"
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The tag key. This parameter specifies a filter condition for the query.",
+          "example": "k1"
+        },
+        {
+          "name": "ValueFilter",
+          "in": "query",
+          "type": "string",
+          "description": "The tag value for a fuzzy query.",
+          "example": "v1"
+        }
+      ]
     },
     "ListTargetAttachmentsForControlPolicy": {
       "required": [
@@ -678,13 +2707,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTargetAttachmentsForControlPolicy"
+      "summary": "Queries the objects to which a specific control policy is attached.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the control policy.",
+          "example": "cp-jExXAqIYkwHN****"
+        },
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        }
+      ]
     },
     "ListTrustedServiceStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListTrustedServiceStatus"
+      "summary": "Queries the trusted services that are enabled within an enterprise management account or delegated administrator account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PageNumber",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of the page to return. Pages start from page 1. Default value: 1.",
+          "example": "1"
+        },
+        {
+          "name": "PageSize",
+          "in": "query",
+          "type": "integer",
+          "description": "The number of entries to return on each page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "AdminAccountId",
+          "in": "query",
+          "type": "string",
+          "description": "The ID of the enterprise management account or delegated administrator account. * If you set this parameter to the ID of an enterprise management account, the trusted services that are enabled within ",
+          "example": "177242285274****"
+        }
+      ]
     },
     "LookupResourceGroupEvents": {
       "required": [
@@ -692,7 +2770,78 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "LookupResourceGroupEvents"
+      "summary": "Queries the events of resource groups.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "StartTime",
+          "in": "query",
+          "type": "string",
+          "description": "The beginning of the time range to query. The time is displayed in UTC.",
+          "example": "2025-11-30 23:43:16"
+        },
+        {
+          "name": "EndTime",
+          "in": "query",
+          "type": "string",
+          "description": "The end of the time range to query. The time is displayed in UTC.",
+          "example": "2025-11-30 23:43:16"
+        },
+        {
+          "name": "EventCategory",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The event type.",
+          "example": "MemberShipChange"
+        },
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "description": "The resource group ID.",
+          "example": "rg-9gLOoK****"
+        },
+        {
+          "name": "NextToken",
+          "in": "query",
+          "type": "string",
+          "description": "The pagination token that is used in the next request to retrieve a new page of results. You do not need to specify this parameter for the first request. You must specify the token that is obtained fr",
+          "example": "TGlzdFJlc291cm****"
+        },
+        {
+          "name": "MaxResults",
+          "in": "query",
+          "type": "string",
+          "description": "The number of entries per page. Valid values: 1 to 100. Default value: 10.",
+          "example": "10"
+        },
+        {
+          "name": "LookupAttributes",
+          "in": "query",
+          "type": "array",
+          "description": "The attributes used for advanced search.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "The key of the attribute."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "The value of the attribute."
+            }
+          ]
+        },
+        {
+          "name": "ResourceGroupDisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The resource group name.",
+          "example": "ProjectA"
+        }
+      ]
     },
     "MoveAccount": {
       "required": [
@@ -701,7 +2850,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "MoveAccount"
+      "summary": "Moves a member account from a folder to another.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the account you want to move.",
+          "example": "12323344****"
+        },
+        {
+          "name": "DestinationFolderId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the destination folder.",
+          "example": "fd-bVaRIG****"
+        }
+      ]
     },
     "MoveResources": {
       "required": [
@@ -710,7 +2878,47 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "MoveResources"
+      "summary": "Moves resources from one resource group to another. You can move multiple resources that reside in different regions, are used by different Alibaba Cloud services, or belong to different resource groups.",
+      "method": "GET",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource group to which you want to move the resources.",
+          "example": "rg-aekzmeobk5w****"
+        },
+        {
+          "name": "Resources",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The resources that you want to move. > You can move a maximum of 10 resources at a time. If you want to move more than 10 resources, move them in batches.",
+          "children": [
+            {
+              "name": "RegionId",
+              "type": "string",
+              "description": "The region ID of the resource."
+            },
+            {
+              "name": "ResourceId",
+              "type": "string",
+              "description": "The ID of the resource."
+            },
+            {
+              "name": "ResourceType",
+              "type": "string",
+              "description": "The type of the resource."
+            },
+            {
+              "name": "Service",
+              "type": "string",
+              "description": "The ID of the Alibaba Cloud service to which the resource belongs."
+            }
+          ]
+        }
+      ]
     },
     "PromoteResourceAccount": {
       "required": [
@@ -719,7 +2927,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PromoteResourceAccount"
+      "summary": "Upgrades a resource account to a cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource account you want to upgrade.",
+          "example": "12323344****"
+        },
+        {
+          "name": "Email",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The email address used to log on to the cloud account after the upgrade.",
+          "example": "someone@example.com"
+        }
+      ]
     },
     "RegisterDelegatedAdministrator": {
       "required": [
@@ -728,7 +2955,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RegisterDelegatedAdministrator"
+      "summary": "Specifies a member in a resource directory as a delegated administrator account of a trusted service.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the member in the resource directory.",
+          "example": "181761095690****"
+        },
+        {
+          "name": "ServicePrincipal",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The identifier of the trusted service. For more information, see the `Trusted service identifier` column in [Supported trusted services](~~208133~~).",
+          "example": "cloudfw.aliyuncs.com"
+        }
+      ]
     },
     "RemoveCloudAccount": {
       "required": [
@@ -736,7 +2982,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RemoveCloudAccount"
+      "summary": "Removes a member of the cloud account type. After you remove a member of the cloud account type, the member is no longer managed by the management account of the resource directory to which the member belonged.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the member.",
+          "example": "177242285274****"
+        }
+      ]
     },
     "ResendCreateCloudAccountEmail": {
       "required": [
@@ -744,7 +3001,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ResendCreateCloudAccountEmail"
+      "summary": "Resends an email that is used to confirm the creation of a cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The account record ID.",
+          "example": "06950264-3f0d-4ca9-82dd-6ee7a3d3****"
+        }
+      ]
     },
     "ResendPromoteResourceAccountEmail": {
       "required": [
@@ -752,7 +3020,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ResendPromoteResourceAccountEmail"
+      "summary": "Resends an email that is used to confirm the upgrade from a resource account to a cloud account.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RecordId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The account record ID.",
+          "example": "06950264-3f0d-4ca9-82dd-6ee7a3d3****"
+        }
+      ]
     },
     "RetryChangeAccountEmail": {
       "required": [
@@ -760,7 +3039,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "RetryChangeAccountEmail"
+      "summary": "Resends a verification email for the email address change of a member.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The Alibaba Cloud account ID of the member.",
+          "example": "181761095690****"
+        }
+      ]
     },
     "SendVerificationCodeForBindSecureMobilePhone": {
       "required": [
@@ -769,13 +3059,42 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SendVerificationCodeForBindSecureMobilePhone"
+      "summary": "Sends a verification code to the mobile phone number that you want to bind to a resource account in a resource directory for security purposes.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecureMobilePhone",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The mobile phone number that you want to bind to the resource account. Specify the mobile phone number in the \\ -\\ format. > Mobile phone numbers in the `86- ` format in the Chinese mainland are not s",
+          "example": "xx-13900001234"
+        },
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource account.",
+          "example": "138660628348****"
+        }
+      ]
     },
     "SendVerificationCodeForEnableRD": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SendVerificationCodeForEnableRD"
+      "summary": "Sends a verification code to the mobile phone number bound to a newly created account when you use the account to enable a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "SecureMobilePhone",
+          "in": "query",
+          "type": "string",
+          "description": "The mobile phone number that is bound to the newly created account. If you leave this parameter empty, the mobile phone number that is bound to the current account is used. Specify the mobile phone nu",
+          "example": "xx-13900001234"
+        }
+      ]
     },
     "SetDefaultPolicyVersion": {
       "required": [
@@ -784,7 +3103,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetDefaultPolicyVersion"
+      "summary": "Sets a default version for a permission policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the permission policy. The name must be 1 to 128 characters in length and can contain letters, digits, and hyphen (-).",
+          "example": "OSS-Administrator"
+        },
+        {
+          "name": "VersionId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the policy version.",
+          "example": "v2"
+        }
+      ]
     },
     "SetMemberDeletionPermission": {
       "required": [
@@ -792,7 +3130,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "SetMemberDeletionPermission"
+      "summary": "Enables or disables the member deletion feature.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "Status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Specifies whether to enable the member deletion feature. Valid values: * Enabled: enables the member deletion feature * Disabled: disables the member deletion feature",
+          "example": "Enabled"
+        }
+      ]
     },
     "TagResources": {
       "required": [
@@ -801,7 +3150,49 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "TagResources"
+      "summary": "Adds tags to resource groups or the members in a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The ID of a resource group or member.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "Tag",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The tags.",
+          "children": [
+            {
+              "name": "Key",
+              "type": "string",
+              "description": "A tag key. A tag key can be a maximum of 128 characters in length. It cannot contain `http://` or `https://` and cannot start with `acs:` or `aliyun`."
+            },
+            {
+              "name": "Value",
+              "type": "string",
+              "description": "A tag value. A tag value can be a maximum of 128 characters in length. It cannot contain `http://` or `https://` and cannot start with `acs:`."
+            }
+          ]
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the objects to which you want to add tags. Valid values: * ResourceGroup : resource group. This is the default value. * Account: member. > This parameter is required if you add tags to mem",
+          "example": "ResourceGroup"
+        }
+      ]
     },
     "UntagResources": {
       "required": [
@@ -809,7 +3200,49 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UntagResources"
+      "summary": "Removes tags from resource groups or the members in a resource directory.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "All",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to remove all tags from the specified resource groups or members. Valid values: * false (default value) * true",
+          "example": "false"
+        },
+        {
+          "name": "ResourceId",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The ID of a resource group or member. You can specify a maximum of 50 IDs.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "TagKey",
+          "in": "query",
+          "type": "array",
+          "description": "A tag key. You can specify a maximum of 20 tag keys. > If you set the `All` parameter to `true`, you do not need to configure this parameter.",
+          "children": [
+            {
+              "name": "<item>",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "ResourceType",
+          "in": "query",
+          "type": "string",
+          "description": "The type of the objects from which you want to remove tags. Valid values: * ResourceGroup: resource group. This is the default value. * Account: member. > This parameter is required if you remove tags",
+          "example": "ResourceGroup"
+        }
+      ]
     },
     "UpdateAccount": {
       "required": [
@@ -817,19 +3250,102 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateAccount"
+      "summary": "Changes the display name of a member, or switches the type of a member.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "NewDisplayName",
+          "in": "query",
+          "type": "string",
+          "description": "The new display name of the member. > You can configure either the `NewDisplayName` or `NewAccountType` parameter.",
+          "example": "admin"
+        },
+        {
+          "name": "NewAccountType",
+          "in": "query",
+          "type": "string",
+          "description": "The new type of the member. Valid values: * ResourceAccount: resource account * CloudAccount: cloud account > You can configure either the `NewDisplayName` or `NewAccountType` parameter.",
+          "example": "ResourceAccount"
+        },
+        {
+          "name": "AccountId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Alibaba Cloud account that corresponds to the member.",
+          "example": "12323344****"
+        }
+      ]
     },
     "UpdateAssociatedTransferSetting": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateAssociatedTransferSetting"
+      "summary": "Updates the settings of the Transfer Associated Resources feature.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleSettings",
+          "in": "query",
+          "type": "array",
+          "description": "The settings of transfer rules.",
+          "children": [
+            {
+              "name": "AssociatedResourceType",
+              "type": "string",
+              "description": "The type of the associated resource. You can obtain the resource type from the **Resource type** column in [Services that work with Resource Group](~~94479~~)."
+            },
+            {
+              "name": "AssociatedService",
+              "type": "string",
+              "description": "The service code of the associated resource. You can obtain the service code from the **Service code** column in [Services that work with Resource Group](~~94479~~)."
+            },
+            {
+              "name": "MasterResourceType",
+              "type": "string",
+              "description": "The type of the primary resource. You can obtain the resource type from the **Resource type** column in [Services that work with Resource Group](~~94479~~)."
+            },
+            {
+              "name": "MasterService",
+              "type": "string",
+              "description": "The service code of the primary resource. You can obtain the service code from the **Service code** column in [Services that work with Resource Group](~~94479~~)."
+            },
+            {
+              "name": "Status",
+              "type": "string",
+              "required": true,
+              "description": "The status of the Transfer Associated Resources feature. Valid values: * Enable: enabled * Disable: disabled",
+              "enum": [
+                "Enable",
+                "Disable"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "EnableExistingResourcesTransfer",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies whether to enable the Transfer Existing Associated Resources feature. Valid values: * false * true",
+          "example": "false"
+        }
+      ]
     },
     "UpdateAutoGroupingConfig": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateAutoGroupingConfig"
+      "summary": "Updates the configuration of the Automatic Resource Transfer feature. You can update only the configuration of the Transfer Existing Associated Resources feature.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "EnableExistingResourcesTransfer",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to enable the Transfer Existing Associated Resources feature. Valid values: * false * true",
+          "example": "false"
+        }
+      ]
     },
     "UpdateAutoGroupingRule": {
       "required": [
@@ -839,7 +3355,114 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateAutoGroupingRule"
+      "summary": "Updates a transfer rule.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RuleId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the rule.",
+          "example": "gr-acfo******hy6a"
+        },
+        {
+          "name": "RuleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the rule.",
+          "example": "A项目线上资源自动转组规则"
+        },
+        {
+          "name": "RuleDesc",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the rule.",
+          "example": "带有标签 {\"env\": \"online\"} 和 {\"project\": \"A\"} 的资源转移到资源组rg-aek2********qcy"
+        },
+        {
+          "name": "RuleContents",
+          "in": "query",
+          "type": "array",
+          "required": true,
+          "description": "The content records of the rule.",
+          "children": [
+            {
+              "name": "AutoGroupingScopeCondition",
+              "type": "string",
+              "description": "The condition for the range of resources that are automatically transferred."
+            },
+            {
+              "name": "RuleContentId",
+              "type": "string",
+              "description": "The ID of the content record."
+            },
+            {
+              "name": "TargetResourceGroupCondition",
+              "type": "string",
+              "required": true,
+              "description": "The condition for the destination resource group."
+            }
+          ]
+        },
+        {
+          "name": "ResourceGroupIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resource groups. Separate multiple IDs with commas (,).",
+          "example": "rg-aekz******4b5ea,rg-aek2******fxykq"
+        },
+        {
+          "name": "ExcludeResourceGroupIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resource groups to be excluded. Separate multiple IDs with commas (,).",
+          "example": "rg-aekz******zj2oi,rg-aekz******r62ua"
+        },
+        {
+          "name": "RegionIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of regions. Separate multiple IDs with commas (,).",
+          "example": "cn-hangzhou,cn-shanghai"
+        },
+        {
+          "name": "ExcludeRegionIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of regions to be excluded. Separate multiple IDs with commas (,).",
+          "example": "cn-beijing,cn-guangzhou"
+        },
+        {
+          "name": "ResourceIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resources. Separate multiple IDs with commas (,).",
+          "example": "i-2zee******ym49kfmwis,vpc-5ts6******fnw493g849a"
+        },
+        {
+          "name": "ExcludeResourceIdsScope",
+          "in": "query",
+          "type": "string",
+          "description": "The IDs of resources to be excluded. Separate multiple IDs with commas (,).",
+          "example": "pc-uf6p******4h784y,rmq-cn-******ny0y"
+        },
+        {
+          "name": "ResourceTypesScope",
+          "in": "query",
+          "type": "string",
+          "description": "The resource types. Separate multiple resource types with commas (,).",
+          "example": "rds.dbinstance,oss.bucket"
+        },
+        {
+          "name": "ExcludeResourceTypesScope",
+          "in": "query",
+          "type": "string",
+          "description": "The resource types to be excluded. Separate multiple resource types with commas (,).",
+          "example": "mse.cluster,slb.loadbalancer"
+        }
+      ]
     },
     "UpdateControlPolicy": {
       "required": [
@@ -847,7 +3470,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateControlPolicy"
+      "summary": "Updates a custom access control policy.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "PolicyId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the access control policy.",
+          "example": "cp-jExXAqIYkwHN****"
+        },
+        {
+          "name": "NewPolicyName",
+          "in": "query",
+          "type": "string",
+          "description": "The new name of the access control policy. The name must be 1 to 128 characters in length. The name can contain letters, digits, and hyphens (-) and must start with a letter.",
+          "example": "NewControlPolicy"
+        },
+        {
+          "name": "NewDescription",
+          "in": "query",
+          "type": "string",
+          "description": "The new description of the access control policy. The description must be 1 to 1,024 characters in length. The description can contain letters, digits, underscores (\\_), and hyphens (-) and must start",
+          "example": "ExampleControlPolicy"
+        },
+        {
+          "name": "NewPolicyDocument",
+          "in": "query",
+          "type": "string",
+          "description": "The new document of the access control policy. The document can be a maximum of 4,096 characters in length. For more information about the languages of access control policies, see [Languages of acces",
+          "example": "{\"Version\":\"1\",\"Statement\":[{\"Effect\":\"Deny\",\"Action\":[\"ram:UpdateRole\",\"ram:DeleteRole\",\"ram:Attach"
+        }
+      ]
     },
     "UpdateFolder": {
       "required": [
@@ -856,7 +3511,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateFolder"
+      "summary": "Changes the name of a folder.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "FolderId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the folder.",
+          "example": "fd-u8B321****"
+        },
+        {
+          "name": "NewFolderName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The new name of the folder. The name must be 1 to 24 characters in length and can contain letters, digits, underscores (\\_), periods (.), and hyphens (-).",
+          "example": "rdFolder"
+        }
+      ]
     },
     "UpdateResourceGroup": {
       "required": [
@@ -865,7 +3539,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateResourceGroup"
+      "summary": "Updates the basic information of a resource group.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "ResourceGroupId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the resource group. You can call the [ListResourceGroups](~~158855~~) operation to obtain the ID.",
+          "example": "rg-9gLOoK****"
+        },
+        {
+          "name": "NewDisplayName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The display name of the resource group. The name must be 1 to 50 characters in length.",
+          "example": "project"
+        }
+      ]
     },
     "UpdateResourceGroupAdminSetting": {
       "required": [
@@ -873,7 +3566,18 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateResourceGroupAdminSetting"
+      "summary": "Updates the configurations of a resource group administrator.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "CreatorAsAdmin",
+          "in": "query",
+          "type": "boolean",
+          "required": true,
+          "description": "Specifies whether to enable the Use Creator as Administrator feature.",
+          "example": "true"
+        }
+      ]
     },
     "UpdateRole": {
       "required": [
@@ -881,7 +3585,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateRole"
+      "summary": "Updates the information about a Resource Access Management (RAM) role.",
+      "method": "POST",
+      "parameters": [
+        {
+          "name": "RoleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the RAM role. The name must be 1 to 64 characters in length, and can contain letters, digits, periods (.), and hyphens (-).",
+          "example": "ECSAdmin"
+        },
+        {
+          "name": "NewAssumeRolePolicyDocument",
+          "in": "query",
+          "type": "string",
+          "description": "The trust policy of the RAM role.",
+          "example": "{ \"Statement\": [ { \"Action\": \"sts:AssumeRole\", \"Effect\": \"Allow\", \"Principal\": { \"RAM\": \"acs:ram::12"
+        },
+        {
+          "name": "NewMaxSessionDuration",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum session time of the RAM role. Valid values: 3600 to 43200. Unit: seconds. Default value: 3600. If you do not specify this parameter, the default value is used.",
+          "example": "3600"
+        },
+        {
+          "name": "NewDescription",
+          "in": "query",
+          "type": "string",
+          "description": "The description of the RAM role. The description must be 1 to 1,024 characters in length.",
+          "example": "ECS管理员"
+        }
+      ]
     }
   }
 }

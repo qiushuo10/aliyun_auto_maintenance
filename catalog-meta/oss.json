@@ -1,16 +1,18 @@
 {
-  "snapshotVersion": 1,
+  "snapshotVersion": 2,
   "product": "oss",
   "openApiProduct": "Oss",
   "version": "2019-05-17",
   "source": "https://api.aliyun.com/meta/v1/products/Oss/versions/2019-05-17/api-docs.json?language=EN_US",
-  "fetchedAt": "2026-06-03T05:46:46.136Z",
+  "fetchedAt": "2026-06-10T02:58:16.117Z",
   "actions": {
     "AbortBucketWorm": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "AbortBucketWorm"
+      "summary": "Deletes an unlocked retention policy for a bucket.",
+      "method": "DELETE",
+      "path": "/?worm"
     },
     "AbortMultipartUpload": {
       "required": [
@@ -20,7 +22,35 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Cancel a multipart upload task and delete the parts that are uploaded by the multipart upload task"
+      "summary": "Cancel a multipart upload task and delete the parts that are uploaded by the multipart upload task",
+      "method": "DELETE",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "oss-example"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object that you want to upload.",
+          "example": "exampledir/exampleobject.txt"
+        },
+        {
+          "name": "uploadId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the multipart upload task.",
+          "example": "0004B9895DBBB6E****"
+        }
+      ]
     },
     "AppendObject": {
       "required": [
@@ -29,7 +59,95 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Upload an object by appending the object to an existing object"
+      "summary": "Upload an object by appending the object to an existing object",
+      "method": "POST",
+      "path": "/{key}?append",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "position",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The position from which the AppendObject operation starts. Each time an AppendObject operation succeeds, the x-oss-next-append-position header is included in the response to specify the position from ",
+          "example": "0"
+        },
+        {
+          "name": "x-oss-server-side-encryption",
+          "in": "header",
+          "type": "string",
+          "description": "The method used to encrypt objects on the specified OSS server. Valid values: - AES256: Keys managed by OSS are used for encryption and decryption (SSE-OSS). - KMS: Keys managed by Key Management Serv",
+          "example": "AES256"
+        },
+        {
+          "name": "x-oss-object-acl",
+          "in": "header",
+          "description": "The access control list (ACL) of the object. Default value: default. Valid values: - default: The ACL of the object is the same as that of the bucket in which the object is stored. - private: The ACL ",
+          "example": "default"
+        },
+        {
+          "name": "x-oss-storage-class",
+          "in": "header",
+          "description": "The storage class of the object that you want to upload. Valid values: - Standard - IA - Archive If you specify the object storage class when you upload an object, the storage class of the uploaded ob",
+          "example": "Standard"
+        },
+        {
+          "name": "x-oss-meta-*",
+          "in": "header",
+          "type": "object",
+          "description": "You can add parameters whose names are prefixed with x-oss-meta-* when you call the AppendObject operation. These parameters cannot be included in the requests when you append objects to an existing o",
+          "example": "x-oss-meta-location"
+        },
+        {
+          "name": "Cache-Control",
+          "in": "header",
+          "type": "string",
+          "description": "The web page caching behavior for the object. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "no-cache"
+        },
+        {
+          "name": "Content-Disposition",
+          "in": "header",
+          "type": "string",
+          "description": "The name of the object when the object is downloaded. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "attachment;filename=oss_download.jpg"
+        },
+        {
+          "name": "Content-Encoding",
+          "in": "header",
+          "type": "string",
+          "description": "The encoding format of the object content. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "utf-8"
+        },
+        {
+          "name": "Content-MD5",
+          "in": "header",
+          "type": "string",
+          "description": "The Content-MD5 header value is a string calculated by using the MD5 algorithm. The header is used to check whether the content of the received message is the same as that of the sent message. To obta",
+          "example": "ohhnqLBJFiKkPSBO1eNaUA=="
+        },
+        {
+          "name": "Expires",
+          "in": "header",
+          "type": "string",
+          "description": "The expiration time. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "Wed, 08 Jul 2015 16:57:01 GMT"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "string",
+          "description": "The request body.",
+          "example": "二进制内容"
+        }
+      ]
     },
     "CleanRestoredObject": {
       "required": [
@@ -37,13 +155,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CleanRestoredObject"
+      "summary": "You can call this operation to clean an object restored from Archive or Cold Archive state. After that, the restored object returns to the frozen state.",
+      "method": "POST",
+      "path": "/{key}?cleanRestoredObject",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object.",
+          "example": "exampledir/restored-object"
+        }
+      ]
     },
     "CloseMetaQuery": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CloseMetaQuery"
+      "summary": "Disables the metadata management feature for an Object Storage Service (OSS) bucket. After the metadata management feature is disabled for a bucket, OSS automatically deletes the metadata index library of the bucket and you cannot perform metadata indexing.",
+      "method": "POST",
+      "path": "/?metaQuery&comp=delete"
     },
     "CompleteBucketWorm": {
       "required": [
@@ -51,7 +183,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CompleteBucketWorm"
+      "summary": "Locks a retention policy.",
+      "method": "POST",
+      "path": "/",
+      "parameters": [
+        {
+          "name": "wormId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the retention policy.",
+          "example": "1666E2CFB2B3418****"
+        }
+      ]
     },
     "CompleteMultipartUpload": {
       "required": [
@@ -60,7 +204,58 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Complete the multipart upload task of an object"
+      "summary": "Complete the multipart upload task of an object",
+      "method": "POST",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject.txt"
+        },
+        {
+          "name": "uploadId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The identifier of the multipart upload task.",
+          "example": "0004B9895DBBB6E****"
+        },
+        {
+          "name": "encoding-type",
+          "in": "query",
+          "description": "The encodingtype of the object name in the response. Only URL encoding is supported. The object name can contain characters that are encoded in UTF-8. However, the XML 1.0 standard cannot be used to p"
+        },
+        {
+          "name": "x-oss-forbid-overwrite",
+          "in": "header",
+          "type": "string",
+          "description": "Specifieswhethertheobjectwith the sameobjectname is overwritten when you call the CompleteMultipartUpload operation. - If the value of x-oss-forbid-overwrite is not specified or set to false, the exis",
+          "example": "true"
+        },
+        {
+          "name": "x-oss-complete-all",
+          "in": "header",
+          "type": "string",
+          "description": "Specifies whether to list all parts that are uploaded by using the current upload ID. Valid value: yes. - If x-oss-complete-all is set to yes in the request, OSS lists all parts that are uploaded by u",
+          "example": "yes"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "CompleteMultipartUpload",
+              "description": "The container that stores the content of the CompleteMultipartUpload request."
+            }
+          ]
+        }
+      ]
     },
     "CopyObject": {
       "required": [
@@ -69,13 +264,142 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CopyObject"
+      "summary": "Copies objects within a bucket or between buckets in the same region.",
+      "method": "PUT",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject.txt"
+        },
+        {
+          "name": "x-oss-copy-source",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The path of the source object. By default, this header is left empty.",
+          "example": "/oss-example/oss.jpg"
+        },
+        {
+          "name": "x-oss-forbid-overwrite",
+          "in": "header",
+          "type": "string",
+          "description": "Specifies whether the CopyObject operation overwrites objects with the same name. The **x-oss-forbid-overwrite** request header does not take effect when versioning is enabled or suspended for the des",
+          "example": "true"
+        },
+        {
+          "name": "x-oss-copy-source-if-match",
+          "in": "header",
+          "type": "string",
+          "description": "The object copy condition. If the ETag value of the source object is the same as the ETag value that you specify in the request, OSS copies the object and returns 200 OK. By default, this header is le",
+          "example": "5B3C1A2E053D763E1B002CC607C5****"
+        },
+        {
+          "name": "x-oss-copy-source-if-none-match",
+          "in": "header",
+          "type": "string",
+          "description": "The object copy condition. If the ETag value of the source object is different from the ETag value that you specify in the request, OSS copies the object and returns 200 OK. By default, this header is",
+          "example": "5B3C1A2E053D763E1B002CC607C5****"
+        },
+        {
+          "name": "x-oss-copy-source-if-unmodified-since",
+          "in": "header",
+          "type": "string",
+          "description": "The object copy condition. If the time that you specify in the request is the same as or later than the modification time of the object, OSS copies the object and returns 200 OK. By default, this head",
+          "example": "2019-04-09T07:01:56.000Z"
+        },
+        {
+          "name": "x-oss-copy-source-if-modified-since",
+          "in": "header",
+          "type": "string",
+          "description": "If the source object is modified after the time that you specify in the request, OSS copies the object. By default, this header is left empty.",
+          "example": "2019-04-09T07:01:56.000Z"
+        },
+        {
+          "name": "x-oss-metadata-directive",
+          "in": "header",
+          "type": "string",
+          "description": "The method that is used to configure the metadata of the destination object. Default value: COPY. * **COPY**: The metadata of the source object is copied to the destination object. The **x-oss-server-",
+          "example": "COPY"
+        },
+        {
+          "name": "x-oss-server-side-encryption",
+          "in": "header",
+          "type": "string",
+          "description": "The entropy coding-based encryption algorithm that OSS uses to encrypt an object when you create the object. The valid values of the header are **AES256** and **KMS**. You must activate Key Management",
+          "example": "AES256"
+        },
+        {
+          "name": "x-oss-server-side-data-encryption",
+          "in": "header",
+          "type": "string",
+          "description": "The server side data encryption algorithm. Invalid value: SM4",
+          "example": "SM4"
+        },
+        {
+          "name": "x-oss-server-side-encryption-key-id",
+          "in": "header",
+          "type": "string",
+          "description": "The ID of the customer master key (CMK) that is managed by KMS. This parameter is available only if you set **x-oss-server-side-encryption** to KMS.",
+          "example": "9468da86-3509-4f8d-a61e-6eab1eac****"
+        },
+        {
+          "name": "x-oss-object-acl",
+          "in": "header",
+          "description": "The access control list (ACL) of the destination object when the object is created. Default value: default. Valid values: * default: The ACL of the object is the same as the ACL of the bucket in which"
+        },
+        {
+          "name": "x-oss-storage-class",
+          "in": "header",
+          "description": "The storage class of the object that you want to upload. Default value: Standard. If you specify a storage class when you upload the object, the storage class applies regardless of the storage class o"
+        },
+        {
+          "name": "x-oss-tagging",
+          "in": "header",
+          "type": "string",
+          "description": "The tag of the destination object. You can add multiple tags to the destination object. Example: TagA=A\\&TagB=B. > The tag key and tag value must be URL-encoded. If a key-value pair does not contain a",
+          "example": "a:1"
+        },
+        {
+          "name": "x-oss-tagging-directive",
+          "in": "header",
+          "type": "string",
+          "description": "The method that is used to add tags to the destination object. Default value: Copy. Valid values: * **Copy**: The tags of the source object are copied to the destination object. * **Replace**: The tag",
+          "example": "Copy"
+        },
+        {
+          "name": "x-oss-meta-*",
+          "in": "header",
+          "type": "object",
+          "description": "You can add parameters that contain the x-oss-meta- prefix when you create an append object. You cannot include these parameters in the requests when you append objects to an existing append object. P"
+        }
+      ]
     },
     "CreateAccessPoint": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateAccessPoint"
+      "summary": "Creates an access point.",
+      "method": "PUT",
+      "path": "/?accessPoint",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "CreateAccessPointConfiguration",
+              "description": "The container that stores the information about the access point."
+            }
+          ]
+        }
+      ]
     },
     "CreateAccessPointForObjectProcess": {
       "required": [
@@ -83,7 +407,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateAccessPointForObjectProcess"
+      "summary": "Creates an Object FC Access Point.",
+      "method": "PUT",
+      "path": "/?accessPointForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point.",
+          "example": "fc-ap-01"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body.",
+          "children": [
+            {
+              "name": "CreateAccessPointForObjectProcessConfiguration",
+              "type": "object",
+              "description": "The container that stores information about the Object FC Access Point."
+            }
+          ]
+        }
+      ]
     },
     "CreateBucketDataRedundancyTransition": {
       "required": [
@@ -91,13 +440,42 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateBucketDataRedundancyTransition"
+      "summary": "Creates a redundancy type conversion task for a bucket.",
+      "method": "POST",
+      "path": "/?redundancyTransition",
+      "parameters": [
+        {
+          "name": "x-oss-target-redundancy-type",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The redundancy type to which you want to convert the bucket. You can only convert the redundancy type of a bucket from LRS to ZRS.",
+          "example": "ZRS"
+        }
+      ]
     },
     "CreateCnameToken": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "CreateCnameToken"
+      "summary": "Creates a CNAME token to verify the ownership of a domain name.",
+      "method": "POST",
+      "path": "/?cname&comp=token",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "BucketCnameConfiguration",
+              "type": "object",
+              "description": "The container that stores the CNAME record."
+            }
+          ]
+        }
+      ]
     },
     "CreateSelectObjectMeta": {
       "required": [
@@ -106,7 +484,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Get Total Number of Rows, Columns, and Splits of the Target File"
+      "summary": "Get Total Number of Rows, Columns, and Splits of the Target File",
+      "method": "POST",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the Object.",
+          "example": "exampledir/exampleobject.png"
+        },
+        {
+          "name": "x-oss-process",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "Parameters to specify the file formate.",
+          "example": "csv/meta"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Container for the CreateSelectObjectMeta request.",
+          "children": [
+            {
+              "name": "CsvMetaRequest",
+              "description": "The request body used to create select meta."
+            }
+          ]
+        }
+      ]
     },
     "DeleteAccessPoint": {
       "required": [
@@ -114,7 +524,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccessPoint"
+      "summary": "Deletes an access point.",
+      "method": "DELETE",
+      "path": "/?accessPoint",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        }
+      ]
     },
     "DeleteAccessPointForObjectProcess": {
       "required": [
@@ -122,7 +544,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccessPointForObjectProcess"
+      "summary": "Deletes an Object FC Access Point.",
+      "method": "DELETE",
+      "path": "/?accessPointForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point.",
+          "example": "fc-ap-01"
+        }
+      ]
     },
     "DeleteAccessPointPolicy": {
       "required": [
@@ -130,7 +564,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccessPointPolicy"
+      "summary": "Deletes an access point policy.",
+      "method": "DELETE",
+      "path": "/?accessPointPolicy",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        }
+      ]
     },
     "DeleteAccessPointPolicyForObjectProcess": {
       "required": [
@@ -138,19 +584,44 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccessPointPolicyForObjectProcess"
+      "summary": "Deletes the policies of an Object FC Access Point.",
+      "method": "DELETE",
+      "path": "/?accessPointPolicyForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point.",
+          "example": "fc-ap-01"
+        }
+      ]
     },
     "DeleteAccessPointPublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteAccessPointPublicAccessBlock"
+      "summary": "Deletes the Block Public Access configurations of an access point.",
+      "method": "DELETE",
+      "path": "/?publicAccessBlock",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        }
+      ]
     },
     "DeleteBucket": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucket"
+      "summary": "Deletes a bucket.",
+      "method": "DELETE",
+      "path": "/"
     },
     "DeleteBucketCommonHeader": {
       "required": [
@@ -158,13 +629,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Delete the user-defined response header configuration of a bucket"
+      "summary": "Delete the user-defined response header configuration of a bucket",
+      "method": "DELETE",
+      "path": "/?x-oss-common-header",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "test-bucket"
+        }
+      ]
     },
     "DeleteBucketCors": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketCors"
+      "summary": "Disables the cross-origin resource sharing (CORS) feature and deletes all CORS rules for a bucket.",
+      "method": "DELETE",
+      "path": "/?cors"
     },
     "DeleteBucketDataRedundancyTransition": {
       "required": [
@@ -172,13 +657,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketDataRedundancyTransition"
+      "summary": "Deletes a redundancy type conversion task of a bucket.",
+      "method": "DELETE",
+      "path": "/?redundancyTransition",
+      "parameters": [
+        {
+          "name": "x-oss-redundancy-transition-taskid",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the redundancy type change task.",
+          "example": "4be5beb0f74f490186311b268bf6****"
+        }
+      ]
     },
     "DeleteBucketEncryption": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketEncryption"
+      "summary": "Deletes encryption rules for a bucket.",
+      "method": "DELETE",
+      "path": "/?encryption"
     },
     "DeleteBucketInventory": {
       "required": [
@@ -186,19 +685,35 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketInventory"
+      "summary": "Deletes an inventory for a bucket.",
+      "method": "DELETE",
+      "path": "/?inventory",
+      "parameters": [
+        {
+          "name": "inventoryId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the inventory that you want to delete.",
+          "example": "list1"
+        }
+      ]
     },
     "DeleteBucketLifecycle": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketLifecycle"
+      "summary": "Deletes the lifecycle rules of a bucket.",
+      "method": "DELETE",
+      "path": "/?lifecycle"
     },
     "DeleteBucketLogging": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketLogging"
+      "summary": "Disables the logging feature for a bucket.",
+      "method": "DELETE",
+      "path": "/?logging"
     },
     "DeleteBucketOverwriteConfig": {
       "required": [
@@ -206,43 +721,97 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketOverwriteConfig"
+      "summary": "Delete overwrite configuration rule for the bucket.",
+      "method": "DELETE",
+      "path": "/?overwriteConfig",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "test-bucket"
+        }
+      ]
     },
     "DeleteBucketPolicy": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketPolicy"
+      "summary": "Deletes a policy for a bucket.",
+      "method": "DELETE",
+      "path": "/?policy"
     },
     "DeleteBucketPublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketPublicAccessBlock"
+      "summary": "Deletes the Block Public Access configurations of a bucket.",
+      "method": "DELETE",
+      "path": "/?publicAccessBlock"
     },
     "DeleteBucketReplication": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketReplication"
+      "summary": "Disables data replication for a bucket and deletes the data replication rule configured for the bucket. After you call this operation, all operations performed on the source bucket are not synchronized to the destination bucket.",
+      "method": "POST",
+      "path": "/?replication&comp=delete",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "ReplicationRules",
+              "type": "object",
+              "description": "The container that is used to store the data replication rule to delete."
+            }
+          ]
+        }
+      ]
     },
     "DeleteBucketTags": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketTags"
+      "summary": "Deletes tags configured for a bucket.",
+      "method": "DELETE",
+      "path": "/?tagging"
     },
     "DeleteBucketWebsite": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteBucketWebsite"
+      "summary": "Disables the static website hosting mode and deletes the redirection rules for a bucket.",
+      "method": "DELETE",
+      "path": "/?website"
     },
     "DeleteCname": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteCname"
+      "summary": "Deletes a CNAME record that is mapped to a bucket.",
+      "method": "POST",
+      "path": "/?cname&comp=delete",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "BucketCnameConfiguration",
+              "type": "object",
+              "description": "The container that stores the CNAME record."
+            }
+          ]
+        }
+      ]
     },
     "DeleteLiveChannel": {
       "required": [
@@ -250,7 +819,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Delete a specified LiveChannel"
+      "summary": "Delete a specified LiveChannel",
+      "method": "DELETE",
+      "path": "/{channel}?live",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of an existing LiveChannel.",
+          "example": "examplechannel"
+        }
+      ]
     },
     "DeleteObject": {
       "required": [
@@ -258,7 +839,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Delete an object"
+      "summary": "Delete an object",
+      "method": "DELETE",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version ID of the object.",
+          "example": "CAEQMxiBgIDh3ZCB0BYiIGE4YjIyMjExZDhhYjQxNzZiNGUyZTI4ZjljZDcz****"
+        }
+      ]
     },
     "DeleteObjectTagging": {
       "required": [
@@ -266,13 +866,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Delete the tags configured for an object"
+      "summary": "Delete the tags configured for an object",
+      "method": "DELETE",
+      "path": "/{key}?tagging",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version ID of the object that you want to delete.",
+          "example": "CAEQExiBgID.jImWlxciIDQ2ZjgwODIyNDk5MTRhNzBiYmQwYTZkMTYzZjM0****"
+        }
+      ]
     },
     "DeletePublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeletePublicAccessBlock"
+      "summary": "Deletes the Block Public Access configurations of OSS resources.",
+      "method": "DELETE",
+      "path": "/?publicAccessBlock"
     },
     "DeleteStyle": {
       "required": [
@@ -280,19 +901,44 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteStyle"
+      "summary": "Deletes an image style from a bucket.",
+      "method": "DELETE",
+      "path": "/?style",
+      "parameters": [
+        {
+          "name": "styleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the image style.",
+          "example": "imagestyle"
+        }
+      ]
     },
     "DeleteUserDefinedLogFieldsConfig": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DeleteUserDefinedLogFieldsConfig"
+      "summary": "Deletes the custom configurations of the user_defined_log_fields field in the real-time logs of a bucket.",
+      "method": "DELETE",
+      "path": "/?userDefinedLogFieldsConfig"
     },
     "DescribeRegions": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "DescribeRegions"
+      "summary": "Queries the endpoints of all supported regions or the endpoints of a specific region.",
+      "method": "GET",
+      "path": "/?regions",
+      "parameters": [
+        {
+          "name": "regions",
+          "in": "query",
+          "type": "string",
+          "description": "The region ID of the request.",
+          "example": "oss-cn-hangzhou"
+        }
+      ]
     },
     "DoMetaQuery": {
       "required": [
@@ -300,7 +946,38 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query objects that meet specified conditions"
+      "summary": "Query objects that meet specified conditions",
+      "method": "POST",
+      "path": "/?metaQuery&comp=query",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "mode",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies the retrieval mode. - basic: scalar retrieval (default) - semantic: AISearch",
+          "example": "semantic"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "MetaQuery",
+              "description": "The containerfor query conditions."
+            }
+          ]
+        }
+      ]
     },
     "ExtendBucketWorm": {
       "required": [
@@ -308,7 +985,31 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ExtendBucketWorm"
+      "summary": "Extends the retention period of objects in a bucket for which a retention policy is locked.",
+      "method": "POST",
+      "path": "/?wormExtend",
+      "parameters": [
+        {
+          "name": "wormId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the retention policy. > If the ID of the retention policy that specifies the number of days for which objects can be retained does not exist, the HTTP status code 404 is returned.",
+          "example": "1666E2CFB2B3418****"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "ExtendWormConfiguration",
+              "description": "The parameters for WORM extension."
+            }
+          ]
+        }
+      ]
     },
     "GetAccessPoint": {
       "required": [
@@ -316,7 +1017,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessPoint"
+      "summary": "Queries the information about an access point.",
+      "method": "GET",
+      "path": "/?accessPoint",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        }
+      ]
     },
     "GetAccessPointConfigForObjectProcess": {
       "required": [
@@ -324,7 +1037,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessPointConfigForObjectProcess"
+      "summary": "Queries the configurations of an Object FC Access Point.",
+      "method": "GET",
+      "path": "/?accessPointConfigForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point.",
+          "example": "fc-ap-01"
+        }
+      ]
     },
     "GetAccessPointForObjectProcess": {
       "required": [
@@ -332,7 +1057,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessPointForObjectProcess"
+      "summary": "Queries basic information about an Object FC Access Point.",
+      "method": "GET",
+      "path": "/?accessPointForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point. The name of an Object FC Access Point must meet the following requirements: The name cannot exceed 63 characters in length. The name can contain only lowercase ",
+          "example": "fc-ap-01"
+        }
+      ]
     },
     "GetAccessPointPolicy": {
       "required": [
@@ -340,7 +1077,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessPointPolicy"
+      "summary": "Queries the configurations of an access point policy.",
+      "method": "GET",
+      "path": "/?accessPointPolicy",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        }
+      ]
     },
     "GetAccessPointPolicyForObjectProcess": {
       "required": [
@@ -348,13 +1097,36 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessPointPolicyForObjectProcess"
+      "summary": "Queries the policies of an Object FC Access Point.",
+      "method": "GET",
+      "path": "/?accessPointPolicyForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point.",
+          "example": "fc-ap-01"
+        }
+      ]
     },
     "GetAccessPointPublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetAccessPointPublicAccessBlock"
+      "summary": "Queries the Block Public Access configurations of an access point.",
+      "method": "GET",
+      "path": "/?publicAccessBlock",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        }
+      ]
     },
     "GetBucketAccessMonitor": {
       "required": [
@@ -362,13 +1134,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketAccessMonitor"
+      "summary": "Queries the access tracking status of a bucket.",
+      "method": "GET",
+      "path": "/?accessmonitor",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        }
+      ]
     },
     "GetBucketAcl": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketAcl"
+      "summary": "Queries the access control list (ACL) of a bucket. Only the owner of a bucket can query the ACL of the bucket.",
+      "method": "GET",
+      "path": "/?acl"
     },
     "GetBucketArchiveDirectRead": {
       "required": [
@@ -376,13 +1162,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Obtain the real-time access configuration for Archive objects of a bucket"
+      "summary": "Obtain the real-time access configuration for Archive objects of a bucket",
+      "method": "GET",
+      "path": "/?bucketArchiveDirectRead",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "example-bucket"
+        }
+      ]
     },
     "GetBucketCors": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketCors"
+      "summary": "Queries the cross-origin resource sharing (CORS) rules that are configured for a bucket.",
+      "method": "GET",
+      "path": "/?cors"
     },
     "GetBucketDataRedundancyTransition": {
       "required": [
@@ -390,31 +1190,51 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketDataRedundancyTransition"
+      "summary": "Queries the redundancy type conversion tasks of a bucket.",
+      "method": "GET",
+      "path": "/?redundancyTransition",
+      "parameters": [
+        {
+          "name": "x-oss-redundancy-transition-taskid",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the redundancy change task.",
+          "example": "751f5243f8ac4ae89f34726534d1****"
+        }
+      ]
     },
     "GetBucketEncryption": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketEncryption"
+      "summary": "Queries the encryption rules configured for a bucket.",
+      "method": "GET",
+      "path": "/?encryption"
     },
     "GetBucketEventNotification": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Get Bucket Event Notification Configuration"
+      "summary": "Get Bucket Event Notification Configuration",
+      "method": "GET",
+      "path": "/?eventNotification"
     },
     "GetBucketHttpsConfig": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketHttpsConfig"
+      "summary": "Queries the Transport Layer Security (TLS) version configurations of a bucket.",
+      "method": "GET",
+      "path": "/?httpsConfig"
     },
     "GetBucketInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketInfo"
+      "summary": "Queries the information about a bucket. Only the owner of a bucket can query the information about the bucket. You can call this operation from an Object Storage Service (OSS) endpoint.",
+      "method": "GET",
+      "path": "/?bucketInfo"
     },
     "GetBucketInventory": {
       "required": [
@@ -423,13 +1243,35 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketInventory"
+      "summary": "Queries the inventories that are configured for a bucket.",
+      "method": "GET",
+      "path": "/?inventory",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "inventoryId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the inventory to be queried.",
+          "example": "list1"
+        }
+      ]
     },
     "GetBucketLifecycle": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketLifecycle"
+      "summary": "Queries the lifecycle rules configured for a bucket. Only the owner of a bucket has the permissions to query the lifecycle rules configured for the bucket.",
+      "method": "GET",
+      "path": "/?lifecycle"
     },
     "GetBucketLocation": {
       "required": [
@@ -437,7 +1279,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketLocation"
+      "summary": "Queries the region in which a bucket resides. Only the owner of a bucket can query the region in which the bucket resides.",
+      "method": "GET",
+      "path": "/?location",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        }
+      ]
     },
     "GetBucketLogging": {
       "required": [
@@ -445,14 +1299,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketLogging"
+      "summary": "Queries the configurations of access log collection of a bucket. Only the owner of a bucket can query the configurations of access log collection of the bucket.",
+      "method": "GET",
+      "path": "/?logging",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        }
+      ]
     },
     "GetBucketObjectWormConfiguration": {
       "required": [
         "bucket"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Query the object retention policy configuration of a bucket",
+      "method": "GET",
+      "path": "/?objectWorm",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "example-bucket"
+        }
+      ]
     },
     "GetBucketOverwriteConfig": {
       "required": [
@@ -460,43 +1339,67 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketOverwriteConfig"
+      "summary": "Call the GetBucketOverwriteConfig operation to retrieve the overwrite configuration of a bucket.",
+      "method": "GET",
+      "path": "/?overwriteConfig",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket Name",
+          "example": "test-bucket"
+        }
+      ]
     },
     "GetBucketPolicy": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketPolicy"
+      "summary": "Queries the policies configured for a bucket.",
+      "method": "GET",
+      "path": "/?policy"
     },
     "GetBucketPolicyStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketPolicyStatus"
+      "summary": "Checks whether the current bucket policy allows public access.",
+      "method": "GET",
+      "path": "/?policyStatus"
     },
     "GetBucketPublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketPublicAccessBlock"
+      "summary": "Queries the Block Public Access configurations of a bucket.",
+      "method": "GET",
+      "path": "/?publicAccessBlock"
     },
     "GetBucketReferer": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketReferer"
+      "summary": "Queries the hotlink protection configurations for a bucket.",
+      "method": "GET",
+      "path": "/?referer"
     },
     "GetBucketReplication": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketReplication"
+      "summary": "Queries the data replication rules configured for a bucket.",
+      "method": "GET",
+      "path": "/?replication"
     },
     "GetBucketReplicationLocation": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketReplicationLocation"
+      "summary": "Queries the regions in which available destination buckets reside. You can determine the region of the destination bucket to which the data in the source bucket are replicated based on the returned response.",
+      "method": "GET",
+      "path": "/?replicationLocation"
     },
     "GetBucketReplicationProgress": {
       "required": [
@@ -504,55 +1407,83 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketReplicationProgress"
+      "summary": "Queries the information about the data replication process of a bucket.",
+      "method": "GET",
+      "path": "/?replicationProgress",
+      "parameters": [
+        {
+          "name": "rule-id",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the data replication rule. You can call the GetBucketReplication operation to query the ID.",
+          "example": "test_replication_1"
+        }
+      ]
     },
     "GetBucketRequestPayment": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketRequestPayment"
+      "summary": "Queries pay-by-requester configurations for a bucket.",
+      "method": "GET",
+      "path": "/?requestPayment"
     },
     "GetBucketResourceGroup": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketResourceGroup"
+      "summary": "Queries the ID of the resource group to which a bucket belongs.",
+      "method": "GET",
+      "path": "/?resourceGroup"
     },
     "GetBucketStat": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketStat"
+      "summary": "Queries the storage capacity of a bucket and the number of objects that are stored in the bucket.",
+      "method": "GET",
+      "path": "/?stat"
     },
     "GetBucketTags": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketTags"
+      "summary": "Queries the tags of a bucket.",
+      "method": "GET",
+      "path": "/?tagging"
     },
     "GetBucketTransferAcceleration": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketTransferAcceleration"
+      "summary": "Queries the transfer acceleration configurations of a bucket.",
+      "method": "GET",
+      "path": "/?transferAcceleration"
     },
     "GetBucketVersioning": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketVersioning"
+      "summary": "Queries the versioning state of a bucket.",
+      "method": "GET",
+      "path": "/?versioning"
     },
     "GetBucketWebsite": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketWebsite"
+      "summary": "Queries the static website hosting status and redirection rules configured for a bucket.",
+      "method": "GET",
+      "path": "/?website"
     },
     "GetBucketWorm": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetBucketWorm"
+      "summary": "Queries the retention policy configured for a bucket.",
+      "method": "GET",
+      "path": "/?worm"
     },
     "GetCnameToken": {
       "required": [
@@ -560,7 +1491,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetCnameToken"
+      "summary": "Queries the created CNAME tokens.",
+      "method": "GET",
+      "path": "/?comp=token",
+      "parameters": [
+        {
+          "name": "cname",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the CNAME record that is mapped to the bucket.",
+          "example": "example.com"
+        }
+      ]
     },
     "GetLiveChannelHistory": {
       "required": [
@@ -568,7 +1511,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the stream ingestion records of a LiveChannel"
+      "summary": "Query the stream ingestion records of a LiveChannel",
+      "method": "GET",
+      "path": "/{channel}?live&comp=history",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the LiveChannel.",
+          "example": "examplechannel"
+        }
+      ]
     },
     "GetLiveChannelInfo": {
       "required": [
@@ -576,7 +1531,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the configuration information about a LiveChannel"
+      "summary": "Query the configuration information about a LiveChannel",
+      "method": "GET",
+      "path": "/{channel}?live",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the LiveChannel about which you want to query configuration information. The name cannot contain forward slashes (/).",
+          "example": "channel_name"
+        }
+      ]
     },
     "GetLiveChannelStat": {
       "required": [
@@ -584,13 +1551,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the stream ingestion status of a LiveChannel"
+      "summary": "Query the stream ingestion status of a LiveChannel",
+      "method": "GET",
+      "path": "/{channel}?live&comp=stat",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the LiveChannel.",
+          "example": "examplechannel"
+        }
+      ]
     },
     "GetMetaQueryStatus": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetMetaQueryStatus"
+      "summary": "Queries the information about the metadata index library of a bucket.",
+      "method": "GET",
+      "path": "/?metaQuery"
     },
     "GetObject": {
       "required": [
@@ -598,7 +1579,110 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query an object"
+      "summary": "Query an object",
+      "method": "GET",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "response-content-type",
+          "in": "query",
+          "type": "string",
+          "description": "The content-type header in the response that OSS returns.",
+          "example": "image/jpg"
+        },
+        {
+          "name": "response-content-language",
+          "in": "query",
+          "type": "string",
+          "description": "The content-language header in the response that OSS returns.",
+          "example": "中文"
+        },
+        {
+          "name": "response-expires",
+          "in": "query",
+          "type": "string",
+          "description": "The expires header in the response that OSS returns.",
+          "example": "Fri, 24 Feb 2012 17:00:00 GMT"
+        },
+        {
+          "name": "response-cache-control",
+          "in": "query",
+          "type": "string",
+          "description": "The cache-control header in the response that OSS returns.",
+          "example": "no-cache"
+        },
+        {
+          "name": "response-content-disposition",
+          "in": "query",
+          "type": "string",
+          "description": "The content-disposition header in the response that OSS returns.",
+          "example": "attachment; filename:testing.txt"
+        },
+        {
+          "name": "response-content-encoding",
+          "in": "query",
+          "type": "string",
+          "description": "The content-encoding header in the response that OSS returns.",
+          "example": "utf-8"
+        },
+        {
+          "name": "Range",
+          "in": "header",
+          "type": "string",
+          "description": "The range of data of the object to be returned. - If the value of Range is valid, OSS returns the response that includes the total size of the object and the range of data returned. For example, Conte",
+          "example": "Content-Range: bytes 100-900/344606"
+        },
+        {
+          "name": "If-Modified-Since",
+          "in": "header",
+          "type": "string",
+          "description": "If the time specified in this header is earlier than the object modified time or is invalid, OSS returns the object and 200 OK. If the time specified in this header is later than or the same as the ob",
+          "example": "Fri, 13 Nov 2015 14:47:53 GMT"
+        },
+        {
+          "name": "If-Unmodified-Since",
+          "in": "header",
+          "type": "string",
+          "description": "If the time specified in this header is the same as or later than the object modified time, OSS returns the object and 200 OK. If the time specified in this header is earlier than the object modified ",
+          "example": "Fri, 13 Nov 2015 14:47:53 GMT"
+        },
+        {
+          "name": "If-Match",
+          "in": "header",
+          "type": "string",
+          "description": "If the ETag specified in the request matches the ETag value of the object, OSS transmits the object and returns 200 OK. If the ETag specified in the request does not match the ETag value of the object",
+          "example": "fba9dede5f27731c9771645a3986****"
+        },
+        {
+          "name": "If-None-Match",
+          "in": "header",
+          "type": "string",
+          "description": "If the ETag specified in the request does not match the ETag value of the object, OSS transmits the object and returns 200 OK. If the ETag specified in the request matches the ETag value of the object",
+          "example": "5B3C1A2E0563E1B002CC607C****"
+        },
+        {
+          "name": "Accept-Encoding",
+          "in": "header",
+          "type": "string",
+          "description": "The encoding type at the client side. If you want an object to be returned in the GZIP format, you must include the Accept-Encoding:gzip header in your request. OSS determines whether to return the ob",
+          "example": "gzip"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version ID of the object that you want to query.",
+          "example": "CAEQNhiBgMDJgZCA0BYiIDc4MGZjZGI2OTBjOTRmNTE5NmU5NmFhZjhjYmY0****"
+        }
+      ]
     },
     "GetObjectAcl": {
       "required": [
@@ -606,7 +1690,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the ACL of an object"
+      "summary": "Query the ACL of an object",
+      "method": "GET",
+      "path": "/{key}?acl",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The verison id of the target object.",
+          "example": "list1"
+        }
+      ]
     },
     "GetObjectLegalHold": {
       "required": [
@@ -614,7 +1717,28 @@
         "key"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Get the legal hold status of an object",
+      "method": "GET",
+      "path": "/{key}?legalHold",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "example-bucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Object name",
+          "example": "test.txt"
+        }
+      ]
     },
     "GetObjectMeta": {
       "required": [
@@ -622,7 +1746,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the metadata of an object"
+      "summary": "Query the metadata of an object",
+      "method": "HEAD",
+      "path": "/{key}?objectMeta",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject.txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The versionID of the object.",
+          "example": "CAEQNRiBgIDMh4mD0BYiIDUzNDA4OGNmZjBjYTQ0YmI4Y2I4ZmVlYzJlNGVk****"
+        }
+      ]
     },
     "GetObjectRetention": {
       "required": [
@@ -630,7 +1773,28 @@
         "key"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Query the retention policy of an object",
+      "method": "GET",
+      "path": "/{key}?retention",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "example-bucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Object name",
+          "example": "test.txt"
+        }
+      ]
     },
     "GetObjectTagging": {
       "required": [
@@ -638,13 +1802,34 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the tags of an object"
+      "summary": "Query the tags of an object",
+      "method": "GET",
+      "path": "/{key}?tagging",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The versionID of the object that you want to query.",
+          "example": "CAEQExiBgID.jImWlxciIDQ2ZjgwODIyNDk5MTRhNzBiYmQwYTZkMTYzZjM0****"
+        }
+      ]
     },
     "GetPublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetPublicAccessBlock"
+      "summary": "Queries the Block Public Access configurations of OSS resources.",
+      "method": "GET",
+      "path": "/?publicAccessBlock"
     },
     "GetStyle": {
       "required": [
@@ -652,7 +1837,19 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetStyle"
+      "summary": "Queries the information about an image style of a bucket.",
+      "method": "GET",
+      "path": "/?style",
+      "parameters": [
+        {
+          "name": "styleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the image style.",
+          "example": "imagestyle"
+        }
+      ]
     },
     "GetSymlink": {
       "required": [
@@ -661,19 +1858,50 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query a symbolic link"
+      "summary": "Query a symbolic link",
+      "method": "GET",
+      "path": "/{key}?symlink",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version of the object to which the symbolic link points.",
+          "example": "CAEQNRiBgMClj7qD0BYiIDQ5Y2QyMjc3NGZkODRlMTU5M2VkY2U3MWRiNGRh****"
+        }
+      ]
     },
     "GetUserAntiDDosInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetUserAntiDDosInfo"
+      "summary": "Queries the information about an Anti-DDoS instance of an Alibaba Cloud account.",
+      "method": "GET",
+      "path": "/?antiDDos"
     },
     "GetUserDefinedLogFieldsConfig": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "GetUserDefinedLogFieldsConfig"
+      "summary": "Queries the custom configurations of the user_defined_log_fields field in the real-time logs of a bucket.",
+      "method": "GET",
+      "path": "/?userDefinedLogFieldsConfig"
     },
     "GetVodPlaylist": {
       "required": [
@@ -683,7 +1911,35 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the playlist that is generated by the streams ingested to the specified LiveChannel"
+      "summary": "Query the playlist that is generated by the streams ingested to the specified LiveChannel",
+      "method": "GET",
+      "path": "/{channel}?vod",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of an existing LiveChannel.",
+          "example": "examplechannel"
+        },
+        {
+          "name": "endTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The end time of the time range during which the TS files that you want to query are generated in the Unix timestamp format. > The value of EndTime must be greater than the value of StartTime. The dura",
+          "example": "1636618271"
+        },
+        {
+          "name": "startTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The start time of the time range during which the TS files that you want to query are generated in the Unix timestamp format.",
+          "example": "1636600271"
+        }
+      ]
     },
     "HeadObject": {
       "required": [
@@ -692,7 +1948,62 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Query the metadata of an object"
+      "summary": "Query the metadata of an object",
+      "method": "HEAD",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version ID of the object for which you want to query metadata.",
+          "example": "CAEQMxiBgMCZov2D0BYiIDY4MDllOTc2YmY5MjQxMzdiOGI3OTlhNTU0ODIx****"
+        },
+        {
+          "name": "If-Modified-Since",
+          "in": "header",
+          "type": "string",
+          "description": "If the time that is specified in the request is earlier than the time when the object is modified, OSS returns 200 OK and the metadata of the object. Otherwise, OSS returns 304 not modified. Default v",
+          "example": "Fri, 9 Apr 2021 14:47:53 GMT"
+        },
+        {
+          "name": "If-Unmodified-Since",
+          "in": "header",
+          "type": "string",
+          "description": "If the time that is specified in the request is later than or the same as the time when the object is modified, OSS returns 200 OK and the metadata of the object. Otherwise, OSS returns 412 preconditi",
+          "example": "Fri, 13 Oct 2021 14:47:53 GMT"
+        },
+        {
+          "name": "If-Match",
+          "in": "header",
+          "type": "string",
+          "description": "If the ETag value that is specified in the request matches the ETag value of the object, OSS returns 200 OK and the metadata of the object. Otherwise, OSS returns 412 precondition failed. Default valu",
+          "example": "fba9dede5f27731c9771645a3986****"
+        },
+        {
+          "name": "If-None-Match",
+          "in": "header",
+          "type": "string",
+          "description": "If the ETag value that is specified in the request does not match the ETag value of the object, OSS returns 200 OK and the metadata of the object. Otherwise, OSS returns 304 Not Modified. Default valu",
+          "example": "5B3C1A2E0563E1B002CC607C****"
+        }
+      ]
     },
     "InitBucketAntiDDosInfo": {
       "required": [
@@ -701,13 +2012,47 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "InitBucketAntiDDosInfo"
+      "summary": "Initializes an Anti-DDoS instance for a bucket.",
+      "method": "PUT",
+      "path": "/?antiDDos",
+      "parameters": [
+        {
+          "name": "x-oss-defender-instance",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the Anti-DDoS instance.",
+          "example": "cbcac8d2-4f75-4d6d-9f2e-c3447f73****"
+        },
+        {
+          "name": "x-oss-defender-type",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The type of the Anti-DDoS instance. Set the value to AntiDDosPremimum.",
+          "example": "AntiDDosPremimum"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "AntiDDOSConfiguration",
+              "description": "The container that stores the configurations of Anti-DDoS instances."
+            }
+          ]
+        }
+      ]
     },
     "InitUserAntiDDosInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "InitUserAntiDDosInfo"
+      "summary": "Creates an Anti-DDoS instance.",
+      "method": "PUT",
+      "path": "/?antiDDos"
     },
     "InitiateBucketWorm": {
       "required": [
@@ -715,7 +2060,31 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "InitiateBucketWorm"
+      "summary": "Creates a retention policy.",
+      "method": "POST",
+      "path": "/?worm",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "InitiateWormConfiguration",
+              "description": "The parameters for WORM initialization."
+            }
+          ]
+        }
+      ]
     },
     "InitiateMultipartUpload": {
       "required": [
@@ -723,31 +2092,172 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "InitiateMultipartUpload"
+      "summary": "Initiates a multipart upload task.",
+      "method": "POST",
+      "path": "/{key}?uploads",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object that is uploaded by the multipart upload task.",
+          "example": "multipart.data"
+        },
+        {
+          "name": "encoding-type",
+          "in": "query",
+          "description": "The method used to encode the object name in the response. Only URL encoding is supported. The object name can contain characters encoded in UTF-8. However, the XML 1.0 standard cannot be used to pars"
+        },
+        {
+          "name": "x-oss-forbid-overwrite",
+          "in": "header",
+          "type": "string",
+          "description": "Specifies whether the InitiateMultipartUpload operation overwrites the existing object that has the same name as the object that you want to upload. When versioning is enabled or suspended for the buc",
+          "example": "true"
+        },
+        {
+          "name": "x-oss-storage-class",
+          "in": "header",
+          "description": "The storage class of the bucket. Default value: Standard. Valid values: - Standard - IA - Archive - ColdArchive"
+        },
+        {
+          "name": "x-oss-tagging",
+          "in": "header",
+          "type": "string",
+          "description": "The tag of the object. You can configure multiple tags for the object. Example: TagA=A&amp;TagB=B. > The key and value of a tag must be URL-encoded. If a tag does not contain an equal sign (=), the va",
+          "example": "a:1"
+        },
+        {
+          "name": "x-oss-server-side-encryption",
+          "in": "header",
+          "type": "string",
+          "description": "The server-side encryption method that is used to encrypt each part of the object that you want to upload. Valid values: **AES256**, **KMS**, and **SM4**. > You must activate Key Management Service (K",
+          "example": "AES256"
+        },
+        {
+          "name": "x-oss-server-side-data-encryption",
+          "in": "header",
+          "type": "string",
+          "description": "The algorithm that is used to encrypt the object that you want to upload. If this header is not specified, the object is encrypted by using AES-256. This header is valid only when **x-oss-server-side-",
+          "example": "SM4"
+        },
+        {
+          "name": "x-oss-server-side-encryption-key-id",
+          "in": "header",
+          "type": "string",
+          "description": "The ID of the CMK that is managed by KMS. This header is valid only when **x-oss-server-side-encryption** is set to KMS.",
+          "example": "9468da86-3509-4f8d-a61e-6eab1eac****"
+        },
+        {
+          "name": "Cache-Control",
+          "in": "header",
+          "type": "string",
+          "description": "The caching behavior of the web page when the object is downloaded. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "private"
+        },
+        {
+          "name": "Content-Disposition",
+          "in": "header",
+          "type": "string",
+          "description": "The name of the object when the object is downloaded. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "attachment;filename=oss_download.jpg"
+        },
+        {
+          "name": "Content-Encoding",
+          "in": "header",
+          "type": "string",
+          "description": "The content encoding format of the object when the object is downloaded. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "utf-8"
+        },
+        {
+          "name": "Expires",
+          "in": "header",
+          "type": "string",
+          "description": "The expiration time of the request. Unit: milliseconds. For more information, see **[RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)**. Default value: null.",
+          "example": "Fri, 28 Feb 2012 05:38:42 GMT"
+        }
+      ]
     },
     "ListAccessPoints": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAccessPoints"
+      "summary": "Queries the information about user-level or bucket-level access points.",
+      "method": "GET",
+      "path": "/?accessPoint",
+      "parameters": [
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of access points that can be returned. Valid values: * For user-level access points: (0,1000]. * For bucket-level access points: (0,100].",
+          "example": "10"
+        },
+        {
+          "name": "continuation-token",
+          "in": "query",
+          "type": "string",
+          "description": "The token from which the listing operation starts. You must specify the value of NextContinuationToken that is obtained from the previous query as the value of continuation-token.",
+          "example": "abc"
+        }
+      ]
     },
     "ListAccessPointsForObjectProcess": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListAccessPointsForObjectProcess"
+      "summary": "Lists information about Object FC Access Points in an Alibaba Cloud account.",
+      "method": "GET",
+      "path": "/?accessPointForObjectProcess",
+      "parameters": [
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of Object FC Access Points to return. Valid values: 1 to 1000 > If the list cannot be complete at a time due to the configurations of the max-keys element, the NextContinuationToken",
+          "example": "10"
+        },
+        {
+          "name": "continuation-token",
+          "in": "query",
+          "type": "string",
+          "description": "The token from which the list operation must start. You can obtain this token from the NextContinuationToken element in the returned result.",
+          "example": "abc"
+        }
+      ]
     },
     "ListBucketAntiDDosInfo": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListBucketAntiDDosInfo"
+      "summary": "Queries the protection list of an Anti-DDoS instance of a bucket.",
+      "method": "GET",
+      "path": "/?bucketAntiDDos",
+      "parameters": [
+        {
+          "name": "marker",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the Anti-DDoS instance from which the list starts. The Anti-DDoS instances whose names are alphabetically after the value of marker are returned. > You can set marker to an empty string in",
+          "example": "nextMarker"
+        },
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "string",
+          "description": "The maximum number of Anti-DDoS instances that can be returned. Valid values: 1 to 100. Default value: 100.",
+          "example": "100"
+        }
+      ]
     },
     "ListBucketDataRedundancyTransition": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListBucketDataRedundancyTransition"
+      "summary": "List Storage Redundancy Conversion Tasks for a User",
+      "method": "GET",
+      "path": "/?redundancyTransition"
     },
     "ListBucketInventory": {
       "required": [
@@ -755,19 +2265,91 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListBucketInventory"
+      "summary": "Queries all inventories in a bucket at a time.",
+      "method": "GET",
+      "path": "/?inventory",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "continuation-token",
+          "in": "query",
+          "type": "string",
+          "description": "Specify the start position of the list operation. You can obtain this token from the NextContinuationToken field of last ListBucketInventory's result.",
+          "example": "first"
+        }
+      ]
     },
     "ListBuckets": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListBuckets"
+      "summary": "Queries all buckets that are owned by a requester.",
+      "method": "GET",
+      "path": "/",
+      "parameters": [
+        {
+          "name": "prefix",
+          "in": "query",
+          "type": "string",
+          "description": "The prefix that the names of returned buckets must contain. If this parameter is not specified, prefixes are not used to filter returned buckets. By default, this parameter is left empty.",
+          "example": "my"
+        },
+        {
+          "name": "marker",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the bucket from which the buckets start to return. The buckets whose names are alphabetically after the value of marker are returned. If this parameter is not specified, all results are re",
+          "example": "mybucket10"
+        },
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of buckets that can be returned. Valid values: 1 to 1000. Default value: 100",
+          "example": "100"
+        },
+        {
+          "name": "x-oss-resource-group-id",
+          "in": "header",
+          "description": "The ID of the resource group to which the bucket belongs."
+        },
+        {
+          "name": "tag-key",
+          "in": "query",
+          "type": "string",
+          "description": "A tag key of target buckets. The listing results will only include Buckets that have been tagged with this key.",
+          "example": "test-key"
+        },
+        {
+          "name": "tag-value",
+          "in": "query",
+          "type": "string",
+          "description": "A tag value for the target buckets. If this parameter is specified in the request, the tag-key must also be specified. The listing results will only include Buckets that have been tagged with this key",
+          "example": "test-value"
+        },
+        {
+          "name": "tagging",
+          "in": "query",
+          "type": "string",
+          "description": "Tag list of target buckets. Only Buckets that match all the key-value pairs in the list will added into the listing results. The tagging parameter cannot be used with the tag-key and tag-value paramet",
+          "example": "\"test-key\":\"test-value\""
+        }
+      ]
     },
     "ListCname": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListCname"
+      "summary": "Queries all CNAME records that are mapped to a bucket.",
+      "method": "GET",
+      "path": "/?cname"
     },
     "ListDataLakeStorageTransferJob": {
       "required": [
@@ -775,25 +2357,149 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "List data lake metadata transformation jobs"
+      "summary": "List data lake metadata transformation jobs",
+      "method": "GET",
+      "path": "/?x-oss-datalake-storage-transfer-job",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true
+        }
+      ]
     },
     "ListLiveChannel": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "List specified LiveChannels"
+      "summary": "List specified LiveChannels",
+      "method": "GET",
+      "path": "/?live",
+      "parameters": [
+        {
+          "name": "marker",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the LiveChannel from which the list operation starts. LiveChannels whose names are alphabetically after the value of the marker parameter are returned.",
+          "example": "channel-1"
+        },
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of LiveChannels that can be returned for the current request. The value of max-keys cannot exceed 1000. Default value: 100.",
+          "example": "100"
+        },
+        {
+          "name": "prefix",
+          "in": "query",
+          "type": "string",
+          "description": "The prefix that the names of the LiveChannels that you want to return must contain. If you specify a prefix in the request, the specified prefix is included in the response.",
+          "example": "fun/"
+        }
+      ]
     },
     "ListMultipartUploads": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "List ongoing multipart upload tasks"
+      "summary": "List ongoing multipart upload tasks",
+      "method": "GET",
+      "path": "/?uploads",
+      "parameters": [
+        {
+          "name": "delimiter",
+          "in": "query",
+          "type": "string",
+          "description": "The character used to group objects by name. Objects whose names contain the same string that ranges from the specified prefix to the delimiter that appears for the first time are grouped as a CommonP",
+          "example": "/"
+        },
+        {
+          "name": "max-uploads",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximumnumber of multipart upload tasks that can be returned for the current request. Default value: 1000. Maximum value: 1000.",
+          "example": "1000"
+        },
+        {
+          "name": "key-marker",
+          "in": "query",
+          "type": "string",
+          "description": "This parameter is used together with the upload-id-marker parameter to specify the position from which the next list begins. - If the upload-id-marker parameter is not set, Object Storage Service (OSS",
+          "example": "test1.avi"
+        },
+        {
+          "name": "prefix",
+          "in": "query",
+          "type": "string",
+          "description": "The prefix that the returned object names must contain. If you specify a prefix in the request, the specified prefix is included in the response. >You can use prefixes to group and manage objects in b",
+          "example": "fun/"
+        },
+        {
+          "name": "upload-id-marker",
+          "in": "query",
+          "type": "string",
+          "description": "The upload ID of the multipart upload task after which the list begins. This parameter is used together with the key-marker parameter. - If the key-marker parameter is not set, OSS ignores the upload-",
+          "example": "0004B99B8E707874FC2D692FA5D7****"
+        },
+        {
+          "name": "encoding-type",
+          "in": "query",
+          "description": "The encoding type of the object name in the response. Values of Delimiter, KeyMarker, Prefix, NextKeyMarker, and Key can be encoded in UTF-8. However, the XML 1.0 standard cannot be used to parse cont",
+          "example": "The upload ID of the multipart upload task after which the list operation starts. This parameter is "
+        }
+      ]
     },
     "ListObjectVersions": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListObjectVersions"
+      "summary": "Queries the information about the versions of all objects in a bucket, including the delete markers.",
+      "method": "GET",
+      "path": "/?versions",
+      "parameters": [
+        {
+          "name": "delimiter",
+          "in": "query",
+          "type": "string",
+          "description": "The character that is used to group objects by name. If you specify prefix and delimiter in the request, the response contains CommonPrefixes. The objects whose name contains the same string from the ",
+          "example": "/"
+        },
+        {
+          "name": "key-marker",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the object after which the GetBucketVersions (ListObjectVersions) operation begins. If this parameter is specified, objects whose name is alphabetically after the value of key-marker are r",
+          "example": "example"
+        },
+        {
+          "name": "version-id-marker",
+          "in": "query",
+          "type": "string",
+          "description": "The version ID of the object specified in key-marker after which the GetBucketVersions (ListObjectVersions) operation begins. The versions are returned from the latest version to the earliest version.",
+          "example": "CAEQMxiBgICbof2D0BYiIGRhZjgwMzJiMjA3MjQ0ODE5MWYxZDYwMzJlZjU1****"
+        },
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of objects to be returned. If the number of returned objects exceeds the value of max-keys, the response contains `NextKeyMarker` and `NextVersionIdMarker`. Specify the values of `N",
+          "example": "100"
+        },
+        {
+          "name": "prefix",
+          "in": "query",
+          "type": "string",
+          "description": "The prefix that the names of returned objects must contain. * The value of prefix must be less than 1,024 bytes in length. * If you specify prefix, the names of the returned objects contain the prefix",
+          "example": "fun"
+        },
+        {
+          "name": "encoding-type",
+          "in": "query",
+          "description": "The encoding type of the content in the response. By default, this parameter is left empty. Set the value to URL. > The values of Delimiter, Marker, Prefix, NextMarker, and Key are UTF-8 encoded. If t"
+        }
+      ]
     },
     "ListObjects": {
       "required": [
@@ -801,13 +2507,113 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListObjects"
+      "summary": "Queries the information about all objects in a bucket.",
+      "method": "GET",
+      "path": "/",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "delimiter",
+          "in": "query",
+          "type": "string",
+          "description": "The character that is used to group objects by name. If you specify delimiter in the request, the response contains CommonPrefixes. The objects whose names contain the same string from the prefix to t",
+          "example": "/"
+        },
+        {
+          "name": "marker",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the object after which the GetBucket (ListObjects) operation begins. If this parameter is specified, objects whose names are alphabetically after the value of marker are returned.\\ The obj",
+          "example": "test1.txt"
+        },
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of objects that can be returned. If the number of objects to be returned exceeds the value of max-keys specified in the request, NextMarker is included in the returned response. The",
+          "example": "100"
+        },
+        {
+          "name": "prefix",
+          "in": "query",
+          "type": "string",
+          "description": "The prefix that must be contained in names of the returned objects. * The value of prefix can be up to 1,024 bytes in length. * If you specify prefix, the names of the returned objects contain the pre",
+          "example": "fun"
+        },
+        {
+          "name": "encoding-type",
+          "in": "query",
+          "description": "The encoding format of the content in the response. > The value of Delimiter, Marker, Prefix, NextMarker, and Key are UTF-8 encoded. If the values of Delimiter, Marker, Prefix, NextMarker, and Key con"
+        }
+      ]
     },
     "ListObjectsV2": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListObjectsV2"
+      "summary": "Queries the information about all objects in a bucket.",
+      "method": "GET",
+      "path": "/?list-type=2",
+      "parameters": [
+        {
+          "name": "delimiter",
+          "in": "query",
+          "type": "string",
+          "description": "The character that is used to group objects by name. If you specify delimiter in the request, the response contains CommonPrefixes. The objects whose names contain the same string from the prefix to t",
+          "example": "/"
+        },
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of objects to be returned.\\ Valid values: 1 to 999.\\ Default value: 100. > If the number of returned objects exceeds the value of max-keys, the response contains NextContinuationTok",
+          "example": "100"
+        },
+        {
+          "name": "prefix",
+          "in": "query",
+          "type": "string",
+          "description": "The prefix that must be contained in names of the returned objects.\\ * The value of prefix can be up to 1,024 bytes in length. * If you specify prefix, the names of the returned objects contain the pr",
+          "example": "a"
+        },
+        {
+          "name": "encoding-type",
+          "in": "query",
+          "description": "The encoding format of the returned objects in the response. > The values of Delimiter, StartAfter, Prefix, NextContinuationToken, and Key are UTF-8 encoded. If the value of Delimiter, StartAfter, Pre"
+        },
+        {
+          "name": "fetch-owner",
+          "in": "query",
+          "type": "boolean",
+          "description": "Specifies whether to include the information about the bucket owner in the response. Valid values: * true * false",
+          "enum": [
+            "true",
+            "false"
+          ],
+          "example": "true"
+        },
+        {
+          "name": "start-after",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the object after which the list operation begins. If this parameter is specified, objects whose names are alphabetically after the value of start-after are returned.\\ The objects are retur",
+          "example": "b"
+        },
+        {
+          "name": "continuation-token",
+          "in": "query",
+          "type": "string",
+          "description": "The token from which the list operation starts. You can obtain the token from NextContinuationToken in the response of the ListObjectsV2 request.",
+          "example": "test1.txt"
+        }
+      ]
     },
     "ListParts": {
       "required": [
@@ -816,19 +2622,78 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Lists all uploaded parts"
+      "summary": "Lists all uploaded parts",
+      "method": "GET",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "uploadId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID of the multipart upload task. By default, this parameter is left empty.",
+          "example": "0004B999EF5A239BB9138C6227D69F95"
+        },
+        {
+          "name": "max-parts",
+          "in": "query",
+          "type": "integer",
+          "description": "The maximum number of parts that can be returned by OSS. Default value: 1000. Maximum value: 1000.",
+          "example": "1000"
+        },
+        {
+          "name": "part-number-marker",
+          "in": "query",
+          "type": "integer",
+          "description": "The position from which the list starts. All parts whose part numbers are greater than the value of this parameter are listed. By default, this parameter is left empty.",
+          "example": "100"
+        },
+        {
+          "name": "encoding-type",
+          "in": "query",
+          "description": "The maximum number of parts that can be returned by OSS. Default value: 1000. Maximum value: 1000."
+        }
+      ]
     },
     "ListStyle": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "ListStyle"
+      "summary": "Queries all image styles that are created for a bucket.",
+      "method": "GET",
+      "path": "/?style"
     },
     "ListUserDataRedundancyTransition": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "List User-Level Storage Redundancy Type Transition Tasks"
+      "summary": "List User-Level Storage Redundancy Type Transition Tasks",
+      "method": "GET",
+      "path": "/?redundancyTransition",
+      "parameters": [
+        {
+          "name": "continuation-token",
+          "in": "query",
+          "type": "string",
+          "description": "Specifies that the List operation should start from this token.",
+          "example": "abc"
+        },
+        {
+          "name": "max-keys",
+          "in": "query",
+          "type": "integer",
+          "description": "Limits the maximum number of tasks returned in this request. Value range: 1-100.",
+          "example": "10"
+        }
+      ]
     },
     "OpenMetaQuery": {
       "required": [
@@ -836,7 +2701,43 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Enable Metadata Management"
+      "summary": "Enable Metadata Management",
+      "method": "POST",
+      "path": "/?metaQuery&comp=add",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "mode",
+          "in": "query",
+          "type": "string",
+          "description": "The retrieval pattern. Valid values: basic (Default Value): scalar retrieval semantic: AISearch"
+        },
+        {
+          "name": "role",
+          "in": "query",
+          "type": "string",
+          "description": "The name of the RAM role used to access the OSS service. You can grant permissions to this role in the console to enable secure access."
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body parameters for the API.",
+          "children": [
+            {
+              "name": "MetaQuery",
+              "description": "Request body parameters for enabling Metadata Management for a bucket."
+            }
+          ]
+        }
+      ]
     },
     "OptionObject": {
       "required": [
@@ -844,13 +2745,64 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "OptionObject"
+      "summary": "Determines whether to send a cross-origin request. Before a cross-origin request is sent, the browser sends a preflight OPTIONS request that includes a specific origin, HTTP method, and header information to Object Storage Service (OSS) to determine whether to send the cross-origin request.",
+      "method": "OPTIONS",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "Origin",
+          "in": "header",
+          "type": "string",
+          "description": "The origin of the request. It is used to identify a cross-origin request. You can specify only one Origin header in a cross-origin request. By default, this header is left empty.",
+          "example": "http://www.example.com"
+        },
+        {
+          "name": "Access-Control-Request-Method",
+          "in": "header",
+          "type": "string",
+          "description": "The method to be used in the actual cross-origin request. You can specify only one Access-Control-Request-Method header in a cross-origin request. By default, this header is left empty.",
+          "example": "PUT"
+        },
+        {
+          "name": "Access-Control-Request-Headers",
+          "in": "header",
+          "type": "string",
+          "description": "The custom headers to be sent in the actual cross-origin request. You can configure multiple custom headers in a cross-origin request. Custom headers are separated by commas (,). By default, this head",
+          "example": "x-oss-test1,x-oss-test2"
+        }
+      ]
     },
     "PostObject": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Upload files by using an HTML form"
+      "summary": "Upload files by using an HTML form",
+      "method": "POST",
+      "path": "/",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "key",
+          "in": "formData",
+          "type": "string",
+          "description": "The name of the Object to upload, without encoding. If the name includes a path, such as destfolder/example.jpg, OSS automatically creates the corresponding folders. Default Value: None",
+          "example": "example.jpg"
+        }
+      ]
     },
     "PostVodPlaylist": {
       "required": [
@@ -861,7 +2813,43 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Generate a VOD playlist for live stream ingest"
+      "summary": "Generate a VOD playlist for live stream ingest",
+      "method": "POST",
+      "path": "/{channel}/{playlist}?vod",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of an existing LiveChannel.",
+          "example": "examplechannel"
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the generated VOD playlist, which must end with \".m3u8\".",
+          "example": "playlist.m3u8"
+        },
+        {
+          "name": "endTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The end time of the time range during which the TS files that you want to query are generated, which is a Unix timestamp. > The value of EndTime must be later than the value of StartTime. The duration",
+          "example": "1636618271"
+        },
+        {
+          "name": "startTime",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The start time of the time range during which the TS files that you want to query are generated, which is a Unix timestamp.",
+          "example": "1636600271"
+        }
+      ]
     },
     "PutAccessPointConfigForObjectProcess": {
       "required": [
@@ -869,13 +2857,56 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutAccessPointConfigForObjectProcess"
+      "summary": "Changes the configurations of an Object FC Access Point.",
+      "method": "PUT",
+      "path": "/?accessPointConfigForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point. The name of an Object FC Access Point must meet the following requirements: The name cannot exceed 63 characters in length. The name can contain only lowercase ",
+          "example": "fc-ap-01"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body.",
+          "children": [
+            {
+              "name": "PutAccessPointConfigForObjectProcessConfiguration",
+              "type": "object",
+              "description": "The container that stores information about the Object FC Access Point."
+            }
+          ]
+        }
+      ]
     },
     "PutAccessPointPolicy": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutAccessPointPolicy"
+      "summary": "Configures an access point policy.",
+      "method": "PUT",
+      "path": "/?accessPointPolicy",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "header",
+          "type": "string",
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "string",
+          "description": "The configurations of the access point policy.",
+          "example": "{ \"Version\":\"1\", \"Statement\":[ { \"Action\":[ \"oss:PutObject\", \"oss:GetObject\" ], \"Effect\":\"Deny\", \"Pr"
+        }
+      ]
     },
     "PutAccessPointPolicyForObjectProcess": {
       "required": [
@@ -883,7 +2914,26 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutAccessPointPolicyForObjectProcess"
+      "summary": "Configures policies for an Object FC Access Point.",
+      "method": "PUT",
+      "path": "/?accessPointPolicyForObjectProcess",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-for-object-process-name",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The name of the Object FC Access Point.",
+          "example": "fc-ap-01"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "string",
+          "description": "The json format permission policies for an Object FC Access Point.",
+          "example": "{ \"Version\": \"1\", \"Statement\": [{ \"Effect\": \"Allow\", \"Action\": [ \"oss:GetObject\" ], \"Principal\": [ \""
+        }
+      ]
     },
     "PutAccessPointPublicAccessBlock": {
       "required": [
@@ -891,19 +2941,92 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutAccessPointPublicAccessBlock"
+      "summary": "Enables or disables Block Public Access for an access point.",
+      "method": "PUT",
+      "path": "/?publicAccessBlock",
+      "parameters": [
+        {
+          "name": "x-oss-access-point-name",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the access point.",
+          "example": "ap-01"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body.",
+          "children": [
+            {
+              "name": "PublicAccessBlockConfiguration",
+              "description": "The container in which the Block Public Access configurations are stored."
+            }
+          ]
+        }
+      ]
     },
     "PutBucket": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucket"
+      "summary": "Creates a bucket.",
+      "method": "PUT",
+      "path": "/",
+      "parameters": [
+        {
+          "name": "x-oss-acl",
+          "in": "header",
+          "description": "The access control list (ACL) of the bucket to be created. Valid values: * public-read-write * public-read * private (default) For more information, see [Bucket ACL](~~31843~~)."
+        },
+        {
+          "name": "x-oss-resource-group-id",
+          "in": "header",
+          "description": "The ID of the resource group. * If you include the header in the request and specify the ID of the resource group, the bucket that you create belongs to the resource group. If the specified resource g"
+        },
+        {
+          "name": "x-oss-bucket-tagging",
+          "in": "header",
+          "type": "string",
+          "description": "指定Bucket标签，如 k1=v1&k2=v2。",
+          "example": "k1=v1&k2=v2"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container that stores the request body.",
+          "children": [
+            {
+              "name": "CreateBucketConfiguration",
+              "description": "The container that stores the information about the bucket to be created."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketAccessMonitor": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketAccessMonitor"
+      "summary": "Modifies the access tracking status of a bucket.",
+      "method": "PUT",
+      "path": "/?accessmonitor",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "AccessMonitorConfiguration",
+              "description": "The access tracking configurations of the bucket."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketAcl": {
       "required": [
@@ -911,7 +3034,17 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketAcl"
+      "summary": "Configures or modifies the access control list (ACL) for a bucket.",
+      "method": "PUT",
+      "path": "/?acl",
+      "parameters": [
+        {
+          "name": "x-oss-acl",
+          "in": "header",
+          "required": true,
+          "description": "The ACL that you want to configure or modify for the bucket. The x-oss-acl header is included in PutBucketAcl requests to configure or modify the ACL of the bucket. If this header is not included, the"
+        }
+      ]
     },
     "PutBucketArchiveDirectRead": {
       "required": [
@@ -919,13 +3052,53 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Modify the real-time access configuration for Archive objects in a bucket"
+      "summary": "Modify the real-time access configuration for Archive objects in a bucket",
+      "method": "PUT",
+      "path": "/?bucketArchiveDirectRead",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "example-bucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body.",
+          "children": [
+            {
+              "name": "ArchiveDirectReadConfiguration",
+              "description": "The container that stores the configurations for real-time access of Archive objects."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketCommonHeader": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Set User-Defined Response Headers Configuration for a Bucket"
+      "summary": "Set User-Defined Response Headers Configuration for a Bucket",
+      "method": "PUT",
+      "path": "/?x-oss-common-header",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body",
+          "children": [
+            {
+              "name": "CommonHeaders",
+              "description": "User-defined response headers configuration"
+            }
+          ]
+        }
+      ]
     },
     "PutBucketCors": {
       "required": [
@@ -933,25 +3106,97 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketCors"
+      "summary": "Configures cross-origin resource sharing (CORS) rules for a bucket.",
+      "method": "PUT",
+      "path": "/?cors",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "CORSConfiguration",
+              "description": "The container that stores CORS rules. You can configure up to 10 CORS rules for a bucket. The XML message body in a request can be up to 16 KB in size."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketEncryption": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketEncryption"
+      "summary": "Configures encryption rules for a bucket.",
+      "method": "PUT",
+      "path": "/?encryption",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "ServerSideEncryptionRule",
+              "description": "The container that stores server-side encryption rules."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketHash": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Modify Bucket Hash Algorithm Configuration"
+      "summary": "Modify Bucket Hash Algorithm Configuration",
+      "method": "PUT",
+      "path": "/?objectHash",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request Body",
+          "children": [
+            {
+              "name": "ObjectHashConfiguration",
+              "description": "Object Hash Algorithm Configuration"
+            }
+          ]
+        }
+      ]
     },
     "PutBucketHttpsConfig": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketHttpsConfig"
+      "summary": "Enables or disables Transport Layer Security (TLS) version management for a bucket.",
+      "method": "PUT",
+      "path": "/?httpsConfig",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "HttpsConfiguration",
+              "description": "The container that stores HTTPS configurations."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketInventory": {
       "required": [
@@ -960,26 +3205,122 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketInventory"
+      "summary": "Configures an inventory for a bucket.",
+      "method": "PUT",
+      "path": "/?inventory",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "inventoryId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the inventory.",
+          "example": "report1"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body schema.",
+          "children": [
+            {
+              "name": "InventoryConfiguration",
+              "description": "The container that stores the Inventory configuration."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketLifecycle": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketLifecycle"
+      "summary": "Configures a lifecycle rule for a bucket. After you configure a lifecycle rule for a bucket, Object Storage Service (OSS) automatically deletes the objects that match the rule or converts the storage type of the objects based on the point in time that is specified in the lifecycle rule.",
+      "method": "PUT",
+      "path": "/?lifecycle",
+      "parameters": [
+        {
+          "name": "x-oss-allow-same-action-overlap",
+          "in": "header",
+          "type": "string",
+          "description": "Specifies whether to allow overlapped prefixes. Valid values: true: Overlapped prefixes are allowed. false: Overlapped prefixes are not allowed.",
+          "example": "true"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "LifecycleConfiguration",
+              "description": "The container that stores the lifecycle configuration."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketLogging": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketLogging"
+      "summary": "Enables logging for a bucket. After you enable logging for a bucket, Object Storage Service (OSS) generates logs every hour based on the defined naming rule and stores the logs as objects in the specified destination bucket.",
+      "method": "PUT",
+      "path": "/?logging",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "BucketLoggingStatus",
+              "description": "The container that stores the logging status information."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketObjectWormConfiguration": {
       "required": [
         "bucket"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Modify the Object Retention Policy Configuration for a Bucket",
+      "method": "PUT",
+      "path": "/?objectWorm",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "example-bucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body of the API",
+          "children": [
+            {
+              "name": "ObjectWormConfiguration",
+              "description": "Container that stores the object-level retention policy"
+            }
+          ]
+        }
+      ]
     },
     "PutBucketOverwriteConfig": {
       "required": [
@@ -987,7 +3328,31 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketOverwriteConfig"
+      "summary": "Call the PutBucketOverwriteConfig operation to configure overwrite protection for a bucket. This prevents specified objects from being overwritten.",
+      "method": "PUT",
+      "path": "/?overwriteConfig",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket Name",
+          "example": "test-bucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Structure of the API Request Body",
+          "children": [
+            {
+              "name": "OverwriteConfiguration",
+              "description": "Container for Saving the Overwrite Configuration Rules of the Bucket"
+            }
+          ]
+        }
+      ]
     },
     "PutBucketPolicy": {
       "required": [
@@ -996,13 +3361,56 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketPolicy"
+      "summary": "Configures a policy for a bucket.",
+      "method": "PUT",
+      "path": "/?policy",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "string",
+          "required": true,
+          "description": "The request parameters.",
+          "example": "二进制内容"
+        }
+      ]
     },
     "PutBucketPublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketPublicAccessBlock"
+      "summary": "Enables or disables Block Public Access for a bucket.",
+      "method": "PUT",
+      "path": "/?publicAccessBlock",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "description": "The name of the bucket.",
+          "example": "exmaplebucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body.",
+          "children": [
+            {
+              "name": "PublicAccessBlockConfiguration",
+              "description": "The container in which the Block Public Access configurations are stored."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketReferer": {
       "required": [
@@ -1010,7 +3418,31 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketReferer"
+      "summary": "Configures a Referer whitelist for an Object Storage Service (OSS) bucket. You can specify whether to allow the requests whose Referer field is empty or whose query strings are truncated.",
+      "method": "PUT",
+      "path": "/?referer",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "RefererConfiguration",
+              "description": "The container that stores the hotlink protection configurations."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketReplication": {
       "required": [
@@ -1018,7 +3450,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketReplication"
+      "summary": "Configures data replication rules for a bucket. Object Storage Service (OSS) supports cross-region replication (CRR) and same-region replication (SRR).",
+      "method": "POST",
+      "path": "/?replication&comp=add",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "ReplicationConfiguration",
+              "type": "object",
+              "description": "The container that stores data replication configurations."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketRequestPayment": {
       "required": [
@@ -1026,61 +3483,232 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketRequestPayment"
+      "summary": "Enables pay-by-requester for a bucket.",
+      "method": "PUT",
+      "path": "/?requestPayment",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "RequestPaymentConfiguration",
+              "description": "The container that stores pay-by-requester configurations."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketResourceGroup": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketResourceGroup"
+      "summary": "Modifies the ID of the resource group to which a bucket belongs.",
+      "method": "PUT",
+      "path": "/?resourceGroup",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "BucketResourceGroupConfiguration",
+              "description": "The container that contains the ID of the resource group."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketRtc": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketRtc"
+      "summary": "Enables or disables the Replication Time Control (RTC) feature for existing cross-region replication (CRR) rules.",
+      "method": "PUT",
+      "path": "/?rtc",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "ReplicationRule",
+              "description": "The container that stores the RTC configurations."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketTags": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketTags"
+      "summary": "Adds tags to or modifies the existing tags of a bucket.",
+      "method": "PUT",
+      "path": "/?tagging",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "Tagging",
+              "description": "The container used to store TagSet."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketTransferAcceleration": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketTransferAcceleration"
+      "summary": "Configures transfer acceleration for a bucket. After you enable transfer acceleration for a bucket, the object access speed is accelerated for users worldwide. The transfer acceleration feature is applicable to scenarios where data needs to be transferred over long geographical distances. This feature can also be used to download or upload objects that are gigabytes or terabytes in size.",
+      "method": "PUT",
+      "path": "/?transferAcceleration",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "TransferAccelerationConfiguration",
+              "description": "The container that stores the transfer acceleration configurations."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketVersioning": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketVersioning"
+      "summary": "Configures the versioning state for a bucket.",
+      "method": "PUT",
+      "path": "/?versioning",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container of the request body.",
+          "children": [
+            {
+              "name": "VersioningConfiguration",
+              "description": "The container that stores the versioning state of the bucket."
+            }
+          ]
+        }
+      ]
     },
     "PutBucketWebsite": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutBucketWebsite"
+      "summary": "Enables the static website hosting mode for a bucket and configures redirection rules for the bucket.",
+      "method": "PUT",
+      "path": "/?website",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "WebsiteConfiguration",
+              "description": "The container that stores the website configuration."
+            }
+          ]
+        }
+      ]
     },
     "PutChannel": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Create Image Processing Channel"
+      "summary": "Create Image Processing Channel",
+      "method": "PUT",
+      "path": "/?img",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body",
+          "children": [
+            {
+              "name": "Channel",
+              "description": "Container for storing image processing channel configuration"
+            }
+          ]
+        }
+      ]
     },
     "PutCname": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutCname"
+      "summary": "Maps a CNAME record to a bucket.",
+      "method": "POST",
+      "path": "/?cname&comp=add",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "BucketCnameConfiguration",
+              "description": "The container that stores the CNAME record."
+            }
+          ]
+        }
+      ]
     },
     "PutDataLakeCachePrefetchJob": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Configure OSS accelerator asynchronous prefetch rules"
+      "summary": "Configure OSS accelerator asynchronous prefetch rules",
+      "method": "PUT",
+      "path": "/?x-oss-datalake-cache-prefetch-job",
+      "parameters": [
+        {
+          "name": "x-oss-datalake-job-id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "children": [
+            {
+              "name": "CreateDataLakeCachePrefetchJob"
+            }
+          ]
+        }
+      ]
     },
     "PutLiveChannel": {
       "required": [
@@ -1089,7 +3717,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Create a LiveChannel"
+      "summary": "Create a LiveChannel",
+      "method": "PUT",
+      "path": "/{channel}?live",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the LiveChannel. The name cannot contain forward slashes (/).",
+          "example": "ChannelName"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "LiveChannelConfiguration",
+              "description": "The container that stores the configurations of the LiveChannel."
+            }
+          ]
+        }
+      ]
     },
     "PutLiveChannelStatus": {
       "required": [
@@ -1098,7 +3758,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Switch the status of a LiveChannel"
+      "summary": "Switch the status of a LiveChannel",
+      "method": "PUT",
+      "path": "/{channel}?live",
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of an existing LiveChannel.",
+          "example": "exmplechannel"
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The status of the LiveChannel. Valid values: - enabled: enables the LiveChannel. - disabled: disables the LiveChannel.",
+          "example": "enabled"
+        }
+      ]
     },
     "PutObject": {
       "required": [
@@ -1106,7 +3786,78 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Upload an object"
+      "summary": "Upload an object",
+      "method": "PUT",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "x-oss-forbid-overwrite",
+          "in": "header",
+          "type": "boolean",
+          "description": "Specifies whether the object that is uploaded by calling the PutObject operation overwrites the existing object that has the same name. When versioning is enabled or suspended for the bucket to which ",
+          "example": "false"
+        },
+        {
+          "name": "x-oss-server-side-encryption",
+          "in": "header",
+          "type": "string",
+          "description": "The method that is used to encrypt the object on the OSS server when the object is created. Valid values: **AES256**, **KMS**, and **SM4****. If you specify the header, the header is returned in the r",
+          "example": "AES256"
+        },
+        {
+          "name": "x-oss-server-side-data-encryption",
+          "in": "header",
+          "type": "string",
+          "description": "The encryption method on the server side when an object is created. Valid values: **AES256**, **KMS**, and **SM4**. If you specify the header, the header is returned in the response. OSS uses the meth",
+          "example": "AES256"
+        },
+        {
+          "name": "x-oss-server-side-encryption-key-id",
+          "in": "header",
+          "type": "string",
+          "description": "The ID of the customer master key (CMK) managed by Key Management Service (KMS). This header is valid only when the **x-oss-server-side-encryption** header is set to KMS.",
+          "example": "9468da86-3509-4f8d-a61e-6eab1eac****"
+        },
+        {
+          "name": "x-oss-object-acl",
+          "in": "header",
+          "description": "The access control list (ACL) of the object. Default value: default. Valid values: - default: The ACL of the object is the same as that of the bucket in which the object is stored. - private: The ACL "
+        },
+        {
+          "name": "x-oss-storage-class",
+          "in": "header",
+          "description": "The storage class of the bucket. Default value: Standard. Valid values: - Standard - IA - Archive - ColdArchive"
+        },
+        {
+          "name": "x-oss-tagging",
+          "in": "header",
+          "type": "string",
+          "description": "The tag of the object. You can configure multiple tags for the object. Example: TagA=A&TagB=B. > The key and value of a tag must be URL-encoded. If a tag does not contain an equal sign (=), the value ",
+          "example": "a:1"
+        },
+        {
+          "name": "x-oss-meta-*",
+          "in": "header",
+          "type": "object",
+          "description": "If the PutObject request contains a parameter prefixed with **x-oss-meta-***, the parameter is considered as the user metadata. Example: `x-oss-meta-location`. You can specify multiple similar headers",
+          "example": "x-oss-meta-location"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "string",
+          "description": "The body of the request.",
+          "example": "二进制内容"
+        }
+      ]
     },
     "PutObjectAcl": {
       "required": [
@@ -1115,7 +3866,32 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Modify the ACL of an object"
+      "summary": "Modify the ACL of an object",
+      "method": "PUT",
+      "path": "/{key}?acl",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "x-oss-object-acl",
+          "in": "header",
+          "required": true,
+          "description": "The access control list (ACL) of the object."
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version id of the object.",
+          "example": "CAEQMhiBgIC3rpSD0BYiIDBjYTk5MmIzN2JlNjQxZTFiNGIzM2E3OTliODA0****"
+        }
+      ]
     },
     "PutObjectLegalHold": {
       "required": [
@@ -1123,7 +3899,40 @@
         "key"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Modify the legal hold status of an object",
+      "method": "PUT",
+      "path": "/{key}?legalHold",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "example-bucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Object name",
+          "example": "test.txt"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body of the API",
+          "children": [
+            {
+              "name": "LegalHold",
+              "description": "Container that stores the legal hold configuration for the object"
+            }
+          ]
+        }
+      ]
     },
     "PutObjectRetention": {
       "required": [
@@ -1131,7 +3940,40 @@
         "key"
       ],
       "deprecated": false,
-      "replacedBy": null
+      "replacedBy": null,
+      "summary": "Query the retention policy of an object",
+      "method": "PUT",
+      "path": "/{key}?retention",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "example-bucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Object name",
+          "example": "test.txt"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body of the API",
+          "children": [
+            {
+              "name": "Retention",
+              "description": "Container that holds the object retention policy"
+            }
+          ]
+        }
+      ]
     },
     "PutObjectTagging": {
       "required": [
@@ -1140,19 +3982,91 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Set or update tags for an object"
+      "summary": "Set or update tags for an object",
+      "method": "PUT",
+      "path": "/{key}?tagging",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The name of the object.",
+          "example": "exampledir/exampleobject.txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version id of the target object.",
+          "example": "CAEQNRiBgMClj7qD0BYiIDQ5Y2QyMjc3NGZkODRlMTU5M2VkY2U3MWRiNGRh****"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "Tagging",
+              "description": "The container of the tag set."
+            }
+          ]
+        }
+      ]
     },
     "PutProcessConfiguration": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Modify Bucket Media Processing Configuration"
+      "summary": "Modify Bucket Media Processing Configuration",
+      "method": "PUT",
+      "path": "/?processConfiguration",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request Body",
+          "children": [
+            {
+              "name": "BucketProcessConfiguration",
+              "required": true,
+              "description": "Bucket Image Processing Configuration"
+            }
+          ]
+        }
+      ]
     },
     "PutPublicAccessBlock": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutPublicAccessBlock"
+      "summary": "Enables or disables Block Public Access for Object Storage Service (OSS) resources.",
+      "method": "PUT",
+      "path": "/?publicAccessBlock",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "Request body.",
+          "children": [
+            {
+              "name": "PublicAccessBlockConfiguration",
+              "description": "The container in which the Block Public Access configurations are stored."
+            }
+          ]
+        }
+      ]
     },
     "PutStyle": {
       "required": [
@@ -1160,7 +4074,38 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutStyle"
+      "summary": "Adds an image style to a bucket. An image style contains one or more image processing parameters.",
+      "method": "PUT",
+      "path": "/?style",
+      "parameters": [
+        {
+          "name": "styleName",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The name of the image style.",
+          "example": "imagestyle"
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "type": "string",
+          "description": "The category of the style.",
+          "example": "image"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container that stores the content information about the image style.",
+          "children": [
+            {
+              "name": "Style",
+              "description": "The style content."
+            }
+          ]
+        }
+      ]
     },
     "PutSymlink": {
       "required": [
@@ -1169,13 +4114,66 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Create a symbolic link for an OSS object"
+      "summary": "Create a symbolic link for an OSS object",
+      "method": "PUT",
+      "path": "/{key}?symlink",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "x-oss-symlink-target",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The target object to which the symbolic link points. The naming conventions for target objects are the same as those for objects. - Similar to ObjectName, TargetObjectName must be URL-encoded. - The t",
+          "example": "oss.jpg"
+        },
+        {
+          "name": "x-oss-object-acl",
+          "in": "header",
+          "description": "The access control list (ACL) of the object. Default value: default. Valid values: - default: The ACL of the object is the same as that of the bucket in which the object is stored. - private: The ACL "
+        },
+        {
+          "name": "x-oss-storage-class",
+          "in": "header",
+          "description": "The storage class of the bucket. Default value: Standard. Valid values: - Standard - IA - Archive - ColdArchive"
+        },
+        {
+          "name": "x-oss-forbid-overwrite",
+          "in": "header",
+          "type": "string",
+          "description": "Specifies whether the PutSymlink operation overwrites the object that has the same name as that of the symbolic link you want to create. - If the value of **x-oss-forbid-overwrite** is not specified o",
+          "example": "true"
+        }
+      ]
     },
     "PutUserDefinedLogFieldsConfig": {
       "required": [],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "PutUserDefinedLogFieldsConfig"
+      "summary": "Customizes the user_defined_log_fields field in real-time logs by adding custom request headers or query parameters to the field for subsequent analysis of requests.",
+      "method": "PUT",
+      "path": "/?userDefinedLogFieldsConfig",
+      "parameters": [
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container that stores the specified log configurations.",
+          "children": [
+            {
+              "name": "UserDefinedLogFieldsConfiguration",
+              "description": "The container for the user-defined logging configuration."
+            }
+          ]
+        }
+      ]
     },
     "RestoreObject": {
       "required": [
@@ -1184,7 +4182,46 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Restore an Archive object or a Cold Archive object"
+      "summary": "Restore an Archive object or a Cold Archive object",
+      "method": "POST",
+      "path": "/{key}?restore",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "versionId",
+          "in": "query",
+          "type": "string",
+          "description": "The version number of the object that you want to restore.",
+          "example": "CAEQNRiBgMClj7qD0BYiIDQ5Y2QyMjc3NGZkODRlMTU5M2VkY2U3MWRiNGRh"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "RestoreRequest",
+              "description": "The container that stores information about the RestoreObject request."
+            }
+          ]
+        }
+      ]
     },
     "SealAppendObject": {
       "required": [
@@ -1194,7 +4231,35 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Seal Appendable Object"
+      "summary": "Seal Appendable Object",
+      "method": "POST",
+      "path": "/{key}?seal",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "Bucket name",
+          "example": "test-bucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "Name of the Appendable Object",
+          "example": "test-appendable-object"
+        },
+        {
+          "name": "position",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "Used to specify the expected length of the file when the user wants to seal it.",
+          "example": "1024"
+        }
+      ]
     },
     "SelectObject": {
       "required": [
@@ -1203,7 +4268,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Execute SQL statements on an object and return the result"
+      "summary": "Execute SQL statements on an object and return the result",
+      "method": "POST",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject.txt"
+        },
+        {
+          "name": "x-oss-process",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "If it is a CSV file, this value should be set to csv/select; if it is a JSON file, it should be set to json/select.",
+          "example": "csv/select"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The container that stores the SelectObject request.",
+          "children": [
+            {
+              "name": "SelectRequest",
+              "description": "Container for saving Select request."
+            }
+          ]
+        }
+      ]
     },
     "StartDataLakeCachePrefetchJob": {
       "required": [
@@ -1211,7 +4308,17 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Start an asynchronous prefetch job for the OSS accelerator"
+      "summary": "Start an asynchronous prefetch job for the OSS accelerator",
+      "method": "PUT",
+      "path": "/?x-oss-datalake-cache-prefetch-job&x-oss-datalake-job-start",
+      "parameters": [
+        {
+          "name": "x-oss-datalake-job-id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ]
     },
     "UpdateBucketAntiDDosInfo": {
       "required": [
@@ -1220,7 +4327,39 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateBucketAntiDDosInfo"
+      "summary": "Updates the status of an Anti-DDoS instance of a bucket.",
+      "method": "POST",
+      "path": "/?antiDDos",
+      "parameters": [
+        {
+          "name": "x-oss-defender-instance",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The Anti-DDoS instance ID.",
+          "example": "cbcac8d2-4f75-4d6d-9f2e-c3447f73****"
+        },
+        {
+          "name": "x-oss-defender-status",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The new status of the Anti-DDoS instance. Valid values: * Init: You must specify the custom domain name that you want to protect. * Defending: You can select whether to specify the custom domain name ",
+          "example": "Init"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "object",
+          "description": "The request body schema.",
+          "children": [
+            {
+              "name": "AntiDDOSConfiguration",
+              "description": "The container that stores the configurations of Anti-DDoS instances."
+            }
+          ]
+        }
+      ]
     },
     "UpdateUserAntiDDosInfo": {
       "required": [
@@ -1229,7 +4368,27 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "UpdateUserAntiDDosInfo"
+      "summary": "Modifies the status of an Anti-DDoS instance.",
+      "method": "POST",
+      "path": "/?antiDDos",
+      "parameters": [
+        {
+          "name": "x-oss-defender-instance",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The Anti-DDoS instance ID.",
+          "example": "cbcac8d2-4f75-4d6d-9f2e-c3447f73****"
+        },
+        {
+          "name": "x-oss-defender-status",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The new status of the Anti-DDoS instance. Set the value to HaltDefending, which indicates that the Anti-DDos protection is disabled for a bucket.",
+          "example": "HaltDefending"
+        }
+      ]
     },
     "UploadPart": {
       "required": [
@@ -1239,7 +4398,42 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Upload data by part"
+      "summary": "Upload data by part",
+      "method": "PUT",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "partNumber",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The number that identifies a part. Valid values: 1 to 10000. The size of a part ranges from 100 KB to 5 GB. > In multipart upload, each part except the last part must be larger than or equal to 100 KB",
+          "example": "2"
+        },
+        {
+          "name": "uploadId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID that identifies the object to which the part that you want to upload belongs.",
+          "example": "0004B9895DBBB6EC98E36"
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "type": "string",
+          "description": "The request body.",
+          "example": "二进制内容"
+        }
+      ]
     },
     "UploadPartCopy": {
       "required": [
@@ -1251,7 +4445,86 @@
       ],
       "deprecated": false,
       "replacedBy": null,
-      "summary": "Upload a block by copying data"
+      "summary": "Upload a block by copying data",
+      "method": "PUT",
+      "path": "/{key}",
+      "parameters": [
+        {
+          "name": "bucket",
+          "in": "host",
+          "type": "string",
+          "required": true,
+          "description": "The name of the bucket.",
+          "example": "examplebucket"
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "type": "string",
+          "required": true,
+          "description": "The full path of the object.",
+          "example": "exampledir/exampleobject/txt"
+        },
+        {
+          "name": "x-oss-copy-source",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "The address to access the source object. You must have permissions to read the source object. Default value: null",
+          "example": "/oss-example/ src-object"
+        },
+        {
+          "name": "partNumber",
+          "in": "query",
+          "type": "integer",
+          "required": true,
+          "description": "The number of parts.",
+          "example": "10000"
+        },
+        {
+          "name": "uploadId",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "description": "The ID that identifies the object to which the parts to upload belong.",
+          "example": "0004B999EF5A239BB9138C6227D69F95"
+        },
+        {
+          "name": "x-oss-copy-source-range",
+          "in": "header",
+          "type": "string",
+          "description": "The range of bytes to copy data from the source object. For example, if you specify bytes to 0 to 9, the system transfers byte 0 to byte 9, a total of 10 bytes. Default value: null - If the x-oss-copy",
+          "example": "bytes=100-6291756"
+        },
+        {
+          "name": "x-oss-copy-source-if-match",
+          "in": "header",
+          "type": "string",
+          "description": "The copy operation condition. If the ETag value of the source object is the same as the ETag value provided by the user, OSS copies data. Otherwise, OSS returns 412 Precondition Failed. Default value:",
+          "example": "5B3C1A2E053D763E1B002CC607C5****"
+        },
+        {
+          "name": "x-oss-copy-source-if-none-match",
+          "in": "header",
+          "type": "string",
+          "description": "The object transfer condition. If the input ETag value does not match the ETag value of the object, the system transfers the object normally and returns 200 OK. Otherwise, OSS returns 304 Not Modified",
+          "example": "5B3C1A2E053D763E1B002CC607C5****"
+        },
+        {
+          "name": "x-oss-copy-source-if-unmodified-since",
+          "in": "header",
+          "type": "string",
+          "description": "The object transfer condition. If the specified time is the same as or later than the actual modified time of the object, OSS transfers the object normally and returns 200 OK. Otherwise, OSS returns 4",
+          "example": "Fri, 13 Oct 2015 14:47:53 GMT"
+        },
+        {
+          "name": "x-oss-copy-source-if-modified-since",
+          "in": "header",
+          "type": "string",
+          "description": "The object transfer condition. If the specified time is earlier than the actual modified time of the object, the system transfers the object normally and returns 200 OK. Otherwise, OSS returns 304 Not",
+          "example": "Fri, 13 Nov 2015 14:47:53 GMT"
+        }
+      ]
     }
   }
 }
